@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>AiPaper 뉴스 — 미니 신문</title>
+    <dateCreated>Sat, 12 Sep 2026 03:50:00 GMT</dateCreated>
+  </head>
+  <body>
+    <outline text="AiPaper 뉴스" title="AiPaper 뉴스">
+      <outline type="rss" text="AiPaper 뉴스 — 미니 신문" title="AiPaper 뉴스 — 미니 신문" xmlUrl="https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.xml" htmlUrl="https://codemwk.github.io/aipaper-newspaper/" />
+    </outline>
+  </body>
+</opml>
