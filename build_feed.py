@@ -1,21 +1,24 @@
 #!/usr/bin/env python3
-"""Build a full-text Atom feed from markdown drafts for Inoreader Free."""
+"""Build full-text Atom + RSS feeds from markdown drafts for Inoreader Free."""
 from __future__ import annotations
 
 import hashlib
 import html
 import re
 from datetime import datetime, timezone
+from email.utils import format_datetime
 from pathlib import Path
 from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).resolve().parent
 DRAFTS = ROOT / "drafts"
-OUT = ROOT / "feeds" / "newspaper.xml"
+OUT_ATOM = ROOT / "feeds" / "newspaper.xml"
+OUT_RSS = ROOT / "feeds" / "newspaper.rss"
 FEED_ID = "https://codemwk.github.io/aipaper-newspaper"
 FEED_TITLE = "AiPaper 뉴스 — 미니 신문"
 FEED_SUBTITLE = "양보다 질. 전문 읽기용 해설 기사"
 AUTHOR = "AiPaper 뉴스"
+RSS_SELF = "https://cdn.jsdelivr.net/gh/codemwk/aipaper-newspaper@main/feeds/newspaper.rss"
 
 FRONT_MATTER = re.compile(r"^---\n(.*?)\n---\n(.*)$", re.S)
 
@@ -48,6 +51,8 @@ def md_to_simple_html(md: str) -> str:
     out: list[str] = []
     in_ul = False
     in_p = False
+    in_table = False
+    table_rows: list[list[str]] = []
 
     def close_p():
         nonlocal in_p
@@ -61,12 +66,39 @@ def md_to_simple_html(md: str) -> str:
             out.append("</ul>")
             in_ul = False
 
+    def flush_table():
+        nonlocal in_table, table_rows
+        if not in_table:
+            return
+        close_p(); close_ul()
+        out.append("<table>")
+        for i, row in enumerate(table_rows):
+            tag = "th" if i == 0 else "td"
+            # skip markdown separator row
+            if i == 1 and all(set(c.strip()) <= set("-: ") and "-" in c for c in row):
+                continue
+            out.append("<tr>" + "".join(f"<{tag}>{inline(c.strip())}</{tag}>" for c in row) + "</tr>")
+        out.append("</table>")
+        in_table = False
+        table_rows = []
+
     for raw in lines:
         line = raw.rstrip()
         if not line.strip():
+            flush_table()
             close_p()
             close_ul()
             continue
+        if "|" in line and line.strip().startswith("|"):
+            close_p(); close_ul()
+            cells = [c for c in line.strip().strip("|").split("|")]
+            if not in_table:
+                in_table = True
+                table_rows = []
+            table_rows.append(cells)
+            continue
+        else:
+            flush_table()
         if line.startswith("### "):
             close_p(); close_ul()
             out.append(f"<h3>{inline(line[4:])}</h3>")
@@ -82,6 +114,12 @@ def md_to_simple_html(md: str) -> str:
                 out.append("<ul>")
                 in_ul = True
             out.append(f"<li>{inline(line[2:])}</li>")
+        elif re.match(r"^\d+\. ", line):
+            close_p()
+            if not in_ul:
+                out.append("<ul>")
+                in_ul = True
+            out.append(f"<li>{inline(re.sub(r'^\d+\. ', '', line))}</li>")
         else:
             close_ul()
             if not in_p:
@@ -90,6 +128,7 @@ def md_to_simple_html(md: str) -> str:
             else:
                 out.append("<br/>")
             out.append(inline(line))
+    flush_table()
     close_p(); close_ul()
     return "\n".join(out)
 
@@ -108,7 +147,6 @@ def parse_date(s: str) -> datetime:
         return datetime.strptime(s, "%Y-%m-%d").replace(tzinfo=timezone.utc)
     if s.endswith("Z"):
         return datetime.strptime(s, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-    # +09:00 style
     if len(s) >= 25 and (s[-6] in "+-") and s[-3] == ":":
         ss = s[:-3] + s[-2:]
         return datetime.strptime(ss, "%Y-%m-%dT%H:%M:%S%z")
@@ -124,15 +162,35 @@ def entry_id(slug: str, date: str) -> str:
     return f"{FEED_ID}/{slug}-{h}"
 
 
-def build() -> Path:
+def entry_link(slug: str, date: str) -> str:
+    h = hashlib.sha1(f"{slug}:{date}".encode()).hexdigest()[:12]
+    return f"{FEED_ID}/{slug}-{h}"
+
+
+def content_html(d: dict) -> str:
+    body_html = md_to_simple_html(d["body_md"])
+    header = f'<p><em>{html.escape(d["summary"])}</em></p>\n' if d["summary"] else ""
+    return (
+        f"{header}"
+        f'<p><strong>분류:</strong> {html.escape(d["category"])}</p>\n'
+        f"{body_html}"
+        f'<hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. '
+        f"원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>"
+    )
+
+
+def load_drafts() -> list[dict]:
     drafts = []
     for p in sorted(DRAFTS.glob("*.md")):
         d = parse_draft(p)
         if d:
             drafts.append(d)
     drafts.sort(key=lambda d: parse_date(d["date"]), reverse=True)
-    updated = atom_date(parse_date(drafts[0]["date"])) if drafts else atom_date(datetime.now(timezone.utc))
+    return drafts
 
+
+def build_atom(drafts: list[dict]) -> Path:
+    updated = atom_date(parse_date(drafts[0]["date"])) if drafts else atom_date(datetime.now(timezone.utc))
     parts = [
         '<?xml version="1.0" encoding="utf-8"?>',
         '<feed xmlns="http://www.w3.org/2005/Atom">',
@@ -144,18 +202,9 @@ def build() -> Path:
         f"<updated>{updated}</updated>",
         f"<author><name>{escape(AUTHOR)}</name></author>",
     ]
-
-    for d in drafts[:30]:
+    for d in drafts[:40]:
         dt = parse_date(d["date"])
-        body_html = md_to_simple_html(d["body_md"])
-        header = f'<p><em>{html.escape(d["summary"])}</em></p>\n' if d["summary"] else ""
-        content = (
-            f"{header}"
-            f'<p><strong>분류:</strong> {html.escape(d["category"])}</p>\n'
-            f"{body_html}"
-            f'<hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. '
-            f"원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>"
-        )
+        content = content_html(d)
         parts += [
             "<entry>",
             f"<title>{escape(d['title'])}</title>",
@@ -170,13 +219,58 @@ def build() -> Path:
             f'<content type="html">{escape(content)}</content>',
             "</entry>",
         ]
-
     parts.append("</feed>")
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text("\n".join(parts) + "\n", encoding="utf-8")
-    return OUT
+    OUT_ATOM.parent.mkdir(parents=True, exist_ok=True)
+    OUT_ATOM.write_text("\n".join(parts) + "\n", encoding="utf-8")
+    return OUT_ATOM
+
+
+def build_rss(drafts: list[dict]) -> Path:
+    now = datetime.now(timezone.utc)
+    parts = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">',
+        "<channel>",
+        f"<title>{escape(FEED_TITLE)}</title>",
+        f"<link>{FEED_ID}/</link>",
+        f"<description>{escape(FEED_SUBTITLE)}</description>",
+        "<language>ko</language>",
+        f'<atom:link href="{RSS_SELF}" rel="self" type="application/rss+xml"/>',
+        f"<lastBuildDate>{format_datetime(now)}</lastBuildDate>",
+        f"<managingEditor>{escape(AUTHOR)}</managingEditor>",
+    ]
+    for d in drafts[:40]:
+        dt = parse_date(d["date"])
+        link = entry_link(d["slug"], d["date"])
+        content = content_html(d)
+        parts += [
+            "<item>",
+            f"<title>{escape(d['title'])}</title>",
+            f"<link>{link}</link>",
+            f'<guid isPermaLink="false">{entry_id(d["slug"], d["date"])}</guid>',
+            f"<pubDate>{format_datetime(dt.astimezone(timezone.utc))}</pubDate>",
+            f"<category>{escape(d['category'])}</category>",
+        ]
+        if d["summary"]:
+            parts.append(f"<description>{escape(d['summary'])}</description>")
+        else:
+            parts.append(f"<description>{escape(d['title'])}</description>")
+        parts += [
+            f"<content:encoded><![CDATA[{content}]]></content:encoded>",
+            "</item>",
+        ]
+    parts += ["</channel>", "</rss>"]
+    OUT_RSS.parent.mkdir(parents=True, exist_ok=True)
+    OUT_RSS.write_text("\n".join(parts) + "\n", encoding="utf-8")
+    return OUT_RSS
+
+
+def build() -> tuple[Path, Path]:
+    drafts = load_drafts()
+    return build_atom(drafts), build_rss(drafts)
 
 
 if __name__ == "__main__":
-    path = build()
-    print(f"Wrote {path} ({path.stat().st_size} bytes)")
+    atom, rss = build()
+    print(f"Wrote {atom} ({atom.stat().st_size} bytes)")
+    print(f"Wrote {rss} ({rss.stat().st_size} bytes)")
