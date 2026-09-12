@@ -6,7 +6,7 @@
   </head>
   <body>
     <outline text="AiPaper 뉴스" title="AiPaper 뉴스">
-      <outline type="rss" text="AiPaper 뉴스 — 미니 신문" title="AiPaper 뉴스 — 미니 신문" xmlUrl="https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.xml" htmlUrl="https://codemwk.github.io/aipaper-newspaper/" />
+      <outline type="rss" text="AiPaper 뉴스 — 미니 신문" title="AiPaper 뉴스 — 미니 신문" xmlUrl="https://raw.githubusercontent.com/codemwk/aipaper-newspaper/main/feeds/newspaper.xml" htmlUrl="https://github.com/codemwk/aipaper-newspaper" />
     </outline>
   </body>
 </opml>
