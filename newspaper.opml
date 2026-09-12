@@ -2,11 +2,8 @@
 <opml version="2.0">
   <head>
     <title>AiPaper 뉴스 — 미니 신문</title>
-    <dateCreated>Sat, 12 Sep 2026 03:50:00 GMT</dateCreated>
   </head>
   <body>
-    <outline text="AiPaper 뉴스" title="AiPaper 뉴스">
-      <outline type="rss" text="AiPaper 뉴스 — 미니 신문" title="AiPaper 뉴스 — 미니 신문" xmlUrl="https://raw.githubusercontent.com/codemwk/aipaper-newspaper/main/feeds/newspaper.xml" htmlUrl="https://github.com/codemwk/aipaper-newspaper" />
-    </outline>
+    <outline type="rss" text="AiPaper 뉴스 — 미니 신문" title="AiPaper 뉴스 — 미니 신문" xmlUrl="https://cdn.jsdelivr.net/gh/codemwk/aipaper-newspaper@main/feeds/newspaper.rss" htmlUrl="https://codemwk.github.io/aipaper-newspaper/" />
   </body>
 </opml>
