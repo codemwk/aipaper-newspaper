@@ -16,7 +16,7 @@ OUT_ATOM = ROOT / "feeds" / "newspaper.xml"
 OUT_RSS = ROOT / "feeds" / "newspaper.rss"
 FEED_ID = "https://codemwk.github.io/aipaper-newspaper"
 FEED_TITLE = "AiPaper 뉴스 — 미니 신문"
-FEED_SUBTITLE = "오늘 호만. 전문 읽기용 해설 기사 (양보다 질)"
+FEED_SUBTITLE = "최근 며칠분. 전문 읽기용 해설 기사 (양보다 질)"
 AUTHOR = "AiPaper 뉴스"
 RSS_SELF = "https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss"
 
@@ -181,23 +181,28 @@ def content_html(d: dict) -> str:
 
 def seoul_today():
     # Asia/Seoul = UTC+9 (no DST)
-    from datetime import timedelta, date
+    from datetime import timedelta
     return (datetime.now(timezone.utc) + timedelta(hours=9)).date()
 
 
-def load_drafts(*, today_only: bool = True) -> list[dict]:
-    """Load drafts. Default: only today's Seoul-date edition (newspaper issue), not full archive."""
+def load_drafts(*, keep_days: int = 3) -> list[dict]:
+    """Load drafts for a rolling Seoul-date window.
+
+    keep_days=3: today + previous 2 days — enough catch-up if the reader was busy,
+    without accumulating the full archive.
+    """
     from datetime import timedelta
     drafts = []
     today = seoul_today()
-    for p in sorted(DRAFTS.glob("*.md")):
-        d = parse_draft(p)
+    oldest = today - timedelta(days=max(keep_days, 1) - 1)
+    seoul_tz = timezone(timedelta(hours=9))
+    for path in sorted(DRAFTS.glob("*.md")):
+        d = parse_draft(path)
         if not d:
             continue
-        if today_only:
-            local = parse_date(d["date"]).astimezone(timezone(timedelta(hours=9))).date()
-            if local != today:
-                continue
+        local = parse_date(d["date"]).astimezone(seoul_tz).date()
+        if local < oldest or local > today:
+            continue
         drafts.append(d)
     drafts.sort(key=lambda d: parse_date(d["date"]), reverse=True)
     return drafts
