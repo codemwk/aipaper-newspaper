@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>DeepSeek V4.1 Flash — 552B MoE·비대칭 인코더-디코더, Pro까지 라우팅 — AiPaper 뉴스</title>
+  <meta name="description" content="공식 2026-09-10. deepseek-flash. Causal Encoder–Decoder(입력 8B·출력 16B 활성), 네이티브 비전. KV 캐시 HBM 1/4·SSD 1/8. 9/14부터 v4-pro 요청도 Flash로."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI Models · 2026-09-16 07:15 KST</div>
+    <h1>DeepSeek V4.1 Flash — 552B MoE·비대칭 인코더-디코더, Pro까지 라우팅</h1>
+  </header>
+  <article>
+<p><em>공식 2026-09-10. deepseek-flash. Causal Encoder–Decoder(입력 8B·출력 16B 활성), 네이티브 비전. KV 캐시 HBM 1/4·SSD 1/8. 9/14부터 v4-pro 요청도 Flash로.</em></p>
+<p><strong>분류:</strong> AI Models</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://api-docs.deepseek.com/news/news260910">DeepSeek(2026-09-10)</a>가 <strong>DeepSeek-V4.1-Flash</strong>를 API에 올렸다. 모델명 <code>deepseek-flash</code>. 새 아키텍처 패밀리의 가장 작은 구성으로 <strong>네이티브 멀티모달</strong>을 열고, 자사 테스트 기준 V4-Pro를 성능·비용·속도에서 앞선다고 주장한다.
+</p>
+<h2>핵심 수치·정책</h2>
+<ul>
+<li><strong>552B</strong> MoE. Causal Encoder–Decoder: 입력측 활성 <strong>8B</strong>, 출력측 <strong>16B</strong>.</li>
+<li>KV 캐시: 이전 세대 대비 HBM <strong>1/4</strong>, SSD <strong>1/8</strong> — 에이전트 캐시 히트 비용 절감이 명시 목적.</li>
+<li>구모델: <code>deepseek-v4-flash</code> / <code>deepseek-v4-flash-vision-exp</code>는 임시로 V4.1-Flash로 라우팅.</li>
+<li><strong>2026-09-14 04:00 UTC</strong>부터 <code>deepseek-v4-pro</code> 요청도 V4.1-Flash로 라우팅·Flash 요금(향후 V4.1-Pro까지). 이후 문서에 Pro API를 수요로 유지한다는 정정도 있으니 <strong>가격 페이지를 재확인</strong>.</li>
+<li>피크/오프피크 요금(오프피크=피크의 50%). HF 가중치·테크 리포트 공개.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+에이전트·코딩 CLI가 Flash급을 백본으로 쓰는 흐름에서 “작은 활성 파라미터 + 큰 토탈 MoE + 비전”은 <strong>단가·지연 민감한 트레이딩/자동화 루프</strong>에 직결된다. 다만 로컬 풀추론은 토탈 파라미터가 커 비현실적이라는 커뮤니티 지적이 있다 — API·파트너(WorkBuddy/OpenCode) 경로가 현실적이다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>호출: <code>model=&quot;deepseek-flash&quot;</code>, base <code>https://api.deepseek.com</code></li>
+<li><a href="https://api-docs.deepseek.com/news/news260910">발표</a> · <a href="https://api-docs.deepseek.com/quick_start/pricing/">요금</a> · <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash">HF</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>IBM Granite PatchTST-FM-r2 — 상업용 허가 제로샷 시계열 예보의 상위권 — AiPaper 뉴스</title>
+  <meta name="description" content="2026-09-09 HF 블로그. Granite Time Series PatchTST-FM-r2(~385M). GIFT-Eval 재현 가능 제로샷에서 전체 2위·상업용 친화 라이선스(Apache 2.0/OpenMDW) 중 1위(2026-09-08 기준). 확률 예보·결측 보간."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI Models · 2026-09-18 07:20 KST</div>
+    <h1>IBM Granite PatchTST-FM-r2 — 상업용 허가 제로샷 시계열 예보의 상위권</h1>
+  </header>
+  <article>
+<p><em>2026-09-09 HF 블로그. Granite Time Series PatchTST-FM-r2(~385M). GIFT-Eval 재현 가능 제로샷에서 전체 2위·상업용 친화 라이선스(Apache 2.0/OpenMDW) 중 1위(2026-09-08 기준). 확률 예보·결측 보간.</em></p>
+<p><strong>분류:</strong> AI Models</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series">Hugging Face 블로그</a>(2026-09-09)에서 IBM은 <strong>Granite Time Series PatchTST-FM-r2</strong>를 공개했다. 약 <strong>385M</strong> 파라미터 제로샷 예보 모델이다.
+</p>
+<h2>무엇이 바뀌었나</h2>
+<ul>
+<li>전작 r1 대비 <strong>conformer 블록</strong>(어텐션+시간 컨볼루션), 패치 오버랩·Hamming 가중, 블록 수 확대 등으로 장·단기 패턴을 같이 잡는다.</li>
+<li>컨텍스트 최대 <strong>8,192</strong>, 유연한 예보 길이, <strong>99 분위</strong> 확률 헤드, 결측값 <strong>imputation</strong> 지원.</li>
+<li><strong>2026-09-08</strong> 기준 GIFT-Eval에서 재현 가능·제로샷·테스트 누수 없는 그룹 <strong>전체 2위</strong>(CRPS·MASE), 그중 <strong>허가형 상업용 라이선스</strong> 모델로는 1위라고 IBM은 밝혔다. TimesFM-3 바로 뒤.</li>
+<li>이중 라이선스 <strong>Apache 2.0 / OpenMDW 1.0</strong>(선택). 가중치·아키텍처·추론·벤치 재현 코드 공개. <code>ibm-granite/granite-timeseries-patchtst-fm-r2</code>.</li>
+<li>Confluent Cloud Early Access에서 Granite TSFM 스트리밍 추론과도 연결된다고 언급(초기 포트폴리오에 r1 등 포함, r2는 블로그에서 노트북·허브 중심).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+트레이딩·수요·전력·텔레메트리처럼 <strong>표 형태 시계열</strong>을 LLM 에이전트와 붙일 때, “또 하나의 챗 모델”보다 <strong>전용 제로샷 예보</strong>가 필요한 구간이 있다. 허가 조건이 명확한 SOTA급 오픈 가중치는 사내 거버넌스 통과에 유리하다. 자동매매 파이프라인에서는 신호 생성·리스크 시나리오의 <strong>불확실성 구간(분위수)</strong> 을 같이 가져갈 수 있다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series">IBM/HF 블로그</a> · Hub: <code>ibm-granite/granite-timeseries-patchtst-fm-r2</code> · <code>granite-tsfm&gt;=0.3.9</code></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

@@ -162,9 +162,15 @@ def entry_id(slug: str, date: str) -> str:
     return f"{FEED_ID}/{slug}-{h}"
 
 
-def entry_link(slug: str, date: str) -> str:
+def entry_path(slug: str, date: str) -> str:
+    """Relative path segment used in public article URLs (no .html)."""
     h = hashlib.sha1(f"{slug}:{date}".encode()).hexdigest()[:12]
-    return f"{FEED_ID}/{slug}-{h}"
+    return f"{slug}-{h}"
+
+
+def entry_link(slug: str, date: str) -> str:
+    # Stable shareable web document URL on GitHub Pages
+    return f"{FEED_ID}/{entry_path(slug, date)}/"
 
 
 def content_html(d: dict) -> str:
@@ -177,6 +183,114 @@ def content_html(d: dict) -> str:
         f'<hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. '
         f"원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>"
     )
+
+
+
+def article_page_html(d: dict) -> str:
+    dt = parse_date(d["date"])
+    from datetime import timedelta
+    seoul = dt.astimezone(timezone(timedelta(hours=9))).strftime("%Y-%m-%d %H:%M KST")
+    body = content_html(d)
+    title = html.escape(d["title"])
+    return f"""<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{title} — AiPaper 뉴스</title>
+  <meta name="description" content="{html.escape(d.get('summary') or d['title'])}"/>
+  <style>
+    body{{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}}
+    header{{margin-bottom:1.5rem}}
+    .meta{{color:#555;font-size:0.95rem}}
+    a{{color:#06c}}
+    h1{{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}}
+    h2{{font-size:1.15rem;margin-top:1.4rem}}
+    h3{{font-size:1.05rem}}
+    code{{background:#eee;padding:0.1em 0.3em;border-radius:3px}}
+    hr{{border:none;border-top:1px solid #ddd;margin:1.5rem 0}}
+    footer{{margin-top:2rem;font-size:0.9rem;color:#666}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · {html.escape(d['category'])} · {seoul}</div>
+    <h1>{title}</h1>
+  </header>
+  <article>
+{body}
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
+"""
+
+
+def write_article_pages(drafts: list[dict]) -> list[Path]:
+    """Write one GitHub Pages HTML document per draft (shareable web URL)."""
+    written: list[Path] = []
+    # Remove previous generated article dirs (slug-hash folders at repo root)
+    skip = {"drafts", "feeds", "templates", ".git", "__pycache__", "node_modules"}
+    for child in ROOT.iterdir():
+        if not child.is_dir() or child.name in skip or child.name.startswith('.'):
+            continue
+        # generated article dirs look like slug-12hex
+        if re.fullmatch(r".+-[0-9a-f]{12}", child.name):
+            for f in child.glob("*"):
+                f.unlink()
+            child.rmdir()
+    for d in drafts:
+        rel = entry_path(d["slug"], d["date"])
+        folder = ROOT / rel
+        folder.mkdir(parents=True, exist_ok=True)
+        path = folder / "index.html"
+        path.write_text(article_page_html(d), encoding="utf-8")
+        written.append(path)
+    return written
+
+
+def write_index(drafts: list[dict]) -> Path:
+    rows = []
+    from datetime import timedelta
+    seoul_tz = timezone(timedelta(hours=9))
+    for d in drafts:
+        dt = parse_date(d["date"]).astimezone(seoul_tz)
+        href = entry_path(d["slug"], d["date"]) + "/"
+        rows.append(
+            f'<li><a href="{href}">{html.escape(d["title"])}</a>'
+            f'<div class="meta">{html.escape(d["category"])} · {dt.strftime("%Y-%m-%d")}</div></li>'
+        )
+    html_doc = f"""<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <title>AiPaper 뉴스 — 미니 신문</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>
+    body{{font-family:system-ui,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1rem 3rem;line-height:1.5;color:#111}}
+    code{{background:#f4f4f4;padding:.1em .3em;border-radius:3px}}
+    a{{color:#06c}}
+    .meta{{color:#666;font-size:0.9rem}}
+    li{{margin:0.85rem 0}}
+  </style>
+</head>
+<body>
+  <h1>AiPaper 뉴스</h1>
+  <p>최근 며칠분 전문 해설. Inoreader / 웹문서 / 공유 모두 같은 본문입니다.</p>
+  <p>RSS: <code>https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss</code>
+     · <a href="feeds/newspaper.rss">열기</a></p>
+  <h2>최근 기사</h2>
+  <ol>
+{chr(10).join(rows)}
+  </ol>
+</body>
+</html>
+"""
+    path = ROOT / "index.html"
+    path.write_text(html_doc, encoding="utf-8")
+    return path
 
 
 def seoul_today():
@@ -224,10 +338,12 @@ def build_atom(drafts: list[dict]) -> Path:
     for d in drafts[:40]:
         dt = parse_date(d["date"])
         content = content_html(d)
+        link = entry_link(d["slug"], d["date"])
         parts += [
             "<entry>",
             f"<title>{escape(d['title'])}</title>",
             f"<id>{entry_id(d['slug'], d['date'])}</id>",
+            f'<link href="{link}" rel="alternate" type="text/html"/>',
             f"<updated>{atom_date(dt)}</updated>",
             f"<published>{atom_date(dt)}</published>",
             f'<category term="{escape(d["category"])}"/>',
@@ -284,12 +400,17 @@ def build_rss(drafts: list[dict]) -> Path:
     return OUT_RSS
 
 
-def build() -> tuple[Path, Path]:
+def build():
     drafts = load_drafts()
-    return build_atom(drafts), build_rss(drafts)
+    pages = write_article_pages(drafts)
+    index = write_index(drafts)
+    atom = build_atom(drafts)
+    rss = build_rss(drafts)
+    return atom, rss, pages, index
 
 
 if __name__ == "__main__":
-    atom, rss = build()
+    atom, rss, pages, index = build()
     print(f"Wrote {atom} ({atom.stat().st_size} bytes)")
     print(f"Wrote {rss} ({rss.stat().st_size} bytes)")
+    print(f"Wrote {len(pages)} article pages + {index}")

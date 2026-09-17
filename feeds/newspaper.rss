@@ -6,11 +6,11 @@
 <description>최근 며칠분. 전문 읽기용 해설 기사 (양보다 질)</description>
 <language>ko</language>
 <atom:link href="https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Thu, 17 Sep 2026 22:39:30 +0000</lastBuildDate>
+<lastBuildDate>Thu, 17 Sep 2026 22:53:47 +0000</lastBuildDate>
 <managingEditor>AiPaper 뉴스</managingEditor>
 <item>
 <title>Agent-Leaderboard 일일 — Skills·MCP 상단, 순위는 어제와 거의 동일</title>
-<link>https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-daily-87062c39a310</link>
+<link>https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-daily-87062c39a310/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-daily-87062c39a310</guid>
 <pubDate>Thu, 17 Sep 2026 22:55:00 +0000</pubDate>
 <category>Agent Leaderboard</category>
@@ -71,7 +71,7 @@
 </item>
 <item>
 <title>obsidian-second-brain v0.16 — ‘말없이 깨지던’ 윈도우·CJK·동시쓰기 고침</title>
-<link>https://codemwk.github.io/aipaper-newspaper/obsidian-second-brain-v016-948a4339be81</link>
+<link>https://codemwk.github.io/aipaper-newspaper/obsidian-second-brain-v016-948a4339be81/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/obsidian-second-brain-v016-948a4339be81</guid>
 <pubDate>Thu, 17 Sep 2026 22:50:00 +0000</pubDate>
 <category>Second Brain</category>
@@ -101,7 +101,7 @@
 </item>
 <item>
 <title>NeoMME — 문서 페이지를 OCR 없이 검색하는 단일 타워 멀티모달 인코더</title>
-<link>https://codemwk.github.io/aipaper-newspaper/neomme-visual-document-rag-b72f3c0f1f6f</link>
+<link>https://codemwk.github.io/aipaper-newspaper/neomme-visual-document-rag-b72f3c0f1f6f/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/neomme-visual-document-rag-b72f3c0f1f6f</guid>
 <pubDate>Thu, 17 Sep 2026 22:45:00 +0000</pubDate>
 <category>GitHub</category>
@@ -131,7 +131,7 @@
 </item>
 <item>
 <title>GitHub 해설: Chrome DevTools MCP — 에이전트가 브라우저를 ‘보고’ 고치게 하는 도구</title>
-<link>https://codemwk.github.io/aipaper-newspaper/chrome-devtools-mcp-explained-7cdcbc8ffeba</link>
+<link>https://codemwk.github.io/aipaper-newspaper/chrome-devtools-mcp-explained-7cdcbc8ffeba/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/chrome-devtools-mcp-explained-7cdcbc8ffeba</guid>
 <pubDate>Thu, 17 Sep 2026 22:40:00 +0000</pubDate>
 <category>GitHub</category>
@@ -161,7 +161,7 @@
 </item>
 <item>
 <title>Pika, 프롬프트 지옥을 줄이는 크리에이터 플랫폼 — 샷 리스트·모델 자동 선택</title>
-<link>https://codemwk.github.io/aipaper-newspaper/pika-creator-platform-e4f60c706387</link>
+<link>https://codemwk.github.io/aipaper-newspaper/pika-creator-platform-e4f60c706387/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/pika-creator-platform-e4f60c706387</guid>
 <pubDate>Thu, 17 Sep 2026 22:35:00 +0000</pubDate>
 <category>AI Content</category>
@@ -191,7 +191,7 @@ Runway·Adobe 타임라인 플러그인, Kling 3.0 같은 “모델 성능” �
 </item>
 <item>
 <title>K2 Horizon — 0.9B~375B 여섯 모델을 가중치·코드·학습데이터까지 한꺼번에</title>
-<link>https://codemwk.github.io/aipaper-newspaper/k2-horizon-open-fleet-518a0d189d47</link>
+<link>https://codemwk.github.io/aipaper-newspaper/k2-horizon-open-fleet-518a0d189d47/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/k2-horizon-open-fleet-518a0d189d47</guid>
 <pubDate>Thu, 17 Sep 2026 22:30:00 +0000</pubDate>
 <category>AI Models</category>
@@ -220,7 +220,7 @@ Runway·Adobe 타임라인 플러그인, Kling 3.0 같은 “모델 성능” �
 </item>
 <item>
 <title>Atria Dawn Preview — 상하이AI랩 744B MoE 에이전트 모델, MIT로 조용히 공개</title>
-<link>https://codemwk.github.io/aipaper-newspaper/atria-dawn-preview-026e97307555</link>
+<link>https://codemwk.github.io/aipaper-newspaper/atria-dawn-preview-026e97307555/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/atria-dawn-preview-026e97307555</guid>
 <pubDate>Thu, 17 Sep 2026 22:25:00 +0000</pubDate>
 <category>AI Models</category>
@@ -251,7 +251,7 @@ Runway·Adobe 타임라인 플러그인, Kling 3.0 같은 “모델 성능” �
 </item>
 <item>
 <title>IBM Granite PatchTST-FM-r2 — 상업용 허가 제로샷 시계열 예보의 상위권</title>
-<link>https://codemwk.github.io/aipaper-newspaper/ibm-granite-patchtst-fm-r2-7c69656374c4</link>
+<link>https://codemwk.github.io/aipaper-newspaper/ibm-granite-patchtst-fm-r2-7c69656374c4/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/ibm-granite-patchtst-fm-r2-7c69656374c4</guid>
 <pubDate>Thu, 17 Sep 2026 22:20:00 +0000</pubDate>
 <category>AI Models</category>
@@ -281,7 +281,7 @@ Runway·Adobe 타임라인 플러그인, Kling 3.0 같은 “모델 성능” �
 </item>
 <item>
 <title>Nasdaq Private Market PAM — 비상장 투자를 iOS 대화형 에이전트로</title>
-<link>https://codemwk.github.io/aipaper-newspaper/nasdaq-pam-private-market-agent-0c6d11d7adaa</link>
+<link>https://codemwk.github.io/aipaper-newspaper/nasdaq-pam-private-market-agent-0c6d11d7adaa/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/nasdaq-pam-private-market-agent-0c6d11d7adaa</guid>
 <pubDate>Thu, 17 Sep 2026 22:15:00 +0000</pubDate>
 <category>AI Trading</category>
@@ -309,7 +309,7 @@ Runway·Adobe 타임라인 플러그인, Kling 3.0 같은 “모델 성능” �
 </item>
 <item>
 <title>TradingView MCP 공개 베타 — 차트 데이터는 주고, 브로커 체결은 아직 안 줌</title>
-<link>https://codemwk.github.io/aipaper-newspaper/tradingview-mcp-server-beta-8cdc88f38ad6</link>
+<link>https://codemwk.github.io/aipaper-newspaper/tradingview-mcp-server-beta-8cdc88f38ad6/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/tradingview-mcp-server-beta-8cdc88f38ad6</guid>
 <pubDate>Thu, 17 Sep 2026 22:10:00 +0000</pubDate>
 <category>AI Trading</category>
@@ -340,7 +340,7 @@ Leverate·cTrader가 “계좌 쪽 MCP”를 열 때, TradingView는 <strong>리
 </item>
 <item>
 <title>Leverate MCP for Traders — 채팅으로 주문 준비, 예는 반드시 사람이</title>
-<link>https://codemwk.github.io/aipaper-newspaper/leverate-mcp-for-traders-43be1e212b67</link>
+<link>https://codemwk.github.io/aipaper-newspaper/leverate-mcp-for-traders-43be1e212b67/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/leverate-mcp-for-traders-43be1e212b67</guid>
 <pubDate>Thu, 17 Sep 2026 22:05:00 +0000</pubDate>
 <category>AI Trading</category>
@@ -371,7 +371,7 @@ Leverate·cTrader가 “계좌 쪽 MCP”를 열 때, TradingView는 <strong>리
 </item>
 <item>
 <title>Agent-Leaderboard 일일 — Skills·MCP 상단에 뭐가 붙어 있나</title>
-<link>https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-daily-f7d442df067e</link>
+<link>https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-daily-f7d442df067e/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-daily-f7d442df067e</guid>
 <pubDate>Wed, 16 Sep 2026 22:55:00 +0000</pubDate>
 <category>Agent Leaderboard</category>
@@ -429,7 +429,7 @@ Leverate·cTrader가 “계좌 쪽 MCP”를 열 때, TradingView는 <strong>리
 </item>
 <item>
 <title>SkillRank — 스타만이 아닌 GitHub·npm·HN 신호로 스킬 일일 순위</title>
-<link>https://codemwk.github.io/aipaper-newspaper/skill-rank-multisignal-a057da4056f9</link>
+<link>https://codemwk.github.io/aipaper-newspaper/skill-rank-multisignal-a057da4056f9/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/skill-rank-multisignal-a057da4056f9</guid>
 <pubDate>Wed, 16 Sep 2026 22:50:00 +0000</pubDate>
 <category>GitHub Hot</category>
@@ -460,7 +460,7 @@ Leverate·cTrader가 “계좌 쪽 MCP”를 열 때, TradingView는 <strong>리
 </item>
 <item>
 <title>TradingAgents — 멀티에이전트 LLM 금융 프레임워크가 깃허브 프레임 보드 상위</title>
-<link>https://codemwk.github.io/aipaper-newspaper/tradingagents-multiagent-framework-513554c781e8</link>
+<link>https://codemwk.github.io/aipaper-newspaper/tradingagents-multiagent-framework-513554c781e8/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/tradingagents-multiagent-framework-513554c781e8</guid>
 <pubDate>Wed, 16 Sep 2026 22:45:00 +0000</pubDate>
 <category>GitHub Hot</category>
@@ -490,7 +490,7 @@ Leverate·cTrader가 “계좌 쪽 MCP”를 열 때, TradingView는 <strong>리
 </item>
 <item>
 <title>llm-wiki-agent — raw/에 넣으면 에이전트가 위키를 키우는 스킬</title>
-<link>https://codemwk.github.io/aipaper-newspaper/llm-wiki-agent-samuraigpt-7ba8a8fbd6b5</link>
+<link>https://codemwk.github.io/aipaper-newspaper/llm-wiki-agent-samuraigpt-7ba8a8fbd6b5/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/llm-wiki-agent-samuraigpt-7ba8a8fbd6b5</guid>
 <pubDate>Wed, 16 Sep 2026 22:40:00 +0000</pubDate>
 <category>Second Brain</category>
@@ -521,7 +521,7 @@ Leverate·cTrader가 “계좌 쪽 MCP”를 열 때, TradingView는 <strong>리
 </item>
 <item>
 <title>Gemini 3.8 Flash · Flash Cyber — 에이전트 워크호스 + Fairwind 방어 전용</title>
-<link>https://codemwk.github.io/aipaper-newspaper/gemini-38-flash-cyber-fe29e8a1f9e5</link>
+<link>https://codemwk.github.io/aipaper-newspaper/gemini-38-flash-cyber-fe29e8a1f9e5/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/gemini-38-flash-cyber-fe29e8a1f9e5</guid>
 <pubDate>Wed, 16 Sep 2026 22:35:00 +0000</pubDate>
 <category>AI Models</category>
@@ -551,7 +551,7 @@ Leverate·cTrader가 “계좌 쪽 MCP”를 열 때, TradingView는 <strong>리
 </item>
 <item>
 <title>GPT-6 Astra — 컴퓨터 사용·정렬·사이버 Critical, API gpt-6-astra</title>
-<link>https://codemwk.github.io/aipaper-newspaper/openai-gpt6-astra-1ad28c720c20</link>
+<link>https://codemwk.github.io/aipaper-newspaper/openai-gpt6-astra-1ad28c720c20/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/openai-gpt6-astra-1ad28c720c20</guid>
 <pubDate>Wed, 16 Sep 2026 22:30:00 +0000</pubDate>
 <category>AI Models</category>
@@ -583,7 +583,7 @@ Leverate·cTrader가 “계좌 쪽 MCP”를 열 때, TradingView는 <strong>리
 </item>
 <item>
 <title>Claude Fable 5.1 · Mythos 5.1 — 코딩·지식노동 최전선, 캐시 읽기값 ↓</title>
-<link>https://codemwk.github.io/aipaper-newspaper/claude-fable-mythos-51-66fd1b93e107</link>
+<link>https://codemwk.github.io/aipaper-newspaper/claude-fable-mythos-51-66fd1b93e107/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/claude-fable-mythos-51-66fd1b93e107</guid>
 <pubDate>Wed, 16 Sep 2026 22:25:00 +0000</pubDate>
 <category>AI Models</category>
@@ -615,7 +615,7 @@ Leverate·cTrader가 “계좌 쪽 MCP”를 열 때, TradingView는 <strong>리
 </item>
 <item>
 <title>Kling 3.0 — 네이티브 4K60·멀티샷·립싱크 ‘AI 디렉터’ 스택</title>
-<link>https://codemwk.github.io/aipaper-newspaper/kling-30-ai-director-c3c53c18ed84</link>
+<link>https://codemwk.github.io/aipaper-newspaper/kling-30-ai-director-c3c53c18ed84/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/kling-30-ai-director-c3c53c18ed84</guid>
 <pubDate>Wed, 16 Sep 2026 22:20:00 +0000</pubDate>
 <category>AI Content Gen</category>
@@ -647,7 +647,7 @@ Leverate·cTrader가 “계좌 쪽 MCP”를 열 때, TradingView는 <strong>리
 </item>
 <item>
 <title>eToro Agent Portfolios — 하위 계좌·스코프 토큰으로 에이전트 자율매매</title>
-<link>https://codemwk.github.io/aipaper-newspaper/etoro-agent-portfolios-8ab374e403f7</link>
+<link>https://codemwk.github.io/aipaper-newspaper/etoro-agent-portfolios-8ab374e403f7/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/etoro-agent-portfolios-8ab374e403f7</guid>
 <pubDate>Wed, 16 Sep 2026 22:15:00 +0000</pubDate>
 <category>AI Trading</category>
@@ -678,7 +678,7 @@ Leverate·cTrader가 “계좌 쪽 MCP”를 열 때, TradingView는 <strong>리
 </item>
 <item>
 <title>cTrader AI Agent Connect — 공식 MCP 두 개 + Skills로 차트·주문까지</title>
-<link>https://codemwk.github.io/aipaper-newspaper/ctrader-ai-agent-connect-mcp-ebe6ca039a3c</link>
+<link>https://codemwk.github.io/aipaper-newspaper/ctrader-ai-agent-connect-mcp-ebe6ca039a3c/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/ctrader-ai-agent-connect-mcp-ebe6ca039a3c</guid>
 <pubDate>Wed, 16 Sep 2026 22:10:00 +0000</pubDate>
 <category>AI Trading</category>
@@ -709,7 +709,7 @@ MT5 Build 6180이 테스터 QA에 머무는 동안, cTrader는 <strong>주문·�
 </item>
 <item>
 <title>MT5 Build 6180 — AI가 Strategy Tester 리포트·최적화를 직접 돌리는 QA 모드</title>
-<link>https://codemwk.github.io/aipaper-newspaper/mt5-build-6180-strategy-tester-ai-4e89ae069a3d</link>
+<link>https://codemwk.github.io/aipaper-newspaper/mt5-build-6180-strategy-tester-ai-4e89ae069a3d/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/mt5-build-6180-strategy-tester-ai-4e89ae069a3d</guid>
 <pubDate>Wed, 16 Sep 2026 22:05:00 +0000</pubDate>
 <category>AI Trading</category>
@@ -740,7 +740,7 @@ MT5 Build 6180이 테스터 QA에 머무는 동안, cTrader는 <strong>주문·�
 </item>
 <item>
 <title>Agent-Leaderboard — Skills·MCP·프레임워크 별을 매일 정리하는 지도</title>
-<link>https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-github-d1d1c45e0ef6</link>
+<link>https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-github-d1d1c45e0ef6/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-github-d1d1c45e0ef6</guid>
 <pubDate>Tue, 15 Sep 2026 22:45:00 +0000</pubDate>
 <category>GitHub Hot</category>
@@ -770,7 +770,7 @@ MT5 Build 6180이 테스터 QA에 머무는 동안, cTrader는 <strong>주문·�
 </item>
 <item>
 <title>obsidian-vault-bridge — Obsidian 없이도 에이전트가 볼트를 읽고 쓰는 MCP</title>
-<link>https://codemwk.github.io/aipaper-newspaper/obsidian-vault-bridge-mcp-87c85c0dcb37</link>
+<link>https://codemwk.github.io/aipaper-newspaper/obsidian-vault-bridge-mcp-87c85c0dcb37/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/obsidian-vault-bridge-mcp-87c85c0dcb37</guid>
 <pubDate>Tue, 15 Sep 2026 22:40:00 +0000</pubDate>
 <category>Second Brain</category>
@@ -800,7 +800,7 @@ MT5 Build 6180이 테스터 QA에 머무는 동안, cTrader는 <strong>주문·�
 </item>
 <item>
 <title>Ar9av/obsidian-wiki — 에이전트 스킬로 키우는 LLM Wiki(크로스 에이전트)</title>
-<link>https://codemwk.github.io/aipaper-newspaper/ar9av-obsidian-wiki-skills-db27864d8518</link>
+<link>https://codemwk.github.io/aipaper-newspaper/ar9av-obsidian-wiki-skills-db27864d8518/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/ar9av-obsidian-wiki-skills-db27864d8518</guid>
 <pubDate>Tue, 15 Sep 2026 22:35:00 +0000</pubDate>
 <category>Second Brain</category>
@@ -830,7 +830,7 @@ MT5 Build 6180이 테스터 QA에 머무는 동안, cTrader는 <strong>주문·�
 </item>
 <item>
 <title>Adobe Premiere Generative Media — 타임라인에서 Firefly·Veo·Kling·Runway·Luma</title>
-<link>https://codemwk.github.io/aipaper-newspaper/adobe-premiere-generative-media-6708d2ae434e</link>
+<link>https://codemwk.github.io/aipaper-newspaper/adobe-premiere-generative-media-6708d2ae434e/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/adobe-premiere-generative-media-6708d2ae434e</guid>
 <pubDate>Tue, 15 Sep 2026 22:30:00 +0000</pubDate>
 <category>AI Content Gen</category>
@@ -861,7 +861,7 @@ MT5 Build 6180이 테스터 QA에 머무는 동안, cTrader는 <strong>주문·�
 </item>
 <item>
 <title>OpenAI Agents API 퍼블릭 베타 — Codex 하네스를 관리형 API로</title>
-<link>https://codemwk.github.io/aipaper-newspaper/openai-agents-api-23dee90ad6f9</link>
+<link>https://codemwk.github.io/aipaper-newspaper/openai-agents-api-23dee90ad6f9/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/openai-agents-api-23dee90ad6f9</guid>
 <pubDate>Tue, 15 Sep 2026 22:25:00 +0000</pubDate>
 <category>GitHub Hot</category>
@@ -891,7 +891,7 @@ MT5 Build 6180이 테스터 QA에 머무는 동안, cTrader는 <strong>주문·�
 </item>
 <item>
 <title>OpenAI GPT-Live-1 API — 풀듀플렉스 음성 $0.05/분, 추론은 백엔드에 위임</title>
-<link>https://codemwk.github.io/aipaper-newspaper/openai-gpt-live-1-api-bc9f618b473f</link>
+<link>https://codemwk.github.io/aipaper-newspaper/openai-gpt-live-1-api-bc9f618b473f/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/openai-gpt-live-1-api-bc9f618b473f</guid>
 <pubDate>Tue, 15 Sep 2026 22:20:00 +0000</pubDate>
 <category>AI Models</category>
@@ -921,7 +921,7 @@ MT5 Build 6180이 테스터 QA에 머무는 동안, cTrader는 <strong>주문·�
 </item>
 <item>
 <title>DeepSeek V4.1 Flash — 552B MoE·비대칭 인코더-디코더, Pro까지 라우팅</title>
-<link>https://codemwk.github.io/aipaper-newspaper/deepseek-v41-flash-759c97d5efaa</link>
+<link>https://codemwk.github.io/aipaper-newspaper/deepseek-v41-flash-759c97d5efaa/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/deepseek-v41-flash-759c97d5efaa</guid>
 <pubDate>Tue, 15 Sep 2026 22:15:00 +0000</pubDate>
 <category>AI Models</category>
@@ -952,7 +952,7 @@ MT5 Build 6180이 테스터 QA에 머무는 동안, cTrader는 <strong>주문·�
 </item>
 <item>
 <title>제미니 3.8 Live · Live Extended Thinking — 말하면서 백그라운드 추론</title>
-<link>https://codemwk.github.io/aipaper-newspaper/gemini-38-live-extended-thinking-7f8cb4d57251</link>
+<link>https://codemwk.github.io/aipaper-newspaper/gemini-38-live-extended-thinking-7f8cb4d57251/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/gemini-38-live-extended-thinking-7f8cb4d57251</guid>
 <pubDate>Tue, 15 Sep 2026 22:10:00 +0000</pubDate>
 <category>AI Models</category>
@@ -984,7 +984,7 @@ MT5 Build 6180이 테스터 QA에 머무는 동안, cTrader는 <strong>주문·�
 </item>
 <item>
 <title>ProreX × MT5 — MCP로 스크리너·Smart Score까지, 주문은 기본 수동 확인</title>
-<link>https://codemwk.github.io/aipaper-newspaper/prorex-mt5-mcp-agentic-136ff6fb4e2c</link>
+<link>https://codemwk.github.io/aipaper-newspaper/prorex-mt5-mcp-agentic-136ff6fb4e2c/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/prorex-mt5-mcp-agentic-136ff6fb4e2c</guid>
 <pubDate>Tue, 15 Sep 2026 22:05:00 +0000</pubDate>
 <category>AI Trading</category>
@@ -1013,7 +1013,7 @@ MT5 Build 6180이 테스터 QA에 머무는 동안, cTrader는 <strong>주문·�
 </item>
 <item>
 <title>ZORO, FinCon에서 전략 라이선스→상시 트레이딩 에이전트 데모</title>
-<link>https://codemwk.github.io/aipaper-newspaper/zoro-fincon-trading-agents-be86de304f1c</link>
+<link>https://codemwk.github.io/aipaper-newspaper/zoro-fincon-trading-agents-be86de304f1c/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/zoro-fincon-trading-agents-be86de304f1c</guid>
 <pubDate>Tue, 15 Sep 2026 22:00:00 +0000</pubDate>
 <category>AI Trading</category>

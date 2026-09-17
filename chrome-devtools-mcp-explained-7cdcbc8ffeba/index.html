@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GitHub 해설: Chrome DevTools MCP — 에이전트가 브라우저를 ‘보고’ 고치게 하는 도구 — AiPaper 뉴스</title>
+  <meta name="description" content="ChromeDevTools/chrome-devtools-mcp. 에이전트가 라이브 Chrome에서 디버그·성능 트레이스·DOM 검사. Agent-Leaderboard MCP 보드 상위(오늘 README 3위권). 스타 ~5.2만(2026-09-17 조회)."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub · 2026-09-18 07:40 KST</div>
+    <h1>GitHub 해설: Chrome DevTools MCP — 에이전트가 브라우저를 ‘보고’ 고치게 하는 도구</h1>
+  </header>
+  <article>
+<p><em>ChromeDevTools/chrome-devtools-mcp. 에이전트가 라이브 Chrome에서 디버그·성능 트레이스·DOM 검사. Agent-Leaderboard MCP 보드 상위(오늘 README 3위권). 스타 ~5.2만(2026-09-17 조회).</em></p>
+<p><strong>분류:</strong> GitHub</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a>는 코딩 에이전트(Cursor·Claude·Copilot 등)가 <strong>실제 Chrome</strong>을 조종·검사하게 하는 <strong>공식 계열 MCP 서버</strong>다. 오늘은 설치 명령이 아니라 <strong>왜 보드 상단에 붙어 있는지</strong>만 풀어서 본다.
+</p>
+<h2>무엇이 바뀌었나 / 무엇을 하나</h2>
+<ul>
+<li>에이전트는 원래 코드를 짜도 <strong>브라우저에서 어떻게 깨지는지</strong>를 직접 못 본다. 이 서버가 DevTools 능력을 MCP 도구로 노출한다.</li>
+<li>예: 성능 트레이스 시작·분석, 네트워크·콘솔 오류, 폼 제출 재현, 레이아웃/CSS 이상, LCP 진단. Chrome for Developers 블로그에 예시 프롬프트가 정리돼 있다.</li>
+<li>Agent-Leaderboard <strong>MCP Servers</strong> 표(오늘 README)에서 <strong>chrome-devtools-mcp</strong>는 awesome-mcp-servers·TrendRadar 다음 <strong>상단권</strong>. GitHub 스타는 조회 시점 약 <strong>52,198</strong>.</li>
+<li><code>npx chrome-devtools-mcp@latest</code> 형태의 MCP 등록이 문서에 나와 있고, “DevTools for agents” 묶음으로도 안내된다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+비개발자에게 필요한 한 줄: <strong>챗봇이 웹을 ‘추측’하지 않고, 열린 페이지를 계측한다</strong>. 자동매매 대시보드·옵시디언 웹 클립·사내 툴 UI를 에이전트에게 맡길 때, Playwright MCP와 함께 <strong>브라우저 관측</strong> 조합의 기본 부품이 됐다. 리더보드에서 스타가 쌓이는 이유도 그 실용성이다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>저장소: <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a></li>
+<li>배경: <a href="https://developer.chrome.com/blog/chrome-devtools-mcp">Chrome Developers — DevTools MCP</a> · 순위: <a href="https://github.com/jaychempan/Agent-Leaderboard">Agent-Leaderboard</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
