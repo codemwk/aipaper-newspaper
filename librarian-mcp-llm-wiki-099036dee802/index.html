@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>librarian-mcp — Karpathy LLM Wiki를 Obsidian 사서 MCP로 제품화 — AiPaper 뉴스</title>
+  <meta name="description" content="ngmeyer/librarian-mcp. 볼트/마크다운 폴더에 trigram 검색·백링크·BFS·Louvain 클러스터·D3 그래프·자동 wikilink. Obsidian 미실행 단독 바이너리. LLM Wiki 패턴의 MCP 실현."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · Second Brain · 2026-09-19 07:45 KST</div>
+    <h1>librarian-mcp — Karpathy LLM Wiki를 Obsidian 사서 MCP로 제품화</h1>
+  </header>
+  <article>
+<p><em>ngmeyer/librarian-mcp. 볼트/마크다운 폴더에 trigram 검색·백링크·BFS·Louvain 클러스터·D3 그래프·자동 wikilink. Obsidian 미실행 단독 바이너리. LLM Wiki 패턴의 MCP 실현.</em></p>
+<p><strong>분류:</strong> Second Brain</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://github.com/ngmeyer/librarian-mcp">ngmeyer/librarian-mcp</a>는 Andrej Karpathy식 <strong>LLM Wiki</strong> 패턴을 <strong>MCP 서버</strong>로 만든 프로젝트다. Claude 등 에이전트에게 옵시디언 볼트(또는 일반 마크다운 폴더)의 <strong>사서</strong> 역할을 준다.
+</p>
+<h2>무엇이 바뀌었나</h2>
+<ul>
+<li><strong>단독 바이너리</strong>: 파일을 직접 읽는다. Obsidian을 켜 둘 필요 없고, 켜 둔 상태와도 충돌하지 않는다고 설명한다.</li>
+<li>도구 예: trigram 전문 검색, 백링크/아웃링크, daily note, 태그 통계, orphan·hub·bridge, <strong>BFS 순회·최단 경로</strong>, Louvain <strong>커뮤니티 탐지</strong>, D3 <strong>인터랙티브 그래프 HTML</strong>, MarkItDown 기반 import, <code>library_suggest_links</code>(미링크 멘션).</li>
+<li>포인트: 임베딩 RAG에만 의존하지 않고 <strong>위키링크 그래프 + 로컬 검색</strong>으로 “이미 정리된 지식”을 에이전트가 인용하게 한다. 본지가 다룬 Ar9av obsidian-wiki·vault-bridge·obsidian-second-brain과 <strong>같은 문제, 다른 인터페이스(MCP)</strong>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+세컨드 브레인 경쟁은 “노트 앱”이 아니라 <strong>에이전트가 볼트를 깨지 않고 읽고 링크하게 하는 프로토콜</strong>로 옮겨 갔다. librarian은 그 중 <strong>그래프·사서 UX</strong>에 특화. 스타 수는 아직 작아(조회 시점 수십) 실험 단계로 읽되, 패턴 자체는 재사용 가치가 있다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://github.com/ngmeyer/librarian-mcp">ngmeyer/librarian-mcp</a> · 관련: Ar9av/obsidian-wiki, LLM Wiki gist 계열</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

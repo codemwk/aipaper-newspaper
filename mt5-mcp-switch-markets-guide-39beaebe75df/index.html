@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>MT5 네이티브 MCP — Switch Markets 가이드가 정리한 ‘에이전트↔터미널’ 실무 — AiPaper 뉴스</title>
+  <meta name="description" content="2026-09-03 갱신. Switch Markets가 MT5 Build 6060+ 네이티브 MCP·AI Assistant 연결 절차를 장문 가이드로 공개. Codex/Claude Code URL·토큰, 써드파티 Python MCP, 라이브 주의사항. Build 6180 테스터 QA와 한 축."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI Trading · 2026-09-19 07:05 KST</div>
+    <h1>MT5 네이티브 MCP — Switch Markets 가이드가 정리한 ‘에이전트↔터미널’ 실무</h1>
+  </header>
+  <article>
+<p><em>2026-09-03 갱신. Switch Markets가 MT5 Build 6060+ 네이티브 MCP·AI Assistant 연결 절차를 장문 가이드로 공개. Codex/Claude Code URL·토큰, 써드파티 Python MCP, 라이브 주의사항. Build 6180 테스터 QA와 한 축.</em></p>
+<p><strong>분류:</strong> AI Trading</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://www.switchmarkets.com/learn/mt5-mcp-server">Switch Markets</a>(2026-09-03 갱신)는 MetaQuotes가 <strong>2026-07-23 Build 6060</strong>에서 넣은 <strong>네이티브 MCP·에이전틱 AI</strong>를, 브로커 고객 관점에서 <strong>설정·연결·한계</strong>까지 풀어 쓴 실무 가이드다. 본지가 9/17에 다룬 <a href="https://codemwk.github.io/aipaper-newspaper/">Build 6180 테스터 QA</a>와 같은 제품 라인의 <strong>연결 매뉴얼</strong>에 가깝다.
+</p>
+<h2>무엇이 바뀌었나</h2>
+<ul>
+<li>MT5는 이제 <strong>시세·계좌·개발·(허용 시) 거래</strong>를 MCP로 외부 에이전트(OpenAI Codex, Claude Code 등)에 노출한다. 예전 비공식 브리지만 쓰던 시절과 다르다.</li>
+<li>가이드 요지: 터미널 <strong>Tools → Options → MCP</strong>에서 localhost URL·bearer 토큰을 복사해 클라이언트에 넣고, 데모·읽기 위주로 먼저 검증한다. MQL5.community 로그인 시 <strong>MQL5 Lite</strong>가 기본 AI 제공자로 붙는다고 MetaQuotes 릴리즈도 설명한다.</li>
+<li>써드파티 <strong>Python MT5 MCP</strong>(예: vincentwongso/mt5-trading-mcp 계열)는 커스텀·도커·승인 프리뷰가 필요할 때 여전히 선택지. 라이브 <code>place_order</code>는 <strong>사람 확정 없이는 금지</strong>가 공통 하드 룰로 강조된다.</li>
+<li>Build <strong>6180</strong>(9/3 릴리즈)은 Strategy Tester 리포트·최적화·로그를 어시스턴트가 직접 다루는 쪽으로 확장됐다 — MCP “연결”과 “테스터 QA”가 한 제품 스택.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+어제 Leverate·TradingView MCP·cTrader 물결과 나란히 두면, <strong>터미널 벤더가 MCP를 1급 시민으로 만든</strong> 쪽이 MT5다. 트레이딩 MCP를 고를 때 질문 순서는 (1) 시세만인가 체결까지인가 (2) 사람 승인 UX (3) 로그·서브계정 격리. Switch 가이드는 그 체크리스트를 브로커 언어로 적어 둔 문서다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://www.switchmarkets.com/learn/mt5-mcp-server">Switch Markets MT5 MCP 가이드</a> · <a href="https://www.metatrader5.com/en/releasenotes/terminal/2447">Build 6060 릴리즈</a> · <a href="https://www.metatrader5.com/en/releasenotes/terminal/2464">Build 6180</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
