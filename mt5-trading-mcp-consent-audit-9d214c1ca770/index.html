@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>mt5-trading-mcp — 에이전트 MT5 주문에 동의·감사(JSONL) 안전층 — AiPaper 뉴스</title>
+  <meta name="description" content="vincentwongso/mt5-trading-mcp(PyPI 최신 1.6.x). 읽기 12도구+주문 4도구. preflight·idempotency·append-only JSONL 감사. auto_approve_notional 기본 0(자동 실행)이라 게이트를 켜야 사람이 승인. Windows 네이티브·Linux Docker."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI Trading · 2026-09-21 07:03 KST</div>
+    <h1>mt5-trading-mcp — 에이전트 MT5 주문에 동의·감사(JSONL) 안전층</h1>
+  </header>
+  <article>
+<p><em>vincentwongso/mt5-trading-mcp(PyPI 최신 1.6.x). 읽기 12도구+주문 4도구. preflight·idempotency·append-only JSONL 감사. auto_approve_notional 기본 0(자동 실행)이라 게이트를 켜야 사람이 승인. Windows 네이티브·Linux Docker.</em></p>
+<p><strong>분류:</strong> AI Trading</p>
+<h2>한줄 요약</h2>
+<p>
+오픈소스 <a href="https://github.com/vincentwongso/mt5-trading-mcp">mt5-trading-mcp</a>는 MetaTrader 5 Python API를 MCP로 감싸 <strong>시세·포지션 읽기</strong>와 <strong>실주문</strong>을 에이전트에 붙인다. 차별점은 브로커 MCP “연결”이 아니라 <strong>동의(consent)·멱등·감사 로그</strong>를 코드에 박아 둔 점이다.
+</p>
+<h2>지금 뭐가 뜨나</h2>
+<ul>
+<li>읽기: 계좌·호가·포지션·주문·히스토리·OHLC·마진 추정·(Windows) 차트 스크린샷 등 <strong>동의 없이</strong> 가능.</li>
+<li>쓰기: <code>place_order</code> / <code>modify_order</code> / <code>cancel_order</code> / <code>close_position</code> — preflight → (옵션) 사람 승인 → idempotency → <strong>JSONL 감사</strong>.</li>
+<li>기본값 주의: <code>auto_approve_notional</code> <strong>기본 0</strong>이면 변이 호출이 <strong>자동 실행</strong>된다. 문서도 “게이트는 opt-in”이라고 명시. 사람 확인을 원하면 임계값을 올려 ApprovalPreview를 켠다.</li>
+<li>배포: <code>pip install mt5-trading-mcp</code> · Windows 네이티브 또는 Linux <strong>올인원 Docker</strong>. OpenClaw 등록 예시가 README에 있음.</li>
+<li>한계: MCP는 <strong>보안 경계가 아님</strong>. 하드 한도는 브로커 MT5 서버. 라이브 전에 데모·<code>doctor</code> 필수.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+9/16 ProreX·9/20 IBKR가 “브로커가 연 공식 MCP”라면, 오늘은 <strong>셀프호스트 안전층</strong>이다. 에이전트 트레이딩에서 승부는 “더 많은 툴”이 아니라 <strong>누가 언제 주문을 막느냐·기록이 남느냐</strong>다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://github.com/vincentwongso/mt5-trading-mcp">GitHub</a> · <a href="https://pypi.org/project/mt5-trading-mcp/">PyPI</a> · docs/SECURITY·DISCLAIMER 먼저</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
