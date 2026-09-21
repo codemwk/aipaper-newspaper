@@ -5,8 +5,391 @@
 <link href="https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.xml" rel="self" type="application/atom+xml"/>
 <link href="https://codemwk.github.io/aipaper-newspaper/" rel="alternate" type="text/html"/>
 <id>https://codemwk.github.io/aipaper-newspaper</id>
-<updated>2026-09-20T22:12:00Z</updated>
+<updated>2026-09-21T22:12:00Z</updated>
 <author><name>AiPaper 뉴스</name></author>
+<entry>
+<title>obsidian-llm-wiki — 마크다운 볼트를 6인 페르소나 MCP 팀으로 컴파일</title>
+<id>https://codemwk.github.io/aipaper-newspaper/obsidian-llm-wiki-six-persona-c5ad23556544</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/obsidian-llm-wiki-six-persona-c5ad23556544/" rel="alternate" type="text/html"/>
+<updated>2026-09-21T22:12:00Z</updated>
+<published>2026-09-21T22:12:00Z</published>
+<category term="Second Brain"/>
+<summary>2233admin/obsidian-llm-wiki(★~33). 마크다운 볼트→Claude Code/Codex/OpenCode/Gemini CLI용 6-persona MCP 팀. headless-first, 인용하고 추측하지 않음. Karpathy식 위키 컴파일 각도. MCPVault ‘파일 게이트’와 다른 ‘역할 팀’ 레이어.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;2233admin/obsidian-llm-wiki(★~33). 마크다운 볼트→Claude Code/Codex/OpenCode/Gemini CLI용 6-persona MCP 팀. headless-first, 인용하고 추측하지 않음. Karpathy식 위키 컴파일 각도. MCPVault ‘파일 게이트’와 다른 ‘역할 팀’ 레이어.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; Second Brain&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href="https://github.com/2233admin/obsidian-llm-wiki"&gt;2233admin/obsidian-llm-wiki&lt;/a&gt;(★약 33)는 마크다운 볼트를 &lt;strong&gt;6개 페르소나 MCP 팀&lt;/strong&gt;으로 컴파일해 Claude Code·Codex·OpenCode·Gemini CLI에 붙인다. 카피는 &lt;strong&gt;headless-first&lt;/strong&gt;, &lt;strong&gt;cites, doesn’t guess&lt;/strong&gt;.
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;각도&lt;/strong&gt;: 단순 파일 CRUD MCP가 아니라, 볼트를 &lt;strong&gt;역할이 나뉜 위키 팀&lt;/strong&gt;으로 재구성(Karpathy식 “LLM wiki compilation” 감성).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;클라이언트&lt;/strong&gt;: GUI Obsidian 플러그인 의존보다 &lt;strong&gt;헤드리스 CLI 에이전트&lt;/strong&gt;를 전제로 한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;신뢰 규칙&lt;/strong&gt;: 답할 때 &lt;strong&gt;인용하고 추측하지 않는다&lt;/strong&gt;는 설계 문장 — 세컨드브레인에서 환각을 줄이려는 명시적 계약.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;배치&lt;/strong&gt;: MCPVault가 “볼트 파일 포트”라면, 이 리포는 &lt;strong&gt;그 위에 얹는 페르소나·워크플로 레이어&lt;/strong&gt;로 읽으면 겹침이 적다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+세컨드브레인×에이전트 스택이 “검색 한 방”에서 &lt;strong&gt;팀·위키·인용 규약&lt;/strong&gt;으로 분화 중이다. 스타 수는 작아도, ‘추측 금지’를 README 전면에 둔 설계는 퍼스널 지식 OS에 바로 이식할 체크리스트다. MCPVault(파일 포트)와 같이 두면 “연결”과 “역할 분담”을 한 스택에서 나눌 수 있다.
+&lt;/p&gt;
+&lt;h2&gt;기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/2233admin/obsidian-llm-wiki"&gt;obsidian-llm-wiki&lt;/a&gt; · 6-persona MCP · cites don’t guess&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>MCPVault — Obsidian 볼트 MCP가 v2 스펙으로, 읽기전용·wiki_link·보안 denylist</title>
+<id>https://codemwk.github.io/aipaper-newspaper/mcpvault-obsidian-mcp-v2-f6b30d0174e3</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/mcpvault-obsidian-mcp-v2-f6b30d0174e3/" rel="alternate" type="text/html"/>
+<updated>2026-09-21T22:11:00Z</updated>
+<published>2026-09-21T22:11:00Z</published>
+<category term="Second Brain"/>
+<summary>@bitbonsai/mcpvault(MCPVault). v0.16.0(2026-08)이 MCP v2(2026-07-28 스펙)로 이동. --read-only, wiki_link, .git/.obsidian 등 denylist, frontmatter 안전 편집. npx 설치·문서는 mcpvault.org. Obsidian 닫아도 로컬 파일 MCP.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;@bitbonsai/mcpvault(MCPVault). v0.16.0(2026-08)이 MCP v2(2026-07-28 스펙)로 이동. --read-only, wiki_link, .git/.obsidian 등 denylist, frontmatter 안전 편집. npx 설치·문서는 mcpvault.org. Obsidian 닫아도 로컬 파일 MCP.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; Second Brain&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href="https://mcpvault.org/"&gt;MCPVault&lt;/a&gt;(&lt;code&gt;@bitbonsai/mcpvault&lt;/code&gt;)는 로컬 Obsidian 볼트를 &lt;strong&gt;MCP 클라이언트에 연결&lt;/strong&gt;한다. &lt;strong&gt;v0.16.0&lt;/strong&gt;(2026-08)에서 공식 SDK 기준 &lt;strong&gt;MCP v2(2026-07-28 스펙)&lt;/strong&gt; 로 옮겼고, 한 프로세스가 구·신 프로토콜을 받는다고 밝힌다.
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;읽기 전용&lt;/strong&gt;: &lt;code&gt;--read-only&lt;/code&gt;로 변형 툴을 끄고 조회만(v0.15.0).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wiki_link&lt;/strong&gt;: &lt;code&gt;[[Note]]&lt;/code&gt; · &lt;code&gt;[[Note|Display]]&lt;/code&gt; · 경로형 링크를 해석해 컨텍스트로 반환.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;보안&lt;/strong&gt;: &lt;code&gt;.git&lt;/code&gt; / &lt;code&gt;.obsidian&lt;/code&gt; / &lt;code&gt;node_modules&lt;/code&gt;·닷파일 등 &lt;strong&gt;깊이 무관 denylist&lt;/strong&gt;. 심링크 탈출 차단 이력.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;편집&lt;/strong&gt;: frontmatter는 AST 보존(날짜·따옴표·HH:MM 오인 방지). Obsidian을 켜지 않아도 파일 단위 동작.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;설치&lt;/strong&gt;: &lt;code&gt;npx -y @bitbonsai/mcpvault&lt;/code&gt; 계열 · 문서 &lt;a href="https://mcpvault.org/"&gt;mcpvault.org&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+어제 enquire-mcp가 “검색 결과 신선도”였다면, 오늘은 &lt;strong&gt;볼트 파일을 에이전트 표준 포트(MCP v2)로 여는 게이트웨이&lt;/strong&gt;다. 세컨드브레인×에이전트에서 스펙 세대가 갈리면 클라이언트가 끊긴다 — v2 이동은 그 신호다. 읽기전용·denylist가 기본 옵션으로 드러난 것도, 에이전트에게 노트북을 통째로 맡기기 전 &lt;strong&gt;최소 권한&lt;/strong&gt; 체크리스트로 바로 쓰인다.
+&lt;/p&gt;
+&lt;h2&gt;기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://mcpvault.org/"&gt;mcpvault.org&lt;/a&gt; · &lt;code&gt;@bitbonsai/mcpvault&lt;/code&gt; · v0.16.0 MCP v2 · read-only 옵션&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>GitHub Hot: TradingAgents — 프레임워크 보드 4위, 트레이딩 에이전트 스캐폴드 신호</title>
+<id>https://codemwk.github.io/aipaper-newspaper/github-tradingagents-framework-hot-f4848ce2201e</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/github-tradingagents-framework-hot-f4848ce2201e/" rel="alternate" type="text/html"/>
+<updated>2026-09-21T22:10:00Z</updated>
+<published>2026-09-21T22:10:00Z</published>
+<category term="GitHub Hot"/>
+<summary>TauricResearch/TradingAgents ★77,314 — Agent-Leaderboard Frameworks 4위. 멀티에이전트 LLM 금융 트레이딩 프레임워크. MetaGPT와 나란히 ‘트레이딩 에이전트 골격’이 스타 중력 상단. MT5 MCP는 실행층 — TradingAgents=라이브 브로커가 아님.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;TauricResearch/TradingAgents ★77,314 — Agent-Leaderboard Frameworks 4위. 멀티에이전트 LLM 금융 트레이딩 프레임워크. MetaGPT와 나란히 ‘트레이딩 에이전트 골격’이 스타 중력 상단. MT5 MCP는 실행층 — TradingAgents=라이브 브로커가 아님.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; GitHub Hot&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href="https://github.com/TauricResearch/TradingAgents"&gt;TauricResearch/TradingAgents&lt;/a&gt;는 &lt;strong&gt;멀티에이전트 LLM 금융 트레이딩 프레임워크&lt;/strong&gt;로, &lt;a href="https://github.com/jaychempan/Agent-Leaderboard"&gt;Agent-Leaderboard&lt;/a&gt; Frameworks 보드에서 &lt;strong&gt;★77,314 · 4위&lt;/strong&gt;(superpowers·LangChain·vLLM 다음, MetaGPT 앞).
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;포지션&lt;/strong&gt;: “브로커 API”가 아니라 &lt;strong&gt;리서치·의사결정 에이전트를 짜는 스캐폴드&lt;/strong&gt;. 스타 중력은 MetaGPT급 멀티에이전트 프레임워크와 같은 줄에 있다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;읽는 법(실무)&lt;/strong&gt;: 발견 신호로는 강하다. 다만 &lt;strong&gt;라이브 주문·리스크·컴플라이언스&lt;/strong&gt;는 이 리포 스타 수로 증명되지 않는다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;조합&lt;/strong&gt;: 오늘 다룬 &lt;strong&gt;MT5 네이티브 MCP / 커뮤니티 MT5 MCP&lt;/strong&gt;는 &lt;strong&gt;실행·시세 층&lt;/strong&gt;. TradingAgents는 &lt;strong&gt;사고·역할 분담 골격&lt;/strong&gt;. 같게 읽지 말 것.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+트레이딩×에이전트 관심이 “단일 봇 데모”에서 &lt;strong&gt;프레임워크 스타 경쟁&lt;/strong&gt;으로 옮겨 가고 있다. 스캐폴드를 고를 때 Frameworks 보드 4위권은 무시하기 어려운 탐색 힌트다 — 단, 데모≠실계좌.
+&lt;/p&gt;
+&lt;h2&gt;기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/TauricResearch/TradingAgents"&gt;TradingAgents&lt;/a&gt; · Frameworks #4 ★77,314 · 실행은 MT5 MCP 등과 분리&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>GitHub Hot: caveman — ‘토큰 65% 절감’을 주장하는 Claude Code 스킬</title>
+<id>https://codemwk.github.io/aipaper-newspaper/github-caveman-token-skill-2338b67b9ea2</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/github-caveman-token-skill-2338b67b9ea2/" rel="alternate" type="text/html"/>
+<updated>2026-09-21T22:09:00Z</updated>
+<published>2026-09-21T22:09:00Z</published>
+<category term="GitHub Hot"/>
+<summary>JuliusBrussee/caveman. Agent-Leaderboard Skills 보드 8위권(★~61,217). 짧은 말투로 컨텍스트·비용을 줄인다는 Claude Code 스킬. 모델 업그레이드가 아니라 세션 위생(hygiene) 도구. ‘65%’는 저장소 주장 — 본인 워크로드에서 측정할 것.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;JuliusBrussee/caveman. Agent-Leaderboard Skills 보드 8위권(★~61,217). 짧은 말투로 컨텍스트·비용을 줄인다는 Claude Code 스킬. 모델 업그레이드가 아니라 세션 위생(hygiene) 도구. ‘65%’는 저장소 주장 — 본인 워크로드에서 측정할 것.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; GitHub Hot&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href="https://github.com/JuliusBrussee/caveman"&gt;JuliusBrussee/caveman&lt;/a&gt;은 Claude Code용 스킬로, README 카피가 &lt;strong&gt;“few token do trick”&lt;/strong&gt; — 토큰을 약 &lt;strong&gt;65%&lt;/strong&gt; 줄인다는 주장이다. &lt;a href="https://github.com/jaychempan/Agent-Leaderboard"&gt;Agent-Leaderboard&lt;/a&gt; Skills 표에서 &lt;strong&gt;8위권(★약 61,217)&lt;/strong&gt;에 올라 있다.
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;하는 일&lt;/strong&gt;: 장황한 에이전트 대화를 &lt;strong&gt;짧은 스타일&lt;/strong&gt;로 유도해 컨텍스트 창·과금을 아끼려는 &lt;strong&gt;스킬/프롬프트 패턴&lt;/strong&gt;. 새 가중치·새 모델이 아니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;보드 위치&lt;/strong&gt;: Skills Top10 안에서 deer-flow(7)·caveman(8)·graphify(10) 등 “실무 위생” 계열이 상단에 섞여 있다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;읽는 법&lt;/strong&gt;: 스타 폭증은 &lt;strong&gt;발견 신호&lt;/strong&gt;. 실제 절감률은 리포·세션·툴콜 패턴에 따라 달라지니 &lt;strong&gt;본인 트레이스에서 측정&lt;/strong&gt;해야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+긴 에이전트 세션의 병목이 “더 센 모델”만이 아니라 &lt;strong&gt;컨텍스트 비만&lt;/strong&gt;인 경우가 많다. caveman 류는 모델 교체 전에 쓰는 &lt;strong&gt;비용·창 위생 습관&lt;/strong&gt;의 인기 지표다. Skills 보드 상단에 ‘토큰 다이어트’가 끼어든 것 자체가, 실무자가 체감하는 병목이 어디인지 보여 준다.
+&lt;/p&gt;
+&lt;h2&gt;기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/JuliusBrussee/caveman"&gt;caveman&lt;/a&gt; · &lt;a href="https://github.com/jaychempan/Agent-Leaderboard"&gt;Agent-Leaderboard Skills&lt;/a&gt; · 65%는 저장소 주장&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>AA-AnalystAgent — pass^5에서 Gemini 3.7 Flash(high) 60%로 선두</title>
+<id>https://codemwk.github.io/aipaper-newspaper/aa-analyst-agent-gemini-pass5-71c8d9a770c1</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/aa-analyst-agent-gemini-pass5-71c8d9a770c1/" rel="alternate" type="text/html"/>
+<updated>2026-09-21T22:08:00Z</updated>
+<published>2026-09-21T22:08:00Z</published>
+<category term="AI 모델"/>
+<summary>Artificial Analysis AA-AnalystAgent: 스프레드시트·문서 기반 분석 80과제. 지표는 pass^5(5회 전부 정답). Gemini 3.7 Flash(high) 60.0% 1위, Claude Fable 5.1 Max ~57.5%, Opus 5 Max ~53.8%. ‘한 번 맞힘’이 아니라 재현 신뢰도가 상품.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;Artificial Analysis AA-AnalystAgent: 스프레드시트·문서 기반 분석 80과제. 지표는 pass^5(5회 전부 정답). Gemini 3.7 Flash(high) 60.0% 1위, Claude Fable 5.1 Max ~57.5%, Opus 5 Max ~53.8%. ‘한 번 맞힘’이 아니라 재현 신뢰도가 상품.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 모델&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href="https://artificialanalysis.ai/evaluations/aa-analyst-agent"&gt;AA-AnalystAgent&lt;/a&gt;는 비즈니스·데이터 분석가가 만나는 &lt;strong&gt;스프레드시트·문서 정량 질문 80개&lt;/strong&gt;를 에이전트에게 돌린다. 헤드라인 지표는 &lt;strong&gt;pass^5&lt;/strong&gt; — 같은 문제를 &lt;strong&gt;5번 모두&lt;/strong&gt; 맞힌 비율이다.
+&lt;/p&gt;
+&lt;h2&gt;지금 상단(공식 보드)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Gemini 3.7 Flash (high)&lt;/strong&gt; — &lt;strong&gt;60.0%&lt;/strong&gt; (pass^5 1위)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Claude Fable 5.1&lt;/strong&gt; (Adaptive Reasoning, Max Effort 등) — &lt;strong&gt;약 57.5%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Claude Opus 5&lt;/strong&gt; (Adaptive Reasoning, Max Effort) — &lt;strong&gt;약 53.8%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;과제는 14개 비즈니스·과학 도메인. 문제·정답은 오염 방지를 위해 비공개(예시만 공개).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 pass^5인가&lt;/h2&gt;
+&lt;p&gt;
+pass@1(한 번 성공)이나 pass@5(한 번이라도 성공)와 달리, pass^5는 &lt;strong&gt;재실행해도 같은 답이 나오는지&lt;/strong&gt;를 본다. Artificial Analysis 표현을 빌리면, 분석 에이전트는 “운 좋은 한 방”이 아니라 &lt;strong&gt;재확인 없이 믿어도 되는 비율&lt;/strong&gt;이 쓸모다.
+&lt;/p&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+에이전트 모델 고를 때 Arena·Agentic Index만 보면 “대화·툴 오케스트레이션”에 치우친다. AA-AnalystAgent는 &lt;strong&gt;표·문서 작업의 신뢰도&lt;/strong&gt;라는 다른 축이다. 퍼스널 OS·대시보드·리서치 파이프에 LLM을 넣을 때 필수 체크리스트에 넣을 만하다.
+&lt;/p&gt;
+&lt;h2&gt;기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://artificialanalysis.ai/evaluations/aa-analyst-agent"&gt;AA-AnalystAgent&lt;/a&gt; · 지표: pass^5 · 80 tasks × 5 runs&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>AA Agentic Index — Last updated 9/21, 왕관은 그대로 Fable 58%</title>
+<id>https://codemwk.github.io/aipaper-newspaper/aa-agentic-index-sep21-7de0026ba834</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/aa-agentic-index-sep21-7de0026ba834/" rel="alternate" type="text/html"/>
+<updated>2026-09-21T22:07:00Z</updated>
+<published>2026-09-21T22:07:00Z</published>
+<category term="AI 모델"/>
+<summary>BenchLM 미러 Last updated September 21, 2026(어제 표기는 ~9/10). 상단 불변: Claude Fable 5.1 58.0%, Opus 5 56.2%, Muse Spark 1.3 55.7%, GLM-5.3·Grok 4.6 53.4%, GPT-6 Astra 51.5%. 포인트는 스탬프 갱신·왕관 유지 — 스크린샷 날짜가 곧 출처.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;BenchLM 미러 Last updated September 21, 2026(어제 표기는 ~9/10). 상단 불변: Claude Fable 5.1 58.0%, Opus 5 56.2%, Muse Spark 1.3 55.7%, GLM-5.3·Grok 4.6 53.4%, GPT-6 Astra 51.5%. 포인트는 스탬프 갱신·왕관 유지 — 스크린샷 날짜가 곧 출처.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 모델&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href="https://benchlm.ai/benchmarks/aaagenticindex"&gt;Artificial Analysis Agentic Index&lt;/a&gt;(BenchLM 미러)의 &lt;strong&gt;Last updated&lt;/strong&gt;가 &lt;strong&gt;2026-09-21&lt;/strong&gt;로 찍혔다. 어제(~9/10)보다 스탬프만 이동했고, &lt;strong&gt;1위 숫자는 그대로&lt;/strong&gt;다.
+&lt;/p&gt;
+&lt;h2&gt;지금 상단(페이지 표 기준)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Claude Fable 5.1 — &lt;strong&gt;58.0%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Claude Opus 5 — &lt;strong&gt;56.2%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Muse Spark 1.3 — &lt;strong&gt;55.7%&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+4–5. GLM-5.3 · Grok 4.6 — &lt;strong&gt;53.4%&lt;/strong&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GPT-6 Astra — &lt;strong&gt;51.5%&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;보드 읽기 팁&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Arena Agent(인간 선호·툴 성공)와 AA Index(교차 벤치 집계)는 &lt;strong&gt;순위가 어긋날 수 있다&lt;/strong&gt;. Astra가 Arena 2위여도 Index 6위인 상태가 계속된다.&lt;/li&gt;
+&lt;li&gt;BenchLM은 이 Index를 &lt;strong&gt;표시용&lt;/strong&gt;으로 두고 가중 점수식에서는 제외한다고 명시. “만능 왕관”으로 읽지 말 것.&lt;/li&gt;
+&lt;li&gt;점수는 퍼센트·갱신일이 바뀌니 &lt;strong&gt;스크린샷 날짜를 남길 것&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;오늘 일일 Leaderboard 기사와 짝으로 읽으면 “스탬프만 움직임” vs “스타/Arena 신호”를 한 번에 대조할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+모델 뉴스에서 가장 흔한 착시는 “보드가 새로고침됐다 = 왕관이 바뀌었다”다. 오늘은 &lt;strong&gt;반대 사례&lt;/strong&gt;: 날짜만 움직이고 상단은 고정. 비개발자도 &lt;strong&gt;스탬프 vs 순위&lt;/strong&gt;를 분리해 보는 습관이 필요하다.
+&lt;/p&gt;
+&lt;h2&gt;기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://benchlm.ai/benchmarks/aaagenticindex"&gt;AA Agentic Index&lt;/a&gt; · 비교용 &lt;a href="https://arena.ai/leaderboard/agent"&gt;Agent Arena&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>fal H3 Max — 해상도 티어·초당 리스트 가격으로 파는 ‘속도형’ 비디오</title>
+<id>https://codemwk.github.io/aipaper-newspaper/fal-h3-max-video-speed-358107bca41b</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/fal-h3-max-video-speed-358107bca41b/" rel="alternate" type="text/html"/>
+<updated>2026-09-21T22:06:00Z</updated>
+<published>2026-09-21T22:06:00Z</published>
+<category term="AI 콘텐츠"/>
+<summary>fal이 MiniMax H3를 포스트트레이닝한 H3 Max. 블로그·모델 페이지 기준 리스트: 480p $0.05/s, 768p $0.08/s, 1080p $0.16/s, Turbo는 절반. 5초 클립을 실시간보다 빠르게 생성한다고 주장. Boreal의 광고충실도·센트/초와 다른 ‘속도+해상도 티어’ 마켓플레이스 상품. 가격은 변동 가능.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;fal이 MiniMax H3를 포스트트레이닝한 H3 Max. 블로그·모델 페이지 기준 리스트: 480p $0.05/s, 768p $0.08/s, 1080p $0.16/s, Turbo는 절반. 5초 클립을 실시간보다 빠르게 생성한다고 주장. Boreal의 광고충실도·센트/초와 다른 ‘속도+해상도 티어’ 마켓플레이스 상품. 가격은 변동 가능.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 콘텐츠&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href="https://blog.fal.ai/introducing-h3-max-by-fal/"&gt;fal 블로그&lt;/a&gt;(2026-08-27)와 &lt;a href="https://fal.ai/minimax-h3-max"&gt;모델 페이지&lt;/a&gt;의 &lt;strong&gt;H3 Max&lt;/strong&gt;는 MiniMax H3를 fal이 포스트트레이닝·추론 최적화한 비디오 모델이다. 메시지는 &lt;strong&gt;퀄리티를 유지한 채 실시간보다 빠른 생성&lt;/strong&gt;.
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;속도 주장&lt;/strong&gt;: 5초 영상을 대략 &lt;strong&gt;3초 이내&lt;/strong&gt;에 뽑는 구성(블로그). Turbo는 동일 계열에서 더 공격적 처리량.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;리스트 가격(페이지 표기, 변동 가능)&lt;/strong&gt;: H3 Max &lt;strong&gt;480p $0.05/s · 768p $0.08/s · 1080p $0.16/s&lt;/strong&gt;. &lt;strong&gt;Turbo는 각 해상도 절반&lt;/strong&gt;. 초당·해상도 티어 과금, 최소 구독 없음(페이지 설명).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;포지션&lt;/strong&gt;: Boreal이 &lt;strong&gt;광고 충실도 + 센트/초(finished second)&lt;/strong&gt; 를 판다면, H3 Max는 fal 마켓에서 &lt;strong&gt;속도 + 해상도 티어&lt;/strong&gt;를 판다. 같은 “초당”이라도 제품 약속이 다르다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;주의&lt;/strong&gt;: 론칭 할인·무료 일일 쿼터·환율·프로모는 시점에 따라 바뀐다. &lt;strong&gt;청구 전 모델 페이지 재확인&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+비디오 API 시장이 “한 모델 왕관”이 아니라 &lt;strong&gt;원가 투명도(Boreal) vs 속도·해상도 SKU(H3 Max)&lt;/strong&gt; 로 쪼개지고 있다. 대량 숏폼 예산을 짤 때 보드를 목적별로 나눠 읽어야 한다.
+&lt;/p&gt;
+&lt;h2&gt;기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://blog.fal.ai/introducing-h3-max-by-fal/"&gt;fal 블로그&lt;/a&gt; · &lt;a href="https://fal.ai/minimax-h3-max"&gt;fal.ai/minimax-h3-max&lt;/a&gt; · 리스트 가격은 변경될 수 있음&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Vidu S2 — 720p 실시간 인터랙티브 아바타·편집, 오프라인 원샷과 결별</title>
+<id>https://codemwk.github.io/aipaper-newspaper/vidu-s2-realtime-interactive-357bd3ab8983</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/vidu-s2-realtime-interactive-357bd3ab8983/" rel="alternate" type="text/html"/>
+<updated>2026-09-21T22:05:00Z</updated>
+<published>2026-09-21T22:05:00Z</published>
+<category term="AI 콘텐츠"/>
+<summary>Shengshu/Tsinghua arXiv 2609.11638. Vidu S2-Avatar: 실시간 디지털 캐릭터 720p @ 25–42 FPS, 스트림 중 동적 레퍼런스, 댄스 등 동작 강화. S2-Editing: 스타일·가상피팅·인물·배경 실시간 교체. VR용 spatial video 탐색. 데모 vidu.com/vidu-stream. 상업 가격은 미공개.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;Shengshu/Tsinghua arXiv 2609.11638. Vidu S2-Avatar: 실시간 디지털 캐릭터 720p @ 25–42 FPS, 스트림 중 동적 레퍼런스, 댄스 등 동작 강화. S2-Editing: 스타일·가상피팅·인물·배경 실시간 교체. VR용 spatial video 탐색. 데모 vidu.com/vidu-stream. 상업 가격은 미공개.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 콘텐츠&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href="https://arxiv.org/abs/2609.11638"&gt;arXiv:2609.11638&lt;/a&gt;(Shengshu Technology · Tsinghua)의 &lt;strong&gt;Vidu S2&lt;/strong&gt;는 “프롬프트→수분 대기→완성본” 오프라인 원샷이 아니라 &lt;strong&gt;실시간 상호작용 비디오&lt;/strong&gt;다. &lt;a href="https://vidu.com/vidu-stream"&gt;데모&lt;/a&gt;에서 스트림을 만질 수 있다.
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;S2-Avatar&lt;/strong&gt;: 실시간 디지털 캐릭터 &lt;strong&gt;720p @ 25–42 FPS&lt;/strong&gt;. 스트림 도중 레퍼런스 이미지를 바꿔 객체·의상·배경을 끼워 넣을 수 있고, 댄스 등 &lt;strong&gt;큰 몸동작&lt;/strong&gt; 지시도 강화.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;S2-Editing&lt;/strong&gt;: 들어오는 비디오 스트림을 실시간으로 &lt;strong&gt;스타일 전환·가상 피팅·인물 교체·배경 교체&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Spatial video&lt;/strong&gt;: VR HMD용 좌·우안 동기 스트림을 Avatar·Editing 파이프라인에서 탐색(해상도·지연은 과제로 명시).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;가격&lt;/strong&gt;: 논문·데모 페이지에 &lt;strong&gt;상업 단가 없음&lt;/strong&gt; — 발명하지 않는다. 포인트는 패러다임 전환(연속 상호작용 vs 원샷).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+Boreal·H3 Max가 “짧은 광고 클립의 원가·속도”라면, Vidu S2는 &lt;strong&gt;라이브·캐릭터·편집이 같은 타임라인에 있는 경험&lt;/strong&gt;이다. 퍼스널 미디어·크리에이터 툴의 다음 축이 “생성”에서 “대화형 연출”로 옮긴다.
+&lt;/p&gt;
+&lt;h2&gt;기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://arxiv.org/abs/2609.11638"&gt;arXiv 2609.11638&lt;/a&gt; · &lt;a href="https://vidu.com/vidu-stream"&gt;vidu.com/vidu-stream&lt;/a&gt; · 상업 가격 미기재&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>ariadng/metatrader-mcp-server — Claude·ChatGPT를 MT5에 자연어로 붙이는 커뮤니티 MCP</title>
+<id>https://codemwk.github.io/aipaper-newspaper/ariadng-metatrader-mcp-server-37c8c217db10</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/ariadng-metatrader-mcp-server-37c8c217db10/" rel="alternate" type="text/html"/>
+<updated>2026-09-21T22:04:00Z</updated>
+<published>2026-09-21T22:04:00Z</published>
+<category term="AI Trading"/>
+<summary>ariadng/metatrader-mcp-server(MIT, GitHub ★~806). Claude/ChatGPT↔MT5 자연어 브리지. 시세·주문, 자격증명은 로컬, MCP/REST/WebSocket·PyPI. 어제 vincentwongso consent/audit 패턴과 보완 관계. 실주문은 되돌릴 수 없음 — 데모 먼저.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;ariadng/metatrader-mcp-server(MIT, GitHub ★~806). Claude/ChatGPT↔MT5 자연어 브리지. 시세·주문, 자격증명은 로컬, MCP/REST/WebSocket·PyPI. 어제 vincentwongso consent/audit 패턴과 보완 관계. 실주문은 되돌릴 수 없음 — 데모 먼저.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI Trading&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+오픈소스 &lt;a href="https://github.com/ariadng/metatrader-mcp-server"&gt;ariadng/metatrader-mcp-server&lt;/a&gt;(MIT, ★약 806)는 MetaTrader 5를 &lt;strong&gt;MCP로 감싸&lt;/strong&gt; Claude·ChatGPT 등 LLM이 &lt;strong&gt;자연어로 시세·주문을 다루게&lt;/strong&gt; 한다. 자격증명은 로컬에 두고, MCP·REST·WebSocket·PyPI로 배포된다.
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;역할&lt;/strong&gt;: “브로커 공식 MCP”가 아니라 &lt;strong&gt;셀프호스트 자연어 브리지&lt;/strong&gt;. 차트·호가 읽기부터 주문 실행까지 에이전트 툴로 노출.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;보안 모델&lt;/strong&gt;: 계정·비밀번호가 클라우드에 안 나가게 &lt;strong&gt;로컬 프로세스&lt;/strong&gt;에 두는 설계가 README의 핵심 메시지.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;보완 패턴&lt;/strong&gt;: 어제 다룬 &lt;a href="https://github.com/vincentwongso/mt5-trading-mcp"&gt;vincentwongso/mt5-trading-mcp&lt;/a&gt;의 &lt;strong&gt;동의·감사(JSONL)&lt;/strong&gt; 레이어와 겹치지 않는다 — 연결 UX vs 승인·감사. 실무에선 둘을 같이 보는 편이 안전하다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;경고&lt;/strong&gt;: 실거래는 &lt;strong&gt;되돌릴 수 없다&lt;/strong&gt;. 데모 계좌·읽기 전용부터. MCP는 보안 경계가 아니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+Build 6060 네이티브 MCP가 “플랫폼 공식 문”이라면, ariadng은 &lt;strong&gt;이미 돌고 있는 커뮤니티 표준 포트&lt;/strong&gt;다. 툴 체인을 고를 때 발견 신호(스타·이슈)와 안전층(consent)을 분리해 읽자.
+&lt;/p&gt;
+&lt;h2&gt;기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/ariadng/metatrader-mcp-server"&gt;GitHub&lt;/a&gt; · MIT · 데모 먼저 · consent/audit과 병행 검토&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>MT5 Build 6060 — 터미널에 네이티브 MCP·에이전트 AI가 들어왔다</title>
+<id>https://codemwk.github.io/aipaper-newspaper/mt5-build-6060-native-mcp-85a80c55fc1f</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/mt5-build-6060-native-mcp-85a80c55fc1f/" rel="alternate" type="text/html"/>
+<updated>2026-09-21T22:03:00Z</updated>
+<published>2026-09-21T22:03:00Z</published>
+<category term="AI Trading"/>
+<summary>MetaQuotes MT5 Build 6060(릴리즈 노트 2026-07-23). Tools&gt;Options&gt;MCP. 로컬 엔드포인트 예: http://127.0.0.1:22346/mcp, 토큰+Bearer. 내장 Assistant 또는 Codex·Claude Code 등 외부 에이전트. 거래 기본은 권한·수동 확인. ProreX 고객은 ProreX MCP와 병행 가능.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;MetaQuotes MT5 Build 6060(릴리즈 노트 2026-07-23). Tools&amp;gt;Options&amp;gt;MCP. 로컬 엔드포인트 예: http://127.0.0.1:22346/mcp, 토큰+Bearer. 내장 Assistant 또는 Codex·Claude Code 등 외부 에이전트. 거래 기본은 권한·수동 확인. ProreX 고객은 ProreX MCP와 병행 가능.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI Trading&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href="https://www.metatrader5.com/en/releasenotes/terminal/2447"&gt;MetaTrader 5 Build 6060&lt;/a&gt;(MetaQuotes, 2026-07-23 릴리즈 노트)은 터미널에 &lt;strong&gt;네이티브 MCP&lt;/strong&gt;와 에이전트형 AI 연결을 넣었다. 시세·차트·주문을 로컬 MCP로 열고, 내장 Assistant나 외부 코딩 에이전트가 같은 프로토콜로 붙는다.
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;설정: &lt;strong&gt;Tools → Options → MCP&lt;/strong&gt;. 로컬 엔드포인트는 흔히 &lt;code&gt;http://127.0.0.1:22346/mcp&lt;/code&gt; 형태(환경·빌드에 따라 확인).&lt;/li&gt;
+&lt;li&gt;인증: &lt;strong&gt;토큰 + Bearer&lt;/strong&gt;. 외부 에이전트(예: Codex, Claude Code)도 동일 엔드포인트로 연결.&lt;/li&gt;
+&lt;li&gt;거래 기본값: 실주문·위험 작업은 &lt;strong&gt;권한 게이트·수동 확인&lt;/strong&gt;이 기본이라는 가이드가 강조된다(&lt;a href="https://trasignal.com/blog/forex/connect-chatgpt-claude-ai-metatrader-5/"&gt;연동 해설&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;ProreX: 자격 있는 고객은 &lt;strong&gt;ProreX MCP&lt;/strong&gt;(스크리너·Smart Score·아이디어·뉴스·캘린더)를 MT5 데이터 옆에 병행할 수 있다 — “브로커 인텔 + 터미널 실행” 이중 층.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+어제 consent/audit형 커뮤니티 MCP가 “안전층”이었다면, 오늘은 &lt;strong&gt;플랫폼 벤더가 MCP를 공식 표면으로 연 신호&lt;/strong&gt;다. 에이전트 트레이딩의 병목은 모델이 아니라 &lt;strong&gt;어디에 권한이 박혀 있는가&lt;/strong&gt;로 이동한다.
+&lt;/p&gt;
+&lt;h2&gt;기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.metatrader5.com/en/releasenotes/terminal/2447"&gt;MT5 릴리즈 노트 6060&lt;/a&gt; · &lt;a href="https://trasignal.com/blog/forex/connect-chatgpt-claude-ai-metatrader-5/"&gt;연동 가이드&lt;/a&gt; · 데모·권한부터&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Agent-Leaderboard 일일 — Skills·MCP 상단 유지, Arena는 Fable, AA Index 스탬프 9/21</title>
+<id>https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-daily-e67cbfeb8895</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-daily-e67cbfeb8895/" rel="alternate" type="text/html"/>
+<updated>2026-09-21T22:02:00Z</updated>
+<published>2026-09-21T22:02:00Z</published>
+<category term="Agent Leaderboard"/>
+<summary>2026-09-22. jaychempan README Skills Top5: everything-claude-code ★185k→hermes ★154k→system-prompts ★137k→karpathy-skills ★133k→mattpocock ★88k. MCP·Frameworks(TradingAgents 4위) 유지. Arena(9/15) Fable 13.71%·Astra 11.54%. AA Index Last updated 9/21, 왕관 불변.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;2026-09-22. jaychempan README Skills Top5: everything-claude-code ★185k→hermes ★154k→system-prompts ★137k→karpathy-skills ★133k→mattpocock ★88k. MCP·Frameworks(TradingAgents 4위) 유지. Arena(9/15) Fable 13.71%·Astra 11.54%. AA Index Last updated 9/21, 왕관 불변.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; Agent Leaderboard&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+오늘 &lt;a href="https://github.com/jaychempan/Agent-Leaderboard"&gt;jaychempan/Agent-Leaderboard&lt;/a&gt; README 누적 스타 Top은 &lt;strong&gt;멤버십이 안정&lt;/strong&gt;하다. “도구를 돌리는 체감”은 &lt;a href="https://arena.ai/leaderboard/agent"&gt;Agent Arena&lt;/a&gt;(스냅샷 2026-09-15, ~1.85M 세션)에서 &lt;strong&gt;Claude Fable 5.1 (Max)&lt;/strong&gt; Net Improvement &lt;strong&gt;13.71%&lt;/strong&gt; 1위, &lt;strong&gt;GPT-6 Astra (Max)&lt;/strong&gt; &lt;strong&gt;11.54%&lt;/strong&gt; 2위다.
+&lt;/p&gt;
+&lt;h2&gt;지금 상단(README 스타 순)&lt;/h2&gt;
+&lt;p&gt;
+&lt;strong&gt;Skills Top5&lt;/strong&gt;: everything-claude-code ★185,355 → hermes-agent ★154,273 → system-prompts… ★137,532 → andrej-karpathy-skills ★133,529 → mattpocock/skills ★88,185
+&lt;br/&gt;
+&lt;strong&gt;Top10 근처 신규감&lt;/strong&gt;: deer-flow ★68k, &lt;strong&gt;caveman ★61k&lt;/strong&gt;(토큰 ~65% 절감 주장), graphify ★48k
+&lt;br/&gt;
+&lt;strong&gt;MCP Top&lt;/strong&gt;: awesome-mcp-servers ★87,171 → TrendRadar ★57,880 → chrome-devtools-mcp ★40,041 → playwright-mcp ★32,726 → github-mcp-server ★29,976
+&lt;br/&gt;
+&lt;strong&gt;Frameworks&lt;/strong&gt;: obra/superpowers ★198k → LangChain ★137k → vLLM ★80k → &lt;strong&gt;TradingAgents ★77,314 (4위)&lt;/strong&gt; → MetaGPT ★68k
+&lt;/p&gt;
+&lt;h2&gt;Arena·AA Index에서 오늘 기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Arena Cost/Task P50: Fable &lt;strong&gt;$4.41&lt;/strong&gt; vs Astra &lt;strong&gt;$3.16&lt;/strong&gt; — 1위가 곧 최저비용은 아님.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://benchlm.ai/benchmarks/aaagenticindex"&gt;AA Agentic Index&lt;/a&gt; &lt;strong&gt;Last updated Sep 21, 2026&lt;/strong&gt;: Fable 58.0% · Opus 5 56.2% · Muse Spark 1.3 55.7% — &lt;strong&gt;왕관 불변, 스탬프만 이동&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+누적 스타는 &lt;strong&gt;발견 지도&lt;/strong&gt;, Arena는 &lt;strong&gt;작업·비용&lt;/strong&gt;, AA Index는 &lt;strong&gt;교차 벤치 집계&lt;/strong&gt;. 오늘은 교체 뉴스보다 &lt;strong&gt;보드를 쪼개 읽는 습관&lt;/strong&gt;이 값이다.
+&lt;/p&gt;
+&lt;h2&gt;기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/jaychempan/Agent-Leaderboard"&gt;Agent-Leaderboard&lt;/a&gt; · &lt;a href="https://agentskills.media"&gt;agentskills.media&lt;/a&gt; · &lt;a href="https://arena.ai/leaderboard/agent"&gt;arena.ai/agent&lt;/a&gt; · &lt;a href="https://benchlm.ai/benchmarks/aaagenticindex"&gt;AA Index&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>AI 비즈니스: Creatify Boreal — 광고 영상 1초당 1센트, 끝난 초(finished second) 과금</title>
+<id>https://codemwk.github.io/aipaper-newspaper/creatify-boreal-cent-second-d30b37f8288c</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/creatify-boreal-cent-second-d30b37f8288c/" rel="alternate" type="text/html"/>
+<updated>2026-09-21T22:01:00Z</updated>
+<published>2026-09-21T22:01:00Z</published>
+<category term="AI 비즈니스"/>
+<summary>Creatify Labs가 2026-09-15 발표한 Boreal. 광고용 T2V·I2V, 720p 완성 초당 $0.01(5초≈$0.05), 실시간(~5초 클립≈재생 시간). 블라인드 리뷰에서 베이스 대비 결정적 비교 81% 선호. Seedance 2.0 대비 유사 품질·약 40배 빠르고·약 12배 저렴(벤치). 불투명 크레딧이 아닌 finished-second 청구.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;Creatify Labs가 2026-09-15 발표한 Boreal. 광고용 T2V·I2V, 720p 완성 초당 $0.01(5초≈$0.05), 실시간(~5초 클립≈재생 시간). 블라인드 리뷰에서 베이스 대비 결정적 비교 81% 선호. Seedance 2.0 대비 유사 품질·약 40배 빠르고·약 12배 저렴(벤치). 불투명 크레딧이 아닌 finished-second 청구.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 비즈니스&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href="https://creatify.ai/blog/introducing-boreal-frontier-quality-ai-video-at-a-cent-a-second"&gt;Creatify&lt;/a&gt;(2026-09-15)는 광고 전용 비디오 모델 &lt;strong&gt;Boreal&lt;/strong&gt;을 공개했다. 텍스트·이미지→비디오, &lt;strong&gt;완성 영상 1초당 $0.01&lt;/strong&gt;(720p, 5초≈$0.05), 생성도 대략 &lt;strong&gt;실시간&lt;/strong&gt;(5초 클립≈5초). 자체 가중치 + 광고 데이터 포스트트레이닝이다.
+&lt;/p&gt;
+&lt;h2&gt;누가 돈을 내고, 가치가 어떻게 흐르나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;무엇을 파나&lt;/strong&gt;: 제품 라벨·크리에이터 정체성이 깨지지 않는 &lt;strong&gt;광고 충실도&lt;/strong&gt;. 블라인드 리뷰에서 Boreal이 손대지 않은 베이스보다 결정적 비교의 &lt;strong&gt;81%&lt;/strong&gt;에서 선호(40 프로덕션 케이스, 25:6·동점 9).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;가격 투명성&lt;/strong&gt;: 크레딧·토큰이 아니라 &lt;strong&gt;끝난 초(finished second)&lt;/strong&gt; 과금. API·Playground·AdFlow·&lt;a href="https://fal.ai"&gt;fal.ai&lt;/a&gt;에서 동일 모델.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;벤치(Creatify 자체)&lt;/strong&gt;: Seedance 2.0과 지각 품질은 비슷하고 모션은 앞선다고 주장. Seedance 5초 중앙값 &lt;strong&gt;198초 / $0.60&lt;/strong&gt; vs Boreal &lt;strong&gt;~5초 / $0.05&lt;/strong&gt; → 대략 &lt;strong&gt;40× 속도·12× 저렴&lt;/strong&gt;. 해상도는 Seedance 1080p vs Boreal 720p급 트레이드오프를 스스로 적는다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;한계(공식)&lt;/strong&gt;: 짧은 클립·단순 장면에 강하고, 1인 토킹은 베이스와 격차가 가장 작음(60%).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가 (AI 저널·퍼스널 미디어)&lt;/h2&gt;
+&lt;p&gt;
+어제 Ground News가 &lt;strong&gt;편향 비교 구독&lt;/strong&gt;이었다면, 오늘은 &lt;strong&gt;대량 숏폼의 단위경제가 장부에 찍히는 모델&lt;/strong&gt;이다. 퍼스널 미디어·광고 파이프가 “몇 크레딧 썼는지 모름”에서 &lt;strong&gt;초당 원가&lt;/strong&gt;로 바뀌면, 고빈도 A/B가 예산 계획이 된다.
+&lt;/p&gt;
+&lt;h2&gt;기억할 것&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://creatify.ai/blog/introducing-boreal-frontier-quality-ai-video-at-a-cent-a-second"&gt;Creatify 블로그&lt;/a&gt; · finished-second 청구 · API/Playground/AdFlow/fal&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
 <entry>
 <title>Arena 해설 — 에이전트 1위 Fable, 웹개발 1위 Astra… ‘최강’은 작업별</title>
 <id>https://codemwk.github.io/aipaper-newspaper/arena-agent-vs-webdev-06d1aebe317e</id>
@@ -788,407 +1171,6 @@ MT5·cTrader·TradingView MCP 물결 옆에서 IBKR는 &lt;strong&gt;“분석�
 &lt;h2&gt;기억할 것&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://ca.marketscreener.com/news/tnl-mediagene-s-the-news-lens-launches-tnl-daily-a-subscription-newsletter-with-crowdfunding-campa-ce785adada89f52c"&gt;MarketScreener / Newsfile 전문&lt;/a&gt; · &lt;a href="https://www.flyingv.cc/projects/37543"&gt;flyingV 캠페인&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Agent-Leaderboard 일일 — Top 구성 유지, Skills·MCP·TradingAgents 축 그대로</title>
-<id>https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-daily-92f1ed800322</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/agent-leaderboard-daily-92f1ed800322/" rel="alternate" type="text/html"/>
-<updated>2026-09-18T22:55:00Z</updated>
-<published>2026-09-18T22:55:00Z</published>
-<category term="Agent Leaderboard"/>
-<summary>2026-09-19 스윕. jaychempan/Agent-Leaderboard README. Skills 1위 everything-claude-code, MCP 1위 awesome-mcp-servers. Frameworks TradingAgents 4위. 9/18 대비 Top5 멤버십 동일 계열.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;2026-09-19 스윕. jaychempan/Agent-Leaderboard README. Skills 1위 everything-claude-code, MCP 1위 awesome-mcp-servers. Frameworks TradingAgents 4위. 9/18 대비 Top5 멤버십 동일 계열.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; Agent Leaderboard&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-오늘 &lt;a href="https://github.com/jaychempan/Agent-Leaderboard"&gt;jaychempan/Agent-Leaderboard&lt;/a&gt; README(및 &lt;a href="https://agentskills.media"&gt;agentskills.media&lt;/a&gt;)를 다시 열었다. &lt;strong&gt;2026-09-18 일일 브리프&lt;/strong&gt;와 Top 구성은 &lt;strong&gt;거의 그대로&lt;/strong&gt;다. 신규 1위 교체는 없다.
-&lt;/p&gt;
-&lt;h2&gt;지금 상단(README 표 기준, 스타 순)&lt;/h2&gt;
-&lt;p&gt;
-&lt;strong&gt;Agent Skills Top&lt;/strong&gt;
-&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/affaan-m/everything-claude-code"&gt;affaan-m/everything-claude-code&lt;/a&gt; — ★185,355&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/NousResearch/hermes-agent"&gt;NousResearch/hermes-agent&lt;/a&gt; — ★154,273&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"&gt;x1xhlol/system-prompts-and-models-of-ai-tools&lt;/a&gt; — ★137,532&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/multica-ai/andrej-karpathy-skills"&gt;multica-ai/andrej-karpathy-skills&lt;/a&gt; — ★133,529&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/mattpocock/skills"&gt;mattpocock/skills&lt;/a&gt; — ★88,185&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-이어 ui-ux-pro-max-skill, &lt;strong&gt;bytedance/deer-flow&lt;/strong&gt;, &lt;strong&gt;JuliusBrussee/caveman&lt;/strong&gt;, awesome-claude-skills, &lt;strong&gt;safishamsi/graphify&lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;strong&gt;MCP Servers Top&lt;/strong&gt;
-&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/punkpeye/awesome-mcp-servers"&gt;punkpeye/awesome-mcp-servers&lt;/a&gt; — ★87,171&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/sansan0/TrendRadar"&gt;sansan0/TrendRadar&lt;/a&gt; — ★57,880&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/ChromeDevTools/chrome-devtools-mcp"&gt;ChromeDevTools/chrome-devtools-mcp&lt;/a&gt; — ★40,041&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/microsoft/playwright-mcp"&gt;microsoft/playwright-mcp&lt;/a&gt; — ★32,726&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/github/github-mcp-server"&gt;github/github-mcp-server&lt;/a&gt; — ★29,976&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-&lt;strong&gt;Frameworks 핫 포인트&lt;/strong&gt;: &lt;a href="https://github.com/obra/superpowers"&gt;obra/superpowers&lt;/a&gt;, LangChain, vLLM, &lt;strong&gt;&lt;a href="https://github.com/TauricResearch/TradingAgents"&gt;TauricResearch/TradingAgents&lt;/a&gt;&lt;/strong&gt;(★77,314·4위), MetaGPT
-&lt;br/&gt;
-&lt;strong&gt;Auto Research&lt;/strong&gt;: karpathy/autoresearch, deer-flow, qlib, BettaFish, khoj, STORM, gpt-researcher, last30days-skill, dexter
-&lt;/p&gt;
-&lt;p&gt;
-규모(보드 추적): Skills 500+ · MCP 1,500+ · Prompt 1,100+ · Frameworks 1,200+ · Auto Research 100+.
-&lt;/p&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-오늘은 TypeSafe Jev·MT5 MCP·librarian-mcp·Axios Direct를 본문에서 풀었다. 보드 상단이 안 바뀌어도, &lt;strong&gt;실사용 후보&lt;/strong&gt;는 (1) Claude 스킬 팩 (2) 브라우저·GitHub MCP (3) TradingAgents 프레임이다. PKM은 보드 Top10 밖이지만 LLM Wiki MCP 실험이 따로 뜨는 중.
-&lt;/p&gt;
-&lt;h2&gt;기억할 것&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/jaychempan/Agent-Leaderboard"&gt;Agent-Leaderboard&lt;/a&gt; · &lt;a href="https://agentskills.media"&gt;agentskills.media&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;어제 대비: Top5 멤버십 동일 계열, &lt;strong&gt;신규 교체 없음&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>AI 비즈니스: Axios Direct — 보도를 ‘에이전트용 피드’로 팔아 2027 성장축을 깐다</title>
-<id>https://codemwk.github.io/aipaper-newspaper/axios-direct-ai-agent-feeds-e6d05179967b</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/axios-direct-ai-agent-feeds-e6d05179967b/" rel="alternate" type="text/html"/>
-<updated>2026-09-18T22:52:00Z</updated>
-<published>2026-09-18T22:52:00Z</published>
-<category term="AI 비즈니스"/>
-<summary>2026-09-16 Digiday Publishing Summit / 9-18 기사. Axios가 Axios Direct 3경로(기관 터미널형·사내 AI 인제스트·개인 에이전트 RSS)를 준비. 연간 수수료·2년 계약. 구체 매출액은 비공개, 2026 목표 조기 달성만 확인.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;2026-09-16 Digiday Publishing Summit / 9-18 기사. Axios가 Axios Direct 3경로(기관 터미널형·사내 AI 인제스트·개인 에이전트 RSS)를 준비. 연간 수수료·2년 계약. 구체 매출액은 비공개, 2026 목표 조기 달성만 확인.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 비즈니스&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href="https://digiday.com/media/axios-preps-new-axios-direct-feeds-for-ai-models-agents-as-revenue-tops-2026-goal/"&gt;Digiday&lt;/a&gt;(2026-09-18, Summit 발언은 &lt;strong&gt;9/16&lt;/strong&gt;)에 따르면, Axios는 &lt;strong&gt;Axios Direct&lt;/strong&gt;를 이달 시장에 낸다. Bloomberg 터미널 + RSS를 &lt;strong&gt;에이전틱 AI 시대&lt;/strong&gt;에 맞게 재해석한 &lt;strong&gt;콘텐츠 피드 상품&lt;/strong&gt;이다.
-&lt;/p&gt;
-&lt;h2&gt;누가 돈을 내고, 가치가 어떻게 흐르나&lt;/h2&gt;
-&lt;p&gt;
-CRO Jacquelyn Cameron이 밝힌 &lt;strong&gt;세 경로&lt;/strong&gt;(단계적으로):
-&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;기관·운용사(행동하는 고객)&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-   기존 &lt;strong&gt;Axios Pro Deals&lt;/strong&gt; 구독사 업셀. 회사 규모·AUM에 따라 &lt;strong&gt;연간 수수료&lt;/strong&gt;가 달라진다. 물리 터미널 없이 시장 이동 보도에 빠르게 접근. &lt;strong&gt;2년 계약&lt;/strong&gt;으로 실험·튜닝 기간을 확보한다고 했다.
-&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;사내 AI 모델을 돌리는 기업&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-   내부 직원이 쓰는 시스템에 Axios 피드를 &lt;strong&gt;직접 인제스트&lt;/strong&gt;. Microsoft식 제3자 AI 콘텐츠 마켓플레이스보다 &lt;strong&gt;클라이언트 다이렉트&lt;/strong&gt;를 선호(올해 매출의 약 &lt;strong&gt;52~54%&lt;/strong&gt;가 직접 거래라고 언급). 론칭 시점은 미정.
-&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;개인 + 개인 AI 에이전트&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-   ChatGPT·Claude 등이 구독 피드를 읽게 하는 &lt;strong&gt;에이전트용 RSS&lt;/strong&gt;에 가깝다. &lt;strong&gt;2027&lt;/strong&gt;에 더 깊게 탐구. 브랜드/에이전트 광고 삽입 가능성도 열어 둠(Time 사례 언급).
-&lt;/p&gt;
-&lt;p&gt;
-수익 규모: Cameron은 &lt;strong&gt;구체 숫자를 공개하지 않았다&lt;/strong&gt;. 다만 2026 매출 목표를 &lt;strong&gt;9월 초&lt;/strong&gt;에 달성(전년은 10월 말), YoY &lt;strong&gt;두 자릿수&lt;/strong&gt;(범위로 &lt;strong&gt;10~50%&lt;/strong&gt; 사이라고만 표현) 성장을 말했고, Direct를 &lt;strong&gt;2027 이후 순증 매출&lt;/strong&gt; 축으로 본다고 했다. &lt;strong&gt;발명 매출액은 넣지 않는다.&lt;/strong&gt;
-&lt;/p&gt;
-&lt;h2&gt;왜 중요한가 (AI 저널·퍼스널 미디어)&lt;/h2&gt;
-&lt;p&gt;
-AiPaper 같은 &lt;strong&gt;미니 신문·개인화 브리핑&lt;/strong&gt;이 참고할 비즈니스 뼈대다. 광고 CPM만으로 버티기 어려운 전문 보도를, (a) 의사결정 기관 (b) 기업 RAG/에이전트 (c) 개인 에이전트 구독으로 &lt;strong&gt;라이선스 피드&lt;/strong&gt;화하는 길. “누가 요약하나”가 아니라 &lt;strong&gt;누가 원문·인용 가능한 피드를 사나&lt;/strong&gt;가 돈이 된다.
-&lt;/p&gt;
-&lt;h2&gt;기억할 것&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://digiday.com/media/axios-preps-new-axios-direct-feeds-for-ai-models-agents-as-revenue-tops-2026-goal/"&gt;Digiday 기사&lt;/a&gt; · Axios Direct / Pro Deals 업셀&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>GitHub 해설: maxkuminov/obsidian-mcp — Postgres·벡터·OAuth 붙인 셀프호스트 볼트 메모리</title>
-<id>https://codemwk.github.io/aipaper-newspaper/obsidian-mcp-pgvector-selfhost-7e72aff47a1d</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/obsidian-mcp-pgvector-selfhost-7e72aff47a1d/" rel="alternate" type="text/html"/>
-<updated>2026-09-18T22:50:00Z</updated>
-<published>2026-09-18T22:50:00Z</published>
-<category term="GitHub"/>
-<summary>maxkuminov/obsidian-mcp. 옵시디언 볼트를 에이전트 공유 메모리로: 시맨틱+전문검색, wikilink 그래프, CRUD, OAuth, vault guide. Docker+Postgres 비용 대신 멀티유저·감사 로그.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;maxkuminov/obsidian-mcp. 옵시디언 볼트를 에이전트 공유 메모리로: 시맨틱+전문검색, wikilink 그래프, CRUD, OAuth, vault guide. Docker+Postgres 비용 대신 멀티유저·감사 로그.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; GitHub&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href="https://github.com/maxkuminov/obsidian-mcp"&gt;maxkuminov/obsidian-mcp&lt;/a&gt;는 옵시디언 볼트를 &lt;strong&gt;에이전트 공유 메모리&lt;/strong&gt;로 만드는 &lt;strong&gt;셀프호스트 MCP&lt;/strong&gt;다. 가벼운 filesystem MCP와 달리 &lt;strong&gt;Postgres 인덱스·pgvector·OAuth·관리 UI&lt;/strong&gt;를 전제로 한다.
-&lt;/p&gt;
-&lt;h2&gt;무엇이 의미 있나 (코드 덤프 없이)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;도구 패밀리 ~25개&lt;/strong&gt;: 시맨틱/전문 검색, wikilink 그래프 질의, 노트 CRUD, 원자적 쓰기·dry-run diff, 볼트 가이드(&lt;code&gt;get_vault_guide&lt;/code&gt; — 일반 Obsidian 문법 + 해당 vault의 &lt;code&gt;CLAUDE.md&lt;/code&gt;를 라이브로).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;왜 무거운가&lt;/strong&gt;: Docker+DB 세팅 세금 대신, 인덱스가 유지되고 멀티유저·사용 로그·토큰 기반 클라이언트가 가능하다. Obsidian REST 플러그인에 묶인 서버와 달리 &lt;strong&gt;앱을 안 켜도&lt;/strong&gt; 동작.&lt;/li&gt;
-&lt;li&gt;포지션 비교(README 표 요지): MarkusPfundstein식 REST 브리지·순수 Python 파일 MCP·플러그인 MCP 대비, &lt;strong&gt;영속 인덱스 + 시맨틱 + OAuth&lt;/strong&gt; 축이 차별점.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-어제 obsidian-second-brain v0.16(침묵 실패 수정)·vault-bridge와 같이 읽으면, PKM 스택이 (1) 에이전트 훅 안전장치 (2) 가벼운 MCP (3) &lt;strong&gt;팀용 백엔드 MCP&lt;/strong&gt;로 분화 중이다. 개인 볼트면 librarian/Ar9av로 충분하고, 팀·감사·권한이 필요하면 이쪽이다.
-&lt;/p&gt;
-&lt;h2&gt;기억할 것&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/maxkuminov/obsidian-mcp"&gt;maxkuminov/obsidian-mcp&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>librarian-mcp — Karpathy LLM Wiki를 Obsidian 사서 MCP로 제품화</title>
-<id>https://codemwk.github.io/aipaper-newspaper/librarian-mcp-llm-wiki-099036dee802</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/librarian-mcp-llm-wiki-099036dee802/" rel="alternate" type="text/html"/>
-<updated>2026-09-18T22:45:00Z</updated>
-<published>2026-09-18T22:45:00Z</published>
-<category term="Second Brain"/>
-<summary>ngmeyer/librarian-mcp. 볼트/마크다운 폴더에 trigram 검색·백링크·BFS·Louvain 클러스터·D3 그래프·자동 wikilink. Obsidian 미실행 단독 바이너리. LLM Wiki 패턴의 MCP 실현.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;ngmeyer/librarian-mcp. 볼트/마크다운 폴더에 trigram 검색·백링크·BFS·Louvain 클러스터·D3 그래프·자동 wikilink. Obsidian 미실행 단독 바이너리. LLM Wiki 패턴의 MCP 실현.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; Second Brain&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href="https://github.com/ngmeyer/librarian-mcp"&gt;ngmeyer/librarian-mcp&lt;/a&gt;는 Andrej Karpathy식 &lt;strong&gt;LLM Wiki&lt;/strong&gt; 패턴을 &lt;strong&gt;MCP 서버&lt;/strong&gt;로 만든 프로젝트다. Claude 등 에이전트에게 옵시디언 볼트(또는 일반 마크다운 폴더)의 &lt;strong&gt;사서&lt;/strong&gt; 역할을 준다.
-&lt;/p&gt;
-&lt;h2&gt;무엇이 바뀌었나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;단독 바이너리&lt;/strong&gt;: 파일을 직접 읽는다. Obsidian을 켜 둘 필요 없고, 켜 둔 상태와도 충돌하지 않는다고 설명한다.&lt;/li&gt;
-&lt;li&gt;도구 예: trigram 전문 검색, 백링크/아웃링크, daily note, 태그 통계, orphan·hub·bridge, &lt;strong&gt;BFS 순회·최단 경로&lt;/strong&gt;, Louvain &lt;strong&gt;커뮤니티 탐지&lt;/strong&gt;, D3 &lt;strong&gt;인터랙티브 그래프 HTML&lt;/strong&gt;, MarkItDown 기반 import, &lt;code&gt;library_suggest_links&lt;/code&gt;(미링크 멘션).&lt;/li&gt;
-&lt;li&gt;포인트: 임베딩 RAG에만 의존하지 않고 &lt;strong&gt;위키링크 그래프 + 로컬 검색&lt;/strong&gt;으로 “이미 정리된 지식”을 에이전트가 인용하게 한다. 본지가 다룬 Ar9av obsidian-wiki·vault-bridge·obsidian-second-brain과 &lt;strong&gt;같은 문제, 다른 인터페이스(MCP)&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-세컨드 브레인 경쟁은 “노트 앱”이 아니라 &lt;strong&gt;에이전트가 볼트를 깨지 않고 읽고 링크하게 하는 프로토콜&lt;/strong&gt;로 옮겨 갔다. librarian은 그 중 &lt;strong&gt;그래프·사서 UX&lt;/strong&gt;에 특화. 스타 수는 아직 작아(조회 시점 수십) 실험 단계로 읽되, 패턴 자체는 재사용 가치가 있다.
-&lt;/p&gt;
-&lt;h2&gt;기억할 것&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/ngmeyer/librarian-mcp"&gt;ngmeyer/librarian-mcp&lt;/a&gt; · 관련: Ar9av/obsidian-wiki, LLM Wiki gist 계열&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Meta Muse — 메일·결제까지 하는 개인 에이전트, Sentinel·자격증명 분리 하네스</title>
-<id>https://codemwk.github.io/aipaper-newspaper/meta-muse-agent-security-harness-d7504f943cd9</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/meta-muse-agent-security-harness-d7504f943cd9/" rel="alternate" type="text/html"/>
-<updated>2026-09-18T22:40:00Z</updated>
-<published>2026-09-18T22:40:00Z</published>
-<category term="AI Models"/>
-<summary>2026-09-18 DeepLearning.AI The Batch. Muse(Spark 1.3)가 앱/WhatsApp으로 메일·폼·구매·백그라운드 작업. VM 셀 분리, 모델은 자격증명 미보유, Sentinel 승인. 미국 18+, Free/$20/$100.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;2026-09-18 DeepLearning.AI The Batch. Muse(Spark 1.3)가 앱/WhatsApp으로 메일·폼·구매·백그라운드 작업. VM 셀 분리, 모델은 자격증명 미보유, Sentinel 승인. 미국 18+, Free/$20/$100.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI Models&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href="https://www.deeplearning.ai/the-batch/how-to-secure-agents-for-the-masses"&gt;DeepLearning.AI The Batch&lt;/a&gt;(2026-09-18)는 Meta &lt;strong&gt;Muse&lt;/strong&gt; 개인 에이전트(모델 &lt;strong&gt;Muse Spark 1.3&lt;/strong&gt;)를 &lt;strong&gt;보안 하네스&lt;/strong&gt; 관점에서 해부했다. 앱·WhatsApp으로 메일 송수신, 브라우징, 폼, &lt;strong&gt;Stripe Link 구매&lt;/strong&gt;, 앱을 꺼도 백그라운드 작업을 한다.
-&lt;/p&gt;
-&lt;h2&gt;무엇이 바뀌었나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;연결: 브라우저·메일·캘린더·Instagram/Facebook·차량·스마트홈 등, 서비스별 읽기/쓰기. 메모리 열람·편집·삭제, 활동 로그.&lt;/li&gt;
-&lt;li&gt;가격(보도): Free(~1억 토큰/주), &lt;strong&gt;$20&lt;/strong&gt;(~5억), &lt;strong&gt;$100&lt;/strong&gt;(~30억). 미국·18+·iOS/Android/muse.ai/WhatsApp.&lt;/li&gt;
-&lt;li&gt;보안 설계 요지: 에이전트는 &lt;strong&gt;격리 VM/컨테이너&lt;/strong&gt; 안. &lt;strong&gt;자격증명은 셀 밖&lt;/strong&gt; — 모델은 스탠드인만 보고, &lt;strong&gt;Sentinel&lt;/strong&gt;이 요청을 허용·거부·사용자 확인 후 실토큰을 붙인다. 승인 UI는 대화 메시지가 아니라 &lt;strong&gt;시스템 다이얼로그&lt;/strong&gt;(인젝션으로 가짜 승인 방지). 메일·구매는 항상 사용자 검증, 낯선 상점 구매는 &lt;strong&gt;일회용 카드&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;추가 방어: 비신뢰 라벨, 셀 밖 분류기 앙상블, 브라우저는 접근성 트리 요약(JS 실행 없음). 버그바운티(유효 리포트 최대 $300k, 성공 인젝션 최대 $130k)로 검증을 외주에 맡긴 상태. 분류기 정확도 수치는 미공개.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-Simon Willison의 “lethal trifecta”(사적 데이터+비신뢰 콘텐츠+외부 송신)를 &lt;strong&gt;모델이 속아도 OS 게이트가 막는다&lt;/strong&gt;는 가정으로 설계한 대중 제품 사례다. 가중치 공개 약속보다 &lt;strong&gt;하네스 오픈&lt;/strong&gt;이 더 중요하다는 Batch의 결론이 실무적으로 와닿는다.
-&lt;/p&gt;
-&lt;h2&gt;기억할 것&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.deeplearning.ai/the-batch/how-to-secure-agents-for-the-masses"&gt;The Batch&lt;/a&gt; · Muse / Muse Spark 1.3&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Google CC — 가정용 에이전트로 선회, 자체 계정·최대 6인·허가증 PDF까지</title>
-<id>https://codemwk.github.io/aipaper-newspaper/google-cc-family-household-agent-2f2d157db640</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/google-cc-family-household-agent-2f2d157db640/" rel="alternate" type="text/html"/>
-<updated>2026-09-18T22:35:00Z</updated>
-<published>2026-09-18T22:35:00Z</published>
-<category term="AI Models"/>
-<summary>2026-09-18 TechCrunch. Google이 CC를 가족 일정·심부름 에이전트로 재포지션. 자체 Google 계정, 멤버별 공유 범위, Gemini+Antigravity 격리 클라우드. 미국 개인 Gmail 18+ 실험.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;2026-09-18 TechCrunch. Google이 CC를 가족 일정·심부름 에이전트로 재포지션. 자체 Google 계정, 멤버별 공유 범위, Gemini+Antigravity 격리 클라우드. 미국 개인 Gmail 18+ 실험.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI Models&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href="https://techcrunch.com/2026/09/18/googles-new-cc-is-an-ai-agent-that-helps-families-run-their-households/"&gt;TechCrunch&lt;/a&gt;(2026-09-18)에 따르면, Google은 생산성 브리핑 에이전트 &lt;strong&gt;CC&lt;/strong&gt;를 &lt;strong&gt;가족 가정 운영&lt;/strong&gt; 쪽으로 크게 틀었다. 학교·스포츠·식단·심부름을 메일·캘린더·태스크와 묶는다.
-&lt;/p&gt;
-&lt;h2&gt;무엇이 바뀌었나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;CC에 &lt;strong&gt;자체 Google 계정&lt;/strong&gt;이 생겨 가족 구성원과 협업하면서도 권한을 분리한다. 최대 &lt;strong&gt;6명&lt;/strong&gt;. 각자 공유할 메일 발신자(학교·클럽·병원 등)를 고르거나 전달한다.&lt;/li&gt;
-&lt;li&gt;할 일 예: 허가증·활동 등록 &lt;strong&gt;PDF 작성&lt;/strong&gt;, 학용품 쇼핑 리스트, 주간 식단, 이동 시간, 공유 Docs/Sheets. 빠진 정보는 물어보고 &lt;strong&gt;그룹 메모리&lt;/strong&gt;를 갱신.&lt;/li&gt;
-&lt;li&gt;런타임: 격리 클라우드 PC, &lt;strong&gt;Gemini&lt;/strong&gt; + 에이전트 하네스 &lt;strong&gt;Antigravity&lt;/strong&gt;. 미국·개인 Gmail·&lt;strong&gt;18세 이상&lt;/strong&gt;만. 기존 사용자는 초대 메일, 신규는 대기열.&lt;/li&gt;
-&lt;li&gt;한계(기사): 학교 계정·미성년자는 바로 못 씀 — 가정 에이전트의 핵심 사용자층과 어긋나는 실험 제약.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-Meta Muse(결제·메일 실행)·소비자 에이전트 경쟁과 같은 주. Google은 “하루 브리핑”에서 &lt;strong&gt;가구 단위 공유 메모리·대행&lt;/strong&gt;으로 옮겼다. 기업 MCP 트레이딩과 다른, &lt;strong&gt;생활 오케스트레이션&lt;/strong&gt; 제품 신호다.
-&lt;/p&gt;
-&lt;h2&gt;기억할 것&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://techcrunch.com/2026/09/18/googles-new-cc-is-an-ai-agent-that-helps-families-run-their-households/"&gt;TechCrunch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>HiDream V1 — 5~20초·물리 일관성 강조 옴니모달 비디오, 벤치 상위권 데뷔</title>
-<id>https://codemwk.github.io/aipaper-newspaper/hidream-o1-video-v1-7dcb40340ecc</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/hidream-o1-video-v1-7dcb40340ecc/" rel="alternate" type="text/html"/>
-<updated>2026-09-18T22:30:00Z</updated>
-<published>2026-09-18T22:30:00Z</published>
-<category term="AI Content Gen"/>
-<summary>2026-09-17. HiDream.ai가 HiDream-O1-Video-1.0(V1) 공개. 텍스트·이미지·비디오 입력, 1080p 5~20초, 서사 계획·캐릭터·물리·AV 싱크. Artificial Analysis I2V(오디오) 4위, Arena.ai 8위.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;2026-09-17. HiDream.ai가 HiDream-O1-Video-1.0(V1) 공개. 텍스트·이미지·비디오 입력, 1080p 5~20초, 서사 계획·캐릭터·물리·AV 싱크. Artificial Analysis I2V(오디오) 4위, Arena.ai 8위.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI Content Gen&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href="https://www.media-outreach.com/news/china/2026/09/17/488140/hidream-unveils-hidream-o1-video-1-0-a-native-omnimodal-video-model-built-for-physical-consistency/"&gt;Media OutReach&lt;/a&gt;(2026-09-17)에 따르면, &lt;strong&gt;HiDream.ai&lt;/strong&gt;는 네이티브 옴니모달 비디오 모델 &lt;strong&gt;HiDream-O1-Video-1.0(V1)&lt;/strong&gt;을 공개했다. 창작 의도·물리 일관성을 전면에 내세웠다.
-&lt;/p&gt;
-&lt;h2&gt;무엇이 바뀌었나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;입력: 텍스트·이미지·비디오. 출력: &lt;strong&gt;1080p&lt;/strong&gt;, 길이 &lt;strong&gt;5~20초&lt;/strong&gt;. 서사 계획, 캐릭터 일관성, 물리 타당성, 시청각 동기화를 강조.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Content-Adaptive Duration&lt;/strong&gt;: 고정 초수에 콘텐츠를 억지로 맞추지 않고, 사건·동작 완결에 맞춰 길이를 고른다고 설명(빈 프레임·슬로모 패딩 감소 목적).&lt;/li&gt;
-&lt;li&gt;독립 벤치 데뷔: Artificial Analysis &lt;strong&gt;Image-to-Video (With Audio)&lt;/strong&gt; &lt;strong&gt;4위&lt;/strong&gt;, Arena.ai Image-to-Video &lt;strong&gt;8위&lt;/strong&gt;(회사 발표 기준).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-MVLAND가 “뮤직 디렉팅 UI”라면 HiDream은 &lt;strong&gt;파운데이션 비디오 모델&lt;/strong&gt; 쪽 신호다. 길이를 서사에 맡긴다는 주장은 데모에서 과대평가되기 쉬우니, 실제 API·크리에이터 툴 연동 여부를 다음으로 보면 된다.
-&lt;/p&gt;
-&lt;h2&gt;기억할 것&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.media-outreach.com/news/china/2026/09/17/488140/hidream-unveils-hidream-o1-video-1-0-a-native-omnimodal-video-model-built-for-physical-consistency/"&gt;HiDream 보도&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>미투 MVLAND 2.0 Studio Mode — MV를 ‘한 번 생성’에서 ‘샷 단위 연출’로</title>
-<id>https://codemwk.github.io/aipaper-newspaper/meitu-mvland-20-studio-mode-2ee5ea0b5b1e</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/meitu-mvland-20-studio-mode-2ee5ea0b5b1e/" rel="alternate" type="text/html"/>
-<updated>2026-09-18T22:25:00Z</updated>
-<published>2026-09-18T22:25:00Z</published>
-<category term="AI Content Gen"/>
-<summary>2026-09-18 BusinessWire/MarketScreener. 미투 MVLAND 2.0이 Studio Mode 공개. 음악 분석→스토리보드→샷 생성→멀티트랙 편집을 에이전트 워크플로로 통합. 샷별 카메라·구도·액션 재생성.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;2026-09-18 BusinessWire/MarketScreener. 미투 MVLAND 2.0이 Studio Mode 공개. 음악 분석→스토리보드→샷 생성→멀티트랙 편집을 에이전트 워크플로로 통합. 샷별 카메라·구도·액션 재생성.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI Content Gen&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href="https://uk.marketscreener.com/news/mvland-2-0-launches-a-studio-modea-bringing-end-to-end-control-as-ai-video-moves-from-generation-ce785adadc81ff24"&gt;MarketScreener/BusinessWire&lt;/a&gt;(2026-09-18)에 따르면, 미투(&lt;strong&gt;Meitu&lt;/strong&gt;)의 AI 뮤직비디오 플랫폼 &lt;strong&gt;MVLAND&lt;/strong&gt;가 &lt;strong&gt;2.0 Studio Mode&lt;/strong&gt;를 냈다. 프롬프트 한 방에 끝나는 클립이 아니라 &lt;strong&gt;음악 이해 → 연출 → 샷 → 후반&lt;/strong&gt;을 한 파이프로 묶는다.
-&lt;/p&gt;
-&lt;h2&gt;무엇이 바뀌었나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Music-first&lt;/strong&gt;: 리듬·무드·장르·구조를 분석해 스토리·샷을 맞춘다. “랜덤 영상 + BGM”이 아니라 비주얼 컷이 음악 감정에 붙도록 설계했다고 밝혔다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;멀티 캐릭터&lt;/strong&gt;: 주연·조연·상호작용을 지정. 스타일 라이브러리로 흔한 AI 미감을 피하려는 포지션.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;샷 단위 제어&lt;/strong&gt;: 장면마다 카메라 움직임·구도·캐릭터 액션을 &lt;strong&gt;따로 수정·재생성&lt;/strong&gt;. 블라인드박스식 1회 생성에서 이탈.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;멀티트랙 편집기&lt;/strong&gt;: AI 컷과 원본 소재를 같은 타임라인에서 이어 붙여 외부 NLE 없이도 마감 가능하다고 주장.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-어제·그저께 Kling·Pika·Premiere 생성 미디어 흐름과 같다. 경쟁축이 &lt;strong&gt;초당 생성 속도&lt;/strong&gt;에서 &lt;strong&gt;디렉팅·수정 루프&lt;/strong&gt;로 이동 중. 뮤지션·숏폼 팀이 “아이디어 → 배포 가능한 MV” 거리를 줄이려는 제품이다. 실제 립싱크·캐릭터 일관성은 데모·유저 클립으로 검증할 일.
-&lt;/p&gt;
-&lt;h2&gt;기억할 것&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://uk.marketscreener.com/news/mvland-2-0-launches-a-studio-modea-bringing-end-to-end-control-as-ai-video-moves-from-generation-ce785adadc81ff24"&gt;보도&lt;/a&gt; · &lt;a href="https://www.businesswire.com/news/home/20260918263125/en/"&gt;BusinessWire 원문&lt;/a&gt; · MVLAND / Meitu&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>제논 Hunmin VLM 397B — 화면을 보고 클릭하는 오픈 CUA, ScreenSpot Pro 2위</title>
-<id>https://codemwk.github.io/aipaper-newspaper/xenon-hunmin-vlm-397b-181ac166cc84</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/xenon-hunmin-vlm-397b-181ac166cc84/" rel="alternate" type="text/html"/>
-<updated>2026-09-18T22:20:00Z</updated>
-<published>2026-09-18T22:20:00Z</published>
-<category term="AI Models"/>
-<summary>2026-09-18 서울경제. 제논이 Qwen 3.5-397B 기반 컴퓨터 조작 VLM Hunmin VLM 397B를 오픈소스 공개. ScreenSpot Pro 75.6(HF 2위), OSWorld +22.3p. B200 8장 후학습. OneAgent에 연동 예정.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;2026-09-18 서울경제. 제논이 Qwen 3.5-397B 기반 컴퓨터 조작 VLM Hunmin VLM 397B를 오픈소스 공개. ScreenSpot Pro 75.6(HF 2위), OSWorld +22.3p. B200 8장 후학습. OneAgent에 연동 예정.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI Models&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href="https://en.sedaily.com/technology/2026/09/18/xenon-open-sources-computer-operating-ai-model-hunmin-vlm"&gt;서울경제(영문)&lt;/a&gt;(2026-09-18)에 따르면, 제논(&lt;strong&gt;Xenon&lt;/strong&gt;)은 화면 요소를 찾아 &lt;strong&gt;실제 PC를 조작&lt;/strong&gt;하는 &lt;strong&gt;Hunmin VLM 397B&lt;/strong&gt;를 오픈소스 공개했다. 베이스는 &lt;strong&gt;Qwen 3.5-397B&lt;/strong&gt;.
-&lt;/p&gt;
-&lt;h2&gt;무엇이 바뀌었나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;질문 답변을 넘어 버튼·입력란을 식별하고 클릭·입력을 수행한다. 전작 Hunmin 32B·VLM 235B 계열의 &lt;strong&gt;한국어 성능 유지 + CUA 강화&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;벤치(회사·보도): ScreenSpot Pro &lt;strong&gt;75.6&lt;/strong&gt; → Hugging Face 스크린 인식 보드 &lt;strong&gt;2위&lt;/strong&gt;, 한국 개발사로는 유일하다고 주장(보드 등재 48개 기준). OSWorld(Linux 360태스크) &lt;strong&gt;70.5&lt;/strong&gt;(베이스 대비 &lt;strong&gt;+22.3&lt;/strong&gt;), WindowsAgentArena도 베이스 대비 &lt;strong&gt;+9.1&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;학습 효율: low-rank 전이 + FP8 SFT/RL을 &lt;strong&gt;Nvidia B200 8장&lt;/strong&gt;으로 후학습했다고 밝혔다. 원본·FP8(용량 약 절반)·평가 조건도 함께 공개 예정.&lt;/li&gt;
-&lt;li&gt;제품: 235B의 브라우저·PC 조작을 &lt;strong&gt;OneAgent&lt;/strong&gt;에 이미 붙였고, 397B로 기업 업무 범위를 넓힌다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-컴퓨터 사용 에이전트(CUA)가 클로즈드 프론티어만의 영역이 아님을 보여 주는 &lt;strong&gt;국내 오픈웨이트&lt;/strong&gt; 신호다. Chrome DevTools MCP·Playwright MCP가 “브라우저 도구”라면, Hunmin은 &lt;strong&gt;픽셀·접근성 트리 수준의 조작 모델&lt;/strong&gt; 쪽이다. 벤치 숫자는 과제 세트에 민감하니, 자체 OSWorld 재현이 다음 과제.
-&lt;/p&gt;
-&lt;h2&gt;기억할 것&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://en.sedaily.com/technology/2026/09/18/xenon-open-sources-computer-operating-ai-model-hunmin-vlm"&gt;서울경제 보도&lt;/a&gt; · Xenon / Hunmin VLM 397B&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Union Alpha = Pareto 26.9 — 스텔스 1일 무료 뒤 유료 전환, Astra급 벤치 주장</title>
-<id>https://codemwk.github.io/aipaper-newspaper/union-alpha-pareto-269-stealth-5e8101be2310</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/union-alpha-pareto-269-stealth-5e8101be2310/" rel="alternate" type="text/html"/>
-<updated>2026-09-18T22:15:00Z</updated>
-<published>2026-09-18T22:15:00Z</published>
-<category term="AI Models"/>
-<summary>2026-09-16~18. OpenRouter 스텔스 Union Alpha가 unbiased.ai Pareto 26.9로 신원 공개. 262K 컨텍스트, GPT-6 Astra·Claude Fable 5.1급 벤치 주장. 무료 주간 예정이 수요 폭주로 1일 만에 종료.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;2026-09-16~18. OpenRouter 스텔스 Union Alpha가 unbiased.ai Pareto 26.9로 신원 공개. 262K 컨텍스트, GPT-6 Astra·Claude Fable 5.1급 벤치 주장. 무료 주간 예정이 수요 폭주로 1일 만에 종료.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI Models&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href="https://gigazine.net/gsc_news/en/20260918-union-alpha/"&gt;GIGAZINE&lt;/a&gt;(2026-09-18) 정리에 따르면, OpenRouter에 &lt;strong&gt;2026-09-16&lt;/strong&gt; 올라온 스텔스 모델 &lt;strong&gt;Union Alpha&lt;/strong&gt;는 하루 만에 &lt;strong&gt;unbiased.ai의 Pareto 26.9&lt;/strong&gt;로 밝혀졌다. 연구·코딩·에이전트 워크플로용 멀티모달, &lt;strong&gt;262,144&lt;/strong&gt; 토큰 컨텍스트.
-&lt;/p&gt;
-&lt;h2&gt;무엇이 바뀌었나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;벤치: GPT-6 &lt;strong&gt;Astra&lt;/strong&gt;·Claude &lt;strong&gt;Fable 5.1&lt;/strong&gt;과 비슷한 수준이라고 소개됐다(보드·자체 주장은 교차검증이 필요).&lt;/li&gt;
-&lt;li&gt;트래픽: 무료 체험을 &lt;strong&gt;1주일&lt;/strong&gt; 예정이었으나, “분당 수십억 토큰”급 수요로 속도가 붕괴 → AWS로 용량을 늘려도 부족해 &lt;strong&gt;조기 유료화&lt;/strong&gt;. 계정은 “실제 반응·스케일 이슈를 보고 &lt;strong&gt;10/10 공식 출시&lt;/strong&gt;에 반영하려 익명 공개했다”고 밝혔다.&lt;/li&gt;
-&lt;li&gt;유료 요금(보도 수치): 입력 &lt;strong&gt;$2.50&lt;/strong&gt; / 캐시 &lt;strong&gt;$0.25&lt;/strong&gt; / 출력 &lt;strong&gt;$7.50&lt;/strong&gt; per million tokens — “Astra 정가의 1/4 미만”이라고 Union Alpha 측. Cloudflare AI에도 stealth 경로로 노출.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-스텔스 드롭 → 신원 공개 → 용량 한계 → 가격 공개는 2026년 오픈라우터 생태계의 반복 패턴이다. 에이전트 워크로드를 돌리는 사람은 &lt;strong&gt;벤치 숫자보다 분당 토큰·대기열·캐시 가격&lt;/strong&gt;을 먼저 본다. 10/10 공식판이 안정성 테스트판이다.
-&lt;/p&gt;
-&lt;h2&gt;기억할 것&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://gigazine.net/gsc_news/en/20260918-union-alpha/"&gt;GIGAZINE&lt;/a&gt; · &lt;a href="https://openrouter.ai/stealth/union-alpha"&gt;OpenRouter Union Alpha&lt;/a&gt; · &lt;a href="https://developers.cloudflare.com/ai/models/stealth/union-alpha/"&gt;Cloudflare stealth 문서&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>TypeSafe Jev — LLM이 아닌 ‘보정된 결정’ 모델, 에이전트 감시·라우팅용</title>
-<id>https://codemwk.github.io/aipaper-newspaper/typesafe-jev-calibrated-decisions-d6762bfd022d</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/typesafe-jev-calibrated-decisions-d6762bfd022d/" rel="alternate" type="text/html"/>
-<updated>2026-09-18T22:10:00Z</updated>
-<published>2026-09-18T22:10:00Z</published>
-<category term="AI Models"/>
-<summary>2026-09-18 TechCrunch. 전 OpenAI RLHF 연구자 Diogo Almeida의 TypeSafe AI가 Jev 공개. 텍스트 대신 확률·캘리브레이션 출력. Vercel 등에서 안전 분류기가 Luna 대비 5~18배 빨라졌다는 현장 반응.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;2026-09-18 TechCrunch. 전 OpenAI RLHF 연구자 Diogo Almeida의 TypeSafe AI가 Jev 공개. 텍스트 대신 확률·캘리브레이션 출력. Vercel 등에서 안전 분류기가 Luna 대비 5~18배 빨라졌다는 현장 반응.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI Models&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href="https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/"&gt;TechCrunch&lt;/a&gt;(2026-09-18)에 따르면, ChatGPT·RLHF에 관여했던 &lt;strong&gt;Diogo Almeida&lt;/strong&gt;가 설립한 &lt;strong&gt;TypeSafe AI&lt;/strong&gt;가 &lt;strong&gt;Jev&lt;/strong&gt;를 공개했다. LLM이 아니라 &lt;strong&gt;미리 정의한 결정 공간에 대한 확률(캘리브레이션된 결정)&lt;/strong&gt;을 내놓는 트랜스포머다.
-&lt;/p&gt;
-&lt;h2&gt;무엇이 바뀌었나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;출력에 자연어가 없다 → &lt;strong&gt;환각 토큰이 원칙적으로 없다&lt;/strong&gt;. 사용자는 “이 클래스일 확률”을 받고, 임계값으로 자동화 여부를 정한다.&lt;/li&gt;
-&lt;li&gt;가격·속도 포지션: 출력 토큰 무료, 입력은 &lt;strong&gt;십억 단위&lt;/strong&gt; 미터링이라고 회사는 설명한다. API 수요로 일시 서빙 장애가 났을 정도로 개발자 관심이 컸다.&lt;/li&gt;
-&lt;li&gt;현장 예: Vercel 엔지니어가 ChatGPT &lt;strong&gt;Luna 5.6&lt;/strong&gt; 안전 분류기를 Jev로 바꿨더니 &lt;strong&gt;5~18배 빠르고&lt;/strong&gt; 정확도도 올랐다고 TechCrunch에 말했다. Bryo AI는 Gemini 대비 정확도는 비슷·비용은 10~20배 낮고 &lt;strong&gt;신뢰 확률이 손에 잡힌다&lt;/strong&gt;고 평가.&lt;/li&gt;
-&lt;li&gt;쓰임: LLM &lt;strong&gt;대체&lt;/strong&gt;(분류·게이트)뿐 아니라 &lt;strong&gt;에이전트 트레이스 감시·jailbreak 차단·모델 라우팅&lt;/strong&gt; 보조. Armin Ronacher(Earendil/Pi)는 “50%면 동전, 95%면 진행” 식으로 사용자에게 결정을 넘긴다고 요약했다.&lt;/li&gt;
-&lt;li&gt;학습: 합성 데이터 + 회사가 부르는 &lt;strong&gt;RL from calibrated decisions&lt;/strong&gt;. 아키텍처는 비공개(오픈웨이트 LLM 위라는 외부 추정만).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-frontier 채팅 모델 경쟁과 다른 축이다. “말 잘하는 지능”이 아니라 &lt;strong&gt;소프트웨어 자동화에 넣을 싸구려·빠른 판단기&lt;/strong&gt;. 에이전트 스택에서 MCP·툴콜 앞단에 붙이면, 비싼 LLM을 매번 돌리지 않아도 된다.
-&lt;/p&gt;
-&lt;h2&gt;기억할 것&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/"&gt;TechCrunch 기사&lt;/a&gt; · TypeSafe AI / Jev&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>MT5 네이티브 MCP — Switch Markets 가이드가 정리한 ‘에이전트↔터미널’ 실무</title>
-<id>https://codemwk.github.io/aipaper-newspaper/mt5-mcp-switch-markets-guide-39beaebe75df</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/mt5-mcp-switch-markets-guide-39beaebe75df/" rel="alternate" type="text/html"/>
-<updated>2026-09-18T22:05:00Z</updated>
-<published>2026-09-18T22:05:00Z</published>
-<category term="AI Trading"/>
-<summary>2026-09-03 갱신. Switch Markets가 MT5 Build 6060+ 네이티브 MCP·AI Assistant 연결 절차를 장문 가이드로 공개. Codex/Claude Code URL·토큰, 써드파티 Python MCP, 라이브 주의사항. Build 6180 테스터 QA와 한 축.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;2026-09-03 갱신. Switch Markets가 MT5 Build 6060+ 네이티브 MCP·AI Assistant 연결 절차를 장문 가이드로 공개. Codex/Claude Code URL·토큰, 써드파티 Python MCP, 라이브 주의사항. Build 6180 테스터 QA와 한 축.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI Trading&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href="https://www.switchmarkets.com/learn/mt5-mcp-server"&gt;Switch Markets&lt;/a&gt;(2026-09-03 갱신)는 MetaQuotes가 &lt;strong&gt;2026-07-23 Build 6060&lt;/strong&gt;에서 넣은 &lt;strong&gt;네이티브 MCP·에이전틱 AI&lt;/strong&gt;를, 브로커 고객 관점에서 &lt;strong&gt;설정·연결·한계&lt;/strong&gt;까지 풀어 쓴 실무 가이드다. 본지가 9/17에 다룬 &lt;a href="https://codemwk.github.io/aipaper-newspaper/"&gt;Build 6180 테스터 QA&lt;/a&gt;와 같은 제품 라인의 &lt;strong&gt;연결 매뉴얼&lt;/strong&gt;에 가깝다.
-&lt;/p&gt;
-&lt;h2&gt;무엇이 바뀌었나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;MT5는 이제 &lt;strong&gt;시세·계좌·개발·(허용 시) 거래&lt;/strong&gt;를 MCP로 외부 에이전트(OpenAI Codex, Claude Code 등)에 노출한다. 예전 비공식 브리지만 쓰던 시절과 다르다.&lt;/li&gt;
-&lt;li&gt;가이드 요지: 터미널 &lt;strong&gt;Tools → Options → MCP&lt;/strong&gt;에서 localhost URL·bearer 토큰을 복사해 클라이언트에 넣고, 데모·읽기 위주로 먼저 검증한다. MQL5.community 로그인 시 &lt;strong&gt;MQL5 Lite&lt;/strong&gt;가 기본 AI 제공자로 붙는다고 MetaQuotes 릴리즈도 설명한다.&lt;/li&gt;
-&lt;li&gt;써드파티 &lt;strong&gt;Python MT5 MCP&lt;/strong&gt;(예: vincentwongso/mt5-trading-mcp 계열)는 커스텀·도커·승인 프리뷰가 필요할 때 여전히 선택지. 라이브 &lt;code&gt;place_order&lt;/code&gt;는 &lt;strong&gt;사람 확정 없이는 금지&lt;/strong&gt;가 공통 하드 룰로 강조된다.&lt;/li&gt;
-&lt;li&gt;Build &lt;strong&gt;6180&lt;/strong&gt;(9/3 릴리즈)은 Strategy Tester 리포트·최적화·로그를 어시스턴트가 직접 다루는 쪽으로 확장됐다 — MCP “연결”과 “테스터 QA”가 한 제품 스택.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-어제 Leverate·TradingView MCP·cTrader 물결과 나란히 두면, &lt;strong&gt;터미널 벤더가 MCP를 1급 시민으로 만든&lt;/strong&gt; 쪽이 MT5다. 트레이딩 MCP를 고를 때 질문 순서는 (1) 시세만인가 체결까지인가 (2) 사람 승인 UX (3) 로그·서브계정 격리. Switch 가이드는 그 체크리스트를 브로커 언어로 적어 둔 문서다.
-&lt;/p&gt;
-&lt;h2&gt;기억할 것&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.switchmarkets.com/learn/mt5-mcp-server"&gt;Switch Markets MT5 MCP 가이드&lt;/a&gt; · &lt;a href="https://www.metatrader5.com/en/releasenotes/terminal/2447"&gt;Build 6060 릴리즈&lt;/a&gt; · &lt;a href="https://www.metatrader5.com/en/releasenotes/terminal/2464"&gt;Build 6180&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
 </entry>
 </feed>
