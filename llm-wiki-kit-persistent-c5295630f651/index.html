@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>llm-wiki-kit — PDF·URL·유튜브를 넣어 ‘세션을 넘는’ Karpathy LLM Wiki — AiPaper 뉴스</title>
+  <meta name="description" content="iamsashank09/llm-wiki-kit. Karpathy LLM Wiki 패턴의 MCP 키트. pip install → init → serve. PDF·URL·YouTube 수집, [[wikilink]] 자동, SQLite FTS5, wiki_lint·wiki_graph. 마크다운 폴더라 Obsidian과 공존. 어제 obsidian-llm-wiki(6인 페르소나)와 다른 ‘키트형’ 각도."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · Second Brain · 2026-09-23 07:06 KST</div>
+    <h1>llm-wiki-kit — PDF·URL·유튜브를 넣어 ‘세션을 넘는’ Karpathy LLM Wiki</h1>
+  </header>
+  <article>
+<p><em>iamsashank09/llm-wiki-kit. Karpathy LLM Wiki 패턴의 MCP 키트. pip install → init → serve. PDF·URL·YouTube 수집, [[wikilink]] 자동, SQLite FTS5, wiki_lint·wiki_graph. 마크다운 폴더라 Obsidian과 공존. 어제 obsidian-llm-wiki(6인 페르소나)와 다른 ‘키트형’ 각도.</em></p>
+<p><strong>분류:</strong> Second Brain</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://github.com/iamsashank09/llm-wiki-kit">llm-wiki-kit</a>은 “매 채팅마다 논문을 다시 설명하는” 문제를 겨냥한다. 에이전트가 <strong>위키를 유지</strong>하고, PDF·URL·YouTube를 넣으면 교차 참조가 쌓인다. <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">Karpathy LLM Wiki gist</a> 패턴을 MCP 서버로 감싼 키트다.
+</p>
+<h2>어떻게 쓰나(개념만)</h2>
+<ul>
+<li><code>pip install &quot;llm-wiki-kit[all] @ git+https://github.com/iamsashank09/llm-wiki-kit.git&quot;</code></li>
+<li><code>llm-wiki-kit init --agent claude</code>로 위키 루트 생성</li>
+<li>Claude/Codex/Cursor에 <code>llm-wiki-kit serve --root …</code> MCP 등록</li>
+<li>“이 PDF ingest” → 페이지·인덱스·링크 생성. <code>wiki_lint</code>로 깨진 링크·고아 페이지 점검, <code>wiki_graph</code>로 HTML 지도.</li>
+</ul>
+<h2>어제 기사와 다른 점</h2>
+<ul>
+<li><strong>9/22 obsidian-llm-wiki</strong>: 볼트를 <strong>6인 페르소나 MCP 팀</strong>으로 컴파일하는 플러그인/헤드리스 스택.</li>
+<li><strong>오늘 llm-wiki-kit</strong>: <strong>폴더형 위키 + MCP serve</strong>에 초점. 소스는 그냥 마크다운이라 Obsidian·VS Code에서 그대로 연다. 스타는 작지만(수십 대) 패턴이 명확하다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+세컨드 브레인 전쟁에서 “플러그인 하나”가 아니라 <strong>위키를 누가 유지하느냐</strong>가 쟁점이다. 에이전트가 책무(ingest·lint·그래프)를 지고 사람은 소스만 고르는 분업이 AiPaper·대시보드 메모리 모듈과 맞닿아 있다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://github.com/iamsashank09/llm-wiki-kit">github.com/iamsashank09/llm-wiki-kit</a> · Karpathy LLM Wiki 패턴</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

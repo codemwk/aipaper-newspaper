@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>TradingView Desktop MCP — 차트 조작·Pine·시그널을 MT5로 잇는 커뮤니티 스택 — AiPaper 뉴스</title>
+  <meta name="description" content="Unjoselo/tradingview-desktop-mcp. CDP로 TradingView Desktop 제어(심볼·지표·Pine·Strategy Tester). 별도 mt5_server + signal_bridge(종가 봉만·데모 기본). Windows. 네이티브 MT5 MCP(6060)·브로커 MCP와 다른 ‘차트앱 원격조종’ 각도. 소형 레포·실험용."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI Trading · 2026-09-23 07:09 KST</div>
+    <h1>TradingView Desktop MCP — 차트 조작·Pine·시그널을 MT5로 잇는 커뮤니티 스택</h1>
+  </header>
+  <article>
+<p><em>Unjoselo/tradingview-desktop-mcp. CDP로 TradingView Desktop 제어(심볼·지표·Pine·Strategy Tester). 별도 mt5_server + signal_bridge(종가 봉만·데모 기본). Windows. 네이티브 MT5 MCP(6060)·브로커 MCP와 다른 ‘차트앱 원격조종’ 각도. 소형 레포·실험용.</em></p>
+<p><strong>분류:</strong> AI Trading</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://github.com/Unjoselo/tradingview-desktop-mcp">tradingview-desktop-mcp</a>는 <strong>이미 켜 둔 TradingView Desktop</strong>을 Chrome DevTools Protocol로 붙잡아, Claude·Codex·Cursor가 차트·지표·Pine·Strategy Tester를 조작하게 한다. 옵션으로 <strong>MT5 MCP</strong>와 <strong>인디케이터 시그널→MT5 주문 브리지</strong>가 있다.
+</p>
+<h2>구조(개념)</h2>
+<ul>
+<li><strong>TV 서버</strong>: <code>tv_set_symbol</code>·<code>tv_add_study</code>·<code>tv_pine_*</code>·<code>tv_strategy_report</code>·스크린샷 등. 계정 API/스크래핑이 아니라 <strong>로컬 Electron 앱 세션</strong>.</li>
+<li><strong>MT5 서버</strong>: 잔고·캔들·포지션·시장가. <strong>데모만 기본</strong>, 실계좌는 <code>MT5_ALLOW_REAL=1</code>을 사용자가 켠다.</li>
+<li><strong>signal_bridge</strong>: 채팅 밖 데몬. 차트 BUY/SELL 셰이프를 읽어 <strong>종가 봉만</strong> 스톱앤리버스. <code>--once</code>/<code>--test</code> 후 가동. <code>bridge_trades.csv</code> 로그.</li>
+<li><strong>한계</strong>: Windows 전용. CDP 포트=앱 세션 전체 권한(localhost 바인딩). 비공식 내부 API라 앱 업데이트에 깨질 수 있음. 금융 조언 아님.</li>
+</ul>
+<h2>어제·최근 기사와 결</h2>
+<ul>
+<li>9/22 <strong>MT5 Build 6060 네이티브 MCP</strong>, <strong>ariadng 커뮤니티 MCP</strong>, 9/21 <strong>consent/audit</strong> — “터미널 안 에이전트”.</li>
+<li>오늘은 <strong>차트 워크벤치(TradingView) ↔ 체결(MT5)</strong> 를 에이전트·브리지로 잇는 <strong>데스크톱 원격조종</strong> 각도. 스타는 작아도 구조가 선명하다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+자동매매 관심이 “한 MCP로 주문”에서 <strong>리서치 UI와 실행 UI를 누가 붙이느냐</strong>로 넘어간다. 가드레일(데모 기본·종가 봉·매직넘버)을 README에 박아 둔 점이 실무 체크리스트다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://github.com/Unjoselo/tradingview-desktop-mcp">github.com/Unjoselo/tradingview-desktop-mcp</a> · MT5 네이티브 MCP 릴리즈노트와 병행 비교</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

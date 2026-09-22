@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>fal MCP — 대화 한 턴으로 이미지·비디오·TTS 1,000+ 모델을 호출 — AiPaper 뉴스</title>
+  <meta name="description" content="fal.ai 호스팅 MCP(mcp.fal.ai). search_models·run_model·submit_job 등 9툴. Claude/Cursor에 Bearer 키만. SDK 없이 생성·큐·가격 조회. MCP 서버 자체는 무료, 모델 실행만 과금. 어제 H3 Max ‘속도 모델’과 다른 ‘카탈로그 접속’ 각도."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 콘텐츠 · 2026-09-23 07:07 KST</div>
+    <h1>fal MCP — 대화 한 턴으로 이미지·비디오·TTS 1,000+ 모델을 호출</h1>
+  </header>
+  <article>
+<p><em>fal.ai 호스팅 MCP(mcp.fal.ai). search_models·run_model·submit_job 등 9툴. Claude/Cursor에 Bearer 키만. SDK 없이 생성·큐·가격 조회. MCP 서버 자체는 무료, 모델 실행만 과금. 어제 H3 Max ‘속도 모델’과 다른 ‘카탈로그 접속’ 각도.</em></p>
+<p><strong>분류:</strong> AI 콘텐츠</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://blog.fal.ai/connect-your-ai-to-1-000-models-with-the-fal-mcp-server/">fal MCP Server</a>는 AI 어시스턴트가 <strong>fal 카탈로그 1,000+ 모델</strong>을 검색·실행·체인하게 한다. “코드를 짜서 fal을 호출”이 아니라 <strong>대화가 곧 fal 호출</strong>이다. 엔드포인트: <code>https://mcp.fal.ai/mcp</code>.
+</p>
+<h2>무엇이 다른가</h2>
+<ul>
+<li><strong>9툴</strong>: 발견(<code>search_models</code>, <code>get_model_schema</code>, <code>get_pricing</code>, <code>search_docs</code>) · 실행(<code>run_model</code>, <code>submit_job</code>, <code>check_job</code>) · 유틸(<code>upload_file</code>, <code>recommend_model</code>).</li>
+<li><strong>세팅</strong>: Claude Code <code>claude mcp add --transport http fal-ai https://mcp.fal.ai/mcp --header &quot;Authorization: Bearer $FAL_KEY&quot;</code>. Cursor/Desktop도 URL+헤더 JSON.</li>
+<li><strong>과금</strong>: MCP 서버는 무료. <strong>모델 실행만</strong> 표준 fal 요금. 키는 요청마다 헤더로만 전달·저장하지 않는다고 명시.</li>
+<li><strong>어제와 구분</strong>: 9/22 <a href="https://fal.ai/learn/devs/introducing-h3-max-by-fal">fal H3 Max</a>는 <strong>특정 비디오 모델의 속도·티어 가격</strong>. 오늘은 <strong>카탈로그 전체를 에이전트 도구로 여는 접속층</strong>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+콘텐츠 파이프가 “모델 고르기 → SDK → 큐 폴링”에서 <strong>한 문장 오케스트레이션</strong>으로 내려온다. 태그라인·제품컷·보이스오버를 한 대화에서 체인하는 예시가 공식 블로그에 있다. 퍼스널 미디어·광고 A/B에 바로 붙는 인프라다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://blog.fal.ai/connect-your-ai-to-1-000-models-with-the-fal-mcp-server/">fal 블로그</a> · <a href="https://fal.ai/mcp">fal.ai/mcp</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
