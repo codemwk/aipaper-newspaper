@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GitHub Hot: Google AX — 에이전트 워크로드용 ‘K8s 감각’ 오케스트레이터 — AiPaper 뉴스</title>
+  <meta name="description" content="google/ax(~10.3k★). Declarative Task/Workspace/Gateway/Model. Agent Substrate 위 샌드박스·네트워크 펜스. ax apply / watch / ssh. 안정화 전 breaking change 경고."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub Hot · 2026-09-25 07:10 KST</div>
+    <h1>GitHub Hot: Google AX — 에이전트 워크로드용 ‘K8s 감각’ 오케스트레이터</h1>
+  </header>
+  <article>
+<p><em>google/ax(~10.3k★). Declarative Task/Workspace/Gateway/Model. Agent Substrate 위 샌드박스·네트워크 펜스. ax apply / watch / ssh. 안정화 전 breaking change 경고.</em></p>
+<p><strong>분류:</strong> GitHub Hot</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://github.com/google/ax">google/ax</a>는 Google의 <strong>오픈 에이전틱 오케스트레이션 런타임</strong>이다. YAML로 Task·Workspace를 선언하면 샌드박스·워크스페이스 배선·네트워크 펜스를 맡긴다. Kubernetes를 써 본 사람에게 <code>ax apply</code>가 익숙하게 느껴지도록 설계.
+</p>
+<h2>핵심 프리미티브</h2>
+<ul>
+<li><strong>Task</strong> — 격리 샌드박스에서 에이전트 실행(CPU/메모리 한도)</li>
+<li><strong>Workspace</strong> — Git 레포·MCP·스킬 패키지를 미리 배선해 에이전트가 warm start</li>
+<li><strong>Gateway</strong> — 아웃바운드 호스트 allowlist</li>
+<li><strong>Model</strong> — 플랫폼 LLM·시크릿(K8s secret) 설정</li>
+<li>운영: <code>ax suspend</code>/<code>resume</code>, <code>ax ssh</code>로 실행 중 에이전트 관찰</li>
+</ul>
+<p>
+&gt; README 경고: 코어 개념이 아직 다듬어지는 중이며 <strong>안정 릴리즈 전 major breaking change</strong> 가능.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+에이전트가 “노트북에서 한 세션”을 넘어 <strong>클러스터 워크로드</strong>가 되면, 마이크로서비스도 배치잡도 아닌 제3의 런타임이 필요하다. AX는 그 레이어를 공개 스펙으로 던진 실험.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://github.com/google/ax">GitHub</a> · <a href="https://agentexecutor.io">agentexecutor.io</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

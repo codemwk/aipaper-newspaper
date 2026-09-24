@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GitHub Hot: Cloudflare security-audit-skill — 코딩 에이전트를 ‘보안 감사관’으로 — AiPaper 뉴스</title>
+  <meta name="description" content="cloudflare/security-audit-skill(~21.3k★). 정찰→커버리지 헌팅→검증→구조화 findings→독립 재검증→리포트 6단계. Cloudflare 취약점 디스커버리 하네스의 단일 레포 출발점."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub Hot · 2026-09-25 07:07 KST</div>
+    <h1>GitHub Hot: Cloudflare security-audit-skill — 코딩 에이전트를 ‘보안 감사관’으로</h1>
+  </header>
+  <article>
+<p><em>cloudflare/security-audit-skill(~21.3k★). 정찰→커버리지 헌팅→검증→구조화 findings→독립 재검증→리포트 6단계. Cloudflare 취약점 디스커버리 하네스의 단일 레포 출발점.</em></p>
+<p><strong>분류:</strong> GitHub Hot</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a>은 코딩 에이전트용 <strong>보안 감사 스킬</strong>이다. “취약점 찾아줘” 한 마디를 <strong>재현 가능한 다단계 워크플로</strong>로 바꾼다(~21.3k★, 2026-09-25 기준).
+</p>
+<h2>어떻게 동작하나</h2>
+<ul>
+<li><strong>정찰</strong> — 아키텍처·신뢰 경계·입력면 → <code>architecture.md</code>, <code>coverage-ledger.json</code></li>
+<li><strong>커버리지 주도 헌팅</strong> — 격리된 헌터 + 커버리지 크리틱</li>
+<li><strong>후보 검증</strong> — 새 검증자가 후보를 반증 시도</li>
+<li><strong>구조화 출력</strong> — <code>confirmed</code> / <code>needs_validation</code> / <code>rejected</code> → <code>findings.json</code> + 스키마 검증</li>
+<li><strong>독립 레코드 재검증</strong></li>
+<li><strong>타깃 중립 리포트</strong> — <code>REPORT.md</code> 등</li>
+</ul>
+<p>
+<code>npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit</code>로 설치. Cloudflare 블로그 <a href="https://blog.cloudflare.com/build-your-own-vulnerability-harness">Build your own vulnerability harness</a>에서 설명한 하네스의 <strong>단일 레포 시드</strong>.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+에이전트 스킬이 “예쁜 프롬프트 모음”을 넘어 <strong>검증기·스키마·커버리지 장부</strong>를 동반하는 쪽으로 성숙한다. 보안을 ‘한 번 물어보기’가 아니라 <strong>감사 프로세스 제품</strong>으로 보는 신호.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://github.com/cloudflare/security-audit-skill">GitHub</a> · <a href="https://blog.cloudflare.com/build-your-own-vulnerability-harness">Cloudflare 블로그</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
