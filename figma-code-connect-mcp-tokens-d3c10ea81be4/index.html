@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Design: Figma Code Connect — MCP에서 토큰 29.5%↓, Coinbase도 같은 패턴 — AiPaper 뉴스</title>
+  <meta name="description" content="Figma 공식 평가: Code Connect+MCP 시 중앙값 토큰 -29.5%, 작업시간 -19.6%, 코드품질 Likert +1. Coinbase CDS도 컴포넌트 날조 감소. 디자인→코드에 ‘프로덕션 import’를 넣는 구조."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · Design/UI·UX · 2026-09-27 07:03 KST</div>
+    <h1>Design: Figma Code Connect — MCP에서 토큰 29.5%↓, Coinbase도 같은 패턴</h1>
+  </header>
+  <article>
+<p><em>Figma 공식 평가: Code Connect+MCP 시 중앙값 토큰 -29.5%, 작업시간 -19.6%, 코드품질 Likert +1. Coinbase CDS도 컴포넌트 날조 감소. 디자인→코드에 ‘프로덕션 import’를 넣는 구조.</em></p>
+<p><strong>분류:</strong> Design/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://www.figma.com/blog/the-benefits-of-code-connect-in-mcp/">Figma 공식 블로그</a>에 따르면, 코딩 에이전트가 Figma MCP <code>get_design_context</code>를 쓸 때 <strong>Code Connect</strong>가 있으면 중앙값 기준 <strong>토큰 29.5% 감소·작업 시간 19.6% 단축·코드 품질 1점 상승</strong>(1–4 Likert). Coinbase Design Systems도 “progress bar로 stepper를 날조”하던 문제가 import 정확도로 줄었다고 전한다.
+</p>
+<h2>핵심 구조</h2>
+<ul>
+<li><strong>문제</strong>: MCP가 주는 React는 시각적으로 맞아도, 팀 DS 컴포넌트와 무관한 <strong>원시 div/CSS</strong>를 에이전트가 새로 짜는 경우가 많음.</li>
+<li><strong>해결</strong>: Code Connect 템플릿이 Figma 컴포넌트↔코드베이스 컴포넌트를 매핑하면, 응답에 <strong>실제 import·props</strong>가 들어감.</li>
+<li><strong>평가</strong>: 27개 케이스, Claude Sonnet 4.5·Opus 4.7. SDS(커버리지 높음) vs 내부 FPL(패치형) 비교 — <strong>커버리지가 높을수록</strong> 탐색 grep·토큰 낭비가 줄었다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+“예쁜 목업”이 아니라 <strong>커밋 가능한 코드</strong>가 목표일 때, DS 매핑이 곧 비용·품질 레버다. AiPaper·대시보드처럼 반복 UI가 많은 제품일수록 Code Connect 투자가 ROI로 바로 잡힌다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://www.figma.com/blog/the-benefits-of-code-connect-in-mcp/">Better Code, Fewer Tokens</a> · <a href="https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/">Code Connect + MCP docs</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
