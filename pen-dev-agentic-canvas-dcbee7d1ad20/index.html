@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Design: pen.dev — .pen 파일을 Git에 두고, MCP로 캔버스를 조작하는 에이전트 디자인 — AiPaper 뉴스</title>
+  <meta name="description" content="pen.dev(구 Pencil). .pen 문서를 Git에 저장. 데스크톱/IDE 호스트에 외부 MCP 클라이언트 연결. get_editor_state·execute·browser 등 툴. 문서 최종 갱신 2026-09-24."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · Design/UI·UX · 2026-09-28 07:03 KST</div>
+    <h1>Design: pen.dev — .pen 파일을 Git에 두고, MCP로 캔버스를 조작하는 에이전트 디자인</h1>
+  </header>
+  <article>
+<p><em>pen.dev(구 Pencil). .pen 문서를 Git에 저장. 데스크톱/IDE 호스트에 외부 MCP 클라이언트 연결. get_editor_state·execute·browser 등 툴. 문서 최종 갱신 2026-09-24.</em></p>
+<p><strong>분류:</strong> Design/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://docs.pen.dev/getting-started/ai-integration">pen.dev</a>는 <strong>에이전트가 직접 다루는 디자인 캔버스</strong>다. 디자인은 <code>.pen</code> 파일로 남고, Claude Code·Codex·ChatGPT 등 외부 클라이언트가 <strong>로컬 MCP</strong>로 연결해 <code>execute</code>로 편집한다. Figma MCP가 “디자인→코드”라면, pen.dev는 <strong>디자인 파일 자체가 에이전트 워크스페이스</strong>다.
+</p>
+<h2>어떻게 붙나</h2>
+<ul>
+<li><strong>통합 에이전트</strong>: 데스크톱 앱에서 <code>.pen</code>을 열고 모델·프롬프트로 변형.</li>
+<li><strong>외부 MCP</strong>: 앱/IDE 확장 실행 → Settings→MCP에서 클라이언트 활성화 → 클라이언트에 <code>pencil</code> 서버 표시 확인. Unix 소켓(macOS/Linux)·네임드 파이프(Windows).</li>
+<li><strong>공개 툴(문서)</strong>: <code>get_style</code>, <code>read_skill</code>, <code>get_app_state</code>, <code>execute</code>; 데스크톱 타겟 시 <code>browser</code>; <code>-enable_spawn_agents</code> 시 <code>spawn_agents</code>.</li>
+<li><strong>주의</strong>: 잘못된 문서를 고치지 않으려면 프롬프트에 <code>.pen</code> 전체 경로를 넣고 <code>get_app_state()</code>로 활성 문서를 확인하라(공식 트러블슈팅).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+디자인 산출물이 <strong>바이너리 SaaS에만</strong> 있으면 에이전트·CI가 끼어들기 어렵다. <code>.pen</code>+Git+MCP는 “디자인도 코드처럼 브랜치·리뷰·자동화”하는 실험이다. 대시보드·랜딩 UI를 에이전트 함대에 맡길 때, Figma·Framer와 <strong>병렬로 둘 후보</strong>다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://docs.pen.dev/getting-started/ai-integration">docs.pen.dev AI Integration</a> (Last updated Sep 24, 2026)</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

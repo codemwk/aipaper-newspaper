@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GitHub: Cloudflare vinext — Next.js API를 Vite로 다시 쓰고 Workers에 한 방에 — AiPaper 뉴스</title>
+  <meta name="description" content="cloudflare/vinext(MIT, ★~8.8k). Next.js API 표면을 Vite 플러그인으로 재구현. Workers 우선 배포. 블로그: 1인+AI·약 $1,100 토큰·1주. 벤치 빌드 ~4x, 클라이언트 gzip ~57%↓(방향성). Agent Skill로 마이그레이션."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub · 2026-09-28 07:07 KST</div>
+    <h1>GitHub: Cloudflare vinext — Next.js API를 Vite로 다시 쓰고 Workers에 한 방에</h1>
+  </header>
+  <article>
+<p><em>cloudflare/vinext(MIT, ★~8.8k). Next.js API 표면을 Vite 플러그인으로 재구현. Workers 우선 배포. 블로그: 1인+AI·약 $1,100 토큰·1주. 벤치 빌드 ~4x, 클라이언트 gzip ~57%↓(방향성). Agent Skill로 마이그레이션.</em></p>
+<p><strong>분류:</strong> GitHub</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://github.com/cloudflare/vinext">cloudflare/vinext</a>는 Next.js의 <strong>빌드 산출물을 개조(OpenNext)</strong>하는 대신, <strong>라우팅·RSC·Server Actions 등 API 표면을 Vite 위에 다시 구현</strong>한다. <a href="https://blog.cloudflare.com/vinext/">Cloudflare 블로그</a>는 엔지니어 1명+AI로 약 1주·토큰비 <strong>~$1,100</strong>에 프로토타입이 나왔다고 적는다. 쉬운 말로: “Next를 Cloudflare에 맞게 깎지 말고, Next처럼 쓰는 Vite 앱을 만든다.”
+</p>
+<h2>무엇이 되나 / 주의</h2>
+<ul>
+<li><strong>됨</strong>: App·Pages Router, RSC, Server Actions, 미들웨어, ISR, <code>next/link</code>·<code>image</code>·<code>navigation</code> 등. <code>vinext deploy</code>→Workers. <code>npx skills add cloudflare/vinext</code> 후 “migrate to vinext”.</li>
+<li><strong>실험적</strong>: README·블로그 모두 production 전면 대체가 아님을 명시. Cache Components/PPR·일부 네이티브 모듈 등 갭. <code>vinext check</code>로 호환성 점검.</li>
+<li><strong>벤치(블로그, 33라우트 픽스처)</strong>: Vite 8/Rolldown 빌드 평균이 Next 16 Turbopack 대비 <strong>~4.4× 빠름</strong>, 클라이언트 gzip <strong>~57% 작음</strong> — 방향성 수치, 서빙 성능 아님.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+에이전트 시대의 “프레임워크 재작성” 레퍼런스다. 스펙·테스트·기반 툴(Vite)이 있으면 <strong>중간 추상화 레이어를 AI가 채워</strong> 배포 락인을 흔든다. Next 앱을 Workers·엣지로 옮기려는 팀에게는 OpenNext 대안 후보. 스타 스냅샷(2026-09-28 <code>gh</code>): <strong>~8,858★</strong>.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://github.com/cloudflare/vinext">github.com/cloudflare/vinext</a> · <a href="https://blog.cloudflare.com/vinext/">blog.cloudflare.com/vinext</a> · <a href="https://vinext.dev">vinext.dev</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
