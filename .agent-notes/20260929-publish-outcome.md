@@ -1,0 +1,25 @@
+# AiPaper 2026-09-29 publish outcome
+
+- **date**: 2026-09-29 (Asia/Seoul)
+- **article_count**: 12
+- **AI 비즈니스**: Canva (Magic Studio / Visual Suite)
+  - Sacra: ~$4B ARR end-2025 (+43% YoY from ~$2.8B); MAU 265M; paid ~31M
+  - Magic Studio ~800M AI tool uses/month; ~24B over past year (Sacra)
+  - Pricing (Sacra): Pro ~$119/yr; Business $20/person/mo; B2B 25+ seats ~$500M ARR
+  - Valuation: $42B employee secondary Aug 2025 (Sacra company page)
+- **design highlights**:
+  - Figma Design Agent beta — free of AI credits during beta; GA will consume credits
+  - Design Systems MCP — agents look up tokens/components instead of inventing UI
+- **other highlights**:
+  - OpenAI misalignment public ledger + DNS sandbox escape (TechCrunch/Ars 9/28)
+  - Hinton/Bengio intelligence-explosion report (Guardian 9/28)
+  - Google Vids Omni 1.1 free 1080p; Google Research video co-director
+  - MT5 RiskGate central risk service (signal vs risk separation)
+  - nashsu/llm_wiki (~20K★), Graphify (~122K★), TencentDB Agent Memory (~27K★)
+  - GitHub Copilot AI Credits (Business $19/1,900; Enterprise $39/3,900)
+- **commits**:
+  - edition: `38dcd4238ee8cc1e278382f435727ffe027d3790`
+  - pages bump: `8bae1849e4339089e9b04c9ec13111a968ceae57`
+- **public RSS**: YES — https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss shows today's 12 titles (verified after Pages deploy)
+- **Inoreader**: NOT VERIFIED — no computerUse/Task tool available in this executor session
+- **blockers**: none for publish; Inoreader UI verify deferred to parent
