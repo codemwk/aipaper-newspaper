@@ -1,0 +1,26 @@
+# AiPaper 2026-09-30 publish outcome
+
+- **date**: 2026-09-30 (Asia/Seoul)
+- **article_count**: 12
+- **AI 비즈니스**: ElevenLabs (voice / conversational AI)
+  - CEO Mati Staniszewski at Nrth (Toronto): ARR ~$600M; enterprise share >55% (was ~40% a year earlier) — [Digital Market Reports 2026-09-26](https://digitalmarketreports.com/news/92639/elevenlabs-reaches-600-million-arr-as-enterprise-revenue-passes-55/)
+  - TNW RAISE (2026-07-08): Calacanis cited ~$600M run-rate (not disputed); valuation talks ~$22B — [TNW](https://thenextweb.com/news/elevenlabs-mati-staniszewski-raise-summit-revenue-ai-labs)
+  - Official pricing (verified 2026-09-30): Free $0 / Starter $6 / Creator $22 / Pro $99 / Scale $299 / Business $990 / Enterprise custom; shared monthly credits — [elevenlabs.io/pricing](https://elevenlabs.io/pricing)
+  - Customers cited in DMR: Klarna, Deutsche Telekom, Cisco, Adobe
+  - Note: 2026-09-28 topical covered Hosted MCP only; this is the standing monetization case
+- **design highlights**:
+  - Adobe → Gemini + Claude Acrobat/Express layer editor
+  - Penpot MCP server (agent read/write on canvas)
+  - OpenPencil AI-native open-source design editor (~8.7K★)
+- **other highlights**:
+  - OpenAI GPT-6.1 Sol (DevDay; ~1/5 Astra token price) + Dots always-on agents
+  - Claude Sonnet 5.5 (30%+ faster; up to ~30% lower cost/task)
+  - MT5 Build 6180 Strategy Tester for MCP agents; cTrader Agent Connect contrast
+  - kepano/obsidian-skills (~49K★); DeerFlow 2.0 (~83K★); n8n-mcp (~23K★)
+- **commits**:
+  - edition: `0fa0463913f817cb2c90eb15e4c5a4bf399037c9`
+  - pages bump: `a671f9126077f58f7b0bfdaa38aae9dd830e8220`
+- **public RSS**: YES — https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss lists all 12 today titles (verified via curl after Pages deploy; cache-bust `?v=20260930`)
+- **keep_days**: 3 OK — Seoul 2026-09-27 edition dropped; live window = 09-28 + 09-29 + 09-30 (36 items)
+- **Inoreader**: NOT VERIFIED — Task/computerUse tool unavailable in this executor session (same as 09-28/09-29). Parent should open Inoreader → 「AiPaper 뉴스 — 미니 신문」 → All articles; if Free-tier cache stuck, unsubscribe all AiPaper duplicates then Website-add once: `https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss?v=20260930`
+- **blockers**: none for publish; Inoreader UI verify deferred to parent
