@@ -1,0 +1,27 @@
+# AiPaper 2026-10-01 publish outcome
+
+- **date**: 2026-10-01 (Asia/Seoul)
+- **article_count**: 12
+- **AI 비즈니스**: Runway (AI video / world models)
+  - co-CEO Anastasis Germanidis via Bloomberg (2026-09-08): ARR **$200M** in September; doubled from ~$100M in April; sources expect **$350M** by end-2026 — [Bloomberg](https://www.bloomberg.com/news/articles/2026-09-08/ai-startup-runway-hits-200-million-in-annual-recurring-revenue)
+  - AI Weekly digest: Q2 ~$40M net-new ARR, NRR >300%, customers Dolce & Gabbana / Palo Alto Networks — [AI Weekly](https://aiweekly.co/alerts/runway-arr-hits-200m-as-revenue-doubles-in-five-months-targets-350m-by-year-end)
+  - Official pricing (verified 2026-10-01): Free (125 credits once) / Standard **$12**/mo annual / Pro **$28** / Max **$76**; credit-based gens — [runway.com/pricing](https://runway.com/pricing)
+  - Series E Feb 2026: **$315M** at **$5.3B** (General Atlantic) — [Crunchbase News](https://news.crunchbase.com/venture/gen-ai-video-startup-unicorn-runway-seriese-raise/)
+- **design highlights**:
+  - Figma generative plugins/shaders + MCP React export (2026-09-01 official blog)
+  - Framer Skills reusable agent instructions (2026-09-22)
+  - Figma Weave node for scoped generative workflows (2026-09-17 press)
+- **other highlights**:
+  - Gemini 4 Argon (2026-09-30; 1M output tokens; intro $2/$10 per 1M)
+  - Pika New Platform (25+ apps, multi-model routing)
+  - Kling 4.0 (~30s native; Flash for Black Gold; full Oct)
+  - NVIDIA SkillSpector (~18.8K★); EverMind Raven (~5.0K★)
+  - Karpathy LLM Wiki Obsidian plugin (~56K downloads)
+  - OpenProphet Alpaca trading agents; Mistral €3B Series D
+- **commits**:
+  - edition: `aa3aa81782c7c6aa06457e3d9132c8701c7e7826`
+  - pages bump: `073962bd7796646cb3b7bc853ab8debcf61da218`
+- **public RSS**: YES — https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss lists all 12 today titles (verified via curl after Pages deploy; cache-bust `?v=20261001`)
+- **keep_days**: 3 OK — live window = 09-29 + 09-30 + 10-01 (36 items); older HTML dirs cleaned by build_feed.py
+- **Inoreader**: NOT VERIFIED — parent should open Inoreader → 「AiPaper 뉴스 — 미니 신문」 → All articles; if Free-tier cache stuck, unsubscribe all AiPaper duplicates then Website-add once: `https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss?v=20261001`
+- **blockers**: none for publish; Inoreader UI verify deferred to parent
