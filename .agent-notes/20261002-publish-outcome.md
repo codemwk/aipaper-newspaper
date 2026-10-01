@@ -1,0 +1,27 @@
+# AiPaper 2026-10-02 publish outcome
+
+- **date**: 2026-10-02 (Asia/Seoul)
+- **article_count**: 12
+- **AI 비즈니스**: HeyGen (identity-first AI avatar video)
+  - CEO Joshua Xu via Upstarts (2026-06-25) + official blog: ARR **$200M**, doubled from $100M in eight months — [Upstarts](https://www.upstartsmedia.com/p/exclusive-heygen-200m-arr-without-burn) · [HeyGen blog](https://www.heygen.com/blog/heygen-surpasses-200m-arr)
+  - Capital efficiency: ~$2.70 ARR per $1 raised; ~$74M raised; ~$25M burned; cash-flow break-even YTD 2026 claim; ~$1.5M revenue/employee (Upstarts)
+  - Official pricing (verified 2026-10-02): Free / Creator **$29**/mo ($24 annual FAQ) / Pro **$49** / Business **$149**+$20/seat / Enterprise — [heygen.com/pricing](https://www.heygen.com/pricing)
+  - Agent layer: HyperFrames Apache-2.0 OSS (~55.3K★ on 2026-10-02)
+- **design highlights**:
+  - Adobe×ChatGPT interactive image/design/PDF editing (2026-09-29 official)
+  - Webflow Agent Instructions Generation + AI code component visual editing (2026-09-02)
+  - Figma Weave Workflow Lab design-system→campaign (2026-10-01 official)
+- **other highlights**:
+  - MT5 Build 6230 AI Assistant (EA tester prep, chart programs, Economic Calendar)
+  - Meta Muse vs OpenAI Dots (free everyday vs Pro workplace agents)
+  - FTC probe OpenAI/Anthropic/METR (Semafor 2026-09-30)
+  - HyperFrames OSS; Hindsight memory (~44K★); mcp-obsidian (~4.5K★); Agent-Reach (~87K★)
+  - Anthropic Project Glasswing / Mythos Preview restricted defensive access
+- **commits**:
+  - edition: `945d17331a10ca254b13747ee226f885f6262234`
+  - pages bump: `6f850add4bb912a2994b8b955f3545032c29c7df`
+- **public RSS**: YES — https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss lists all 12 today titles (curl verified after Pages deploy; cache-bust `?v=20261002`). Sample: HeyGen ARR, Adobe×ChatGPT, Webflow Agent Instructions, Glasswing/Mythos, Agent-Reach.
+- **keep_days**: 3 OK — live window = 09-30 + 10-01 + 10-02 (36 items); 09-29 HTML dirs cleaned by build_feed.py
+- **Inoreader**: NOT VERIFIED — Task/computerUse tool unavailable in this executor session (same pattern as 09-28..10-01). Parent should open Inoreader → 「AiPaper 뉴스 — 미니 신문」 → All articles; prefer NOT resub if today titles already show. If Free-tier cache stuck while public RSS OK: unsubscribe/delete every AiPaper/newspaper copy first, then Website-add once: `https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss?v=20261002`. Confirm exactly one feed row.
+- **blockers**: none for publish; Inoreader UI verify deferred to parent
+- **draft slugs**: heygen-arr-identity-video, adobe-chatgpt-interactive-edit, webflow-agent-instructions, figma-weave-campaign-lab, mt5-build6230-ai, muse-vs-dots-agent-access, ftc-openai-anthropic-metr, heygen-hyperframes-oss, hindsight-agent-memory, mcp-obsidian-bridge, agent-reach-cli, anthropic-glasswing-mythos
