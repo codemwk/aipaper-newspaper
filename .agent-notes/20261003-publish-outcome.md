@@ -27,3 +27,9 @@
 - **Inoreader**: NOT VERIFIED — deferred to parent. Prefer NOT resub if today titles already show. If Free-tier cache stuck while public RSS OK: unsubscribe/delete every AiPaper/newspaper copy first, then Website-add once: `https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss?v=20261003`. Confirm exactly one feed row.
 - **blockers**: none for publish; Inoreader UI verify deferred to parent
 - **draft slugs**: synthesia-arr-enterprise-lnd, framer-agent-3d-transforms, relume-publish-library-mcp, figma-motion-lottie-styles, figma-community-riffs, suno-speech-beta, ideogram-45-precise-edit, obsidian-copilot-v4-agent, claude-code-mods-default, openharness-ohmo, openai-sol-ultrafast-pro500, mt5-ai-trillion-tokens
+
+## Inoreader (parent verify 2026-10-03)
+- Logged in as vicevegas
+- Exactly **one** feed row: AiPaper 뉴스 — 미니 신문
+- Today titles visible (Synthesia, Framer Agent, Relume, Figma Motion, Suno, Ideogram, Copilot V4, Mods, OpenHarness, Sol/Pro500, MT5, Riffs)
+- Resubbed once via Website to `?v=20261003` after unsubscribing the prior single copy
