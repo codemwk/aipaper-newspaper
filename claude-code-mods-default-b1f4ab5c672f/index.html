@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GitHub 트렌드: Claude Code Mods 기본 ON — 프롬프트·툴콜을 프로세스 안에서 고치는 플러그인, Copilot·Codex는 옵트인 — AiPaper 뉴스</title>
+  <meta name="description" content="AIDevPulse(2026-10-02): Claude Code v2.1.287 Mods 기본 활성(샌드박스 없음·설치 사용자 권한). allowManagedModsOnly로 사용자 모드 차단 가능. Copilot sandbox CA·Codex Guardian 히스토리는 옵트인/오프 기본."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub 트렌드 · 2026-10-03 07:07 KST</div>
+    <h1>GitHub 트렌드: Claude Code Mods 기본 ON — 프롬프트·툴콜을 프로세스 안에서 고치는 플러그인, Copilot·Codex는 옵트인</h1>
+  </header>
+  <article>
+<p><em>AIDevPulse(2026-10-02): Claude Code v2.1.287 Mods 기본 활성(샌드박스 없음·설치 사용자 권한). allowManagedModsOnly로 사용자 모드 차단 가능. Copilot sandbox CA·Codex Guardian 히스토리는 옵트인/오프 기본.</em></p>
+<p><strong>분류:</strong> GitHub 트렌드</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://aidevpulse.com/2026/10/02/claude-code-mods-ship-on-by-default-while-copilot-and-codex-stay-opt-in-2026-10-02/">AIDevPulse</a>(2026-10-02) 정리: <strong>Claude Code v2.1.287</strong>부터 <strong>Mods</strong>가 기본으로 켜진다. Mod는 설정 훅(외부 명령)과 달리 <strong>프로세스 안 JS/TS 핸들러</strong>가 프롬프트·툴콜·턴을 읽고 고치거나, 권한 프롬프트 전에 승인/거절할 수 있다. Anthropic 문서상 <strong>샌드박스 없음</strong>, 설치 사용자 권한으로 실행. 반면 Copilot CLI의 sandbox CA trust, Codex Guardian 히스토리 툴은 <strong>기본 오프·옵트인</strong>. “에이전트 CLI 보안 표면”이 제품마다 비대칭이다.
+</p>
+<h2>실무로 보면</h2>
+<ul>
+<li><strong>관리자 스위치</strong>: managed settings의 <code>cc-plugin-sec-default@builtin</code> → <code>allowManagedModsOnly</code>로 사용자 설치·<code>--plugin-dir</code>·Claude가 쓴 모드를 막고, 설정 훅·빌트인은 유지.</li>
+<li><strong>Watcher</strong>: 빌트인 <code>cc-plugin-you-should-know</code> 사이드 에이전트는 <strong>기본 오프</strong>. 텔레메트리·전송 범위가 문서에 불명확해 공유 이미지에서는 끈 채 두는 편이 안전하다는 권고.</li>
+<li><strong>채널 주의</strong>: 보도 시점 npm <code>stable</code>이 아직 2.1.285(Mods 없음)일 수 있어, 태그 이동 <strong>전에</strong> managed 정책을 깔라는 타이밍 이슈.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+코드 덤프가 아니라 <strong>거버넌스 뉴스</strong>. 퍼스널 OS·사내 코딩 에이전트를 배포할 때 “기본 ON인 확장 표면”이 있는지부터 점검 목록에 넣어야 한다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://aidevpulse.com/2026/10/02/claude-code-mods-ship-on-by-default-while-copilot-and-codex-stay-opt-in-2026-10-02/">AIDevPulse 브리핑</a> · Claude Code CHANGELOG / mods 문서</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
