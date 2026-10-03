@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AI 모델: Aleph Alpha Kolibri — 독·영 MoE 78B/활성 3B·컨텍스트 최대 1M, Apache 2.0 오픈웨이트 — AiPaper 뉴스</title>
+  <meta name="description" content="Aleph Alpha(2026-10-03): Kolibri 공개. 78.1B total / ~3.5B active, 추론 none~high, 프리트레인 20T. 독일·핀란드 인프라, EU AI Act·GDPR 지향. HF Apache 2.0. Origin(30B) → 3개월 만 스케일."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-04 07:06 KST</div>
+    <h1>AI 모델: Aleph Alpha Kolibri — 독·영 MoE 78B/활성 3B·컨텍스트 최대 1M, Apache 2.0 오픈웨이트</h1>
+  </header>
+  <article>
+<p><em>Aleph Alpha(2026-10-03): Kolibri 공개. 78.1B total / ~3.5B active, 추론 none~high, 프리트레인 20T. 독일·핀란드 인프라, EU AI Act·GDPR 지향. HF Apache 2.0. Origin(30B) → 3개월 만 스케일.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/">Aleph Alpha 공식</a>(2026-10-03, 독일 통일기념일): <strong>Kolibri</strong> — 영어·독일어 MoE 트랜스포머, <strong>총 78.1B / 토큰당 활성 ~3.46B</strong>, 컨텍스트 <strong>최대 1M</strong>, 추론 노력 <strong>none/low/medium/high</strong>. Hugging Face <strong>Apache 2.0</strong> 풀웨이트. 규제 산업·공공·항공우주 등 <strong>주권(sovereign)</strong> 배포용으로 특화. Origin(30.6B, 65k 맥락, 비공개) 프리트레인 종료(6/11) 후 <strong>3개월</strong>(9/11 프리트레인 종료) 만에 스케일·공개.
+</p>
+<h2>실무로 보면</h2>
+<ul>
+<li><strong>효율</strong>: 활성 파라미터를 작게 유지해 온프레미스·서빙 비용 절충. 풀어텐션은 50층 중 일부, 나머지는 512 윈도.</li>
+<li><strong>독일어</strong>: 프리트레인 토큰의 <strong>~21.3%</strong>가 독일 — 번역 의존이 아닌 유기·재구문 중심 큐레이션을 강조.</li>
+<li><strong>그라운딩</strong>: Merlin-Arthur 프로토콜로 “모른다” 학습. 환각보다 <strong>기권</strong>이 규제 고객 KPI.</li>
+<li><strong>서빙</strong>: <code>aleph-alpha-inference</code> + vLLM 플러그인. 예: <code>vllm serve Aleph-Alpha/Kolibri-1 ...</code></li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+“벤치 1등 레이스”가 아니라 <strong>EU 규제·온프레미스·이중언어</strong> 제품 포지션. 오픈웨이트라도 <strong>공급망·데이터 투명성</strong>을 파는 B2G/B2B 스토리다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/">Kolibri Has Landed</a> · Hugging Face Aleph-Alpha/Kolibri</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

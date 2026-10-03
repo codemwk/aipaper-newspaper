@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>PKM: Obsidian에서 Karpathy LLM Wiki 돌리기 — raw/wiki/SCHEMA·ingest·query·lint (Dexio 가이드 2026-10-01) — AiPaper 뉴스</title>
+  <meta name="description" content="Dexio(2026-10-01): Obsidian 볼트에 raw·entities/concepts·SCHEMA.md·index.md·log.md. 유지자는 Claude Code/Codex, Hermes llm-wiki, Karpathy Wiki 플러그인(~56k DL) 등. 그래프·린트로 위키 형태 점검."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-10-04 07:10 KST</div>
+    <h1>PKM: Obsidian에서 Karpathy LLM Wiki 돌리기 — raw/wiki/SCHEMA·ingest·query·lint (Dexio 가이드 2026-10-01)</h1>
+  </header>
+  <article>
+<p><em>Dexio(2026-10-01): Obsidian 볼트에 raw·entities/concepts·SCHEMA.md·index.md·log.md. 유지자는 Claude Code/Codex, Hermes llm-wiki, Karpathy Wiki 플러그인(~56k DL) 등. 그래프·린트로 위키 형태 점검.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://dexio.wiki/guides/llm-wiki-obsidian/">Dexio 가이드</a>(2026-10-01 업데이트): Karpathy LLM wiki 패턴을 Obsidian에 옮기려면 <strong>전용 볼트(또는 최상위 폴더)</strong>에 <code>raw/</code>(에이전트가 안 고침), 에이전트가 쓰는 wiki 페이지, <strong><code>SCHEMA.md</code> / <code>index.md</code> / <code>log.md</code></strong>를 둔다. 연산은 <strong>ingest · query · lint</strong> 세 가지. 유지자는 (1) 폴더에서 돌리는 Claude Code/Codex (2) Hermes 번들 <code>llm-wiki</code> 스킬 (3) Obsidian 커뮤니티 플러그인(Karpathy LLM Wiki ~<strong>56k</strong> 다운로드, Auto LLM Wiki 등 — 가이드가 2026-10-01 기준 수치 인용). Obsidian은 <strong>읽기·그래프</strong>, 에이전트는 <strong>마크다운 파일</strong>.
+</p>
+<h2>실무로 보면</h2>
+<ul>
+<li><strong>레이아웃 예</strong>: <code>entities/ concepts/ comparisons/ queries/</code> + <code>raw/articles|papers|transcripts|assets</code>.</li>
+<li><strong>스키마</strong>: 파일명·프론트매터·태그 화이트리스트·위키링크 최소 2개·200줄 분할·모순 시 양측 날짜 병기.</li>
+<li><strong>세션 시작 루틴</strong>: SCHEMA + index + log 최근 20–30줄 읽고 시작 — 중복 페이지 방지. Hermes는 raw sha256으로 재ingest 스킵.</li>
+<li><strong>그래프</strong>: path 그룹·orphan·missing file 필터로 허브/공백 확인.</li>
+<li><strong>한계</strong>: 에이전트 2개가 동시에 index/log를 쓰면 충돌. 멀티에이전트·감사 추적이 필요하면 호스트형(Dexio MCP 등) 검토 — 가이드가 제품도 소개하므로 <strong>패턴과 벤더를 분리</strong>해서 읽을 것.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+어제 Obsidian Copilot V4가 <strong>채팅 UX</strong>였다면, 오늘은 <strong>위키 운영 계약(스키마)</strong>. 사용자가 관심 두는 LLM Wiki를 “아이디어”에서 <strong>폴더 규약+린트</strong>로 고정하는 실용 브리핑이다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://dexio.wiki/guides/llm-wiki-obsidian/">Dexio: LLM wiki in Obsidian</a> · <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">Karpathy gist</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
