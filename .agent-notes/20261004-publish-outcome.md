@@ -1,0 +1,27 @@
+# AiPaper 2026-10-04 publish outcome
+
+- **date**: 2026-10-04 (Asia/Seoul)
+- **article_count**: 12
+- **AI 비즈니스**: Midjourney (bootstrapped AI image/video subscription SaaS)
+  - Official pricing (docs.midjourney.com Comparing Plans): Basic **$10**/mo / Standard **$30** / Pro **$60** / Mega **$120**; annual ≈20% off ($96 / $288 / $576 / $1,152); Fast GPU 3.3h / 15h / 30h / 60h; extra Fast **$4**/hr; Stealth on Pro/Mega; companies with >$1M USD gross revenue must use Pro or Mega — [Comparing Midjourney Plans](https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans)
+  - Sacra: no external funding (self-funded); estimated **~$200M ARR in 2023** — [Sacra Midjourney](https://sacra.com/c/midjourney/). Later $300–600M figures are third-party estimates only (not company-disclosed).
+  - Contrast vs 10-03 Synthesia: bootstrapped consumer/prosumer compute quotas vs VC-backed enterprise L&D avatar video
+- **design highlights**:
+  - Shopify Canvas + Sidekick (2026-10-01 official) — whole-store canvas, live theme-code render, 25M+ theme edits H1’26
+  - Figma agent design-system workflows (official Help) — docs at scale, bulk updates, pattern extract, pre-publish review
+  - Framer vs Webflow freelancer positioning (Recode + Stan.vision 2026-10) — design-to-site speed vs CMS scale
+- **other highlights**:
+  - Adobe Firefly audio GA (Music/Speech/SFX, commercially safe; blog 2026-08-20)
+  - Black Forest Labs FLUX 3 Image (2026-10-02) — multi-turn edit, 10 refs, 4K; open weights “weeks” unconfirmed; API 50% off through Oct 8
+  - Aleph Alpha Kolibri (2026-10-03) — 78B/3B-active DE-EN MoE, 1M ctx, Apache 2.0
+  - Upstage Solar Mini 4 (2026-10-01) — 35B/3B-active, 524K ctx; OpenRouter $0.05/$0.20 (promo); Pro/Mini lineup split
+  - openclaw (~391k★) + ECC (~272k★) harness trend; AgentoolRank “stars lie” activity ranking (669 tools)
+  - Dexio LLM Wiki in Obsidian setup guide (2026-10-01)
+- **commits**:
+  - edition: `06743ef11a43716ad3ce40bbe42403f7ebec8aa8`
+  - pages bump: `0a8df6f836eacfb3553a0788c2aea91d14ed9b2a`
+- **public RSS**: YES — https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss lists all 12 today titles (curl verified after Pages deploy success; cache-bust `?v=20261004`). Sample: Midjourney, Shopify Canvas, Figma Agent DS, Framer vs Webflow, Firefly audio, FLUX 3, Kolibri, Solar Mini 4, openclaw, ECC, LLM Wiki Obsidian, AgentoolRank.
+- **keep_days**: 3 OK — live window = 10-02 + 10-03 + 10-04 (36 items); 10-01 HTML dirs cleaned by build_feed.py
+- **Inoreader**: NOT VERIFIED — deferred to parent. Prefer NOT resub if today titles already show. If Free-tier cache stuck while public RSS OK: unsubscribe/delete every AiPaper/newspaper copy first, then Website-add once: `https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss?v=20261004`. Confirm exactly one feed row.
+- **blockers**: none for publish; Pages build queued ~5min then succeeded; Inoreader UI verify deferred to parent
+- **draft slugs**: midjourney-bootstrapped-subscription, shopify-canvas-sidekick, figma-agent-design-system, framer-vs-webflow-freelancer, adobe-firefly-audio-ga, flux3-image-bfl, aleph-alpha-kolibri, upstage-solar-mini-4, openclaw-agent-harness, ecc-portable-harness, llm-wiki-obsidian-dexio, agentoolrank-stars-lie
