@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>디자인/UI·UX: Figma 원격 MCP, ‘승인된 클라이언트만’ 쓰기 허용 — MCP 공동 창시자 반발, 좌석별 호출 한도까지 — AiPaper 뉴스</title>
+  <meta name="description" content="Figma 문서: MCP Catalog에 등재된 클라이언트만 원격 서버 연결(대기자 명단). 9/30 Figma 커뮤니티 리드 확인, Pi 제작자 David Soria Parra 공개 요청. 쓰기(캔버스 생성·수정)는 원격만, 데스크톱 MCP는 읽기 전용·제한 없음. 베타 무료→향후 사용량 과금. Dev/Full 좌석 일 200~600회."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인/UI·UX · 2026-10-05 07:09 KST</div>
+    <h1>디자인/UI·UX: Figma 원격 MCP, ‘승인된 클라이언트만’ 쓰기 허용 — MCP 공동 창시자 반발, 좌석별 호출 한도까지</h1>
+  </header>
+  <article>
+<p><em>Figma 문서: MCP Catalog에 등재된 클라이언트만 원격 서버 연결(대기자 명단). 9/30 Figma 커뮤니티 리드 확인, Pi 제작자 David Soria Parra 공개 요청. 쓰기(캔버스 생성·수정)는 원격만, 데스크톱 MCP는 읽기 전용·제한 없음. 베타 무료→향후 사용량 과금. Dev/Full 좌석 일 200~600회.</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/">Figma 개발자 문서</a>는 이제 이렇게 적혀 있다: “<strong>Figma MCP Catalog에 등재된 클라이언트만</strong> Figma MCP 서버에 연결할 수 있다. 새 클라이언트 개발자는 대기자 명단에 등록하라.” 9월 30일 Figma 커뮤니티 리드가 X에서 이를 확인했고, MCP 공동 창시자이자 오픈소스 코딩 하네스 <strong>Pi</strong>를 만든 David Soria Parra가 공개적으로 “MCP의 개방 생태계 취지에 어긋난다”고 반발했다(<a href="https://aiagentslisting.com/news/figma-restricts-remote-mcp-access-to-an-approved-client-list">AI Agents Listing 10/2</a>).
+</p>
+<h2>무엇이 걸려 있나</h2>
+<ul>
+<li><strong>원격 MCP(mcp.figma.com)만 ‘쓰기’가 된다</strong>: 프레임·컴포넌트·변수·오토레이아웃 생성·수정, FigJam 보드 편집, 라이브 UI 캡처를 Figma로 보내기, 코드 생성, Code Connect. 로컬 <strong>데스크톱 MCP는 읽기 전용</strong>이고 화이트리스트 대상이 아니다.</li>
+<li><strong>등재 목록</strong>(보도 기준): Claude·Claude Code, ChatGPT·Codex, Cursor, Xcode, VS Code, Kiro, Grok, Google Antigravity, GitHub Copilot CLI, Notion, Slack, Devin, Replit, Warp, Factory, Augment, Rovo Studio, Android Studio. Pi는 없다.</li>
+<li><strong>허점</strong>: 검사가 OAuth 클라이언트 이름 기준이라 이름을 ‘Codex’로 바꾸면 통과됐다는 HN 댓글이 있다(미확인 커뮤니티 보고). OpenCode 등재에 <strong>8개월 법무 검토</strong>가 걸렸다는 댓글도.</li>
+<li><strong>돈</strong>: 원격 쓰기는 현재 베타 무료, 향후 <strong>사용량 기반 유료화</strong> 예정. 호출 한도는 좌석별 — 무료 view/collab 월 6~20회, Professional·Organization Dev/Full 일 200회, Enterprise Dev/Full <strong>일 600회·분당 20회</strong>(보도 인용).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난 몇 주 Figma Agent·Weave·Code Connect를 다루며 본 ‘디자인 캔버스를 에이전트에 연다’는 흐름에, <strong>누가 열쇠를 쥐는가</strong>라는 플랫폼 정치가 붙었다. 9월 아마존이 Meta Muse 쇼핑 에이전트를 막은 것과 같은 패턴 — 프로토콜은 개방형이어도 <strong>쓰기 권한은 플랫폼이 고른 에이전트에게만</strong> 간다. 자체 하네스나 소규모 에이전트로 Figma 자동화를 설계한다면, 지금은 등재 클라이언트(Claude Code·Cursor·Codex 등) 위에 올리는 게 현실적이고, 한도·유료화 일정을 비용표에 넣어 둬야 한다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>정책 문구는 Figma 공식 문서로 확인, 등재 목록·한도·HN 우회 내용은 보도 인용.</li>
+<li><a href="https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/">Figma 원격 MCP 설치 문서</a> · <a href="https://aiagentslisting.com/news/figma-restricts-remote-mcp-access-to-an-approved-client-list">AI Agents Listing 10/2</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

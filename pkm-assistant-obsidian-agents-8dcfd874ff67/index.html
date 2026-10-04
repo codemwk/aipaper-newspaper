@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>세컨드 브레인/PKM: PKM Assistant — Obsidian 볼트 안에 사는 에이전트, ‘프롬프트를 전부 보여 주는’ 기억 v3 — AiPaper 뉴스</title>
+  <meta name="description" content="JDHole/pkm-assistant v2.3.1(GPL-3.0, 무료). 에이전트별 brain index·영구 메모·세션 아카이브·L1/L2/L3 요약. Prompt Inspector로 시스템 프롬프트 섹션별 토큰 확인·수정. 9개 플랫폼(Ollama·LM Studio 로컬 포함), 내장 MCP 도구 23개, 하위 에이전트 위임, 웹·볼트 딥리서치. 현재 BRAT/ZIP 설치, 다운로드 155."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-10-05 07:11 KST</div>
+    <h1>세컨드 브레인/PKM: PKM Assistant — Obsidian 볼트 안에 사는 에이전트, ‘프롬프트를 전부 보여 주는’ 기억 v3</h1>
+  </header>
+  <article>
+<p><em>JDHole/pkm-assistant v2.3.1(GPL-3.0, 무료). 에이전트별 brain index·영구 메모·세션 아카이브·L1/L2/L3 요약. Prompt Inspector로 시스템 프롬프트 섹션별 토큰 확인·수정. 9개 플랫폼(Ollama·LM Studio 로컬 포함), 내장 MCP 도구 23개, 하위 에이전트 위임, 웹·볼트 딥리서치. 현재 BRAT/ZIP 설치, 다운로드 155.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://community.obsidian.md/plugins/pkm-assistant">PKM Assistant</a>는 Obsidian 볼트 <strong>안에서</strong> 여러 AI 에이전트를 만들고 돌리는 플러그인이다. 슬로건이 인상적이다: “마법은 없다. 당신의 에이전트는 <strong>프롬프트</strong>다. 그 재료를 보여 줄 테니 원하는 대로 바꿔라.” 작은 1인 프로젝트(다운로드 155, v2.3.1)지만, 지금까지 다룬 LLM Wiki·Copilot 계열과 결이 다르다.
+</p>
+<h2>무엇이 있나</h2>
+<ul>
+<li><strong>Prompt Inspector</strong>: 모델에 보내는 시스템 프롬프트를 섹션별로 펼치고 <strong>토큰 수를 보여 주며 직접 수정</strong>. 숨은 중간층이 없다.</li>
+<li><strong>Memory v3</strong>: 에이전트마다 brain index, 영구 메모 노트, 세션 아카이브, <strong>L1/L2/L3 계단식 요약</strong> — 세션을 넘어 맥락이 이어진다.</li>
+<li><strong>멀티 에이전트·위임</strong>: 성격·역할·도구가 다른 에이전트를 탭으로 전환. 리서치 같은 일은 <strong>더 싼 작은 모델의 하위 에이전트</strong>에 넘겨 토큰 절약. 에이전트끼리 주고받는 ‘메일’도 볼트 안 마크다운.</li>
+<li><strong>스킬·딥리서치</strong>: 스킬은 마크다운 파일. 웹·볼트 병렬 리서치 후 <strong>인용문+URL/위키링크(그리고 ‘지식의 빈틈’)</strong>를 담은 살아 있는 리포트 노트 생성.</li>
+<li><strong>모델·도구</strong>: Anthropic, OpenAI, Gemini, DeepSeek, Groq, OpenRouter, xAI, <strong>Ollama·LM Studio(완전 로컬)</strong>. 내장 MCP 도구 23개 + 외부 MCP 서버 연결.</li>
+<li><strong>보안·프라이버시</strong>: 텔레메트리 없음, 경로 탈출 차단, 키 마스킹, 에이전트별 승인(YOLO / 경계에서만 묻기 / 모두 묻기). 단 API 키가 볼트 내 <code>.pkm-assistant/settings.json</code>에 저장되므로 <strong>볼트 동기화·공유 시 주의</strong>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+Karpathy식 LLM Wiki가 “지식을 위키로 컴파일”하는 쪽이라면, PKM Assistant는 <strong>“볼트를 에이전트의 사무실로”</strong> 만드는 쪽이다. 특히 Prompt Inspector는 퍼스널 OS 제품을 설계할 때 참고할 UI 패턴 — 사용자가 에이전트의 기억과 지시를 <strong>눈으로 보고 고칠 수 있는가</strong>가 신뢰의 핵심이 된다. 저자 스스로 “비개발자가 Claude Code로 100% 바이브 코딩”했다고 밝힌 점도 시대를 보여 준다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>아직 커뮤니티 카탈로그 승인 전 — BRAT(베타 플러그인 설치기) 또는 ZIP 수동 설치. 데스크톱 전용.</li>
+<li><a href="https://community.obsidian.md/plugins/pkm-assistant">Obsidian Community: PKM Assistant</a> · <a href="https://github.com/JDHole/pkm-assistant">GitHub JDHole/pkm-assistant</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
