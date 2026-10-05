@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>디자인/UI·UX: Webflow MCP, 애니메이션을 ‘네이티브 Interactions’로 — 에이전트가 만든 모션을 디자이너가 타임라인에서 다시 만진다 — AiPaper 뉴스</title>
+  <meta name="description" content="10/2 Webflow MCP 업데이트: 연결된 에이전트가 GSAP 기반 네이티브 Interactions(스크롤·호버·커서·텍스트 분할)를 생성. 결과가 커스텀 코드가 아니라 Interactions 패널의 트리거·타임라인으로 남아 수동 편집 가능. 커서 틸트·단어별 스크롤 등장(3분 30초)·고정 섹션+진행 내비(액션 10개+) 데모. Cloud 앱 배포·로그 읽기·재배포도."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인/UI·UX · 2026-10-06 07:11 KST</div>
+    <h1>디자인/UI·UX: Webflow MCP, 애니메이션을 ‘네이티브 Interactions’로 — 에이전트가 만든 모션을 디자이너가 타임라인에서 다시 만진다</h1>
+  </header>
+  <article>
+<p><em>10/2 Webflow MCP 업데이트: 연결된 에이전트가 GSAP 기반 네이티브 Interactions(스크롤·호버·커서·텍스트 분할)를 생성. 결과가 커스텀 코드가 아니라 Interactions 패널의 트리거·타임라인으로 남아 수동 편집 가능. 커서 틸트·단어별 스크롤 등장(3분 30초)·고정 섹션+진행 내비(액션 10개+) 데모. Cloud 앱 배포·로그 읽기·재배포도.</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+Webflow가 10월 2일 MCP 서버 업데이트를 소개하며 <strong>“이제 에이전트가 사이트를 움직이게 한다”</strong>고 밝혔다(<a href="https://webflow.com/blog/interactions-gsap-mcp">Webflow Blog</a>). 지금까지 에이전트는 레이아웃은 만들어도 Webflow 고유 애니메이션은 못 건드렸다. 이번부터 GSAP 기반 <strong>네이티브 Interactions</strong>를 직접 만든다. (같은 업데이트의 ‘사이트 가이드라인 자동 초안’은 10/2자 AiPaper에서 다뤘다.)
+</p>
+<h2>핵심: 결과물이 ‘편집 가능한 모션’이다</h2>
+<ul>
+<li>에이전트가 만든 애니메이션이 붙여 넣은 커스텀 코드가 아니라 <strong>Interactions 패널의 트리거·타임라인·속성</strong>으로 남는다. 디자이너가 열어서 이징·스태거·속성을 손으로 바꿀 수 있다.</li>
+<li>데모 3개(Codex + GPT-6 Astra): ① 커서를 따라 기울어지는 버튼(마우스 무브 트리거) ② 스크롤하면 줄마다·단어마다 등장하는 문단 — <strong>3분 30초</strong> ③ 섹션이 고정된 채 왼쪽 내비가 진행률을 따라가고 오른쪽 이미지가 바뀌는 패턴 — Interactions에 <strong>액션 10개 이상</strong>.</li>
+<li>한계도 명시: 모든 GSAP 기능이 Interactions 속성에 1:1로 대응하진 않는다. 더 필요하면 여전히 커스텀 코드. 더 저렴한 모델은 결과가 달라질 수 있다.</li>
+</ul>
+<h2>따라 할 만한 ‘프롬프트 3단’</h2>
+<ul>
+<li><strong>맥락</strong>: 어떤 사이트에, 어떤 레퍼런스(GSAP 데모 URL)를.</li>
+<li><strong>제약</strong>: “네이티브·편집 가능한 Webflow Interactions로” — 에이전트가 커스텀 코드로 도망가지 않게.</li>
+<li><strong>보류</strong>: “끝나면 알려 줘, 내가 확인할게.” 모델은 스스로 검증하려고 토끼굴에 빠지는데, <strong>애니메이션이 ‘느낌이 맞는지’는 사람이 판단할 일</strong>이다(<a href="https://artdirectiondaily.com/issues/2026-10-02-codex-rebuilt-gsap-demos-webflow.html">Art Direction Daily 10/2</a>).</li>
+</ul>
+<h2>함께 들어온 것</h2>
+<p>
+Webflow Cloud(풀스택 앱) 쪽에선 에이전트가 코드를 고쳐 푸시한 뒤 <strong>배포 완료를 기다리고, 실패하면 빌드·런타임 로그를 읽고 고쳐 재배포</strong>한다. 브랜치→환경 매핑, 이전 배포로 롤백도 가능. 별도 설정 없이 이미 MCP를 연결한 사용자에게 라이브.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+AI 생성 UI의 고질병은 “<strong>한 번 뽑으면 디자이너가 손댈 수 없는 결과물</strong>”이다. Framer·Figma가 ‘레이어는 캔버스에 남긴다’로 답했다면, Webflow는 <strong>모션까지 같은 원칙</strong>을 적용했다. 에이전트는 초안을 빠르게, 사람은 타이밍과 감각을 — 모션 디자인에서 분업선이 처음으로 명확해졌다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li><a href="https://webflow.com/blog/interactions-gsap-mcp">Webflow Blog 10/2</a> · <a href="https://artdirectiondaily.com/issues/2026-10-02-codex-rebuilt-gsap-demos-webflow.html">Art Direction Daily 10/2</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

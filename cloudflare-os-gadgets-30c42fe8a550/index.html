@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GitHub 트렌드: cloudflare-os(~11K★) — 사내 AI 업무공간을 오픈소스로, ‘앱은 1인 1개 사본’·승인은 나중에 몰아서 — AiPaper 뉴스</title>
+  <meta name="description" content="Cloudflare가 사내에서 쓰던 AI 생산성 환경을 공개(v2, 8월 early access). 에이전트 채팅+회사 지식, 에이전트가 만드는 개인용 미니앱 ‘Gadget’(사용자마다 별도 샌드박스 인스턴스), 권한 레이어 ‘Gatekeeper’(부작용 있는 행동은 시뮬레이션 후 일괄 승인). Workers 위에서 동작, 일간·주간 트렌딩 동시 진입."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub 트렌드 · 2026-10-06 07:07 KST</div>
+    <h1>GitHub 트렌드: cloudflare-os(~11K★) — 사내 AI 업무공간을 오픈소스로, ‘앱은 1인 1개 사본’·승인은 나중에 몰아서</h1>
+  </header>
+  <article>
+<p><em>Cloudflare가 사내에서 쓰던 AI 생산성 환경을 공개(v2, 8월 early access). 에이전트 채팅+회사 지식, 에이전트가 만드는 개인용 미니앱 ‘Gadget’(사용자마다 별도 샌드박스 인스턴스), 권한 레이어 ‘Gatekeeper’(부작용 있는 행동은 시뮬레이션 후 일괄 승인). Workers 위에서 동작, 일간·주간 트렌딩 동시 진입.</em></p>
+<p><strong>분류:</strong> GitHub 트렌드</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://github.com/cloudflare/cloudflare-os">cloudflare/cloudflare-os</a>가 이번 주 GitHub 일간·주간 트렌딩에 동시에 올랐다(약 1.1만 스타). Cloudflare 직원 상당수가 — 엔지니어부터 영업까지 — 매일 쓰는 <strong>사내 ‘AI 운영체제’</strong>를 통째로 공개한 것이다. 컴퓨터 OS가 아니라 “회사가 AI로 안전하게 일하는 OS”라는 뜻이다.
+</p>
+<h2>무엇이 들어 있나 (쉽게)</h2>
+<ul>
+<li><strong>에이전트 채팅</strong>: 회사가 일하는 방식을 미리 아는 에이전트에게 “고객 미팅 슬라이드 만들어 줘”, “이 구글 문서 오타 고쳐 줘”를 시킨다.</li>
+<li><strong>Gadget(가젯)</strong>: 에이전트가 만들어 주는 작은 개인용 앱. 핵심은 <strong>모든 사용자가 자기만의 앱 사본을 별도 샌드박스에서 돌린다</strong>는 것. 슬라이드 앱이 필요하면 SaaS를 부르는 게 아니라 ‘나만의 슬라이드 앱 인스턴스’가 생긴다. 기능이 모자라면 에이전트에게 코드를 고치라고 하면 되고, 샌드박스라 남의 데이터가 샐 수 없다.</li>
+<li><strong>Gatekeeper(게이트키퍼)</strong>: 외부 서비스(GitHub, Google 등)에 붙을 때 생기는 ‘강화된 MCP 서버’. 인증·좁은 권한·모든 행동 로그를 맡고, 부작용 있는 행동은 사람 승인을 받는다.</li>
+</ul>
+<h2>가장 흥미로운 아이디어: ‘비동기 승인’</h2>
+<p>
+보통 사람-승인 구조는 에이전트가 첫 단계에서 멈춰 기다린다. 커피 마시고 오면 아무 진척이 없으니 결국 다들 ‘자동 승인’을 켠다. Gatekeeper는 승인이 필요한 행동을 <strong>로컬에서 시뮬레이션해 ‘완료됐다’고 돌려주고</strong>, 에이전트가 계속 일하게 한 뒤, 끝나면 사람이 <strong>한 번에 또는 하나씩</strong> 승인·거절한다.
+</p>
+<h2>왜 뜨나</h2>
+<p>
+최근 트렌딩 상위는 openclaw·ECC·paperclip 같은 <strong>‘하네스(에이전트를 감싸는 층)’</strong>였다. cloudflare-os는 그 다음 질문 — <strong>“회사 전체가 써도 보안팀이 잠을 잘 수 있나”</strong> — 에 대한 대기업의 실제 답안이다. 특히 ‘SaaS 1개를 모두가 공유’ 대신 <strong>‘사용자마다 고쳐 쓰는 앱 사본’</strong>이라는 발상은, 개인 대시보드·퍼스널 OS를 구상하는 입장에서 그대로 참고할 만한 설계다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>README 스스로 <strong>“early access, 거친 부분 많음”</strong>(v2는 v1을 완전히 다시 쓴 버전, 2026년 8월 릴리스). Cloudflare 계정에 배포하거나 로컬(wrangler)로 체험 가능.</li>
+<li><a href="https://github.com/cloudflare/cloudflare-os">GitHub: cloudflare/cloudflare-os</a> · <a href="https://github.com/trending?since=weekly">GitHub Trending</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

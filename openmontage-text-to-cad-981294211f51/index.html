@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GitHub 트렌드: 코딩 에이전트에 ‘전문 스튜디오’를 붙인다 — OpenMontage(~64K★) 영상 제작, text-to-cad(~17K★) 3D 설계 — AiPaper 뉴스</title>
+  <meta name="description" content="일간 트렌딩 두 저장소의 공통점: Claude Code·Codex 같은 범용 코딩 에이전트를 스킬·MCP로 특정 직군 작업대로 바꾼다. OpenMontage는 12개 제작 파이프라인·100+ 툴·700+ 스킬 파일(60초 애니 단편 총비용 $1.33 예시, AGPLv3). text-to-cad는 STEP·STL·3MF 생성, 제조성 검사·도면, 3D 프린팅·CNC 서비스 연결(MIT)."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub 트렌드 · 2026-10-06 07:08 KST</div>
+    <h1>GitHub 트렌드: 코딩 에이전트에 ‘전문 스튜디오’를 붙인다 — OpenMontage(~64K★) 영상 제작, text-to-cad(~17K★) 3D 설계</h1>
+  </header>
+  <article>
+<p><em>일간 트렌딩 두 저장소의 공통점: Claude Code·Codex 같은 범용 코딩 에이전트를 스킬·MCP로 특정 직군 작업대로 바꾼다. OpenMontage는 12개 제작 파이프라인·100+ 툴·700+ 스킬 파일(60초 애니 단편 총비용 $1.33 예시, AGPLv3). text-to-cad는 STEP·STL·3MF 생성, 제조성 검사·도면, 3D 프린팅·CNC 서비스 연결(MIT).</em></p>
+<p><strong>분류:</strong> GitHub 트렌드</p>
+<h2>한줄 요약</h2>
+<p>
+이번 주 일간 트렌딩에서 눈에 띄는 패턴: 새 모델이 아니라 <strong>“이미 쓰는 코딩 에이전트에 특정 분야의 작업대를 꽂아 주는”</strong> 저장소가 뜬다. 대표가 영상 제작의 <a href="https://github.com/calesthio/OpenMontage">OpenMontage</a>와 3D 설계의 <a href="https://github.com/earthtojake/text-to-cad">text-to-cad</a>다.
+</p>
+<h2>OpenMontage — 에이전트를 영상 프로덕션으로</h2>
+<ul>
+<li>자칭 “최초의 오픈소스 에이전트형 영상 제작 시스템”. <strong>12개 제작 파이프라인, 100개 이상 툴, 700개 이상 스킬·제작 지식 파일</strong>. 약 6.4만 스타, 라이선스 AGPLv3.</li>
+<li>말로 원하는 영상을 설명하면 에이전트가 <strong>리서치 → 대본 → 에셋 생성 → 편집 → 최종 합성</strong>을 한다. Veo·Kling 같은 생성 모델로 클립을 만들 수도, 무료 스톡·공개 아카이브에서 <strong>실제 촬영 영상을 찾아 편집</strong>할 수도 있다.</li>
+<li>README 예시: Kling v3 클립 6개 + 내레이션 + 무료 음악 + 단어 단위 자막으로 만든 60초 애니메이션 단편, <strong>총비용 $1.33</strong>. Blender로 물리 애니메이션을 만들어 FFmpeg로 붙인 예시도 있다.</li>
+</ul>
+<h2>text-to-cad — 에이전트에게 CAD 능력을</h2>
+<ul>
+<li>“에이전트에 CAD 초능력을.” 약 1.7만 스타, MIT. Claude Code·Codex·Cursor·Gemini·Grok 등 플러그인/스킬 지원 에이전트에 설치.</li>
+<li>3D 모델을 <strong>STEP·GLB·STL·3MF</strong>로 생성, <strong>제조 가능성(DFM) 검사</strong>, 엔지니어링 도면 생성, 3D 프린팅·판금·CNC 가공 서비스 연결까지. 대화창 안에서 돌려 보는 CAD 뷰어 카드를 띄우고, 사용자가 선택한 부분을 에이전트가 읽는다.</li>
+<li>내부는 오픈소스 CAD 커널(Open CASCADE·build123d) 위의 <code>cadgen</code> 패키지 + 로컬 MCP 서버.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+어제 다룬 impeccable(디자인)에 이어 이번 주 OpenMontage(영상)·text-to-cad(제조)까지 — <strong>스킬 파일 + 로컬 MCP 서버 + 결과 뷰어</strong>라는 같은 틀이 직군을 하나씩 먹어 들어간다. 의미는 두 가지다. (1) 전문 툴 회사의 경쟁자가 ‘다른 툴’이 아니라 <strong>‘범용 에이전트 + 무료 스킬팩’</strong>이 된다. (2) 사용자 입장에선 새 앱을 배우는 대신 <strong>이미 익숙한 에이전트 하나에 작업대를 갈아 끼우는</strong> 쪽으로 학습 비용이 옮겨 간다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>OpenMontage는 AGPLv3 — 서비스에 넣으려면 소스 공개 의무 확인.</li>
+<li><a href="https://github.com/calesthio/OpenMontage">GitHub: OpenMontage</a> · <a href="https://github.com/earthtojake/text-to-cad">GitHub: text-to-cad</a> · <a href="https://www.texttocad.dev">text-to-cad 문서</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

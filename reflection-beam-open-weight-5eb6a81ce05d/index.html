@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AI 모델: Reflection Beam — 501B/활성 23B 오픈웨이트, ‘중국 오픈모델급을 추론 연산 3~4배 적게’ — AiPaper 뉴스</title>
+  <meta name="description" content="10/5 Reflection AI 첫 오픈웨이트 Beam: 텍스트 전용 MoE 501B(활성 23B), 사전학습 23.8T 토큰, 컨텍스트 1M. GB300 10.5K장·4주·1억+ 롤아웃 RL. GLM-5.2급 추론을 3~4배 적은 연산으로(자사 주장). 가중치는 이달 중 Apache 2.0 공개 예정, 지금은 대기자 프리뷰."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-06 07:03 KST</div>
+    <h1>AI 모델: Reflection Beam — 501B/활성 23B 오픈웨이트, ‘중국 오픈모델급을 추론 연산 3~4배 적게’</h1>
+  </header>
+  <article>
+<p><em>10/5 Reflection AI 첫 오픈웨이트 Beam: 텍스트 전용 MoE 501B(활성 23B), 사전학습 23.8T 토큰, 컨텍스트 1M. GB300 10.5K장·4주·1억+ 롤아웃 RL. GLM-5.2급 추론을 3~4배 적은 연산으로(자사 주장). 가중치는 이달 중 Apache 2.0 공개 예정, 지금은 대기자 프리뷰.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+설립 2년 차 미국 스타트업 Reflection AI가 10월 5일 첫 오픈웨이트 모델 <strong>Beam</strong>을 공개했다(<a href="https://reflection.ai/blog/introducing-beam">Reflection Blog</a>). 총 <strong>501B 파라미터, 토큰당 활성 23B</strong>의 텍스트 전용 MoE로, 코딩·추론·에이전트 작업에 맞췄다. 메시지는 하나다 — <strong>“DeepSeek·Qwen·Z.ai에 대한 서구의 오픈 답안”</strong>(<a href="https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/">TechCrunch</a>).
+</p>
+<h2>핵심 숫자</h2>
+<ul>
+<li><strong>사전학습</strong> 23.8조 토큰(웹+라이선스 데이터), GB300 NVL72 6,144장으로 4주 이내. 컨텍스트 <strong>1M 토큰</strong>.</li>
+<li><strong>강화학습</strong>: GB300 <strong>10,500장 × 4주</strong>, 롤아웃 1억 건 이상, 샌드박스 약 13억 개, 학습 환경 약 100만 개. “오픈 랩 중 최대급 RL”이라고 주장, 연산을 더 넣을수록 성능이 계속 올라 <strong>포화 징후가 없었다</strong>고 했다.</li>
+<li><strong>자사 벤치마크</strong>: SWE-Bench Verified 80.9, Terminal-Bench 2.1 80.1, GPQA Diamond 90.5, MCP Atlas 78.7. GLM-5.2와 비슷하고 Qwen 3.8-Max에 근접, <strong>Kimi K3는 여전히 앞선다</strong>고 스스로 인정. 독립 검증은 아직 없다.</li>
+<li><strong>효율</strong>: 추론 벤치에서 GLM-5.2급 점수를 <strong>3~4배 적은 추론 연산</strong>으로. 사용자는 ‘reasoning effort’로 길이·성능을 조절한다.</li>
+</ul>
+<h2>회사와 사업</h2>
+<ul>
+<li>전 DeepMind 연구자 2명이 2024년 창업, 누적 조달 약 <strong>$47억</strong>(Nvidia·Sequoia·Lightspeed), 직전 라운드 프리머니 $250억. 올여름 SpaceX·Nebius와 <strong>$70억+ 규모 GB300 확보 계약</strong>(2029년까지).</li>
+<li>목표는 기업·국가용 <strong>‘AI 팩토리’</strong> — 고객이 자기 데이터로 Reflection 모델을 학습시켜 자체 AI를 갖는 구조. 한국 <strong>신세계그룹</strong>과 소버린 AI 팩토리 파트너십을 시험 중이고, Axios에 따르면 헤지펀드·트레이딩 회사의 관심이 크다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+최근 오픈웨이트 상위권은 거의 중국 모델(Kimi·GLM·Qwen·DeepSeek)이었다. Beam은 <strong>“더 큰 모델”이 아니라 “같은 성능을 더 싸게 돌리는 모델”</strong>로 승부를 건다. 에이전트는 토큰을 많이 쓰니, 활성 23B·짧은 추론이 곧 운영비다. 다만 지금은 <strong>대기자 프리뷰</strong>이고 가중치·기술 보고서·모델 카드는 “이달 중” 공개 예정 — 숫자는 공개 후 다시 확인해야 한다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>라이선스: Apache 2.0(공개 시). 텍스트 전용(멀티모달 아님).</li>
+<li><a href="https://reflection.ai/blog/introducing-beam">Reflection Blog 10/5</a> · <a href="https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/">TechCrunch 10/5</a></li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
