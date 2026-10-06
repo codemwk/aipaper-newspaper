@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>세컨드 브레인 / PKM: EmbeddingGemma 2 — 노트·스크린샷·음성메모를 ‘한 검색창’에, 270M~740M 로컬 임베딩 — AiPaper 뉴스</title>
+  <meta name="description" content="Google이 10/6 공개한 Apache 2.0 멀티모달 임베딩. 텍스트·코드·이미지·영상·오디오를 같은 768차원 공간에. 필요한 인코더만 로드(텍스트 270M, +비전 440M, +오디오 570M, 전체 740M). 256차원으로 줄여도 텍스트 품질 대부분·미디어 약 95% 유지. Ollama·LM Studio·MLX 지원."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-10-07 07:02 KST</div>
+    <h1>세컨드 브레인 / PKM: EmbeddingGemma 2 — 노트·스크린샷·음성메모를 ‘한 검색창’에, 270M~740M 로컬 임베딩</h1>
+  </header>
+  <article>
+<p><em>Google이 10/6 공개한 Apache 2.0 멀티모달 임베딩. 텍스트·코드·이미지·영상·오디오를 같은 768차원 공간에. 필요한 인코더만 로드(텍스트 270M, +비전 440M, +오디오 570M, 전체 740M). 256차원으로 줄여도 텍스트 품질 대부분·미디어 약 95% 유지. Ollama·LM Studio·MLX 지원.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+Google이 10월 6일 <strong>EmbeddingGemma 2</strong>를 공개했다. Gemma 4 기반의 <strong>10억 파라미터 미만</strong> 오픈 모델로, <strong>텍스트·코드·이미지·영상·오디오를 하나의 768차원 벡터 공간</strong>에 넣는다. 라이선스는 <strong>Apache 2.0</strong>(<a href="https://developers.googleblog.com/embeddinggemma-2-the-developer-guide/">Google Developers Blog</a>, <a href="https://huggingface.co/google/embeddinggemma-2">Hugging Face</a>).
+</p>
+<h2>‘임베딩’이 뭐고, 왜 세컨드 브레인 얘기인가</h2>
+<p>
+임베딩은 글이나 그림을 <strong>“의미 좌표”</strong>로 바꾸는 것이다. 좌표가 가까우면 뜻이 비슷하다. LLM Wiki·Obsidian 에이전트가 “관련 노트 찾아 줘”를 할 때 뒤에서 도는 게 이것이다. 지금까지는 텍스트용, 이미지용 모델이 따로라 <strong>스크린샷·회의 녹음·PDF 슬라이드는 검색에서 빠지기 일쑤</strong>였다. EmbeddingGemma 2는 “파도 소리”라고 치면 <strong>바다 사진과 파도 녹음 파일이 같이</strong> 걸린다.
+</p>
+<h2>핵심 사양</h2>
+<ul>
+<li><strong>모듈식 로딩</strong>: 텍스트·코드만 <strong>270M</strong>, +비전 <strong>440M</strong>, +오디오 <strong>570M</strong>, 전부 <strong>740M</strong>. 안 쓰는 인코더는 메모리에 아예 안 올린다.</li>
+<li><strong>나중에 확장 OK</strong>: 텍스트 인덱스로 시작했다가 이미지 인코더를 켜도, 이미 만든 임베딩은 <strong>다시 계산할 필요가 없다</strong>(같은 체크포인트·같은 공간).</li>
+<li><strong>컨텍스트 8,192토큰</strong>. 영상은 기본 초당 1프레임 샘플링, 오디오는 16kHz 모노.</li>
+<li><strong>차원 줄이기(MRL)</strong>: 768→512/256/128. <strong>256차원</strong>이면 텍스트·코드 품질 대부분, 이미지·영상·음성은 약 <strong>95%</strong> 유지. 128차원은 텍스트 ~90%, 미디어 ~75%로 떨어진다.</li>
+<li><strong>용량 감각</strong>: 768차원 벡터 100만 개 ≈ 1.5GB(bf16) → 128차원이면 ≈ 250MB.</li>
+<li>코드 검색(MTEB Code)은 1세대보다 <strong>14%</strong> 높다고 Google은 밝혔다.</li>
+<li>vLLM·Transformers·sentence-transformers(v6.1+)·<strong>Ollama·LM Studio·MLX</strong>·LiteRT에서 돌릴 수 있다.</li>
+</ul>
+<h2>왜 중요한가 (실전 팁)</h2>
+<p>
+개인 볼트는 대개 수만 개 조각 수준이라 <strong>노트북 로컬</strong>로 충분하다. 추천 조합은 “텍스트는 270M+256차원으로 가볍게, 스크린샷 폴더만 비전 인코더로” — 클라우드에 노트를 올리지 않고도 <strong>멀티모달 검색</strong>이 생긴다. Gemma 4와 토크나이저·오디오 인코더를 공유하므로 온디바이스 RAG에서 메모리도 아낀다.
+</p>
+<h2>체크포인트</h2>
+<ul>
+<li>벤치마크는 Google 발표 기준. 한국어 노트 검색 품질은 <strong>내 볼트 샘플로 직접</strong> 확인할 것.</li>
+<li>질의와 문서는 <strong>같은 차원</strong>으로 임베딩해야 한다(섞으면 검색이 깨진다).</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

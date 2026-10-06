@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>세컨드 브레인 / PKM: EtherPK — Obsidian식 ‘글’과 Logseq식 ‘블록’을 한 문서에, 종단간 암호화 동기화와 로컬 MCP까지 — AiPaper 뉴스</title>
+  <meta name="description" content="9/30 공개 후 이번 주 Show HN에 오른 개인 PKM. 평문 Markdown 위에 문단·아웃라이너 블록 혼용, 중첩 위키링크, 로컬 폴더 또는 E2E 암호화 동기화, PWA·CRDT 공동편집·정적 사이트 발행. AGENTS.md를 볼트 옆에 생성하고 MCP 서버로 로컬 시맨틱 검색. 보호 문서는 에이전트 접근 차단."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-10-07 07:10 KST</div>
+    <h1>세컨드 브레인 / PKM: EtherPK — Obsidian식 ‘글’과 Logseq식 ‘블록’을 한 문서에, 종단간 암호화 동기화와 로컬 MCP까지</h1>
+  </header>
+  <article>
+<p><em>9/30 공개 후 이번 주 Show HN에 오른 개인 PKM. 평문 Markdown 위에 문단·아웃라이너 블록 혼용, 중첩 위키링크, 로컬 폴더 또는 E2E 암호화 동기화, PWA·CRDT 공동편집·정적 사이트 발행. AGENTS.md를 볼트 옆에 생성하고 MCP 서버로 로컬 시맨틱 검색. 보호 문서는 에이전트 접근 차단.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+<strong>EtherPK</strong>(Ether Personal Knowledge)는 1인 개발자가 9월 30일 공개한 Markdown 기반 PKM이다. 이번 주 Hacker News ‘Show HN’에 “Obsidian·Logseq 대안”으로 올랐다(<a href="https://blog.etherpk.com/introducing-etherpk">공식 블로그</a>, <a href="https://wpnews.pro/news/show-hn-etherpk-an-obsidian-and-logseq-alternative-with-prose-and-blocks">HN 요약</a>). 눈에 띄는 건 <strong>“에이전트가 내 노트를 다루는 방식”을 처음부터 설계에 넣었다</strong>는 점이다.
+</p>
+<h2>핵심 기능</h2>
+<ul>
+<li><strong>글 + 블록 한 문서에</strong>: 블로그처럼 문단·제목으로 쓰다가, 아이디어 캡처할 땐 Logseq·Roam 같은 <strong>아웃라이너 블록</strong>으로. 제목 계층(H1·H2…)에서도 링크 관계를 추론한다.</li>
+<li><strong>중첩 위키링크</strong>: <code>[[[[Nested]] Wikilinking]]</code>처럼 개념 안에 개념을 넣어 계층을 만든다. 백링크·태스크 패널은 개념별 필터.</li>
+<li><strong>데이터 소유권</strong>: 표준 GFM Markdown. 내 컴퓨터 폴더(Chromium 파일 시스템 API) 또는 브라우저 저장소(OPFS)에 평문으로 두거나, 동기화 서버를 쓰면 <strong>기기에서 암호화한 뒤 전송(E2E)</strong> — 회사도 제목·파일명조차 못 본다. 대신 복구 코드를 잃으면 복구 불가.</li>
+<li><strong>어디서나</strong>: 웹 우선, 모바일 <strong>PWA</strong>, 안드로이드 공유 대상으로 빠른 캡처. 회사 방화벽용 Docker·Node 빌드와 클라이언트 소스 공개(소스 공개형)를 예고.</li>
+<li>그 밖에 CRDT <strong>실시간 공동 편집</strong>, 그래프 하나로 여러 <strong>정적 사이트 발행</strong>, 텔레메트리 없음.</li>
+</ul>
+<h2>에이전트 연동 — 여기가 포인트</h2>
+<ul>
+<li>폴더형 그래프 옆에 <strong><code>AGENTS.md</code></strong>를 자동 발행해, 에이전트가 노트 구조와 작업 규칙을 먼저 읽게 한다.</li>
+<li>MCP 서버 <strong><code>@appsoftwareltd/etherpk-mcp</code></strong>(헤드리스 클라이언트 포함)로 Claude Code·Codex·Cursor가 <strong>로컬에서 시맨틱 검색(RAG)</strong>하고 노트를 편집한다.</li>
+<li><strong>옵트인 원칙</strong>: 에이전트는 일부러 연결해야만 쓰이고, 추가 암호로 잠근 <strong>‘보호 문서’에는 접근할 수 없다</strong>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+LLM Wiki를 Obsidian에서 돌리는 사람들이 부딪히는 두 벽은 <strong>“에이전트가 볼트 규칙을 모른다”</strong>와 <strong>“민감한 노트까지 다 읽힌다”</strong>였다. EtherPK는 AGENTS.md와 보호 문서로 이 둘을 기본값에서 해결하려 한다. 당장 갈아탈 일은 아니어도, 내 Obsidian 볼트에 <strong>AGENTS.md 한 장과 ‘에이전트 금지 폴더’ 규칙</strong>을 두는 건 오늘 바로 베낄 만한 아이디어다.
+</p>
+<h2>체크포인트</h2>
+<ul>
+<li>신생 1인 프로젝트다. 장기 유지·가격 정책은 아직 미지수 — 평문 Markdown·내보내기 덕분에 <strong>탈출 비용이 낮다</strong>는 점이 안전판.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
