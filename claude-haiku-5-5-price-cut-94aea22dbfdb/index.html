@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AI 모델: Claude Haiku 5.5 — 입력 $0.10·출력 $0.50(10만 토큰 이하), Haiku 4.5보다 90% 싸고 Sonnet 5.5 캐시 읽기도 반값 — AiPaper 뉴스</title>
+  <meta name="description" content="Anthropic이 10/7 Claude Haiku 5.5를 공개했다. 10만 토큰 이하 요청은 Haiku 4.5 대비 90% 저렴(입력 $0.10/출력 $0.50 per 1M), Haiku급 최초 ‘effort’ 조절. 같은 날 Sonnet 5.5 캐시 읽기 $0.20→$0.10, Max·Team 구독자에게 월 API 크레딧($100~$500)을 준다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-08 07:01 KST</div>
+    <h1>AI 모델: Claude Haiku 5.5 — 입력 $0.10·출력 $0.50(10만 토큰 이하), Haiku 4.5보다 90% 싸고 Sonnet 5.5 캐시 읽기도 반값</h1>
+  </header>
+  <article>
+<p><em>Anthropic이 10/7 Claude Haiku 5.5를 공개했다. 10만 토큰 이하 요청은 Haiku 4.5 대비 90% 저렴(입력 $0.10/출력 $0.50 per 1M), Haiku급 최초 ‘effort’ 조절. 같은 날 Sonnet 5.5 캐시 읽기 $0.20→$0.10, Max·Team 구독자에게 월 API 크레딧($100~$500)을 준다.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+Anthropic이 10월 7일 <strong>Claude Haiku 5.5</strong>를 냈다. 스스로 “가장 싸고, 가장 빠르고, 가장 유능한 소형 모델”이라 부른다. 요약·압축(compaction)·분류·DB 질의 같은 <strong>대량·반복 작업</strong>과, Opus 5.5·Sonnet 5.5 밑에서 일하는 <strong>서브에이전트</strong>용이다(<a href="https://www.anthropic.com/claude-haiku-5-5">Anthropic</a>).
+</p>
+<h2>가격이 핵심 (100만 토큰당)</h2>
+<table>
+<tr><th></th><th>Haiku 5.5 (≤10만 / &gt;10만 토큰 프롬프트)</th><th>Haiku 4.5</th><th>Sonnet 5.5</th></tr>
+<tr><td>입력</td><td>$0.10 / $0.50</td><td>$1.00</td><td>$2.00</td></tr>
+<tr><td>출력</td><td>$0.50 / $2.50</td><td>$5.00</td><td>$10.00</td></tr>
+<tr><td>캐시 읽기</td><td>$0.01 / $0.05</td><td>$0.10</td><td>$0.10</td></tr>
+</table>
+<ul>
+<li>10만 토큰 이하 요청은 <strong>90% 인하</strong>, 초과는 50% 인하. Anthropic은 이전 Haiku 요청의 약 90%가 10만 토큰 이하였다며 “평균 약 75% 저렴”이라고 계산한다(새 토크나이저로 작업당 토큰이 약간 늘어난 점 반영).</li>
+<li><strong>Haiku급 최초로 effort(노력) 설정</strong>을 지원 — 비용과 지능 중 어느 쪽에 맞출지 고른다.</li>
+</ul>
+<h2>성능은 (회사 발표 수치)</h2>
+<ul>
+<li>컴퓨터 사용 OSWorld 2.1(오프라인 부분집합) <strong>72.4%</strong>(Haiku 4.5는 15.7%, Sonnet 5.5는 83.9%).</li>
+<li>Terminal-Bench 4.0 <strong>39.2%</strong> — 복잡한 에이전트 코딩은 여전히 Sonnet·Opus(70.6%) 몫이라고 Anthropic도 인정한다.</li>
+<li>고객 후기: HubSpot CRM 평가 92.8%, Asana 작업 지연 30%+ 감소, Box는 Haiku 4.5 대비 11점 상승·지연 절반.</li>
+</ul>
+<h2>함께 발표된 것</h2>
+<ul>
+<li><strong>Sonnet 5.5 캐시 읽기 $0.20→$0.10</strong> — 에이전트 작업 대부분에서 약 20% 저렴.</li>
+<li><strong>Max·Team 구독자 월 API 크레딧</strong>: Max 5x $100, Max 20x $200, Team 최대 $500(팀 공유). 이번 주 배포.</li>
+<li>Python·TypeScript SDK에 <strong>컴퓨터 사용·브라우저 사용(베타)</strong> 지원 추가.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+가격표가 “큰 모델이 생각하고, 작은 모델이 손발을 움직인다”는 구조를 밀고 있다. 내 노트 자동 요약, RSS 기사 분류, 볼트 정리 같은 <strong>매일 수백 번 도는 작업</strong>은 Haiku 5.5로, 기획·판단은 상위 모델로 나누면 비용이 크게 준다. 구독자 크레딧은 “구독 → API 실험”으로 사용자를 끌어오는 장치다.
+</p>
+<p>
+출처: <a href="https://www.anthropic.com/claude-haiku-5-5">Introducing Claude Haiku 5.5</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GitHub 트렌드: tester-army/e2e — “Pro 플랜으로 업그레이드해 봐”라고 쓰면 에이전트가 앱을 눌러 보는 테스트, 두 번째부터는 모델 호출 없이 재생 — AiPaper 뉴스</title>
+  <meta name="description" content="TesterArmy의 오픈소스 e2e(Apache-2.0)는 웹·모바일 앱의 끝단(E2E) 테스트를 자연어 목표로 쓰게 한다. 에이전트가 앱을 조작하고, 검증이 통과한 동작은 기록돼 다음 실행부터 모델 없이 재생한다. Playwright(크로미움·파이어폭스·웹킷)와 iOS·안드로이드 시뮬레이터 지원, 내 구독·API 키·로컬 모델 사용. 10/8 기준 약 7.3K★, 하루 +1.4K."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub 트렌드 · 2026-10-08 07:08 KST</div>
+    <h1>GitHub 트렌드: tester-army/e2e — “Pro 플랜으로 업그레이드해 봐”라고 쓰면 에이전트가 앱을 눌러 보는 테스트, 두 번째부터는 모델 호출 없이 재생</h1>
+  </header>
+  <article>
+<p><em>TesterArmy의 오픈소스 e2e(Apache-2.0)는 웹·모바일 앱의 끝단(E2E) 테스트를 자연어 목표로 쓰게 한다. 에이전트가 앱을 조작하고, 검증이 통과한 동작은 기록돼 다음 실행부터 모델 없이 재생한다. Playwright(크로미움·파이어폭스·웹킷)와 iOS·안드로이드 시뮬레이터 지원, 내 구독·API 키·로컬 모델 사용. 10/8 기준 약 7.3K★, 하루 +1.4K.</em></p>
+<p><strong>분류:</strong> GitHub 트렌드</p>
+<h2>한줄 요약</h2>
+<p>
+앱 테스트에서 가장 귀찮은 건 “버튼을 찾아 클릭하는 코드”를 계속 고치는 일이다. <strong>tester-army/e2e</strong>는 테스트를 <strong>목표 문장</strong>으로 쓰게 한다 — “워크스페이스를 Pro 플랜으로 업그레이드해”, “청구서 미리보기에 일할 계산 금액이 보이는지 확인해”. 그러면 에이전트가 실제로 앱을 조작한다. 10월 8일 GitHub 트렌딩에서 별 약 <strong>7.3천 개</strong>, 하루 <strong>+1,391</strong>(<a href="https://github.com/tester-army/e2e">GitHub</a>, <a href="https://github.com/trending">GitHub Trending</a>).
+</p>
+<h2>핵심 아이디어 (쉽게)</h2>
+<ul>
+<li><strong>자연어 + 전통적 검증을 한 테스트에</strong>: 에이전트에게 “해 봐”를 시키고, 마지막 확인은 기존 방식(화면 요소·텍스트 일치)으로 딱 잘라 검사할 수 있다.</li>
+<li><strong>한 번 성공하면 녹화 → 재생</strong>: 이후 검증이 통과한 에이전트 단계는 동작을 기록해 두고, <strong>앱이 바뀌기 전까지는 모델 호출 없이</strong> 그대로 재생한다. AI 테스트의 최대 약점인 <strong>비용·느림·들쭉날쭉함</strong>을 정면으로 줄인 설계다.</li>
+<li><strong>모델은 내 것</strong>: 구독, API 키, 로컬 모델 중 선택. 에이전트 단계가 없는 테스트는 모델이 아예 필요 없다.</li>
+</ul>
+<h2>어디서 돌아가나</h2>
+<ul>
+<li>웹: Playwright 기반 <strong>크로미움·파이어폭스·웹킷</strong>(호스팅 브라우저 Kernel도 지원).</li>
+<li>모바일: <strong>iOS 시뮬레이터·안드로이드 에뮬레이터</strong>(EAS 호스팅 포함).</li>
+<li>예제: Vite, Next.js, Expo, SwiftUI, Jetpack Compose, Kotlin Multiplatform, Flutter.</li>
+<li>PR에 결과를 댓글로 다는 GitHub 리포터, <code>npx e2e init</code> 한 줄 시작. 문서가 패키지에 포함돼 <strong>코딩 에이전트가 오프라인으로 읽을 수 있다</strong>.</li>
+</ul>
+<h2>왜 뜨나</h2>
+<p>
+코딩 에이전트가 코드를 빨리 쓸수록 병목은 <strong>“제대로 동작하나?”를 확인하는 단계</strong>로 옮겨 간다. e2e는 “AI가 짠 기능을 AI가 사용자처럼 눌러 보고, 통과한 경로는 싸게 반복”하는 구조로 그 병목을 노린다. 아직 1.0 전이라 API가 바뀔 수 있고, CLI는 익명 사용 통계를 보낸다(끌 수 있음).
+</p>
+<p>
+출처: <a href="https://github.com/tester-army/e2e">tester-army/e2e</a> · <a href="https://e2e.tester.army/docs">문서</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
