@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>세컨드 브레인 / PKM: Cadabby — PARA 폴더 세금 버리고, Karpathy식 LLM Wiki(flat wiki/)로 옮긴 실전 후기 — AiPaper 뉴스</title>
+  <meta name="description" content="naikoob이 10/6 Abby(PARA+MCP 도구)에서 Cadabby(LLM Wiki)로 피벗한 글을 공개. note_move·백링크 수리가 ‘폴더 세금’. raw/ 수집 + flat wiki/ + account/ 고객 경계. 상태·관계는 frontmatter·wikilink·MOC."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-10-10 07:18 KST</div>
+    <h1>세컨드 브레인 / PKM: Cadabby — PARA 폴더 세금 버리고, Karpathy식 LLM Wiki(flat wiki/)로 옮긴 실전 후기</h1>
+  </header>
+  <article>
+<p><em>naikoob이 10/6 Abby(PARA+MCP 도구)에서 Cadabby(LLM Wiki)로 피벗한 글을 공개. note_move·백링크 수리가 ‘폴더 세금’. raw/ 수집 + flat wiki/ + account/ 고객 경계. 상태·관계는 frontmatter·wikilink·MOC.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+LLM Wiki를 “써 보고 싶다”는 사람 앞에서, 실무자가 <strong>PARA 자동화 코드를 짜다 포기하고</strong> flat wiki로 옮긴 기록이 나왔다. <a href="https://naikoob.github.io/blog/second-brain/ai/architecture/2026/10/06/introducing-abby-cadabby.html">@naikoob — Introducing Abby Cadabby</a>(10/6).
+</p>
+<h2>Abby가 보여 준 것</h2>
+<p>
+speckit으로 <code>note_capture</code>·<code>note_move</code>·<code>note_archive</code>·<code>vault_lint</code> 계약을 단단히 짰다. 그런데 코드 감사 결과, 상당량이 <strong>Inbox→Projects→Archive 경로 이동</strong>, 이동 시 <strong>백링크 수리</strong>, 폴더 <code>index.md</code> 동기화 — 이른바 <strong>폴더 세금</strong>이었다. 에이전트는 트리 브라우징보다 검색·링크로 움직이는데, 사람은 폴더 분류에 토큰을 쓰고 있었다.
+</p>
+<h2>Cadabby = LLM Wiki 실전형</h2>
+<ul>
+<li><code>raw/</code> — 스크래치·트랜스크립트 수집.</li>
+<li><code>wiki/</code> — 상록 지식 <strong>평탄</strong> 배치. 경로가 곧 정체성(이동 없음).</li>
+<li><code>account/&lt;client&gt;/</code> — 고객 맥락 격리(일반 wiki 오염·크로스 검색 누수 방지).</li>
+<li>생명주기는 폴더가 아니라 frontmatter <code>status</code>, 관계는 <code>[[wikilink]]</code>·MOC.</li>
+<li>도구도 <code>note_move</code> 대신 <code>kb_scaffold</code>·<code>kb_graph</code>·<code>kb_search</code>·<code>kb_inspect</code>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+Karpathy LLM Wiki 플러그인(이미지 근거 등)과 맞물려, “두 번째 뇌” 담론이 <strong>폴더 정리 자동화</strong>에서 <strong>그래프·수집/위키 이층 구조</strong>로 옮기는 증거다. AiPaper 독자(LLM Wiki 관심)에게는 “스펙부터 짜도 잘못된 추상화면 폴더 로봇이 된다”는 교훈이 크다.
+</p>
+<p>
+출처: <a href="https://naikoob.github.io/blog/second-brain/ai/architecture/2026/10/06/introducing-abby-cadabby.html">Introducing Abby Cadabby</a> · <a href="https://github.com/naikoob/cadabby">naikoob/cadabby</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
