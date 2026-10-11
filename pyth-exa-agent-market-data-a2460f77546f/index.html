@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AI 트레이딩: Pyth × Exa — 에이전트가 ‘웹 리서치 + 실시간·역사 시세’를 한 워크플로로, MCP는 Pro 키 필요 — AiPaper 뉴스</title>
+  <meta name="description" content="10/9 A-Team Insight: Pyth Network와 Exa가 에이전트용 시세+웹리서치 파일럿. Pyth MCP(https://mcp.pyth.network/mcp)로 심볼 검색·최신가·역사·60초 틱·캔들. 가격 도구는 Pyth Pro API 키. 상용 요금은 미정·파일럿 단계."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 트레이딩 · 2026-10-12 07:06 KST</div>
+    <h1>AI 트레이딩: Pyth × Exa — 에이전트가 ‘웹 리서치 + 실시간·역사 시세’를 한 워크플로로, MCP는 Pro 키 필요</h1>
+  </header>
+  <article>
+<p><em>10/9 A-Team Insight: Pyth Network와 Exa가 에이전트용 시세+웹리서치 파일럿. Pyth MCP(https://mcp.pyth.network/mcp)로 심볼 검색·최신가·역사·60초 틱·캔들. 가격 도구는 Pyth Pro API 키. 상용 요금은 미정·파일럿 단계.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>한줄 요약</h2>
+<p>
+온체인·기관 시세 네트워크 <strong>Pyth</strong>와 AI 검색 <strong>Exa</strong>가 <strong>에이전트가 뉴스·기업 정보와 시세를 한 흐름에서</strong> 쓰게 하는 협업을 <strong>초기 테스트</strong> 중이라고 10/9 <a href="https://a-teaminsight.com/blog/pyth-and-exa-explore-new-market-data-model-for-ai-agents/">A-Team Insight</a>가 전했다. 프로덕션 전사 배포·확정 요금은 <strong>아직 없다</strong>.
+</p>
+<h2>어떻게 붙나 (문서 기준)</h2>
+<ul>
+<li><strong>엔드포인트</strong>: <code>https://mcp.pyth.network/mcp</code> (호스티드, Streamable HTTP).</li>
+<li><strong>도구</strong>: <code>get_symbols</code>(키 선택) · <code>get_latest_price</code>(최대 100피드, <strong>키 필요</strong>) · <code>get_historical_price</code> · <code>get_price_range</code>(최대 60초 창) · <code>get_candlestick_data</code> · 날짜 변환 유틸.</li>
+<li><strong>키</strong>: 클라이언트가 <code>Authorization: Bearer &lt;Pyth Pro key&gt;</code>를 보낸다. 서버는 키를 갖지 않는다. <code>get_symbols</code>는 키 없이 가능, 키 있으면 <code>entitled</code> 플래그.</li>
+<li><strong>스킬</strong>: 포트폴리오·변동성·FX·CSV보내기 등 <strong>9개 MCP Skills</strong> 템플릿을 문서가 안내.</li>
+<li><strong>파일럿 초점</strong>(인터뷰): 이벤트 드리븐 리서치, 실적 발표 후 가격 경로, 크로스에셋 비교, 포트폴리오 모니터링. Cahill(Douro/Pyth)은 전통 벤더 다단계 라이선스가 <strong>추론·학습·재배포</strong> 앞에서 느려진다고 본다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+eToro·Axi·Ludus가 <strong>브로커·논지 보드</strong> 쪽 MCP라면, Pyth는 <strong>시세 레이어</strong>를 에이전트 표준 소켓으로 내민다. “Bloomberg 터미널을 에이전트에 통째로”가 아니라 <strong>기여 기관 시세 + 명시적 엔타이틀먼트</strong>로 AI 네이티브 앱 요금을 다시 짜려는 실험이다. 리스크·컴플라이언스: 에이전트가 시세와 웹 문장을 섞을 때 <strong>출처·시각·심볼 식별</strong>을 기계가 읽게 남겨야 한다고 기사도 강조.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>역사 데이터는 문서상 <strong>2025-04 이후</strong>.</li>
+<li>ARR $11.5M 등 성장 수치는 <strong>별도 Pyth/커뮤니티 주장</strong> — 이번 Exa 파일럿의 성과 지표가 아니다.</li>
+</ul>
+<p>
+출처: <a href="https://a-teaminsight.com/blog/pyth-and-exa-explore-new-market-data-model-for-ai-agents/">A-Team — Pyth and Exa</a> · <a href="https://docs.pyth.network/price-feeds/pro/mcp">Pyth MCP docs</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

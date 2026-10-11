@@ -6,8 +6,398 @@
 <description>최근 며칠분. 전문 읽기용 해설 기사 (양보다 질)</description>
 <language>ko</language>
 <atom:link href="https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Sat, 10 Oct 2026 21:57:41 +0000</lastBuildDate>
+<lastBuildDate>Sun, 11 Oct 2026 21:59:55 +0000</lastBuildDate>
 <managingEditor>AiPaper 뉴스</managingEditor>
+<item>
+<title>디자인/UI·UX: Figma AI 크레딧 — Full 3,000~4,250/월, Make·에이전트는 가변, Weave 툴은 고정(스티커팩 78·제품변형 110)</title>
+<link>https://codemwk.github.io/aipaper-newspaper/figma-ai-credits-weave-c6804c726b61/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/figma-ai-credits-weave-c6804c726b61</guid>
+<pubDate>Sun, 11 Oct 2026 22:11:00 +0000</pubDate>
+<category>디자인/UI·UX</category>
+<description>Figma 가격·헬프(크레딧 표 2026-10-06 갱신): Professional Full $16+3,000 AI credits, Org $55+3,500, Ent $90+4,250. Make 앱 생성 ~100+, 에이전트 5스크린 ~300+. Weave 1st-party 툴은 실행당 고정(예: Generate product variations 110).</description>
+<content:encoded><![CDATA[<p><em>Figma 가격·헬프(크레딧 표 2026-10-06 갱신): Professional Full $16+3,000 AI credits, Org $55+3,500, Ent $90+4,250. Make 앱 생성 ~100+, 에이전트 5스크린 ~300+. Weave 1st-party 툴은 실행당 고정(예: Generate product variations 110).</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+Figma는 AI를 <strong>좌석에 묶인 월간 크레딧</strong>으로 판다. <a href="https://www.figma.com/pricing/">가격표</a> 기준 Full 시트는 Professional <strong>$16/월+3,000 credits</strong>, Organization <strong>$55+3,500</strong>, Enterprise <strong>$90+4,250</strong>. Dev/Collab/View·Starter는 <strong>500</strong>/월(Starter·View는 <strong>일 150</strong> 상한도). 크레딧은 <strong>이월·공유 불가</strong>.
+</p>
+<h2>숫자가 말하는 소비 (헬프센터, rates as of 2026-10-06)</h2>
+<ul>
+<li><strong>공짜</strong>: AI 검색, 레이어 이름, FigJam sticky 요약/클러스터 등.</li>
+<li><strong>이미지</strong>: 배경제거 1–5, 업스케일 5–10, Make image는 모델별 <strong>2 / 6 / 8 / 16</strong>.</li>
+<li><strong>에이전트성(대략)</strong>: Make “폰트 변경 ~30+”, “인터랙티브 ~75+”, “앱 從頭 ~100+”. Design 에이전트 “5스크린 체크아웃 ~300+”. <strong>사전 고지 불가</strong> — 끝난 뒤 아이콘에 소비량 표시.</li>
+<li><strong>Weave 1st-party 고정 단가 예</strong>: Add logo 19, Sticker pack <strong>78</strong>, Generate product variations <strong>110</strong>, Bauhaus/Art Deco <strong>55</strong>. 커뮤니티 Weave는 가변. <strong>Design 크레딧 풀 ≠ weave.figma.com Weave 크레딧 풀</strong>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+10/6–10/7 Figma Agent GA 보도와 맞물려, 오늘은 <strong>단가표</strong>만 분리해 읽는다. Framer가 사이트 플랜+크레딧, Linear가 공급가 토큰+샌드박스라면, Figma는 <strong>시트 포함분으로 훅을 걸고 애드온 크레딧으로 스케일</strong>한다. 디자인 시스템 팀 예산은 “AI on”이 아니라 <strong>Make 한 번=100크레딧 ≈ Full 월정액의 1/30</strong> 같은 환산으로 짜야 한다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>Undo는 크레딧 환불 없음.</li>
+<li>에이전트·Make 수치는 <strong>근사</strong>, 모델·컨텍스트에 따라 흔들림.</li>
+</ul>
+<p>
+출처: <a href="https://www.figma.com/pricing/">Figma Pricing</a> · <a href="https://help.figma.com/hc/en-us/articles/33459875669015-How-Figma-AI-credits-work">How Figma AI credits work</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>GitHub: openrig — Claude Code·Codex·Pi로 ‘역할 있는 에이전트 팀’을 로컬에, ~6.9K★</title>
+<link>https://codemwk.github.io/aipaper-newspaper/openrig-agent-teams-b25cf1771556/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/openrig-agent-teams-b25cf1771556</guid>
+<pubDate>Sun, 11 Oct 2026 22:10:00 +0000</pubDate>
+<category>GitHub</category>
+<description>mvschwarz/openrig(~6,947★): 여러 코딩 에이전트를 역할·공유 컨텍스트·소유 작업이 있는 지속 팀으로 묶는 오픈소스. ‘한 채팅창’이 아니라 네트워크형 협업 하네스.</description>
+<content:encoded><![CDATA[<p><em>mvschwarz/openrig(~6,947★): 여러 코딩 에이전트를 역할·공유 컨텍스트·소유 작업이 있는 지속 팀으로 묶는 오픈소스. ‘한 채팅창’이 아니라 네트워크형 협업 하네스.</em></p>
+<p><strong>분류:</strong> GitHub</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://github.com/mvschwarz/openrig">openrig</a>는 Claude Code·Codex·Pi 등을 묶어 <strong>역할이 있는 에이전트 팀</strong>을 로컬에서 돌리게 하는 프로젝트다. 설명 문구 그대로 *persistent teams with roles, shared context and owned work*. 스타 <strong>~6,947</strong>(10/12).
+</p>
+<h2>무엇을 풀려 하나</h2>
+<ul>
+<li><strong>문제</strong>: 단일 에이전트 창은 컨텍스트가 섞이고, 누가 무슨 일을 소유하는지 흐려진다.</li>
+<li><strong>접근</strong>: 사람 조직처럼 <strong>역할·공유 메모리·작업 소유권</strong>을 에이전트 네트워크에 부여. T3 Code가 “여러 벤더 HUD”라면 openrig은 “한 벤더 조합을 <strong>팀 토폴로지</strong>로”.</li>
+<li><strong>실용 시나리오</strong>(저장소 포지션 기준): 리뷰어 에이전트 / 구현 에이전트 / 문서 에이전트가 같은 공유 컨텍스트를 읽되, 이슈 단위 소유는 나눔.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+Claude Code Projects·클라우드 스레드가 <strong>벤더 클라우드 병렬</strong>이라면, openrig은 <strong>로컬·조합형 멀티에이전트</strong> 실험이다. 스타 규모는 github-mcp·t3code보다 작지만, “에이전트 팀 OS” 키워드가 주간 트렌드에 반복 등장하는 흐름과 맞춰 읽을 만하다. 프로덕션 전 확인: 메모리 공유 경계(시크릿 유출), 역할 충돌 시 merge 규칙, 각 CLI 요금이 <strong>곱으로</strong> 나가는 점.
+</p>
+<p>
+출처: <a href="https://github.com/mvschwarz/openrig">github.com/mvschwarz/openrig</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>GitHub: T3 Code(pingdotgg/t3code) — 구독을 되팔지 않는 ‘에이전트 하네스 컨트롤 플레인’, ~2.7만★</title>
+<link>https://codemwk.github.io/aipaper-newspaper/t3code-agent-harness-e92e13890a21/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/t3code-agent-harness-e92e13890a21</guid>
+<pubDate>Sun, 11 Oct 2026 22:09:00 +0000</pubDate>
+<category>GitHub</category>
+<description>Theo(pingdotgg) 팀의 T3 Code: Claude Code·Codex·Cursor·Grok Build·OpenCode·Antigravity를 로컬에서 遥控하는 웹·데스크톱·모바일 UI. 토큰 재판매 없음·MIT. npx t3@latest / brew cask. 스타 ~26,973.</description>
+<content:encoded><![CDATA[<p><em>Theo(pingdotgg) 팀의 T3 Code: Claude Code·Codex·Cursor·Grok Build·OpenCode·Antigravity를 로컬에서 遥控하는 웹·데스크톱·모바일 UI. 토큰 재판매 없음·MIT. npx t3@latest / brew cask. 스타 ~26,973.</em></p>
+<p><strong>분류:</strong> GitHub</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://github.com/pingdotgg/t3code">T3 Code</a>는 AI 코딩 <strong>모델을 파는 앱이 아니라</strong>, 이미 쓰는 에이전트 CLI를 <strong>원격·모바일·데스크톱에서 조종하는 컨트롤 서피스</strong>다. README 첫 질문에 “뭘 파냐?” → <strong>Nothing.</strong> 스타 <strong>~26,973</strong>(10/12), 라이선스 <strong>MIT</strong>.
+</p>
+<h2>어떻게 동작하나</h2>
+<ul>
+<li><strong>지원 프로바이더</strong>(문서): Codex CLI, Claude Code, Cursor CLI(<code>agent login</code>), Grok Build, OpenCode, Google Antigravity(설정에서 설치·Google 로그인).</li>
+<li><strong>클라이언트</strong>: <a href="https://t3.codes">t3.codes</a> 웹, Electron 데스크톱, iOS·Android 리모트 앱.</li>
+<li><strong>설치</strong>: <code>curl -fsSL https://t3.codes/install.sh | sh</code> 또는 <code>npx t3@latest</code>. macOS <code>brew install --cask t3-code</code>, Windows winget/scoop.</li>
+<li><strong>철학</strong>: Codex 데스크톱·Conductor·Cursor Glass 등에 영감을 받았으나 <strong>오픈·포크 가능·원격</strong>을 기준으로 다시 씀. Git 체크포인트·원버튼 GitHub PR 같은 워크플로를 사용자 문서가 강조.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+“또 하나의 에이전트”가 아니라 <strong>에이전트 오케스트라의 HUD</strong>다. 구독은 Anthropic·OpenAI·Cursor에 그대로 두고, T3는 <strong>세션·기기·UI</strong>만 가져간다. cmux가 터미널 UX, gh-aw가 GitHub 워크플로라면 T3는 <strong>멀티 프로바이더 리모컨</strong>. 기업에선 “토큰 프록시 금지” 정책을 지키면서도 모바일 승인·모니터링을 넣고 싶을 때 후보가 된다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>프로바이더 CLI가 먼저 설치·로그인되어 있어야 한다.</li>
+<li>상업 모델이 나중에 바뀔 수 있으니, 가치는 <strong>MIT 포크 가능성</strong>에 두라는 것이 프로젝트 스스로의 메시지다.</li>
+</ul>
+<p>
+출처: <a href="https://github.com/pingdotgg/t3code">github.com/pingdotgg/t3code</a> · <a href="https://t3.codes">t3.codes</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>AI 도구: Linear AI Credits — 이슈 트래커가 ‘코딩 세션·Loops’를 공급가 토큰+$0.25/20분 샌드박스로 판다</title>
+<link>https://codemwk.github.io/aipaper-newspaper/linear-ai-credits-coding-6843c03f2cac/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/linear-ai-credits-coding-6843c03f2cac</guid>
+<pubDate>Sun, 11 Oct 2026 22:08:00 +0000</pubDate>
+<category>AI 도구</category>
+<description>Linear는 Free에도 Agent/MCP를 열고, Basic $10·Business $16/유저(연간) 좌석 위에 Coding sessions·Loops만 선불 AI 크레딧으로 과금. 모델 토큰은 공급가 그대로(마크업 0), 샌드박스 $0.25/20분. Loops 일반 실행 $0.07–$0.20. 크레딧 12개월 만료·최소 충전 $10.</description>
+<content:encoded><![CDATA[<p><em>Linear는 Free에도 Agent/MCP를 열고, Basic $10·Business $16/유저(연간) 좌석 위에 Coding sessions·Loops만 선불 AI 크레딧으로 과금. 모델 토큰은 공급가 그대로(마크업 0), 샌드박스 $0.25/20분. Loops 일반 실행 $0.07–$0.20. 크레딧 12개월 만료·최소 충전 $10.</em></p>
+<p><strong>분류:</strong> AI 도구</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://linear.app/pricing">Linear</a>는 이슈·프로젝트 SaaS 위에 <strong>에이전트 코딩</strong>을 얹되, 비용을 <strong>좌석과 분리</strong>했다. Triage Intelligence·Asks 등 많은 AI는 플랜에 포함되고, <strong>Coding sessions·Loops만</strong> <a href="https://linear.app/docs/ai-credits">AI Credits</a> 선불 잔고에서 빠진다.
+</p>
+<h2>숫자가 말하는 구조 (2026-10-12 확인)</h2>
+<ul>
+<li><strong>좌석(연간 청구 표시)</strong>: Free $0(Agent·MCP 포함) · <strong>Basic $10/유저/월</strong> · <strong>Business $16/유저/월</strong> · Enterprise 커스텀.</li>
+<li><strong>크레딧 과금 대상</strong>: Coding sessions(Basic+) — <strong>토큰=모델 공급가 마크업 0</strong> + <strong>샌드박스 $0.25 / 20분</strong>. Loops — 코딩 세션 없이 돌면 전형적으로 <strong>$0.07–$0.20</strong>/run(작업에 따라 변동; 세션을 띄우면 세션 비용 추가).</li>
+<li><strong>충전</strong>: 관리자만. 최소 <strong>$10</strong>, 자동충전 최소 <strong>$50</strong>. <strong>12개월 만료</strong>, 구독 주기와 독립 이월. 프로모→지원팀→직접충전 순 소진.</li>
+<li><strong>통제</strong>: 워크스페이스·유저·Loop별 일/주/월 한도. 게스트의 에이전트 상호작용 차단 토글.</li>
+<li><strong>제품 쪽</strong>(8/20 changelog): 환경별 툴체인 자동 설치, <strong>브라우저에서 플로우 테스트·전후 스크린샷</strong>, 그 뒤에야 PR을 되돌리는 방향.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+Cursor·Claude Code가 “에디터/CLI 구독”이라면 Linear는 <strong>이슈가 곧 티켓팅된 에이전트 작업</strong>이 되는 경로다. 원가 공개형 크레딧은 Framer·Figma의 “크레딧 번들”과 다르게 <strong>클라우드 런타임 분</strong>을 분리해 보여 준다. 팀은 ‘AI 기능 on/off’가 아니라 <strong>월 얼마까지 코딩 세션을 태울지</strong>를 예산 항목으로 넣게 된다.
+</p>
+<p>
+출처: <a href="https://linear.app/pricing">Linear Pricing</a> · <a href="https://linear.app/docs/ai-credits">AI Credits</a> · <a href="https://linear.app/changelog/2026-08-20-coding-environments">Changelog 2026-08-20</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>AI 트레이딩: Match-Trader ‘트레이더용 MCP’ — 브로커 데스크용에 이어, 개인 계좌 조회·주문(승인형)까지</title>
+<link>https://codemwk.github.io/aipaper-newspaper/match-trader-mcp-traders-87306f5fa010/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/match-trader-mcp-traders-87306f5fa010</guid>
+<pubDate>Sun, 11 Oct 2026 22:07:00 +0000</pubDate>
+<category>AI 트레이딩</category>
+<description>10/5 Finance Magnates: Match-Trade가 브로커 Manager MCP에 이어 Match-Trader MCP for Traders를 출시. 포지션·스왑·노출·이력 자연어 조회, 주문 생성·수정·취소는 클라이언트가 승인 UI를 띄울 수 있음. 토큰 권한·레이트 리밋·투자자문 아님 고지.</description>
+<content:encoded><![CDATA[<p><em>10/5 Finance Magnates: Match-Trade가 브로커 Manager MCP에 이어 Match-Trader MCP for Traders를 출시. 포지션·스왑·노출·이력 자연어 조회, 주문 생성·수정·취소는 클라이언트가 승인 UI를 띄울 수 있음. 토큰 권한·레이트 리밋·투자자문 아님 고지.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>한줄 요약</h2>
+<p>
+10/5 AiPaper가 다룬 것은 <strong>브로커·프롭펌 내부</strong>용 Broker Management MCP였다. 같은 시기 Match-Trade는 <strong>개인/트레이더 계좌</strong>를 Claude·ChatGPT·Cursor·VS Code에 붙이는 <a href="https://www.financemagnates.com/forex/match-trade-adds-retail-traders-to-mcp-after-brokers-and-prop-firms/">MCP for Traders</a>를 냈다. <strong>조회 + (승인형) 주문</strong>이 한 서버에 있다.
+</p>
+<h2>어떻게 동작하나</h2>
+<ul>
+<li><strong>읽기</strong>: 오픈 포지션, 스왑 비용, 포트폴리오 노출, 대기 주문, 거래 이력. 손실 패턴·손절 없는 포지션 찾기 같은 질의 예시가 보도에 등장.</li>
+<li><strong>쓰기</strong>: 포지션 오픈·수정·클로즈, 대기 주문 생성·수정·취소. 호환 클라이언트는 <strong>파라미터를 보여 주고 트레이더 승인 후</strong> 실행할 수 있다고 한다.</li>
+<li><strong>통제</strong>: Match-Trader API 경유, 읽기/거래 기능 분리, <strong>계좌 단위 토큰</strong>, 기능별 권한 제한·철회, 토큰·유저 레이트 리밋, API 액션이 <strong>거래 이력에 남음</strong>.</li>
+<li><strong>고지</strong>: 투자 조언 아님, 승인 주문 책임은 트레이더.</li>
+</ul>
+<h2>같은 주의 다른 MCP와 비교</h2>
+<ul>
+<li><strong>브로커 MCP</strong>(10/1·10/5 보도): Full Server License 사업자, Manager/Admin, 주로 <strong>운영 데이터</strong>.</li>
+<li><strong>트레이더 MCP</strong>: 고객 계좌, <strong>주문 경로 포함</strong>.</li>
+<li><strong>Axi MT5↔Claude</strong>(10/8): 브로커별 MT5 권한 모델. Match-Trader는 <strong>자사 멀티에셋 스택</strong> 안의 원격 MCP.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+리테일 FX·CFD에서 MCP가 “차트 설명해 줘”를 넘어 <strong>계좌 행위 계층</strong>으로 내려왔다. 실무 체크리스트는 (1) 토큰을 읽기 전용으로 쪼갤 수 있는지 (2) 승인 UI가 클라이언트 기본값인지 (3) 레이트 리밋·감사 로그가 분쟁 시 증거로 쓰이는지다.
+</p>
+<p>
+출처: <a href="https://www.financemagnates.com/forex/match-trade-adds-retail-traders-to-mcp-after-brokers-and-prop-firms/">Finance Magnates — MCP for Traders</a> · 브로커편: <a href="https://match-trader.com/match-trader-brings-ai-assistants-directly-to-broker-data-via-model-context-protocol/">Match-Trader Broker MCP</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>AI 트레이딩: Pyth × Exa — 에이전트가 ‘웹 리서치 + 실시간·역사 시세’를 한 워크플로로, MCP는 Pro 키 필요</title>
+<link>https://codemwk.github.io/aipaper-newspaper/pyth-exa-agent-market-data-a2460f77546f/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/pyth-exa-agent-market-data-a2460f77546f</guid>
+<pubDate>Sun, 11 Oct 2026 22:06:00 +0000</pubDate>
+<category>AI 트레이딩</category>
+<description>10/9 A-Team Insight: Pyth Network와 Exa가 에이전트용 시세+웹리서치 파일럿. Pyth MCP(https://mcp.pyth.network/mcp)로 심볼 검색·최신가·역사·60초 틱·캔들. 가격 도구는 Pyth Pro API 키. 상용 요금은 미정·파일럿 단계.</description>
+<content:encoded><![CDATA[<p><em>10/9 A-Team Insight: Pyth Network와 Exa가 에이전트용 시세+웹리서치 파일럿. Pyth MCP(https://mcp.pyth.network/mcp)로 심볼 검색·최신가·역사·60초 틱·캔들. 가격 도구는 Pyth Pro API 키. 상용 요금은 미정·파일럿 단계.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>한줄 요약</h2>
+<p>
+온체인·기관 시세 네트워크 <strong>Pyth</strong>와 AI 검색 <strong>Exa</strong>가 <strong>에이전트가 뉴스·기업 정보와 시세를 한 흐름에서</strong> 쓰게 하는 협업을 <strong>초기 테스트</strong> 중이라고 10/9 <a href="https://a-teaminsight.com/blog/pyth-and-exa-explore-new-market-data-model-for-ai-agents/">A-Team Insight</a>가 전했다. 프로덕션 전사 배포·확정 요금은 <strong>아직 없다</strong>.
+</p>
+<h2>어떻게 붙나 (문서 기준)</h2>
+<ul>
+<li><strong>엔드포인트</strong>: <code>https://mcp.pyth.network/mcp</code> (호스티드, Streamable HTTP).</li>
+<li><strong>도구</strong>: <code>get_symbols</code>(키 선택) · <code>get_latest_price</code>(최대 100피드, <strong>키 필요</strong>) · <code>get_historical_price</code> · <code>get_price_range</code>(최대 60초 창) · <code>get_candlestick_data</code> · 날짜 변환 유틸.</li>
+<li><strong>키</strong>: 클라이언트가 <code>Authorization: Bearer &lt;Pyth Pro key&gt;</code>를 보낸다. 서버는 키를 갖지 않는다. <code>get_symbols</code>는 키 없이 가능, 키 있으면 <code>entitled</code> 플래그.</li>
+<li><strong>스킬</strong>: 포트폴리오·변동성·FX·CSV보내기 등 <strong>9개 MCP Skills</strong> 템플릿을 문서가 안내.</li>
+<li><strong>파일럿 초점</strong>(인터뷰): 이벤트 드리븐 리서치, 실적 발표 후 가격 경로, 크로스에셋 비교, 포트폴리오 모니터링. Cahill(Douro/Pyth)은 전통 벤더 다단계 라이선스가 <strong>추론·학습·재배포</strong> 앞에서 느려진다고 본다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+eToro·Axi·Ludus가 <strong>브로커·논지 보드</strong> 쪽 MCP라면, Pyth는 <strong>시세 레이어</strong>를 에이전트 표준 소켓으로 내민다. “Bloomberg 터미널을 에이전트에 통째로”가 아니라 <strong>기여 기관 시세 + 명시적 엔타이틀먼트</strong>로 AI 네이티브 앱 요금을 다시 짜려는 실험이다. 리스크·컴플라이언스: 에이전트가 시세와 웹 문장을 섞을 때 <strong>출처·시각·심볼 식별</strong>을 기계가 읽게 남겨야 한다고 기사도 강조.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>역사 데이터는 문서상 <strong>2025-04 이후</strong>.</li>
+<li>ARR $11.5M 등 성장 수치는 <strong>별도 Pyth/커뮤니티 주장</strong> — 이번 Exa 파일럿의 성과 지표가 아니다.</li>
+</ul>
+<p>
+출처: <a href="https://a-teaminsight.com/blog/pyth-and-exa-explore-new-market-data-model-for-ai-agents/">A-Team — Pyth and Exa</a> · <a href="https://docs.pyth.network/price-feeds/pro/mcp">Pyth MCP docs</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>GitHub: github/github-mcp-server — 공식 MCP로 이슈·PR·리포를 에이전트 도구로, ~3.4만★</title>
+<link>https://codemwk.github.io/aipaper-newspaper/github-official-mcp-server-5ee6a9c5b448/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/github-official-mcp-server-5ee6a9c5b448</guid>
+<pubDate>Sun, 11 Oct 2026 22:05:00 +0000</pubDate>
+<category>GitHub</category>
+<description>GitHub 공식 MCP 서버(github/github-mcp-server) 스타 ~33,520. 에이전트가 리포 읽기·이슈/PR 관리·워크플로 자동화를 MCP 도구로 수행. ‘비공식 스크래퍼’가 아니라 플랫폼이 에이전트 인터페이스를 제품화한 사례.</description>
+<content:encoded><![CDATA[<p><em>GitHub 공식 MCP 서버(github/github-mcp-server) 스타 ~33,520. 에이전트가 리포 읽기·이슈/PR 관리·워크플로 자동화를 MCP 도구로 수행. ‘비공식 스크래퍼’가 아니라 플랫폼이 에이전트 인터페이스를 제품화한 사례.</em></p>
+<p><strong>분류:</strong> GitHub</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://github.com/github/github-mcp-server">github/github-mcp-server</a>는 GitHub가 직접 유지하는 <strong>Model Context Protocol 서버</strong>다. Claude Code·Codex·Cursor 같은 MCP 클라이언트가 <strong>이슈·PR·코드·액션</strong>을 도구 호출로 다루게 한다. 스타 <strong>~33,520</strong>(10/12 <code>gh api</code>).
+</p>
+<h2>무엇을 의미하나 (코드 덤프 없이)</h2>
+<ul>
+<li><strong>이전</strong>: 에이전트에게 “GitHub 해 줘”는 곧 스크래핑·임의 <code>gh</code> 래퍼·깨지기 쉬운 HTML 파서였다.</li>
+<li><strong>지금</strong>: 플랫폼이 <strong>도구 스키마</strong>를 정의하고, 권한·감사·API 한도를 <strong>기존 GitHub 인증</strong> 안으로 넣는다.</li>
+<li><strong>실무 패턴</strong>: “이 이슈 관련 파일 찾아 PR 초안” → 에이전트가 MCP로 이슈 본문·코멘트·체크런을 읽고, 브랜치/PR API로 되돌린다. cmux·gh-aw가 <strong>로컬 하네스·워크플로 DSL</strong>이라면, 이건 <strong>호스트 API의 공식 플러그</strong>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+MCP 생태계에서 “누가 서버를 쓰느냐”보다 <strong>누가 공식 서버를 내느냐</strong>가 신뢰 분기점이다. GitHub가 직접 내면 기업 보안팀이 “커뮤니티 MCP”를 막을 때 <strong>예외 화이트리스트</strong>가 생기기 쉽다. 반대로 공식 서버가 기능을 좁히면 비공식 서버가 다시 틈새에 들어온다 — 플랫폼 vs 확장의 고전 긴장.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>스타 수는 인기도 지표일 뿐, 프로덕션 권한 설계(세밀한 PAT·조직정책)는 별개다.</li>
+<li>최근 푸시 기준 활발히 유지 중(10/8 전후).</li>
+</ul>
+<p>
+출처: <a href="https://github.com/github/github-mcp-server">github/github-mcp-server</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>AI 모델: OpenAI, 내부 프론티어 모델의 수학 원고 700+편을 GitHub에 — Lean 형식화·인용 규약과 함께</title>
+<link>https://codemwk.github.io/aipaper-newspaper/openai-math-manuscripts-0a0e7637c9c9/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/openai-math-manuscripts-0a0e7637c9c9</guid>
+<pubDate>Sun, 11 Oct 2026 22:04:00 +0000</pubDate>
+<category>AI 모델</category>
+<description>10/6 OpenAI가 github.com/openai/math에 AI 생성 수학 결과물을 공개. 카탈로그 ~719–722편, 다수 Lean 형식화, 평균 계산량은 ChatGPT Pro 사고 ~3시간 상당이라고 회사 공표. IAS 자문그룹 권고를 반영한 공개 방식. 스타 ~14.0K.</description>
+<content:encoded><![CDATA[<p><em>10/6 OpenAI가 github.com/openai/math에 AI 생성 수학 결과물을 공개. 카탈로그 ~719–722편, 다수 Lean 형식화, 평균 계산량은 ChatGPT Pro 사고 ~3시간 상당이라고 회사 공표. IAS 자문그룹 권고를 반영한 공개 방식. 스타 ~14.0K.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+OpenAI는 <strong>2026-10-06</strong> <a href="https://openai.com/index/sharing-ai-progress-in-mathematics/">Sharing AI progress in mathematics</a>에서 내부 프론티어 모델이 만든 수학 결과를 <strong>GitHub 저장소</strong>로 공개했다. <a href="https://github.com/openai/math">openai/math</a>는 원고 PDF·소스·인용 지침·(다수) <strong>Lean</strong> 증명 형식화를 담고, 스타는 <strong>~14,041</strong>(10/12).
+</p>
+<h2>어떻게 공개하나</h2>
+<ul>
+<li><strong>자문</strong>: Institute for Advanced Study의 *Advisory Group on Mathematics and Artificial Intelligence* 권고를 반영했다고 명시. 개정·인용 프로토콜을 저장소에 둠.</li>
+<li><strong>규모</strong>: 초기 보도·탐색기는 <strong>722</strong> 원고/372 패밀리, README·카탈로그는 철회·수정 반영 <strong>~719</strong> 전후 — <strong>유동</strong>.</li>
+<li><strong>투명성 부가물</strong>: 모델 추론 요약 <strong>10건</strong>, ChatGPT <strong>Pro 사용량으로 환산한 컴퓨트</strong>, 시도 문제 수 통계. “평균 결과는 Pro thinking <strong>약 3시간</strong> 상당”이라고 회사 문장.</li>
+<li><strong>앞으로</strong>: 워크숍·학회 지원 예고, 모델 자체 책임 공개는 “작업 중” 수준으로만 언급.</li>
+</ul>
+<h2>왜 중요한가 (그리고 논쟁)</h2>
+<p>
+Fields 메달리스트 Hugo Duminil-Copin이 자기 분야 관련 AI 원고 홍수에 공개적으로 고뇌를 표했다는 X·언론 요약이 돌았다 — <strong>감정·규범 논쟁</strong>이지, 개별 정리의 진위를 여기서 검증하진 않았다. 제품 관점에선 “블로그 포스트”가 아니라 <strong>버전 관리되는 증명 아티팩트 + 기계검증(Lean)</strong> 으로 과학 소통 채널을 옮기려는 실험이다. 세컨드 브레인/LLM Wiki와 맞닿는 점: <strong>raw 결과 → 위키식 정리 → 형식 검증</strong> 파이프라인.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>“수백 개 미해결 문제를 풀었다”는 <strong>회사·저장소 주장</strong>을 그대로 정답으로 수용하지 말 것. 수학 커뮤니티 피어 리뷰가 본게임이다.</li>
+<li>모델 이름·가중치는 이 글에서 <strong>공개되지 않음</strong>.</li>
+</ul>
+<p>
+출처: <a href="https://openai.com/index/sharing-ai-progress-in-mathematics/">OpenAI — Sharing AI progress in mathematics</a> · <a href="https://github.com/openai/math">github.com/openai/math</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>AI 모델: Anthropic Cyber Verification Program 3단 — Defense·Red Team·Specialized, Glasswing 129K 취약점 경험을 ‘검증된 방어자’에게 연다</title>
+<link>https://codemwk.github.io/aipaper-newspaper/anthropic-cyber-verification-tiers-db328587dc9c/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/anthropic-cyber-verification-tiers-db328587dc9c</guid>
+<pubDate>Sun, 11 Oct 2026 22:03:00 +0000</pubDate>
+<category>AI 모델</category>
+<description>10/6 Anthropic이 CVP를 확장. Project Glasswing과 통합해 Defense / Red Team / Specialized 3티어. Opus·Sonnet 5.5·Mythos 5.1 포함. CyScenarioBench에서 Defense는 50회 중 46 차단, Red Team은 차단 0·34/50 성공. Glasswing 파트너가 4–7월 검증 취약점 ≥129K(고위험 ≥33K) 주장.</description>
+<content:encoded><![CDATA[<p><em>10/6 Anthropic이 CVP를 확장. Project Glasswing과 통합해 Defense / Red Team / Specialized 3티어. Opus·Sonnet 5.5·Mythos 5.1 포함. CyScenarioBench에서 Defense는 50회 중 46 차단, Red Team은 차단 0·34/50 성공. Glasswing 파트너가 4–7월 검증 취약점 ≥129K(고위험 ≥33K) 주장.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+Anthropic은 <strong>2026-10-06</strong> <a href="https://www.anthropic.com/news/cyber-verification-program">Cyber Verification Program 확장</a>을 발표했다. 일반 모델의 <strong>보수적 사이버 차단</strong>은 유지한 채, 검증된 보안 조직에 <strong>티어별 완화</strong>를 준다. Glasswing(핵심 소프트웨어 방어)과 기존 CVP를 <strong>하나로 합쳤다</strong>.
+</p>
+<h2>티어가 나누는 것</h2>
+<ul>
+<li><strong>Defense Access</strong>: SOC·IR, 악성코드 리버싱, <strong>소유·유지 시스템</strong>의 취약점 분석. 기업·비영리·대학·정부·중소 보안펌·OSS 유지자·실적 있는 개인 연구자. “며칠 내” 심사 목표.</li>
+<li><strong>Red Team Access</strong>: 위 + <strong>승인된</strong> 펜테스트·레드팀. 조직만(개인 불가). 랜섬·물리 피해·고위험 안전시스템 펜테스트는 여전히 실시간 차단. 심사 “몇 주”, 대기 중엔 Defense로 등록.</li>
+<li><strong>Specialized Access</strong>: 차단 최소. 항공·전력·통신·은행 간 이체·정부 행정 등 <strong>생명·시장에 영향</strong> 가능한 안전시스템 테스트. <strong>미 정부와 심층 심사</strong>. 기존 Glasswing 멤버는 이 티어로 이전·재승인 불필요(현재 모델 기준).</li>
+<li><strong>공통</strong>: Opus 5.5·Sonnet 5.5·Mythos 5.1 및 이후 신모델. Claude Platform·Vertex·Foundry. Bedrock은 EFS 대상만. <strong>데이터 보관 의무</strong>(오남용 모니터링). 올가을 EFS(제로 리텐션+가드레일) 예고.</li>
+</ul>
+<h2>숫자가 말하는 검증</h2>
+<ul>
+<li><strong>CyScenarioBench</strong>(Opus 5.5, 10과제×5시도): CVP 없음 → 첫 프롬프트에서 전원 차단 / Defense → <strong>46/50</strong> 차단·4 성공 / Red Team → <strong>차단 0</strong>, <strong>34/50</strong> 성공(=가드레일 없음과 동일 67.6%).</li>
+<li><strong>Glasswing 임팩트</strong>(회사 설문·부분 데이터): 2026-04~07 파트너 <strong>검증 취약점 ≥129,000</strong>, Anthropic OSS 스캔 <strong>+5,500</strong>(4~10월). 이 중 <strong>고·치명 ≥33,000</strong>. “Mythos 없이 같으려면 수개월~수년” 파트너 발언. <strong>하한·과소집계</strong>라고 스스로 적었다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+어제 Cyber Mission·Usage Policy와 겹쳐 읽히지만, 오늘은 <strong>“누구에겐 열고 누구엔 막을지”를 제품 티어로 만든 날</strong>이다. 듀얼유즈를 전부 막으면 방어자가 손해를 보고, 전부 열면 공격면이 커진다. CVP는 그 중간을 <strong>KYC식 검증 + 차등 분류기</strong>로 판다. 국내 팀이면 Defense  qualifying 여부·데이터 보관 의무·EFS 일정을 먼저 봐야 한다.
+</p>
+<p>
+출처: <a href="https://www.anthropic.com/news/cyber-verification-program">Expanding the Cyber Verification Program</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>디자인/UI·UX: Anatomy — ‘상자-화살표’ 대신 움직이는 기계로 설명하는 Claude Code 스킬, 사흘 만에 수천★</title>
+<link>https://codemwk.github.io/aipaper-newspaper/anatomy-claude-skill-b60a18446abd/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/anatomy-claude-skill-b60a18446abd</guid>
+<pubDate>Sun, 11 Oct 2026 22:02:00 +0000</pubDate>
+<category>디자인/UI·UX</category>
+<description>wheresryan22/anatomy(10/8 생성, ~3.1K★)은 한 줄 아이디어를 등각(isometric) 인터랙티브 기계 그림으로 만든다. 규칙: ‘오브젝트가 설명이다’. SVG·WebGL·3D(베타), React 패키지 anatomy-figures, MIT. npx skills add로 설치.</description>
+<content:encoded><![CDATA[<p><em>wheresryan22/anatomy(10/8 생성, ~3.1K★)은 한 줄 아이디어를 등각(isometric) 인터랙티브 기계 그림으로 만든다. 규칙: ‘오브젝트가 설명이다’. SVG·WebGL·3D(베타), React 패키지 anatomy-figures, MIT. npx skills add로 설치.</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+<a href="https://skills.wheresryan.sh/anatomy">Anatomy</a>는 Claude Code용 <strong>스킬</strong>이다. “LRU 캐시가 어떻게 쫓아내는지 설명해”라고 쓰면 <strong>상자 다이어그램이 아니라</strong>, 책장·과일 슬롯머신·수조 같은 <strong>실제 기계</strong>를 수십~수백 파트로 조립하고, 드래그·키보드로 움직이게 한다. 저장소는 <strong>2026-10-08</strong> 생성, 스타 <strong>~3,064</strong>(10/12 <code>gh</code>).
+</p>
+<h2>어떻게 동작하나</h2>
+<ul>
+<li><strong>한 줄 규칙</strong>(SKILL.md): *The object is the explanation.* 박스·화살표·떠다니는 라벨 금지. 움직임이 개념과 1:1이어야 한다.</li>
+<li><strong>키워드</strong>: <code>interactive</code>(포인터/키보드), <code>WebGL</code>(불·물·플라즈마), <code>3D</code>(진정 회전, 베타·느림).</li>
+<li><strong>크기 예산</strong>: Figure 40–80파트·30–90분 / Hero 80–150·2–4시간 / Epic은 추정만 하고 <strong>승인 없이 시작 안 함</strong>.</li>
+<li><strong>검증</strong>: 스크린샷·4× 크롭·겹침 감사(예: Trent 터보팬 541 solids·6,320 overlapping pairs). 제작자 Ryan은 시계 무브먼트 <strong>1h54m</strong>, Raptor <strong>10h33m</strong> 등 실측 시간을 공개.</li>
+<li><strong>배포</strong>: <code>npx skills add wheresryan22/anatomy</code> 또는 <code>npm install anatomy-figures</code>. 테마 dark/light/paper/blueprint/sepia.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+diagram-design·Framer Skills가 <strong>브랜드 도판·디자인 시스템</strong>을 다룬다면, Anatomy는 <strong>설명 디자인(explainer design)</strong> 을 에이전트 스킬로 제품화한다. 문서·랜딩·교육에서 “에이전트가 그린 그림”이 <strong>장난감이 아니라 모델과 동일한 숫자</strong>를 읽게 만드는 것이 핵심(스프링 모델 ↔ 게이지 눈금). 한계: 느리고, Claude가 “동작은 맞는데 보기엔 틀린” 파트를 자주 놓친다고 제작자도 인정 — <strong>두 번째 눈으로 고치는 루프</strong>가 필수.
+</p>
+<p>
+출처: <a href="https://skills.wheresryan.sh/anatomy">Anatomy 사이트</a> · <a href="https://github.com/wheresryan22/anatomy">GitHub wheresryan22/anatomy</a> · <a href="https://explainx.ai/blog/anatomy-claude-code-skill-isometric-interactive-figures-wheresryan22-2026">explainx 요약</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>디자인/UI·UX: CopilotKit ‘Open Intelligent UI’ — ChatGPT Intelligent UI의 오픈소스 판, AG-UI로 내 앱·내 컴포넌트에 꽂는다</title>
+<link>https://codemwk.github.io/aipaper-newspaper/open-intelligent-ui-7ec75c943ec7/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/open-intelligent-ui-7ec75c943ec7</guid>
+<pubDate>Sun, 11 Oct 2026 22:01:00 +0000</pubDate>
+<category>디자인/UI·UX</category>
+<description>10/9 CopilotKit이 Open Intelligent UI를 공개. OpenAI가 ChatGPT 안에만 넣은 Interactive UI(차트·맵·계산기·폼)를 오픈소스로 가져오고, AG-UI로 임의 에이전트·임의 모델을 붙인다. 저장소 CopilotKit/OpenIntelligentUI ~2.6K★, 모체 CopilotKit ~37.9K★.</description>
+<content:encoded><![CDATA[<p><em>10/9 CopilotKit이 Open Intelligent UI를 공개. OpenAI가 ChatGPT 안에만 넣은 Interactive UI(차트·맵·계산기·폼)를 오픈소스로 가져오고, AG-UI로 임의 에이전트·임의 모델을 붙인다. 저장소 CopilotKit/OpenIntelligentUI ~2.6K★, 모체 CopilotKit ~37.9K★.</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+OpenAI가 10/7 ChatGPT에 넣은 <strong>Intelligent UI</strong>(답을 글 대신 버튼·차트·폼·도구로 조립)는 <strong>ChatGPT 안에만</strong> 있다. CopilotKit은 <strong>10/9</strong> <a href="https://www.copilotkit.ai/blog/introducing-open-intelligent-ui">Open Intelligent UI</a>로 같은 경험을 <strong>내 제품</strong>에 옮기는 오픈소스 스택을 냈다. 에이전트는 <strong>AG-UI</strong>로 붙이고, 생성 UI는 승인 CDN만 로드하는 iframe에서 돈다.
+</p>
+<h2>어떻게 동작하나</h2>
+<ul>
+<li><strong>스펙트럼</strong>: Controlled(에이전트가 <strong>이미 가진 디자인 시스템 컴포넌트</strong>만 씀) ↔ Open(에이전트가 HTML/인터랙션을 <strong>즉석 생성</strong>). 블로그는 여행 플래너(라이브 맵+위키 사진)와 뱀 게임을 예시로 든다.</li>
+<li><strong>스트리밍</strong>: UI가 생성되는 동안 조각이 흘러 들어오고, 끝난 인터페이스는 <strong>standalone HTML</strong>로 다운로드 가능.</li>
+<li><strong>모델 역할 분리</strong>(블로그 주장): 답 작성은 OpenAI, 포맷 선택은 TypeSafe의 Jev — “사실이면 텍스트, 추세면 차트” 같은 라우팅.</li>
+<li><strong>표준</strong>: A2UI·MCP Apps가 AG-UI 위에 올라탄다고 명시. LangChain Deep Agents 기본 예제를 Mastra·Google ADK 등으로 갈아끼울 수 있다고 한다.</li>
+<li><strong>스타 수</strong>(2026-10-12 <code>gh</code> 확인): <a href="https://github.com/CopilotKit/OpenIntelligentUI">OpenIntelligentUI</a> <strong>~2,641★</strong>, <a href="https://github.com/CopilotKit/CopilotKit">CopilotKit</a> <strong>~37,940★</strong>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+어제·그제 Framer Skills·PhotoCraft가 “에이전트가 <strong>디자인 도구</strong> 안에서 그린다”면, 이건 “에이전트 답이 <strong>제품 UI 자체</strong>가 된다”. OpenAI 디자인팀 Andrew Chen이 말한 “생성 UI의 난제는 생성보다 <strong>소속에 맞게 느껴지게</strong> 하는 것”을, CopilotKit은 <strong>당신 컴포넌트 카탈로그</strong>로 풀겠다는 주장이다. 보안상 승인 CDN·격리 iframe은 필수 전제 — “아무 스크립트나 실행”이 아니다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>ChatGPT Intelligent UI API는 <strong>여전히 없음</strong>(블로그가 출발점으로 삼은 불만).</li>
+<li>데모는 OpenAI 키 + TypeSafe 키가 필요하다고 안내 — 완전 로컬 무료는 아니다.</li>
+</ul>
+<p>
+출처: <a href="https://www.copilotkit.ai/blog/introducing-open-intelligent-ui">CopilotKit — Open Intelligent UI</a> · <a href="https://openai.com/index/gpt-6-for-everyone/">OpenAI GPT-6 Intelligent UI</a> · <a href="https://github.com/CopilotKit/OpenIntelligentUI">GitHub OpenIntelligentUI</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>AI 비즈니스: Fin(구 Intercom) — 해결(outcome)당 $0.99로 팔고, Salesforce $36억 인수 후에도 ‘헬프데스크 위에 얹는’ 에이전트로 남는다</title>
+<link>https://codemwk.github.io/aipaper-newspaper/fin-outcome-ai-business-738830d28a54/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/fin-outcome-ai-business-738830d28a54</guid>
+<pubDate>Sun, 11 Oct 2026 22:00:00 +0000</pubDate>
+<category>AI 비즈니스</category>
+<description>Fin은 좌석 SaaS가 아니라 ‘대화당 결과’로 과금한다. 공개 가격은 outcome $0.99(자격 판정 $9.99), Intercom 헬프데스크 좌석 $29부터, Copilot $35/유저, Pro 애드온 $100. 2026-09-10 Salesforce 인수 완료(~$36억). Sacra는 Fin ARR $1억 돌파·회사 전체 ~$4억을 추정.</description>
+<content:encoded><![CDATA[<p><em>Fin은 좌석 SaaS가 아니라 ‘대화당 결과’로 과금한다. 공개 가격은 outcome $0.99(자격 판정 $9.99), Intercom 헬프데스크 좌석 $29부터, Copilot $35/유저, Pro 애드온 $100. 2026-09-10 Salesforce 인수 완료(~$36억). Sacra는 Fin ARR $1억 돌파·회사 전체 ~$4억을 추정.</em></p>
+<p><strong>분류:</strong> AI 비즈니스</p>
+<h2>한줄 요약</h2>
+<p>
+고객지원 AI 에이전트 <strong>Fin</strong>(회사명도 2026-05에 Intercom→Fin으로 변경)은 <strong>“티켓을 끝까지 처리했을 때만”</strong> 돈을 받는다. 공개 가격표 기준 <strong>outcome당 $0.99</strong>(월 최소 50건), 세일즈 자격 판정은 <strong>$9.99</strong>. Salesforce는 <strong>2026-09-10</strong> 인수 완료를 발표했고, CNBC·회사 측이 인용한 규모는 약 <strong>$36억</strong>이다(<a href="https://fin.ai/pricing">fin.ai/pricing</a>, <a href="https://fin.ai/blog/salesforce-completes-acquisition-of-fin">인수 완료 블로그</a>, <a href="https://www.cnbc.com/2026/06/15/salesforce-ai-customer-service-fin-acquistion.html">CNBC</a>).
+</p>
+<h2>숫자가 말하는 구조 (공개 가격, 2026-10-12 확인)</h2>
+<ul>
+<li><strong>Standalone Fin</strong>(Salesforce·HubSpot 등 기존 헬프데스크 위): <strong>$0.99/outcome</strong>, 월 최소 <strong>50 outcomes</strong>. 팀원 좌석비 없음(“Unlimited teammates”).</li>
+<li><strong>Fin + Intercom 헬프데스크</strong>: outcome 과금 + <strong>풀 시트 $29/월부터</strong>(플랜에 따라 Advanced/Expert로 상승 — 가격표는 “From $29”).</li>
+<li><strong>애드온</strong>: Inbox용 <strong>Copilot $35/유저/월</strong>, 품질·트렌드·Operator가 묶인 <strong>Pro From $100/월</strong>. Operator 초과 크레딧은 <strong>$0.01/credit</strong>.</li>
+<li><strong>무엇이 billable outcome인가</strong>(FAQ): ① Fin이 답한 뒤 추가 도움 요청이 없으면 <strong>Resolution</strong> ② 설정한 Procedure로 사람/워크플로에 넘기면 <strong>Procedure handoff</strong> ③ 자격 미달 판정·셀프서브 라우팅 등. 단순 전달만 하면 <strong>과금 안 함</strong>. Qualification만 <strong>$9.99</strong>.</li>
+<li><strong>규모 주장</strong>: 인수 보도자료는 고객 <strong>3만+</strong>, 평균 해결률 <strong>76%</strong>를 회사 수치로 제시. 제3자 Sacra는 Fin ARR <strong>$1억 돌파·YoY ~350%</strong>, Intercom/Fin 전체 ARR <strong>~$4억(2026)</strong> 을 <strong>추정</strong> — 감사 공시는 아니다.</li>
+</ul>
+<h2>돈이 흐르는 구조</h2>
+<p>
+<strong>1) 입장 = outcome 미터</strong> — 좌석을 늘릴수록 매출이 늘던 전통 CS SaaS와 반대로, <strong>자동화될수록 청구 건수가 늘어</strong> ARPU가 커진다. NRR이 올라간다고 Sacra가 해석한 지점이다.
+<br/>
+<strong>2) 잠금 = 기존 헬프데스크</strong> — Zendesk·Salesforce 위에 Fin만 얹을 수 있어 “플랫폼 갈아엎기” 없이 침투. Salesforce 인수 후에도 Agentforce와 <strong>병행 선택지</strong>로 포지셔닝한다.
+<br/>
+<strong>3) 업셀 = 사람 보조·운영</strong> — Copilot(상담원 AI)·Pro(품질 모니터·Operator)로 <strong>사람 좌석·운영 크레딧</strong>을 다시 붙인다. AI가 많이 처리할수록 사람 쪽 QA·가드레일 수요도 남는다.
+<br/>
+<strong>4) 출구 = Salesforce 유통</strong> — $36억은 “outcome 모델이 CRM 거대 사업자에 프리미엄으로 팔렸다”는 신호. 다만 인수 후 가격·번들 변경 여부는 <strong>아직 공개 가격표에 반영되지 않았다</strong>.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+Framer·v0가 <strong>크레딧/토큰으로 생성</strong>을 파는 것과 달리, Fin은 <strong>비즈니스 결과(해결·자격)</strong>에 가격을 붙인다. ANDRSN·퍼스널 OS 관점에선 “AI 구독”이 아니라 <strong>SLA·해결률·CSAT에 묶인 가변비</strong>로 읽어야 한다. 리스크는 모델 API 원가 vs $0.99 마진, 그리고 Salesforce 번들이 독립 가격을 흔들 가능성이다.
+</p>
+<p>
+출처: <a href="https://fin.ai/pricing">Fin Pricing</a> · <a href="https://fin.ai/blog/salesforce-completes-acquisition-of-fin">Salesforce completes acquisition of Fin</a> · <a href="https://www.intercom.com/blog/today-intercom-becomes-fin/">Today Intercom becomes Fin</a> · <a href="https://sacra.com/c/intercom/">Sacra Intercom</a> · <a href="https://www.cnbc.com/2026/06/15/salesforce-ai-customer-service-fin-acquistion.html">CNBC $3.6B</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
 <item>
 <title>AI 모델: Anthropic 2026 Usage Policy — 기만 캠페인 통합 금지, 고위험 HITL 명시, ‘모델에 대한 지속적 학대’ 조항(11/12 시행)</title>
 <link>https://codemwk.github.io/aipaper-newspaper/anthropic-usage-policy-2026-8405174503ad/</link>

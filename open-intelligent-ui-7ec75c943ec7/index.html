@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>디자인/UI·UX: CopilotKit ‘Open Intelligent UI’ — ChatGPT Intelligent UI의 오픈소스 판, AG-UI로 내 앱·내 컴포넌트에 꽂는다 — AiPaper 뉴스</title>
+  <meta name="description" content="10/9 CopilotKit이 Open Intelligent UI를 공개. OpenAI가 ChatGPT 안에만 넣은 Interactive UI(차트·맵·계산기·폼)를 오픈소스로 가져오고, AG-UI로 임의 에이전트·임의 모델을 붙인다. 저장소 CopilotKit/OpenIntelligentUI ~2.6K★, 모체 CopilotKit ~37.9K★."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인/UI·UX · 2026-10-12 07:01 KST</div>
+    <h1>디자인/UI·UX: CopilotKit ‘Open Intelligent UI’ — ChatGPT Intelligent UI의 오픈소스 판, AG-UI로 내 앱·내 컴포넌트에 꽂는다</h1>
+  </header>
+  <article>
+<p><em>10/9 CopilotKit이 Open Intelligent UI를 공개. OpenAI가 ChatGPT 안에만 넣은 Interactive UI(차트·맵·계산기·폼)를 오픈소스로 가져오고, AG-UI로 임의 에이전트·임의 모델을 붙인다. 저장소 CopilotKit/OpenIntelligentUI ~2.6K★, 모체 CopilotKit ~37.9K★.</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+OpenAI가 10/7 ChatGPT에 넣은 <strong>Intelligent UI</strong>(답을 글 대신 버튼·차트·폼·도구로 조립)는 <strong>ChatGPT 안에만</strong> 있다. CopilotKit은 <strong>10/9</strong> <a href="https://www.copilotkit.ai/blog/introducing-open-intelligent-ui">Open Intelligent UI</a>로 같은 경험을 <strong>내 제품</strong>에 옮기는 오픈소스 스택을 냈다. 에이전트는 <strong>AG-UI</strong>로 붙이고, 생성 UI는 승인 CDN만 로드하는 iframe에서 돈다.
+</p>
+<h2>어떻게 동작하나</h2>
+<ul>
+<li><strong>스펙트럼</strong>: Controlled(에이전트가 <strong>이미 가진 디자인 시스템 컴포넌트</strong>만 씀) ↔ Open(에이전트가 HTML/인터랙션을 <strong>즉석 생성</strong>). 블로그는 여행 플래너(라이브 맵+위키 사진)와 뱀 게임을 예시로 든다.</li>
+<li><strong>스트리밍</strong>: UI가 생성되는 동안 조각이 흘러 들어오고, 끝난 인터페이스는 <strong>standalone HTML</strong>로 다운로드 가능.</li>
+<li><strong>모델 역할 분리</strong>(블로그 주장): 답 작성은 OpenAI, 포맷 선택은 TypeSafe의 Jev — “사실이면 텍스트, 추세면 차트” 같은 라우팅.</li>
+<li><strong>표준</strong>: A2UI·MCP Apps가 AG-UI 위에 올라탄다고 명시. LangChain Deep Agents 기본 예제를 Mastra·Google ADK 등으로 갈아끼울 수 있다고 한다.</li>
+<li><strong>스타 수</strong>(2026-10-12 <code>gh</code> 확인): <a href="https://github.com/CopilotKit/OpenIntelligentUI">OpenIntelligentUI</a> <strong>~2,641★</strong>, <a href="https://github.com/CopilotKit/CopilotKit">CopilotKit</a> <strong>~37,940★</strong>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+어제·그제 Framer Skills·PhotoCraft가 “에이전트가 <strong>디자인 도구</strong> 안에서 그린다”면, 이건 “에이전트 답이 <strong>제품 UI 자체</strong>가 된다”. OpenAI 디자인팀 Andrew Chen이 말한 “생성 UI의 난제는 생성보다 <strong>소속에 맞게 느껴지게</strong> 하는 것”을, CopilotKit은 <strong>당신 컴포넌트 카탈로그</strong>로 풀겠다는 주장이다. 보안상 승인 CDN·격리 iframe은 필수 전제 — “아무 스크립트나 실행”이 아니다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>ChatGPT Intelligent UI API는 <strong>여전히 없음</strong>(블로그가 출발점으로 삼은 불만).</li>
+<li>데모는 OpenAI 키 + TypeSafe 키가 필요하다고 안내 — 완전 로컬 무료는 아니다.</li>
+</ul>
+<p>
+출처: <a href="https://www.copilotkit.ai/blog/introducing-open-intelligent-ui">CopilotKit — Open Intelligent UI</a> · <a href="https://openai.com/index/gpt-6-for-everyone/">OpenAI GPT-6 Intelligent UI</a> · <a href="https://github.com/CopilotKit/OpenIntelligentUI">GitHub OpenIntelligentUI</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
