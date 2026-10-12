@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AI 콘텐츠: Helix World — 실시간 시청각 월드모델, H800에서 RTF 0.77·WBench 79.9, 공간 음향 점수 41.8(EchoWM 12.7) — AiPaper 뉴스</title>
+  <meta name="description" content="Noiz AI×HKUST가 10/12 Helix World를 공개. 한 장 이미지에서 WASD·화살표로 탐색하면 비디오+스테레오 사운드를 동시에 생성(24fps, 768×512). H800 RTF 0.77, WBench navigation 79.9. HelixBench 공간일관성 41.8 vs EchoWM 12.7. 코드·프리뷰 가중치·helixworld.org 데모. GitHub ~627★."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 콘텐츠 · 2026-10-13 07:04 KST</div>
+    <h1>AI 콘텐츠: Helix World — 실시간 시청각 월드모델, H800에서 RTF 0.77·WBench 79.9, 공간 음향 점수 41.8(EchoWM 12.7)</h1>
+  </header>
+  <article>
+<p><em>Noiz AI×HKUST가 10/12 Helix World를 공개. 한 장 이미지에서 WASD·화살표로 탐색하면 비디오+스테레오 사운드를 동시에 생성(24fps, 768×512). H800 RTF 0.77, WBench navigation 79.9. HelixBench 공간일관성 41.8 vs EchoWM 12.7. 코드·프리뷰 가중치·helixworld.org 데모. GitHub ~627★.</em></p>
+<p><strong>분류:</strong> AI 콘텐츠</p>
+<h2>한줄 요약</h2>
+<p>
+대부분의 인터랙티브 월드모델은 <strong>무음</strong>이다. Noiz AI와 HKUST는 <strong>2026-10-12</strong> <a href="https://noiz.ai/lp/blog/meet-helix-world">Helix World</a>로, 카메라가 돌면 <strong>스테레오 음장도 같이 도는</strong> 실시간 시청각 월드모델을 냈다. 단일 <strong>NVIDIA H800</strong>에서 <strong>RTF 0.77</strong>(1초 영상에 0.77초 연산, 디코딩 포함), WBench navigation <strong>79.9</strong>.
+</p>
+<h2>어떻게 동작하나</h2>
+<ul>
+<li><strong>입력</strong>: 시작 이미지(768×512) + 선택적 텍스트. <strong>WASD·화살표</strong>로 이동·시야. 약 <strong>1.3초</strong> 청크 단위로 생성되어 다음 청크부터 입력 반영.</li>
+<li><strong>벤치</strong>(논문 Table 3·4를 블로그가 인용): 실시간(RTF&lt;1) 모델 중 WBench 최고 <strong>79.9</strong>(무음 SANA-WM 76.0, Matrix-Game 3 71.3). 더 높은 점수대(82.0 등)는 RTF 1.98–4.29로 실시간 밖.</li>
+<li><strong>소리</strong>: 자체 HelixBench(1,015 케이스)에서 공간-음향 일관성 <strong>41.8</strong> vs EchoWM <strong>12.7</strong>(블로그 한곳 12.6). 비디오→오디오 후처리 파이프라인은 공간 점수가 음수까지 떨어지기도 함.</li>
+<li><strong>데이터</strong>: 원본 4,100시간 → 필터 후 <strong>3,000시간·210만 클립</strong>(수율 73.1%), 진짜 스테레오+메트릭 카메라 포즈.</li>
+<li><strong>구조</strong>: LTX-2.3 기반 양방향 teacher → causal student(self-forcing + trajectory distillation). 공개물: <a href="https://arxiv.org/abs/2609.38123">arXiv:2609.38123</a>, GitHub <a href="https://github.com/NoizAI/HelixWorld">NoizAI/HelixWorld</a>(<strong>~627★</strong>, 2026-10-13 <code>gh</code>), HF 프리뷰, 데모 helixworld.org.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+영상 생성에서 “예쁜 클립” 다음 전쟁은 <strong>조작 가능한 세계</strong>다. Helix는 <strong>소리까지 같은 루프</strong>에 넣어, 후처리 더빙이 깨는 공간 일관성을 정면으로 잰다. 한계도 분명하다 — 해상도 768×512, 속도는 <strong>데이터센터 H800</strong> 기준, 시각만 보면 최강 무음 모델에 살짝 못 미치고, 공개 체크포인트는 <strong>프리뷰</strong>.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>“실시간”은 소비자 GPU 수치가 아니다.</li>
+<li>사용자 연구에서 오디오 포함 시 EchoWM 대비 선호 67.9% vs 20.8% — <strong>이점이 주로 소리에서</strong> 온다고 블로그가 요약한다.</li>
+</ul>
+<p>
+출처: <a href="https://noiz.ai/lp/blog/meet-helix-world">Noiz — Helix World</a> · <a href="https://github.com/NoizAI/HelixWorld">GitHub NoizAI/HelixWorld</a> · <a href="https://arxiv.org/abs/2609.38123">arXiv:2609.38123</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

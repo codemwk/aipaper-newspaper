@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AI 도구: Gremlin Foresight AI GA — 장애를 ‘내고 고치고 다시 테스트’하는 신뢰성 에이전트, 사람은 승인만 — AiPaper 뉴스</title>
+  <meta name="description" content="InfoQ 10/11: Gremlin Foresight AI가 일반 제공. Analyst·Tester·Operator·TPM 네 역할이 실패 주입 테스트를 고르고, 해석하고, 수정안을 제안한 뒤 같은 테스트를 재실행. Failure Atlas(10년+ 실험) 기반. LLM은 검색·요약용, 테스트/리메디에이션은 승인 전제. 정확도·오탐 공개 수치 없음."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 도구 · 2026-10-13 07:09 KST</div>
+    <h1>AI 도구: Gremlin Foresight AI GA — 장애를 ‘내고 고치고 다시 테스트’하는 신뢰성 에이전트, 사람은 승인만</h1>
+  </header>
+  <article>
+<p><em>InfoQ 10/11: Gremlin Foresight AI가 일반 제공. Analyst·Tester·Operator·TPM 네 역할이 실패 주입 테스트를 고르고, 해석하고, 수정안을 제안한 뒤 같은 테스트를 재실행. Failure Atlas(10년+ 실험) 기반. LLM은 검색·요약용, 테스트/리메디에이션은 승인 전제. 정확도·오탐 공개 수치 없음.</em></p>
+<p><strong>분류:</strong> AI 도구</p>
+<h2>한줄 요약</h2>
+<p>
+AI가 코드를 빨리 넣을수록 <strong>의도치 않은 장애</strong>도 빨라진다. Gremlin은 <strong>Foresight AI</strong>를 애드온으로 <strong>일반 제공(GA)</strong> 했다고 InfoQ가 <strong>2026-10-11</strong> 전했다. 에이전트가 서비스를 분석해 실험을 고르고, 실패를 해석하고, 고친 뒤 <strong>같은 테스트를 다시 돌리는 닫힌 검증 루프</strong>가 핵심이다.
+</p>
+<h2>어떻게 동작하나</h2>
+<ul>
+<li><strong>네 역할</strong>: Analyst(데이터·테스트 추천) → Tester(스케줄·실행) → Operator(실패 해석·수정 제안) → TPM(커버리지·리스크·팀 간 약속, Slack 주간 보고).</li>
+<li><strong>Failure Atlas</strong>: 10년 이상, 수만 분산 시스템에서 쌓은 장애 주입 실험 기록. 회사는 <strong>시스템 데이터로 LLM을 학습하지 않는다</strong>고 하고, 결정은 플랫폼 데이터+Atlas, LLM은 검색·요약·설명에 쓴다고 한다.</li>
+<li><strong>가드레일</strong>: 테스트 실행·리메디에이션 적용 전 <strong>사람 승인</strong>. “알림이 조용해진 것”이 아니라 <strong>부하 조건에서 테스트가 통과했는지</strong>를 증거로 삼는다고 CEO Kolton Andrus 인용.</li>
+<li><strong>리포트</strong>: 자연어로 대시보드·차트 생성, 신뢰성 점수 변화를 보이게 — “막은 장애는 티켓이 없다”는 가시성 문제를 겨냥.</li>
+<li><strong>공백</strong>: 비교 정확도·오탐률·베타 상세 수치는 <strong>미공개</strong>(InfoQ가 명시).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+관측·AI SRE가 대개 <strong>이미 난 사고의 텔레메트리</strong>에서 출발한다면, Foresight는 <strong>의도적으로 실패를 만들어</strong> 먼저 검증한다. Cloudflare식 더 자율적인 에이전트 수명주기와 대비해, Gremlin은 <strong>감독형(supervised)</strong> 쪽이다. AI 배포 가속 시대의 “리뷰 없는 프로덕션”에 대한 제품 응답으로 읽힌다.
+</p>
+<h2>기억할 것</h2>
+<ul>
+<li>카오스/신뢰성 프로그램은 소프트웨어만으로 설치되지 않는다(Intellyx·InfoQ가 반복). 어떤 리스크를 받아들일지는 조직 결정.</li>
+<li>가격·시트는 InfoQ 기사에 없음 — Gremlin 영업 애드온으로 확인할 것.</li>
+</ul>
+<p>
+출처: <a href="https://www.infoq.com/news/2026/10/gremlin-foresight-ai/">InfoQ — Foresight AI</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
