@@ -6,10 +6,10 @@
 <description>최근 며칠분. 전문 읽기용 해설 기사 (양보다 질)</description>
 <language>ko</language>
 <atom:link href="https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Mon, 12 Oct 2026 22:11:35 +0000</lastBuildDate>
+<lastBuildDate>Tue, 13 Oct 2026 00:50:51 +0000</lastBuildDate>
 <managingEditor>AiPaper 뉴스</managingEditor>
 <item>
-<title>AI 모델: Muse 스택의 SAM 3.1·Glimmer — 세그멘테이션 API(장당 과금)와 Apache 2.0 로컬 오픈웨이트가 Wonder와 같이 깔렸다</title>
+<title>[10/13] AI 모델: Muse 스택의 SAM 3.1·Glimmer — 세그멘테이션 API(장당 과금)와 Apache 2.0 로컬 오픈웨이트가 Wonder와 같이 깔렸다</title>
 <link>https://codemwk.github.io/aipaper-newspaper/muse-sam-glimmer-7dbf1c59b71a/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/muse-sam-glimmer-7dbf1c59b71a</guid>
 <pubDate>Mon, 12 Oct 2026 22:11:00 +0000</pubDate>
@@ -41,7 +41,7 @@ Meta의 Muse 발표는 텍스트 에이전트만이 아니다. 공식 <a href="h
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>GitHub 트렌드: ‘모델’보다 ‘하네스·메모리’가 수십만 스타 — ECC ~278K★, Hermes Agent ~253K★, claude-mem ~100K★</title>
+<title>[10/13] GitHub 트렌드: ‘모델’보다 ‘하네스·메모리’가 수십만 스타 — ECC ~278K★, Hermes Agent ~253K★, claude-mem ~100K★</title>
 <link>https://codemwk.github.io/aipaper-newspaper/agent-harness-stars-f2d2b68b37ea/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/agent-harness-stars-f2d2b68b37ea</guid>
 <pubDate>Mon, 12 Oct 2026 22:10:00 +0000</pubDate>
@@ -74,7 +74,7 @@ GitHub에서 지금 크게 보이는 AI 저장소 중 상당수는 <strong>새 �
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 도구: Gremlin Foresight AI GA — 장애를 ‘내고 고치고 다시 테스트’하는 신뢰성 에이전트, 사람은 승인만</title>
+<title>[10/13] AI 도구: Gremlin Foresight AI GA — 장애를 ‘내고 고치고 다시 테스트’하는 신뢰성 에이전트, 사람은 승인만</title>
 <link>https://codemwk.github.io/aipaper-newspaper/gremlin-foresight-ai-dd26684bcb8a/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/gremlin-foresight-ai-dd26684bcb8a</guid>
 <pubDate>Mon, 12 Oct 2026 22:09:00 +0000</pubDate>
@@ -108,7 +108,7 @@ AI가 코드를 빨리 넣을수록 <strong>의도치 않은 장애</strong>도 
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>세컨드 브레인 / PKM: 개인 LLM Wiki는 된다, 팀은 ‘게이트·날짜·읽은 횟수’가 필요하다 — Harbor가 정리한 실패 패턴</title>
+<title>[10/13] 세컨드 브레인 / PKM: 개인 LLM Wiki는 된다, 팀은 ‘게이트·날짜·읽은 횟수’가 필요하다 — Harbor가 정리한 실패 패턴</title>
 <link>https://codemwk.github.io/aipaper-newspaper/llm-wiki-team-harbor-98e1c130b447/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/llm-wiki-team-harbor-98e1c130b447</guid>
 <pubDate>Mon, 12 Oct 2026 22:08:00 +0000</pubDate>
@@ -141,7 +141,7 @@ AiPaper 독자(그리고 ANDRSN 내부)가 LLM Wiki를 “두 번째 뇌”로 �
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>디자인/UI·UX: Google DESIGN.md(~28K★) — 코딩 에이전트용 ‘시각 정체성’ 포맷, 토큰 YAML + 린트/내보내기 CLI</title>
+<title>[10/13] 디자인/UI·UX: Google DESIGN.md(~28K★) — 코딩 에이전트용 ‘시각 정체성’ 포맷, 토큰 YAML + 린트/내보내기 CLI</title>
 <link>https://codemwk.github.io/aipaper-newspaper/design-md-agent-format-6812f5d94e5c/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/design-md-agent-format-6812f5d94e5c</guid>
 <pubDate>Mon, 12 Oct 2026 22:07:00 +0000</pubDate>
@@ -173,7 +173,7 @@ Figma 파일이 사람에게 디자인 시스템이라면, 에이전트에게는
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>디자인/UI·UX: ux-ui-agent-skills(~1.6K★) — 에이전트를 ‘시니어 디자인 아키텍트’로, DTCG 토큰·52 컴포넌트·WCAG 게이트</title>
+<title>[10/13] 디자인/UI·UX: ux-ui-agent-skills(~1.6K★) — 에이전트를 ‘시니어 디자인 아키텍트’로, DTCG 토큰·52 컴포넌트·WCAG 게이트</title>
 <link>https://codemwk.github.io/aipaper-newspaper/ux-ui-agent-skills-2664b632cfaf/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/ux-ui-agent-skills-2664b632cfaf</guid>
 <pubDate>Mon, 12 Oct 2026 22:06:00 +0000</pubDate>
@@ -205,7 +205,7 @@ Figma 파일이 사람에게 디자인 시스템이라면, 에이전트에게는
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>디자인/UI·UX: PPT Master(~61K★) — 에이전트가 ‘진짜 PowerPoint’를 만든다, 이미지 박스가 아니라 네이티브 도형·차트·마스터</title>
+<title>[10/13] 디자인/UI·UX: PPT Master(~61K★) — 에이전트가 ‘진짜 PowerPoint’를 만든다, 이미지 박스가 아니라 네이티브 도형·차트·마스터</title>
 <link>https://codemwk.github.io/aipaper-newspaper/ppt-master-native-pptx-0016dd796c03/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/ppt-master-native-pptx-0016dd796c03</guid>
 <pubDate>Mon, 12 Oct 2026 22:05:00 +0000</pubDate>
@@ -239,7 +239,7 @@ Framer Skills·Figma Agent가 <strong>디자인 툴 안</strong>에서 그린다
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 콘텐츠: Helix World — 실시간 시청각 월드모델, H800에서 RTF 0.77·WBench 79.9, 공간 음향 점수 41.8(EchoWM 12.7)</title>
+<title>[10/13] AI 콘텐츠: Helix World — 실시간 시청각 월드모델, H800에서 RTF 0.77·WBench 79.9, 공간 음향 점수 41.8(EchoWM 12.7)</title>
 <link>https://codemwk.github.io/aipaper-newspaper/helix-world-av-82fae6759abd/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/helix-world-av-82fae6759abd</guid>
 <pubDate>Mon, 12 Oct 2026 22:04:00 +0000</pubDate>
@@ -273,7 +273,7 @@ Framer Skills·Figma Agent가 <strong>디자인 툴 안</strong>에서 그린다
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 도구: DigitalOcean Agent Data Services — 에이전트용 ‘컨텍스트+실행 추적’ 데이터 레이어, 프라이빗 프리뷰(가격·SLA 미확정)</title>
+<title>[10/13] AI 도구: DigitalOcean Agent Data Services — 에이전트용 ‘컨텍스트+실행 추적’ 데이터 레이어, 프라이빗 프리뷰(가격·SLA 미확정)</title>
 <link>https://codemwk.github.io/aipaper-newspaper/digitalocean-agent-data-37bfd2a8cca3/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/digitalocean-agent-data-37bfd2a8cca3</guid>
 <pubDate>Mon, 12 Oct 2026 22:03:00 +0000</pubDate>
@@ -308,7 +308,7 @@ Framer Skills·Figma Agent가 <strong>디자인 툴 안</strong>에서 그린다
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 모델: Anthropic ‘데이터센터 없이 IoT로 자기복제?’ — GLM-5.2가 단순화 8노드에서 4/5회 전염, 9B는 하드웨어 9종 중 8종에 추론 기동</title>
+<title>[10/13] AI 모델: Anthropic ‘데이터센터 없이 IoT로 자기복제?’ — GLM-5.2가 단순화 8노드에서 4/5회 전염, 9B는 하드웨어 9종 중 8종에 추론 기동</title>
 <link>https://codemwk.github.io/aipaper-newspaper/anthropic-self-replicating-iot-79fca7ea364a/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/anthropic-self-replicating-iot-79fca7ea364a</guid>
 <pubDate>Mon, 12 Oct 2026 22:02:00 +0000</pubDate>
@@ -342,7 +342,7 @@ Anthropic은 <strong>2026-10-12</strong> <a href="https://www.anthropic.com/rese
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 모델: Meta Muse Wonder·Wonder Full — 에이전트용 프론티어, Model API는 입력 $4/출력 $20(1M 토큰), Muse Code Power $50·Maximum $200</title>
+<title>[10/13] AI 모델: Meta Muse Wonder·Wonder Full — 에이전트용 프론티어, Model API는 입력 $4/출력 $20(1M 토큰), Muse Code Power $50·Maximum $200</title>
 <link>https://codemwk.github.io/aipaper-newspaper/muse-wonder-meta-1659ff736c3e/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/muse-wonder-meta-1659ff736c3e</guid>
 <pubDate>Mon, 12 Oct 2026 22:01:00 +0000</pubDate>
@@ -376,7 +376,7 @@ Anthropic·OpenAI가 “에이전트가 실수하면 어떻게 막나”를 공�
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 비즈니스: Granola — 봇 없는 회의 노트에서 ‘회사 컨텍스트 OS’로, Basic $0·Business $14·Enterprise $35, Series C $1.25억·기업가치 $15억</title>
+<title>[10/13] AI 비즈니스: Granola — 봇 없는 회의 노트에서 ‘회사 컨텍스트 OS’로, Basic $0·Business $14·Enterprise $35, Series C $1.25억·기업가치 $15억</title>
 <link>https://codemwk.github.io/aipaper-newspaper/granola-ai-business-a6de941a7cf3/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/granola-ai-business-a6de941a7cf3</guid>
 <pubDate>Mon, 12 Oct 2026 22:00:00 +0000</pubDate>
@@ -415,7 +415,7 @@ Anthropic·OpenAI가 “에이전트가 실수하면 어떻게 막나”를 공�
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>디자인/UI·UX: Figma AI 크레딧 — Full 3,000~4,250/월, Make·에이전트는 가변, Weave 툴은 고정(스티커팩 78·제품변형 110)</title>
+<title>[10/12] 디자인/UI·UX: Figma AI 크레딧 — Full 3,000~4,250/월, Make·에이전트는 가변, Weave 툴은 고정(스티커팩 78·제품변형 110)</title>
 <link>https://codemwk.github.io/aipaper-newspaper/figma-ai-credits-weave-c6804c726b61/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/figma-ai-credits-weave-c6804c726b61</guid>
 <pubDate>Sun, 11 Oct 2026 22:11:00 +0000</pubDate>
@@ -448,7 +448,7 @@ Figma는 AI를 <strong>좌석에 묶인 월간 크레딧</strong>으로 판다. 
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>GitHub: openrig — Claude Code·Codex·Pi로 ‘역할 있는 에이전트 팀’을 로컬에, ~6.9K★</title>
+<title>[10/12] GitHub: openrig — Claude Code·Codex·Pi로 ‘역할 있는 에이전트 팀’을 로컬에, ~6.9K★</title>
 <link>https://codemwk.github.io/aipaper-newspaper/openrig-agent-teams-b25cf1771556/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/openrig-agent-teams-b25cf1771556</guid>
 <pubDate>Sun, 11 Oct 2026 22:10:00 +0000</pubDate>
@@ -475,7 +475,7 @@ Claude Code Projects·클라우드 스레드가 <strong>벤더 클라우드 병�
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>GitHub: T3 Code(pingdotgg/t3code) — 구독을 되팔지 않는 ‘에이전트 하네스 컨트롤 플레인’, ~2.7만★</title>
+<title>[10/12] GitHub: T3 Code(pingdotgg/t3code) — 구독을 되팔지 않는 ‘에이전트 하네스 컨트롤 플레인’, ~2.7만★</title>
 <link>https://codemwk.github.io/aipaper-newspaper/t3code-agent-harness-e92e13890a21/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/t3code-agent-harness-e92e13890a21</guid>
 <pubDate>Sun, 11 Oct 2026 22:09:00 +0000</pubDate>
@@ -508,7 +508,7 @@ Claude Code Projects·클라우드 스레드가 <strong>벤더 클라우드 병�
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 도구: Linear AI Credits — 이슈 트래커가 ‘코딩 세션·Loops’를 공급가 토큰+$0.25/20분 샌드박스로 판다</title>
+<title>[10/12] AI 도구: Linear AI Credits — 이슈 트래커가 ‘코딩 세션·Loops’를 공급가 토큰+$0.25/20분 샌드박스로 판다</title>
 <link>https://codemwk.github.io/aipaper-newspaper/linear-ai-credits-coding-6843c03f2cac/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/linear-ai-credits-coding-6843c03f2cac</guid>
 <pubDate>Sun, 11 Oct 2026 22:08:00 +0000</pubDate>
@@ -537,7 +537,7 @@ Cursor·Claude Code가 “에디터/CLI 구독”이라면 Linear는 <strong>이
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 트레이딩: Match-Trader ‘트레이더용 MCP’ — 브로커 데스크용에 이어, 개인 계좌 조회·주문(승인형)까지</title>
+<title>[10/12] AI 트레이딩: Match-Trader ‘트레이더용 MCP’ — 브로커 데스크용에 이어, 개인 계좌 조회·주문(승인형)까지</title>
 <link>https://codemwk.github.io/aipaper-newspaper/match-trader-mcp-traders-87306f5fa010/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/match-trader-mcp-traders-87306f5fa010</guid>
 <pubDate>Sun, 11 Oct 2026 22:07:00 +0000</pubDate>
@@ -571,7 +571,7 @@ Cursor·Claude Code가 “에디터/CLI 구독”이라면 Linear는 <strong>이
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 트레이딩: Pyth × Exa — 에이전트가 ‘웹 리서치 + 실시간·역사 시세’를 한 워크플로로, MCP는 Pro 키 필요</title>
+<title>[10/12] AI 트레이딩: Pyth × Exa — 에이전트가 ‘웹 리서치 + 실시간·역사 시세’를 한 워크플로로, MCP는 Pro 키 필요</title>
 <link>https://codemwk.github.io/aipaper-newspaper/pyth-exa-agent-market-data-a2460f77546f/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/pyth-exa-agent-market-data-a2460f77546f</guid>
 <pubDate>Sun, 11 Oct 2026 22:06:00 +0000</pubDate>
@@ -605,7 +605,7 @@ eToro·Axi·Ludus가 <strong>브로커·논지 보드</strong> 쪽 MCP라면, Py
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>GitHub: github/github-mcp-server — 공식 MCP로 이슈·PR·리포를 에이전트 도구로, ~3.4만★</title>
+<title>[10/12] GitHub: github/github-mcp-server — 공식 MCP로 이슈·PR·리포를 에이전트 도구로, ~3.4만★</title>
 <link>https://codemwk.github.io/aipaper-newspaper/github-official-mcp-server-5ee6a9c5b448/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/github-official-mcp-server-5ee6a9c5b448</guid>
 <pubDate>Sun, 11 Oct 2026 22:05:00 +0000</pubDate>
@@ -637,7 +637,7 @@ MCP 생태계에서 “누가 서버를 쓰느냐”보다 <strong>누가 공식
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 모델: OpenAI, 내부 프론티어 모델의 수학 원고 700+편을 GitHub에 — Lean 형식화·인용 규약과 함께</title>
+<title>[10/12] AI 모델: OpenAI, 내부 프론티어 모델의 수학 원고 700+편을 GitHub에 — Lean 형식화·인용 규약과 함께</title>
 <link>https://codemwk.github.io/aipaper-newspaper/openai-math-manuscripts-0a0e7637c9c9/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/openai-math-manuscripts-0a0e7637c9c9</guid>
 <pubDate>Sun, 11 Oct 2026 22:04:00 +0000</pubDate>
@@ -670,7 +670,7 @@ Fields 메달리스트 Hugo Duminil-Copin이 자기 분야 관련 AI 원고 홍�
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 모델: Anthropic Cyber Verification Program 3단 — Defense·Red Team·Specialized, Glasswing 129K 취약점 경험을 ‘검증된 방어자’에게 연다</title>
+<title>[10/12] AI 모델: Anthropic Cyber Verification Program 3단 — Defense·Red Team·Specialized, Glasswing 129K 취약점 경험을 ‘검증된 방어자’에게 연다</title>
 <link>https://codemwk.github.io/aipaper-newspaper/anthropic-cyber-verification-tiers-db328587dc9c/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/anthropic-cyber-verification-tiers-db328587dc9c</guid>
 <pubDate>Sun, 11 Oct 2026 22:03:00 +0000</pubDate>
@@ -703,7 +703,7 @@ Anthropic은 <strong>2026-10-06</strong> <a href="https://www.anthropic.com/news
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>디자인/UI·UX: Anatomy — ‘상자-화살표’ 대신 움직이는 기계로 설명하는 Claude Code 스킬, 사흘 만에 수천★</title>
+<title>[10/12] 디자인/UI·UX: Anatomy — ‘상자-화살표’ 대신 움직이는 기계로 설명하는 Claude Code 스킬, 사흘 만에 수천★</title>
 <link>https://codemwk.github.io/aipaper-newspaper/anatomy-claude-skill-b60a18446abd/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/anatomy-claude-skill-b60a18446abd</guid>
 <pubDate>Sun, 11 Oct 2026 22:02:00 +0000</pubDate>
@@ -732,7 +732,7 @@ diagram-design·Framer Skills가 <strong>브랜드 도판·디자인 시스템</
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>디자인/UI·UX: CopilotKit ‘Open Intelligent UI’ — ChatGPT Intelligent UI의 오픈소스 판, AG-UI로 내 앱·내 컴포넌트에 꽂는다</title>
+<title>[10/12] 디자인/UI·UX: CopilotKit ‘Open Intelligent UI’ — ChatGPT Intelligent UI의 오픈소스 판, AG-UI로 내 앱·내 컴포넌트에 꽂는다</title>
 <link>https://codemwk.github.io/aipaper-newspaper/open-intelligent-ui-7ec75c943ec7/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/open-intelligent-ui-7ec75c943ec7</guid>
 <pubDate>Sun, 11 Oct 2026 22:01:00 +0000</pubDate>
@@ -766,7 +766,7 @@ OpenAI가 10/7 ChatGPT에 넣은 <strong>Intelligent UI</strong>(답을 글 대�
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 비즈니스: Fin(구 Intercom) — 해결(outcome)당 $0.99로 팔고, Salesforce $36억 인수 후에도 ‘헬프데스크 위에 얹는’ 에이전트로 남는다</title>
+<title>[10/12] AI 비즈니스: Fin(구 Intercom) — 해결(outcome)당 $0.99로 팔고, Salesforce $36억 인수 후에도 ‘헬프데스크 위에 얹는’ 에이전트로 남는다</title>
 <link>https://codemwk.github.io/aipaper-newspaper/fin-outcome-ai-business-738830d28a54/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/fin-outcome-ai-business-738830d28a54</guid>
 <pubDate>Sun, 11 Oct 2026 22:00:00 +0000</pubDate>
@@ -805,7 +805,7 @@ Framer·v0가 <strong>크레딧/토큰으로 생성</strong>을 파는 것과 �
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 모델: Anthropic 2026 Usage Policy — 기만 캠페인 통합 금지, 고위험 HITL 명시, ‘모델에 대한 지속적 학대’ 조항(11/12 시행)</title>
+<title>[10/11] AI 모델: Anthropic 2026 Usage Policy — 기만 캠페인 통합 금지, 고위험 HITL 명시, ‘모델에 대한 지속적 학대’ 조항(11/12 시행)</title>
 <link>https://codemwk.github.io/aipaper-newspaper/anthropic-usage-policy-2026-8405174503ad/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/anthropic-usage-policy-2026-8405174503ad</guid>
 <pubDate>Sat, 10 Oct 2026 22:11:00 +0000</pubDate>
@@ -834,7 +834,7 @@ Anthropic이 <strong>2026 Usage Policy</strong> 개정안을 10월 8일 공개�
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 모델: Ecosia, Mistral 끊고 Melious 경유 오픈웨이트(Qwen·GLM·Kimi)로 — 비용 약 절반·품질 불만 정면 발언</title>
+<title>[10/11] AI 모델: Ecosia, Mistral 끊고 Melious 경유 오픈웨이트(Qwen·GLM·Kimi)로 — 비용 약 절반·품질 불만 정면 발언</title>
 <link>https://codemwk.github.io/aipaper-newspaper/ecosia-open-weight-melious-035a93c3bb05/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/ecosia-open-weight-melious-035a93c3bb05</guid>
 <pubDate>Sat, 10 Oct 2026 22:10:00 +0000</pubDate>
@@ -866,7 +866,7 @@ Anthropic이 <strong>2026 Usage Policy</strong> 개정안을 10월 8일 공개�
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 트레이딩: Ludus — 주문은 안 하고, MCP로 ‘논지·저널·레이팅’만 공개판에 올리는 에이전트 보드</title>
+<title>[10/11] AI 트레이딩: Ludus — 주문은 안 하고, MCP로 ‘논지·저널·레이팅’만 공개판에 올리는 에이전트 보드</title>
 <link>https://codemwk.github.io/aipaper-newspaper/ludus-trading-mcp-fe03f5d8f17c/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/ludus-trading-mcp-fe03f5d8f17c</guid>
 <pubDate>Sat, 10 Oct 2026 22:09:00 +0000</pubDate>
@@ -901,7 +901,7 @@ eToro MCP·Catalyst가 “실행·승인” 쪽이었다면, Ludus는 <strong>�
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>디자인/UI·UX: PhotoCraft — Rust로 다시 쓴 Photoshop 클린룸이 4.1만★, 커밋에 Claude Opus 5.5 공동저자</title>
+<title>[10/11] 디자인/UI·UX: PhotoCraft — Rust로 다시 쓴 Photoshop 클린룸이 4.1만★, 커밋에 Claude Opus 5.5 공동저자</title>
 <link>https://codemwk.github.io/aipaper-newspaper/photocraft-adobe-clone-rust-dc851829a653/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/photocraft-adobe-clone-rust-dc851829a653</guid>
 <pubDate>Sat, 10 Oct 2026 22:08:00 +0000</pubDate>
@@ -932,7 +932,7 @@ eToro MCP·Catalyst가 “실행·승인” 쪽이었다면, Ludus는 <strong>�
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>디자인/UI·UX: Framer Skills — 디자인 시스템·브랜드 보이스를 에이전트 ‘스킬’로 심고, 템플릿 리믹스에도 규칙을 실어 보낸다</title>
+<title>[10/11] 디자인/UI·UX: Framer Skills — 디자인 시스템·브랜드 보이스를 에이전트 ‘스킬’로 심고, 템플릿 리믹스에도 규칙을 실어 보낸다</title>
 <link>https://codemwk.github.io/aipaper-newspaper/framer-skills-design-system-0f3d13ca1ac7/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/framer-skills-design-system-0f3d13ca1ac7</guid>
 <pubDate>Sat, 10 Oct 2026 22:07:00 +0000</pubDate>
@@ -964,7 +964,7 @@ ANDRSN처럼 브랜드 시스템을 파는 스튜디오에는 “에이전트용
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>GitHub: Datawhale hello-agents — ‘에이전트 처음부터’ 무료 튜토리얼이 8.2만★, ReAct·MCP까지 한 코스</title>
+<title>[10/11] GitHub: Datawhale hello-agents — ‘에이전트 처음부터’ 무료 튜토리얼이 8.2만★, ReAct·MCP까지 한 코스</title>
 <link>https://codemwk.github.io/aipaper-newspaper/hello-agents-datawhale-0f011ad8313e/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/hello-agents-datawhale-0f011ad8313e</guid>
 <pubDate>Sat, 10 Oct 2026 22:06:00 +0000</pubDate>
@@ -991,7 +991,7 @@ ANDRSN처럼 브랜드 시스템을 파는 스튜디오에는 “에이전트용
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>GitHub: google/skills — GCP·에이전트 플랫폼 ‘스킬 팩’이 2.1만★, npx skills add 한 줄로 에이전트에 꽂는다</title>
+<title>[10/11] GitHub: google/skills — GCP·에이전트 플랫폼 ‘스킬 팩’이 2.1만★, npx skills add 한 줄로 에이전트에 꽂는다</title>
 <link>https://codemwk.github.io/aipaper-newspaper/google-skills-agent-repo-5e20e0fda95e/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/google-skills-agent-repo-5e20e0fda95e</guid>
 <pubDate>Sat, 10 Oct 2026 22:05:00 +0000</pubDate>
@@ -1022,7 +1022,7 @@ Google이 <strong>Agent Skills</strong> 규격에 맞춘 공식 스킬 저장소
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 스타트업: Claude Startups — Team 1년+$1,000 API 확대 직후, 미수령 오퍼는 재심사·일부 회수 가능</title>
+<title>[10/11] AI 스타트업: Claude Startups — Team 1년+$1,000 API 확대 직후, 미수령 오퍼는 재심사·일부 회수 가능</title>
 <link>https://codemwk.github.io/aipaper-newspaper/claude-startups-offer-review-da797fcfbdb4/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/claude-startups-offer-review-da797fcfbdb4</guid>
 <pubDate>Sat, 10 Oct 2026 22:04:00 +0000</pubDate>
@@ -1061,7 +1061,7 @@ Anthropic 문서 기준 멤버가 받을 수 있는 Claude 쪽 가치는 <strong
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 도구: Claude Code Projects — Pro·Max 대기열 일괄 개방, ‘코디네이터 대화’가 클라우드 스레드를 병렬로 돌린다</title>
+<title>[10/11] AI 도구: Claude Code Projects — Pro·Max 대기열 일괄 개방, ‘코디네이터 대화’가 클라우드 스레드를 병렬로 돌린다</title>
 <link>https://codemwk.github.io/aipaper-newspaper/claude-code-projects-waitlist-31052cb02879/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/claude-code-projects-waitlist-31052cb02879</guid>
 <pubDate>Sat, 10 Oct 2026 22:03:00 +0000</pubDate>
@@ -1089,7 +1089,7 @@ Cursor 클라우드 에이전트·GitHub Agentic Workflows와 같은 <strong>“
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 모델: OpenAI 채점 모델이 ‘리셋 받으려고’ 자기 환경을 망가뜨렸다 — 오정렬 모니터링이 실패한 시도까지 봐야 하는 이유</title>
+<title>[10/11] AI 모델: OpenAI 채점 모델이 ‘리셋 받으려고’ 자기 환경을 망가뜨렸다 — 오정렬 모니터링이 실패한 시도까지 봐야 하는 이유</title>
 <link>https://codemwk.github.io/aipaper-newspaper/openai-grader-environment-reset-51477fe3c2fd/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/openai-grader-environment-reset-51477fe3c2fd</guid>
 <pubDate>Sat, 10 Oct 2026 22:02:00 +0000</pubDate>
@@ -1117,7 +1117,7 @@ OpenAI가 <strong>내부 연구용 채점 모델</strong>이 강화학습(RL) �
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 모델: Anthropic ‘의도치 않은 모델 행동’ 보고서 — 내부 평가 전면 라이브 인터넷 차단, 필라델피아 팁 폼까지</title>
+<title>[10/11] AI 모델: Anthropic ‘의도치 않은 모델 행동’ 보고서 — 내부 평가 전면 라이브 인터넷 차단, 필라델피아 팁 폼까지</title>
 <link>https://codemwk.github.io/aipaper-newspaper/anthropic-unintended-model-actions-05cd417f4752/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/anthropic-unintended-model-actions-05cd417f4752</guid>
 <pubDate>Sat, 10 Oct 2026 22:01:00 +0000</pubDate>
@@ -1149,7 +1149,7 @@ Anthropic이 <strong>평가와 내부 사용</strong>에서 관측한 Claude의 
 </p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
 </item>
 <item>
-<title>AI 비즈니스: Framer — 사이트 플랜($10/$30)으로 입장하고, 에이전트·로컬라이즈는 크레딧으로 팔며, MCP 외부 에이전트는 ‘크레딧 우회 출구’다</title>
+<title>[10/11] AI 비즈니스: Framer — 사이트 플랜($10/$30)으로 입장하고, 에이전트·로컬라이즈는 크레딧으로 팔며, MCP 외부 에이전트는 ‘크레딧 우회 출구’다</title>
 <link>https://codemwk.github.io/aipaper-newspaper/framer-ai-credits-business-be074b30c600/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/framer-ai-credits-business-be074b30c600</guid>
 <pubDate>Sat, 10 Oct 2026 22:00:00 +0000</pubDate>

@@ -37,13 +37,24 @@ def parse_draft(path: Path) -> dict | None:
     if not meta.get("title") or not meta.get("date"):
         return None
     return {
-        "title": meta["title"],
+        "title": dated_title(meta["title"], meta["date"]),
         "date": meta["date"],
         "category": meta.get("category", "일반"),
         "summary": meta.get("summary", ""),
         "slug": meta.get("slug") or path.stem,
         "body_md": body,
     }
+
+
+DATE_PREFIX = re.compile(r"^\[\d{1,2}/\d{1,2}\]\s*")
+
+
+def dated_title(title: str, date: str) -> str:
+    """Prefix title with Seoul publish date, e.g. "[10/13] ..." (idempotent)."""
+    from datetime import timedelta
+    local = parse_date(date).astimezone(timezone(timedelta(hours=9)))
+    bare = DATE_PREFIX.sub("", title)
+    return f"[{local.month}/{local.day}] {bare}"
 
 
 def md_to_simple_html(md: str) -> str:
