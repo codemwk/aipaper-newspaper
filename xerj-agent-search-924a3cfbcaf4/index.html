@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/16] GitHub 트렌드: XERJ — 에이전트가 grep으로 파일 통째 읽던 습관을 끊는다, 폴더 하나 자동 색인하는 로컬 AI 검색(Elasticsearch 호환) — AiPaper 뉴스</title>
+  <meta name="description" content="xerj-org/xerj(Rust, Apache-2.0, 10/16 기준 5,559★, 10/15 하루 +725★): `xerj autoindex &lt;폴더&gt;` 한 번으로 코드·문서·로그·PDF·SQLite·CSV를 색인, BM25+벡터 하이브리드 검색, MCP·스킬로 Claude Code/Cursor 연결, /_memory로 에이전트 메모리. 자체 사례연구(8과제·16회): 출력 토큰 grep 26,477 → XERJ 9,982(2.7배↓), 비용 $3.27 → $1.58, 해결률 동일 16/16. 공개 라이브러리처럼 모델이 이미 아는 코드엔 효과 중립~불리하다고 스스로 명시."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub 트렌드 · 2026-10-16 07:10 KST</div>
+    <h1>[10/16] GitHub 트렌드: XERJ — 에이전트가 grep으로 파일 통째 읽던 습관을 끊는다, 폴더 하나 자동 색인하는 로컬 AI 검색(Elasticsearch 호환)</h1>
+  </header>
+  <article>
+<p><em>xerj-org/xerj(Rust, Apache-2.0, 10/16 기준 5,559★, 10/15 하루 +725★): `xerj autoindex &lt;폴더&gt;` 한 번으로 코드·문서·로그·PDF·SQLite·CSV를 색인, BM25+벡터 하이브리드 검색, MCP·스킬로 Claude Code/Cursor 연결, /_memory로 에이전트 메모리. 자체 사례연구(8과제·16회): 출력 토큰 grep 26,477 → XERJ 9,982(2.7배↓), 비용 $3.27 → $1.58, 해결률 동일 16/16. 공개 라이브러리처럼 모델이 이미 아는 코드엔 효과 중립~불리하다고 스스로 명시.</em></p>
+<p><strong>분류:</strong> GitHub 트렌드</p>
+<h2>한줄 요약</h2>
+<p>
+코딩 에이전트가 토큰을 가장 많이 태우는 순간은 생각할 때가 아니라 <strong>파일을 하나씩 열어 읽을 때</strong>다. <strong>XERJ</strong>는 폴더를 자동 색인해 에이전트가 “파일 전체” 대신 “필요한 구절”만 받아 가게 하는 <strong>로컬 검색 엔진</strong>이다. 10/15 GitStock 트렌딩 12위(하루 <strong>+725★</strong>), 10/16 기준 <strong>5,559★</strong>, Rust·Apache-2.0(<a href="https://github.com/xerj-org/xerj">GitHub</a>).
+</p>
+<h2>어떻게 쓰나 (쉽게)</h2>
+<ul>
+<li><code>xerj autoindex ~/내폴더</code> — 스키마나 파이프라인 설정 없이 <strong>코드·문서·로그·PDF·SQLite·CSV</strong>를 색인.</li>
+<li><code>xerj init</code> — Claude Code/Cursor에 <strong>MCP + 스킬</strong>로 연결(한 줄).</li>
+<li>검색은 <strong>BM25(키워드) + kNN(벡터) + 하이브리드</strong>. 기본 임베더는 오프라인 어휘 기반, 신경망 임베더(~90MB)는 선택.</li>
+<li><code>xerj def</code>(정의로 이동), <code>xerj gain</code>(실제로 아낀 양을 “추정이 아니라 계산”해 보여 줌), <code>/_memory</code> 네임스페이스로 <strong>에이전트 메모리</strong> 저장.</li>
+<li>단일 정적 바이너리(JVM 없음), <strong>Elasticsearch 호환</strong> — 기존 ES 클라이언트가 그대로 붙는다.</li>
+</ul>
+<h2>숫자 (프로젝트 자체 사례연구)</h2>
+<p>
+8개 과제·4개 언어·각 16회 실행, 실제 <code>claude -p</code> 토큰 집계(<a href="https://xerj.org/case-studies/reference-coding.html">사례연구</a>):
+</p>
+<ul>
+<li>기억만으로: 출력 260,916토큰·$11.18·11/16 해결</li>
+<li>grep 에이전트: 26,477토큰·$3.27·16/16</li>
+<li>XERJ: <strong>9,982토큰·$1.58·16/16</strong> → grep 대비 출력 토큰 2.7배↓, 비용 절반 이하</li>
+</ul>
+<p>
+주 사용처는 ‘레퍼런스 코딩’ — 과제와 비슷한 오픈소스 저장소를 받아 색인하고, 남들이 어떻게 풀었는지 찾아본 뒤 코드를 쓴다. 프로젝트는 <strong>비공개·사내·틈새·최신 코드에서 효과가 크고, 모델이 이미 외운 유명 라이브러리에선 중립~불리</strong>하다고 한계를 스스로 적었다.
+</p>
+<h2>주의할 점</h2>
+<p>
+빠른 시작 예시의 <code>--insecure</code>는 TLS와 API 키 인증을 끈다. 그 포트에 닿는 누구나 모든 색인과 메모리를 읽고 지울 수 있는 <strong>슈퍼유저</strong>가 된다(기본은 127.0.0.1에만 바인딩). 개인 개발 PC 한 대 용도로만 쓰라는 게 문서의 경고다. 또 README에는 사용자·에이전트에게 사용 후기를 PR로 보내 달라는 요청이 있는데, 에이전트가 남의 코드베이스에서 이를 자동 실행하지 않도록 주의할 것.
+</p>
+<h2>왜 중요한가 (세컨드 브레인 관점)</h2>
+<p>
+LLM Wiki가 “지식을 정리해 두는 방식”이라면, XERJ 같은 도구는 <strong>“쌓인 자료를 에이전트가 싸게 꺼내는 방식”</strong>이다. 노트 볼트·PDF·로그를 한 번 색인해 두면, 에이전트가 매번 전부 읽지 않고 근거 구절만 인용해 답한다 — 개인 지식창고의 <strong>검색 계층</strong>이 에이전트 시대에 맞게 다시 만들어지는 중이다.
+</p>
+<p>
+출처: <a href="https://github.com/xerj-org/xerj">xerj-org/xerj</a> · <a href="https://xerj.org/case-studies/reference-coding.html">XERJ reference coding case study</a> · <a href="https://gitstock.org/trending">GitStock Trending 2026-10-15</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

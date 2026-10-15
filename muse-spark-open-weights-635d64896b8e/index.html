@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/16] AI 모델: Meta ‘Muse Spark Open’ 가중치 공개 — 816B(활성 42B) MoE·100만 토큰, 맥 스튜디오 두 대로 집에서 돌리는 코딩 에이전트 — AiPaper 뉴스</title>
+  <meta name="description" content="Meta(10/15)가 Muse Spark의 오픈 가중치판을 공개. 총 816B·토큰당 활성 약 42B(256 전문가 중 8개), 텍스트·이미지·오디오·영상 입력 → 텍스트 출력, 컨텍스트 100만 토큰. BF16(약 1.5TB)·NVFP4 체크포인트, M5 Ultra 맥 스튜디오 2대로 구동(회사). HF 테스트: M3 Ultra 512GB에서 2비트 18 tok/s, oQ3e 21 tok/s. 추론 끄기 불가. 라이선스는 ‘제한적 상업 조건’의 Muse Model License."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-16 07:01 KST</div>
+    <h1>[10/16] AI 모델: Meta ‘Muse Spark Open’ 가중치 공개 — 816B(활성 42B) MoE·100만 토큰, 맥 스튜디오 두 대로 집에서 돌리는 코딩 에이전트</h1>
+  </header>
+  <article>
+<p><em>Meta(10/15)가 Muse Spark의 오픈 가중치판을 공개. 총 816B·토큰당 활성 약 42B(256 전문가 중 8개), 텍스트·이미지·오디오·영상 입력 → 텍스트 출력, 컨텍스트 100만 토큰. BF16(약 1.5TB)·NVFP4 체크포인트, M5 Ultra 맥 스튜디오 2대로 구동(회사). HF 테스트: M3 Ultra 512GB에서 2비트 18 tok/s, oQ3e 21 tok/s. 추론 끄기 불가. 라이선스는 ‘제한적 상업 조건’의 Muse Model License.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+9월에 다뤘던 Meta의 <strong>Muse Spark</strong>가 2026-10-15 <strong>오픈 가중치</strong>로 풀렸다. Meta는 이를 “미국산 오픈 가중치 중 가장 강력한 모델”이라고 부른다(회사 주장). 코딩·에이전트 작업에 맞춰 학습했고, 스크린샷을 보고, 음성 메모를 듣고, 화면 녹화를 보면서 코드를 고치는 <strong>멀티모달 에이전트 모델</strong>이다(<a href="https://research.meta.ai/blog/muse-spark-open">Meta AI Research</a>).
+</p>
+<h2>숫자로 보는 모델 (Hugging Face 해설 기준)</h2>
+<ul>
+<li><strong>구조</strong>: 총 약 <strong>816B</strong>, 토큰당 활성 약 <strong>42B</strong>. 층마다 전문가 <strong>256개 중 8개</strong>를 고르는 MoE, 62층. 파라미터의 약 97%가 전문가에 있다.</li>
+<li><strong>입출력</strong>: 텍스트·이미지·오디오·영상 입력 → 텍스트 출력. 오디오는 80ms마다 토큰 1개(10초 = 125토큰), 영상은 기본 2FPS·최대 96프레임.</li>
+<li><strong>컨텍스트</strong>: 최대 <strong>100만 토큰</strong>(이미지·영상·오디오 토큰 포함). 꽉 채우면 KV 캐시만 약 266GB(BF16).</li>
+<li><strong>체크포인트</strong>: BF16(약 1.5TB)과 NVIDIA Blackwell용 <strong>NVFP4</strong>. BF16은 H200 32장(4노드), NVFP4는 B200 1노드.</li>
+<li><strong>추론 레버</strong>: low/medium/high/xhigh(기본 xhigh). <strong>추론을 완전히 끌 수는 없다</strong> — 쉬운 일엔 low로 두라는 안내.</li>
+</ul>
+<h2>“집에서 돌린다”의 실제 의미</h2>
+<p>
+Meta는 <strong>M5 Ultra 맥 스튜디오 2대</strong>(대당 최대 512GB 통합 메모리)를 묶어 모델 전체를 올렸다고 밝혔다. 데모로 오픈소스 마스토돈 앱 Ice Cubes에 실제 iOS 수정을 넣고, DaVinci Resolve를 끝까지 조작해 영상을 프레임 단위로 검토·세로 크롭했다고 한다(회사 테스트). Hugging Face 측 실측은 더 현실적이다: <strong>M3 Ultra 512GB 한 대</strong>에서 2비트 양자화가 <strong>18 tok/s</strong>(모델 304GB), oMLX oQ3e가 생성 <strong>21 tok/s</strong>(344GB)(<a href="https://huggingface.co/blog/meta-muse-spark-open">HF 블로그</a>). 즉 “개인용”이라도 <strong>최소 256GB 이상 메모리</strong>가 필요한 급이다.
+</p>
+<h2>어디서 쓰나</h2>
+<ul>
+<li>API: Baseten, Fireworks AI, Groq, Modal, Nebius, OpenRouter, Together AI.</li>
+<li>가중치: Hugging Face, Amazon SageMaker, Google Cloud Model Garden, Microsoft Foundry. llama.cpp·vLLM·SGLang·MLX·Unsloth 지원, 미세조정은 TorchTitan/TRL.</li>
+<li><strong>라이선스</strong>: Muse Model License, “제한적 상업 조건” — Apache/MIT식 완전 개방은 아니다. 상용 서비스 전 조건 확인 필수.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+오픈 가중치 최상위권은 그동안 중국 모델이 주도해 왔다. 미국 대형 연구소가 <strong>100만 토큰·멀티모달·에이전트 특화</strong>급을 풀었다는 건, 사내 데이터를 밖으로 내보내기 어려운 팀(금융·의료·보안)에 선택지가 생겼다는 뜻이다. 다만 벤치마크 수치는 Meta 자체 평가이고, 안전성 전체 보고서는 “곧 공개” 상태다.
+</p>
+<p>
+출처: <a href="https://research.meta.ai/blog/muse-spark-open">Meta AI Research — Muse Spark Open</a> · <a href="https://huggingface.co/blog/meta-muse-spark-open">Hugging Face — Welcome Muse Spark Open</a> · <a href="https://huggingface.co/collections/meta-models/muse-spark-open">HF 컬렉션</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
