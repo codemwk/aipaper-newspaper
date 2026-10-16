@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/17] AI 콘텐츠: FLUX 3 Image Klein 오픈웨이트 — 5.6B로 4K·편집·레퍼런스 10장·바운딩박스, 8GB 그래픽카드에서 돌고 연 매출 $500만 미만은 상업 무료 — AiPaper 뉴스</title>
+  <meta name="description" content="Black Forest Labs(10/15): FLUX 3 Image Klein 공개. 5.6B 파라미터 오픈웨이트, 텍스트→이미지·편집·최대 10장 멀티 레퍼런스, 네이티브 4K, 바운딩박스 배치·편집 영역 제한. 16스텝 증류 모델 + 50스텝 베이스(파인튜닝용), FP8·INT8·NVFP4. BF16 11.2GB·FP8 5.6GB, INT8은 VRAM 8GB. RTX 5090 1MP 약 4초. API flux-3-image-klein 1K 이미지당 $0.009부터. FLUX Kommunity License."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 콘텐츠 · 2026-10-17 07:04 KST</div>
+    <h1>[10/17] AI 콘텐츠: FLUX 3 Image Klein 오픈웨이트 — 5.6B로 4K·편집·레퍼런스 10장·바운딩박스, 8GB 그래픽카드에서 돌고 연 매출 $500만 미만은 상업 무료</h1>
+  </header>
+  <article>
+<p><em>Black Forest Labs(10/15): FLUX 3 Image Klein 공개. 5.6B 파라미터 오픈웨이트, 텍스트→이미지·편집·최대 10장 멀티 레퍼런스, 네이티브 4K, 바운딩박스 배치·편집 영역 제한. 16스텝 증류 모델 + 50스텝 베이스(파인튜닝용), FP8·INT8·NVFP4. BF16 11.2GB·FP8 5.6GB, INT8은 VRAM 8GB. RTX 5090 1MP 약 4초. API flux-3-image-klein 1K 이미지당 $0.009부터. FLUX Kommunity License.</em></p>
+<p><strong>분류:</strong> AI 콘텐츠</p>
+<h2>한줄 요약</h2>
+<p>
+10/4 본지가 “오픈웨이트는 수주 내”라고 전했던 <strong>FLUX 3</strong> 계열에서 <strong>작은 오픈 모델</strong>이 먼저 나왔다. Black Forest Labs(BFL)는 2026-10-15 <strong>FLUX 3 Image Klein</strong>을 공개했다 — 5.6B 파라미터로 큰 FLUX 3 Image의 핵심 기능(네이티브 4K, 정밀 편집, 바운딩박스)을 그대로 가져왔다(<a href="https://bfl.ai/blog/flux-3-image-klein">BFL 블로그</a>).
+</p>
+<h2>무엇을 할 수 있나</h2>
+<ul>
+<li><strong>세 가지 일을 한 모델로</strong>: 텍스트→이미지, 이미지 편집, <strong>최대 10장</strong>의 레퍼런스를 섞는 멀티 레퍼런스 생성.</li>
+<li><strong>바운딩박스</strong>: 프롬프트에 박스를 넣어 요소가 놓일 <strong>자리를 지정</strong>하거나, 편집을 <strong>정해진 영역 안으로 제한</strong>한다. 레이아웃이 중요한 광고·썸네일 작업에 직접 쓰이는 기능.</li>
+<li><strong>두 체크포인트</strong>: 빠른 생성용 <strong>증류 모델(16스텝)</strong>과 LoRA·파인튜닝용 <strong>베이스(50스텝)</strong>. Diffusers·Ostris AI Toolkit·NVIDIA NeMo가 첫날부터 학습을 지원.</li>
+<li><strong>API 옵션</strong>: 모델명 <code>flux-3-image-klein</code>, 프롬프트 자동 보강과 <strong>편집하지 않은 영역을 픽셀 그대로 보존</strong>하는 기능 포함. 가격은 1K 이미지당 <strong>$0.009부터</strong>.</li>
+</ul>
+<h2>얼마나 가벼운가 (BFL·NVIDIA 측정)</h2>
+<ul>
+<li>생성기 가중치 <strong>BF16 11.2GB, FP8 5.6GB</strong>. <strong>INT8 빌드는 VRAM 8GB</strong> GeForce RTX에서도 ComfyUI·Diffusers로 동작.</li>
+<li>증류 모델+INT8로 1MP 이미지 1장: <strong>RTX 5090 약 4초, RTX 4070 9초 미만</strong>. 데이터센터 GB300(NVFP4)에선 0.6초 미만.</li>
+<li>자체 평가에서 이전 FLUX.2 [klein] 9B보다 파라미터는 38% 적은데 Elo가 텍스트→이미지 +91, 편집 +70. (비교·순위는 회사 내부 평가다.)</li>
+</ul>
+<h2>라이선스가 핵심</h2>
+<p>
+<strong>FLUX Kommunity License</strong>: 개인과 <strong>연 매출 $500만 미만 기업은 상업 이용 무료</strong>, 연구·비상업도 허용. 그 이상은 자체 호스팅 라이선스나 API를 사야 한다. 1인 스튜디오나 소규모 에이전시는 내 PC에서 돌려 클라이언트 작업에 써도 된다는 뜻이다. 이것은 FLUX 3 Action에 이은 FLUX 3 계열의 <strong>두 번째 오픈웨이트</strong>이고, BFL은 “더 나온다”고 했다.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+이미지 생성의 실무 병목은 “예쁜 한 장”이 아니라 <strong>“로고는 여기, 제품은 저기, 나머지는 건드리지 마”</strong>를 지키는 것이다. 바운딩박스와 미편집 영역 보존이 5.6B짜리 로컬 모델에 들어오면서, 브랜드 에셋을 클라우드에 올리지 않고 <strong>내 그래픽카드에서 반복 수정</strong>하는 워크플로가 현실이 됐다. 브랜드 일관성을 위해 자사 스타일 LoRA를 학습시키기에도 베이스 모델 크기가 적당하다.
+</p>
+<p>
+출처: <a href="https://bfl.ai/blog/flux-3-image-klein">BFL — FLUX 3 Image Klein</a> · <a href="https://huggingface.co/blog/flux-3">Hugging Face — FLUX.3 in Diffusers</a> · <a href="https://docs.bfl.ml/flux_3/flux3_image_klein">BFL Docs</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
