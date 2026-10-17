@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/18] 세컨드 브레인 / PKM: 텐센트 Hy-Memory 2.0 — ‘기억을 쓰는 전용 모델’(30B, 활성 3B)·엔진·앱 MemHub까지 전부 오픈소스, Cursor에서 말한 취향을 Codex도 안다 — AiPaper 뉴스</title>
+  <meta name="description" content="Tencent Hunyuan(10/16): Hy-Memory 2.0 3층 오픈소스. ① 모델 Hy-Memory-30B-A3B — 무엇을 기억·어떻게 적고·새 증거로 어떻게 고칠지 정하는 ‘기억 작성기’, Mem0·MemOS·Hy-Memory·(미학습)EverMemOS 4개 시스템 평균 55.49로 Claude Opus 5(54.62)·DeepSeek V4.1 Flash(53.64)보다 높음(자체 평가). ② 엔진 Hy-Memory — 대화 기억(사건 흐름)·작업 기억(진행 상황·적용 조건 있는 경험)·코드 기억(왜 이렇게 고쳤나). ③ 앱 MemHub — AI 도구 10종의 과거 대화 가져오기·실시간 동기화·플러그인 호출로 ‘한 개의 개인 기억’ 공유. 텐센트 증권앱 리서치 기억 평가 64.3→79.6."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-10-18 07:11 KST</div>
+    <h1>[10/18] 세컨드 브레인 / PKM: 텐센트 Hy-Memory 2.0 — ‘기억을 쓰는 전용 모델’(30B, 활성 3B)·엔진·앱 MemHub까지 전부 오픈소스, Cursor에서 말한 취향을 Codex도 안다</h1>
+  </header>
+  <article>
+<p><em>Tencent Hunyuan(10/16): Hy-Memory 2.0 3층 오픈소스. ① 모델 Hy-Memory-30B-A3B — 무엇을 기억·어떻게 적고·새 증거로 어떻게 고칠지 정하는 ‘기억 작성기’, Mem0·MemOS·Hy-Memory·(미학습)EverMemOS 4개 시스템 평균 55.49로 Claude Opus 5(54.62)·DeepSeek V4.1 Flash(53.64)보다 높음(자체 평가). ② 엔진 Hy-Memory — 대화 기억(사건 흐름)·작업 기억(진행 상황·적용 조건 있는 경험)·코드 기억(왜 이렇게 고쳤나). ③ 앱 MemHub — AI 도구 10종의 과거 대화 가져오기·실시간 동기화·플러그인 호출로 ‘한 개의 개인 기억’ 공유. 텐센트 증권앱 리서치 기억 평가 64.3→79.6.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+세컨드 브레인을 AI에게 맡길 때 진짜 어려운 건 <strong>검색</strong>이 아니라 <strong>기록</strong>이다 — 무엇을 남기고, 어떻게 적고, 생각이 바뀌면 무엇을 고칠지. 텐센트 훈위안이 2026-10-16 공개한 <strong>Hy-Memory 2.0</strong>은 이 ‘기록’만 전문으로 하는 모델부터 엔진, 사용자 앱까지 <strong>세 층을 모두 오픈소스</strong>로 풀었다(<a href="https://memory.hunyuan.tencent.com/">Hy-Memory 2.0</a>).
+</p>
+<h2>1층 — 기억을 ‘쓰는’ 모델</h2>
+<p>
+<strong>Hy-Memory-30B-A3B</strong>는 총 300억 파라미터 중 약 30억만 일하는 작은 MoE 모델이다. 역할은 대화를 보고 <strong>무엇을 기억할지, 얼마나 정확히 적을지, 새 정보가 들어오면 기존 기억을 어떻게 고칠지</strong> 정하는 것. Mem0·MemOS 같은 기존 기억 프레임워크 안의 범용 LLM을 그대로 갈아 끼우면 된다(<a href="https://huggingface.co/tencent/Hy-Memory-30B-A3B">Hugging Face</a>).
+</p>
+<ul>
+<li>4개 기억 시스템에서 6개 지표 평균 <strong>55.49</strong> — Claude Opus 5(54.62), DeepSeek V4.1 Flash(53.64), 같은 체급 Qwen3-30B-A3B(44.37)보다 높다(텐센트 자체 평가, 벤치마크 20% 표본). 학습에 쓰지 않은 EverMemOS에서도 1위라 <strong>다른 시스템으로 옮겨도 통한다</strong>는 주장.</li>
+</ul>
+<h2>2층 — 세 종류의 기억을 관리하는 엔진</h2>
+<ul>
+<li><strong>대화 기억</strong>: 흩어진 사실 대신 <strong>사건 단위</strong>로 시간·장소·인물과 이후 전개를 묶는다. 중복은 합치고 앞뒤가 충돌하는 내용은 정리한 뒤 모델에 건넨다.</li>
+<li><strong>작업 기억(신규)</strong>: 과제 목표, 이미 정한 방법, 단계별 결과, 그리고 <strong>‘언제 적용되는지’ 조건이 붙은 경험</strong>. 조건이 맞을 때만 그 경험을 쓴다.</li>
+<li><strong>코드 기억(신규)</strong>: 긴 작업을 이어 갈 때 지금 어떤 일을 하는지 먼저 판단하고, <strong>“이 코드를 왜 이렇게 고쳤나”</strong>의 결정 기록을 찾아온다.</li>
+</ul>
+<h2>3층 — MemHub: 모든 에이전트, 하나의 기억</h2>
+<p>
+“Cursor에 말해 둔 취향을 Codex는 모르고, OpenCode에서 정한 규칙을 WorkBuddy에선 다시 설명해야 한다.” <strong>MemHub</strong>는 이 문제를 겨냥한 앱이다. AI 도구 <strong>10종</strong>의 과거 대화를 가져와 <strong>내 컴퓨터의 기억</strong>으로 정리하고, 이후 새 대화를 실시간 동기화하며, 각 도구에 플러그인으로 붙어 필요한 기억을 꺼내 준다. CLI와 맥 앱 제공.
+</p>
+<h2>실제 업무 수치</h2>
+<p>
+텐센트 증권 앱 ‘자선주(自选股)’ 리서치 비서 평가에서 “이번 주는 비철금속·반도체만”, “PER은 과거 백분위부터” 같은 사용자 규칙을 여러 날·여러 대화에 걸쳐 기억하는 능력이 종합 <strong>64.3 → 79.6</strong>, 여러 단서를 이어야 하는 회상은 <strong>+40%p</strong> 올랐다고 밝혔다. 관심 방향을 바꾸면 옛 방향은 보관하되 다시 추천하지 않는다.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+LLM Wiki를 만드는 사람에게 이 프로젝트는 두 가지를 알려 준다. ① <strong>기억 쓰기는 별도 모델로 분리할 만큼 중요한 작업</strong>이다 — 비싼 최상위 모델 대신 작은 전용 모델이 더 잘 적을 수 있다. ② ‘사건 / 작업 / 결정 이유’로 기억을 나누는 구조는 Obsidian 볼트 설계에도 그대로 쓸 수 있다: <code>events/</code>, <code>projects/</code>(진행 상황과 적용 조건 붙은 교훈), <code>decisions/</code>. 같은 주 DeepMind 마인크래프트 에이전트들이 공유 메모리에 교훈을 남겨 같은 실수를 반복하지 않은 것도 같은 원리다. 단, 모든 점수는 텐센트 자체 평가다.
+</p>
+<p>
+출처: <a href="https://memory.hunyuan.tencent.com/">Hy-Memory 2.0 공식 페이지 (10/16)</a> · <a href="https://huggingface.co/tencent/Hy-Memory-30B-A3B">Hugging Face — tencent/Hy-Memory-30B-A3B</a> · <a href="https://arxiv.org/html/2610.22196">arXiv 2610.22196</a> · <a href="https://github.com/Tencent-Hunyuan/Hy-Memory">GitHub Tencent-Hunyuan/Hy-Memory</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

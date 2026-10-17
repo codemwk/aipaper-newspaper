@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/18] 디자인/UI·UX: Pantheon ‘P1’ — 디자인 시스템이 ‘무엇을 고칠 수 있는지’ 정하는 AI 웹 빌더, Storybook만 있으면 바로 사이트, 사람과 에이전트가 같은 화면에서 작업 — AiPaper 뉴스</title>
+  <meta name="description" content="Pantheon(WordPress·Drupal 호스팅사, GoLive 컨퍼런스 10/16 블로그): AI 네이티브 ‘웹 구성 계층’ P1 공개. React 컴포넌트로 페이지를 조립하되 디자인 시스템이 사람·AI가 편집 가능한 범위를 통제, 기존 Storybook을 그대로 연결. 사람·에이전트(자사 ‘Zappy’ 또는 Claude) 실시간 공동 작업과 신원·변경 기록, 코드·콘텐츠·설정을 한 브랜치로 스테이징·병합, MCP로 외부 에이전트 연결. Next.js·오픈소스 Puck 기반, 사이트는 내보내기 가능. 가격 비공개(도입 상담)."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인/UI·UX · 2026-10-18 07:06 KST</div>
+    <h1>[10/18] 디자인/UI·UX: Pantheon ‘P1’ — 디자인 시스템이 ‘무엇을 고칠 수 있는지’ 정하는 AI 웹 빌더, Storybook만 있으면 바로 사이트, 사람과 에이전트가 같은 화면에서 작업</h1>
+  </header>
+  <article>
+<p><em>Pantheon(WordPress·Drupal 호스팅사, GoLive 컨퍼런스 10/16 블로그): AI 네이티브 ‘웹 구성 계층’ P1 공개. React 컴포넌트로 페이지를 조립하되 디자인 시스템이 사람·AI가 편집 가능한 범위를 통제, 기존 Storybook을 그대로 연결. 사람·에이전트(자사 ‘Zappy’ 또는 Claude) 실시간 공동 작업과 신원·변경 기록, 코드·콘텐츠·설정을 한 브랜치로 스테이징·병합, MCP로 외부 에이전트 연결. Next.js·오픈소스 Puck 기반, 사이트는 내보내기 가능. 가격 비공개(도입 상담).</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+AI가 웹페이지를 순식간에 만드는 시대에 기업이 가장 두려워하는 건 <strong>“브랜드가 무너지는 속도”</strong>다. WordPress·Drupal 호스팅 회사 <strong>Pantheon</strong>이 2026-10-16 공개한 <strong>P1</strong>의 답은 명확하다 — AI에게 자유를 주는 대신, <strong>디자인 시스템이 울타리가 된다</strong>(<a href="https://pantheon.io/blog/p1-fresh-start-web-builders-ai-era">Pantheon 블로그</a>).
+</p>
+<h2>핵심 아이디어: ‘컴포넌트가 권한이다’</h2>
+<ul>
+<li>편집자는 <strong>React 컴포넌트</strong>를 끌어다 페이지를 조립한다(이건 흔하다). 다른 점은 그 컴포넌트가 <strong>디자인 시스템의 규칙을 품고 있어서, 사람이든 AI든 무엇을 바꿀 수 있는지를 컴포넌트가 정한다</strong>는 것.</li>
+<li><strong>Storybook이 있다면 “몇 분이면” 그걸로 실제 사이트를 만들 수 있다</strong>고 회사는 말한다 — 프런트엔드 컴포넌트가 곧 편집 화면이 된다. 별도 번역 작업이 필요 없다.</li>
+</ul>
+<h2>사람과 에이전트가 ‘한 팀’</h2>
+<ul>
+<li><strong>실시간 멀티플레이</strong>: 팀원이 동시에 작업하고, AI 에이전트(자사 에이전트 <strong>‘Zappy’</strong> 또는 사용자의 <strong>Claude</strong>)도 <strong>신원이 있는 팀원</strong>으로 참여한다. 누가 무엇을 바꿨는지 항상 기록.</li>
+<li><strong>외부에서도 조작</strong>: Pantheon MCP 서버로 Claude Desktop·Claude Code 같은 에이전트가 기존 권한 그대로 P1 콘텐츠를 다룬다. 예: “리디자인 브랜치에서 홈 히어로 문구를 다듬어”, “승인된 컴포넌트로 랜딩 페이지 3개 만들고 머지 요청 열어”(<a href="https://p1.pantheon.io/about">P1 소개</a>).</li>
+<li><strong>코드·콘텐츠·설정을 한 번에 브랜치</strong>: 캠페인·리디자인·현지화를 각자 보호된 ‘작업 줄기’에서 진행하고, 검토 후 한 번에 배포. 오랫동안 웹 운영의 숙원이던 “콘텐츠 동결 없이 대규모 개편”을 겨냥했다. 시점 복원(타임머신)도 내세운다.</li>
+</ul>
+<h2>기술 선택과 잠금 효과</h2>
+<p>
+P1 사이트는 <strong>Next.js</strong>, 페이지 빌더는 오픈소스 <strong>Puck</strong> 기반이라 사이트와 콘텐츠는 <strong>밖으로 내보내 다른 곳에서 돌릴 수 있다</strong>. 다만 브랜치·에이전트 워크플로·자동 테스트·CDN 같은 운영 계층은 Pantheon에 남는다. 기존 WordPress·Drupal은 ‘콘텐츠 창고’로 두고 P1이 화면 조립을 맡는 조합도 가능하다고 한다. 가격은 공개되지 않았고 도입 상담 방식이다.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+최근 디자인 툴 뉴스(Figma 코드 레이어, TypeUI 스킬, Claude Design 등)의 공통 결론은 <strong>“AI 시대의 디자인 시스템은 문서가 아니라 집행 장치”</strong>라는 것이다. P1은 이를 가장 노골적으로 제품화했다 — 마케터·AI가 마음대로 만들 수 있지만 <strong>승인된 컴포넌트와 규칙 안에서만</strong>. 브랜드 스튜디오 입장에선 납품물이 ‘가이드 PDF’에서 <strong>‘AI가 지킬 수밖에 없는 컴포넌트 라이브러리’</strong>로 바뀌는 신호다.
+</p>
+<p>
+출처: <a href="https://pantheon.io/blog/p1-fresh-start-web-builders-ai-era">Pantheon — P1: A Fresh Start For Web Builders in the AI Era (10/16)</a> · <a href="https://p1.pantheon.io/about">About P1</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
