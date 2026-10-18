@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/19] AI 콘텐츠: SolarRenderer — 회색 박스·뼈대·연필 콘티를 ‘완성 영상’으로, 4스텝(50스텝보다 12.3배 빠름)·학습 안 한 구조 11종도 통했다, 가중치·데이터 공개 — AiPaper 뉴스</title>
+  <meta name="description" content="SolarRenderer(NUS 연구진, 10/15 공개): ‘에이전트가 장면을 짜면, 우리가 렌더한다.’ 얼려 둔 MiniMax-H3에 LoRA 2개 — 구조 영상을 따르는 제어 LoRA + 4스텝 가속 LoRA. 구조가 레이아웃·움직임·카메라를 고정하고, 첫 프레임과 프롬프트가 ‘보이는 모습’을 정한다. 구조 종류 이름표 없이 16종 처리, 그중 11종(포인트 클라우드·와이어프레임·노멀맵·연필 콘티·복셀·아이 크레용 그림·실루엣 등)은 학습에 없던 것. 블록 단위 스트리밍 버전도. 208개 벤치마크·LoRA 4개·학습 클립 57,738개(영상 포함) 공개. 공개된 15개 연구의 자체 데모 86건과 비교해 49승 13무 24패(Gemini 판정)."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 콘텐츠 · 2026-10-19 07:06 KST</div>
+    <h1>[10/19] AI 콘텐츠: SolarRenderer — 회색 박스·뼈대·연필 콘티를 ‘완성 영상’으로, 4스텝(50스텝보다 12.3배 빠름)·학습 안 한 구조 11종도 통했다, 가중치·데이터 공개</h1>
+  </header>
+  <article>
+<p><em>SolarRenderer(NUS 연구진, 10/15 공개): ‘에이전트가 장면을 짜면, 우리가 렌더한다.’ 얼려 둔 MiniMax-H3에 LoRA 2개 — 구조 영상을 따르는 제어 LoRA + 4스텝 가속 LoRA. 구조가 레이아웃·움직임·카메라를 고정하고, 첫 프레임과 프롬프트가 ‘보이는 모습’을 정한다. 구조 종류 이름표 없이 16종 처리, 그중 11종(포인트 클라우드·와이어프레임·노멀맵·연필 콘티·복셀·아이 크레용 그림·실루엣 등)은 학습에 없던 것. 블록 단위 스트리밍 버전도. 208개 벤치마크·LoRA 4개·학습 클립 57,738개(영상 포함) 공개. 공개된 15개 연구의 자체 데모 86건과 비교해 49승 13무 24패(Gemini 판정).</em></p>
+<p><strong>분류:</strong> AI 콘텐츠</p>
+<h2>한줄 요약</h2>
+<p>
+게임 엔진이나 AI 에이전트는 이미 장면의 <strong>배치·움직임·카메라</strong>를 꽤 잘 만든다. 부족한 건 그걸 <strong>진짜처럼 보이는 영상으로 칠하는 단계</strong>다. 싱가포르국립대(NUS) 연구진의 <strong>SolarRenderer</strong>는 정확히 그 단계만 맡는다. 슬로건부터 “The agent builds it. We render it.”이다(<a href="https://enderfga.cn/SolarRenderer/">프로젝트 페이지</a>).
+</p>
+<h2>어떻게 작동하나 (코드 없이)</h2>
+<ul>
+<li><strong>입력</strong>: ‘구조 영상’(회색 박스로 만든 3D 장면, 사람 뼈대, 깊이 지도, 연필 스토리보드 등) + 선택적으로 첫 프레임 이미지 + 프롬프트.</li>
+<li><strong>역할 분담</strong>: 구조 영상이 <strong>레이아웃·움직임·카메라를 프레임마다 고정</strong>하고, 첫 프레임과 글이 <strong>세계의 생김새</strong>(시대, 화풍, 조명)를 정한다. 같은 회색 박스 영상을 우키요에 풍, 사막 도시, 우주 오페라로 각각 렌더할 수 있다.</li>
+<li><strong>구조</strong>: 영상 모델 <strong>MiniMax-H3는 얼려 둔 채</strong> LoRA(작은 추가 학습 모듈) 두 개만 붙인다. 하나는 구조를 따르게 하는 <strong>제어 LoRA</strong>, 하나는 <strong>4스텝 만에 렌더하는 가속 LoRA</strong>. “이건 깊이 지도다” 같은 <strong>구조 종류 이름표가 필요 없다</strong> — 프롬프트에 입력 이름만 적으면 된다.</li>
+<li><strong>스트리밍</strong>: 블록 단위로 순서대로 렌더하는 버전도 있어, 영상이 다 만들어지기 전에 앞부분부터 볼 수 있다.</li>
+</ul>
+<h2>숫자</h2>
+<ul>
+<li><strong>4스텝 샘플링</strong>은 50스텝보다 <strong>12.3배 빠르면서</strong> 화질·구조 충실도가 더 좋았다고 주장.</li>
+<li>처리 가능한 구조 <strong>16종 중 11종은 학습 때 본 적 없는 것</strong>: 포인트 클라우드, 2D 포즈 뼈대, 와이어프레임, 노멀맵, <strong>연필 스토리보드</strong>, 복셀, <strong>아이가 그린 크레용 그림</strong>, 실루엣, 컬러 깊이 지도, 자율주행식 3D 박스, Mixamo 캐릭터.</li>
+<li><strong>비교</strong>: 다른 연구 15개가 자기 페이지에 올린 데모 86건을 그들의 구조 입력 그대로 다시 렌더해 <strong>49승 13무 24패</strong>. 판정은 Gemini 모델이 쌍별 비교로 했고, 사람 블라인드 테스트도 같은 방향이었다고 한다(자체 평가).</li>
+<li><strong>공개물</strong>: 208개 사례 일반화 벤치마크, 53개 정답 포함 테스트셋, LoRA 4개(전체 클립용·스트리밍용 × 제어·가속), 학습 인덱스 136,289개 중 <strong>57,738개를 영상과 함께</strong> 공개(<a href="https://huggingface.co/Enderfga/SolarRenderer">Hugging Face</a>).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+이 방식은 영상 제작을 <strong>“3D 블로킹 → AI 렌더”</strong> 두 단계로 나눈다. 감독은 회색 박스로 동선과 카메라만 정하고(혹은 에이전트에게 맡기고), 룩은 나중에 여러 버전으로 뽑는다. 연필 콘티나 아이 그림까지 받아 준다는 건 <strong>스토리보드가 곧 입력</strong>이 된다는 뜻이다. 지난주 소개한 Code Video Model(코드로 프리비즈 후 MiniMax로 렌더)과 같은 흐름이고, 둘 다 MiniMax-H3를 바닥에 깔았다. 한계: 백본 MiniMax-H3가 필요하고, 성능 비교는 연구진 자체 평가다.
+</p>
+<p>
+출처: <a href="https://enderfga.cn/SolarRenderer/">SolarRenderer 프로젝트 페이지</a> · <a href="https://enderfga.cn/data/solarrenderer.pdf">논문 PDF</a> · <a href="https://huggingface.co/Enderfga/SolarRenderer">Hugging Face — Enderfga/SolarRenderer</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

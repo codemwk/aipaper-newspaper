@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/19] AI 도구: OpenCode Console 침해 — 웹 콘솔에 저장한 OpenAI·Anthropic·Gemini 키가 샜다, 1.4% 사용자 영향·환불 진행, ‘내 키를 어디에 맡겼나’ 점검할 때 — AiPaper 뉴스</title>
+  <meta name="description" content="OpenCode(10/17 공지): 10/16 밤 폐기 중이던 레거시 시스템이 뚫려, OpenCode Console 워크스페이스에 외부 제공자 키를 연결한 사용자 1.4%의 OpenAI·Anthropic 등 키가 노출됐을 수 있음(‘대규모 증류 공격’과 관련). Anthropic은 영향받은 Claude 키 폐기, Google은 노출 Gemini 키 차단, 환불 진행 중. 로컬 OpenCode 앱에서 쓰는 키는 서버로 가지 않아 무관. 10/18 공격 48시간 지속·시스템 강화, 조사 중 일부 모델이 협조를 거부해 OpenAI ‘Daybreak Blue’ 방어 보안 등급 승인. 사용자 보고 피해 $65~$3,000(미확인). 할 일: 키 교체·OAuth 권한 회수·10/16 이후 사용량 확인·한도 설정."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 도구 · 2026-10-19 07:04 KST</div>
+    <h1>[10/19] AI 도구: OpenCode Console 침해 — 웹 콘솔에 저장한 OpenAI·Anthropic·Gemini 키가 샜다, 1.4% 사용자 영향·환불 진행, ‘내 키를 어디에 맡겼나’ 점검할 때</h1>
+  </header>
+  <article>
+<p><em>OpenCode(10/17 공지): 10/16 밤 폐기 중이던 레거시 시스템이 뚫려, OpenCode Console 워크스페이스에 외부 제공자 키를 연결한 사용자 1.4%의 OpenAI·Anthropic 등 키가 노출됐을 수 있음(‘대규모 증류 공격’과 관련). Anthropic은 영향받은 Claude 키 폐기, Google은 노출 Gemini 키 차단, 환불 진행 중. 로컬 OpenCode 앱에서 쓰는 키는 서버로 가지 않아 무관. 10/18 공격 48시간 지속·시스템 강화, 조사 중 일부 모델이 협조를 거부해 OpenAI ‘Daybreak Blue’ 방어 보안 등급 승인. 사용자 보고 피해 $65~$3,000(미확인). 할 일: 키 교체·OAuth 권한 회수·10/16 이후 사용량 확인·한도 설정.</em></p>
+<p><strong>분류:</strong> AI 도구</p>
+<h2>한줄 요약</h2>
+<p>
+오픈소스 코딩 에이전트 <strong>OpenCode</strong>의 웹 서비스 <strong>OpenCode Console</strong>이 뚫렸다. 사용자들이 “내 OpenAI·Anthropic 키로 모델을 불러 달라”며 콘솔에 저장해 둔 <strong>제공자 API 키</strong>가 노출됐을 수 있다. 일부 사용자는 밤사이 잔액이 털렸다고 보고했다(<a href="https://ctxsec.com/items/opencode-console-provider-key-breach-2026-10">ctxsec 정리, 10/18 갱신</a>).
+</p>
+<h2>무슨 일이 있었나</h2>
+<ul>
+<li><strong>10/16 밤(미국 시간)</strong>: 회사가 폐기 중이던 <strong>레거시 시스템</strong>에 무단 접근. OpenCode는 이를 <strong>“대규모 증류 공격(distillation attack)”과 관련</strong>됐다고 설명했다. 증류 공격은 훔친 키로 최상위 모델에 대량 요청을 보내 답을 수집, 다른 모델 학습에 쓰는 수법으로 흔히 쓰이는 말이지만, OpenCode는 구체적으로 설명하지 않았다.</li>
+<li><strong>영향 범위</strong>: Console 사용자 중 외부 제공자를 연결한 <strong>1.4%</strong>. 10/17 오전 “Action Required: Potential provider key breach” 메일을 받았다. 메일을 못 받았다면 영향이 없다는 게 회사 설명.</li>
+<li><strong>제공자 대응</strong>: Anthropic은 영향받은 것으로 보이는 <strong>Claude API 키를 폐기</strong>했고(갑자기 401 오류가 나면 폐기된 것), Google은 노출된 <strong>Gemini 키를 차단</strong>했다. OpenCode는 피해자 연락과 <strong>환불이 진행 중</strong>이라고 밝혔다.</li>
+<li><strong>로컬 사용자는 무관</strong>: OpenCode 개발자 Dax는 침해가 Console에서 일어났고, <strong>로컬 앱에서 쓰는 키는 회사 서버로 오지 않는다</strong>고 밝혔다.</li>
+<li><strong>10/18</strong>: 공격 시도가 48시간째 이어지고 있어 시스템을 강화 중. 조사 도중 프런티어 모델이 “상당히 돕다가 거부하기 시작”해, 방어 보안용으로 거절을 줄인 <strong>OpenAI ‘Daybreak Blue’</strong> 접근을 승인받았다고 했다(신청은 며칠 전, 10/17 승인).</li>
+<li><strong>미확인</strong>: 사용자들이 X·Reddit에 올린 피해액은 약 $65~$3,000. 접근 경로, 노출 기간, 키 외 데이터 노출 여부는 아직 공개되지 않았다.</li>
+</ul>
+<h2>지금 할 일 (Console에 키를 저장했다면)</h2>
+<ul>
+<li>각 제공자 대시보드에서 <strong>새 키를 만들고 옛 키를 삭제</strong> — Anthropic, OpenAI, Google AI Studio·Cloud, OpenRouter, xAI. 사용량이 정상이어도.</li>
+<li>Console의 제공자 연결과 OpenCode에 준 <strong>OAuth·앱 권한 회수</strong>.</li>
+<li>다시 쓸 거라면 <strong>OpenCode 전용·모델 범위 제한 키</strong>로.</li>
+<li>제공자별 <strong>월 한도·키별 크레딧 상한·알림</strong> 설정.</li>
+<li><strong>10/16 이후 사용량·청구서</strong> 확인, 낯선 모델이나 출력 토큰 급증 체크. 피해가 있으면 제공자 지원팀에 신고. 키 값 자체는 누구에게도 보내지 말 것 — “키 확인” 피싱 메일도 주의.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+에이전트 도구가 늘수록 <strong>API 키를 맡기는 곳</strong>도 늘어난다. 키 하나가 새면 남이 내 청구서로 모델을 돌린다. 원칙은 단순하다: 키는 <strong>가능하면 내 컴퓨터에만</strong> 두고, 호스팅 서비스에 맡겨야 한다면 <strong>전용 키 + 한도</strong>로. 매일 자동으로 도는 루틴(뉴스 수집, 트레이딩 봇)을 운영한다면 더더욱 사용량 알림을 켜 두자 — 이상 징후를 가장 먼저 알려 주는 건 청구서다.
+</p>
+<p>
+출처: <a href="https://ctxsec.com/items/opencode-console-provider-key-breach-2026-10">ctxsec — OpenCode Console 침해 정리(공식 발표·제공자 성명 링크 포함, 10/18 갱신)</a> · <a href="https://buttondown.com/ai-tldr/archive/aitldr-daily-digest-october-18-2026/">AI/TLDR 10/18 다이제스트</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
