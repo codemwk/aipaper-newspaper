@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/20] AI 모델: Inception Mercury 3 — 글자를 ‘한 번에 여러 개’ 쓰는 확산형 언어모델, 초당 1,000토큰 이상·100만 토큰 컨텍스트, 출시가 입력 $0.10·출력 $0.35 — AiPaper 뉴스</title>
+  <meta name="description" content="Inception이 10/19 확산형 LLM(dLLM) Mercury 3 공개: Mercury 1(2025년 6월)보다 40배 이상 크지만 엔비디아 GPU에서 초당 1,000토큰 이상 유지, 컨텍스트 26만→100만 토큰. 회사는 GPT-6 Luna·Claude Haiku 5.5와 같거나 낫고 4~8배 빠르다고 주장. 정가 100만 토큰당 입력 $0.20·출력 $0.70, 출시 기념 50% 할인($0.10/$0.35), 캐시 토큰은 입력가의 90% 할인. Inception API·Baseten·OpenRouter·Vercel 제공, OpenAI API 호환. 브라우저 에이전트·교육·실시간 검색·고객지원에서 초기 사용."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-20 07:02 KST</div>
+    <h1>[10/20] AI 모델: Inception Mercury 3 — 글자를 ‘한 번에 여러 개’ 쓰는 확산형 언어모델, 초당 1,000토큰 이상·100만 토큰 컨텍스트, 출시가 입력 $0.10·출력 $0.35</h1>
+  </header>
+  <article>
+<p><em>Inception이 10/19 확산형 LLM(dLLM) Mercury 3 공개: Mercury 1(2025년 6월)보다 40배 이상 크지만 엔비디아 GPU에서 초당 1,000토큰 이상 유지, 컨텍스트 26만→100만 토큰. 회사는 GPT-6 Luna·Claude Haiku 5.5와 같거나 낫고 4~8배 빠르다고 주장. 정가 100만 토큰당 입력 $0.20·출력 $0.70, 출시 기념 50% 할인($0.10/$0.35), 캐시 토큰은 입력가의 90% 할인. Inception API·Baseten·OpenRouter·Vercel 제공, OpenAI API 호환. 브라우저 에이전트·교육·실시간 검색·고객지원에서 초기 사용.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+지금 쓰는 거의 모든 챗봇은 글자를 <strong>앞에서부터 한 토큰씩</strong> 쓴다. <strong>Inception</strong>의 Mercury는 이미지 생성 AI처럼 <strong>흐릿한 초안 전체를 여러 번 다듬어</strong> 한꺼번에 완성하는 ‘확산(diffusion)’ 방식 언어모델이다. 2026-10-19 나온 <strong>Mercury 3</strong>는 이 방식이 <strong>커져도 빠르다</strong>는 걸 보여 주겠다는 모델이다(<a href="https://finance.yahoo.com/technology/ai/articles/inception-launches-mercury-3-setting-164800350.html">Business Wire via Yahoo Finance</a>).
+</p>
+<h2>확산형 언어모델, 쉽게 말하면</h2>
+<ul>
+<li>일반 모델(자기회귀형): “오늘 → 날씨가 → 맑다”처럼 <strong>순서대로 한 단어씩</strong>. 앞 단어가 나와야 다음 단어를 쓴다.</li>
+<li>확산형: 답변 자리 전체를 놓고 <strong>여러 토큰을 병렬로</strong> 채운 뒤 몇 번에 걸쳐 고친다. 그래서 같은 GPU에서 <strong>훨씬 빨리</strong> 끝난다.</li>
+<li>그동안의 의문은 “모델을 키워도 이 속도가 유지되나”였다. 공동창업자 스테파노 에르몬은 “한계는 계산량과 데이터이지 알고리즘의 벽이 아니다”라고 말했다.</li>
+</ul>
+<h2>Mercury 3 한눈에</h2>
+<table>
+<tr><th>항목</th><th>내용</th></tr>
+<tr><td>크기</td><td>Mercury 1(2025년 6월)보다 <strong>40배 이상</strong></td></tr>
+<tr><td>속도</td><td>널리 쓰이는 엔비디아 GPU에서 <strong>초당 1,000토큰 이상</strong></td></tr>
+<tr><td>컨텍스트</td><td><strong>100만 토큰</strong>(Mercury 2.5는 26만)</td></tr>
+<tr><td>정가</td><td>100만 토큰당 입력 <strong>$0.20</strong> / 출력 <strong>$0.70</strong></td></tr>
+<tr><td>출시 할인</td><td>50% 할인 <strong>$0.10 / $0.35</strong>, 캐시 토큰은 입력가의 90% 할인</td></tr>
+<tr><td>제공처</td><td>Inception API, Baseten, OpenRouter, Vercel — <strong>OpenAI API 호환</strong></td></tr>
+</table>
+<p>
+성능은 회사 주장 기준으로 GPT-6 Luna·Claude Haiku 5.5 같은 ‘빠른 모델’급이거나 그 이상이며 <strong>4~8배 빠르다</strong>. 독립 검증은 아직이다.
+</p>
+<h2>누가 쓰나</h2>
+<p>
+학습 앱 RevisionDojo는 힌트·채점·용어 설명이 <strong>약 1초</strong> 안에 돌아오게 됐다며 “기존 스택에 그대로 끼웠다”고 말했다. 그 밖에 브라우저를 대신 조작하는 에이전트, 실시간 검색 에이전트, 고객지원에서 시험 중이다.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+에이전트는 한 작업에 모델을 여러 번 부르기 때문에 <strong>한 번의 지연이 곱셈으로 쌓인다</strong>. 확산형 모델이 이 정도 지능에서 초당 1,000토큰을 낸다면 “똑똑하지만 느린 모델”과 “빠르지만 단순한 모델” 사이의 선택이 사라진다. 실사용 관점에선 음성 비서, 실시간 번역, 글쓰기 도구처럼 <strong>사람이 기다리는 화면</strong>에서 먼저 체감될 것이다. 할인가 기준으로는 오늘 같은 날 나온 MiniMax M3.1 Flash보다도 싸다.
+</p>
+<p>
+출처: <a href="https://finance.yahoo.com/technology/ai/articles/inception-launches-mercury-3-setting-164800350.html">Inception — Mercury 3 발표 (Business Wire, 10/19)</a> · <a href="https://pricepertoken.com/news/model-releases">Price Per Token — 신규 모델 목록</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
