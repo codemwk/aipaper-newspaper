@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/21] AI 도구: 코딩 에이전트 ‘운영 수칙’ 업데이트 — Claude Code는 ‘이 대화 다시 열면 5시간 한도를 꽤 먹는다’고 미리 경고하고 작업 브랜치 삭제 버그를 고쳤다, GitHub Copilot은 GPT-5.5 등 6개 모델 퇴역 — AiPaper 뉴스</title>
+  <meta name="description" content="Claude Code 2.1.304(10/20 06:34 KST 배포): Pro·Max에서 오래 쉰 대화를 재개하면 5시간 사용 한도의 상당 부분을 쓸 때 경고(새 대화로 시작하고 이전 대화는 필요할 때 찾아보게 할 수 있음), 프로젝트·최근 세션을 읽어 auto 모드를 가르치는 /auto-mode-setup, Managed Agents 설정을 공식 보안 가이드와 비교만 하는 점검 명령, --worktree 종료 시 HEAD가 분리됐거나 다른 브랜치일 때 묻지 않고 작업트리·브랜치를 지워 커밋을 잃을 수 있던 버그 수정, 마운트 드라이브 rm -r 안전 확인 추가. 2.1.305(10/21 05:46 KST): 2.1.304의 Vertex·Bedrock 요청 실패 회귀 수정. GitHub Copilot은 10/19부터 Gemini 3.7 Flash, GPT-5.5·5.4, GPT-5.4 mini·GPT-5 mini, Grok 4.5 퇴역(대안 Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna, Grok 4.7), 기업용 모델 정책 REST API 정식."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 도구 · 2026-10-21 07:08 KST</div>
+    <h1>[10/21] AI 도구: 코딩 에이전트 ‘운영 수칙’ 업데이트 — Claude Code는 ‘이 대화 다시 열면 5시간 한도를 꽤 먹는다’고 미리 경고하고 작업 브랜치 삭제 버그를 고쳤다, GitHub Copilot은 GPT-5.5 등 6개 모델 퇴역</h1>
+  </header>
+  <article>
+<p><em>Claude Code 2.1.304(10/20 06:34 KST 배포): Pro·Max에서 오래 쉰 대화를 재개하면 5시간 사용 한도의 상당 부분을 쓸 때 경고(새 대화로 시작하고 이전 대화는 필요할 때 찾아보게 할 수 있음), 프로젝트·최근 세션을 읽어 auto 모드를 가르치는 /auto-mode-setup, Managed Agents 설정을 공식 보안 가이드와 비교만 하는 점검 명령, --worktree 종료 시 HEAD가 분리됐거나 다른 브랜치일 때 묻지 않고 작업트리·브랜치를 지워 커밋을 잃을 수 있던 버그 수정, 마운트 드라이브 rm -r 안전 확인 추가. 2.1.305(10/21 05:46 KST): 2.1.304의 Vertex·Bedrock 요청 실패 회귀 수정. GitHub Copilot은 10/19부터 Gemini 3.7 Flash, GPT-5.5·5.4, GPT-5.4 mini·GPT-5 mini, Grok 4.5 퇴역(대안 Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna, Grok 4.7), 기업용 모델 정책 REST API 정식.</em></p>
+<p><strong>분류:</strong> AI 도구</p>
+<h2>한줄 요약</h2>
+<p>
+에이전트로 일하는 사람에게 이번 주 중요한 업데이트는 새 기능보다 <strong>‘돈과 작업을 잃지 않게 하는 장치’</strong>다. Claude Code와 GitHub Copilot이 하루 사이 나란히 그런 변화를 내놨다.
+</p>
+<h2>Claude Code 2.1.304 — 한도·안전·설정</h2>
+<p>
+2026-10-20 오전(한국 시간 06:34) 배포(<a href="https://github.com/anthropics/claude-code/releases">릴리스 노트</a>).
+</p>
+<ul>
+<li><strong>재개 전 경고</strong>: Pro·Max 요금제에서 <strong>오래 쉬었던 대화를 다시 열면 5시간 사용 한도의 눈에 띄는 비율</strong>을 쓰게 될 때 미리 알려 준다. 그대로 재개하거나, <strong>새 대화</strong>를 시작하고 필요하면 Claude가 이전 대화를 찾아보게 할 수 있다. (긴 대화는 캐시가 식으면 처음부터 다시 읽혀 비싸다.)</li>
+<li><strong><code>/auto-mode-setup</code></strong>: 프로젝트와 최근 세션을 읽어 auto 모드에 <strong>내 작업 환경</strong>을 가르치는 안내형 설정.</li>
+<li><strong>보안 점검</strong>: Managed Agents 에이전트 설정을 Anthropic이 공개한 보안 가이드와 <strong>비교만</strong> 하는 명령(아무것도 바꾸지 않음).</li>
+<li><strong>중요한 버그 수정</strong>: <code>claude --worktree</code>로 연 작업을 끝낼 때, HEAD가 분리됐거나 다른 브랜치에 있으면 <strong>묻지 않고 작업트리와 브랜치를 지워 커밋을 잃을 수 있던</strong> 문제를 고쳤다. 마운트된 드라이브 최상위(<code>/Volumes</code>, <code>/media</code>, WSL <code>/mnt/c</code>)를 <code>rm -r</code> 할 때도 이제 안전 확인을 받는다.</li>
+<li><strong>Code Review</strong>: 리뷰 강도를 Quick·Standard·Deep 중에서 고르고 저장소별로 덮어쓸 수 있다(MUVO 정리).</li>
+</ul>
+<h2>2.1.305 — 하루 만의 보정</h2>
+<p>
+한국 시간 10/21 05:46 배포. 2.1.304에서 생긴 <strong>Vertex·Bedrock 등 다른 제공자 경유 시 모든 요청이 실패하던 회귀</strong>를 고쳤다(도구 검색을 거부하는 게이트웨이면 그것 없이 재시도). 무인 재시도 모드가 <strong>사용 한도가 일찍 풀린 것</strong>을 알아채는 설정도 추가됐다. AWS·Google 클라우드로 Claude Code를 쓰는 팀은 2.1.304를 건너뛰고 바로 2.1.305로 가는 게 안전하다.
+</p>
+<h2>GitHub Copilot — 모델 6개 퇴역</h2>
+<p>
+10/19부터 대부분의 Copilot 화면에서 다음 모델이 빠졌다(<a href="https://muvoai.com/reports/daily-ai-news-updates-2026-10-20/">MUVO 정리, GitHub 공지 인용</a>).
+</p>
+<table>
+<tr><th>퇴역</th><th>GitHub 권장 대안</th></tr>
+<tr><td>Gemini 3.7 Flash</td><td>Gemini 3.8 Flash</td></tr>
+<tr><td>GPT-5.5, GPT-5.4</td><td>GPT-6.1 Sol</td></tr>
+<tr><td>GPT-5.4 mini, GPT-5 mini</td><td>GPT-6 Luna</td></tr>
+<tr><td>Grok 4.5</td><td>Grok 4.7</td></tr>
+</table>
+<p>
+기업 관리자는 대안 모델을 정책에서 켜야 할 수 있다. 허용 모델 목록을 <strong>REST API로 조회·수정</strong>하는 엔드포인트도 정식 제공된다. (Copilot에서의 퇴역일 뿐, 원래 회사가 모델을 없앤 건 아니다.)
+</p>
+<h2>왜 중요한가</h2>
+<p>
+에이전트 비용의 상당 부분은 ‘모델 가격’이 아니라 <strong>습관</strong>에서 나온다 — 오래된 대화를 계속 이어 쓰기, 한도를 모른 채 밤새 돌리기. Claude Code의 재개 경고는 그 습관을 도구가 먼저 지적하기 시작했다는 신호다. 실천 팁: 큰 작업은 <strong>세션을 짧게 끊고</strong>, 이어 갈 맥락은 <code>decisions.md</code> 같은 파일에 남겨 새 세션이 읽게 하자(오늘 PKM 기사 참고). Copilot을 쓰는 자동화가 있다면 모델 이름이 하드코딩된 곳부터 찾아 바꿀 것.
+</p>
+<p>
+출처: <a href="https://github.com/anthropics/claude-code/releases">Claude Code 릴리스 노트 (2.1.304·2.1.305)</a> · <a href="https://muvoai.com/reports/daily-ai-news-updates-2026-10-20/">MUVO — AI news 20 October 2026</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

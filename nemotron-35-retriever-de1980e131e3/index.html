@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/21] AI 모델: NVIDIA Nemotron 3.5 검색 모델 공개 — PDF 페이지를 ‘사진째로’ 찾는 임베딩(1B·8B)과 재정렬 8B, 한국어 포함·상업 이용 가능 — AiPaper 뉴스</title>
+  <meta name="description" content="NVIDIA가 10/20 Hugging Face에 Nemotron 3.5 Retriever 공개. Embed-1B(1.55B): 문서 페이지를 이미지·텍스트·둘 다로 임베딩, 질문은 텍스트, 표·차트·인포그래픽 페이지 지원, 2,048차원(512·1,024로 잘라 써도 됨), 컨텍스트 32,768토큰, 텍스트 34개·이미지 18개 언어 평가(한국어 포함). 8B 교사 모델에서 증류, 기존 Nemotron-3-Embed-1B와 같은 텍스트 임베딩 공간 유지. ViDoRe V3(이미지+텍스트) 58.82로 Qwen3-VL-Embedding-8B(57.03)보다 높다고 모델 카드에 표기. Rerank-8B(8.38B, 32K)는 텍스트·페이지 이미지 재정렬. OpenMDW-1.1 라이선스로 상업 이용 가능, NVIDIA GPU(Ampere·Hopper·Blackwell)용."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-21 07:07 KST</div>
+    <h1>[10/21] AI 모델: NVIDIA Nemotron 3.5 검색 모델 공개 — PDF 페이지를 ‘사진째로’ 찾는 임베딩(1B·8B)과 재정렬 8B, 한국어 포함·상업 이용 가능</h1>
+  </header>
+  <article>
+<p><em>NVIDIA가 10/20 Hugging Face에 Nemotron 3.5 Retriever 공개. Embed-1B(1.55B): 문서 페이지를 이미지·텍스트·둘 다로 임베딩, 질문은 텍스트, 표·차트·인포그래픽 페이지 지원, 2,048차원(512·1,024로 잘라 써도 됨), 컨텍스트 32,768토큰, 텍스트 34개·이미지 18개 언어 평가(한국어 포함). 8B 교사 모델에서 증류, 기존 Nemotron-3-Embed-1B와 같은 텍스트 임베딩 공간 유지. ViDoRe V3(이미지+텍스트) 58.82로 Qwen3-VL-Embedding-8B(57.03)보다 높다고 모델 카드에 표기. Rerank-8B(8.38B, 32K)는 텍스트·페이지 이미지 재정렬. OpenMDW-1.1 라이선스로 상업 이용 가능, NVIDIA GPU(Ampere·Hopper·Blackwell)용.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+‘내 문서에 묻는 AI(RAG)’가 자주 틀리는 이유 중 하나는 <strong>PDF를 글자로만 읽기</strong> 때문이다. 표, 차트, 슬라이드는 텍스트로 뽑으면 의미가 깨진다. 2026-10-20 NVIDIA가 공개한 <strong>Nemotron 3.5 Retriever</strong>는 문서 페이지를 <strong>이미지째로</strong> 이해해 찾는 오픈 모델이다(<a href="https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-BF16">Hugging Face 모델 카드</a>).
+</p>
+<h2>구성</h2>
+<table>
+<tr><th>모델</th><th>크기</th><th>역할</th></tr>
+<tr><td>Nemotron-3.5-Embed-1B</td><td>1.55B</td><td>페이지(이미지·텍스트·둘 다)를 벡터로 — 1차 검색</td></tr>
+<tr><td>Nemotron-3.5-Embed-8B</td><td>8B급</td><td>더 정확한 임베딩(1B의 교사 모델)</td></tr>
+<tr><td>Nemotron-3.5-Rerank-8B</td><td>8.38B</td><td>찾은 후보를 다시 정렬 — 2차 정밀 검색</td></tr>
+</table>
+<h2>Embed-1B의 특징</h2>
+<ul>
+<li><strong>입력</strong>: 질문은 텍스트, 문서는 <strong>페이지 이미지·텍스트·둘을 합친 것</strong> 모두 가능. 표·차트·인포그래픽이 있는 페이지를 지원한다.</li>
+<li><strong>출력</strong>: 2,048차원 벡터. 앞부분만 잘라 <strong>1,024·512차원</strong>으로 써도 검색이 유지된다(저장 공간 절약).</li>
+<li><strong>언어</strong>: 텍스트 검색 34개, 이미지 검색 18개 언어로 평가 — 둘 다 <strong>한국어 포함</strong>.</li>
+<li><strong>호환성</strong>: 기존 Nemotron-3-Embed-1B와 <strong>같은 텍스트 임베딩 공간</strong>을 공유해, 이미 텍스트로 색인해 둔 자료에 이미지 검색을 얹기 쉽다.</li>
+<li><strong>성능(모델 카드 기준)</strong>: 시각 문서 검색 벤치마크 ViDoRe V3(이미지+텍스트)에서 <strong>58.82</strong>, 크기가 훨씬 큰 Qwen3-VL-Embedding-8B는 57.03. 다국어 이미지 검색 MIRACL-VISION에서 68.93.</li>
+<li><strong>라이선스</strong>: OpenMDW-1.1, <strong>상업·비상업 이용 가능</strong>. NVIDIA GPU(Ampere·Hopper·Blackwell)에서 Transformers·Sentence Transformers·vLLM으로 실행.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+세컨드 브레인에 쌓이는 건 깔끔한 마크다운만이 아니다. 스캔한 계약서, 강의 슬라이드, 차트가 든 리서치 PDF, 화면 캡처가 훨씬 많다. ‘페이지를 사진처럼 기억하는’ 임베딩은 이런 자료를 <strong>OCR 없이</strong> 검색 대상으로 만든다. 1B라는 작은 크기에 512차원 절삭까지 되니 개인 서버나 소규모 팀에서도 현실적이다.
+<br/>
+한계: 모델 카드 스스로 “항상 정확한 문서를 찾는다는 보장은 없다”고 적었다. 성능 수치는 NVIDIA 자체 평가이며, 공식 예제는 CUDA GPU를 전제로 한다(맥 단독 실행은 별도 확인 필요).
+</p>
+<p>
+출처: <a href="https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-BF16">Hugging Face — Nemotron-3.5-Embed-1B 모델 카드 (10/20)</a> · <a href="https://huggingface.co/nvidia/Nemotron-3.5-Rerank-8B-BF16">Hugging Face — Nemotron-3.5-Rerank-8B</a> · <a href="https://huggingface.co/collections/nvidia/nemotron-35-retriever">Nemotron 3.5 Retriever 컬렉션</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

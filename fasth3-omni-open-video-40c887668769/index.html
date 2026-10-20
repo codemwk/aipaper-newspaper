@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/21] AI 콘텐츠: FastH3-Omni 가중치 공개 — 이미지·영상·목소리 참고 파일을 한꺼번에 넣어 ‘소리 있는 15초 영상’을 한 번에, 원본 MiniMax H3보다 5.6~11.9배 빠르고 내 RTX·맥에서도 돈다 — AiPaper 뉴스</title>
+  <meta name="description" content="Nuva Lab과 UC San Diego Hao AI Lab의 FastVideo가 10/20 FastH3-Omni 가중치·학습 코드 공개. MiniMax H3의 가속 오픈 버전으로 ‘옴니 레퍼런스’ 지원: 텍스트 + 참고 이미지 최대 9장, 참고 영상 최대 3개(합계 15초), 목소리·음악 참고 최대 3개(총 12개 파일), 첫·끝 프레임 지정, 클립 이어 붙이기. 5~15초·24fps 영상을 동기화된 소리와 한 번에 생성. GB200 8장 기준 27개 동일 작업에서 원본 대비 지연 5.6~11.9배 감소(FastVideo 측정). NVIDIA RTX, DGX Spark, Apple Silicon(MLX)에서 실행. 프리뷰 기간 광고 대행사·애니 스튜디오에 먼저 공급."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 콘텐츠 · 2026-10-21 07:04 KST</div>
+    <h1>[10/21] AI 콘텐츠: FastH3-Omni 가중치 공개 — 이미지·영상·목소리 참고 파일을 한꺼번에 넣어 ‘소리 있는 15초 영상’을 한 번에, 원본 MiniMax H3보다 5.6~11.9배 빠르고 내 RTX·맥에서도 돈다</h1>
+  </header>
+  <article>
+<p><em>Nuva Lab과 UC San Diego Hao AI Lab의 FastVideo가 10/20 FastH3-Omni 가중치·학습 코드 공개. MiniMax H3의 가속 오픈 버전으로 ‘옴니 레퍼런스’ 지원: 텍스트 + 참고 이미지 최대 9장, 참고 영상 최대 3개(합계 15초), 목소리·음악 참고 최대 3개(총 12개 파일), 첫·끝 프레임 지정, 클립 이어 붙이기. 5~15초·24fps 영상을 동기화된 소리와 한 번에 생성. GB200 8장 기준 27개 동일 작업에서 원본 대비 지연 5.6~11.9배 감소(FastVideo 측정). NVIDIA RTX, DGX Spark, Apple Silicon(MLX)에서 실행. 프리뷰 기간 광고 대행사·애니 스튜디오에 먼저 공급.</em></p>
+<p><strong>분류:</strong> AI 콘텐츠</p>
+<h2>한줄 요약</h2>
+<p>
+요즘 AI 영상의 승부처는 <strong>‘참고 자료를 얼마나 많이, 얼마나 정확히 따르나’</strong>다. 이 캐릭터 얼굴, 이 카메라 움직임, 이 목소리로 — 그 모든 걸 한 번에 넣는 방식을 ‘옴니 레퍼런스’라고 부른다. 2026-10-20 공개된 <strong>FastH3-Omni</strong>는 이 기능을 <strong>오픈 가중치</strong>로 풀었다(<a href="https://nuvalab.ai/fasth3/">Nuva Lab</a>).
+</p>
+<h2>무엇을 넣고 무엇이 나오나</h2>
+<ul>
+<li><strong>입력</strong>: 텍스트 + 참고 <strong>이미지 최대 9장</strong>(실시간 모드 3장), 참고 <strong>영상 최대 3개</strong>(각 2~15초, 합계 15초), <strong>목소리·음악 최대 3개</strong>(각 2~15초, 이미지나 영상과 함께), 총 <strong>12개 파일</strong>까지. <strong>첫 프레임·끝 프레임</strong>을 같이 지정하거나, 이전 클립을 <strong>이어서</strong> 만들 수도 있다.</li>
+<li><strong>출력</strong>: <strong>5~15초, 24fps</strong> 영상을 <strong>소리와 동기화해 한 번에</strong> 생성.</li>
+<li><strong>정체</strong>: MiniMax의 영상 모델 <strong>H3</strong>를 더 많은 고품질 데이터와 ‘궤적 기반 증류’로 다시 학습하고, 하드웨어 친화적인 희소 어텐션과 저정밀(NVFP4) 부품을 붙인 <strong>가속판</strong>이다.</li>
+</ul>
+<h2>얼마나 빠르나, 어디서 도나</h2>
+<ul>
+<li>FastVideo가 GB200 8장에서 같은 참고 작업 27개를 비교한 결과, 원본 H3 옴니 모드보다 <strong>지연이 5.6~11.9배 짧았다</strong>(제작진 측정).</li>
+<li><strong>NVIDIA RTX GPU, DGX Spark, Apple Silicon(MLX)</strong> 에서 직접 실행할 수 있다고 밝혔다. 가중치는 Hugging Face, 코드·학습법은 FastVideo GitHub에 공개.</li>
+<li>만든 곳: Nuva Lab + UC San Diego <strong>Hao AI Lab의 FastVideo</strong> 팀. 프리뷰 기간에는 성과형 광고 대행사, 애니메이션 스튜디오, 엔터테인먼트 회사에 먼저 공급했다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+어제 소개한 FLUX 3 Max(10/20 기사)가 ‘빠르고 싼 API’ 쪽이었다면, FastH3-Omni는 <strong>‘내 장비에서, 내 참고 자료로’</strong> 쪽이다. 광고·브랜드 영상에서 가장 중요한 건 <strong>일관성</strong>(같은 얼굴, 같은 제품, 같은 목소리)인데, 참고 파일 12개를 한 번에 넣을 수 있다는 건 그 일관성을 프롬프트 대신 <strong>자료로 지정</strong>한다는 뜻이다.
+<br/>
+주의: “무제한 Seedance”라는 제작진의 표현은 마케팅이다. 소비자 GPU에서의 실제 속도·품질, 그리고 원본 H3의 라이선스 조건이 오픈 버전에 어떻게 적용되는지는 사용 전 모델 카드에서 꼭 확인하자. 실존 인물의 얼굴·목소리를 참고로 넣는 일은 동의가 먼저다.
+</p>
+<p>
+출처: <a href="https://nuvalab.ai/fasth3/">Nuva Lab — FastH3-Omni release (10/20)</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

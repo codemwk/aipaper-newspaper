@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/21] 세컨드 브레인 / PKM: ‘검색되는 엉망도 엉망이다’ — 메모와 결정을 다른 파일에 두는 decisions.md 습관, 그리고 기억을 칸막이로 나눈 ChatGPT ‘잠긴 대화’ — AiPaper 뉴스</title>
+  <meta name="description" content="10/20 TLDR Design·HeyDesigner가 함께 소개한 디자이너 안톤 스텐의 글 ‘Where decisions live’(10/16): 프로젝트 폴더마다 running-notes.md(시간순, 지저분해도 되는 관찰·질문·시도)와 decisions.md(최신 결정이 맨 위, 날짜 필수, 바뀐 결정은 지우지 않고 위에 새로 추가)를 분리. 에이전트에게 맥락을 많이 주는 것만큼 ‘탐색과 확정’, ‘옛 정보와 현재 정보’를 구분하는 구조가 중요하다는 주장. 같은 날 OpenAI는 ChatGPT ‘잠긴 대화(Locked Chats)’ 출시: 4자리 PIN·Face ID/Touch ID, 별도 섹션·검색 제외, 메모리 켜면 잠긴 대화끼리만 공유하는 별도 메모리(일반 메모리로 새지 않음). 종단간 암호화·보존 기간 변경은 아님, PIN 재설정 시 전부 영구 삭제. 무료~Enterprise·Edu 요금제에 순차 배포."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-10-21 07:11 KST</div>
+    <h1>[10/21] 세컨드 브레인 / PKM: ‘검색되는 엉망도 엉망이다’ — 메모와 결정을 다른 파일에 두는 decisions.md 습관, 그리고 기억을 칸막이로 나눈 ChatGPT ‘잠긴 대화’</h1>
+  </header>
+  <article>
+<p><em>10/20 TLDR Design·HeyDesigner가 함께 소개한 디자이너 안톤 스텐의 글 ‘Where decisions live’(10/16): 프로젝트 폴더마다 running-notes.md(시간순, 지저분해도 되는 관찰·질문·시도)와 decisions.md(최신 결정이 맨 위, 날짜 필수, 바뀐 결정은 지우지 않고 위에 새로 추가)를 분리. 에이전트에게 맥락을 많이 주는 것만큼 ‘탐색과 확정’, ‘옛 정보와 현재 정보’를 구분하는 구조가 중요하다는 주장. 같은 날 OpenAI는 ChatGPT ‘잠긴 대화(Locked Chats)’ 출시: 4자리 PIN·Face ID/Touch ID, 별도 섹션·검색 제외, 메모리 켜면 잠긴 대화끼리만 공유하는 별도 메모리(일반 메모리로 새지 않음). 종단간 암호화·보존 기간 변경은 아님, PIN 재설정 시 전부 영구 삭제. 무료~Enterprise·Edu 요금제에 순차 배포.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+AI가 내 기록을 다 읽을 수 있게 되자 새 문제가 생겼다. <strong>무엇이 ‘지금 유효한’ 정보인지</strong> AI가 구분하지 못한다. 10/20 디자인 뉴스레터들이 함께 소개한 글 한 편과, 같은 날 나온 ChatGPT 기능 하나가 같은 답을 가리킨다: <strong>기억에는 칸막이가 필요하다.</strong>
+</p>
+<h2>1. running-notes.md와 decisions.md</h2>
+<p>
+디자이너 <strong>안톤 스텐</strong>은 프로젝트 폴더마다 파일 두 개를 둔다(<a href="https://www.antonsten.com/articles/where-decisions-live/">Where decisions live</a>, 10/16).
+</p>
+<ul>
+<li><strong><code>running-notes.md</code></strong> — 시간순. 관찰, 질문, 해 본 것, 나중에 중요할지 모를 디테일, 아직 바뀌는 생각. <strong>지저분해도 된다.</strong></li>
+<li><strong><code>decisions.md</code></strong> — 엄격하다. 어디로 결론 났는지, <strong>최신 결정이 맨 위</strong>, 모든 항목에 <strong>날짜</strong>. 결정이 바뀌면 옛 결정을 <strong>지우지 않고</strong> 그 위에 새 결정을 쓴다. 팀 회의 결정뿐 아니라 혼자 내린 디자인 결정도 적는다.</li>
+<li>나머지 역할: 슬랙은 토론, 회의는 결론(그는 Granola로 회의를 기록한다).</li>
+</ul>
+<p>
+핵심 문장은 이것이다. “구분이 없으면 <strong>모든 옛 생각이 현재 결정과 같은 무게</strong>를 갖는다. 에이전트에게 물으면, 출처까지 완벽하게 달린, <strong>아무도 더는 믿지 않는 답</strong>이 돌아온다.” 날짜가 붙은 결정 기록은 <strong>제품 생각의 버전 기록</strong>이 된다. 결론: “검색되는 엉망도 여전히 엉망이다.”
+</p>
+<h2>2. ChatGPT ‘잠긴 대화’ — 메모리를 따로 쓰는 방</h2>
+<p>
+OpenAI가 10/20 출시했다(<a href="https://techcrunch.com/2026/10/20/chatgpt-now-lets-you-lock-your-chats/">TechCrunch</a>).
+</p>
+<ul>
+<li><strong>4자리 PIN</strong> 또는 Face ID·Touch ID로 잠근다. 잠긴 대화는 별도 섹션으로 옮겨지고 <strong>일반 기록·고정·검색에서 빠진다.</strong> 임시 대화와 달리 언제든 다시 열 수 있다.</li>
+<li><strong>메모리 분리</strong>: 메모리가 켜져 있으면 잠긴 대화들은 <strong>그들끼리만 공유하는 별도 메모리</strong>를 쓴다. 잠근 뒤의 새 내용은 <strong>일반 메모리에 들어가지 않는다.</strong></li>
+<li><strong>한계</strong>: 종단간 암호화나 별도 암호 금고가 <strong>아니다.</strong> 보존 기간도, 잠그기 전에 이미 기억된 내용도, ‘모델 개선’ 설정도 그대로다. <strong>PIN을 재설정하면 잠긴 대화·파일이 전부 영구 삭제</strong>된다.</li>
+<li>무료·Go·Plus·Pro·Business·Enterprise·Edu에 순차 배포(의료용 ChatGPT 제외). 임시·보관·그룹 대화, 예약 작업이나 회의 녹음이 있는 대화는 잠글 수 없다.</li>
+</ul>
+<h2>둘을 합치면: 내 볼트에 적용하기</h2>
+<ul>
+<li><strong>현재와 과거를 나눈다</strong>: 프로젝트 노트마다 <code>decisions.md</code>를 두고, 에이전트 지시문(CLAUDE.md 등)에 “사실 판단은 decisions.md 우선, running-notes는 배경으로만”이라고 적는다.</li>
+<li><strong>맥락을 나눈다</strong>: 개인·재무·건강처럼 업무와 섞이면 안 되는 기억은 별도 볼트나 폴더로 분리해, 에이전트가 기본적으로 읽지 않게 한다. ChatGPT의 잠긴 대화가 바로 이 원리를 제품으로 만든 것이다.</li>
+<li><strong>날짜는 필수</strong>: AiPaper 제목 앞에 [10/21]을 붙이는 것도 같은 이유다 — 언제의 정보인지 모르면 정보가 아니라 위험이 된다.</li>
+</ul>
+<p>
+출처: <a href="https://www.antonsten.com/articles/where-decisions-live/">Anton Sten — Where decisions live (10/16)</a> · <a href="https://tldr.tech/design/2026-10-20">TLDR Design (10/20)</a> · <a href="https://techcrunch.com/2026/10/20/chatgpt-now-lets-you-lock-your-chats/">TechCrunch — ChatGPT now lets you lock your chats (10/20)</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
