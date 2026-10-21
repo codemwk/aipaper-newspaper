@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/22] AI 모델: 카카오 ‘Kanana-2-vision-encoder’ 오픈소스 — AI의 ‘눈’만 따로 공개, 1억 개도 안 되는 tiny가 한국어 문서·작은 글자에서 강했다 — AiPaper 뉴스</title>
+  <meta name="description" content="카카오가 10/21 자체 개발 비전 인코더 2종을 Hugging Face에 공개: medium(4억 2,600만 파라미터)·tiny(9,800만). 9개 영역 42개 벤치마크(일반 VQA, 영어·한국어 OCR/문서 이해, 위치 파악·세밀 인식 등)에서 구글 SigLIP 2·메타 Perception Encoder·애플 AIMv2·알리바바 Qwen3.5-ViT를 웃돌았다고 발표(회사 평가). 자체 언어모델 Kanana-2로 학습 효율 약 4배, 고해상도 처리 최적화로 지연 60%↓, 지식 증류로 온디바이스용 tiny 제작. 상업 이용 가능한 ‘카나나 오픈 라이선스’. 옴니 모델 Kanana-o 구성요소를 순차 공개 예정. 배경: 화면을 보고 조작하는 ‘컴퓨터 유즈’ 에이전트 시대."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-22 07:09 KST</div>
+    <h1>[10/22] AI 모델: 카카오 ‘Kanana-2-vision-encoder’ 오픈소스 — AI의 ‘눈’만 따로 공개, 1억 개도 안 되는 tiny가 한국어 문서·작은 글자에서 강했다</h1>
+  </header>
+  <article>
+<p><em>카카오가 10/21 자체 개발 비전 인코더 2종을 Hugging Face에 공개: medium(4억 2,600만 파라미터)·tiny(9,800만). 9개 영역 42개 벤치마크(일반 VQA, 영어·한국어 OCR/문서 이해, 위치 파악·세밀 인식 등)에서 구글 SigLIP 2·메타 Perception Encoder·애플 AIMv2·알리바바 Qwen3.5-ViT를 웃돌았다고 발표(회사 평가). 자체 언어모델 Kanana-2로 학습 효율 약 4배, 고해상도 처리 최적화로 지연 60%↓, 지식 증류로 온디바이스용 tiny 제작. 상업 이용 가능한 ‘카나나 오픈 라이선스’. 옴니 모델 Kanana-o 구성요소를 순차 공개 예정. 배경: 화면을 보고 조작하는 ‘컴퓨터 유즈’ 에이전트 시대.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+멀티모달 AI에서 이미지를 ‘보는’ 부분을 <strong>비전 인코더</strong>라 부른다. 카카오가 이 <strong>눈 부품만</strong> 따로 떼어 오픈소스로 풀었다. 10/13 if(kakao)26 키노트에서 예고한 대로다(<a href="https://www.kakaocorp.com/page/detail/12173?lang=ENG">카카오 보도자료</a>, <a href="https://huggingface.co/collections/kakaocorp/kanana-2-vision-encoder">Hugging Face 컬렉션</a>).
+</p>
+<h2>비전 인코더가 뭐길래</h2>
+<p>
+사진·문서·화면에서 사물, 글자, 위치, 모양 같은 <strong>시각 특징을 뽑아 언어모델에 넘기는</strong> 부품이다. 메뉴판의 음식·가격을 읽거나, 문서의 배치를 파악하거나, 사진 속 상황을 설명하는 능력이 여기서 갈린다. 아무리 똑똑한 언어모델도 <strong>눈이 흐리면</strong> 엉뚱하게 답한다.
+</p>
+<h2>무엇을 공개했나</h2>
+<table>
+<tr><th>모델</th><th>파라미터</th><th>성격</th></tr>
+<tr><td>medium</td><td>4억 2,600만</td><td>고성능</td></tr>
+<tr><td>tiny</td><td>9,800만</td><td>온디바이스 고려 경량</td></tr>
+</table>
+<ul>
+<li><strong>평가</strong>: 일반 시각 질의응답, 영어·한국어 문자 인식/문서 이해, 이미지 내 위치 파악·세밀 인식 등 <strong>9개 영역 42개 벤치마크</strong>. 카카오는 두 모델이 구글 SigLIP 2, 메타 Perception Encoder, 애플 AIMv2, 알리바바 Qwen3.5-ViT를 <strong>웃돌았다</strong>고 밝혔다(회사 자체 평가).</li>
+<li><strong>tiny의 의미</strong>: 1억 개 미만인데도 4억 개 넘는 해외 모델과 견줄 만했고, 특히 <strong>위치 파악·한국어 시험·한국어 OCR/문서 이해</strong>에서 차이가 컸다고. 작은 글자와 복잡한 문서 구조를 보존하도록 학습한 덕분이라는 설명.</li>
+<li><strong>만든 방법</strong>: 자체 언어모델 <strong>Kanana-2</strong>를 활용해 학습 효율을 <strong>약 4배</strong> 높였고, 고해상도 처리에 맞춘 설계로 처리 지연을 <strong>60% 이상</strong> 줄였다. 지식 증류·경량화로 tiny를 만들었다.</li>
+<li><strong>라이선스</strong>: 연구는 물론 <strong>상업적 이용도 가능한 ‘카나나 오픈 라이선스’</strong>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li><strong>컴퓨터 유즈 시대의 핵심 부품</strong>: 카카오 노병석 성과리더는 “PC·모바일 화면을 직접 이해하고 조작하는 에이전트가 주목받으며 고해상도 이미지를 정확히 읽는 비전 인코더의 역할이 커졌다”고 했다. 화면 속 작은 버튼과 글자를 못 읽으면 에이전트는 엉뚱한 곳을 누른다.</li>
+<li><strong>한국어 문서</strong>: 영수증·공문·계약서·스캔 PDF처럼 한국어 문서를 다루는 서비스라면, 해외 인코더보다 나은 선택지가 상업 라이선스로 생겼다.</li>
+<li>카카오는 옴니 모델 <strong>Kanana-o</strong>를 이루는 언어·시각·음성 모듈을 <strong>순차 공개</strong>하겠다고 했다. 국산 오픈 모델 생태계의 부품 단위 공개라는 점에서 지켜볼 만하다.</li>
+</ul>
+<p>
+출처: <a href="https://www.kakaocorp.com/page/detail/12173?lang=ENG">카카오 보도자료 (10/21)</a> · <a href="https://huggingface.co/collections/kakaocorp/kanana-2-vision-encoder">Hugging Face — kakaocorp/kanana-2-vision-encoder</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
