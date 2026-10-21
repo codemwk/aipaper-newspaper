@@ -19,6 +19,9 @@ FEED_TITLE = "AiPaper 뉴스 — 미니 신문"
 FEED_SUBTITLE = "최근 며칠분. 전문 읽기용 해설 기사 (양보다 질)"
 AUTHOR = "AiPaper 뉴스"
 RSS_SELF = "https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss"
+ATOM_SELF = "https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.xml"
+# WebSub hub: Inoreader subscribes here for push; ping it after each publish (ping_hub.sh).
+HUB = "https://pubsubhubbub.appspot.com/"
 
 FRONT_MATTER = re.compile(r"^---\n(.*?)\n---\n(.*)$", re.S)
 
@@ -162,6 +165,11 @@ def parse_date(s: str) -> datetime:
         ss = s[:-3] + s[-2:]
         return datetime.strptime(ss, "%Y-%m-%dT%H:%M:%S%z")
     return datetime.now(timezone.utc)
+
+
+def capped(dt: datetime, now: datetime) -> datetime:
+    """Never advertise an item date later than the build time."""
+    return min(dt, now)
 
 
 def atom_date(dt: datetime) -> str:
@@ -334,20 +342,22 @@ def load_drafts(*, keep_days: int = 3) -> list[dict]:
 
 
 def build_atom(drafts: list[dict]) -> Path:
-    updated = atom_date(parse_date(drafts[0]["date"])) if drafts else atom_date(datetime.now(timezone.utc))
+    now = datetime.now(timezone.utc)
+    updated = atom_date(capped(parse_date(drafts[0]["date"]), now)) if drafts else atom_date(now)
     parts = [
         '<?xml version="1.0" encoding="utf-8"?>',
         '<feed xmlns="http://www.w3.org/2005/Atom">',
         f"<title>{escape(FEED_TITLE)}</title>",
         f"<subtitle>{escape(FEED_SUBTITLE)}</subtitle>",
-        f'<link href="{FEED_ID}/feeds/newspaper.xml" rel="self" type="application/atom+xml"/>',
+        f'<link href="{ATOM_SELF}" rel="self" type="application/atom+xml"/>',
+        f'<link href="{HUB}" rel="hub"/>',
         f'<link href="{FEED_ID}/" rel="alternate" type="text/html"/>',
         f"<id>{FEED_ID}</id>",
         f"<updated>{updated}</updated>",
         f"<author><name>{escape(AUTHOR)}</name></author>",
     ]
     for d in drafts[:40]:
-        dt = parse_date(d["date"])
+        dt = capped(parse_date(d["date"]), now)
         content = content_html(d)
         link = entry_link(d["slug"], d["date"])
         parts += [
@@ -382,11 +392,12 @@ def build_rss(drafts: list[dict]) -> Path:
         f"<description>{escape(FEED_SUBTITLE)}</description>",
         "<language>ko</language>",
         f'<atom:link href="{RSS_SELF}" rel="self" type="application/rss+xml"/>',
+        f'<atom:link href="{HUB}" rel="hub"/>',
         f"<lastBuildDate>{format_datetime(now)}</lastBuildDate>",
         f"<managingEditor>{escape(AUTHOR)}</managingEditor>",
     ]
     for d in drafts[:40]:
-        dt = parse_date(d["date"])
+        dt = capped(parse_date(d["date"]), now)
         link = entry_link(d["slug"], d["date"])
         content = content_html(d)
         parts += [

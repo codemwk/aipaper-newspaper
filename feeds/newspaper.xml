@@ -3,6 +3,7 @@
 <title>AiPaper 뉴스 — 미니 신문</title>
 <subtitle>최근 며칠분. 전문 읽기용 해설 기사 (양보다 질)</subtitle>
 <link href="https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.xml" rel="self" type="application/atom+xml"/>
+<link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
 <link href="https://codemwk.github.io/aipaper-newspaper/" rel="alternate" type="text/html"/>
 <id>https://codemwk.github.io/aipaper-newspaper</id>
 <updated>2026-10-20T22:11:00Z</updated>
