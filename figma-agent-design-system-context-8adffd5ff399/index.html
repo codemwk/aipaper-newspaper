@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/24] 디자인/UI·UX: Figma가 직접 쓴 ‘에이전트에게 디자인 시스템 가르치는 법’ — 라이브러리·가이드라인·예시·스킬 4단 구조 — AiPaper 뉴스</title>
+  <meta name="description" content="Figma가 10/22 블로그에서 Figma 에이전트에게 디자인 시스템을 ‘제대로’ 쓰게 하는 방법을 정리. ① 게시된 라이브러리 연결(승인된 컴포넌트·토큰 사용) ② 가이드라인 파일 첨부(규칙·예외·피해야 할 실수 — 라이브러리 켜면 자동 적용) ③ 예시(Examples 페이지나 _example 접미사) ④ 반복 작업은 /design-system-audit 같은 스킬로. 단 가이드라인은 새 화면을 만들 때 더 잘 지켜지고 기존 화면 수정 땐 아직 덜 일관적이라고 Figma가 인정."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인/UI·UX · 2026-10-24 07:02 KST</div>
+    <h1>[10/24] 디자인/UI·UX: Figma가 직접 쓴 ‘에이전트에게 디자인 시스템 가르치는 법’ — 라이브러리·가이드라인·예시·스킬 4단 구조</h1>
+  </header>
+  <article>
+<p><em>Figma가 10/22 블로그에서 Figma 에이전트에게 디자인 시스템을 ‘제대로’ 쓰게 하는 방법을 정리. ① 게시된 라이브러리 연결(승인된 컴포넌트·토큰 사용) ② 가이드라인 파일 첨부(규칙·예외·피해야 할 실수 — 라이브러리 켜면 자동 적용) ③ 예시(Examples 페이지나 _example 접미사) ④ 반복 작업은 /design-system-audit 같은 스킬로. 단 가이드라인은 새 화면을 만들 때 더 잘 지켜지고 기존 화면 수정 땐 아직 덜 일관적이라고 Figma가 인정.</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+“AI가 만든 화면은 우리 제품처럼 안 보인다”는 불만에 Figma가 내놓은 답은 모델이 아니라 <strong>문맥(context) 정리법</strong>이다. PM Wayne Lin이 10/22 쓴 가이드는 에이전트에게 줄 정보를 네 층으로 나눈다(<a href="https://www.figma.com/blog/how-to-put-your-design-system-to-work-with-the-figma-agent/">Figma 블로그</a>).
+</p>
+<h2>4단 구조</h2>
+<table>
+<tr><th>층</th><th>무엇</th><th>언제 쓰나</th></tr>
+<tr><td><strong>라이브러리</strong></td><td>게시된 컴포넌트·토큰·변수</td><td>기본 재료. 연결하면 에이전트가 ‘승인된’ 부품만 고른다</td></tr>
+<tr><td><strong>가이드라인</strong></td><td>라이브러리에 붙이는 지시 파일</td><td>늘 지켜야 할 규칙·예외·실수와 대안, 비슷한 컴포넌트 중 고르는 기준</td></tr>
+<tr><td><strong>예시</strong></td><td><code>Examples</code> 페이지 또는 이름 끝 <code>_example</code></td><td>“말보다 보여 주기” — 팀이 부품을 실제로 어떻게 조합하는지</td></tr>
+<tr><td><strong>스킬</strong></td><td><code>/</code>로 부르는 반복 절차</td><td>예: <code>/design-system-audit</code>(분리된 인스턴스·하드코딩 값·접근성 누락 점검)</td></tr>
+</table>
+<p>
+예를 들면 “결제 화면의 ‘주문하기’는 항상 Primary 버튼, ‘뒤로’는 Secondary”를 가이드라인에 한 번 써 두면, 매번 프롬프트에 반복할 필요가 없다.
+</p>
+<h2>실무 팁 (원문에서)</h2>
+<ul>
+<li>컴포넌트 이름을 <strong>의미 있게</strong>(<code>Card/OrderSummary/Default</code>처럼), 속성·변형(variant)을 정의해 둘수록 에이전트가 잘 고른다</li>
+<li>같은 실수를 반복하면 → 프롬프트를 고칠 게 아니라 <strong>가이드라인·라이브러리·예시를 고칠 신호</strong></li>
+<li><code>Examples</code>·<code>_example</code>은 <strong>대소문자 구분</strong>, 컴포넌트 세트는 부모에 붙일 것</li>
+<li>솔직한 한계: 가이드라인은 <strong>새로 만들 때</strong> 잘 적용되고, <strong>기존 화면 편집</strong> 땐 아직 일관성이 떨어진다</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+이번 달 Webflow의 DESIGN.md, Char의 design.md, Figma Specs까지 — 흐름은 하나다. <strong>디자인 시스템이 ‘사람이 읽는 문서’에서 ‘에이전트가 읽는 계약서’로</strong> 바뀌고 있다. 좋은 시스템의 기준에 “에이전트가 헷갈리지 않는가”가 새로 붙었다.
+</p>
+<p>
+&gt; 지난번 저장하신 Figma Agent·DESIGN.md 류 기사들과 이어지는 소식입니다 — 이번엔 Figma가 직접 낸 ‘운영 매뉴얼’.
+</p>
+<p>
+출처: <a href="https://www.figma.com/blog/how-to-put-your-design-system-to-work-with-the-figma-agent/">Figma 블로그 — How to put your design system to work with the Figma agent (10/22)</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

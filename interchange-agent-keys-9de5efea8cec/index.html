@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/24] AI 트레이딩: 증권 인프라 회사 Interchange, 에이전트 전용 ‘열쇠’를 만들었다 — 문서만/읽기만/읽기·쓰기 3단계, 60초짜리 토큰, 재시도는 같은 주문 ID로 — AiPaper 뉴스</title>
+  <meta name="description" content="증권 계좌·주문 API 플랫폼 Interchange가 10/22 MCP 서버와 Agent Auth 공개(우선 샌드박스). 에이전트는 문서 검색 도구 + ‘조회(query)’·‘명령(command)’ 두 API 도구로 계좌 개설·입금·주문까지. Agent Key는 Docs Only / Read Only / Read &amp; Write 중 하나로 만들 때 고정 — 리서치용 키를 매매용으로 넓힐 수 없다. 연결은 브라우저 승인, 키를 만든 사람만 승인 가능, 키 보관(archive) 즉시 차단. 호출마다 60초짜리 토큰으로 바꿔 누가·어떤 클라이언트로·무엇을 했는지 기록. 명령 도구는 스스로 재시도하지 않고, 타임아웃이 ‘두 번째 매매’가 되지 않도록 같은 ID 재사용을 지시."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 트레이딩 · 2026-10-24 07:07 KST</div>
+    <h1>[10/24] AI 트레이딩: 증권 인프라 회사 Interchange, 에이전트 전용 ‘열쇠’를 만들었다 — 문서만/읽기만/읽기·쓰기 3단계, 60초짜리 토큰, 재시도는 같은 주문 ID로</h1>
+  </header>
+  <article>
+<p><em>증권 계좌·주문 API 플랫폼 Interchange가 10/22 MCP 서버와 Agent Auth 공개(우선 샌드박스). 에이전트는 문서 검색 도구 + ‘조회(query)’·‘명령(command)’ 두 API 도구로 계좌 개설·입금·주문까지. Agent Key는 Docs Only / Read Only / Read &amp; Write 중 하나로 만들 때 고정 — 리서치용 키를 매매용으로 넓힐 수 없다. 연결은 브라우저 승인, 키를 만든 사람만 승인 가능, 키 보관(archive) 즉시 차단. 호출마다 60초짜리 토큰으로 바꿔 누가·어떤 클라이언트로·무엇을 했는지 기록. 명령 도구는 스스로 재시도하지 않고, 타임아웃이 ‘두 번째 매매’가 되지 않도록 같은 ID 재사용을 지시.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>한줄 요약</h2>
+<p>
+IBKR·Walt·Coinbase가 “에이전트가 매매해도 된다”는 <strong>문</strong>을 열었다면, Interchange는 그 문의 <strong>자물쇠와 출입 기록부</strong>를 공개했다. 증권 계좌·주문 API를 다른 금융사에 제공하는 회사가 10/22 <strong>MCP 서버 + Agent Auth</strong>를 냈다(<a href="https://www.interchange.com/blog/introducing-interchange-mcp-and-agent-auth">Interchange 블로그</a>).
+</p>
+<h2>에이전트가 할 수 있는 일 (샌드박스)</h2>
+<ul>
+<li><strong>문서 도구</strong>: 모든 가이드·API 패키지 색인, 전문 검색, 스키마 원문 읽기</li>
+<li><strong>API 도구 단 두 개</strong>: 읽는 건 전부 <strong>query</strong>, 상태를 바꾸는 건 전부 <strong>command</strong>. 처음부터 읽기·쓰기를 분리해 설계해서 가능했다고</li>
+<li>계좌 개설 → 입금 → 주문까지 샌드박스에서 실행</li>
+</ul>
+<h2>안전장치 설계 (핵심)</h2>
+<table>
+<tr><th>장치</th><th>내용</th></tr>
+<tr><td><strong>3단계 키</strong></td><td>Docs Only / Read Only / Read &amp; Write — <strong>생성 시 고정</strong>, 리서치용 키를 매매용으로 넓힐 수 없음. 엔드포인트 단위 세분화는 다음 버전</td></tr>
+<tr><td><strong>사람 승인</strong></td><td>브라우저에서 로그인·프로그램·키를 골라 승인. <strong>키를 만든 사람만</strong> 승인 가능, 한 프로그램에만</td></tr>
+<tr><td><strong>즉시 차단</strong></td><td>키를 archive하면 갱신 토큰이 바로 폐기</td></tr>
+<tr><td><strong>60초 토큰</strong></td><td>에이전트 토큰은 API에 직접 닿지 않음. 호출마다 키·승인자·클라이언트 이름이 박힌 60초짜리 토큰으로 교환, 모든 행동에 기록</td></tr>
+<tr><td><strong>중복 주문 방지</strong></td><td>command 도구는 <strong>스스로 재시도하지 않음</strong>. 행동 전 ID를 만들고, 재시도 땐 같은 ID, 타임아웃 뒤엔 상태부터 확인 — “타임아웃이 두 번째 매매가 되면 안 된다”</td></tr>
+</table>
+<h2>어떻게 봐야 하나</h2>
+<p>
+이번 주 흐름을 한 줄로: <strong>IBKR</strong>은 ‘별도 칸(AI Partition)’, <strong>Walt</strong>는 ‘출금 불가·실행 기본 OFF’, <strong>Interchange</strong>는 ‘키 등급 고정·호출별 기록’. 같은 날 Coinbase는 공식 X 계정에서 “에이전트가 문자 그대로 대신 매매한다”며 MCP 연결을 홍보했다(<a href="https://outposts.io/project/coinbase/article/coinbase-pitches-ai-agent-trading-via-its-connector-cmvfcsz6n000l06jq71hhf9z3">Outposts 정리</a>). 마케팅은 빨라지고, 기록·권한 설계는 이제 막 표준이 생기는 중이다.
+<br/>
+개인 MT5 자동매매에 옮겨 쓸 만한 교훈: <strong>① 분석용·주문용 계정/키를 아예 분리 ② 주문엔 고유 ID를 붙여 재시도 중복 방지 ③ 에이전트가 한 모든 호출을 로그로</strong>.
+</p>
+<p>
+&gt; 지난번 저장하신 MT5 에이전트 매매 안전장치(RiskGate, 권한 분리) 기사와 이어지는 소식입니다.
+</p>
+<p>
+출처: <a href="https://www.interchange.com/blog/introducing-interchange-mcp-and-agent-auth">Interchange — Introducing the Interchange MCP server and Agent Auth (10/22)</a> · <a href="https://outposts.io/project/coinbase/article/coinbase-pitches-ai-agent-trading-via-its-connector-cmvfcsz6n000l06jq71hhf9z3">Outposts — Coinbase agent trading (10/22)</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
