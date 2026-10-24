@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/25] GitHub 트렌드: 3d-model-anything(~1.6천★, 공개 사흘) — 아이폰으로 방을 스캔하면 코딩 에이전트가 ‘사진과 비교해 가며’ 편집 가능한 3D 방을 코드로 다시 짓는다 — AiPaper 뉴스</title>
+  <meta name="description" content="웹 개발 강사 Wes Bos가 10/21 공개한 wesbos/3d-model-anything이 사흘 만에 약 1,600개 별을 모았다. 라이다 아이폰으로 방 구조·메시·사진·카메라 위치를 기록하는 앱, 그 기록으로 Three.js 장면을 짓는 에이전트 스킬 scan-to-threejs, 브라우저 뷰어가 한 묶음. 핵심은 ‘원클릭 변환’이 아니라 에이전트가 장면을 만들고, 원본 사진과 같은 위치에서 스크린샷을 찍어 비교하고, 코드를 고치는 반복 루프. 결과물은 덩어리 메시가 아니라 책상·선반이 각각 객체인 편집 가능한 코드. 코드·스킬 MIT."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub 트렌드 · 2026-10-25 07:09 KST</div>
+    <h1>[10/25] GitHub 트렌드: 3d-model-anything(~1.6천★, 공개 사흘) — 아이폰으로 방을 스캔하면 코딩 에이전트가 ‘사진과 비교해 가며’ 편집 가능한 3D 방을 코드로 다시 짓는다</h1>
+  </header>
+  <article>
+<p><em>웹 개발 강사 Wes Bos가 10/21 공개한 wesbos/3d-model-anything이 사흘 만에 약 1,600개 별을 모았다. 라이다 아이폰으로 방 구조·메시·사진·카메라 위치를 기록하는 앱, 그 기록으로 Three.js 장면을 짓는 에이전트 스킬 scan-to-threejs, 브라우저 뷰어가 한 묶음. 핵심은 ‘원클릭 변환’이 아니라 에이전트가 장면을 만들고, 원본 사진과 같은 위치에서 스크린샷을 찍어 비교하고, 코드를 고치는 반복 루프. 결과물은 덩어리 메시가 아니라 책상·선반이 각각 객체인 편집 가능한 코드. 코드·스킬 MIT.</em></p>
+<p><strong>분류:</strong> GitHub 트렌드</p>
+<h2>한줄 요약</h2>
+<p>
+사무실을 아이폰으로 스캔한 뒤, Codex에게 <strong>“이 방을 Three.js로 다시 지어 줘”</strong>라고 맡겼더니 책상·선반·3D 프린터·필라멘트 벽까지 <strong>브라우저에서 돌아다닐 수 있는 편집 가능한 3D 방</strong>이 나왔다. Wes Bos가 그 과정을 통째로 오픈소스로 풀었다(<a href="https://wesbos.com/3d-model-anything">블로그, 10/22</a> · <a href="https://github.com/wesbos/3d-model-anything">GitHub</a>).
+</p>
+<h2>묶음 구성</h2>
+<table>
+<tr><th>구성</th><th>하는 일</th></tr>
+<tr><td>아이폰 앱(소스 공개, Xcode로 직접 빌드)</td><td>RoomPlan(벽·문·창·가구 상자), 라이다 메시, 사진, <strong>각 사진의 카메라 위치·방향·보정값</strong>, 깊이 프레임 기록</td></tr>
+<tr><td>에이전트 스킬 <code>scan-to-threejs</code></td><td>측정 → 모델링 → 비교 → 수정 절차와 변환·비교 도구</td></tr>
+<tr><td>브라우저 뷰어</td><td>인형의 집·걷기·위에서 보기·와이어프레임·<strong>knolling(물건 펼쳐 놓기)</strong> 보기</td></tr>
+</table>
+<h2>핵심은 ‘만들고, 찍고, 비교하고, 반복’</h2>
+<p>
+스캔 자체는 완성 모델이 아니라 <strong>증거</strong>일 뿐이다. 사진마다 촬영 위치가 기록돼 있어서, 에이전트는 만든 3D 장면을 <strong>같은 시점에서 렌더</strong>해 원본 사진과 나란히 놓고 본다. “책상이 너무 넓나? 선반 위치가 틀렸나? 의자가 내 의자처럼 보이나?” — 비교할 기준이 있으니 에이전트가 스스로 고칠 거리가 생긴다.
+<br/>
+결과가 <strong>코드</strong>라서 물리 엔진을 붙여 물건을 던지고 노는 ‘놀이터’까지 만들었다(닌텐도 재퍼 총 포함).
+</p>
+<h2>한계 (README가 직접 밝힘)</h2>
+<ul>
+<li>“한 번에 완벽한 모델로 바꿔 주는 변환기가 아니라 <strong>반복 재구성 작업 흐름</strong>” — 레이아웃 한 번, 재질·조명·그림자·작은 디테일은 또 한참.</li>
+<li>실내·방 위주. 스캔엔 <strong>라이다 탑재 아이폰·아이패드</strong> 필요, 앱스토어 배포 없음.</li>
+<li>치수는 실제와 다시 대조할 것. 에이전트 사용 비용은 본인 부담.</li>
+<li>코드·스킬은 MIT, 예시 사무실 이미지·텍스처는 별도 조건.</li>
+</ul>
+<h2>왜 뜨나</h2>
+<p>
+이 저장소의 진짜 교훈은 3D가 아니라 <strong>에이전트에게 ‘정답 사진’을 쥐여 주는 패턴</strong>이다. 디자인 시안을 코드로 옮길 때도, 랜딩 페이지를 만들 때도 “목표 이미지와 같은 시점 스크린샷 비교”를 루프에 넣으면 에이전트가 스스로 품질을 끌어올린다.
+<br/>
+디자인·공간 브랜딩 관점: 실제 매장·사무실을 스캔해 <strong>리브랜딩 후 공간을 웹에서 걸어 다니며</strong> 보여 주는 시안이 개인 작업으로 가능해졌다.
+</p>
+<p>
+출처: <a href="https://wesbos.com/3d-model-anything">Wes Bos — I Turned My Office into an Interactive 3D Model with AI (10/22)</a> · <a href="https://github.com/wesbos/3d-model-anything">GitHub wesbos/3d-model-anything</a> · <a href="https://wesbos.github.io/3d-model-anything/">데모 뷰어</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
