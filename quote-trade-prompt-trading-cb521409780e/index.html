@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/26] AI 트레이딩: Quote.Trade Pro — 말로 주문 전략을 짜면 AI가 ‘계획서’를 내고 사람이 승인해야 실행. 손절·익절 위치는 거래소에 끝까지 숨긴다 — AiPaper 뉴스</title>
+  <meta name="description" content="AI 에이전트용 크립토 ‘다크풀’ 거래소 Quote.Trade가 10/22(미 동부) 텔레그램 기반 Quote.Trade Pro를 출시. 내장 AI에게 ‘차트에 지표 넣어 줘’, ‘내 진입·청산 조건으로 고급 주문 만들어 줘’라고 말하면 거래 계획 초안을 만들고, 사용자가 검토·승인해야 실행된다. 지정가·손절·트레일링 스톱·OCO·브래킷 주문은 거래소 밖에서 관리하다 조건이 맞을 때만 즉시체결(FOK) 요청을 보낸다. API 문서상 ‘프롬프트’ 엔드포인트는 리서치·미리보기 전용."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 트레이딩 · 2026-10-26 07:08 KST</div>
+    <h1>[10/26] AI 트레이딩: Quote.Trade Pro — 말로 주문 전략을 짜면 AI가 ‘계획서’를 내고 사람이 승인해야 실행. 손절·익절 위치는 거래소에 끝까지 숨긴다</h1>
+  </header>
+  <article>
+<p><em>AI 에이전트용 크립토 ‘다크풀’ 거래소 Quote.Trade가 10/22(미 동부) 텔레그램 기반 Quote.Trade Pro를 출시. 내장 AI에게 ‘차트에 지표 넣어 줘’, ‘내 진입·청산 조건으로 고급 주문 만들어 줘’라고 말하면 거래 계획 초안을 만들고, 사용자가 검토·승인해야 실행된다. 지정가·손절·트레일링 스톱·OCO·브래킷 주문은 거래소 밖에서 관리하다 조건이 맞을 때만 즉시체결(FOK) 요청을 보낸다. API 문서상 ‘프롬프트’ 엔드포인트는 리서치·미리보기 전용.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<p>
+&gt; 지난번 저장하신 MT5 + 에이전트 안전장치 기사들(RiskGate·MT5 MCP 권한 설정)과 이어지는 소식입니다 — ‘AI는 제안, 사람은 승인’ 구조가 크립토 거래소에도 들어왔습니다.
+</p>
+<h2>한줄 요약</h2>
+<p>
+AI에게 매매를 맡길 때 두 가지가 무섭다. <strong>AI가 멋대로 주문하는 것</strong>, 그리고 <strong>내 손절 위치가 남에게 보이는 것</strong>. Quote.Trade Pro는 둘 다 막는 설계를 내세웠다(<a href="https://www.globenewswire.com/news-release/2026/10/23/3387001/0/en/quote-trade-launches-prompt-trading-and-advanced-order-suite-bringing-institutional-grade-ai-native-strategy-execution-to-the-dark-pool.html">GlobeNewswire 보도자료</a>).
+</p>
+<h2>어떻게 쓰나</h2>
+<ul>
+<li><strong>텔레그램 안에서</strong> 차트를 보며 내장 AI 에이전트와 대화한다.</li>
+</ul>
+<p>
+  - “이 차트에 지표 추가해 줘” / “내 진입·청산 조건으로 고급 주문 만들어 줘” / “이 시장의 신호 아이디어 제안해 줘”
+</p>
+<ul>
+<li>AI는 지시를 <strong>거래 계획 초안</strong>으로 바꾸고, 사용자가 <strong>검토·승인한 뒤에만</strong> 실행된다.</li>
+<li>API 문서 기준으로도 <code>/api/v3/prompt/</code> 계열은 <strong>리서치·미리보기만</strong> 하고, 승인된 주문은 별도 주문 엔드포인트로 들어간다(<a href="https://doc.quote.trade/v3-advanced-orders.html">API 문서</a>).</li>
+</ul>
+<h2>‘전략을 숨기는’ 구조</h2>
+<table>
+<tr><th>일반 거래소</th><th>Quote.Trade Pro</th></tr>
+<tr><td>손절·익절 주문을 거래소가 보관 → 거래소는 내가 어디서 나갈지 안다</td><td>지정가·손절·트레일링 스톱·OCO·브래킷·조건부 전략을 <strong>거래소 밖</strong>에서 관리</td></tr>
+<tr><td>주문이 호가창에 대기</td><td>조건 충족 시 <strong>즉시체결 아니면 취소(FOK)</strong> 요청만 거래소로</td></tr>
+</table>
+<ul>
+<li>CEO 크리스 맥: “손절 주문을 쥔 거래소는 당신이 어디서 나갈지 정확히 안다. 우리 다크풀은 FOK 실행 요청만 받는다.”</li>
+<li>회사 주장 수치: 초당 10만 주문 처리, 1,500개+ 시장, 올해 초 400만 달러 투자 유치. (외부 검증 수치 아님)</li>
+</ul>
+<h2>읽을 때 주의할 점</h2>
+<ul>
+<li><strong>‘다크풀 DEX’</strong>는 주문 정보를 공개 호가창에 드러내지 않는 탈중앙 거래소라는 뜻. 한국 사용자에겐 규제·세금·서비스 제공 범위를 먼저 확인해야 할 해외 크립토 서비스다.</li>
+<li>보도자료엔 “AI 에이전트는 제한 없이 거래한다”는 문구도 있다. 즉 <strong>승인 단계는 Pro 앱의 프롬프트 기능에 해당</strong>하고, API로 직접 붙는 봇·에이전트는 스스로 주문할 수 있다. 내 에이전트를 붙일 땐 승인 단계를 내 쪽에서 따로 만들어야 한다.</li>
+<li>같은 주 Virtuals Protocol은 에이전트용 BTC·ETH <strong>옵션 자동매매</strong>를 추가했다(<a href="https://www.tokenpost.com/news/technology/40602">TokenPost, 10/25</a>). 에이전트가 다룰 수 있는 상품이 현물→무기한 선물→옵션으로 빠르게 넓어지는 중이라, 권한 설계의 중요성은 더 커진다.</li>
+</ul>
+<h2>MT5 사용자에게 주는 힌트</h2>
+<ul>
+<li>MT5 내장 AI 어시스턴트도 매매 권한을 <strong>실행 / 확인 요청 / 매매 금지</strong> 중에서 고르게 돼 있다(<a href="https://www.metatrader5.com/en/terminal/help/mcp_and_ai/configuration">MT5 도움말</a>). Quote.Trade의 ‘초안→승인’은 그중 <strong>‘확인 요청’ 모드를 기본으로 만든 것</strong>과 같다.</li>
+<li>차용할 아이디어: 손절·익절을 브로커에 미리 걸지 않고 <strong>내 쪽(EA·에이전트)에서 보관하다 조건 시 시장가로 보내는 방식</strong>은 노출은 줄이지만, 연결이 끊기면 손절이 안 나가는 위험이 생긴다. 안전장치(서버 측 비상 손절)와 함께 써야 한다.</li>
+</ul>
+<p>
+출처: <a href="https://www.globenewswire.com/news-release/2026/10/23/3387001/0/en/quote-trade-launches-prompt-trading-and-advanced-order-suite-bringing-institutional-grade-ai-native-strategy-execution-to-the-dark-pool.html">Quote.Trade 보도자료 (10/22 ET)</a> · <a href="https://doc.quote.trade/v3-advanced-orders.html">Quote.Trade API — Advanced Orders</a> · <a href="https://www.tokenpost.com/news/technology/40602">TokenPost — Virtuals 옵션 (10/25)</a> · <a href="https://www.metatrader5.com/en/terminal/help/mcp_and_ai/configuration">MetaTrader 5 도움말 — MCP and AI</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

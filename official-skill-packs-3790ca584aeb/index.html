@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/26] GitHub 트렌드: ‘공식 스킬 꾸러미’가 뜬다 — 구글 android/skills(~9.7천★, 스킬 33개)와 Anthropic knowledge-work-plugins(~3.3만★, 주간 +2.6천). 디자인 플러그인엔 /critique·/handoff·/accessibility — AiPaper 뉴스</title>
+  <meta name="description" content="이번 주(10/19–25) GitHub 주간 트렌딩에 플랫폼 회사가 직접 만든 ‘에이전트용 업무 설명서’ 저장소 두 개가 올랐다. 구글 안드로이드팀의 android/skills는 Compose 이전·Navigation 3·권한 보안·온디바이스 LLM 등 33개 스킬을 담아 10/21·10/23 연속 릴리스. Anthropic의 knowledge-work-plugins는 영업·법무·재무·마케팅·디자인·소상공인 등 직무별 플러그인 모음으로 주간 +2.6천 별. 코드 대신 ‘일하는 절차’를 배포하는 흐름."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub 트렌드 · 2026-10-26 07:09 KST</div>
+    <h1>[10/26] GitHub 트렌드: ‘공식 스킬 꾸러미’가 뜬다 — 구글 android/skills(~9.7천★, 스킬 33개)와 Anthropic knowledge-work-plugins(~3.3만★, 주간 +2.6천). 디자인 플러그인엔 /critique·/handoff·/accessibility</h1>
+  </header>
+  <article>
+<p><em>이번 주(10/19–25) GitHub 주간 트렌딩에 플랫폼 회사가 직접 만든 ‘에이전트용 업무 설명서’ 저장소 두 개가 올랐다. 구글 안드로이드팀의 android/skills는 Compose 이전·Navigation 3·권한 보안·온디바이스 LLM 등 33개 스킬을 담아 10/21·10/23 연속 릴리스. Anthropic의 knowledge-work-plugins는 영업·법무·재무·마케팅·디자인·소상공인 등 직무별 플러그인 모음으로 주간 +2.6천 별. 코드 대신 ‘일하는 절차’를 배포하는 흐름.</em></p>
+<p><strong>분류:</strong> GitHub 트렌드</p>
+<h2>한줄 요약</h2>
+<p>
+이번 주 GitHub 인기 목록에서 눈에 띄는 건 새 앱이 아니라 <strong>“에이전트에게 우리 방식으로 일하는 법을 알려 주는 설명서 묶음”</strong>이다. 그것도 구글·Anthropic이 <strong>공식으로</strong> 낸 것(<a href="https://githot.dev/en/weekly">Githot 주간 트렌딩</a>).
+</p>
+<h2>1) google: android/skills — 안드로이드 개발 ‘공식 요령집’</h2>
+<ul>
+<li><strong>무엇</strong>: 안드로이드 개발 작업을 에이전트가 제대로 하도록 돕는 <code>SKILL.md</code> 묶음. 별 약 9,700개, Apache-2.0.</li>
+<li><strong>최근</strong>: v1.0.16(10/21)에서 3개 추가 → v1.0.17(10/23) 11개 갱신, <strong>총 33개</strong>(<a href="https://github.com/android/skills/releases">릴리스</a>).</li>
+</ul>
+<p>
+  - 새 스킬 예: <strong>litert-lm</strong>(휴대폰 안에서 공개 LLM을 돌리는 앱 만들기), <strong>anr-audit-and-fix</strong>(앱 ‘응답 없음’ 위험 점검), <strong>projected-hardware</strong>(오디오·디스플레이 안경 같은 XR 기기 다루기).
+<br/>
+  - 그 외 분야: Jetpack Compose, 내비게이션, 성능·프로파일러, 권한·인텐트 보안, Wear OS, TV, 자동차, XR.
+</p>
+<ul>
+<li><strong>설치</strong>: Android CLI의 <code>android skills add</code> 명령으로 프로젝트·에이전트별로 넣는다. 저장소엔 Claude·Codex용 플러그인 폴더도 같이 있다.</li>
+<li>쉽게 말하면: “구글이 권장하는 최신 방식”을 에이전트가 <strong>추측하지 않고 문서대로</strong> 따르게 하는 것. 오래된 블로그 글로 학습한 AI가 구식 코드를 쓰는 문제를 줄인다.</li>
+</ul>
+<h2>2) anthropics/knowledge-work-plugins — 직무별 ‘AI 동료 세팅’</h2>
+<ul>
+<li><strong>무엇</strong>: Claude Cowork(데스크톱 에이전트 앱)·Claude Code용 직무 플러그인 모음. 별 약 3.3만, 이번 주 +2.6천, Apache-2.0.</li>
+<li><strong>폴더</strong>: 영업, 법무, 재무, 마케팅, 인사, 고객지원, 데이터, 엔지니어링, 제품관리, 바이오 연구, <strong>디자인</strong>, <strong>소상공인</strong> 등. 각 플러그인 = 스킬 + 도구 연결(MCP) + 슬래시 명령. 코드·서버 없이 마크다운·JSON 파일뿐.</li>
+<li><strong>최근 커밋 예</strong>(10/21): 영업 플러그인 2.1.0 — “모든 문장 옆에 출처 링크를 달아 확인할 수 있게”.</li>
+<li><strong>디자인 플러그인 명령</strong>:</li>
+</ul>
+<table>
+<tr><th>명령</th><th>하는 일</th></tr>
+<tr><td><code>/critique</code></td><td>사용성·시각 위계·접근성·일관성 구조화 피드백</td></tr>
+<tr><td><code>/design-system</code></td><td>컴포넌트·토큰·패턴 감사·문서화</td></tr>
+<tr><td><code>/handoff</code></td><td>개발 전달 명세(치수·토큰·상태·예외)</td></tr>
+<tr><td><code>/ux-copy</code></td><td>마이크로카피·오류 문구·빈 화면 문구</td></tr>
+<tr><td><code>/accessibility</code></td><td>WCAG 2.1 AA 점검</td></tr>
+<tr><td><code>/research-synthesis</code></td><td>인터뷰·설문·사용성 테스트 정리</td></tr>
+</table>
+<ul>
+<li>Figma 등을 연결하면 더 강해지고, 연결 없이 스크린샷만 줘도 동작한다.</li>
+</ul>
+<h2>왜 뜨나</h2>
+<ul>
+<li>같은 호 AI 도구 기사처럼 Agent Skills가 <strong>중립 표준</strong>이 되자, 플랫폼 회사가 “우리 제품은 이렇게 쓰라”는 공식 스킬을 배포할 이유가 생겼다. 문서 사이트 → <strong>에이전트가 읽는 문서</strong>로의 이동.</li>
+<li>‘무엇을 만들 수 있나’보다 <strong>‘어떤 절차로 일하나’가 공유 자산</strong>이 되는 흐름. 디자이너라면 디자인 플러그인의 명령 구성(비평→시스템→전달→카피→접근성)이 그대로 <strong>팀 리뷰 체크리스트</strong>로 쓸 만하다.</li>
+</ul>
+<p>
+출처: <a href="https://githot.dev/en/weekly">Githot 주간 트렌딩 (10/19–25)</a> · <a href="https://github.com/android/skills/releases">android/skills 릴리스</a> · <a href="https://developer.android.com/tools/agents/android-cli/commands/skills">Android 개발자 문서 — skills</a> · <a href="https://github.com/anthropics/knowledge-work-plugins">anthropics/knowledge-work-plugins</a> (별 수는 10/26 GitHub API 기준)
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
