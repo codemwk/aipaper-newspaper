@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/27] 디자인/UI·UX: 아이폰에 ‘접는 선’이 생겼다 — iPhone Duo가 디자이너에게 던진 숙제는 화면 크기가 아니라 ‘자세(pose)’. 반쯤 접어 세우면 위는 보는 칸, 아래는 조작하는 칸 — AiPaper 뉴스</title>
+  <meta name="description" content="애플 첫 폴더블 iPhone Duo가 10/23 출시(한국 포함 1차 국가). 안쪽 화면은 iPhone 18 Pro Max보다 50% 크고, 바깥·안쪽 화면 비율이 같아 앱이 비례 확대된다. 표준 SwiftUI·UIKit 부품으로 만든 앱은 자동으로 조작 버튼을 옆으로 옮기고, 여러 단으로 펼치고, 반쯤 접히면 버튼을 접는 선에서 비켜 놓는다. 새 힌지 API는 화면 각도를, ‘예약 영역’ API는 접는 선·카메라 위치를 알려 준다. Figma도 10/23 iPhone Duo 프레임 프리셋 추가."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인/UI·UX · 2026-10-27 07:05 KST</div>
+    <h1>[10/27] 디자인/UI·UX: 아이폰에 ‘접는 선’이 생겼다 — iPhone Duo가 디자이너에게 던진 숙제는 화면 크기가 아니라 ‘자세(pose)’. 반쯤 접어 세우면 위는 보는 칸, 아래는 조작하는 칸</h1>
+  </header>
+  <article>
+<p><em>애플 첫 폴더블 iPhone Duo가 10/23 출시(한국 포함 1차 국가). 안쪽 화면은 iPhone 18 Pro Max보다 50% 크고, 바깥·안쪽 화면 비율이 같아 앱이 비례 확대된다. 표준 SwiftUI·UIKit 부품으로 만든 앱은 자동으로 조작 버튼을 옆으로 옮기고, 여러 단으로 펼치고, 반쯤 접히면 버튼을 접는 선에서 비켜 놓는다. 새 힌지 API는 화면 각도를, ‘예약 영역’ API는 접는 선·카메라 위치를 알려 준다. Figma도 10/23 iPhone Duo 프레임 프리셋 추가.</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+iPhone Duo는 “화면이 커진 아이폰”이 아니라 <strong>“여러 자세로 쓰는 아이폰”</strong>이다. 책상 위에 반쯤 접어 세우면 노트북처럼 <strong>위는 보는 칸, 아래는 조작하는 칸</strong>이 된다. 디자이너에게 새로 생긴 변수는 해상도가 아니라 <strong>힌지 각도</strong>다(<a href="https://www.apple.com/newsroom/2026/10/developers-bring-incredible-new-app-experiences-to-iphone-duo/">Apple 뉴스룸</a>).
+</p>
+<h2>앱이 화면을 나누는 방식 (실제 사례)</h2>
+<ul>
+<li><strong>MLB</strong>: 반쯤 접어 세우면 위에는 중계, 테이블에 닿은 아래쪽엔 실시간 기록. “중계와 박스스코어 중 고를 필요가 없다.”</li>
+<li><strong>Prime Video</strong>: 반쯤 접으면 위는 영상, 아래는 출연진·부가정보(X-Ray).</li>
+<li><strong>NYT Cooking</strong>: 주방 조리대에 세워 두고 단계·타이머·영상을 함께.</li>
+<li><strong>Detail</strong>(영상·팟캐스트 편집): 영상과 자막 원고를 나란히. 새 <strong>Core AI</strong> 프레임워크로 자막·군말 제거·음질 개선을 <strong>기기 안에서</strong> 처리.</li>
+<li><strong>한국 앱</strong>: 카카오톡(여러 대화방 목록 + 한 대화), 웹툰·네이버 시리즈(큰 화면 읽기), 카카오페이지(책처럼 펼친 Split View), BAND.</li>
+</ul>
+<h2>디자이너가 알아야 할 새 규칙</h2>
+<table>
+<tr><th>무엇</th><th>내용</th></tr>
+<tr><td>같은 화면 비율</td><td>바깥·안쪽 화면 비율이 같아, 펼치면 앱이 <strong>비례 확대</strong>되며 이어진다</td></tr>
+<tr><td>표준 부품의 자동 적응</td><td>버튼을 손 닿는 옆으로, 안쪽 화면에선 여러 단으로, 반쯤 접히면 <strong>접는 선에서 버튼을 비켜 놓는다</strong></td></tr>
+<tr><td>배치·예약 영역 API</td><td>접는 선 기준으로 내용을 나누거나 끝까지 채우는 맞춤 레이아웃</td></tr>
+<tr><td>힌지 API</td><td>열고 닫는 <strong>각도</strong>에 반응 (닫힘·반쯤 열림·완전 열림 + 연속 각도)</td></tr>
+<tr><td>씬 액세서리</td><td>두 화면에 동시에 표시 — 예: 촬영당하는 사람 쪽 바깥 화면에 프롬프터</td></tr>
+<tr><td>테스트</td><td>Xcode 27.1 Device Hub에서 가상 Duo를 열고·접고·돌려 보기</td></tr>
+</table>
+<ul>
+<li>‘Made for iPhone Duo’ 배지: 최적화 앱은 App Store에 배지가 붙는다. 업계 보도(MacRumors)에 따르면 iOS 27.1 SDK로 빌드해야 최적화로 인정되며, 구형 앱은 가운데에 여백을 두고 뜬다.</li>
+<li><strong>Figma</strong>는 10/23 iPhone Duo·iPhone 18 프레임 프리셋을 디자인·프로토타입·Make 미리보기·코드 레이어 전반에 추가했다(<a href="https://www.figma.com/release-notes/">Figma 릴리스 노트</a>).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li><strong>디자인 시스템의 배당금.</strong> 표준 부품으로 만든 팀은 새 기기에 거의 공짜로 맞춰지고, 전부 손으로 그린 팀은 화면 한가운데 접는 선을 떠안는다. 컴포넌트 규칙을 지키는 것이 곧 ‘미래 기기 대응’이다.</li>
+<li><strong>‘자세’라는 새 어휘.</strong> 손에 든 폰, 펼친 태블릿, 반쯤 세운 노트북형 — 같은 앱이 세 가지 물건이 된다. 와이어프레임에 화면 크기뿐 아니라 <strong>자세별 상태</strong>를 그려야 한다.</li>
+<li><strong>AI는 조용히, 기기 안에서.</strong> 이번 출시에서 AI는 챗봇이 아니라 편집 앱 안에서 군말을 지우는 기능으로 등장했다. 새 화면에 가장 잘 맞는 AI는 화면을 더 쓰기 쉽게 만드는 AI라는 점을 보여 준다.</li>
+<li>가격: 미국 1,999달러부터. 한국은 10/23 1차 출시국에 포함.</li>
+</ul>
+<p>
+출처: <a href="https://www.apple.com/newsroom/2026/10/developers-bring-incredible-new-app-experiences-to-iphone-duo/">Apple 뉴스룸 — 개발자 앱 경험 (10/22)</a> · <a href="https://developer.apple.com/videos/play/tech-talks/111463/">Apple Developer — Strike a pose with adaptive layouts</a> · <a href="https://developer.apple.com/videos/play/tech-talks/111464/">Apple Developer — Leverage multiple displays and scenes</a> · <a href="https://www.figma.com/release-notes/">Figma 릴리스 노트 (10/23)</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

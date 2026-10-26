@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/27] AI 모델: 문맥 1,000만 토큰 — 신생 연구소 Mirendil의 첫 모델 ‘Fern 0.1’. 코드 50만 줄을 한 번에 읽지만, 여러 단계 추론 정답률은 45%라고 스스로 밝혔다 — AiPaper 뉴스</title>
+  <meta name="description" content="올해 6월 시드 2억 달러(기업가치 10억 달러)로 등장한 AI 연구소 Mirendil이 10/26 처음부터 직접 사전학습한 모델 Fern 0.1을 공개. 최대 1,000만 토큰(코드 약 23MB, 약 50만 줄)을 한 번에 담는다. 용도는 일반 챗봇이 아니라 AI를 만드는 사람의 일: 대형 저장소 코딩, 학습 로그 디버깅, 에이전트 기록 전체 분석, 학습 데이터 감사. 회사가 공개한 RULER(1,000만 토큰) 결과는 단일 검색 100%·다중 키 90%·다단계 질문 45%. 접근은 ‘곧’, 조기 신청만 받고 가격 미정."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-27 07:02 KST</div>
+    <h1>[10/27] AI 모델: 문맥 1,000만 토큰 — 신생 연구소 Mirendil의 첫 모델 ‘Fern 0.1’. 코드 50만 줄을 한 번에 읽지만, 여러 단계 추론 정답률은 45%라고 스스로 밝혔다</h1>
+  </header>
+  <article>
+<p><em>올해 6월 시드 2억 달러(기업가치 10억 달러)로 등장한 AI 연구소 Mirendil이 10/26 처음부터 직접 사전학습한 모델 Fern 0.1을 공개. 최대 1,000만 토큰(코드 약 23MB, 약 50만 줄)을 한 번에 담는다. 용도는 일반 챗봇이 아니라 AI를 만드는 사람의 일: 대형 저장소 코딩, 학습 로그 디버깅, 에이전트 기록 전체 분석, 학습 데이터 감사. 회사가 공개한 RULER(1,000만 토큰) 결과는 단일 검색 100%·다중 키 90%·다단계 질문 45%. 접근은 ‘곧’, 조기 신청만 받고 가격 미정.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+지금 주요 모델의 문맥은 대개 100만 토큰 안팎이다. Mirendil의 <strong>Fern 0.1</strong>은 그 <strong>10배</strong>를 주장한다. 그런데 이 소식에서 더 눈여겨볼 것은 숫자 자체보다 <strong>회사가 스스로 공개한 약점</strong>이다(<a href="https://mirendil.com/news/introducing-fern/">Mirendil 발표</a>).
+</p>
+<h2>무엇인가</h2>
+<ul>
+<li><strong>Mirendil</strong>: 6월 시드 <strong>2억 달러, 기업가치 10억 달러</strong>(a16z·Kleiner Perkins 공동 주도, Nvidia 참여)로 등장. 창업자 Behnam Neyshabur·Harsh Mehta는 Anthropic·Google 출신(<a href="https://startupfortune.com/mirendil-unveils-fern-an-ai-model-claiming-a-10-million-token-context-window/">Startup Fortune</a>). 목표는 ‘AI 연구를 돕는 AI’.</li>
+<li><strong>Fern 0.1</strong>: 자체 기반 모델 Mirendil-Base를 <strong>짧게 후속 학습</strong>한 첫 버전. “새 버전을 자주 낸다”고 했다.</li>
+<li><strong>1,000만 토큰이면</strong>: 코드 약 23MB·약 50만 줄(Megatron-LM 라이브러리 규모), 완성된 에이전트 작업 기록 수십~수백 개, 에이전트가 며칠 동안 한 일 전체.</li>
+</ul>
+<h2>무엇에 쓰라고 만들었나</h2>
+<ul>
+<li>큰 저장소에서 명령 실행 → 결과 읽기 → 테스트 통과까지 반복하는 <strong>에이전트 코딩</strong></li>
+<li>학습이 왜 망가졌는지 <strong>긴 로그·스택트레이스에서 찾기</strong></li>
+<li>에이전트 기록을 <strong>처음부터 끝까지 읽고</strong> 무슨 일이 왜 일어났는지 설명</li>
+<li>사전학습 데이터 조각 전체에서 <strong>중복·벤치마크 오염·쓰레기 데이터 찾기</strong></li>
+</ul>
+<h2>숫자를 읽는 법</h2>
+<table>
+<tr><th>RULER (1,000만 토큰, 항목당 20문항, 회사 측정)</th><th>정답률</th></tr>
+<tr><td>바늘 하나 찾기</td><td>100%</td></tr>
+<tr><td>여러 열쇠 찾기</td><td>90%</td></tr>
+<tr><td>여러 단계 추론 질문</td><td><strong>45%</strong></td></tr>
+</table>
+<ul>
+<li>‘어딘가 숨겨 둔 문장 찾기’는 완벽하지만, <strong>흩어진 정보를 엮어 답하는 문제는 절반 이상 틀린다.</strong> 긴 문맥 모델 전반의 알려진 한계이고, Mirendil이 이를 숨기지 않고 공개했다는 점은 신뢰 쪽 점수다.</li>
+<li>“연구자 1명이 에이전트를 지휘해 3.5개월, 1,000만 달러 미만으로 기반 모델을 만들었다”는 주장도 나왔지만 <strong>회사 측 단독 주장</strong>이다.</li>
+</ul>
+<h2>지금 쓸 수 있나</h2>
+<ul>
+<li><strong>아직 아니다.</strong> 접근은 ‘곧’, 조기 이용 신청만 받는다. API·가격·가중치 공개 정보 없음. 첫 고객은 연구소·기업이 될 가능성이 크다.</li>
+<li>세컨드 브레인 관점의 질문: 문맥이 이 정도로 커지면 볼트 전체를 그냥 넣으면 될까? 위 45%가 답이다. <strong>찾기는 맡길 수 있어도 ‘엮어서 결론 내기’는 여전히 정리된 위키·인덱스가 유리</strong>하다(아래 Gemma LLM Wiki 기사 참고).</li>
+</ul>
+<p>
+출처: <a href="https://mirendil.com/news/introducing-fern/">Mirendil — Introducing Fern (10/26)</a> · <a href="https://startupfortune.com/mirendil-unveils-fern-an-ai-model-claiming-a-10-million-token-context-window/">Startup Fortune (10/27)</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

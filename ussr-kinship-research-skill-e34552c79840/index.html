@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/27] 새로운 각도: AI 에이전트를 ‘족보 조사관’으로 — 옛 소련 15개국 교회 기록·병적·강제이주 문서를 뒤지는 스킬, 핵심은 검색이 아니라 ‘증명된 것과 추측을 구분하는 법’ — AiPaper 뉴스</title>
+  <meta name="description" content="10/25 공개된 오픈소스 스킬 ex-ussr-kinship-research가 공개 이틀 만에 별 ~780개(Upstar 주간 2위). Codex·Claude Code 같은 에이전트를 러시아 제국·소련 지역 가족사 연구자로 만든다. 사건 당시의 행정구역 기준으로 문서고를 고르고, 혁명 전 러시아어·우크라이나어·폴란드어·이디시어 이름 변형표를 만들고, 모든 주장에 ‘가설·단일 출처·교차 확인·모순’ 같은 상태를 붙인다. 같은 기록의 사본은 독립 증거로 세지 않으며, 감사 스크립트가 최종 보고서의 근거를 점검한다. MIT."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 도구 · 2026-10-27 07:11 KST</div>
+    <h1>[10/27] 새로운 각도: AI 에이전트를 ‘족보 조사관’으로 — 옛 소련 15개국 교회 기록·병적·강제이주 문서를 뒤지는 스킬, 핵심은 검색이 아니라 ‘증명된 것과 추측을 구분하는 법’</h1>
+  </header>
+  <article>
+<p><em>10/25 공개된 오픈소스 스킬 ex-ussr-kinship-research가 공개 이틀 만에 별 ~780개(Upstar 주간 2위). Codex·Claude Code 같은 에이전트를 러시아 제국·소련 지역 가족사 연구자로 만든다. 사건 당시의 행정구역 기준으로 문서고를 고르고, 혁명 전 러시아어·우크라이나어·폴란드어·이디시어 이름 변형표를 만들고, 모든 주장에 ‘가설·단일 출처·교차 확인·모순’ 같은 상태를 붙인다. 같은 기록의 사본은 독립 증거로 세지 않으며, 감사 스크립트가 최종 보고서의 근거를 점검한다. MIT.</em></p>
+<p><strong>분류:</strong> AI 도구</p>
+<h2>한줄 요약</h2>
+<p>
+“증조할아버지가 1930년대 카자흐스탄으로 추방됐다. 교회 기록에서 그분의 부모를 찾아 달라.” 이번 주 GitHub에서 빠르게 뜬 저장소는 코딩 도구가 아니라 <strong>에이전트용 족보 연구 매뉴얼</strong>이다. 흥미로운 건 족보 그 자체보다, AI에게 <strong>“무엇이 증명됐고 무엇이 아닌지”를 말하게 하는 설계</strong>다(<a href="https://github.com/DenisSergeevitch/ex-ussr-kinship-research">GitHub</a>, <a href="https://upstar.dev/t/ai-agents">Upstar</a>).
+</p>
+<h2>무엇을 하나</h2>
+<ul>
+<li><strong>범위</strong>: 러시아·우크라이나·벨라루스·몰도바·발트 3국·조지아·아르메니아·아제르바이잔·중앙아시아 5개국 — 옛 소련 15개국.</li>
+<li><strong>자료</strong>: 교회 출생·혼인 기록, 민적, 군 기록, 강제이주·탄압 문서, 색인 안 된 문서고 스캔, 1차 세계대전 기록.</li>
+<li><strong>언어</strong>: 지시문은 러시아어지만 <strong>에이전트는 사용자 언어로 답한다.</strong> 원문은 원래 철자로 인용하고 번역을 붙이며, 검색어는 기록의 언어로 만든다.</li>
+</ul>
+<h2>설계의 핵심 5가지</h2>
+<ul>
+<li><strong>그때의 지도 기준</strong>: 모든 사건을 ‘지금 지도’가 아니라 <strong>사건 당시</strong>의 국가·주·군·교구·호적 관청에 맞춘다. 그래야 맞는 문서고를 찾는다.</li>
+<li><strong>이름 변형 행렬</strong>: 혁명 전 러시아어, 우크라이나어, 폴란드어, 루마니아어, 독일어, 이디시어 표기, 부칭(父稱), 결혼 전 성, 음역 변형.</li>
+<li><strong>출처 순서</strong>: 원본 → 공식 목록·색인 → 출판된 문서집 → 그다음에야 가계도 사이트·포럼(단서로만).</li>
+<li><strong>확률 대신 상태</strong>: 주장마다 <code>가설 / 단일 출처 / 교차 확인 / 강하게 교차 확인 / 모순 / 미해결</code>. 같은 기록의 사본·미러는 같은 <code>독립성 그룹</code>으로 묶어 <strong>두 번 세지 않는다.</strong></li>
+<li><strong>동명이인은 끝까지 분리</strong>: 집 번호·부모·대부모·정확한 생일·군 부대 같은 구별 증거가 나오기 전엔 다른 사람으로 둔다.</li>
+<li>여기에 <strong>감사 스크립트</strong>가 붙는다: 보고서가 인용한 ID가 실제 존재하는지, 상태가 기록과 맞는지, 확인 안 된 주장이 뭔지 점검. “교차 확인을 선언만으로 만들어 낼 수 없게” 했다고 README는 적었다.</li>
+<li>문서고·도서관에 보낼 <strong>요청 편지 초안</strong>을 쓰고, 사용자가 허락했을 때만 보낸다. 살아 있는 사람·미성년자·DNA 같은 민감 정보 지침도 따로 있다.</li>
+</ul>
+<h2>왜 ‘새로운 각도’인가</h2>
+<ul>
+<li><strong>AI의 환각 문제에 대한 인문학적 답.</strong> 족보학은 원래 “이 사람이 그 사람이 맞나”를 증거로 다투는 학문이다. 이 스킬은 그 방법론(출처 위계, 독립성, 동명이인 분리)을 에이전트 규칙으로 옮겼다. 리서치·기자·법무 에이전트에 그대로 빌려 쓸 만한 틀이다.</li>
+<li><strong>세컨드 브레인과도 연결.</strong> 노트에 ‘출처 상태’ 칸을 두고, 같은 출처의 재인용은 한 번만 세는 습관 — 개인 위키의 신뢰도를 올리는 가장 싼 방법이다.</li>
+<li><strong>한국에도 같은 수요가 있다.</strong> 고려인 강제이주(1937) 후손의 뿌리 찾기는 바로 이 스킬이 다루는 문서고와 겹친다. 다만 한국어·한국 족보 자료용 스킬은 아직 없다.</li>
+<li>주의: 공개 이틀 된 개인 프로젝트(MIT). FamilySearch 등은 <strong>이미 합법적으로 로그인한 브라우저 세션</strong>에서 허용된 범위만 쓰도록 돼 있고, 개인 사건 자료는 스킬 폴더 밖에 두라고 안내한다.</li>
+</ul>
+<p>
+출처: <a href="https://github.com/DenisSergeevitch/ex-ussr-kinship-research">DenisSergeevitch/ex-ussr-kinship-research</a> · <a href="https://upstar.dev/t/ai-agents">Upstar — AI agents 주간 순위 (10/20–26)</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

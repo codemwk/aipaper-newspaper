@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/27] 디자인/UI·UX: Coco Labs ‘Vyb’ — 픽셀을 그리지 않고 ‘레이어’로 디자인하는 모델. 내가 고른 폰트·색·사진을 그대로 지키고, 글자색 하나 바꿔도 나머지는 안 건드린다 — AiPaper 뉴스</title>
+  <meta name="description" content="스타트업 Coco Labs가 10/20 첫 디자인 모델 Vyb를 공개. 이미지 생성 모델처럼 한 장의 픽셀을 뽑는 대신, 텍스트는 텍스트·그래픽은 벡터·사진은 픽셀로 레이어를 쌓는다. 회사 측정 기준 구글 폰트 145종 재현 일치도 90.3%(gpt-image-2.5 76.0%), 지정 색상 오차 0, 편집 200건에서 바뀐 픽셀 평균 11.9%(타 모델 90%+). 이를 위해 AI용 디자인 언어 ‘Cocolang’을 만들었고 Figma로 손실 없이 내보낸다고. 수치는 모두 자체 측정."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인/UI·UX · 2026-10-27 07:07 KST</div>
+    <h1>[10/27] 디자인/UI·UX: Coco Labs ‘Vyb’ — 픽셀을 그리지 않고 ‘레이어’로 디자인하는 모델. 내가 고른 폰트·색·사진을 그대로 지키고, 글자색 하나 바꿔도 나머지는 안 건드린다</h1>
+  </header>
+  <article>
+<p><em>스타트업 Coco Labs가 10/20 첫 디자인 모델 Vyb를 공개. 이미지 생성 모델처럼 한 장의 픽셀을 뽑는 대신, 텍스트는 텍스트·그래픽은 벡터·사진은 픽셀로 레이어를 쌓는다. 회사 측정 기준 구글 폰트 145종 재현 일치도 90.3%(gpt-image-2.5 76.0%), 지정 색상 오차 0, 편집 200건에서 바뀐 픽셀 평균 11.9%(타 모델 90%+). 이를 위해 AI용 디자인 언어 ‘Cocolang’을 만들었고 Figma로 손실 없이 내보낸다고. 수치는 모두 자체 측정.</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+이미지 AI로 포스터를 만들면 예쁘지만 <strong>내 브랜드 폰트가 미묘하게 다른 글꼴로 바뀌고, 색이 살짝 틀어지고, 글자 하나 고치면 그림 전체가 다시 그려진다.</strong> Coco Labs의 Vyb는 디자이너처럼 <strong>레이어 단위로</strong> 만들어서 이 문제를 풀겠다고 한다(<a href="https://cocolabs.ai/blog/introducing-vyb">Coco Labs 블로그</a>).
+</p>
+<h2>무엇이 다른가</h2>
+<ul>
+<li><strong>레이어로 생각한다</strong>: 텍스트는 텍스트로, 그래픽은 벡터로, 사진은 픽셀로 남는다. 그래서 4,800만 화소 아이폰 사진도 화질 손실 없이 디자인에 들어간다(이미지 모델 출력은 약 830만 화소 한계라고 회사는 설명).</li>
+<li><strong>Cocolang</strong>: 디자인 툴마다 내부 형식이 달라 ‘웹의 HTML’ 같은 표준이 없다는 문제를 풀려고 만든 <strong>AI용 디자인 언어</strong>. 레이어별로 가장 효율적인 방식으로 적어 문맥 창을 아끼고, 사람도 고칠 수 있다. <strong>Figma로 손실 없이 내보낸다</strong>고 한다.</li>
+<li><strong>필요할 때만 이미지 생성</strong>: Vyb 자체는 ‘사용자 재료를 조합하는’ 모델이고, 이미지 생성기·편집 도구는 필요할 때 호출한다.</li>
+</ul>
+<h2>회사가 공개한 비교 (모두 자체 측정)</h2>
+<table>
+<tr><th>시험</th><th>Vyb</th><th>gpt-image-2.5</th><th>muse-image</th><th>recraft v4.1</th></tr>
+<tr><td>구글 폰트 145종 모양 일치(IoU)</td><td><strong>90.3%</strong></td><td>76.0%</td><td>50.9%</td><td>46.2%</td></tr>
+<tr><td>지정 색상 최대 채널 오차(0~255)</td><td><strong>0.00</strong></td><td>3.94</td><td>5.67</td><td>27.19</td></tr>
+<tr><td>편집 시 바뀐 픽셀 평균(200건×3회)</td><td><strong>11.9%</strong></td><td>95.5%</td><td>91.8%</td><td>98.9%</td></tr>
+<tr><td>편집 지시 수행률(LLM 평가)</td><td>94.7%</td><td>100%</td><td>98.0%</td><td>50.3%</td></tr>
+</table>
+<ul>
+<li>측정 잡음 때문에 폰트 일치도의 이론상 최고치는 94.4%라고 밝혔다.</li>
+<li>수행률이 5%p 낮은 이유로 회사는 “글자가 안 읽히게 되는 색·크기 변경은 일부러 거절하기 때문”이라고 설명한다. 장점인지 단점인지는 써 봐야 안다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li><strong>‘AI 티 나는 디자인’의 원인을 정면으로 건드린다.</strong> 이미지 모델은 인터넷에서 본 흔한 패턴에 맞추려고 사용자의 폰트·색을 희생한다. 그래서 다들 비슷해 보인다. Vyb는 <strong>취향 = 사용자가 고른 재료</strong>라고 정의하고 그걸 보존하는 쪽을 택했다.</li>
+<li><strong>레이어를 ‘나중에 분리’하는 방식과의 차이.</strong> 평평한 이미지를 레이어로 쪼개는 모델은 가려진 뒤쪽을 추측으로 채워 흐릿해진다. 처음부터 레이어로 만들면 그런 추측이 필요 없다.</li>
+<li><strong>ANDRSN 관점</strong>: 커스텀 서체·정확한 브랜드 컬러가 생명인 브랜드 작업에선 ‘예쁜 한 장’보다 <strong>편집 가능한 원본</strong>이 납품물이다. 지난주 Ideogram Vector(SVG), Canva Craft(계획→렌더)와 함께 “생성 결과를 디자인 파일로 만드는” 흐름의 세 번째 사례.</li>
+<li>주의: 비교 대상·지표·시험 세트를 모두 회사가 골랐다. 회사도 이번 시험은 공개 구글 폰트 기준이며, 커스텀 폰트에선 차이가 더 클 것으로 ‘예상’한다고만 했다. 가격·이용 방식은 이번 글에서 확인하지 못했다.</li>
+</ul>
+<p>
+출처: <a href="https://cocolabs.ai/blog/introducing-vyb">Coco Labs — Introducing Vyb (10/20)</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/27] AI 모델: OpenAI ‘GPT-6.1 Terra’ — 입력 $1·출력 $5, 이전 Terra보다 반값인데 ‘화면 보고 컴퓨터 다루기’는 GPT-6 Astra급이라고. 엉뚱한 답(오류율)은 53.6%→16.7% — AiPaper 뉴스</title>
+  <meta name="description" content="OpenAI가 10/26 중간급 모델 GPT-6.1 Terra를 공개. ChatGPT Work·Codex·API(gpt-6.1-terra)에 들어갔고 같은 날 Amazon Bedrock에도 정식 출시. API 가격은 100만 토큰당 입력 $1·출력 $5로 GPT-5.6 Terra·GPT-6.1 Sol보다 50% 낮다. 회사 측정 기준 ‘Agents’ Last Exam’에서 GPT-5.6 Terra보다 15%p 높고 GPT-6 Astra와 비슷, 속도는 Astra·Sol의 3배+. 오류 유도 질문 오류율은 저추론에서 53.6%→16.7%. 문맥 105만 토큰, 텍스트·이미지 입력, 텍스트 출력."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-27 07:01 KST</div>
+    <h1>[10/27] AI 모델: OpenAI ‘GPT-6.1 Terra’ — 입력 $1·출력 $5, 이전 Terra보다 반값인데 ‘화면 보고 컴퓨터 다루기’는 GPT-6 Astra급이라고. 엉뚱한 답(오류율)은 53.6%→16.7%</h1>
+  </header>
+  <article>
+<p><em>OpenAI가 10/26 중간급 모델 GPT-6.1 Terra를 공개. ChatGPT Work·Codex·API(gpt-6.1-terra)에 들어갔고 같은 날 Amazon Bedrock에도 정식 출시. API 가격은 100만 토큰당 입력 $1·출력 $5로 GPT-5.6 Terra·GPT-6.1 Sol보다 50% 낮다. 회사 측정 기준 ‘Agents’ Last Exam’에서 GPT-5.6 Terra보다 15%p 높고 GPT-6 Astra와 비슷, 속도는 Astra·Sol의 3배+. 오류 유도 질문 오류율은 저추론에서 53.6%→16.7%. 문맥 105만 토큰, 텍스트·이미지 입력, 텍스트 출력.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+‘가장 똑똑한 모델’이 아니라 <strong>‘매일 많이 돌릴 모델’</strong>이 업그레이드됐다. 송장 읽고 회계 프로그램에 입력하기, 도면 해석, 양식 채우기, 영상 편집 같은 <strong>반복 업무용</strong>으로, 값은 내리고 컴퓨터 조작 능력은 올렸다(<a href="https://openai.com/index/introducing-gpt-6-1-terra">OpenAI 발표</a>).
+</p>
+<h2>무엇이 달라졌나 (모두 OpenAI 자체 측정)</h2>
+<ul>
+<li><strong>컴퓨터 사용</strong>: ‘Agents’ Last Exam’(건축 도면을 3D 모델로 바꾸기, 애니메이션을 컷별로 검토해 타임코드 로그 만들기 같은 전문 업무)에서 중간 추론 기준 GPT-5.6 Terra보다 <strong>15%p 높고 비용은 약 3분의 1</strong>. 토큰당 가격이 10분의 1인데 <strong>GPT-6 Astra와 비슷한 점수</strong>.</li>
+<li><strong>속도</strong>: GPT-6 Astra·GPT-6.1 Sol보다 작업 완료가 <strong>3배 이상 빠르다</strong>.</li>
+<li><strong>사실 정확도</strong>: 오류를 유도하는 질문 모음에서 저추론 오류율 <strong>53.6% → 16.7%</strong>, 최대 추론 <strong>4.3%</strong>.</li>
+<li><strong>코딩</strong>: Terminal-Bench 4.0 최대 추론 <strong>50.3%</strong>(GPT-5.6 Terra 21.5%). 다만 OpenAI도 “가장 복잡한 코딩은 Sol·Astra가 낫다”고 적었다.</li>
+<li><strong>보안 등급</strong>: 자체 위험 기준(Preparedness Framework)에서 사이버 보안 ‘Critical’ 기준에 해당 → Astra와 같은 보호장치 적용.</li>
+</ul>
+<h2>가격과 사양 (<a href="https://developers.openai.com/api/docs/models/gpt-6.1-terra">모델 문서</a>)</h2>
+<table>
+<tr><th>항목</th><th>값</th></tr>
+<tr><td>입력 / 캐시 입력 / 출력</td><td>$1 / $0.05 / $5 (100만 토큰당)</td></tr>
+<tr><td>긴 프롬프트</td><td>입력 27.2만 토큰 초과 시 요청 전체에 입력 2배·출력 1.5배</td></tr>
+<tr><td>배치·Flex</td><td>50% 할인 / Fast 모드 2배</td></tr>
+<tr><td>문맥</td><td>105만 토큰(입력 최대 92.2만), 출력 최대 12.8만</td></tr>
+<tr><td>입출력</td><td>텍스트·이미지 입력 → 텍스트 출력 (음성·영상 미지원)</td></tr>
+<tr><td>지식 기준일</td><td>2026-06-01</td></tr>
+<tr><td>지원 도구</td><td>computer_use, MCP, skills, hosted_shell, web_search 등 (도구 호출은 Responses API 필요)</td></tr>
+</table>
+<ul>
+<li>같은 날 <strong>Amazon Bedrock</strong>에 정식 출시, ChatGPT Work·Codex도 Bedrock 경유로 이 모델을 쓰게 설정할 수 있다(<a href="https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/">AWS</a>).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li><strong>에이전트 비용의 ‘기본값’이 내려간다.</strong> 에이전트는 한 작업에 모델을 수십 번 부른다. 이번 주 AI 비즈니스 Nevis 사례처럼 “정확도 1%p보다 원가 25배가 더 중요하다”는 회사들에겐, 상위 모델급 컴퓨터 조작을 반값에 주는 중간급 모델이 실제 배치 대상이다.</li>
+<li><strong>ChatGPT 구독자에겐 ‘같은 한도로 더 많은 일’.</strong> OpenAI는 같은 사용량 한도로 GPT-5.6 Terra보다 더 많은 작업을, Sol·Astra보다는 훨씬 많은 작업을 처리한다고 했다.</li>
+<li><strong>주의</strong>: 비교 수치는 전부 OpenAI가 고른 평가다. Claude Opus 5.5 대비 “작업당 비용 약 9배 낮다”는 주장도 회사 계산이다. 내 업무(예: 송장·차트 캡처 읽기)로 먼저 작게 시험해 보는 게 맞다.</li>
+</ul>
+<p>
+출처: <a href="https://openai.com/index/introducing-gpt-6-1-terra">OpenAI — Introducing GPT-6.1 Terra (10/26)</a> · <a href="https://developers.openai.com/api/docs/models/gpt-6.1-terra">OpenAI 모델 문서</a> · <a href="https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/">AWS — Bedrock 정식 출시 (10/26)</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
