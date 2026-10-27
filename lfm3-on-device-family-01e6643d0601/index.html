@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/28] AI 모델: Liquid AI ‘LFM3’ — 2B급 모델 6종(글·이미지·음성·전부·판단)을 한 뼈대로. 4비트로 약 1GB, 노트북·휴대폰에서 돌리고 GPU 한 장으로 ‘내 일 전문가’로 다시 가르치는 게 목표 — AiPaper 뉴스</title>
+  <meta name="description" content="Liquid AI가 10/27 오픈웨이트 LFM3를 공개. 같은 LFM3-1.7B 뼈대에서 글(1.7B, 문맥 256K)·비전·오디오(18개 언어)·옴니(보고 듣고 말하기)·‘판단 전용’ d1 모델 2종까지 6종을 뽑았다. 글 모델은 4비트로 약 1GB, 128K 문맥의 기억 공간(KV 캐시)이 1.6GB로 Qwen3.5-4B(4.3GB)보다 작다(회사 측정). 핵심 메시지는 ‘큰 범용 모델 대신 작은 모델을 내 데이터로 짧게 미세조정’ — 풍력발전기 날개 결함 사진 3,000장으로 몇 시간 학습해 분류 정확도를 10% 미만→67%로 올린 예시를 공개."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-28 07:01 KST</div>
+    <h1>[10/28] AI 모델: Liquid AI ‘LFM3’ — 2B급 모델 6종(글·이미지·음성·전부·판단)을 한 뼈대로. 4비트로 약 1GB, 노트북·휴대폰에서 돌리고 GPU 한 장으로 ‘내 일 전문가’로 다시 가르치는 게 목표</h1>
+  </header>
+  <article>
+<p><em>Liquid AI가 10/27 오픈웨이트 LFM3를 공개. 같은 LFM3-1.7B 뼈대에서 글(1.7B, 문맥 256K)·비전·오디오(18개 언어)·옴니(보고 듣고 말하기)·‘판단 전용’ d1 모델 2종까지 6종을 뽑았다. 글 모델은 4비트로 약 1GB, 128K 문맥의 기억 공간(KV 캐시)이 1.6GB로 Qwen3.5-4B(4.3GB)보다 작다(회사 측정). 핵심 메시지는 ‘큰 범용 모델 대신 작은 모델을 내 데이터로 짧게 미세조정’ — 풍력발전기 날개 결함 사진 3,000장으로 몇 시간 학습해 분류 정확도를 10% 미만→67%로 올린 예시를 공개.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+“제일 똑똑한 모델 하나”가 아니라 <strong>“작고 빠른 모델을 내 일에 맞게 다시 가르쳐서 내 기기에서 돌린다”</strong>는 방향의 대표 사례. Liquid AI가 10/27 LFM3 가족을 오픈웨이트로 공개했다(<a href="https://www.liquid.ai/blog/lfm3">Liquid AI 블로그</a>). 지난 10/15에 다룬 LFM2.5의 다음 세대다.
+</p>
+<h2>6종 구성</h2>
+<table>
+<tr><th>모델</th><th>하는 일</th></tr>
+<tr><td>LFM3-1.7B (글)</td><td>문맥 256K. 에이전트 실행 틀(Hermes Agent, Pi, OpenClaw)에 맞춰 학습. 메일 정리·일정·웹 조사·아침 브리핑 같은 상시 작업용</td></tr>
+<tr><td>LFM3-VL-2B (비전)</td><td>처음으로 <strong>영상 입력</strong> 지원. 단계별 추론, 물체 위치·공간 관계 파악</td></tr>
+<tr><td>LFM3-Audio-2B</td><td>18개 언어 받아쓰기·음성 합성·번역, 말로 도구 호출. 첫 응답까지 최저 50ms</td></tr>
+<tr><td>LFM3-Omni-2B</td><td>이미지·소리·말을 한꺼번에. “이 사진 속 이거 뭐야?”를 말로 묻고 말로 답</td></tr>
+<tr><td>d1-2B / d1-Omni-2B</td><td>글을 쓰지 않고 <strong>질문 여러 개에 한 번에 ‘판단’만</strong> 낸다. 예/아니오, 선택지, 숫자 범위, 문서에서 값 뽑기, 물체에 박스 그리기 + 각각 확률</td></tr>
+</table>
+<h2>무엇이 달라졌나 (회사 발표 기준)</h2>
+<ul>
+<li><strong>뼈대 재설계</strong>: 24층 중 13층은 짧은 합성곱, 5층은 ‘가까운 256토큰만 보는’ 주의 집중, 6층은 전체를 보는 주의 집중. 긴 글에서 느려지지 않게 하려는 조합이다. 학습 데이터는 22조 토큰.</li>
+<li><strong>작은데 덜 무겁다</strong>: 글 모델은 4비트에서 약 1GB. 128K 문맥을 다 채워도 기억 공간이 1.6GB(Qwen3.5-4B 4.3GB, MiniCPM5-2B 5.6GB).</li>
+<li><strong>14가지 기기 조합으로 속도를 재며 설계</strong>: 갤럭시 S26 울트라, 원플러스 15, 라즈베리파이 5, M4 Max·라이젠 AI 노트북, 퀄컴 NPU 등.</li>
+<li><strong>외부 테스트 한 건</strong>: MacPaw는 실제 macOS 일상 작업 65개에서 LFM3-1.7B가 Qwen3.5-2B보다 성공률 64% 대 48%, 토큰 58% 절약, ‘막힘’ 1% 미만 대 15%였다고 밝혔다.</li>
+<li>수치는 대부분 Liquid AI 자체 측정이다. 회사도 “코딩과 지식 문제는 여전히 큰 모델이 낫다”고 적었다.</li>
+</ul>
+<h2>“작게 다시 가르치기” 예시</h2>
+<ul>
+<li>풍력발전기 날개를 드론으로 찍은 공개 사진 약 3,000장으로 A100 한 장에서 몇 시간 학습.</li>
+<li>결함 종류 분류 정확도: 그대로 쓰면(LFM3-VL-2B, GPT-6 Luna 모두) 10% 미만 → 미세조정 후 <strong>67%</strong>. 번개 맞은 자국을 GPT-6 Luna는 위치는 찾되 이름을 틀리는 경우가 많았다고.</li>
+<li>로봇 쪽으로는 로봇팔 도구 조작, 길 찾기, 동작 생성까지 실험 결과를 공개.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li><strong>‘토큰이 공짜’인 에이전트.</strong> 내 기기에서 돌면 사용료가 없으니, 회사 표현대로 “수십 개 에이전트를 배경에서 계속 돌릴 수” 있다. 매일 아침 뉴스 정리, 메일 분류처럼 반복되는 일에 맞다.</li>
+<li><strong>판단 전용 모델(d1)은 자동화의 ‘분기점’에 쓰기 좋다.</strong> 들어온 티켓·영수증·화면 캡처를 보고 “이건 A로 보낼까 B로 보낼까”만 빠르게 정하는 역할. 글을 길게 쓰는 모델보다 싸고 빠르며, 확률이 같이 나와 ‘애매하면 사람에게’ 규칙을 걸기 쉽다.</li>
+<li><strong>차·노트북 안으로.</strong> 메르세데스-벤츠는 MBUX 음성비서에 온디바이스 AI를 시험 중이라고 했고, AMD·퀄컴·Arm·인텔·엔비디아가 출시 파트너로 이름을 올렸다.</li>
+</ul>
+<p>
+출처: <a href="https://www.liquid.ai/blog/lfm3">Liquid AI — Introducing LFM3 (10/27)</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

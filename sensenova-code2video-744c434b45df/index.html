@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/28] AI 콘텐츠: 영상을 ‘그리지’ 않고 ‘코딩’한다 — 센스타임 SenseNova 6.8 Code2Video 오픈소스(27B, Apache-2.0). 모션그래픽·움직이는 글자·설명 영상을 코드로 만들고, “이 부분 색만 바꿔 줘”가 정확히 먹히는 이유 — AiPaper 뉴스</title>
+  <meta name="description" content="센스타임이 10/27 ‘코드로 영상 만드는’ 모델 SenseNova 6.8 Code2Video를 Apache-2.0으로 공개. Qwen3.8-27B를 다듬은 27B 모델로, 픽셀을 직접 생성하는 대신 실행 가능한 코드를 써서 렌더링한다. 그래서 수정 지시가 ‘다시 뽑기’가 아니라 ‘코드 고치기’가 되어 색·타이밍·요소를 정확히 바꿀 수 있다. 권장 실행 환경은 Claude Code + 전용 스킬로, 한 편에 10시간·2,000턴 이상 돌아가며 최종 영상과 함께 SPEC.md(설계서)·VERIFY.md(검수 기록)를 남긴다. 수치 벤치마크는 없고 ‘초기 결과’ 예시만 공개."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 콘텐츠 · 2026-10-28 07:04 KST</div>
+    <h1>[10/28] AI 콘텐츠: 영상을 ‘그리지’ 않고 ‘코딩’한다 — 센스타임 SenseNova 6.8 Code2Video 오픈소스(27B, Apache-2.0). 모션그래픽·움직이는 글자·설명 영상을 코드로 만들고, “이 부분 색만 바꿔 줘”가 정확히 먹히는 이유</h1>
+  </header>
+  <article>
+<p><em>센스타임이 10/27 ‘코드로 영상 만드는’ 모델 SenseNova 6.8 Code2Video를 Apache-2.0으로 공개. Qwen3.8-27B를 다듬은 27B 모델로, 픽셀을 직접 생성하는 대신 실행 가능한 코드를 써서 렌더링한다. 그래서 수정 지시가 ‘다시 뽑기’가 아니라 ‘코드 고치기’가 되어 색·타이밍·요소를 정확히 바꿀 수 있다. 권장 실행 환경은 Claude Code + 전용 스킬로, 한 편에 10시간·2,000턴 이상 돌아가며 최종 영상과 함께 SPEC.md(설계서)·VERIFY.md(검수 기록)를 남긴다. 수치 벤치마크는 없고 ‘초기 결과’ 예시만 공개.</em></p>
+<p><strong>분류:</strong> AI 콘텐츠</p>
+<h2>한줄 요약</h2>
+<p>
+대부분의 영상 AI는 <strong>그림(픽셀)을 직접 만든다.</strong> Code2Video는 <strong>영상을 만드는 프로그램 코드를 쓴다.</strong> 그래서 결과물이 ‘수정 가능한 설계도’로 남는다(<a href="https://huggingface.co/sensenova/SenseNova-6.8-Code2Video">Hugging Face 모델 카드</a>).
+</p>
+<h2>어떤 영상에 맞나</h2>
+<ul>
+<li><strong>모션그래픽, 움직이는 글자(키네틱 타이포그래피), 애니메이션 일러스트, 제품 소개, 설명 영상</strong>처럼 도형·글자·레이아웃으로 이루어진 짧은 영상.</li>
+<li>실사 촬영 같은 영상은 아니다. 대신 코드가 이미지·영상 생성 모델, 3D·편집 도구를 <strong>불러서 엮을 수 있다</strong>는 게 회사가 코드를 고른 이유다. 장기 목표는 “여러 생성 모델과 도구를 코드로 지휘하는 모델”.</li>
+</ul>
+<h2>만드는 과정 (모델 카드 안내)</h2>
+<table>
+<tr><th>단계</th><th>누가</th><th>결과물</th></tr>
+<tr><td>1. 요청 다듬기</td><td>강한 범용 모델(센스타임은 Claude Opus 5.5 사용)</td><td>상세 기획서 <code>dense_prompt.md</code></td></tr>
+<tr><td>2. 제작</td><td>Code2Video + Claude Code + <code>code-video</code> 스킬</td><td>최종 영상 <code>final.mp4</code>, 설계서 <code>SPEC.md</code>, 검수 기록 <code>VERIFY.md</code></td></tr>
+<tr><td>3. 수정(선택)</td><td>사람이 메모 → 같은 프로젝트에서 반영</td><td>새 버전 영상</td></tr>
+</table>
+<ul>
+<li>한 편 제작이 <strong>10시간 이상, 2,000턴 이상</strong> 이어지는 ‘장거리 작업’이다. 코드를 쓰고 → 렌더링하고 → 프레임을 보고 → 고치기를 반복한다.</li>
+<li>문맥 512K. 예시 설정은 GPU 4장 분산 실행 기준이라 개인 노트북용은 아니다(INT4·INT8 경량판은 예정이라고 알려짐).</li>
+<li>제작 과정 기록(대화·도구 호출·그림 357장)도 함께 공개해 <strong>어떻게 만들었는지 따라가 볼 수 있다.</strong></li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li><strong>수정이 정확해진다.</strong> 픽셀 생성 영상에 “로고 색만 바꿔 줘”라고 하면 다른 부분까지 바뀌기 쉽다. 코드 영상은 해당 값만 바꾸면 된다. 브랜드 컬러·폰트를 지켜야 하는 <strong>브랜드 모션 작업</strong>에 특히 맞는 방식이다.</li>
+<li><strong>‘설계서 + 검수 기록’이 기본 산출물.</strong> 결과 영상만 주는 게 아니라 SPEC.md와 VERIFY.md를 남긴다는 점은, AI 제작물을 클라이언트에게 설명하고 넘겨야 하는 스튜디오 입장에서 실용적이다.</li>
+<li><strong>같은 흐름의 신호들.</strong> 오늘 디자인면의 Rive(애니메이션을 마크업·코드로 다루는 도구)처럼, 크리에이티브 도구들이 ‘에이전트가 읽고 고칠 수 있는 형식’으로 모이고 있다.</li>
+</ul>
+<h2>주의할 점</h2>
+<ul>
+<li>모델 카드는 성능을 <strong>‘초기 결과’</strong>라고만 표현했고, 수치 벤치마크는 내놓지 않았다. 공개된 건 예시 영상과 제작 기록이다.</li>
+<li>권장 실행 방식은 에이전트가 <strong>명령을 묻지 않고 실행</strong>한다. 모델 카드도 “격리된 작업 환경에서 시작하라”고 적었다. 내 작업 폴더·계정이 있는 컴퓨터에서 바로 돌리지 말 것.</li>
+</ul>
+<p>
+출처: <a href="https://huggingface.co/sensenova/SenseNova-6.8-Code2Video">Hugging Face — SenseNova 6.8 Code2Video 모델 카드</a> · <a href="https://github.com/OpenSenseNova/SenseNova-6.8-Code2Video">GitHub — OpenSenseNova/SenseNova-6.8-Code2Video</a> · <a href="https://agihunt.info/en/p/1a17dd52e71b6d73c8195e10f70">AGI Hunt 요약 (10/27)</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

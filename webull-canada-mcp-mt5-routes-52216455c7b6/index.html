@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/28] AI 트레이딩: Webull 캐나다, ChatGPT·Claude·Perplexity·Grok에서 말로 주문 준비 — 실행은 ‘Webull 앱에서 직접 확인’. 그리고 MT5 MCP 실험이 찾은 ‘매매 스위치를 돌아가는 두 갈래 길’ — AiPaper 뉴스</title>
+  <meta name="description" content="Webull 캐나다 법인이 10/27 고객 계좌를 MCP로 ChatGPT·Perplexity·Claude·Grok에 연결하는 서비스를 발표(11월 초까지 전 계좌 순차 적용). AI는 실시간 시세·잔고·포트폴리오 분석과 ‘주문 준비’까지만 하고, 실제 실행은 투자자가 Webull에서 검토·확인해야 한다. 같은 주제로, MT5 내장 MCP를 직접 시험한 RoboXpert 가이드는 ‘AI 매매 허용’ 스위치가 알고 트레이딩 버튼과 따로 움직이며, 전문가 자문(EA)을 차트에 붙이는 도구와 외부 웹 요청 도구가 매매 스위치를 우회할 수 있는 길이라고 지적했다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 트레이딩 · 2026-10-28 07:05 KST</div>
+    <h1>[10/28] AI 트레이딩: Webull 캐나다, ChatGPT·Claude·Perplexity·Grok에서 말로 주문 준비 — 실행은 ‘Webull 앱에서 직접 확인’. 그리고 MT5 MCP 실험이 찾은 ‘매매 스위치를 돌아가는 두 갈래 길’</h1>
+  </header>
+  <article>
+<p><em>Webull 캐나다 법인이 10/27 고객 계좌를 MCP로 ChatGPT·Perplexity·Claude·Grok에 연결하는 서비스를 발표(11월 초까지 전 계좌 순차 적용). AI는 실시간 시세·잔고·포트폴리오 분석과 ‘주문 준비’까지만 하고, 실제 실행은 투자자가 Webull에서 검토·확인해야 한다. 같은 주제로, MT5 내장 MCP를 직접 시험한 RoboXpert 가이드는 ‘AI 매매 허용’ 스위치가 알고 트레이딩 버튼과 따로 움직이며, 전문가 자문(EA)을 차트에 붙이는 도구와 외부 웹 요청 도구가 매매 스위치를 우회할 수 있는 길이라고 지적했다.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<p>
+&gt; 지난번 저장하신 MT5 + MCP 안전장치 기사들(MT5 Build 6060 매매 권한, RiskGate)과 이어지는 소식입니다(어제 다룬 메리츠증권 OPEN API의 연장선) — 이번엔 ‘확인 버튼이 어디에 있느냐’가 핵심입니다.
+</p>
+<h2>한줄 요약</h2>
+<p>
+“AI에게 말하면 주문이 준비된다”는 서비스가 또 하나 늘었다. 차이는 <strong>최종 확인을 어디서 하느냐</strong>다. Webull 캐나다는 그 확인을 <strong>대화창이 아니라 Webull 앱 안</strong>에 두었다(<a href="https://www.investing.com/news/stock-market-news/exclusive-webull-brings-aiassistant-trading-to-canada-via-chatgpt-claude-4975280">Investing.com</a>).
+</p>
+<h2>Webull 캐나다 — 무엇이 되나</h2>
+<ul>
+<li>연결 대상: <strong>ChatGPT, Perplexity, Claude, Grok</strong>. 연결 규격은 MCP, 코딩 지식 불필요.</li>
+<li>가능한 일: 실시간 시세, 잔고·보유 종목 확인, 포트폴리오 분석, <strong>주문 준비</strong>.</li>
+<li>실행: “투자자가 Webull에서 검토하고 확인하기 전에는 <strong>아무것도 체결되지 않는다</strong>”(회사).</li>
+<li>일정: 11월 초까지 대상 계좌 전체에 순차 적용. 미국에서는 이미 비슷한 서비스를 확대한 바 있다.</li>
+<li>배경: 전 세계 등록 이용자 2,900만 명+. 최근 미국 하원 위원회 보고서가 중국과의 연관성을 비판했고 회사는 반박 중이다.</li>
+</ul>
+<h2>MT5 내장 MCP — 실험으로 드러난 것</h2>
+<p>
+MT5는 7월 Build 6060부터 MCP를 내장했고, 설정에서 AI 매매를 <strong>허용 / 확인 요청 / 금지</strong> 중 고를 수 있다(<a href="https://www.metatrader5.com/en/terminal/help/mcp_and_ai">MT5 도움말</a>). RoboXpert가 Claude Code를 실제로 붙여 본 결과(<a href="https://roboxpert.ai/en/guides/mt5-mcp-server/">가이드</a>):
+</p>
+<table>
+<tr><th>관찰</th><th>의미</th></tr>
+<tr><td>계좌 정보에 <code>experts_trade_allowed: false</code>(알고 트레이딩 꺼짐)와 <code>mcp_trade_allowed: true</code>가 <strong>따로</strong> 나옴</td><td>알고 트레이딩 버튼을 껐다고 AI 주문까지 꺼진 게 아니다. <strong>AI 매매 스위치는 별도로 확인</strong></td></tr>
+<tr><td>주문 도구 설명에 “사용자가 종목·방향·수량을 명시했을 때만 사용” 문구</td><td>이건 모델에게 주는 <strong>부탁</strong>일 뿐. 믿을 수 있는 건 도구 옵션의 스위치</td></tr>
+<tr><td>파일 접근은 MQL5·Tester·Logs·Common 폴더로 제한, 계정 설정 폴더·윈도 시스템 파일 요청은 거부</td><td>파일 쪽 울타리는 작동</td></tr>
+<tr><td><code>chart_add_expert</code>(차트에 EA 붙이기)</td><td>EA는 <strong>자기 코드대로 매매</strong>한다. 알고 트레이딩이 켜져 있으면 AI 매매 스위치와 무관하게 주문이 나갈 수 있는 길</td></tr>
+<tr><td><code>send_web_request</code>(외부 웹 요청)</td><td>에이전트가 읽은 내용(잔고·포지션 등)을 <strong>아무 주소로나 보낼 수 있는</strong> 길</td></tr>
+</table>
+<ul>
+<li>두 우회로는 RoboXpert도 <strong>직접 시험하지는 않았다</strong>고 밝혔다. 권고는 “도구를 하나씩 허용할 수 있다면 <strong>주문·차트·웹 요청 도구는 필요할 때까지 빼 두라</strong>”.</li>
+</ul>
+<h2>왜 중요한가 — ‘확인’의 위치 3가지</h2>
+<ul>
+<li><strong>대화창 안 확인</strong>(AI가 “주문할까요?” 묻고 내가 “네”): 가장 편하지만, 대화 내용이 조작되면(프롬프트 인젝션) 확인 자체가 흐려질 수 있다.</li>
+<li><strong>증권사 앱에서 확인</strong>(Webull 캐나다 방식): AI가 만든 주문서를 <strong>AI 밖의 화면</strong>에서 사람이 승인. 가장 안전한 축.</li>
+<li><strong>확인 없음</strong>(스위치 ‘허용’, 또는 EA 자동매매): 금액·종목·횟수 상한을 <strong>코드나 브로커 쪽에</strong> 걸어 두지 않았다면 쓰지 말 것.</li>
+<li>MT5를 쓴다면 오늘 할 일: 도구 → 옵션 → AI Assistant에서 매매를 <strong>‘확인 요청’ 이상</strong>으로 두고, 알고 트레이딩 버튼과 별개로 점검. 데모 계좌에서 먼저.</li>
+</ul>
+<p>
+출처: <a href="https://www.investing.com/news/stock-market-news/exclusive-webull-brings-aiassistant-trading-to-canada-via-chatgpt-claude-4975280">Investing.com — Webull Canada AI-assistant trading (10/27)</a> · <a href="https://roboxpert.ai/en/guides/mt5-mcp-server/">RoboXpert — MT5 MCP Server 가이드 (10/12)</a> · <a href="https://www.metatrader5.com/en/terminal/help/mcp_and_ai">MetaTrader 5 도움말 — MCP and AI</a> · <a href="https://www.metatrader5.com/en/releasenotes/terminal/2447">MT5 Build 6060 릴리스 노트</a>
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
