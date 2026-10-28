@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/29] AI 모델: 구글 ‘Gemini 4 Carbon’ — 가장 강한 모델을 개발자가 아니라 ‘보안 방어팀’에게 먼저 준다. 취약점 찾기·패치에 강하고, ‘근거 없는 주장’은 Argon의 절반 — AiPaper 뉴스</title>
+  <meta name="description" content="구글이 10/28 차세대 최상위 모델 Gemini 4 Carbon을 발표. Argon 출시 2주 만이다. 취약점 발견(SEC-bench Pro 88.2%)·익스플로잇 검증(ExploitGym 54.8%)·패치(CWE-bench 71.0%)에 강하고, 며칠씩 이어지는 긴 엔지니어링 작업을 버틴다는 설명. 먼저 ‘Fairwind 프로그램’의 일부 사이버 방어 조직에만 열고 개발자·기업·일반 사용자에겐 ‘가능한 빨리’. 가격은 도입가 입력 $2·출력 $10(이후 $4·$20). 근거 없는 주장 약 2배 감소, 프롬프트 인젝션 공격 성공률 0.0% 등 ‘행동’ 지표를 앞세웠다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-29 07:02 KST</div>
+    <h1>[10/29] AI 모델: 구글 ‘Gemini 4 Carbon’ — 가장 강한 모델을 개발자가 아니라 ‘보안 방어팀’에게 먼저 준다. 취약점 찾기·패치에 강하고, ‘근거 없는 주장’은 Argon의 절반</h1>
+  </header>
+  <article>
+<p><em>구글이 10/28 차세대 최상위 모델 Gemini 4 Carbon을 발표. Argon 출시 2주 만이다. 취약점 발견(SEC-bench Pro 88.2%)·익스플로잇 검증(ExploitGym 54.8%)·패치(CWE-bench 71.0%)에 강하고, 며칠씩 이어지는 긴 엔지니어링 작업을 버틴다는 설명. 먼저 ‘Fairwind 프로그램’의 일부 사이버 방어 조직에만 열고 개발자·기업·일반 사용자에겐 ‘가능한 빨리’. 가격은 도입가 입력 $2·출력 $10(이후 $4·$20). 근거 없는 주장 약 2배 감소, 프롬프트 인젝션 공격 성공률 0.0% 등 ‘행동’ 지표를 앞세웠다.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+구글의 새 최상위 모델 Carbon은 성능보다 <strong>출시 순서</strong>가 뉴스다. 코딩·보안 능력이 너무 강해져서, <strong>먼저 방어하는 쪽(보안팀)에 주고 공격자보다 앞서게 한 뒤</strong> 일반 공개한다(<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">Google 발표</a>).
+</p>
+<h2>무엇이 달라졌나</h2>
+<table>
+<tr><th>영역</th><th>내용 (구글 발표)</th></tr>
+<tr><td>취약점 찾기</td><td>SEC-bench Pro <strong>88.2%</strong> — 실제 소프트웨어 속 복잡한 결함을 스스로 발견</td></tr>
+<tr><td>위험 검증</td><td>ExploitGym <strong>54.8%</strong> — 실제로 악용 가능한지 확인해 고칠 순서를 정함</td></tr>
+<tr><td>근본 패치</td><td>CWE-bench <strong>71.0%</strong> — 찾은 문제를 동작하는 수정 코드로</td></tr>
+<tr><td>안전한 코드</td><td>내부 기준 Argon 대비 <strong>2배 이상</strong> 성공률</td></tr>
+<tr><td>긴 작업</td><td>내부 팀에서 <strong>며칠씩</strong> 막다른 길을 돌아 가며 대형 코드베이스 버그를 추적·수정</td></tr>
+</table>
+<ul>
+<li>크롬 팀은 “다른 연구소의 대형 모델보다 <strong>고품질 패치 생성에서 10배 이상</strong> 낫다”고 보고했다고 한다(구글 측 인용).</li>
+</ul>
+<h2>‘행동’ 지표를 앞세운 이유</h2>
+<ul>
+<li><strong>꼼수 감소</strong>: Terminal-Bench 4.0에서 부정 성공 0.0%, 시도 0.4%. 실제 코딩 환경의 심각한 오정렬 경고는 약 80% 감소.</li>
+<li><strong>정직함</strong>: 근거 없는 주장 <strong>약 2배 감소</strong>. 증거가 부족하면 지어내지 않고, 결과물에 한계를 적거나 “남은 필요 작업 목록”을 남긴다.</li>
+<li><strong>애매하면 묻기</strong>: 추측해서 밀어붙이는 대신 출처를 찾고 <strong>불일치를 먼저 사용자에게 보여 준다.</strong></li>
+<li><strong>선 넘지 않기</strong>: 과잉 행동 26%↓, 덜 해 주기 29%↓.</li>
+<li><strong>프롬프트 인젝션</strong>: Gray Swan 간접 인젝션 평가에서 공격 성공률 <strong>0.0%</strong>(Argon 0.7%).</li>
+</ul>
+<h2>언제, 얼마에</h2>
+<ul>
+<li>이번 주부터 <strong>일부 사이버 방어 조직</strong>에, 이후 Fairwind 프로그램으로 신뢰 파트너를 단계적으로 확대. 미국 정부의 자발적 출시 전 시험 절차에도 참여 중.</li>
+<li>개발자·기업·일반 사용자 공개 시점은 미정(“가능한 한 빨리”).</li>
+<li>도입가 입력 100만 토큰당 <strong>$2</strong>, 출력 <strong>$10</strong>(Argon과 동일), 캐시 입력은 95% 할인. 도입 기간 후 <strong>$4/$20</strong>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>이달 Anthropic의 사이버 인증 단계, 이번 Carbon까지 — <strong>최상위 모델은 ‘누구에게 먼저 줄지’를 고르는 제품</strong>이 됐다. 일반 사용자가 쓰는 시점은 점점 늦어질 수 있다.</li>
+<li>에이전트를 오래 돌리는 사람에게는 점수보다 <strong>“모르면 지어내지 않고 멈추는가”</strong>가 실제 체감 품질이다. 공개되면 그 부분부터 확인해 볼 만하다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

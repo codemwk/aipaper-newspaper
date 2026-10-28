@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/29] 디자인/UI·UX: GitHub Design이 만든 ‘Replica’ 오픈소스 공개 — 아무 AI 시안이 아니라 ‘우리 디자인 시스템 부품’으로만 프로토타입을 만든다. 디자이너는 규칙을, 팀 전원은 말로 — AiPaper 뉴스</title>
+  <meta name="description" content="GitHub가 10/28 사내 디자인팀이 만든 AI 프로토타이핑 도구 Replica를 MIT 라이선스로 공개. 팀의 실제 컴포넌트·패턴·문서를 지침으로 삼아, 기획자·엔지니어 누구나 GitHub Copilot 앱에서 말로 ‘진짜 제품처럼 동작하는’ 시안을 만든다. 실행 중인 시안이 대화창 옆 캔버스에 뜨고, 회사가 직접 운영하는 Replica Hub에 올려 팀원이 눌러 보고 댓글을 단다(Hub 없이 로컬만으로도 시작 가능). 시안을 보거나 리뷰하는 데는 Copilot 구독이 필요 없다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인/UI·UX · 2026-10-29 07:03 KST</div>
+    <h1>[10/29] 디자인/UI·UX: GitHub Design이 만든 ‘Replica’ 오픈소스 공개 — 아무 AI 시안이 아니라 ‘우리 디자인 시스템 부품’으로만 프로토타입을 만든다. 디자이너는 규칙을, 팀 전원은 말로</h1>
+  </header>
+  <article>
+<p><em>GitHub가 10/28 사내 디자인팀이 만든 AI 프로토타이핑 도구 Replica를 MIT 라이선스로 공개. 팀의 실제 컴포넌트·패턴·문서를 지침으로 삼아, 기획자·엔지니어 누구나 GitHub Copilot 앱에서 말로 ‘진짜 제품처럼 동작하는’ 시안을 만든다. 실행 중인 시안이 대화창 옆 캔버스에 뜨고, 회사가 직접 운영하는 Replica Hub에 올려 팀원이 눌러 보고 댓글을 단다(Hub 없이 로컬만으로도 시작 가능). 시안을 보거나 리뷰하는 데는 Copilot 구독이 필요 없다.</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+AI 프로토타입 도구는 많지만 대부분 <strong>“그럴듯한데 우리 제품 같지 않은”</strong> 화면을 낸다. GitHub Design의 Replica는 반대로 <strong>우리 팀 부품 상자 안에서만</strong> 만들게 한다(<a href="https://github.blog/changelog/2026-10-28-introducing-replica-an-open-source-ai-prototyping-tool/">GitHub Changelog</a>).
+</p>
+<h2>어떻게 쓰나</h2>
+<ul>
+<li><strong>디자이너가 지침을 정한다</strong>: 컴포넌트, 패턴, 승인된 가이드.</li>
+<li><strong>누구나 말로 만든다</strong>: 기획자·엔지니어가 GitHub Copilot 앱에서 “이런 화면 만들어 줘”라고 하면, 실행 중인 시안이 <strong>대화창 옆 캔버스</strong>에 뜬다.</li>
+<li><strong>함께 본다</strong>: 회사가 자체 서버에 두는 <strong>Replica Hub</strong>에 올리면 팀원이 직접 눌러 보며 댓글. 시안을 보거나 리뷰하는 사람은 Copilot 구독이 필요 없다.</li>
+</ul>
+<h2>구성</h2>
+<table>
+<tr><th>부분</th><th>역할</th></tr>
+<tr><td>Starters</td><td>시안을 시작할 기본 앱(최소형 / 마이크로소프트 CoreAI 디자인 시스템 기반 샌드박스) + Copilot용 공용 스킬</td></tr>
+<tr><td>Replica 플러그인</td><td>Copilot에 캔버스를 붙여 실행 중인 시안을 옆에 표시</td></tr>
+<tr><td>Replica Hub(선택)</td><td>시안 호스팅·댓글. 활동 기록은 회사 DB에 90일 보관</td></tr>
+<tr><td>빌드 액션</td><td>Hub 게시용 빌드(로컬 작업엔 불필요)</td></tr>
+</table>
+<ul>
+<li>로컬만 쓰면 Copilot 앱·Git·Node.js(macOS/Linux)면 충분. Hub를 쓰려면 리눅스 서버와 전용 도메인(와일드카드 DNS·HTTPS)이 필요하다(<a href="https://github.com/github/replica">README</a>).</li>
+<li>Copilot 요금제 없이 <strong>자기 모델 제공자 키(BYOK)</strong>로도 쓸 수 있다(공개 미리보기).</li>
+<li>공개 직후라 저장소 스타는 아직 수십 개 수준 — 성숙도는 이제부터다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>최근 흐름(Figma의 디자인 시스템 가이드, Supernova Agent, DTCG 1주년)과 같은 결론이다: <strong>AI 시대 디자이너의 일은 화면을 그리는 것에서 ‘AI가 따를 부품과 규칙’을 관리하는 것으로</strong> 옮겨 간다.</li>
+<li>스튜디오 관점에서 보면, 클라이언트 브랜드의 컴포넌트·가이드를 Replica식으로 정리해 두면 <strong>기획 회의에서 바로 ‘동작하는 시안’</strong>을 띄우는 워크플로가 된다. 시안이 우리 시스템 안에서 나오니 ‘AI 티’도 덜 난다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/29] 세컨드 브레인 / PKM: Obsidian ‘Karpathy LLM Wiki’ 1.29 — 이제 페이지 ‘본문’까지 읽고 찾는다. 프로젝트 사상 최대의 검색 개선, 그리고 “새 순위가 안 맞으면 되돌리는 스위치” — AiPaper 뉴스</title>
+  <meta name="description" content="Obsidian 플러그인 Karpathy LLM Wiki(다운로드 6.5만, Apache-2.0)가 10/28 v1.29.0을 공개. 질문에 맞는 페이지를 찾을 때 제목·별칭·요약만 보던 단계가 본문까지 BM25F로 점수를 매긴다(프로젝트 역사상 가장 큰 재현율 개선). 어디서나 링크되는 ‘허브 페이지’가 관련 목록을 독차지하지 못하게 했고, 답변 예산을 8,000→16,000토큰으로 늘리며 한도에 닿으면 알린다. 생각하는 모델에서 정리 작업이 끊기던 문제도 고쳤다. 새 순위가 내 볼트에 안 맞으면 ‘legacyScorer’로 예전 방식 복귀."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-10-29 07:08 KST</div>
+    <h1>[10/29] 세컨드 브레인 / PKM: Obsidian ‘Karpathy LLM Wiki’ 1.29 — 이제 페이지 ‘본문’까지 읽고 찾는다. 프로젝트 사상 최대의 검색 개선, 그리고 “새 순위가 안 맞으면 되돌리는 스위치”</h1>
+  </header>
+  <article>
+<p><em>Obsidian 플러그인 Karpathy LLM Wiki(다운로드 6.5만, Apache-2.0)가 10/28 v1.29.0을 공개. 질문에 맞는 페이지를 찾을 때 제목·별칭·요약만 보던 단계가 본문까지 BM25F로 점수를 매긴다(프로젝트 역사상 가장 큰 재현율 개선). 어디서나 링크되는 ‘허브 페이지’가 관련 목록을 독차지하지 못하게 했고, 답변 예산을 8,000→16,000토큰으로 늘리며 한도에 닿으면 알린다. 생각하는 모델에서 정리 작업이 끊기던 문제도 고쳤다. 새 순위가 내 볼트에 안 맞으면 ‘legacyScorer’로 예전 방식 복귀.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+카파시식 ‘LLM 위키’(내 노트를 AI가 개념·인물 페이지로 정리해 연결하는 방식)를 Obsidian 안에서 돌리는 대표 플러그인이 큰 업데이트를 냈다. 핵심은 <strong>“제목만 보고 찾던 걸 본문까지 읽고 찾는다”</strong>(<a href="https://github.com/GD4AI/obsidian-llm-wiki/releases">v1.29.0 릴리스</a>, <a href="https://community.obsidian.md/plugins/karpathywiki">커뮤니티 페이지</a>).
+</p>
+<p>
+지난번 저장하신 LLM 위키·Obsidian 기사들과 이어지는 소식입니다.
+</p>
+<h2>무엇이 바뀌었나</h2>
+<table>
+<tr><th>변화</th><th>의미</th></tr>
+<tr><td><strong>본문까지 점수 매기기</strong>(BM25F)</td><td>제목·별칭·요약에 없던 단어도 본문에 있으면 찾는다. 긴 페이지가 분량만으로 이기지 않게 길이 보정</td></tr>
+<tr><td><strong>두 단계 질의 확장</strong></td><td>내 위키에서 후보 단어를 뽑고 → 모델이 고르고 → 확장된 질문으로 다시 검색</td></tr>
+<tr><td><strong>허브 독점 방지</strong></td><td>모든 곳에서 링크되는 페이지가 ‘관련 페이지’ 목록을 끌어당기지 못하게 상한·가중치 조정</td></tr>
+<tr><td><strong>답변 예산 16,000토큰</strong></td><td>8,000에서 두 배. 한도에 닿으면 <strong>조용히 끊지 않고 알림</strong></td></tr>
+<tr><td><strong>생각하는 모델 대응</strong></td><td>추론에 토큰을 쓰는 모델에서 정리(ingest)가 중간에 죽던 문제 해결 — 출력 상한을 모델 기본값(128,000)으로</td></tr>
+<tr><td><strong>용어 색인 1회 생성</strong></td><td>질문마다 4.4초 걸리던 작업이 세션당 한 번으로</td></tr>
+<tr><td><strong>되돌리기 스위치</strong></td><td>고급 설정의 <code>legacyScorer</code>로 예전 순위 방식 복귀(11개 언어 UI 모두)</td></tr>
+</table>
+<h2>정직한 측정이 눈에 띈다</h2>
+<ul>
+<li>질의 확장은 프로젝트 자체 볼트에서 r@10 기준 +0.086, +0.113 개선을 측정했지만, <strong>“가중치를 준 복잡한 방식이 단순히 이어 붙이는 방식보다 낫다는 증거는 없어서 단순한 쪽을 출시했다”</strong>고 적었다.</li>
+<li>기본값을 바꾸는 순위 변경이니 <strong>복귀 스위치를 함께 준다</strong>는 원칙도 명시.</li>
+</ul>
+<h2>그대로인 장점</h2>
+<ul>
+<li>원본 노트는 <strong>절대 수정하지 않고</strong> <code>wiki/</code> 아래에만 새 페이지 생성.</li>
+<li>임베딩·벡터DB 없이 <code>[[위키링크]]</code> 그래프 위 PageRank로 연관 페이지 탐색.</li>
+<li>한국어 포함 11개 언어 UI·위키 출력, Ollama·LM Studio로 완전 로컬 가능.</li>
+</ul>
+<h2>써 볼 때 팁</h2>
+<ul>
+<li>업데이트 후 평소 자주 묻는 질문 3~4개를 다시 던져 보고, 결과가 이상하면 <code>legacyScorer</code>를 켜서 비교.</li>
+<li>자주 링크하는 ‘색인 노트’가 많은 볼트일수록 허브 독점 방지 효과를 체감하기 쉽다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
