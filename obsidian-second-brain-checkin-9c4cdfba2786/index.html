@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/30] 세컨드 브레인 / PKM: obsidian-second-brain 0.19 ‘Check-In’ — 노트끼리 비교해선 못 잡는 ‘낡은 사실’을, 하루 3장 카드로 주인에게 직접 묻는다 — AiPaper 뉴스</title>
+  <meta name="description" content="10/19 소개한 obsidian-second-brain(Crew)의 후속. v0.19.0(10/24) ‘/obsidian-checkin’은 14일 넘은 사람·프로젝트 노트를 하루 최대 3개 골라 ‘아직 맞나요?’ 카드로 묻는다(같음/새 소식/건너뜀). 훅이 없는 에이전트용 쓰기 검사 스크립트도 추가. v0.20.0(10/25)은 PDF·음성·이미지 섞인 폴더를 끊겼다 이어서 일괄 수집하고, Word·ODT도 PDF 변환으로 받는다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-10-30 07:07 KST</div>
+    <h1>[10/30] 세컨드 브레인 / PKM: obsidian-second-brain 0.19 ‘Check-In’ — 노트끼리 비교해선 못 잡는 ‘낡은 사실’을, 하루 3장 카드로 주인에게 직접 묻는다</h1>
+  </header>
+  <article>
+<p><em>10/19 소개한 obsidian-second-brain(Crew)의 후속. v0.19.0(10/24) ‘/obsidian-checkin’은 14일 넘은 사람·프로젝트 노트를 하루 최대 3개 골라 ‘아직 맞나요?’ 카드로 묻는다(같음/새 소식/건너뜀). 훅이 없는 에이전트용 쓰기 검사 스크립트도 추가. v0.20.0(10/25)은 PDF·음성·이미지 섞인 폴더를 끊겼다 이어서 일괄 수집하고, Word·ODT도 PDF 변환으로 받는다.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+노트가 낡는 가장 흔한 이유는 <strong>새 소식이 아예 볼트에 들어오지 않아서</strong>다. 청구서를 냈다, 이사했다, 이직했다 — 이런 변화는 노트끼리 비교하는 검사로는 절대 안 잡힌다. 그래서 0.19는 <strong>주인에게 직접 묻기로</strong> 했다(<a href="https://github.com/eugeniughelbur/obsidian-second-brain/blob/main/CHANGELOG.md">CHANGELOG</a>).
+</p>
+<h2>v0.19.0 ‘The Check-In’ (10/24)</h2>
+<ul>
+<li><strong><code>/obsidian-checkin</code></strong>: 사실이 <strong>14일 넘게</strong> 갱신 안 된 사람·프로젝트 노트를 <strong>하루 최대 3개</strong> 골라 카드로 보여 준다. 가족·진행 중 프로젝트가 우선.</li>
+<li>카드에는 노트 이름, 사실의 날짜, 핵심 사실 1~3개.</li>
+</ul>
+<p>
+  - <strong>같음</strong> → <code>last-checked</code> 날짜만 새로 찍음
+<br/>
+  - <strong>새 소식</strong> → 낡은 문장을 고치고 관련 노트에 전파
+<br/>
+  - <strong>건너뜀</strong> → 14일 뒤 다시 물음
+</p>
+<ul>
+<li>답 안 한 질문은 채팅이 아니라 볼트 안 <code>.checkin.json</code>에 남아, 메신저가 한 시간 뒤 질문을 날려도 다음 실행 때 다시 보낸다. 노트별로 <code>checkin: never</code>(제외) / <code>checkin: priority</code>(우선) 지정 가능.</li>
+<li><strong>훅 없는 에이전트용 쓰기 검사</strong>: Claude Code는 저장할 때마다 검사 훅이 돌지만, Grok Bot·크론 에이전트·스크립트는 그동안 검사 없이 파일을 고쳤다. <code>scripts/check_notes.py</code>가 같은 검사를 돌리고, 실패하면 종료 코드 1로 커밋을 막는다.</li>
+</ul>
+<h2>v0.20.0 ‘The Batch’ (10/25)</h2>
+<ul>
+<li><strong><code>/obsidian-ingest</code>가 폴더째</strong>: 텍스트·PDF·음성·이미지가 섞인 폴더를 작은 묶음으로 순서대로 수집. 다시 실행하면 <strong>끝난 건 건너뛰고 안 끝난 것만</strong> 이어서 한다.</li>
+<li><strong>Word·ODT 지원</strong>: <code>.docx/.doc/.odt</code>를 PDF로 바꿔 기존 규칙대로 수집(LibreOffice 26.2+ 필요).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>지난번 저장하신 <strong>‘기억 신선도’(obsidian 태그)</strong> 기사들과 바로 이어진다. 세컨드 브레인의 적은 정보 부족보다 <strong>틀린 채 자신 있는 노트</strong>다.</li>
+<li>하루 3장이라는 상한이 핵심. 묻는 피로를 줄여야 습관이 된다 — 직접 LLM Wiki를 만들 때 그대로 빌려 올 만한 설계다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

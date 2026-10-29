@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/30] GitHub 트렌드: JetBrains ThinkRail 하루 +1,100★ — 에이전트마다 작업 공간을 따로 주고, ‘살아 있는 명세’로 프로젝트 기억을 남기는 가벼운 IDE — AiPaper 뉴스</title>
+  <meta name="description" content="JetBrains 인큐베이터 프로젝트 ThinkRail(Apache-2.0)이 10/29 GitHub 일간 트렌드 4위(+1,116★, 약 5.9천★). 10/27 기사에서 한 줄로 소개했던 도구가 일주일 새 두 배 넘게 컸다. pi 코딩 에이전트를 감싸, 작업마다 git worktree로 분리된 공간을 만들고, SPEC.md 그래프를 에이전트가 직접 읽고 고치며, UI 변경은 전/후 목업으로 보여 준다. 같은 날 트렌드엔 ‘에이전트에게 컴퓨터를 주는’ OpenMausBot·CopilotKit OpenBot도 올랐다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub 트렌드 · 2026-10-30 07:09 KST</div>
+    <h1>[10/30] GitHub 트렌드: JetBrains ThinkRail 하루 +1,100★ — 에이전트마다 작업 공간을 따로 주고, ‘살아 있는 명세’로 프로젝트 기억을 남기는 가벼운 IDE</h1>
+  </header>
+  <article>
+<p><em>JetBrains 인큐베이터 프로젝트 ThinkRail(Apache-2.0)이 10/29 GitHub 일간 트렌드 4위(+1,116★, 약 5.9천★). 10/27 기사에서 한 줄로 소개했던 도구가 일주일 새 두 배 넘게 컸다. pi 코딩 에이전트를 감싸, 작업마다 git worktree로 분리된 공간을 만들고, SPEC.md 그래프를 에이전트가 직접 읽고 고치며, UI 변경은 전/후 목업으로 보여 준다. 같은 날 트렌드엔 ‘에이전트에게 컴퓨터를 주는’ OpenMausBot·CopilotKit OpenBot도 올랐다.</em></p>
+<p><strong>분류:</strong> GitHub 트렌드</p>
+<h2>한줄 요약</h2>
+<p>
+“바이브 코딩”의 불편함은 두 가지다. 에이전트 여러 개가 <strong>같은 폴더를 동시에 건드리고</strong>, 대화가 끝나면 <strong>왜 그렇게 만들었는지가 사라진다</strong>. ThinkRail은 이 둘을 IDE 차원에서 막는다(<a href="https://github.com/JetBrains/thinkrail">GitHub</a>).
+</p>
+<h2>핵심 기능 (README 기준)</h2>
+<ul>
+<li><strong>작업 공간 분리</strong> — 프로젝트에서 작업마다 <code>git worktree</code>(브랜치별 별도 폴더)를 잘라 준다. 에이전트들이 병렬로 일해도 내 작업본은 안전. 잘 된 브랜치만 합치고 나머진 버린다. PR이 합쳐지거나 일주일 조용하면 선반으로 자동 정리.</li>
+<li><strong>살아 있는 명세(living specs)</strong> — 코드 옆에 연결된 <code>SPEC.md</code> 파일 그래프를 두고, 에이전트가 전용 도구로 <strong>읽고·검색하고·고친다</strong>. 대화가 끝나도 “의도”가 남는다.</li>
+<li><strong>진짜 IDE</strong> — 에디터 탭·파일 트리·터미널, 파일과 diff에 리뷰 댓글을 달아 채팅으로 넘기기.</li>
+<li><strong>추측 대신 질문</strong> — 에이전트가 애매하면 객관식 질문을 채팅에 띄우고, UI를 바꿀 땐 <strong>전/후 목업</strong>을 보여 줘 diff처럼 댓글을 달 수 있다.</li>
+<li><strong>스킬 재사용</strong> — 다른 코딩 에이전트용으로 갖고 있던 Agent Skills를 그대로 읽는다. PR 생성은 내 <code>gh</code>로.</li>
+</ul>
+<h2>같은 날 트렌드의 이웃들</h2>
+<table>
+<tr><th>저장소</th><th>한 줄 설명</th></tr>
+<tr><td>milind-soni/OpenMausBot (~7.4천★, +1,190)</td><td>봇 여러 명을 채팅 앱처럼 두고, 각자 모델·컴퓨터·연결 앱을 갖는 오픈소스 개인 에이전트 팀(Apache-2.0). 내 PC에 깔린 claude·codex·grok CLI를 그대로 씀</td></tr>
+<tr><td>CopilotKit/OpenBot (~8천★)</td><td>회사가 자기 인프라에 두는 ‘AI 동료’ 템플릿(MIT). 봇마다 브라우저·파일·허용된 도구, 모든 행동을 사전 판단·사후 기록</td></tr>
+</table>
+<p>
+출처: <a href="https://gitstock.org/trending/2026-10-29">GitStock 10/29 일간 트렌드</a> · <a href="https://github.com/milind-soni/OpenMausBot">OpenMausBot</a> · <a href="https://github.com/CopilotKit/OpenBot">CopilotKit/OpenBot</a>
+</p>
+<h2>왜 중요한가</h2>
+<ul>
+<li>요즘 인기 도구의 공통점은 모델이 아니라 <strong>“작업 단위 격리 + 기억 파일 + 사람 승인”</strong>이다. ThinkRail은 이를 IDE로, OpenMausBot·OpenBot은 메신저·사내 플랫폼으로 푼다.</li>
+<li>지난 10/27 ‘명세 주도 개발’ 기사에서 본 흐름이 한 주 만에 대형 IDE 회사 실험작의 급성장으로 이어졌다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

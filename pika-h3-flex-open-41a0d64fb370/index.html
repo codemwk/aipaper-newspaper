@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/30] AI 콘텐츠: Pika H3 Flex — 15초 영상을 약 7초 만에, 참조 12장·오디오 5트랙 분리·4K 마감. 생성기 가중치도 공개 — AiPaper 뉴스</title>
+  <meta name="description" content="Pika가 10/29 MiniMax H3를 후학습한 영상 모델 Pika H3 Flex를 공개했다. 생성 단계를 50→6으로 줄여 768p·오디오 동기 15초 클립을 트랜스포머 연산 기준 약 7초에 만든다(회사 발표). 참조 최대 12개, 오디오 스템 5개 분리, 최대 4K 업샘플. 생성기 어댑터·추론 코드를 공개(480p/768p)하고 업샘플·스템 분리·가속 서빙은 Pika 호스팅 전용. Pika 앱에는 11/2 탑재."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 콘텐츠 · 2026-10-30 07:04 KST</div>
+    <h1>[10/30] AI 콘텐츠: Pika H3 Flex — 15초 영상을 약 7초 만에, 참조 12장·오디오 5트랙 분리·4K 마감. 생성기 가중치도 공개</h1>
+  </header>
+  <article>
+<p><em>Pika가 10/29 MiniMax H3를 후학습한 영상 모델 Pika H3 Flex를 공개했다. 생성 단계를 50→6으로 줄여 768p·오디오 동기 15초 클립을 트랜스포머 연산 기준 약 7초에 만든다(회사 발표). 참조 최대 12개, 오디오 스템 5개 분리, 최대 4K 업샘플. 생성기 어댑터·추론 코드를 공개(480p/768p)하고 업샘플·스템 분리·가속 서빙은 Pika 호스팅 전용. Pika 앱에는 11/2 탑재.</em></p>
+<p><strong>분류:</strong> AI 콘텐츠</p>
+<h2>한줄 요약</h2>
+<p>
+“첫 생성은 출발점일 뿐, 진짜 작업은 그다음 수정에서 일어난다.” Pika의 새 모델 <strong>H3 Flex</strong>는 한 번에 완벽한 영상보다 <strong>빨리 여러 번 고쳐 보는 것</strong>에 맞췄다(<a href="https://pika.art/blog/pika-h3-flex">Pika 블로그</a>).
+</p>
+<h2>무엇이 다른가</h2>
+<ul>
+<li><strong>빠르다</strong>: MiniMax H3를 후학습해 생성 단계를 <strong>50단계 → 6단계</strong>로 줄였다. 768p, 오디오 동기화된 15초 클립을 트랜스포머 연산 기준 <strong>약 7초</strong>에 만든다(회사 발표, 별표 조건 포함).</li>
+<li><strong>참조 12개</strong>: 인물·배경·소품 이미지를 최대 12개까지 넣어 일관성을 잡는다.</li>
+<li><strong>오디오 스템 5개 분리</strong>: 대사·효과음·음악 등을 따로 뽑아 편집 프로그램에서 다시 섞을 수 있다.</li>
+<li><strong>최대 4K 마감</strong>: 1080p·2K·4K 업샘플러 제공.</li>
+</ul>
+<h2>공개된 것 vs 호스팅 전용</h2>
+<table>
+<tr><th>공개(직접 실행 가능)</th><th>Pika 호스팅 전용</th></tr>
+<tr><td>생성기 어댑터·추론 코드</td><td>1080p·2K·4K 업샘플러</td></tr>
+<tr><td>텍스트→영상, 첫·끝 프레임 지정, 멀티모달 참조→영상</td><td>오디오 스템 분리</td></tr>
+<tr><td>오디오 동기 480p·768p</td><td>프롬프트 자동 보강, 가속 서빙</td></tr>
+</table>
+<p>
+로컬 속도는 하드웨어에 따라 다르다. Pika 앱에는 <strong>11월 2일</strong> 들어간다.
+</p>
+<h2>왜 중요한가</h2>
+<ul>
+<li><strong>‘오픈 코어’ 영상 모델.</strong> 기본 생성은 풀고, 프로가 돈 낼 마감 기능(4K·스템)은 호스팅으로 남겼다. 오픈웨이트 영상 모델이 이렇게 수익 구조를 짜는 건 참고할 만하다.</li>
+<li><strong>편집 친화성이 새 경쟁 축.</strong> 오디오를 트랙별로 주는 건 숏폼·광고 제작자에게 “한 번 뽑고 끝”이 아니라 <strong>편집 툴로 넘길 수 있는 소재</strong>가 된다는 뜻이다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
