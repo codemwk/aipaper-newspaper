@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/31] AI 콘텐츠: Phonic-1 — 상대가 말하는 ‘도중에’ 검색을 끝내 두는 음성 모델. 44분 통화에 도구 호출 123번 — AiPaper 뉴스</title>
+  <meta name="description" content="음성 AI 스타트업 Phonic이 10/29 음성→음성(speech-to-speech) 모델 Phonic-1과 2,750만 달러 시리즈 A(First Round 주도)를 발표했다. 다른 모델이 사용자 말이 끝난 뒤 ‘찾아볼게요’ 하고 도구를 부르는 것과 달리, Phonic-1은 말하는 도중에 도구를 호출해 말이 끝나는 순간 답을 준비한다. 50개+ 언어, 대화 중 언어 전환. Ashby의 AI 면접 등에 쓰인다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 콘텐츠 · 2026-10-31 07:05 KST</div>
+    <h1>[10/31] AI 콘텐츠: Phonic-1 — 상대가 말하는 ‘도중에’ 검색을 끝내 두는 음성 모델. 44분 통화에 도구 호출 123번</h1>
+  </header>
+  <article>
+<p><em>음성 AI 스타트업 Phonic이 10/29 음성→음성(speech-to-speech) 모델 Phonic-1과 2,750만 달러 시리즈 A(First Round 주도)를 발표했다. 다른 모델이 사용자 말이 끝난 뒤 ‘찾아볼게요’ 하고 도구를 부르는 것과 달리, Phonic-1은 말하는 도중에 도구를 호출해 말이 끝나는 순간 답을 준비한다. 50개+ 언어, 대화 중 언어 전환. Ashby의 AI 면접 등에 쓰인다.</em></p>
+<p><strong>분류:</strong> AI 콘텐츠</p>
+<h2>한줄 요약</h2>
+<p>
+음성 비서가 “잠시만요, 확인해 볼게요”라고 말하는 그 몇 초를 없애는 모델이다. Phonic-1은 <strong>사용자가 아직 말하는 동안</strong> 검색·도구 호출을 시작한다(<a href="https://phonic.ai/blog/phonic-1">Phonic 블로그</a>).
+</p>
+<h2>무엇이 다른가</h2>
+<ul>
+<li><strong>기존 방식(캐스케이드)</strong>: 받아쓰기 모델 → 답변 모델 → 음성 합성 모델. 받아쓴 글자에는 <strong>목소리의 짜증, 긴 망설임, 이름을 말하는 억양</strong>이 빠진다.</li>
+<li><strong>음성→음성</strong>: 소리를 그대로 이해하고 소리로 답한다. 문제는 그동안 “자연스럽지만 멍청하다”는 것이었는데, Phonic은 이 둘을 같이 잡았다고 주장한다.</li>
+<li>개발자 문서 기준, 도구에 <code>can_run_during_user_speech</code> 옵션을 켜면 말하는 중 실행된다(조직 단위 기능 승인 필요)(<a href="https://docs.phonic.ai/api-reference/conversations/conversations">Phonic 문서</a>).</li>
+</ul>
+<h2>숫자 (회사 발표)</h2>
+<ul>
+<li>Sierra의 다국어 전이중(full-duplex) 음성 벤치마크 τ³-Voice: <strong>83.2</strong> (GPT-Live-1 79.9, Gemini 3.8 Live 68.5).</li>
+<li>사람과 블라인드 비교에선 <strong>사람이 약 60% 이긴다</strong> — 회사 스스로 “자연스러움은 아직 개선할 여지가 크다”고 적었다.</li>
+<li>데모: 브라질 호텔에 신부 들러리가 파티 예약을 문의하는 <strong>44분 통화, 도구 호출 123회</strong>.</li>
+<li>50개 이상 언어, 대화 중 언어를 바꿔도 <strong>같은 목소리 유지</strong>.</li>
+</ul>
+<h2>누가 쓰나</h2>
+<ul>
+<li>Ashby(채용 플랫폼)는 25개국에서 <strong>AI 면접</strong>을 Phonic으로 돌린다. 그 밖에 Maven AGI, Rho, 포천 50 IT 인프라 기업. 고객지원·헬스케어·채용·물류.</li>
+<li>투자: 시리즈 A <strong>2,750만 달러</strong>(누적 3,150만 달러), First Round 주도.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>음성 에이전트의 체감 품질은 <strong>지연</strong>에서 갈린다. “말 끝나기 전에 준비”는 사람 상담원이 실제로 하는 일(듣는 동안 화면을 찾아보기)을 흉내 낸 설계다.</li>
+<li>콘텐츠 제작 관점에서도, 인터뷰·팟캐스트형 <strong>실시간 대화 콘텐츠</strong>를 자동화할 때 캐스케이드 대비 감정·억양 손실이 적다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

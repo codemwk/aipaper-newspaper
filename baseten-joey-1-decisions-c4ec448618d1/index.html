@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/31] AI 모델: Baseten joey-1 — 글을 쓰지 않고 ‘답 + 확신도’만 내는 2B 결정 모델. 20ms, 100만 토큰에 1센트 — AiPaper 뉴스</title>
+  <meta name="description" content="추론 인프라 회사 Baseten이 10/29 결정(decision) 모델 패밀리의 가장 작은 막내 joey-1(2B, Qwen3.5-2B 기반 후속 학습)을 공개했다. 텍스트를 생성하는 대신 ‘라벨 하나 + 보정된 확률’을 한 번의 계산으로 돌려준다. 2,000토큰 요청 P50 지연 20ms, 100만 토큰당 $0.01. 가중치는 Hugging Face에 공개."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-31 07:04 KST</div>
+    <h1>[10/31] AI 모델: Baseten joey-1 — 글을 쓰지 않고 ‘답 + 확신도’만 내는 2B 결정 모델. 20ms, 100만 토큰에 1센트</h1>
+  </header>
+  <article>
+<p><em>추론 인프라 회사 Baseten이 10/29 결정(decision) 모델 패밀리의 가장 작은 막내 joey-1(2B, Qwen3.5-2B 기반 후속 학습)을 공개했다. 텍스트를 생성하는 대신 ‘라벨 하나 + 보정된 확률’을 한 번의 계산으로 돌려준다. 2,000토큰 요청 P50 지연 20ms, 100만 토큰당 $0.01. 가중치는 Hugging Face에 공개.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+“이 티켓은 어느 팀으로?”, “이 메시지 차단해야 해?”, “이 요청 승인?” — 이런 질문에 LLM은 지금까지 <strong>문장을 써서</strong> 답했다. 결정 모델은 <strong>답 한 토큰과 확신도 숫자</strong>만 내놓는다. 그래서 싸고 빠르다(<a href="https://www.baseten.co/blog/decisions-for-a-penny-introducing-joey-1/">Baseten 블로그</a>).
+</p>
+<h2>패밀리 구성 (같은 API, 한 줄로 교체)</h2>
+<table>
+<tr><th>모델</th><th>크기</th><th>용도</th></tr>
+<tr><td>mammoth-1</td><td>27B</td><td>정확도가 가장 중요한 판단</td></tr>
+<tr><td>elephant-1</td><td>9B</td><td>기본값. 지연 49ms</td></tr>
+<tr><td><strong>joey-1</strong></td><td><strong>2B</strong></td><td>대량·저지연 1차 판단. <strong>20ms, $0.01/100만 토큰</strong></td></tr>
+</table>
+<ul>
+<li>텍스트·이미지 입력. Model API는 16k 맥락, 전용 배포는 262k 맥락·미세조정 가중치 지원. 기본 <strong>데이터 미보관</strong>.</li>
+</ul>
+<h2>실제 비용 감각 (회사 예시)</h2>
+<ul>
+<li>월 1,000만 건 지원 티켓 분류(건당 약 500토큰 = 50억 토큰) → joey-1 <strong>월 약 $50</strong>, mammoth-1이면 약 $500.</li>
+<li>권장 구조: <strong>joey-1이 1차로 거르고, 확신도가 낮을 때만 큰 모델로 올린다.</strong></li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>에이전트 파이프라인에는 “다음 단계로 갈까?” 같은 작은 판단이 사슬처럼 이어진다. 판단 하나의 지연이 <strong>모든 응답에 더해진다.</strong> 20ms급 판단기는 이 사슬을 짧게 만든다.</li>
+<li>같은 날 DiffuSpace도 Clover 기반 결정 모델을 예고했다(앞 기사). 결정 모델이 하나의 <strong>독립 장르</strong>로 자리 잡는 중이다.</li>
+<li>지난번 저장하신 Clef 결정 모델(Cloudflare) 기사와 이어지는 소식이다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

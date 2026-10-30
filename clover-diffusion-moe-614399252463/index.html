@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/31] AI 모델: Clover-35B-A3B — 한 글자씩이 아니라 ‘블록째’ 써 내려가는 확산 언어모델, Apache 라이선스로 공개. 에이전트 작업에서 초당 680토큰 — AiPaper 뉴스</title>
+  <meta name="description" content="Dream 7B를 만든 홍콩대 출신 팀 DiffuSpace가 10/30 확산(diffusion) 방식 MoE 언어모델 Clover-35B-A3B-Preview를 Apache 라이선스로 공개했다(총 35B, 활성 3B, 사고 모드 지원). 회사 발표로 SWE-bench Verified 73.6, Terminal-Bench 2.1 51.7로 같은 크기의 Qwen3.6-35B-A3B보다 높고, GB300 한 장에서 에이전트 작업 초당 680토큰. INT4로 16GB RTX 5070 Ti에서도 돈다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-10-31 07:03 KST</div>
+    <h1>[10/31] AI 모델: Clover-35B-A3B — 한 글자씩이 아니라 ‘블록째’ 써 내려가는 확산 언어모델, Apache 라이선스로 공개. 에이전트 작업에서 초당 680토큰</h1>
+  </header>
+  <article>
+<p><em>Dream 7B를 만든 홍콩대 출신 팀 DiffuSpace가 10/30 확산(diffusion) 방식 MoE 언어모델 Clover-35B-A3B-Preview를 Apache 라이선스로 공개했다(총 35B, 활성 3B, 사고 모드 지원). 회사 발표로 SWE-bench Verified 73.6, Terminal-Bench 2.1 51.7로 같은 크기의 Qwen3.6-35B-A3B보다 높고, GB300 한 장에서 에이전트 작업 초당 680토큰. INT4로 16GB RTX 5070 Ti에서도 돈다.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+보통 언어모델은 <strong>한 토큰씩 순서대로</strong> 쓴다. Clover는 <strong>한 블록을 통째로 놓고 노이즈를 걷어내듯 동시에</strong> 채운다. 그 결과 “빠른데 똑똑하기도 하다”를 35B급에서 보여 주겠다는 모델이다(<a href="https://ofia-docs.france-ioi.org/huggingface/blog/Diffuspace/clover-35b-a3b-preview">DiffuSpace 블로그</a>).
+</p>
+<h2>스펙 (회사 발표)</h2>
+<table>
+<tr><th>항목</th><th>내용</th></tr>
+<tr><td>구조</td><td>MoE 확산 언어모델, 총 35B / 활성 3B, 사고 모드</td></tr>
+<tr><td>라이선스</td><td><strong>Apache</strong>, 가중치·코드 Hugging Face·GitHub·ModelScope</td></tr>
+<tr><td>추론 지원</td><td>SGLang, llama.cpp</td></tr>
+<tr><td>속도</td><td>GB300 1장 에이전트 작업 <strong>680 tok/s</strong>, H200에서 515 tok/s(비교 설정 365)</td></tr>
+<tr><td>로컬</td><td>INT4로 <strong>RTX 5070 Ti 16GB</strong>에서 MATH-500 101.8 tok/s</td></tr>
+<tr><td>점수</td><td>SWE-bench Verified 73.6, Terminal-Bench 2.1 51.7, GPQA Diamond 83.8</td></tr>
+</table>
+<h2>에이전트에게 속도가 왜 중요한가</h2>
+<ul>
+<li>에이전트는 “판단 → 실행 → 결과 보기 → 수정”을 수십 번 반복한다. 한 단계가 빨라지면 같은 시간에 <strong>더 많은 경로를 시도</strong>할 수 있다.</li>
+<li>데모 예: 웹 도구로 6가지 업무(송장 작성·수강 신청 등)를 처리하는 49개 과제에서 <strong>중앙값 1.52초</strong>, Gemini 3.6 Flash는 8.86초(회사 측정).</li>
+</ul>
+<h2>덤: ‘여러 판단을 한 번에’ 내리는 결정 모델 예고</h2>
+<ul>
+<li>Clover 기반 결정 모델을 <strong>나중에 공개</strong> 예정. 같은 자료에 대한 관련 질문 최대 8개를 <strong>한 번의 생성에서 동시에</strong> 답하는 ‘Joint Mode’가 특징 — 계약서의 “통지가 기한 내였나”와 “보증금을 돌려줘야 하나”처럼 서로 얽힌 판단이 모순되지 않게 한다.</li>
+</ul>
+<h2>주의할 점</h2>
+<ul>
+<li>모든 수치는 <strong>회사 자체 측정</strong>이고, 이름 그대로 <strong>Preview</strong>다. 독립 벤치마크는 아직 없다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>10/20 다룬 Mercury 3에 이어 <strong>확산 언어모델이 오픈웨이트·로컬 GPU 영역으로</strong> 들어왔다. 16GB 그래픽카드에서 도는 빠른 코딩·도구 사용 모델은 개인 에이전트 실험에 바로 쓸 수 있는 선택지다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/31] 세컨드 브레인 / PKM: Obsidian Copilot 4.0.17은 에이전트가 Excalidraw를 ‘그리고 고친다’, claude-mem 15.7은 ‘몰래 다른 AI로 넘어가던’ 기억 갱신을 막았다 — AiPaper 뉴스</title>
+  <meta name="description" content="10/30 같은 날 두 에이전트 기억 도구가 업데이트됐다. Obsidian Copilot 4.0.17은 에이전트가 Excalidraw 다이어그램을 읽고·그리고·수정하게 했고(자체 테스트에서 Codex 단독 대비 토큰 60%↓, 시간 23%↓), 에이전트 검색 결과 수를 제한하는 설정을 넣었다. Claude Code용 기억 플러그인 claude-mem 15.7은 갱신 작업이 거절되면 다른 로그인된 에이전트(Codex)로 넘어가 사용자 ChatGPT 계정에서 4일간 약 230회 숨은 실행이 일어나던 문제를 고쳤다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-10-31 07:11 KST</div>
+    <h1>[10/31] 세컨드 브레인 / PKM: Obsidian Copilot 4.0.17은 에이전트가 Excalidraw를 ‘그리고 고친다’, claude-mem 15.7은 ‘몰래 다른 AI로 넘어가던’ 기억 갱신을 막았다</h1>
+  </header>
+  <article>
+<p><em>10/30 같은 날 두 에이전트 기억 도구가 업데이트됐다. Obsidian Copilot 4.0.17은 에이전트가 Excalidraw 다이어그램을 읽고·그리고·수정하게 했고(자체 테스트에서 Codex 단독 대비 토큰 60%↓, 시간 23%↓), 에이전트 검색 결과 수를 제한하는 설정을 넣었다. Claude Code용 기억 플러그인 claude-mem 15.7은 갱신 작업이 거절되면 다른 로그인된 에이전트(Codex)로 넘어가 사용자 ChatGPT 계정에서 4일간 약 230회 숨은 실행이 일어나던 문제를 고쳤다.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+세컨드 브레인에 에이전트를 붙이면 두 가지가 중요해진다. <strong>노트를 더 풍부하게 다루는 능력</strong>, 그리고 <strong>내 계정으로 무엇이 실행되는지 아는 것</strong>. 이번 두 업데이트가 정확히 그 둘이다.
+</p>
+<h2>① Obsidian Copilot 4.0.17 — 노트 안의 그림까지</h2>
+<p>
+(<a href="https://github.com/logancyang/obsidian-copilot/releases/tag/4.0.17">릴리스 노트</a>)
+</p>
+<ul>
+<li><strong>Excalidraw 연동</strong>: Copilot 안의 에이전트가 손그림풍 다이어그램을 <strong>새로 그리고, 기존 그림을 읽고 고친다.</strong> 라벨과 화살표가 도형에 붙은 채 유지된다. 채팅에는 작업한 그림 카드가 뜬다.</li>
+</ul>
+<p>
+  - 개발자 테스트: 같은 다이어그램을 Copilot 밖의 Codex보다 <strong>토큰 60% 적게, 시간 23% 덜</strong> 써서 그렸다.
+<br/>
+  - Excalidraw 플러그인 <strong>2.29 이상</strong> 필요.
+</p>
+<ul>
+<li><strong>검색 크기 제한</strong>: 설정 → Copilot → Miyo에서 <strong>최대 결과 수·검색 변형 수</strong> 조절, 특정 폴더만 검색 지시 가능 → 에이전트가 볼트를 과하게 퍼 오지 않게.</li>
+<li><strong>Send now</strong>: Claude가 답하는 도중 대기 중 메시지를 바로 끼워 넣기.</li>
+<li>관련 노트 목록에 <strong>폴더 경로</strong> 표시(같은 제목 노트 구분).</li>
+</ul>
+<h2>② claude-mem 15.7 — 기억 갱신이 ‘다른 AI’로 새던 문제</h2>
+<p>
+(<a href="https://github.com/thedotmack/claude-mem/releases/tag/v15.7.0">릴리스 노트</a>)
+</p>
+<ul>
+<li>무슨 일이었나: ‘My Work’ 자동 갱신이 Claude Code의 답을 거절하면(주로 1,200자 넘는 리뷰), 다음 로그인된 에이전트로 넘어갔다. Codex가 깔린 PC에선 설정을 Claude로 해 뒀어도 <strong>사용자 ChatGPT 계정으로 숨은 Codex 실행</strong>이 돌았다 — 보고된 사례는 <strong>4일간 약 230회</strong>.</li>
+<li>수정: 거절된 답은 <strong>그 에이전트에서 갱신을 끝낸다.</strong> 아예 실행 불가(로그아웃·크래시)일 때만 다음 에이전트로 넘긴다.</li>
+<li>기본 노트 작성 모델을 날짜 고정 ID 대신 <strong>항상 최신 Haiku 별칭</strong>으로. 저장소 규칙에도 “기본값에 날짜 고정 모델 ID 금지”를 명시.</li>
+<li>그 밖에: 30일 지난 로그 자동 정리, 상위 Git 저장소의 관계없는 기억이 하위 환경으로 새지 않게 하는 명시적 상속, GitLab·Hugging Face·npm 토큰 가림 처리 확대, 이미지 인식 관찰 1단계(<strong>기본 꺼짐</strong>).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>기억 도구는 백그라운드에서 <strong>내 구독으로</strong> 돈다. “설정은 A인데 실제론 B가 돌았다”는 비용·프라이버시 모두의 문제다. 업데이트 전이라면 Codex 사용 기록을 한 번 확인해 볼 만하다.</li>
+<li>지난번 저장하신 Obsidian Copilot V4·claude-mem 기사와 이어지는 소식이다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

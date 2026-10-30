@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/31] 디자인: 에이전트 UI가 채팅창 밖으로 — CopilotKit ‘Surfaces’는 페이지 아무 곳이나 에이전트가 그리게 하고, 70개 컴포넌트 카탈로그로 디자인 시스템을 지킨다 — AiPaper 뉴스</title>
+  <meta name="description" content="에이전트 UI 프레임워크 CopilotKit이 10/29 Generative UI 대규모 업데이트를 냈다. 폼·차트·지도 등 70개 표준 컴포넌트 카탈로그(구글 A2UI 1.0 기본 18개 + 자체 52개), 내 컴포넌트로 덮어쓰기, 채팅 밖 페이지 영역을 에이전트가 렌더링하는 ‘Surfaces’, 답변 텍스트와 UI가 함께 흘러나오는 마크다운 모드. 생성된 UI는 카탈로그 검사를 통과해야만 그려지고 코드를 실행하지 않는다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인/UI·UX · 2026-10-31 07:08 KST</div>
+    <h1>[10/31] 디자인: 에이전트 UI가 채팅창 밖으로 — CopilotKit ‘Surfaces’는 페이지 아무 곳이나 에이전트가 그리게 하고, 70개 컴포넌트 카탈로그로 디자인 시스템을 지킨다</h1>
+  </header>
+  <article>
+<p><em>에이전트 UI 프레임워크 CopilotKit이 10/29 Generative UI 대규모 업데이트를 냈다. 폼·차트·지도 등 70개 표준 컴포넌트 카탈로그(구글 A2UI 1.0 기본 18개 + 자체 52개), 내 컴포넌트로 덮어쓰기, 채팅 밖 페이지 영역을 에이전트가 렌더링하는 ‘Surfaces’, 답변 텍스트와 UI가 함께 흘러나오는 마크다운 모드. 생성된 UI는 카탈로그 검사를 통과해야만 그려지고 코드를 실행하지 않는다.</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+지금까지 ‘에이전트가 만든 UI’는 <strong>채팅 말풍선 안의 카드</strong>였다. 이번 업데이트로 에이전트는 <strong>쇼핑몰 ‘추천 상품’ 줄, 상품 페이지, 장바구니</strong> 같은 실제 화면 영역을 직접 다시 그릴 수 있다(<a href="https://www.copilotkit.ai/blog/new-generative-ui">CopilotKit 블로그</a>).
+</p>
+<h2>무엇이 새로 생겼나</h2>
+<table>
+<tr><th>기능</th><th>디자이너가 알아야 할 의미</th></tr>
+<tr><td>표준 카탈로그 70개</td><td>레이아웃·텍스트·입력·표·차트·지도·미디어. 링크 미리보기·인용·상품 카드 같은 블록 포함</td></tr>
+<tr><td>extend / omit / override</td><td>표준 옆에 내 컴포넌트 추가 / 안 쓰는 건 빼기(프롬프트도 줄어듦) / <strong>표준을 내 디자인 시스템 컴포넌트로 교체</strong></td></tr>
+<tr><td><strong>Surfaces</strong></td><td>페이지 한 영역을 감싸고 “이 영역은 무엇을 위한 곳인지 + 쓸 수 있는 컴포넌트”를 지정. 평소엔 <strong>원래 화면이 대체(fallback)</strong>로 보임</td></tr>
+<tr><td>마크다운 모드</td><td>텍스트와 UI가 <strong>한 답변 안에서 같이 스트리밍</strong></td></tr>
+<tr><td>라이브 값·액션</td><td>슬라이더를 움직이면 가격·차트가 브라우저에서 즉시 재계산 — <strong>토큰 0</strong></td></tr>
+<tr><td>테마</td><td>브랜드 색·폰트, 다크 모드</td></tr>
+<tr><td>인스펙터</td><td>무엇이 그려졌는지, <strong>무엇이 거부됐고 왜인지</strong>, 모델이 받은 정확한 프롬프트</td></tr>
+</table>
+<h2>안전장치가 디자인 시스템이다</h2>
+<ul>
+<li>에이전트가 보낸 모든 조각은 <strong>카탈로그와 대조한 뒤에만</strong> 렌더링된다. 안 맞으면 이유를 에이전트에게 돌려보내 다음 턴에 고치게 한다. 생성된 UI는 페이지에서 <strong>코드를 실행하지 않는다.</strong></li>
+<li>즉 “에이전트가 아무 화면이나 만든다”가 아니라 <strong>“허락된 부품 상자 안에서만 조립한다”</strong>. 이 부품 상자가 곧 디자인 시스템이다.</li>
+</ul>
+<h2>주의</h2>
+<ul>
+<li>A2UI 1.0 사양이 확정 전이라 <strong>실험적 기능</strong>이며 API가 바뀔 수 있다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>10/29 다룬 Google A2UI Express가 ‘결정용 UI’ 패턴이었다면, 이번엔 <strong>제품 화면 자체가 사용자별로 재구성되는</strong> 패턴이다. 디자이너의 산출물이 “완성 화면”에서 <strong>“영역 정의 + 허용 부품 + 대체 화면”</strong>으로 바뀌는 신호다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

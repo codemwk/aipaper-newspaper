@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[10/31] AI 트레이딩: Samaya Sterling — 활성 3B짜리 작은 금융 리서치 모델이 Claude Fable 5.1을 넘었다. 질문당 비용은 11분의 1 — AiPaper 뉴스</title>
+  <meta name="description" content="금융 리서치 AI 회사 Samaya가 10/28 NVIDIA Nemotron 3.5 Lightning(30B MoE, 활성 3B)을 4단계로 후속 학습한 Sterling을 공개했다. 자체 벤치마크 FrontierFinance(220문항, 전문가 채점 기준)에서 58.9%로 Claude Fable 5.1(55.9%)보다 높고, 질문당 비용은 $0.61 대 $6.89. 핵심은 모델과 ‘하네스’(금융 도구·맥락 압축기·리서치 예산)를 함께 학습시킨 것."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 트레이딩 · 2026-10-31 07:02 KST</div>
+    <h1>[10/31] AI 트레이딩: Samaya Sterling — 활성 3B짜리 작은 금융 리서치 모델이 Claude Fable 5.1을 넘었다. 질문당 비용은 11분의 1</h1>
+  </header>
+  <article>
+<p><em>금융 리서치 AI 회사 Samaya가 10/28 NVIDIA Nemotron 3.5 Lightning(30B MoE, 활성 3B)을 4단계로 후속 학습한 Sterling을 공개했다. 자체 벤치마크 FrontierFinance(220문항, 전문가 채점 기준)에서 58.9%로 Claude Fable 5.1(55.9%)보다 높고, 질문당 비용은 $0.61 대 $6.89. 핵심은 모델과 ‘하네스’(금융 도구·맥락 압축기·리서치 예산)를 함께 학습시킨 것.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>한줄 요약</h2>
+<p>
+“AT&amp;T와 버라이즌의 2019~2023년 분기별 이자보상배율은? 부채 상환 능력은 어떻게 변했나?” — 이런 애널리스트형 질문을 <strong>작은 모델이 프런티어 모델보다 잘, 훨씬 싸게</strong> 푼다는 결과다(<a href="https://samaya.ai/blog/rl-post-trained-agentic-model">Samaya 블로그</a>).
+</p>
+<h2>숫자 (회사 발표, 자체 벤치마크)</h2>
+<table>
+<tr><th>모델</th><th>FrontierFinance</th><th>질문당 비용</th><th>지연</th></tr>
+<tr><td><strong>Samaya Sterling</strong></td><td><strong>58.9%</strong></td><td><strong>$0.61</strong></td><td>282초</td></tr>
+<tr><td>Claude Fable 5.1</td><td>55.9%</td><td>$6.89</td><td>268초</td></tr>
+<tr><td>Samaya 기존 시스템(고강도)</td><td>56.0%</td><td>$1.81</td><td>278초</td></tr>
+</table>
+<ul>
+<li>고강도 모드로 돌리면 <strong>60.6%</strong>($1.83).</li>
+<li>학습 전 원본 모델은 42.5%. 질문당 도구 호출 중앙값이 <strong>3회 → 17회</strong>로 늘었다 — “더 깊이 조사하는 법”을 배운 것.</li>
+<li>$0.61 중 모델 자체 비용은 $0.04뿐이고, 나머지는 도구 호출과 보조 모델 비용.</li>
+</ul>
+<h2>어떻게 만들었나 (쉽게)</h2>
+<ul>
+<li><strong>모범 답안 따라 하기</strong>: Kimi K3가 37개 금융 도구로 푼 합성 질문 968개를 흉내 낸다.</li>
+<li><strong>8가지 조사 전략 중 최고만 배우기</strong>: 같은 질문을 8가지 방식(공시 표에서 바로 / 웹 검색부터 등)으로 풀게 하고 채점 1등만 학습.</li>
+<li><strong>좋은·나쁜 전략 비교 학습</strong>(오프라인 RL), 4. <strong>자기 시도에서 실수 배우기</strong>(온라인 RL).</li>
+<li>작은 모델이 긴 조사를 버티도록 <strong>결과 요약기(condenser)·기록 압축기(compactor)·리서치 예산</strong>을 붙였다. “서비스하는 하네스 그대로 학습한다”가 원칙.</li>
+</ul>
+<h2>주의할 점</h2>
+<ul>
+<li>FrontierFinance는 <strong>Samaya가 만든 벤치마크</strong>다. 학습에 쓰지 않고 따로 떼어 뒀다고 밝혔지만, 독립 검증은 아직 없다.</li>
+<li>이건 <strong>매매 신호 모델이 아니라 리서치 보조</strong>다. 숫자를 모으고 인용과 함께 보고서를 쓰는 일.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>트레이딩 에이전트에서 비싼 부분은 “조사”다. <strong>질문당 $6.89 → $0.61</strong>이면, 매일 수십 종목을 훑는 개인 리서치 루틴도 현실적인 비용이 된다.</li>
+<li>회사는 다음 방향으로 <strong>회사별 전용 모델</strong>(자기 데이터·과거 판단을 학습)을 예고했다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
