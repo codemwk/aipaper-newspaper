@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/1] AI 모델: Microsoft Mage-VL-Cowork — 4B가 GUI 클릭과 터미널을 한 정책으로. OSWorld-Verified 66% — AiPaper 뉴스</title>
+  <meta name="description" content="Microsoft가 10/30 Hugging Face에 Mage-VL-Cowork(4B)를 올렸다. 스크린샷 기반 computer_use와 bash를 외부 오케스트레이터 없이 한 모델이 고른다. OSWorld-Verified 50스텝 기준 66.0%(4B대 최고 주장). Apache-2.0, Docker·SGLang 서빙."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-11-01 07:03 KST</div>
+    <h1>[11/1] AI 모델: Microsoft Mage-VL-Cowork — 4B가 GUI 클릭과 터미널을 한 정책으로. OSWorld-Verified 66%</h1>
+  </header>
+  <article>
+<p><em>Microsoft가 10/30 Hugging Face에 Mage-VL-Cowork(4B)를 올렸다. 스크린샷 기반 computer_use와 bash를 외부 오케스트레이터 없이 한 모델이 고른다. OSWorld-Verified 50스텝 기준 66.0%(4B대 최고 주장). Apache-2.0, Docker·SGLang 서빙.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+픽셀만 클릭하면 토큰이 낭비되고, 터미널만 주면 GUI 앱을 못 다룬다. Mage-VL-Cowork는 <strong>언제 마우스를 쓰고 언제 셸을 쓸지</strong>를 4B 한 모델 안에 넣었다(<a href="https://huggingface.co/microsoft/Mage-VL-Cowork">Hugging Face</a>).
+</p>
+<h2>핵심 숫자</h2>
+<table>
+<tr><th>항목</th><th>값</th></tr>
+<tr><td>파라미터</td><td><strong>4B</strong> (bf16 약 9.5GB)</td></tr>
+<tr><td>벤치</td><td><strong>OSWorld-Verified 66.0%</strong> (361태스크, 50스텝, 2런 평균 65.33·66.75)</td></tr>
+<tr><td>비교</td><td>동급 4B 중 최고라고 팀 주장. ScaleCUA-Qwen3.5-9B 68.7 등은 더 큰 모델</td></tr>
+<tr><td>데이터</td><td>Mage-CUA-Forge로 <strong>293,806</strong> 태스크 합성, 태스크당 비용 $0.906→$0.158(−82.6%)</td></tr>
+<tr><td>RL 효과</td><td>Hybrid SFT 대비 +10.16pp, 평균 호출 −13%, 출력 토큰 −25.4%</td></tr>
+</table>
+<h2>동작 방식(쉽게)</h2>
+<ul>
+<li>채널 둘: <code>computer_use</code>(클릭·타이핑·스크롤) + <code>bash</code>(파일·검증).</li>
+<li>스프레드시트 병합처럼 <strong>구조화된 편집</strong>은 GUI 39스텝 대신 Python 6스텝으로 끝내는 식의 데모를 공개.</li>
+<li>학습은 “먼저 GUI·코딩을 따로 세게 → 나중에 합치기” 5단계. 교사 하네스에서 중복 도구를 쳐내니 학생 4B가 +12.5pp 이득을 봤다고 한다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li><strong>온디바이스·소형 에이전트</strong>가 ‘하이브리드 컴퓨터 사용’에 들어왔다는 신호. 다만 샌드박스·사람 확인 없이 셸을 열면 위험하고, 팀도 격리 환경을 권한다.</li>
+<li>라이선스 Apache-2.0. <code>trust_remote_code</code> 커스텀 아키텍처(<code>llava_onevision2</code>).</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

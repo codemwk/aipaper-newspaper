@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/1] AI 모델: RightNow System Zero — 입력이 들어오는 동안 결정을 스트리밍. ‘생각 전 단계’를 파는 YC 스타트업 — AiPaper 뉴스</title>
+  <meta name="description" content="YC F26 RightNow가 10/31 System Zero를 공개했다. 텍스트·JSON·PDF·이미지·음성·비디오(프리뷰)·코드베이스·로봇 상태를 받아, 도착하는 대로 선택지별 확률을 갱신한다. 텍스트 결정 약 30ms, 호출당 최대 1,024문항. 종량제(텍스트 $0.19/M 토큰 등), 가입 $5 크레딧."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-11-01 07:04 KST</div>
+    <h1>[11/1] AI 모델: RightNow System Zero — 입력이 들어오는 동안 결정을 스트리밍. ‘생각 전 단계’를 파는 YC 스타트업</h1>
+  </header>
+  <article>
+<p><em>YC F26 RightNow가 10/31 System Zero를 공개했다. 텍스트·JSON·PDF·이미지·음성·비디오(프리뷰)·코드베이스·로봇 상태를 받아, 도착하는 대로 선택지별 확률을 갱신한다. 텍스트 결정 약 30ms, 호출당 최대 1,024문항. 종량제(텍스트 $0.19/M 토큰 등), 가입 $5 크레딧.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+지난번 저장하신 ‘결정 모델(Clef·joey-1)’ 흐름과 이어지는 소식이다. RightNow는 LLM의 System 1/2 앞에 <strong>System Zero = 결정 자체</strong>를 두겠다고 한다(<a href="https://rightnowai.co">rightnowai.co</a>, <a href="https://dailycited.com/d/2026-10-31/">DailyCited</a>).
+</p>
+<h2>제품</h2>
+<ul>
+<li><strong>입력 8종</strong>: 텍스트, JSON, robot state, codebase, PDF, images, voice, video(preview).</li>
+<li><strong>출력</strong>: 옵션별 확률·confidence. 입력이 더 오면 확률이 바뀐다(예: 깨진 블렌더 → 환불 확률 상승).</li>
+<li><strong>한도</strong>: 컨텍스트 설정으로 <strong>최대 1M</strong>, 표준 약 38k. 호출당 질문 최대 <strong>1,024</strong>.</li>
+<li><strong>API</strong>: <code>POST …/v1/system-zero/decide</code>, 모델명 <code>system-zero</code>.</li>
+</ul>
+<h2>요금(사이트 계산기·카드 기준)</h2>
+<ul>
+<li>텍스트 <strong>$0.19 / M</strong> 토큰, 캐시 텍스트 <strong>$0.019 / M</strong>.</li>
+<li>답변된 질문당 <strong>$0.00013</strong>, 호출당 <strong>$0.000055</strong>.</li>
+<li>가입 <strong>$5</strong> 무료 크레딧, 종량제.</li>
+</ul>
+<h2>벤치 주의</h2>
+<p>
+사이트에 Artificial Analysis Decision Index 표가 있으나, RightNow 3.0.0 <strong>63.20\*는 자사 측정</strong>(공개 홀드아웃 절반, 10/28)이고 AA 공식 평가가 아니라고 고지한다. 순위는 참고용.
+</p>
+<h2>왜 중요한가</h2>
+<ul>
+<li>에이전트 파이프라인에서 ‘긴 추론’ 전에 <strong>라우팅·환불·승인</strong> 같은 짧은 결정을 싸게 빼는 계층이 상품화되고 있다. Baseten joey-1과 같은 ‘결정 전용’ 시장 조각.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
