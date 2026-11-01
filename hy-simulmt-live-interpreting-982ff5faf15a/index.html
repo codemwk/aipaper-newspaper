@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/2] AI 콘텐츠: Tencent Hy-SimulMT — 말하는 동안 통역하고 목소리까지 복제하는 오픈 동시통역 모델(중↔영) — AiPaper 뉴스</title>
+  <meta name="description" content="Tencent Hunyuan이 10/26 중국어↔영어 실시간 동시통역 모델 Hy-SimulMT(30B-A3B, Apache-2.0)를 공개했다. 오디오가 들어오는 대로 번역 텍스트·음성을 내고 화자 음색을 복제한다(TTS 서비스 별도 필요). RealSI 장문 평가 StreamLAAL 약 3초로 비교군 최저. 6분짜리 실녹음 18개로 CATTI 자격 통역사와 비교했지만 소규모 자체 평가."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 콘텐츠 · 2026-11-02 07:04 KST</div>
+    <h1>[11/2] AI 콘텐츠: Tencent Hy-SimulMT — 말하는 동안 통역하고 목소리까지 복제하는 오픈 동시통역 모델(중↔영)</h1>
+  </header>
+  <article>
+<p><em>Tencent Hunyuan이 10/26 중국어↔영어 실시간 동시통역 모델 Hy-SimulMT(30B-A3B, Apache-2.0)를 공개했다. 오디오가 들어오는 대로 번역 텍스트·음성을 내고 화자 음색을 복제한다(TTS 서비스 별도 필요). RealSI 장문 평가 StreamLAAL 약 3초로 비교군 최저. 6분짜리 실녹음 18개로 CATTI 자격 통역사와 비교했지만 소규모 자체 평가.</em></p>
+<p><strong>분류:</strong> AI 콘텐츠</p>
+<h2>한줄 요약</h2>
+<p>
+회의·강연·인터뷰를 <strong>“다 듣고 번역”이 아니라 “들으면서 번역”</strong>하는 오픈 모델이다. 번역문과 함께 원래 화자의 목소리 특징을 살린 음성도 낸다(<a href="https://huggingface.co/tencent/Hy-SimulMT-30B-A3B">Hugging Face 모델 카드</a>, <a href="https://github.com/Tencent-Hunyuan/Hy-SimulMT">GitHub</a>).
+</p>
+<h2>핵심</h2>
+<ul>
+<li><strong>방향</strong>: 중국어↔영어 양방향 음성→음성. 번역만 내는 판 / 원문+번역(Interleave) 판, 각각 FP8·GGUF 제공.</li>
+<li><strong>지연</strong>: RealSI 장문 오디오에서 StreamLAAL 약 <strong>3초</strong> — 비교한 시스템 중 최저. GEMBA 품질은 비교한 오픈 모델 전부, 상용 API 5개 중 4개보다 높았다고 회사가 밝힘.</li>
+<li><strong>단문 벤치</strong>: RealSI-Sentence 84.7로 표 안 최고. FLEURS 90.3(Gemini3.5-LiveTranslate 92.4보다 낮음).</li>
+<li><strong>사람과 비교</strong>: 2026년 9월 이후 올라온 약 6분 길이 실녹음 18개(10개 분야)를 CATTI 1·2급 통역사 6명과 비교, “품질 대등, 응답은 종종 더 빠름”. 회사 스스로 <strong>소규모 평가</strong>라고 단서를 달았다.</li>
+</ul>
+<h2>쓰려면</h2>
+<ul>
+<li>vLLM ≥0.31 기반 SimulInfer(웹 페이지·파일 업로드·WebSocket). 음성 출력·음색 복제는 <strong>별도 TTS 서비스 설정 필요</strong>.</li>
+<li>BF16 가중치만 약 57GiB — H200 한 장급. llama.cpp 지원은 PR 제출 단계(미병합).</li>
+<li>써 보기만 하려면 Hy Translate 앱.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>콘텐츠 제작 쪽에선 <strong>라이브 방송·웨비나 다국어 송출</strong>의 비용 구조가 바뀐다. “말하면서 고쳐 말하는” 방식(먼저 말하고 나중에 정정)이 통역사의 자기 수정과 비슷하다는 현업 평가도 붙었다.</li>
+<li>다만 공개된 언어쌍은 중↔영뿐이고, 고위험(법·의료) 현장은 여전히 사람 통역 영역이라고 Tencent도 명시했다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/2] GitHub 트렌드: DeepSeek dsh-superagent — ‘세션 하나에 사람 하나’를 깨는 라우터·워커 코딩 에이전트. 공개 이틀 만에 ★7천 — AiPaper 뉴스</title>
+  <meta name="description" content="DeepSeek Harness 팀이 10/31 MIT 연구 프로토타입 dsh-superagent를 공개했다. GitHub(선택적으로 Feishu)를 듣다가 허가된 사람의 요청을 ‘티켓’으로 만들고, 티켓마다 격리된 워커 세션이 작업해 PR로 돌려준다. 자발적 작업은 기본 observe(기록만). 시뮬레이션 p95 15.7분 vs 단일 세션 29.5분. 실제 코드 품질은 측정 안 함."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub 트렌드 · 2026-11-02 07:05 KST</div>
+    <h1>[11/2] GitHub 트렌드: DeepSeek dsh-superagent — ‘세션 하나에 사람 하나’를 깨는 라우터·워커 코딩 에이전트. 공개 이틀 만에 ★7천</h1>
+  </header>
+  <article>
+<p><em>DeepSeek Harness 팀이 10/31 MIT 연구 프로토타입 dsh-superagent를 공개했다. GitHub(선택적으로 Feishu)를 듣다가 허가된 사람의 요청을 ‘티켓’으로 만들고, 티켓마다 격리된 워커 세션이 작업해 PR로 돌려준다. 자발적 작업은 기본 observe(기록만). 시뮬레이션 p95 15.7분 vs 단일 세션 29.5분. 실제 코드 품질은 측정 안 함.</em></p>
+<p><strong>분류:</strong> GitHub 트렌드</p>
+<h2>한줄 요약</h2>
+<p>
+지난번 저장하신 DeepSeek Harness·메신저→PR 워크플로(LYIO) 관심과 이어지는 소식이다. DeepSeek는 <strong>병목은 모델이 아니라 사람의 주의력</strong>이라고 보고, 한 사람이 세션 3~5개를 쫓아다니는 구조를 바꾸려 한다(<a href="https://github.com/deepseek-ai/dsh-superagent-prototype/">GitHub</a>, <a href="https://www.marktechpost.com/2026/11/01/deepseek-dsh-superagent-router-worker-coding-agent/">MarkTechPost</a>).
+</p>
+<h2>어떻게 일하나 (코드 없이)</h2>
+<ul>
+<li><strong>라우터</strong>(상시 실행): GitHub 이슈·PR 댓글, 선택적으로 Feishu 채팅을 듣는다.</li>
+<li>허가된 사람이 부르면 <strong>티켓</strong>을 연다. 티켓엔 “왜 진행해도 되는가”를 적은 변경 불가 위임장(Mandate)이 붙는다.</li>
+<li>티켓마다 <strong>격리된 워커 세션·디렉터리</strong>가 작업 → 결과는 원래 대화로, 대개 <strong>PR</strong>로 돌아온다.</li>
+<li>이후 PR 댓글은 다시 멘션하지 않아도 해당 워커로 전달.</li>
+<li>원칙: 한 번 확인하고, 작업 중엔 조용히, <strong>결과·질문·실패</strong>일 때만 말한다. 로컬 웹 패널엔 사람이 봐야 할 것만.</li>
+</ul>
+<h2>안전장치와 한계</h2>
+<ul>
+<li>자발적 작업은 <code>off</code> / <code>observe</code>(기본, 하려던 일만 기록) / <code>auto</code> 3단계.</li>
+<li>내 PC에서 OS 사용자 권한 그대로 돈다 → <strong>격리 환경 권장</strong>. Node 22.19+, git, tmux, GitHub CLI 필요.</li>
+<li>성능: 메시지 약 300개(진짜 요청 약 20개) 시뮬레이션에서 p95 <strong>15.7분 vs 29.5분</strong>(단일 세션+서브에이전트). 단, 합성 메시지·모의 도구 기준이고 <strong>실제 코딩 품질은 측정하지 않았다</strong>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>Copilot·Claude Code Action이 ‘불러야 오는 비서’라면, 이건 <strong>팀 채팅방에 상주하는 동료</strong> 모델이다. 메신저→티켓→PR 흐름을 오픈소스로 뜯어볼 수 있는 첫 레퍼런스 중 하나.</li>
+<li>생성 10/31, 11/2 기준 ★약 7,000. 연구 프로토타입이니 운영 투입보다 <strong>설계 문서(라우터/워커, 위임장, observe 모드)</strong>를 내 하네스에 빌려오는 용도가 현실적이다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

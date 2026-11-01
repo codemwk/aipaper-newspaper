@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/2] 세컨드 브레인: LLM Wiki 플러그인 v4 — 로컬 위키는 그대로, 원하면 Cloudflare 무료 플랜에 ‘여러 에이전트가 같이 쓰는 위키’ — AiPaper 뉴스</title>
+  <meta name="description" content="카파시식 LLM Wiki를 Claude Code·Codex·Cursor 등에서 쓰게 해 주는 praneybehl/llm-wiki-plugin이 v4.0(10/29)을 냈다. 선택형 호스팅 위키(Workers Free에서 동작), 충돌 시 409+diff를 돌려주는 원자적 동시 쓰기, BM25+벡터 하이브리드 검색, MCP 8도구·에이전트별 토큰, 마이그레이션 CLI, 기본 꺼진 ‘결정 레이어’. 로컬 위키는 마이그레이션 불필요."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인/PKM · 2026-11-02 07:07 KST</div>
+    <h1>[11/2] 세컨드 브레인: LLM Wiki 플러그인 v4 — 로컬 위키는 그대로, 원하면 Cloudflare 무료 플랜에 ‘여러 에이전트가 같이 쓰는 위키’</h1>
+  </header>
+  <article>
+<p><em>카파시식 LLM Wiki를 Claude Code·Codex·Cursor 등에서 쓰게 해 주는 praneybehl/llm-wiki-plugin이 v4.0(10/29)을 냈다. 선택형 호스팅 위키(Workers Free에서 동작), 충돌 시 409+diff를 돌려주는 원자적 동시 쓰기, BM25+벡터 하이브리드 검색, MCP 8도구·에이전트별 토큰, 마이그레이션 CLI, 기본 꺼진 ‘결정 레이어’. 로컬 위키는 마이그레이션 불필요.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인/PKM</p>
+<h2>한줄 요약</h2>
+<p>
+지난번 저장하신 LLM Wiki·Obsidian 에이전트 관심과 이어지는 소식이다. 개인 노트북 안의 LLM Wiki를 <strong>여러 에이전트가 동시에 읽고 쓰는 공유 위키</strong>로 키우는 길이 열렸다(<a href="https://github.com/praneybehl/llm-wiki-plugin/releases">릴리스 노트</a>).
+</p>
+<h2>v4.0에서 바뀐 것</h2>
+<ul>
+<li><strong>호스팅 위키(선택)</strong>: Cloudflare Worker 하나 + 위키마다 SQLite Durable Object. 배포 버튼과 비밀값 하나(<code>ADMIN_TOKEN</code>). <strong>Workers 무료 플랜에서 동작</strong>.</li>
+<li><strong>안전한 동시 쓰기</strong>: create·put·edit·append·move 등 원자적 커밋. <code>append</code>는 충돌이 없고, 그 밖의 충돌은 <strong>HTTP 409 + 현재 리비전 + diff</strong>를 돌려준다. 커밋마다 작성자 기록.</li>
+<li><strong>하이브리드 검색</strong>: 키워드(BM25) + 벡터를 RRF로 합침. 벡터가 빠지면 서버가 재전송.</li>
+<li><strong>에이전트 접속</strong>: <code>/mcp</code>에 MCP 도구 8개, JSON API, 에이전트별 토큰, claude.ai 같은 클라이언트용 OAuth. 웹 UI에 검색·백링크·히스토리·diff·리뷰 플래그.</li>
+<li><strong>이사 도구</strong>: 로컬→호스팅 <code>import</code>(SHA-256 검증·재개), Git 커밋으로 남는 <strong>pull 전용 미러</strong>.</li>
+<li><strong>결정 레이어(기본 꺼짐)</strong>: 검색 관련성·그래프 근거·신뢰 못 할 텍스트를 작은 결정 모델로 거르는 게이트.</li>
+<li>v4.0.1(같은 날): 배포 폼의 Vectorize 설정값(384차원·cosine) 안내 추가.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>세컨드 브레인의 다음 문제는 ‘한 에이전트가 잘 쓰기’가 아니라 <strong>‘여러 에이전트가 덮어쓰지 않기’</strong>다. 409+diff, 작성자 기록, 읽기 전용 미러는 그 문제에 대한 실무형 답.</li>
+<li>로컬 마크다운·스크립트는 그대로라 Obsidian 볼트와 병행 가능. 다만 호스팅을 켜면 노트가 Cloudflare로 올라가므로, 민감 노트는 로컬 위키에 남기는 분리 운영이 안전하다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
