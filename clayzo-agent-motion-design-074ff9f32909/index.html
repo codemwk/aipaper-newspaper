@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/3] 디자인: Clayzo — 모션 그래픽을 ‘타임라인’이 아니라 코딩 에이전트가 읽고 고치는 ‘글’로. 에이전트가 프레임을 직접 보고 스스로 검토, 영상보다 최대 40배 작은 파일로 웹·iOS에서 실시간 재생 — AiPaper 뉴스</title>
+  <meta name="description" content="11/2 Product Hunt 일간 6위(157표) Clayzo는 Claude Code·Codex·Cursor 같은 코딩 에이전트가 웹 애니메이션·모션 그래픽을 만들게 하는 무료 도구다. 도형·텍스트·키프레임·스프링·셰이더·카메라·오디오·호버/드래그 상태를 전용 형식으로 쓰고, CLI로 아무 프레임이나 즉시 미리 보며 에이전트가 자기 작업을 검토한다. 결과는 .clayzo 한 파일(영상 대비 최대 ~40배 작음)로 WebGL/Swift 플레이어 재생 또는 MP4·GIF·WebM 내보내기."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인/UI·UX · 2026-11-03 07:05 KST</div>
+    <h1>[11/3] 디자인: Clayzo — 모션 그래픽을 ‘타임라인’이 아니라 코딩 에이전트가 읽고 고치는 ‘글’로. 에이전트가 프레임을 직접 보고 스스로 검토, 영상보다 최대 40배 작은 파일로 웹·iOS에서 실시간 재생</h1>
+  </header>
+  <article>
+<p><em>11/2 Product Hunt 일간 6위(157표) Clayzo는 Claude Code·Codex·Cursor 같은 코딩 에이전트가 웹 애니메이션·모션 그래픽을 만들게 하는 무료 도구다. 도형·텍스트·키프레임·스프링·셰이더·카메라·오디오·호버/드래그 상태를 전용 형식으로 쓰고, CLI로 아무 프레임이나 즉시 미리 보며 에이전트가 자기 작업을 검토한다. 결과는 .clayzo 한 파일(영상 대비 최대 ~40배 작음)로 WebGL/Swift 플레이어 재생 또는 MP4·GIF·WebM 내보내기.</em></p>
+<p><strong>분류:</strong> 디자인/UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+지난번 저장하신 OpenMontage(에이전트용 영상 스튜디오)와 이어지는 소식이다. Clayzo는 모션 디자인을 <strong>에이전트가 읽을 수 있는 텍스트</strong>로 바꿔, “40번째 프레임 이징만 천천히”가 한 줄 수정이 되게 하려 한다(<a href="https://www.hunted.space/product/clayzo">Product Hunt 요약</a>, <a href="https://www.producthunt.com/products/clayzo">Product Hunt</a>).
+</p>
+<h2>어떻게 일하나 (코드 없이)</h2>
+<ul>
+<li>프로젝트에 Clayzo를 설치하고 로그인하면, 에이전트에게 <strong>스킬 2개</strong>가 생긴다: 애니메이션 작성용, 미리보기·내보내기용.</li>
+<li>에이전트가 Clayzo 형식으로 애니메이션을 쓴다 — 도형, 글자, 키프레임, 스프링, 커스텀 효과/셰이더, 카메라 이동, 오디오, <strong>호버·누르기·드래그 같은 인터랙션 상태</strong>까지.</li>
+<li>CLI로 <strong>특정 프레임을 즉시 렌더해 에이전트가 직접 보고</strong> 어색한 부분을 스스로 고친다.</li>
+<li>결과는 애니메이션+에셋이 묶인 <strong>.clayzo 파일 하나</strong>(영상보다 최대 ~40배 작음). 웹·iOS·Mac 앱에선 WebGL/Swift 플레이어로 실시간 재생, 필요하면 MP4·GIF·WebM으로.</li>
+</ul>
+<h2>디자이너에게 무엇이 바뀌나</h2>
+<ul>
+<li>모션이 영상 파일이 아니라 <strong>살아 있는 UI 자산</strong>이 된다. 같은 파일이 랜딩 페이지 인터랙션이자 출시 영상이 된다.</li>
+<li>“코드로 영상 만들기”는 Remotion, Anthropic의 Claude Motion(Team·Enterprise 전용 베타)도 하는 일이다. Clayzo의 차별점은 <strong>무료 + 내 에이전트 그대로 + 프레임 단위 자기 검토</strong>다.</li>
+<li>지난주 Rive CLI 1.8이 ‘에이전트가 고치고 사람이 검토하는’ 구조를 내세운 것과 같은 방향. 모션 디자인 도구들이 <strong>에이전트를 1순위 사용자</strong>로 다시 설계 중이다.</li>
+</ul>
+<h2>아직 답이 없는 질문 (댓글에서)</h2>
+<ul>
+<li>디자이너가 .clayzo 파일을 열어 <strong>키프레임을 손으로</strong> 밀 수 있나, 모든 수정이 에이전트를 거쳐야 하나?</li>
+<li>여러 작품에서 <strong>캐릭터·스타일을 고정</strong>하는 방법은?</li>
+<li>이미지·영상 생성 모델과 섞는 하이브리드는 언제 유리한가? — 출시 시점 공개 자료에선 답이 없다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

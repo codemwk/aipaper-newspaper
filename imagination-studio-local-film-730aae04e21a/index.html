@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/3] AI 콘텐츠: Imagination Studio — 기획·콘티·이미지·소리 있는 영상·목소리·음악을 ‘내 컴퓨터 한 대’에서. 구독·클라우드 없는 오픈소스 AI 영화 스튜디오(Mac·DGX Spark) — AiPaper 뉴스</title>
+  <meta name="description" content="개발자 keys(drowzeys)와 Wasserman Productions의 Sam Wasserman이 만든 Imagination Studio가 11/2 주목받았다. Apache-2.0 오픈소스로, 영화 기획(Slate 워크플로)부터 Qwen-Image-2.1·FLUX3-K 이미지, MiniMax H3/FastH3 소리 동기 영상, Fish Audio Drama 3 다화자 음성, MiniMax Music 3 노래까지 로컬에서 돌린다. 5초 864×480 클립 렌더에 DGX Spark 73초, M5 Ultra Mac 66초. 메모리에 따라 기능이 잠기고 풀린다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 콘텐츠 · 2026-11-03 07:03 KST</div>
+    <h1>[11/3] AI 콘텐츠: Imagination Studio — 기획·콘티·이미지·소리 있는 영상·목소리·음악을 ‘내 컴퓨터 한 대’에서. 구독·클라우드 없는 오픈소스 AI 영화 스튜디오(Mac·DGX Spark)</h1>
+  </header>
+  <article>
+<p><em>개발자 keys(drowzeys)와 Wasserman Productions의 Sam Wasserman이 만든 Imagination Studio가 11/2 주목받았다. Apache-2.0 오픈소스로, 영화 기획(Slate 워크플로)부터 Qwen-Image-2.1·FLUX3-K 이미지, MiniMax H3/FastH3 소리 동기 영상, Fish Audio Drama 3 다화자 음성, MiniMax Music 3 노래까지 로컬에서 돌린다. 5초 864×480 클립 렌더에 DGX Spark 73초, M5 Ultra Mac 66초. 메모리에 따라 기능이 잠기고 풀린다.</em></p>
+<p><strong>분류:</strong> AI 콘텐츠</p>
+<h2>한줄 요약</h2>
+<p>
+지금까지 로컬 AI 영상 제작은 모델 서버 여러 개, 파이썬 파이프라인 여러 개를 붙이는 일이었다. Imagination Studio는 그걸 <strong>앱 하나·작업 대기열 하나·라이브러리 하나</strong>로 묶었다(<a href="https://hermes-ai.net/news/imagination-studio-packs-video-voice-and-image-generation-into-one-local-app/">Hermes AI News</a>, <a href="https://github.com/drowzeys/Imagination-Studio-by-keys-Wasserman">GitHub</a>).
+</p>
+<h2>작업 공간 8개</h2>
+<table>
+<tr><th>영역</th><th>하는 일</th></tr>
+<tr><td>Story</td><td>캐스팅·로케이션·룩북·샷 프롬프트까지 ‘영화 크루처럼’ 기획(Wasserman Slate 워크플로)</td></tr>
+<tr><td>Image</td><td>Qwen-Image-2.1, FLUX3-K, MOSS-Image. 캐릭터 5방향 턴어라운드</td></tr>
+<tr><td>Video</td><td>MiniMax H3 / FastH3로 <strong>최대 15초, 소리 동기</strong> 영상</td></tr>
+<tr><td>Previs</td><td>참고 영상에서 포즈 골격·깊이·윤곽·카메라 움직임 설명 추출</td></tr>
+<tr><td>Sound</td><td>Fish Audio Drama 3(한 테이크 최대 16명, [whispering] 같은 연기 지시, 음성 복제), MiniMax Music 3(최대 5분 보컬 포함)</td></tr>
+<tr><td>Edit</td><td>업스케일, SAM 3.1로 인물 지우기</td></tr>
+<tr><td>Agent room</td><td>Claude Code·Codex·Gemini·Grok 등 외부 에이전트, 로컬 모델 연결</td></tr>
+<tr><td>Studio Vaults</td><td>생성물·LoRA 보관함</td></tr>
+</table>
+<h2>실제로 얼마나 빠른가</h2>
+<ul>
+<li>FastH3 5초 864×480 클립: <strong>DGX Spark 73초, M5 Ultra Mac 66초</strong>(제작자 수치). DGX Spark 최대 8대까지 묶을 수 있고, Tailscale+QR로 폰에서 원격 조작.</li>
+<li>설치 프로그램이 메모리·디스크를 먼저 재고, <strong>통합 메모리 용량에 따라 쓸 수 있는 기능이 열린다</strong>. 큰 영상·편집 모델은 OS와 메모리를 나눠 써야 해서다.</li>
+<li>핵심 생성은 구독·클라우드 추론·생성 API 키 없이 로컬. 단, 에이전트 연동을 켜면 클라우드를 쓸 수 있다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>영상·음성·음악 AI가 각각 좋아진 다음 단계는 <strong>‘파이프라인의 통합’</strong>이다. 지난주 다룬 Genspark Media Studio가 클라우드 쪽 답이라면, 이건 <strong>로컬·오픈소스 쪽 답</strong>이다. 원본 소재가 밖으로 나가지 않는다는 점이 광고·영화 사전 시각화 현장에서 의미가 있다.</li>
+<li>다만 ‘개인 개발자+제작사’ 프로젝트(10월 초 생성, ★약 500)라 안정성은 미지수. 모델별 라이선스(특히 상업 이용)는 각 모델 조건을 따로 확인해야 한다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

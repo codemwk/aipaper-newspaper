@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/3] AI 트레이딩: 42AI — 차트가 아니라 ‘트레이더의 마음’을 예측한다는 행동 세계 모델. 증권사 10곳이 유동성·증거금·헤지에 쓰는 중, 시드 6,250만 달러 — AiPaper 뉴스</title>
+  <meta name="description" content="이스라엘 42AI가 11/2 스텔스를 벗었다. 고객의 KYC·상담 통화·입출금·매매 기록에서 ‘성향’을 뽑아 트랜스포머 기반 세계 모델로 ‘변동장에서 이 고객이 어떻게 움직일지’ 확률을 낸다. 대형 증권사 10곳이 유동성·증거금·헤지 관리에 사용, 매출은 ‘7자리(수백만 달러)’. 98% 정확도는 ‘예측 범위 안’ 기준이며, 고객을 상대로 쓰일 위험은 회사도 ‘타당한 우려’라고 인정."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 트레이딩 · 2026-11-03 07:01 KST</div>
+    <h1>[11/3] AI 트레이딩: 42AI — 차트가 아니라 ‘트레이더의 마음’을 예측한다는 행동 세계 모델. 증권사 10곳이 유동성·증거금·헤지에 쓰는 중, 시드 6,250만 달러</h1>
+  </header>
+  <article>
+<p><em>이스라엘 42AI가 11/2 스텔스를 벗었다. 고객의 KYC·상담 통화·입출금·매매 기록에서 ‘성향’을 뽑아 트랜스포머 기반 세계 모델로 ‘변동장에서 이 고객이 어떻게 움직일지’ 확률을 낸다. 대형 증권사 10곳이 유동성·증거금·헤지 관리에 사용, 매출은 ‘7자리(수백만 달러)’. 98% 정확도는 ‘예측 범위 안’ 기준이며, 고객을 상대로 쓰일 위험은 회사도 ‘타당한 우려’라고 인정.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>한줄 요약</h2>
+<p>
+대부분의 AI 트레이딩 도구는 <strong>가격</strong>을 예측한다. 42AI는 <strong>사람</strong>을 예측한다. 증권사 입장에서 “폭락장에서 우리 고객들이 한꺼번에 팔까?”를 미리 아는 건 곧 돈이다(<a href="https://techcrunch.com/2026/11/02/42ai-comes-out-of-stealth-with-62-5m-and-a-world-model-that-can-predict-human-behavior/">TechCrunch</a>, <a href="https://www.axios.com/pro/all-deals/2026/11/02/pro-rata-premium-first-look-tutor-thornton-ajami">Axios Pro</a>).
+</p>
+<h2>어떻게 작동하나 (코드 없이)</h2>
+<ul>
+<li>겉보기엔 무관한 행동을 모은다: KYC 절차, 온보딩, <strong>상담 통화의 감정·목소리</strong>, 전화 횟수, 송금, 매매 타이밍.</li>
+<li>이를 ‘성향’(예: 위험 회피형)의 수학적 표현으로 바꿔 트랜스포머 기반 <strong>행동 세계 모델</strong>에 넣는다.</li>
+<li>모델은 상황별로 “이 사람이 이런 결정을 할 확률”을 낸다. 설명 문장은 별도 언어모델이 쓴다.</li>
+<li>학습 보상: 시뮬레이션 중에도 사람의 기본 성향을 유지해야 한다(위험 회피형을 갑자기 공격형으로 보면 ‘오답’).</li>
+</ul>
+<h2>숫자 (모두 회사 주장)</h2>
+<table>
+<tr><th>항목</th><th>내용</th></tr>
+<tr><td>고객</td><td>대형 증권사 10곳 — 유동성, 증거금 요건, 헤지 노출 관리</td></tr>
+<tr><td>데이터</td><td>심리 평가 수천 명 → 정부·바이오뱅크 200만 명+ → 고객 데이터 약 3,000만 명</td></tr>
+<tr><td>정확도</td><td>“98%”는 <strong>매매 흐름이 예측 범위 안에 들어왔는지</strong> 기준. 방향·거래량 예측 F1 0.8~0.85</td></tr>
+<tr><td>가격</td><td>정액 또는 <strong>창출 가치의 일정 비율</strong>. 한 증권사는 동적 헤지로 약 3,000만 달러 가치를 얻었다고 주장</td></tr>
+<tr><td>자금</td><td>시드 6,250만 달러(3년간, 창업자·Infinity Group — 회장인 공동창업자 부친이 세운 곳)</td></tr>
+</table>
+<h2>개인 트레이더에게 무슨 의미인가</h2>
+<ul>
+<li>이 모델은 개인을 돕는 도구가 아니라 <strong>증권사가 개인을 읽는 도구</strong>다. TechCrunch가 “고객 예측을 고객에게 불리하게 쓰는 걸 무엇이 막나”라고 묻자, 회사는 규제·모니터링·내부 윤리위원회를 들었지만 구체적 차단 장치는 설명하지 않았다.</li>
+<li>회사는 “모델은 그 사람이 누구인지 모른다(PII 불필요)”고 하지만, 연결된 고객 활동으로 <strong>개인별 행동 프로필</strong>은 만든다.</li>
+<li>한계도 인정: 친구·동료 조언처럼 모델이 못 보는 상황 정보가 있으면 정확도가 떨어진다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난주까지 AiPaper가 다룬 AI 트레이딩 흐름이 ‘에이전트에게 주문 권한을 얼마나 줄까’였다면, 이건 반대편 — <strong>플랫폼이 AI로 고객 행동을 선반영</strong>하는 흐름이다. 내 상담 통화와 송금 패턴까지 리스크 모델의 입력이 될 수 있다는 점은 알고 있을 만하다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
