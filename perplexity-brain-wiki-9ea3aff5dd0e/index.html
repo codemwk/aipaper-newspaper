@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/4] 세컨드 브레인 / PKM: Perplexity ‘Brain’ — AI 기억을 벡터 DB가 아니라 ‘링크된 마크다운 위키’로. 밤마다 ‘Dream’ 에이전트가 정리하고 Git으로 커밋 — AiPaper 뉴스</title>
+  <meta name="description" content="Perplexity가 11/2 Computer의 기억 시스템 Brain 구조를 공개했다. 원본 대화(sessions/) → 주제별 요약(notes/) → 사람·프로젝트·개념별로 링크된 마크다운 위키(knowledge/) 3층. 밤마다 Dream 에이전트가 하루 기록을 요약해 위키를 고치고, 수정안은 검증 후 Git으로 커밋해 diff가 남는다. 30일 비교에서 정답률 +9.3%p, 토큰 약 15% 절약. 금융 문서 150문항에선 파일 도구 탐색(0.627)이 의미 검색(약 0.37)을 앞섰다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-11-04 07:09 KST</div>
+    <h1>[11/4] 세컨드 브레인 / PKM: Perplexity ‘Brain’ — AI 기억을 벡터 DB가 아니라 ‘링크된 마크다운 위키’로. 밤마다 ‘Dream’ 에이전트가 정리하고 Git으로 커밋</h1>
+  </header>
+  <article>
+<p><em>Perplexity가 11/2 Computer의 기억 시스템 Brain 구조를 공개했다. 원본 대화(sessions/) → 주제별 요약(notes/) → 사람·프로젝트·개념별로 링크된 마크다운 위키(knowledge/) 3층. 밤마다 Dream 에이전트가 하루 기록을 요약해 위키를 고치고, 수정안은 검증 후 Git으로 커밋해 diff가 남는다. 30일 비교에서 정답률 +9.3%p, 토큰 약 15% 절약. 금융 문서 150문항에선 파일 도구 탐색(0.627)이 의미 검색(약 0.37)을 앞섰다.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+<strong>LLM Wiki</strong> 패턴을 큰 회사가 제품 수준으로 굴려 보고 숫자를 냈다. 결론은 “기억은 모델 안이 아니라, 사람이 읽고 고칠 수 있는 <strong>위키 파일</strong>에 두는 게 낫다”(<a href="https://www.perplexity.ai/hub/blog/brain-agentic-memory-as-a-knowledge-wiki">Perplexity 블로그</a>, <a href="https://www.unite.ai/perplexity-details-brain-memory-architecture-and-agent-api-testing/">Unite.AI 정리 11/2</a>).
+</p>
+<h2>구조: 3층 폴더</h2>
+<table>
+<tr><th>폴더</th><th>내용</th><th>기억의 종류</th></tr>
+<tr><td><code>sessions/</code></td><td>원본 대화와 요약</td><td>일화 기억</td></tr>
+<tr><td><code>notes/</code></td><td>주제별로 걸러 낸 정보</td><td>중간 정리</td></tr>
+<tr><td><code>knowledge/</code></td><td>사람·프로젝트·개념별로 <strong>서로 링크된 마크다운 페이지</strong>, 주장마다 출처 링크</td><td>의미 기억</td></tr>
+<tr><td>(Skills·저장된 지시)</td><td>“어떻게 하는지”</td><td>절차 기억</td></tr>
+</table>
+<h2>밤에 일하는 ‘Dream’</h2>
+<p>
+백그라운드 Dream 에이전트가 <strong>매일 밤</strong> 그날 세션을 요약하고, 바뀐 사실이 있으면 위키를 고친다. 수정안은 스테이징 → 검증 → <strong>Git 커밋</strong>이라 무엇이 왜 바뀌었는지 diff로 남는다. 여전히 맞는 정보는 강화하고, 낡은 정보는 표시한다. 사용자는 Memory 화면에서 항목을 출처까지 따라가 보고 수정·삭제할 수 있다. 시크릿 세션은 제외.
+</p>
+<h2>숫자</h2>
+<ul>
+<li>30일 쌍비교: Brain 켠 세션이 <strong>정답률 +9.3%p, 회상 +8.9%p, 토큰 약 15% 절약</strong>.</li>
+<li>금융 문서 150문항: 일반 파일 도구로 위키를 탐색한 에이전트 0.627 vs 같은 자료에 의미 검색 약 0.37.</li>
+<li>고객 사례(Rho): 주간 회의 2.5시간 → 15분. 단, Perplexity 스스로 이 절감에서 <strong>기억이 기여한 몫은 따로 못 잰다</strong>고 밝혔다.</li>
+</ul>
+<h2>내 볼트에 가져갈 것</h2>
+<p>
+지난번 저장하신 <strong>LLM Wiki·claude-mem·Obsidian Copilot</strong> 흐름과 정확히 이어진다. 바로 따라 할 수 있는 원칙 세 가지:
+</p>
+<ul>
+<li><strong>원본 / 정리 / 위키를 폴더로 분리</strong>한다.</li>
+<li>위키 수정은 <strong>밤에 몰아서, Git 커밋으로</strong> — 에이전트가 고친 내용을 diff로 검토할 수 있게.</li>
+<li>주장마다 <strong>출처 링크</strong>를 단다(‘기억의 신선도’ 문제를 줄이는 가장 싼 방법).</li>
+</ul>
+<h2>주의</h2>
+<p>
+개발자용 Agent API에는 이 자동 관리 기억이 <strong>포함되지 않는다</strong>. 버전 붙은 Skills·Profile과 문맥 전달 도구만 주고, 저장소 관리는 개발자 몫이다. 수치는 모두 Perplexity 내부 평가.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

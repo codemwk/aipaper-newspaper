@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/4] 세컨드 브레인 / PKM: K-Plex 0.4 — Excalidraw 제작자의 ‘노트 관계 지도’가 에이전트에게 문을 열었다. 로컬 API + 스킬 파일, 노트는 밖으로 안 나간다 — AiPaper 뉴스</title>
+  <meta name="description" content="Obsidian Excalidraw 제작자 Zsolt의 K-Plex가 11/1 0.4.0을 냈다. 공개 API(window.kplexApi.v1)로 로컬 스크립트·플러그인, 그리고 Obsidian CLI를 통해 Codex·Claude가 온톨로지·인덱스된 노드·관계와 그 근거·열린 캔버스 맥락을 읽고, 캔버스를 이동·전환할 수 있다. 에이전트용 스킬 파일 동봉. API는 로컬 전용이며 결과가 얼마나 완전한지 함께 알려 준다. 관계 필드 설명, PNG·마인드맵 마크다운 내보내기도 추가."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-11-04 07:10 KST</div>
+    <h1>[11/4] 세컨드 브레인 / PKM: K-Plex 0.4 — Excalidraw 제작자의 ‘노트 관계 지도’가 에이전트에게 문을 열었다. 로컬 API + 스킬 파일, 노트는 밖으로 안 나간다</h1>
+  </header>
+  <article>
+<p><em>Obsidian Excalidraw 제작자 Zsolt의 K-Plex가 11/1 0.4.0을 냈다. 공개 API(window.kplexApi.v1)로 로컬 스크립트·플러그인, 그리고 Obsidian CLI를 통해 Codex·Claude가 온톨로지·인덱스된 노드·관계와 그 근거·열린 캔버스 맥락을 읽고, 캔버스를 이동·전환할 수 있다. 에이전트용 스킬 파일 동봉. API는 로컬 전용이며 결과가 얼마나 완전한지 함께 알려 준다. 관계 필드 설명, PNG·마인드맵 마크다운 내보내기도 추가.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+노트 사이의 <strong>관계(“이 노트가 저 노트를 설명한다”, “가이드다”)</strong>를 지도로 보여 주던 K-Plex가, 이제 그 지도를 <strong>AI 비서가 읽을 수 있게</strong> 열었다(<a href="https://community.sketch-your-mind.com/t/k-plex-0-4-0-new-cli-agent-support-lots-more/13459">Sketch Your Mind 포럼 11/1</a>).
+</p>
+<h2>에이전트에게 열린 것</h2>
+<ul>
+<li><strong>읽기</strong>: 설정한 온톨로지(관계 종류), 인덱스된 노드 검색, 관계와 <strong>그 관계의 출처</strong>, 지금 열린 캔버스의 맥락.</li>
+<li><strong>조작</strong>: 캔버스 이동, 보기 전환(Compass·Mind Map·Facets), Facets 프리셋 선택.</li>
+<li><strong>경로</strong>: Obsidian 안에선 <code>window.kplexApi.v1</code>, 밖에선 <strong>Obsidian CLI</strong>로 Codex·Claude 같은 도구에서 호출. 예제: 연구 주제 찾기, 두 노트가 <strong>왜 연결됐는지</strong> 확인, 열린 마인드맵을 마크다운으로.</li>
+<li><strong>스킬 파일</strong>: 에이전트가 API를 어떻게 쓰고, <strong>불완전한 결과를 어떻게 해석할지</strong> 설명하는 기성 스킬.</li>
+</ul>
+<h2>설계가 좋은 이유</h2>
+<ul>
+<li><strong>로컬 전용</strong>: 웹 서비스를 띄우지 않고 노트를 AI 회사로 보내지도 않는다(호출한 에이전트가 무엇을 보내는지는 별개).</li>
+<li><strong>완전성 표시</strong>: 인덱스가 덜 된 영역을 읽으면 “이건 부분 결과”라고 알려 주고, 몰래 볼트 전체 인덱싱을 시작하지 않는다. 에이전트가 <strong>모르는 걸 아는 척하지 않게</strong> 하는 장치다.</li>
+<li><strong>쓰기는 기존 도구로</strong>: 노트 생성·관계 수정은 여전히 Obsidian의 일반 노트·속성 도구로. API가 데이터 구조를 몰래 바꾸지 않는다.</li>
+</ul>
+<h2>그 밖의 추가</h2>
+<p>
+관계 필드마다 <strong>설명</strong> 달기(예: Guide와 Explains를 언제 쓰나 — 스크립트도 읽음), Compass·Mind Map·Facets의 <strong>PNG 내보내기</strong>(1~3배, 투명 배경), 캔버스 → <strong>MindMap 마크다운</strong> 내보내기(Excalidraw MindMap Builder로 이어짐), 트랙패드 이동.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+저장해 두신 <strong>Obsidian Copilot</strong> 흐름의 10/31 소식(에이전트가 Excalidraw를 그리고 고치기)과 짝을 이룬다. 그쪽이 ‘에이전트가 그림을 그리는’ 방향이라면, K-Plex는 <strong>‘에이전트가 내 생각의 연결 구조를 읽는’</strong> 방향이다. 링크가 아니라 <strong>이름 붙은 관계</strong>를 쌓아 온 볼트일수록 에이전트가 쓸 재료가 많아진다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
