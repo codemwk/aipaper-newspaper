@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/5] 세컨드 브레인: 옵시디언 에이전트 플러그인의 다음 단계는 ‘되돌리기와 출처’ — Smart Second Brain과 Agent LLMs — AiPaper 뉴스</title>
+  <meta name="description" content="옵시디언 AI 플러그인이 ‘노트와 대화’를 넘어 안전장치 경쟁으로 가고 있다. Smart Second Brain은 의미+키워드 하이브리드 검색, 자동 주제 그래프, 모든 수정을 검토 대기로 올리는 에이전트를 무료·텔레메트리 없이 제공한다. Agent LLMs 0.7.15는 AI 변경 기록과 안전한 undo, 출처 해시로 ‘낡은 요약’ 표시, 모순 검토, 인용 경로 검증을 넣었다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 · 2026-11-05 07:04 KST</div>
+    <h1>[11/5] 세컨드 브레인: 옵시디언 에이전트 플러그인의 다음 단계는 ‘되돌리기와 출처’ — Smart Second Brain과 Agent LLMs</h1>
+  </header>
+  <article>
+<p><em>옵시디언 AI 플러그인이 ‘노트와 대화’를 넘어 안전장치 경쟁으로 가고 있다. Smart Second Brain은 의미+키워드 하이브리드 검색, 자동 주제 그래프, 모든 수정을 검토 대기로 올리는 에이전트를 무료·텔레메트리 없이 제공한다. Agent LLMs 0.7.15는 AI 변경 기록과 안전한 undo, 출처 해시로 ‘낡은 요약’ 표시, 모순 검토, 인용 경로 검증을 넣었다.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인</p>
+<h2>한줄 요약</h2>
+<p>
+에이전트가 내 볼트를 <strong>읽기만</strong> 하던 단계에서 <strong>쓰기 시작</strong>하자, 이제 플러그인들의 경쟁 포인트는 “얼마나 똑똑하냐”보다 <strong>“틀렸을 때 되돌릴 수 있냐, 근거가 살아 있냐”</strong>로 옮겨 가고 있다. 지난번 저장하신 <strong>LLM Wiki·기억 신선도(freshness)</strong> 소식과 바로 이어진다.
+</p>
+<h2>Smart Second Brain — 검토 대기열이 기본</h2>
+<ul>
+<li>키워드와 의미를 섞은 <strong>하이브리드 검색</strong>, 링크·태그·내용으로 노트를 묶는 <strong>자동 주제 그래프</strong>. 이 둘은 AI 연결 없이도 동작.</li>
+<li>AI를 붙이면 에이전트가 노트를 찾고 읽고 <strong>수정하되, 모든 변경은 검토 대기로</strong> 올라간다. 웹 검색, Dataview·Tasks·Canvas 연동, 노트 기반 차트·대시보드.</li>
+<li>Ollama·oMLX 로컬 또는 OpenAI·Anthropic·OpenRouter. 로컬 모델끼리 쓰면 아무것도 밖으로 안 나가고, <strong>텔레메트리 없음</strong>. 데스크톱·모바일 모두(<a href="https://community.obsidian.md/plugins/smart-second-brain">플러그인 페이지</a>).</li>
+</ul>
+<h2>Agent LLMs 0.7.15 — 안전장치 목록이 길다</h2>
+<ul>
+<li><strong>AI 변경 기록 + 안전한 undo</strong>: 최근 20건의 전후 스냅샷. 그 사이 내가 파일을 고쳤다면 덮어쓰지 않고 건너뛴다.</li>
+<li><strong>출처 추적</strong>: 요약 노트가 원문 조각별 해시를 기록 → 원문이 바뀌면 ‘낡음’ 표시, 재생성 시 차이를 보여 준다.</li>
+<li><strong>인용 검증</strong>: 답변에 인용된 노트 경로·헤딩이 실제로 있는지 확인, 없으면 표시.</li>
+<li><strong>모순 검토·중복 후보·고아 노트 링크 제안</strong>: 대부분 LLM 호출 0회, 아무것도 자동 삭제·병합하지 않음.</li>
+<li>그 밖에 결정 기록장, 오래 안 연 노트 5개 다시 보여 주기, 대화에서 결론·미결 질문 추출(<a href="https://community.obsidian.md/plugins/agent-llms">플러그인 페이지</a>).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+LLM Wiki를 직접 만들 계획이라면, 이 두 플러그인의 기능 목록은 그대로 <strong>설계 체크리스트</strong>다: 에이전트 수정은 검토 후 반영, 요약엔 원문 해시, 인용은 자동 검증, 삭제는 절대 자동으로 하지 않기.
+</p>
+<h2>주의</h2>
+<p>
+기능 설명은 각 플러그인의 문서 기준이며 직접 테스트한 결과가 아니다. 클라우드 모델을 붙이면 노트 내용이 해당 회사로 전송된다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
