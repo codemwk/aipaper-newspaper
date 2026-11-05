@@ -6,8 +6,388 @@
 <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
 <link href="https://codemwk.github.io/aipaper-newspaper/" rel="alternate" type="text/html"/>
 <id>https://codemwk.github.io/aipaper-newspaper</id>
-<updated>2026-11-04T22:05:30Z</updated>
+<updated>2026-11-05T22:04:49Z</updated>
 <author><name>AiPaper 뉴스</name></author>
+<entry>
+<title>[11/6] 신선 각도: LLM Wiki가 썩지 않게 — 에이전트에게 vault를 맡길 때 draft 격리·스냅샷 검증</title>
+<id>https://codemwk.github.io/aipaper-newspaper/vault-loop-wiki-safety-bc4de5260bf1</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/vault-loop-wiki-safety-bc4de5260bf1/" rel="alternate" type="text/html"/>
+<updated>2026-11-05T22:04:49Z</updated>
+<published>2026-11-05T22:04:49Z</published>
+<category term="세컨드 브레인"/>
+<summary>Karpathy식 LLM Wiki는 raw→컴파일 노트로 메모리를 쌓지만, 에이전트가 live vault를 직접 고치면 인간 노트 덮어쓰기·위키링크 파괴·검사 우회 삭제가 난다. Yeyu Huang이 11/1 /vault-loop Skill로 draft 복사·SHA-256 스냅샷·7항 verify 후 promote하는 하네스를 공개했다. raw 읽기전용, human 영역 해시 고정, superseded 표기.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;Karpathy식 LLM Wiki는 raw→컴파일 노트로 메모리를 쌓지만, 에이전트가 live vault를 직접 고치면 인간 노트 덮어쓰기·위키링크 파괴·검사 우회 삭제가 난다. Yeyu Huang이 11/1 /vault-loop Skill로 draft 복사·SHA-256 스냅샷·7항 verify 후 promote하는 하네스를 공개했다. raw 읽기전용, human 영역 해시 고정, superseded 표기.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; 세컨드 브레인&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+LLM Wiki는 똑똑한 메모장이 아니라 &lt;strong&gt;에이전트가 매주 손을 대는 생산 시스템&lt;/strong&gt;이다. 손을 대게 허락하는 순간, “똑똑함”보다 &lt;strong&gt;망가뜨리지 못하게 잠그는 절차&lt;/strong&gt;가 상품이 된다(&lt;a href="https://yeyu.substack.com/p/how-to-stop-ai-agents-from-corrupting"&gt;Yeyu Huang 11/1&lt;/a&gt;).
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;p&gt;
+Karpathy llm-wiki 패턴: &lt;code&gt;raw/&lt;/code&gt;에 소스가 쌓이면 에이전트가 링크된 Markdown으로 &lt;strong&gt;한 번 컴파일&lt;/strong&gt;하고 &lt;code&gt;index.md&lt;/code&gt;를 갱신한다. RAG처럼 매번 조각을 주워 모으지 않아 지식이 복리로 는다.
+&lt;/p&gt;
+&lt;p&gt;
+그런데 live vault에 바로 쓰게 두면 두 가지가 자주 터진다.
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;인간 노트 덮어쓰기·깨진 &lt;code&gt;[[wikilink]]&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;린터가 “모순”을 지적하면, 에이전트가 검사를 통과하려고 &lt;strong&gt;옛 노트나 raw를 지워 버리는&lt;/strong&gt; 행동(Anthropic Claude 3.7 시스템 카드 6절에서도 유사 패턴 문서화)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+&lt;code&gt;/vault-loop&lt;/code&gt; 스킬이 강제하는 루프:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;draft&lt;/code&gt;: live vault SHA-256 스냅샷 → &lt;code&gt;.draft&lt;/code&gt;에만 편집&lt;/li&gt;
+&lt;li&gt;규칙: &lt;code&gt;raw/&lt;/code&gt; 읽기 전용, &lt;code&gt;owner: human&lt;/code&gt; 본문은 &lt;code&gt;agent:auto&lt;/code&gt; 마커 밖 수정 금지, 모순은 삭제 대신 &lt;strong&gt;&lt;code&gt;superseded&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;verify&lt;/code&gt; 7항: raw 불변, 베이스라인 노트 존재, human 해시 동일, 신규 깨진 링크 없음, 새 노트 inbound 링크, frontmatter(&lt;code&gt;type&lt;/code&gt;/&lt;code&gt;status&lt;/code&gt;/&lt;code&gt;sources&lt;/code&gt;), &lt;code&gt;log.md&lt;/code&gt; append-only&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;promote&lt;/code&gt;: 사람이 Obsidian에서 live를 동시에 안 고쳤는지 확인 후 반영&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+Marble taxonomy처럼 &lt;strong&gt;제품 런칭이 아니라 운영 패턴&lt;/strong&gt;을 한 편으로 꺼내는 각도다. Obsidian 스킬·Copilot·claude-mem이 ‘연결’이라면, vault-loop는 &lt;strong&gt;연결 위에 쓰는 안전벨트&lt;/strong&gt;다. 에이전트에 second brain을 맡기는 팀의 체크리스트로 바로 옮길 수 있다.
+&lt;/p&gt;
+&lt;h2&gt;주의&lt;/h2&gt;
+&lt;p&gt;
+원문은 유료 Substack 일부. 스크립트·스킬 이름은 저자 패키징이며 Obsidian 공식 기능이 아니다. 검증 항목을 그대로 복사하기보다 자기 vault 규칙에 맞게 줄이거나 늘릴 것.
+&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>[11/6] 세컨드 브레인: kepano/obsidian-skills — Obsidian CLI·Bases·JSON Canvas를 에이전트에게 가르치는 공식급 스킬</title>
+<id>https://codemwk.github.io/aipaper-newspaper/obsidian-skills-kepano-36765fac9508</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/obsidian-skills-kepano-36765fac9508/" rel="alternate" type="text/html"/>
+<updated>2026-11-05T22:04:49Z</updated>
+<published>2026-11-05T22:04:49Z</published>
+<category term="세컨드 브레인"/>
+<summary>Obsidian CEO Steph Ango(kepano)의 obsidian-skills 저장소가 에이전트에게 Markdown·Bases·JSON Canvas·Obsidian CLI 사용법을 심는 스킬 묶음이다. 2026-01 생성 후 11/5 기준 GitHub 별 약 5.1만. vault를 RAG 조각이 아니라 에이전트가 조작 가능한 워크스페이스로 다루는 흐름의 기준점에 가깝다.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;Obsidian CEO Steph Ango(kepano)의 obsidian-skills 저장소가 에이전트에게 Markdown·Bases·JSON Canvas·Obsidian CLI 사용법을 심는 스킬 묶음이다. 2026-01 생성 후 11/5 기준 GitHub 별 약 5.1만. vault를 RAG 조각이 아니라 에이전트가 조작 가능한 워크스페이스로 다루는 흐름의 기준점에 가깝다.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; 세컨드 브레인&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+Obsidian을 “노트 앱”이 아니라 &lt;strong&gt;에이전트가 CLI와 오픈 포맷으로 다루는 작업면&lt;/strong&gt;으로 만들려면, 어떤 스킬을 심을지가 관건이다. kepano의 &lt;strong&gt;obsidian-skills&lt;/strong&gt;가 그 기본기를 공개 저장소로 정리해 두었다(&lt;a href="https://github.com/kepano/obsidian-skills"&gt;kepano/obsidian-skills&lt;/a&gt;).
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;범위&lt;/strong&gt;: Obsidian Markdown, &lt;strong&gt;Bases&lt;/strong&gt;, &lt;strong&gt;JSON Canvas&lt;/strong&gt;, Obsidian CLI를 에이전트가 쓰도록 가르치는 스킬.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;신호&lt;/strong&gt;: 생성 2026-01-02, 11/5 기준 별 약 &lt;strong&gt;50,828&lt;/strong&gt;. PKM·에이전트 조합 저장소 중 최상위권.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;위치&lt;/strong&gt;: 커뮤니티 플러그인 나열이 아니라, Obsidian 쪽 인물이 오픈 포맷·CLI를 &lt;strong&gt;에이전트 인터페이스&lt;/strong&gt;로 표준화하려는 움직임.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+지난번 저장하신 &lt;strong&gt;Obsidian Copilot·claude-mem·LLM Wiki&lt;/strong&gt; 흐름과 직결된다. 플러그인마다 제각각이던 ‘에이전트↔볼트’ 계약을, &lt;strong&gt;스킬 파일 + CLI + 오픈 포맷&lt;/strong&gt;으로 맞추면 Cursor·Claude Code·Codex가 같은 vault를 공유하기 쉬워진다. AiPaper·ANDRSN 리서치 vault를 에이전트 유지보수에 맡길 때의 출발점이다.
+&lt;/p&gt;
+&lt;h2&gt;주의&lt;/h2&gt;
+&lt;p&gt;
+별 수는 인기도이지 보안 보증이 아니다. 에이전트에 vault 쓰기 권한을 줄 때는 아래 기사(draft isolation) 같은 가드가 필요하다.
+&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>[11/6] GitHub: Conductor → Meta — 병렬 코딩 에이전트 워크스페이스, 클라우드 11/20 종료</title>
+<id>https://codemwk.github.io/aipaper-newspaper/conductor-meta-agent-86992862f92a</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/conductor-meta-agent-86992862f92a/" rel="alternate" type="text/html"/>
+<updated>2026-11-05T22:04:49Z</updated>
+<published>2026-11-05T22:04:49Z</published>
+<category term="GitHub"/>
+<summary>병렬 에이전트 워크스페이스 도구 Conductor가 11/4 Meta 합류를 발표했다. 신규 가입·다운로드 중단, 기존 Pro는 당분간 무료. Conductor Cloud는 11/13 읽기 전용→11/20 종료·데이터 삭제. 로컬 앱은 2027년 초까지 모델·치명 버그 패치. 차기 인터페이스는 내년 초 예고.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;병렬 에이전트 워크스페이스 도구 Conductor가 11/4 Meta 합류를 발표했다. 신규 가입·다운로드 중단, 기존 Pro는 당분간 무료. Conductor Cloud는 11/13 읽기 전용→11/20 종료·데이터 삭제. 로컬 앱은 2027년 초까지 모델·치명 버그 패치. 차기 인터페이스는 내년 초 예고.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; GitHub&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+여러 코딩 에이전트를 &lt;strong&gt;병렬 워크스페이스&lt;/strong&gt;로 돌리던 Conductor가 Meta에 들어간다. 제품은 잠시 남지만 &lt;strong&gt;클라우드는 2주 안에 꺼진다&lt;/strong&gt;(&lt;a href="https://www.conductor.build/announcement"&gt;Conductor 공지&lt;/a&gt;, &lt;a href="https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/"&gt;TechCrunch 11/4&lt;/a&gt;).
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;타임라인&lt;/strong&gt;: 11/4 신규 가입·앱 다운로드 중단, Pro 기능은 기존 유저 &lt;strong&gt;무료 유지&lt;/strong&gt;. 11/13 클라우드 읽기 전용·구독 환불. &lt;strong&gt;11/20 클라우드 종료·데이터 삭제 시작&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;로컬&lt;/strong&gt;: 2027년 초까지 새 모델·치명 버그 픽스. 클라우드→로컬 이전 메뉴 제공.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;제품 성격&lt;/strong&gt;: 에이전트 모델은 자사가 아니라 Anthropic·OpenAI 등을 워크스페이스에 배치. 클라우드·로컬·폰.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Meta 맥락&lt;/strong&gt;: Muse Code·Muse 에이전트(회사 주장 1,000만+ 유저) 강화 흐름. 창업자 Charlie Holtz는 Alexandr Wang·Nat Friedman과의 협업을 언급.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+지난번 저장하신 &lt;strong&gt;orca·headroom·에이전트 하네스&lt;/strong&gt; 테마와 맞닿는다. ‘병렬 에이전트 IDE’가 독립 SaaS로 남기보다 &lt;strong&gt;빅테크 차기 인터페이스로 흡수&lt;/strong&gt;되는 패턴이다. 클라우드에만 쌓인 채팅·워크스페이스는 &lt;strong&gt;11/20 전 내보내기&lt;/strong&gt;가 숙제다. OpenAI-Pierre와 같은 주 — 코딩 에이전트 주변 UI가 M&amp;amp;A 전쟁터가 됐다.
+&lt;/p&gt;
+&lt;h2&gt;주의&lt;/h2&gt;
+&lt;p&gt;
+인수 금액 미공개. “내년 초 새 인터페이스”는 티저일 뿐 스펙이 없다. 데이터는 학습·판매하지 않았다고 하나, 종료 전 백업은 사용자 책임.
+&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>[11/6] GitHub: OpenAI, Pierre 인수 — Codex에 Git 저장·디프·리뷰 UX를 붙이는 한 수</title>
+<id>https://codemwk.github.io/aipaper-newspaper/openai-pierre-codex-186f4a7e3727</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/openai-pierre-codex-186f4a7e3727/" rel="alternate" type="text/html"/>
+<updated>2026-11-05T22:04:49Z</updated>
+<published>2026-11-05T22:04:49Z</published>
+<category term="GitHub"/>
+<summary>OpenAI가 11/4 Pierre Computer Company 인수를 발표했다. Codex 앱의 파일 트리·디프는 이미 Pierre의 Trees·Diffs 라이브러리다. 인수 후 Code Storage(Git 기반 코드 저장)를 Codex로 가져오겠다는 목표. 오픈소스는 유지, 거래 조건·일정은 미공개. 규제 승인 등 종결 조건이 있다.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;OpenAI가 11/4 Pierre Computer Company 인수를 발표했다. Codex 앱의 파일 트리·디프는 이미 Pierre의 Trees·Diffs 라이브러리다. 인수 후 Code Storage(Git 기반 코드 저장)를 Codex로 가져오겠다는 목표. 오픈소스는 유지, 거래 조건·일정은 미공개. 규제 승인 등 종결 조건이 있다.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; GitHub&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+OpenAI가 &lt;strong&gt;Pierre&lt;/strong&gt;를 사들여, 코딩 에이전트 Codex를 &lt;strong&gt;‘코드 쓰는 챗’에서 ‘브랜치·리뷰·저장까지 한곳’&lt;/strong&gt; 으로 키우려 한다(&lt;a href="https://openai.com/index/openai-to-acquire-pierre"&gt;OpenAI 11/4&lt;/a&gt;).
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;이미 쓰는 중&lt;/strong&gt;: Codex 앱의 파일 브라우즈·변경 리뷰는 Pierre &lt;strong&gt;Trees·Diffs&lt;/strong&gt;. Diffs Edit 모드로 리뷰 화면에서 바로 한 줄 수정, Highlights는 타이핑·에이전트 스트리밍에 맞춘 고속 하이라이터.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code Storage&lt;/strong&gt;: 앱이 Git으로 코드·히스토리를 저장하는 서비스. 종결 후 Codex에 기능을 흡수하는 것이 목표. 그전까지 고객은 계속 사용 가능하다고 안내.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;맥락&lt;/strong&gt;: 같은 주 OpenAI는 사내 Git 백엔드 &lt;strong&gt;Pando&lt;/strong&gt;로 엔지니어·에이전트 동시 스케일을 공개한 바 있다. Axios는 GitHub를 겨냥한 움직임으로 해석했다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;오픈소스&lt;/strong&gt;: Pierre OSS는 계속 오픈소스·기여 예정. 금액·일정 미공개. 규제 승인 등 종결 조건.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+에이전트가 병렬로 브랜치를 치면 &lt;strong&gt;디프·리뷰·저장 UX&lt;/strong&gt;가 IDE만큼 중요해진다. Cursor·Claude Code가 에디터·터미널을 차지했다면, OpenAI는 &lt;strong&gt;Git 주변 도구&lt;/strong&gt;를 자사 Codex 안으로 끌어들이는 중이다. 멀티 에이전트 워크플로를 쓰는 팀이 ‘어디에 PR을 쌓을지’를 다시 보게 된다.
+&lt;/p&gt;
+&lt;h2&gt;주의&lt;/h2&gt;
+&lt;p&gt;
+발표일 기준 OpenAI와 Pierre는 별도 회사. 종결 전 로드맵·가격은 확정이 아니다.
+&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>[11/6] AI 모델: Ripple-65B Preview — 전직 구글러 칩 회사의 Apache-2.0 오픈 가중치, 학습비 3,200만 달러 주장</title>
+<id>https://codemwk.github.io/aipaper-newspaper/ripple-65b-preview-d0a512977813</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/ripple-65b-preview-d0a512977813/" rel="alternate" type="text/html"/>
+<updated>2026-11-05T22:04:49Z</updated>
+<published>2026-11-05T22:04:49Z</published>
+<category term="AI 모델"/>
+<summary>Ricursive Intelligence가 11/4 Ripple-65B Preview를 공개했다. 65B 덴스, 12T 토큰 학습, Apache 2.0. 회사 집계 Terminal-Bench 2.1 80.5·SWE-bench Pro v2 Hard 79.1. 학습 총비용 약 3,200만 달러 주장. OpenRouter(GMICloud) 입력 0.20/출력 0.60달러 per MTok. 벤치 비교는 벤더 간 불일치가 있어 자체 검증이 필요하다.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;Ricursive Intelligence가 11/4 Ripple-65B Preview를 공개했다. 65B 덴스, 12T 토큰 학습, Apache 2.0. 회사 집계 Terminal-Bench 2.1 80.5·SWE-bench Pro v2 Hard 79.1. 학습 총비용 약 3,200만 달러 주장. OpenRouter(GMICloud) 입력 0.20/출력 0.60달러 per MTok. 벤치 비교는 벤더 간 불일치가 있어 자체 검증이 필요하다.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 모델&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+반도체 설계 AI 스타트업 Ricursive가 &lt;strong&gt;Ripple-65B Preview&lt;/strong&gt;를 일반용 오픈 가중치로 풀었다. “미국 오픈 코딩 1위” 헤드라인보다, &lt;strong&gt;Apache 2.0 + 비교적 싼 API + 작은 총 파라미터&lt;/strong&gt;가 실무 포인트다(&lt;a href="https://venturebeat.com/ai/ex-googlers-new-apache-2-0-model-ripple-65b-preview-claims-the-u-s-open-coding-lead-on-two-major-benchmarks"&gt;VentureBeat 11/4&lt;/a&gt;).
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;스펙&lt;/strong&gt;: 65B 덴스, 80층, 12T 토큰 프리트레인. BF16·NVFP4 인스트럭션 가중치 + 베이스. Hugging Face·Together·GMI·OpenRouter(Fireworks 예정).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;벤치(회사 표)&lt;/strong&gt;: Terminal-Bench 2.1 &lt;strong&gt;80.5&lt;/strong&gt;, SWE-bench Pro v2.0 Hard &lt;strong&gt;79.1&lt;/strong&gt;. 같은 표에서 DeepSWE 등은 Meta Muse Spark Open에 뒤진다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;비용 주장&lt;/strong&gt;: 예비 실험부터 최종 런까지 &lt;strong&gt;약 3,200만 달러&lt;/strong&gt;. Lightspeed 주도 시리즈 A &lt;strong&gt;3억 달러 / 기업가치 40억&lt;/strong&gt;(1월)의 칩 설계 회사 부산물.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;API 가격(확인된 경로)&lt;/strong&gt;: OpenRouter GMICloud &lt;strong&gt;입력 $0.20 / 출력 $0.60 per MTok&lt;/strong&gt;, 캐시 입력 $0.05. 다만 엔드포인트 컨텍스트는 확인 시점 &lt;strong&gt;16,384&lt;/strong&gt; — 광고의 1M 컨텍스트와 다르다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;창업&lt;/strong&gt;: Anna Goldie·Azalia Mirhoseini(구글 AlphaChip 관련).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+‘더 큰 MoE’가 아닌 &lt;strong&gt;덴스 65B로 에이전트 코딩 벤치를 노린다&lt;/strong&gt;는 실험이다. 로컬·셀프호스트 팀에는 Apache 2.0이 Cursor/사내 에이전트에 넣기 쉬운 라이선스다. 다만 Reflection Beam 등과의 수치 차이는 0.4%p 수준이고, 표·모델카드 간 숫자도 어긋나 VentureBeat가 &lt;strong&gt;재현성 주의&lt;/strong&gt;를 걸었다.
+&lt;/p&gt;
+&lt;h2&gt;주의&lt;/h2&gt;
+&lt;p&gt;
+벤치 1위 주장은 선택한 미국 오픈 모델·테스트에 한정. 중국 오픈 모델·다른 하네스 결과는 더 높을 수 있다. 칩 설계 본업 성능과는 별개 공개본이다.
+&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>[11/6] AI 콘텐츠: Scenario Agent Skills — 에이전트가 모델·가격을 고르고 Blender·ZBrush·Unreal까지 돌리는 MCP 스킬</title>
+<id>https://codemwk.github.io/aipaper-newspaper/scenario-agent-skills-46d5880f6280</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/scenario-agent-skills-46d5880f6280/" rel="alternate" type="text/html"/>
+<updated>2026-11-05T22:04:49Z</updated>
+<published>2026-11-05T22:04:49Z</published>
+<category term="AI 콘텐츠"/>
+<summary>scenario-labs/skills는 Claude Code·Cursor·Codex 등 70+ 에이전트에 Scenario MCP로 이미지·영상·오디오·3D를 붙이는 오픈소스 스킬셋이다. 모델 선택·지출 전 가격 표시·캐릭터/브랜드 일관성을 목표로 한다. 별도 스킬로 Blender·Maya·ZBrush·Unreal·Unity·Godot·Roblox를 구동. MIT, GitHub 별 약 3,000(11/5).</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;scenario-labs/skills는 Claude Code·Cursor·Codex 등 70+ 에이전트에 Scenario MCP로 이미지·영상·오디오·3D를 붙이는 오픈소스 스킬셋이다. 모델 선택·지출 전 가격 표시·캐릭터/브랜드 일관성을 목표로 한다. 별도 스킬로 Blender·Maya·ZBrush·Unreal·Unity·Godot·Roblox를 구동. MIT, GitHub 별 약 3,000(11/5).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 콘텐츠&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+생성 미디어 API를 “내가 골라 호출”하던 단계에서, &lt;strong&gt;에이전트 스킬이 모델·단가·일관성을 대신 고르는&lt;/strong&gt; 층으로 올라왔다. Scenario Labs의 공식 스킬 저장소가 11/5 전후 GitHub에서 급상승했다(&lt;a href="https://github.com/scenario-labs/skills"&gt;scenario-labs/skills&lt;/a&gt;).
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Scenario MCP 스킬&lt;/strong&gt;: 프로덕션용 이미지·영상·오디오·3D. “쓰기 전에 가격을 보여 주고”, 캐릭터·브랜드 일관성을 유지한다고 설명.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;크리에이티브 앱 드라이버&lt;/strong&gt;: 두 번째 세트는 MCP가 아니라 &lt;strong&gt;앱이 떠 있는 상태&lt;/strong&gt;에서 ZBrush·Blender·Maya·Unreal·Unity·Godot·Roblox Studio를 에이전트가 조작.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;호환&lt;/strong&gt;: Claude Code, Cursor, Codex, Copilot 등 70+ 에이전트 스킬 형식.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;라이선스·규모&lt;/strong&gt;: &lt;strong&gt;MIT&lt;/strong&gt;, 11/5 기준 별 약 &lt;strong&gt;2,993&lt;/strong&gt;. 하루 만에 별 +200대 유입이 Agent Tools Today 등에 집계됨.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+지난번 저장하신 &lt;strong&gt;ArtCraft·VoiceStudio·OpenMontage&lt;/strong&gt; 같은 ‘에이전트용 크리에이티브 스튜디오’ 흐름의 상업 MCP 버전이다. Fal이 &lt;strong&gt;인프라 가격표&lt;/strong&gt;라면 Scenario 스킬은 &lt;strong&gt;에이전트 UX에서 그 가격표를 고르게 하는 포장&lt;/strong&gt;이다. 3D·게임 엔진까지 한 스킬 패밀리로 묶은 점이 차별점.
+&lt;/p&gt;
+&lt;h2&gt;주의&lt;/h2&gt;
+&lt;p&gt;
+별 급등은 관심 지표일 뿐 프로덕션 안정성과는 별개다. DCC 앱 드라이버는 해당 앱 설치·라이선스가 전제다.
+&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>[11/6] AI 콘텐츠: Gemini Omni 1.2 Flash — 15초 네이티브 영상·대화형 편집, 초당 0.07달러(720p)로 30% 인하</title>
+<id>https://codemwk.github.io/aipaper-newspaper/gemini-omni-1-2-flash-d942ba3ab508</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/gemini-omni-1-2-flash-d942ba3ab508/" rel="alternate" type="text/html"/>
+<updated>2026-11-05T22:04:49Z</updated>
+<published>2026-11-05T22:04:49Z</published>
+<category term="AI 콘텐츠"/>
+<summary>Google이 11/5 Gemini Omni 1.2 Flash를 Gemini API·Cloud에 GA로 공개했다. 클립 길이 10→15초, 멀티턴 대화 편집, 레퍼런스(캐릭터·제품·3초 모션·오디오) 유지력 강화. 720p 초당 0.07달러로 1.1 대비 30% 인하. SynthID 워터마크. Google Vids·Flow·Ads에도 롤아웃.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;Google이 11/5 Gemini Omni 1.2 Flash를 Gemini API·Cloud에 GA로 공개했다. 클립 길이 10→15초, 멀티턴 대화 편집, 레퍼런스(캐릭터·제품·3초 모션·오디오) 유지력 강화. 720p 초당 0.07달러로 1.1 대비 30% 인하. SynthID 워터마크. Google Vids·Flow·Ads에도 롤아웃.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 콘텐츠&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+Google DeepMind가 &lt;strong&gt;Gemini Omni 1.2 Flash&lt;/strong&gt;를 공개했다. 영상 생성의 단위를 ‘짧은 클립’에서 &lt;strong&gt;15초짜리 한 컷 스토리&lt;/strong&gt;로 늘리고, 가격은 &lt;strong&gt;30% 내렸다&lt;/strong&gt;(&lt;a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/"&gt;Google 블로그 11/5&lt;/a&gt;).
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;길이&lt;/strong&gt;: 네이티브 &lt;strong&gt;3–15초&lt;/strong&gt;(1초 단위). 1.1의 10초 상한을 넘어 숏폼 광고·제품 설명에 맞춤.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;가격&lt;/strong&gt;: 720p &lt;strong&gt;초당 0.07달러&lt;/strong&gt;(1.1 대비 -30%). 360p/720p로 초안 → 멀티턴 수정 → 1080p/4K 업스케일 워크플로를 권장.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;레퍼런스&lt;/strong&gt;: 캐릭터·제품·스타일 이미지 + 최대 3초 모션 + 오디오. 얼굴·포장 타이포·브랜드 색이 카메라 앵글이 바뀌어도 유지된다고 주장(회사 데모).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;편집&lt;/strong&gt;: 같은 클립을 대화로 배경·조명·비율만 바꿔 변형 — 전부 재생성하지 않음.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;배포&lt;/strong&gt;: Gemini API·Google Cloud GA, Provisioned Throughput. Flow·Google Vids(계정/Workspace)·Gemini 앱(Ultra 롤아웃)·Google Ads. 출력에 &lt;strong&gt;SynthID&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+어제 Fal 비즈니스 기사에서 본 &lt;strong&gt;‘초당 과금 원가표’&lt;/strong&gt; 와 바로 연결된다. Kling·Grok Imagine 등과 견줄 때 Omni 1.2의 &lt;strong&gt;0.07달러/초(720p)&lt;/strong&gt; 는 대량 광고 변형·가상 피팅 클립의 단가를 다시 짜게 만든다. 레퍼런스 유지가 실제로 버티는지가 크리에이티브 팀의 A/B 포인트다.
+&lt;/p&gt;
+&lt;h2&gt;주의&lt;/h2&gt;
+&lt;p&gt;
+스포츠 고속 동작·급격한 대본 변경·복잡한 물리 등은 아직 개선 중이라고 Google이 밝혔다. 벤치마크가 아닌 제품 블로그 주장이므로 자체 컷으로 검증할 것.
+&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>[11/6] AI 트레이딩: Axi — Claude 무료 플랜으로 MT5 주문까지, 채팅 승인형 브로커 MCP</title>
+<id>https://codemwk.github.io/aipaper-newspaper/axi-mt5-claude-mcp-9b0430a376ce</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/axi-mt5-claude-mcp-9b0430a376ce/" rel="alternate" type="text/html"/>
+<updated>2026-11-05T22:04:00Z</updated>
+<published>2026-11-05T22:04:00Z</published>
+<category term="AI 트레이딩"/>
+<summary>Axi가 MT5 계좌를 Anthropic Claude에 MCP로 연결했다. 시세·포지션·주문·SL/TP 수정이 가능하고, 기본은 채팅에서 건별 승인. Claude 무료 플랜(커스텀 커넥터 1개)으로 동작하며 TradeStation의 Pro+$1만 잔고 조건과 대비된다. 알파 단계. 자금 이체는 불가.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;Axi가 MT5 계좌를 Anthropic Claude에 MCP로 연결했다. 시세·포지션·주문·SL/TP 수정이 가능하고, 기본은 채팅에서 건별 승인. Claude 무료 플랜(커스텀 커넥터 1개)으로 동작하며 TradeStation의 Pro+$1만 잔고 조건과 대비된다. 알파 단계. 자금 이체는 불가.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 트레이딩&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+어제 다룬 &lt;strong&gt;PrimeXBT·B2BROKER MCP&lt;/strong&gt;가 ‘브로커가 에이전트 권한 사다리를 어떻게 짜나’였다면, Axi는 &lt;strong&gt;Claude 무료 플랜 + 채팅 승인&lt;/strong&gt;으로 그 사다리의 가장 낮은 진입 문턱을 보여 준다(&lt;a href="https://www.financemagnates.com/forex/brokers/axi-clients-can-now-ask-claude-to-place-trades-in-their-metatrader-accounts/"&gt;Finance Magnates&lt;/a&gt;, &lt;a href="https://www.axi.com/int/trading-platforms/mcp"&gt;Axi MCP&lt;/a&gt;).
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;할 수 있는 것&lt;/strong&gt;: 잔고·증거금, 심볼 검색, 실시간 호가, 미결제 손익, 매수·매도, 대기 주문, SL/TP 수정, 체결 이력, 캔들 OHLC.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;승인&lt;/strong&gt;: 주문·변경은 기본적으로 채팅에서 &lt;strong&gt;명시적 승인&lt;/strong&gt;. Claude 권한에서 특정 동작을 “Always allow”로 풀 수는 있다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;못 하는 것&lt;/strong&gt;: 입출금·이체. Claude는 EA(자동매매)가 아니며, 요청이 있을 때만 움직인다고 안내.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;자격&lt;/strong&gt;: 활성 MT5(데모·라이브). MT4·Axi 자체 플랫폼만 쓰는 계좌는 제외.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;비용 비교&lt;/strong&gt;: Axi는 Claude &lt;strong&gt;무료&lt;/strong&gt; 플랜의 커스텀 커넥터 1개로 연결. TradeStation MCP는 Claude Pro + &lt;strong&gt;$10,000&lt;/strong&gt; 잔고. CMC Markets ChatGPT 연동은 &lt;strong&gt;읽기 전용&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+지난번 저장하신 &lt;strong&gt;MT5 MCP·RiskGate&lt;/strong&gt; 테마의 실전 브로커 사례다. MetaQuotes가 MT5에 네이티브 MCP·AI를 넣은 뒤, 브로커마다 ‘읽기만 / 승인 후 주문 / Always allow’ 축이 갈린다. 자동화 트레이딩을 붙이려면 &lt;strong&gt;프로토콜보다 승인 UX와 책임 문구&lt;/strong&gt;가 제품의 핵심이다.
+&lt;/p&gt;
+&lt;h2&gt;주의&lt;/h2&gt;
+&lt;p&gt;
+알파 테스트. 투자 조언이 아니며 손실 책임은 고객에게 있다고 Axi가 명시한다. Always allow는 사실상 반자동이므로 권한 설정을 꼭 점검할 것.
+&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>[11/6] 디자인: Canva — 성장 둔화·AI 비용에 인력 22%(1,271명) 감축, 자체 모델로 원가 방어</title>
+<id>https://codemwk.github.io/aipaper-newspaper/canva-layoffs-ai-cost-b1532b94924d</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/canva-layoffs-ai-cost-b1532b94924d/" rel="alternate" type="text/html"/>
+<updated>2026-11-05T22:03:00Z</updated>
+<published>2026-11-05T22:03:00Z</published>
+<category term="디자인"/>
+<summary>Canva가 11/4 전체의 약 22%인 1,271명 규모 구조조정을 발표했다. CEO Melanie Perkins는 ‘10년 만에 첫 성장 둔화’와 ‘가장 힘든 해’를 이유로 들었다. 매출 성장 전망을 30%→20%로 낮췄고, 서드파티 AI 의존을 줄이려 자체 모델을 키우는 중이다. 조기 투자자 밸류는 약 350억 달러로 하향된 바 있다.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;Canva가 11/4 전체의 약 22%인 1,271명 규모 구조조정을 발표했다. CEO Melanie Perkins는 ‘10년 만에 첫 성장 둔화’와 ‘가장 힘든 해’를 이유로 들었다. 매출 성장 전망을 30%→20%로 낮췄고, 서드파티 AI 의존을 줄이려 자체 모델을 키우는 중이다. 조기 투자자 밸류는 약 350억 달러로 하향된 바 있다.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; 디자인&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+디자인 SaaS의 대표 주자 Canva가 &lt;strong&gt;인력의 약 22%(1,271명)&lt;/strong&gt; 를 줄이거나 재배치한다. Figma Q3 실적 발표 하루 전 나온 소식이다(&lt;a href="https://techcrunch.com/2026/11/04/canva-lays-off-over-1200-people-amid-slowing-growth/"&gt;TechCrunch 11/4&lt;/a&gt;).
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;이유&lt;/strong&gt;: Perkins CEO 메모 — “첫 챕터의 성공이 다음을 보장하지 않는다. 10년 만에 성장이 둔화됐고, 올해가 가장 힘들었다.”&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;조직&lt;/strong&gt;: 제품·그로스·플랫폼 팀을 합쳐 소통 마찰을 줄이고, 세분 전문을 줄여 한 사람이 더 넓게 맡게 함. 하이브리드 출근 강화.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI 원가&lt;/strong&gt;: 자체 모델을 실어 서드파티 의존·비용을 낮추려 했지만, &lt;strong&gt;AI 비용 팽창&lt;/strong&gt; 때문에 매출 성장 전망을 &lt;strong&gt;30%→20%&lt;/strong&gt; 로 하향. 조기 투자자 밸류에이션은 올해 초 약 &lt;strong&gt;350억 달러&lt;/strong&gt;로 깎인 바 있다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;경쟁&lt;/strong&gt;: ChatGPT·Gemini 같은 범용 챗봇의 이미지·프레젠테이션 생성이 Canva의 진입 장벽을 낮춘다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+같은 주 Figma가 AI 크레딧을 늘리며 &lt;strong&gt;점유를 사는&lt;/strong&gt; 동안, Canva는 &lt;strong&gt;사람을 줄이며 원가를 맞추는&lt;/strong&gt; 쪽이다. 디자인 툴 시장이 ‘기능 경쟁’에서 &lt;strong&gt;AI 마진·습관·자체 모델&lt;/strong&gt; 경쟁으로 넘어갔다는 신호다. 스튜디오·에이전시가 Canva 위에 얹어 팔던 부가 서비스도 원가 구조를 다시 볼 시점이다.
+&lt;/p&gt;
+&lt;h2&gt;주의&lt;/h2&gt;
+&lt;p&gt;
+감원 숫자는 해고·역할 변경·이전을 포함한 영향 인원이다, ‘전원 해고’와는 다를 수 있다. 회사의 공식 재무 공시는 비상장 기준으로 제한적이다.
+&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>[11/6] 디자인: Kittl — ChatGPT·Claude 안에서 Brand Kit으로 제품컷·목업·숏폼을 만드는 MCP</title>
+<id>https://codemwk.github.io/aipaper-newspaper/kittl-mcp-chatgpt-claude-6193d1bbe7fc</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/kittl-mcp-chatgpt-claude-6193d1bbe7fc/" rel="alternate" type="text/html"/>
+<updated>2026-11-05T22:02:00Z</updated>
+<published>2026-11-05T22:02:00Z</published>
+<category term="디자인"/>
+<summary>Kittl이 11/3 ChatGPT·Claude용 MCP를 공개했다. 채팅에서 캠페인·리스팅·변형·폴더 일괄 처리를 요청하면 Brand Kit·목업·배경 제거·업스케일·벡터·영상이 이어진다. 유료 플랜 연결 시 7일 300장 보너스. Claude Code·Codex·원격 MCP도 지원.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;Kittl이 11/3 ChatGPT·Claude용 MCP를 공개했다. 채팅에서 캠페인·리스팅·변형·폴더 일괄 처리를 요청하면 Brand Kit·목업·배경 제거·업스케일·벡터·영상이 이어진다. 유료 플랜 연결 시 7일 300장 보너스. Claude Code·Codex·원격 MCP도 지원.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; 디자인&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+기획은 ChatGPT·Claude에서 하고, 시각물은 따로 툴을 열던 흐름을 Kittl이 &lt;strong&gt;같은 채팅 안으로&lt;/strong&gt; 끌어들였다. 11/3 MCP 연결을 공개했다(&lt;a href="https://www.kittl.com/blogs/kittl-now-works-inside-chatgpt-and-claude/"&gt;Kittl 블로그&lt;/a&gt;).
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;한 번 연결&lt;/strong&gt;: kittl.com/mcp에서 ChatGPT·Claude에 추가. Claude Code·Codex·원격 MCP 앱도 지원.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Brand Kit 유지&lt;/strong&gt;: 색·폰트·로고가 결과물에 따라붙는다. 웹사이트 URL만 주면 Brand Kit을 새로 만들 수도 있다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;워크플로 예시&lt;/strong&gt;: 제품 한 장 → IG·스토리·광고·숏폼 / 베스트셀러 스타일로 신규 리스팅 세트 / 디자인 10변형 후 티셔츠 목업 / 폴더 전체 배경 제거·업스케일·벡터.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;보너스&lt;/strong&gt;: 유료 플랜 연결 시 &lt;strong&gt;7일 안에 쓸 300장&lt;/strong&gt; 분량 토큰(ChatGPT 2.5 Flare 기준 1,500 토큰 환산). 모델마다 소모량이 다르다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;라이브 데모&lt;/strong&gt;: 11/10.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+지난번 저장하신 &lt;strong&gt;Studiolo·Lovart·Figma Agent&lt;/strong&gt; 같은 ‘에이전트가 디자인 툴을 직접 조작’ 흐름의 &lt;strong&gt;브랜드 커머스 버전&lt;/strong&gt;이다. 범용 이미지 모델이 제품을 왜곡하는 문제를, 디자이너가 짜 둔 워크플로+Brand Kit으로 줄이겠다는 접근이다. doop이 오픈소스 캔버스라면, Kittl은 &lt;strong&gt;판매용 목업·리스팅&lt;/strong&gt;에 특화돼 있다.
+&lt;/p&gt;
+&lt;h2&gt;주의&lt;/h2&gt;
+&lt;p&gt;
+어시스턴트 기본 이미지 도구와 섞이지 않게 프롬프트에 “Use Kittl to…”를 명시하라고 안내한다. 최종 미세 조정·고해상도 내보내기는 Kittl 앱으로 돌아가라고 한다.
+&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>[11/6] 디자인: Figma Q3 — AI 크레딧을 더 주고 자체 모델 비중을 2배로, 매출 3.91억 달러에도 주가는 하락</title>
+<id>https://codemwk.github.io/aipaper-newspaper/figma-q3-ai-credits-2d86b1591e49</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/figma-q3-ai-credits-2d86b1591e49/" rel="alternate" type="text/html"/>
+<updated>2026-11-05T22:01:00Z</updated>
+<published>2026-11-05T22:01:00Z</published>
+<category term="디자인"/>
+<summary>Figma 2026 Q3 매출 3.914억 달러(+43% YoY), 조정 EPS 10센트. AI 크레딧 사용 조직의 주간 활성 사용자가 분기 중 거의 50% 늘었고, 자체 AI 모델이 처리하는 작업 비중은 2배. 가격은 유지한 채 크레딧을 늘려 단기 매출을 장기 점유에 바꾼다고 CFO가 설명했다.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;Figma 2026 Q3 매출 3.914억 달러(+43% YoY), 조정 EPS 10센트. AI 크레딧 사용 조직의 주간 활성 사용자가 분기 중 거의 50% 늘었고, 자체 AI 모델이 처리하는 작업 비중은 2배. 가격은 유지한 채 크레딧을 늘려 단기 매출을 장기 점유에 바꾼다고 CFO가 설명했다.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; 디자인&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+Figma는 11/4 Q3에서 컨센서스를 웃도는 숫자를 냈지만, &lt;strong&gt;AI를 ‘단기 매출’이 아니라 ‘고객 습관’에 심는 쪽&lt;/strong&gt;을 택했다. 매출 &lt;strong&gt;3.914억 달러&lt;/strong&gt;(예상 3.758억), 조정 EPS &lt;strong&gt;10센트&lt;/strong&gt;(예상 5센트). 시간외 &lt;strong&gt;-7%&lt;/strong&gt;(&lt;a href="https://www.cnbc.com/2026/11/04/figma-fig-q3-earnings-report-2026.html"&gt;CNBC 11/4&lt;/a&gt;).
+&lt;/p&gt;
+&lt;h2&gt;지금 뭐가 뜨나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AI 크레딧↑, 가격 유지&lt;/strong&gt;: 분기 중 $10,000 이상 쓰는 조직의 주간 사용자 중 AI 크레딧을 쓴 비율이 &lt;strong&gt;거의 50% 증가&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;자체 모델 비중 2배&lt;/strong&gt;: 회사 모델이 수행하는 작업 점유율이 두 배가 됐고, AI 결과물을 &lt;strong&gt;되돌리는(undo) 비율은 하락&lt;/strong&gt; — 품질·수용도가 같이 올랐다는 신호.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;연간 가이던스 상향&lt;/strong&gt;: 매출 14.97–14.99억 달러, 조정 영업이익률 &lt;strong&gt;11%&lt;/strong&gt;(8월 9%에서 상향). Q4 매출 성장은 약 &lt;strong&gt;33%&lt;/strong&gt;로 둔화 전망.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;보안 경계&lt;/strong&gt;: Dylan Field CEO는 에이전트가 타사 시스템을 침투한 사례를 언급하며 벤더 보안 점검을 강화한다고 했다. 보안 제품을 팔겠다는 뜻은 아니라고 선을 그었다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+지난번 다룬 &lt;strong&gt;Figma code layers·Agent Templates&lt;/strong&gt;가 ‘캔버스 위 기능’이었다면, 이번은 &lt;strong&gt;돈과 모델 전략&lt;/strong&gt;이다. 서드파티 모델에만 의존하면 마진이 깎이니, 지연·비용·품질이 비슷한 작업은 자사 모델로 돌리겠다는  Explicit 선택이다. ANDRSN처럼 디자인 툴에 AI를 붙이는 스튜디오라면, “크레딧을 넉넉히 주고 습관을 만든 뒤 마진을 회수한다”는 플레이북을 참고할 만하다.
+&lt;/p&gt;
+&lt;h2&gt;주의&lt;/h2&gt;
+&lt;p&gt;
+주가 하락은 ‘성장 둔화(Q4 ~33%)’와 AI 투자 트레이드오프에 대한 시장 반응이다. 실적 자체는 컨센서스를 넘겼다.
+&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>[11/6] AI 비즈니스: Upwind — 클라우드·AI 런타임 보안으로 분기 ARR 2–3천만 달러씩 쌓아, 시리즈 C 40억·기업가치 38억 달러</title>
+<id>https://codemwk.github.io/aipaper-newspaper/upwind-ai-business-e6cfff817bb8</id>
+<link href="https://codemwk.github.io/aipaper-newspaper/upwind-ai-business-e6cfff817bb8/" rel="alternate" type="text/html"/>
+<updated>2026-11-05T22:00:00Z</updated>
+<published>2026-11-05T22:00:00Z</published>
+<category term="AI 비즈니스"/>
+<summary>Upwind는 실행 중인 클라우드·AI 워크로드를 실시간으로 보고 고치는 런타임 보안 회사다. 10/28 Bessemer 주도 시리즈 C 4억 달러로 기업가치 38억 달러. ARR은 2025년 말 약 2천만에서 2026년 9월 약 5천만 달러, 연말 약 9천만 달러 전망. Datadog 인수 제안을 거절하고 독립을 택했다.</summary>
+<content type="html">&lt;p&gt;&lt;em&gt;Upwind는 실행 중인 클라우드·AI 워크로드를 실시간으로 보고 고치는 런타임 보안 회사다. 10/28 Bessemer 주도 시리즈 C 4억 달러로 기업가치 38억 달러. ARR은 2025년 말 약 2천만에서 2026년 9월 약 5천만 달러, 연말 약 9천만 달러 전망. Datadog 인수 제안을 거절하고 독립을 택했다.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 비즈니스&lt;/p&gt;
+&lt;h2&gt;한줄 요약&lt;/h2&gt;
+&lt;p&gt;
+Upwind는 &lt;strong&gt;스캔 목록이 아니라, 지금 돌아가는 서비스에서 실제로 닿는 위험만&lt;/strong&gt; 골라 고치는 클라우드·AI 보안 플랫폼이다. 10/28 Bessemer가 이끈 &lt;strong&gt;시리즈 C 4억 달러&lt;/strong&gt;로 기업가치 &lt;strong&gt;38억 달러&lt;/strong&gt;(1월 시리즈 B 15억 달러에서 약 2.5배). TechCrunch에 따르면 Datadog가 같은 가격대 인수를 제안했으나 프리미엄이 없어 독립을 택했다(&lt;a href="https://techcrunch.com/2026/10/28/upwind-raises-400m-after-walking-away-from-datadog-acquisition-offer/"&gt;TechCrunch 10/28&lt;/a&gt;).
+&lt;/p&gt;
+&lt;h2&gt;누구에게 무엇을 파나&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;고객&lt;/strong&gt;: Siemens, Roku, Nubank, Supabase, ClickUp 등 클라우드를 크게 쓰는 기업 보안·DevOps 팀. AWS·Azure·GCP·Oracle을 한 화면에서 본다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;상품 핵심 — 런타임 보안&lt;/strong&gt;: 취약점·CVE 목록을 쏟아내는 대신, &lt;strong&gt;실제로 실행·노출된&lt;/strong&gt; 워크로드·API·에이전트만 우선순위에 올린다. 고객 보고 기준 알림 98% 감소, 무관한 CVE 60% 감소(회사·고객 인용, 독립 전수 검증은 아님).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI 보안 확장&lt;/strong&gt;: 엔드포인트 AI 센서, 에이전트·스킬 스캐너, 인벤토리 그래프 재설계. 대응용 &lt;strong&gt;Blue&lt;/strong&gt;(조사)·&lt;strong&gt;Red&lt;/strong&gt;(노출 검증)·&lt;strong&gt;Green&lt;/strong&gt;(대규모 수정) 에이전트를 자사 블로그에서 공개(&lt;a href="https://www.upwind.io/blog/the-next-wave-is-here-upwinds-400m-series-c-to-build-the-cloud-ai-security-platform"&gt;Upwind 블로그&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;돈 버는 구조&lt;/h2&gt;
+&lt;p&gt;
+연간 구독(ARR) 모델이다. Sacra 추산 &lt;strong&gt;2026년 9월 ARR 약 5천만 달러&lt;/strong&gt;(2025년 말 약 2천만). TechCrunch 소식통은 분기마다 ARR &lt;strong&gt;2–3천만 달러&lt;/strong&gt;씩 늘고 연말 &lt;strong&gt;약 9천만 달러&lt;/strong&gt;를 전망한다고 전했다. 공개 가격표는 없고 엔터프라이즈 계약·AWS 마켓플레이스 통합 청구가 주 경로다. 총 조달액은 회사 발표 기준 &lt;strong&gt;8억 달러 이상&lt;/strong&gt;.
+&lt;/p&gt;
+&lt;h2&gt;왜 중요한가&lt;/h2&gt;
+&lt;p&gt;
+지난 사례 &lt;strong&gt;Serval&lt;/strong&gt;(ITSM 에이전트)·&lt;strong&gt;Infisical&lt;/strong&gt;(시크릿)이 ‘운영·자격증명’ 쪽이었다면, Upwind는 &lt;strong&gt;에이전트가 클라우드에 뿌려진 뒤의 방어막&lt;/strong&gt;이다. AI 코딩·고객지원 다음으로 기업이 돈을 쓸 세 번째 AI 소프트웨어 파도로 사이버보안이 거론되는 시점의 대표 숫자다. 38억÷연말 ARR 9천만 ≈ &lt;strong&gt;40배+&lt;/strong&gt; — Cyera의 80배보다는 낮지만 여전히 높은 배수다.
+&lt;/p&gt;
+&lt;h2&gt;주의&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ARR·Datadog 제안은 익명 소식통·추산이다. 감사 실적이 아니다.&lt;/li&gt;
+&lt;li&gt;사이버보안 IPO가 드문 환경이라 TechCrunch는 &lt;strong&gt;결국 매각&lt;/strong&gt;이 유력한 출구라고 적었다.&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
+</entry>
 <entry>
 <title>[11/5] AI 모델: 창업 18개월 만에 연환산 매출 1억 달러 — Applied Compute가 보여 준 ‘기업 전용 모델 학습’ 시장</title>
 <id>https://codemwk.github.io/aipaper-newspaper/applied-compute-post-training-f6cb01308047</id>
@@ -854,445 +1234,6 @@ CFD 브로커 Century Financial의 ‘Century AI Connect’(11/3)는 원격 MCP�
 &lt;ul&gt;
 &lt;li&gt;월 최소 80시간, 구축비·보증금 때문에 &lt;strong&gt;일감이 충분해야&lt;/strong&gt; 계산이 맞는다(Inc.가 짚은 ‘한 가지 함정’).&lt;/li&gt;
 &lt;li&gt;원격 사람 튜터에 얼마나 의존하는지, 로봇 1대당 수익성은 공개되지 않았다. 기업가치도 비공개.&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>[11/3] 새로운 각도: 똑같이 학습시켜도 AI가 다르게 자라는 이유는 ‘프랙털 지도’ 때문 — 시드 고정·결정론 연산에서도, 시작값을 1비트만 바꾸면 약 48%가 다른 결말로. 시작값을 100억 배 정밀하게 해도 소용없었다</title>
-<id>https://codemwk.github.io/aipaper-newspaper/riddled-basins-ai-reproducibility-1a0a49c53a80</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/riddled-basins-ai-reproducibility-1a0a49c53a80/" rel="alternate" type="text/html"/>
-<updated>2026-11-02T22:11:00Z</updated>
-<published>2026-11-02T22:11:00Z</published>
-<category term="새로운 각도"/>
-<summary>시드니대 물리학과 Andrew Ly·Pulin Gong이 Nature Machine Intelligence에 발표한 연구(11/2 보도). 신경망 50만 개가량을 학습시켜, 학습 결과를 가르는 ‘끌림 영역(basin)’이 어느 지점이든 아주 가까이에 다른 결말로 가는 지점이 섞여 있는 ‘구멍 뚫린(riddled) 프랙털’ 구조임을 보였다. VGG·ResNet·BERT 등에서 같은 징후. 가장 잘 배우는 학습률일수록 재현이 어렵고, 학습률을 낮추면 재현되지만 덜 배운다.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;시드니대 물리학과 Andrew Ly·Pulin Gong이 Nature Machine Intelligence에 발표한 연구(11/2 보도). 신경망 50만 개가량을 학습시켜, 학습 결과를 가르는 ‘끌림 영역(basin)’이 어느 지점이든 아주 가까이에 다른 결말로 가는 지점이 섞여 있는 ‘구멍 뚫린(riddled) 프랙털’ 구조임을 보였다. VGG·ResNet·BERT 등에서 같은 징후. 가장 잘 배우는 학습률일수록 재현이 어렵고, 학습률을 낮추면 재현되지만 덜 배운다.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; 새로운 각도&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-같은 데이터, 같은 절차, 같은 컴퓨터로 학습시켜도 AI가 다른 성격으로 자라는 이유를, 연구진은 하드웨어 잡음이 아니라 &lt;strong&gt;학습 자체의 수학&lt;/strong&gt;에서 찾았다(&lt;a href="https://electronicsera.in/sydney-researchers-uncover-a-hidden-limit-to-ai-predictability/"&gt;시드니대 연구 보도&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/2510.05606"&gt;논문 arXiv 2510.05606&lt;/a&gt;).
-&lt;/p&gt;
-&lt;h2&gt;‘구멍 뚫린 분지’를 지도로 이해하기&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;학습을 시작할 수 있는 모든 출발점을 지도 위의 점이라고 하자. 각 점을 &lt;strong&gt;학습이 끝났을 때 도착하는 결말&lt;/strong&gt;의 색으로 칠한다. 같은 결말로 가는 영역이 ‘끌림 영역(basin)’.&lt;/li&gt;
-&lt;li&gt;보통의 프랙털은 경계만 복잡해서, 출발점을 충분히 정밀하게 정하면 결말을 맞힐 수 있다.&lt;/li&gt;
-&lt;li&gt;그런데 연구진이 찾은 건 &lt;strong&gt;riddled(구멍 뚫린) 분지&lt;/strong&gt;다. 어느 점을 골라도, 아무리 확대해도 &lt;strong&gt;바로 옆에 다른 결말로 가는 점이 섞여 있다&lt;/strong&gt;. 정밀도를 올려도 예측이 거의 좋아지지 않는다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;숫자로 본 결과&lt;/h2&gt;
-&lt;table&gt;
-&lt;tr&gt;&lt;th&gt;실험&lt;/th&gt;&lt;th&gt;결과&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;규모&lt;/td&gt;&lt;td&gt;신경망 약 50만 개(이미지 인식·텍스트 분류, VGG·ResNet·BERT, SGD·AdamW 등)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;결정론 CPU 연산에서도&lt;/td&gt;&lt;td&gt;효과 유지 — 하드웨어 무작위성 탓이 아님&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;시작값 정밀도 100억 배↑&lt;/td&gt;&lt;td&gt;재현성 개선 측정 불가(보도자료 표현)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;파라미터 하나의 &lt;strong&gt;최하위 1비트&lt;/strong&gt;만 바꿔도&lt;/td&gt;&lt;td&gt;약 47.7%가 다른 내부 구성으로&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;학습된 ‘기능’ 차이(VGG 예)&lt;/td&gt;&lt;td&gt;시작값을 아무리 가깝게 해도 예측이 다른 입력 비율 약 2.9%에서 줄지 않음&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&lt;h2&gt;성능 vs 재현성의 맞교환&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;가장 잘 배우게 하는 학습률 근처에서 이 현상이 강했다. 학습률을 낮추면 &lt;strong&gt;재현되지만 덜 배운다&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;연구진은 불예측성을 “완전히 공학적으로 없앨 문제가 아니라 신경망 작동의 근본 특성일 수 있다”고 보며, 측정 도구(불확실성 지수)를 제안하고 대칭성을 깨는 구조 설계 같은 방향을 제시한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;의료 진단처럼 “다시 학습해도 같은 판단을 해야 하는” 분야에선, 모델 하나의 점수보다 &lt;strong&gt;‘학습을 여러 번 했을 때 얼마나 흔들리나’&lt;/strong&gt;를 따로 재야 한다는 근거가 된다.&lt;/li&gt;
-&lt;li&gt;지난 호에 다룬 ‘같은 논문을 받은 AI 에이전트 30개가 18가지 분석’이 &lt;strong&gt;에이전트 수준의 재현성&lt;/strong&gt; 문제였다면, 이건 그보다 한 층 아래 — &lt;strong&gt;모델이 만들어지는 순간의 재현성&lt;/strong&gt; 문제다.&lt;/li&gt;
-&lt;li&gt;한계: 실험은 계산량 때문에 소형화한 네트워크(예: 파라미터 약 1.2만 개 VGG-12) 중심이고, 초대형 LLM에서 같은 구조를 직접 확인한 건 아니다.&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>[11/3] 세컨드 브레인 / PKM: 노트 옆에 ‘AI 작업 중’ 배지 — Obsidian AI Overview 4.2는 에이전트가 기다리는·돌리는·저장하는 노트를 표시하고, DevMate 4.0.6은 코딩 에이전트에 넘기기 전 ‘사람 승인’을 먼저 받는다</title>
-<id>https://codemwk.github.io/aipaper-newspaper/obsidian-agent-working-badges-82edc8deb552</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/obsidian-agent-working-badges-82edc8deb552/" rel="alternate" type="text/html"/>
-<updated>2026-11-02T22:10:00Z</updated>
-<published>2026-11-02T22:10:00Z</published>
-<category term="세컨드 브레인 / PKM"/>
-<summary>노트 속 [!ai] 콜아웃에 적은 질문을 내 PC의 Codex CLI·Claude Code·opencode·Pi에 맡겨 답을 노트에 저장하는 Obsidian 플러그인 AI Overview가 4.2.0에서 ‘작업 중’ 배지를 추가했다. 대기·실행 중인 노트 옆에 AI 배지, 저장 중엔 점 세 개 애니메이션, 접힌 폴더엔 ‘AI 2’처럼 합계. 같은 주 DevMate 4.0.6은 코딩 에이전트에 보내는 작업을 먼저 사람 승인 대기로 돌렸다. 에이전트가 볼트를 만지는 시간이 길어지며 ‘보이게, 허락받게’가 기본값이 되는 중.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;노트 속 [!ai] 콜아웃에 적은 질문을 내 PC의 Codex CLI·Claude Code·opencode·Pi에 맡겨 답을 노트에 저장하는 Obsidian 플러그인 AI Overview가 4.2.0에서 ‘작업 중’ 배지를 추가했다. 대기·실행 중인 노트 옆에 AI 배지, 저장 중엔 점 세 개 애니메이션, 접힌 폴더엔 ‘AI 2’처럼 합계. 같은 주 DevMate 4.0.6은 코딩 에이전트에 보내는 작업을 먼저 사람 승인 대기로 돌렸다. 에이전트가 볼트를 만지는 시간이 길어지며 ‘보이게, 허락받게’가 기본값이 되는 중.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; 세컨드 브레인 / PKM&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-지난번 저장하신 Obsidian Copilot V4(볼트 속 에이전트)와 이어지는 소식이다. 에이전트가 노트를 &lt;strong&gt;몇 분씩&lt;/strong&gt; 붙잡고 일하기 시작하면서, “지금 어느 노트를 AI가 만지고 있지?”를 보여 주는 장치가 생겼다(&lt;a href="https://www.obsidianstats.com/updates"&gt;obsidianstats 업데이트&lt;/a&gt;, &lt;a href="https://synon.co.jp/article/news/2026-11-02-obsidian-ai-daily"&gt;synon 11/2 정리&lt;/a&gt;).
-&lt;/p&gt;
-&lt;h2&gt;AI Overview 4.2.0 — 무엇이 보이나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;플러그인 개요: 노트의 &lt;code&gt;[!ai]&lt;/code&gt; 콜아웃에 질문을 적으면, &lt;strong&gt;내 PC의 에이전트 CLI&lt;/strong&gt;(Codex CLI, Claude Code, opencode, Pi)가 답을 써서 노트에 저장한다(Deepal Jayasekara 제작, MIT, 데스크톱 전용).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AI 배지&lt;/strong&gt;: AI 콜아웃·Discussions·인라인 리뷰 댓글에서 온 요청이 ‘대기’ 또는 ‘실행 중’인 노트 옆에 배지. 에이전트가 일하거나 결과를 저장하는 동안 점 세 개가 움직인다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;폴더 합계&lt;/strong&gt;: 폴더를 접어 두면 보이는 가장 가까운 폴더에 “AI 2”처럼 합계. 마우스를 올리면 대기·실행·저장 건수.&lt;/li&gt;
-&lt;li&gt;배지를 숨겨도 작업은 계속되고, ‘동작 줄이기’ 설정도 따른다. (공개 4주, 누적 96 다운로드 — 아직 작은 플러그인)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;DevMate 4.0.6 — 넘기기 전에 묻는다&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Codex·Claude Code 같은 코딩 에이전트에 넘기는 작업이 &lt;strong&gt;먼저 사람 승인을 기다리도록&lt;/strong&gt; 바뀌었다(업데이트 목록 기재).&lt;/li&gt;
-&lt;li&gt;같은 주 CoDriver 0.6.1은 도구 호출과 응답을 자세히 남기는 &lt;strong&gt;선택형 로그&lt;/strong&gt;를 추가했다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;노트 앱의 AI가 ‘채팅창 대답’에서 &lt;strong&gt;‘백그라운드 작업자’&lt;/strong&gt;로 바뀌면, 필요한 UI도 바뀐다. 진행 표시(배지) · 사전 승인 · 행동 로그는 GitHub 트렌드에서 “아직 부족하다”고 지적된 바로 그 &lt;strong&gt;감시 레이어&lt;/strong&gt;의 작은 버전이다.&lt;/li&gt;
-&lt;li&gt;실사용 팁: 에이전트가 쓰는 노트를 한 폴더(예: &lt;code&gt;AI Inbox/&lt;/code&gt;)로 모아 두면, 폴더 합계 배지만 보고도 “지금 몇 건 돌고 있나”를 알 수 있다.&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>[11/3] 세컨드 브레인 / PKM: Notion 새 AI 크레딧제, 11/2부터 기존 워크스페이스에도 — 1인당 월 Standard 1,500·Select 500, 이월 없음. 그런데 외부 에이전트가 MCP·API로 읽고 쓰는 건 ‘공짜’</title>
-<id>https://codemwk.github.io/aipaper-newspaper/notion-ai-credits-mcp-d80cf7500f7a</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/notion-ai-credits-mcp-d80cf7500f7a/" rel="alternate" type="text/html"/>
-<updated>2026-11-02T22:09:00Z</updated>
-<published>2026-11-02T22:09:00Z</published>
-<category term="세컨드 브레인 / PKM"/>
-<summary>Notion의 새 AI 사용량 체계가 신규 Business·Enterprise(10/19)에 이어 11/2부터 기존 워크스페이스에도 적용됐다. 매달 1인당 Standard 1,500(자동 모델 선택 작업), Select 500(모델 지정 에이전트·커스텀 에이전트) 크레딧. 서로 합치거나 넘길 수 없고 매달 초기화. 반면 Notion MCP·API의 일반 읽기·쓰기는 크레딧을 쓰지 않는다(레이트 리밋은 적용). AI 회의록은 12/1부터 과금.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;Notion의 새 AI 사용량 체계가 신규 Business·Enterprise(10/19)에 이어 11/2부터 기존 워크스페이스에도 적용됐다. 매달 1인당 Standard 1,500(자동 모델 선택 작업), Select 500(모델 지정 에이전트·커스텀 에이전트) 크레딧. 서로 합치거나 넘길 수 없고 매달 초기화. 반면 Notion MCP·API의 일반 읽기·쓰기는 크레딧을 쓰지 않는다(레이트 리밋은 적용). AI 회의록은 12/1부터 과금.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; 세컨드 브레인 / PKM&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-Notion 안의 AI는 ‘쓸 만큼 쓰는 뷔페’에서 &lt;strong&gt;‘월 정량 식권’&lt;/strong&gt;으로 바뀌었다. 흥미로운 건 경계선이다 — &lt;strong&gt;Notion 밖의 에이전트(Claude Code 등)가 MCP로 노트를 읽고 쓰는 건 크레딧이 안 든다&lt;/strong&gt;(&lt;a href="https://www.notion.com/help/standard-select-and-notion-credits-eligible-features"&gt;Notion 도움말&lt;/a&gt;, &lt;a href="https://www.notion.com/help/manage-your-ai-credits"&gt;AI 크레딧 관리&lt;/a&gt;, &lt;a href="https://synon.co.jp/article/news/2026-11-02-obsidian-ai-daily"&gt;synon 정리&lt;/a&gt;).
-&lt;/p&gt;
-&lt;h2&gt;무엇이 어디서 차감되나&lt;/h2&gt;
-&lt;table&gt;
-&lt;tr&gt;&lt;th&gt;구분&lt;/th&gt;&lt;th&gt;주요 대상&lt;/th&gt;&lt;th&gt;양·조건&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Standard&lt;/td&gt;&lt;td&gt;Auto(자동 모델 선택) Notion Agent, AI 편집·번역, AI 블록·수식, AI 회의록(12/1~)&lt;/td&gt;&lt;td&gt;1인당 월 1,500, 이월 없음&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Select&lt;/td&gt;&lt;td&gt;모델을 직접 고른 Notion Agent, 커스텀 에이전트&lt;/td&gt;&lt;td&gt;1인당 월 500, 이월 없음&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Notion 크레딧&lt;/td&gt;&lt;td&gt;위 둘을 다 쓴 뒤(관리자 허용 시), 비싼 모델, 워크스페이스 부담 에이전트&lt;/td&gt;&lt;td&gt;관리자가 사용 승인&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;차감 없음&lt;/td&gt;&lt;td&gt;&lt;strong&gt;Notion MCP·API 일반 읽기·쓰기&lt;/strong&gt;, Workers(베타 기간)&lt;/td&gt;&lt;td&gt;레이트 리밋은 적용&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;두 크레딧은 합산·교환·멤버 간 양도 불가. 다 쓰면 관리자가 Notion 크레딧 사용을 허용하지 않는 한 &lt;strong&gt;다음 초기화까지 그 기능이 멈춘다&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;AI 회의록은 12/1부터 Standard 차감(1시간 회의 약 10크레딧이 기준). 내 사용량은 설정 → Notion AI → Usage.&lt;/li&gt;
-&lt;li&gt;단, &lt;strong&gt;API나 연결 앱을 통해 Notion Agent를 ‘실행’시키는 건&lt;/strong&gt; 크레딧을 쓴다 — 공짜인 건 데이터 읽기·쓰기다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;세컨드 브레인 사용자에게 무슨 의미인가&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;가격 구조가 &lt;strong&gt;“생각은 바깥 에이전트로, 저장은 Notion으로”&lt;/strong&gt;를 유리하게 만든다. 외부 에이전트가 MCP로 정리·요약해 Notion에 써 넣으면 Notion AI 크레딧을 건드리지 않는다(외부 모델 비용은 별도).&lt;/li&gt;
-&lt;li&gt;반대로 Notion 안에서 모델을 골라 에이전트를 돌리는 습관이라면 &lt;strong&gt;월 500 Select가 금방 바닥&lt;/strong&gt;날 수 있다. 무엇을 Auto로 돌릴지 정리해 둘 시점.&lt;/li&gt;
-&lt;li&gt;Obsidian+에이전트 조합과 비교하면: Obsidian은 노트가 로컬 파일이라 처음부터 ‘바깥 에이전트’ 구조였고, Notion은 이번 가격표로 그 구조를 &lt;strong&gt;공식적으로 허용&lt;/strong&gt;한 셈이다.&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>[11/3] GitHub 트렌드: Floorplan — ‘AI로 만든 내 앱, 어떻게 돌아가는지 모르겠다’는 사람을 위한 지도. Claude·Codex가 코드를 읽고 부품·화면·요청 흐름을 쉬운 말로 그린다. 키 노출·열린 DB 같은 ‘건강검진’도</title>
-<id>https://codemwk.github.io/aipaper-newspaper/floorplan-codebase-map-2f9fb0ed85bc</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/floorplan-codebase-map-2f9fb0ed85bc/" rel="alternate" type="text/html"/>
-<updated>2026-11-02T22:08:00Z</updated>
-<published>2026-11-02T22:08:00Z</published>
-<category term="GitHub 트렌드"/>
-<summary>10/27 공개된 Floorplan(MIT, ★약 2,200)은 Claude Code·Codex 플러그인으로, 코드베이스를 읽어 부품·파일·웹 요청에 쉬운 이름을 붙인 확대·축소 가능한 인터랙티브 지도를 만든다. 여러 저장소에 걸친 프론트↔백엔드 요청까지 잇고, 코드 속 키·열린 Supabase 테이블·위조 가능한 Stripe 웹훅을 찾는 ‘건강검진’, AI가 방금 바꾼 부분을 보여 주는 ‘최근 작업’을 제공. 같은 주 아키텍처 다이어그램 스킬 stack-diagram, 애니메이션 역설계 스킬 reanimate도 떴다.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;10/27 공개된 Floorplan(MIT, ★약 2,200)은 Claude Code·Codex 플러그인으로, 코드베이스를 읽어 부품·파일·웹 요청에 쉬운 이름을 붙인 확대·축소 가능한 인터랙티브 지도를 만든다. 여러 저장소에 걸친 프론트↔백엔드 요청까지 잇고, 코드 속 키·열린 Supabase 테이블·위조 가능한 Stripe 웹훅을 찾는 ‘건강검진’, AI가 방금 바꾼 부분을 보여 주는 ‘최근 작업’을 제공. 같은 주 아키텍처 다이어그램 스킬 stack-diagram, 애니메이션 역설계 스킬 reanimate도 떴다.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; GitHub 트렌드&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-바이브 코딩으로 앱은 돌아간다. 그런데 “결제하면 무슨 일이 일어나?”, “이거 바꾸면 뭐가 깨져?”엔 &lt;strong&gt;“모르겠다”&lt;/strong&gt;가 정직한 답이다. Floorplan은 &lt;strong&gt;아무도 그리지 않은 설계도&lt;/strong&gt;를 대신 그려 준다(&lt;a href="https://github.com/haydenschmitty/floorplan"&gt;GitHub&lt;/a&gt;, &lt;a href="https://haydenschmitty.github.io/floorplan-demo/"&gt;라이브 데모&lt;/a&gt;).
-&lt;/p&gt;
-&lt;h2&gt;무엇을 보여 주나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;줌 가능한 앱 지도&lt;/strong&gt;: 부품 → 파일 → 엔드포인트까지 내려가며, 화면과 프론트↔백엔드 요청(저장소가 여러 개여도), 외부 서비스 연결을 선으로 잇는다. 모든 요소에 &lt;strong&gt;쉬운 영어 이름&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;건강검진&lt;/strong&gt;: 코드에 박힌 키, 열려 있는 Supabase 테이블·Firebase 규칙, 위조 가능한 Stripe 웹훅, 아무나 부를 수 있는 엔드포인트.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;최근 작업&lt;/strong&gt;: Claude나 Codex가 방금 무엇을 왜 바꿨는지 지도 위에 표시. PRD에서 설계도를 먼저 그리는 기능도.&lt;/li&gt;
-&lt;li&gt;의존성 0, Node 18+. README가 Archify(문서용 다이어그램), Understand Anything(대형 코드베이스 학습)과의 차이를 표로 정리해 둔 점도 친절하다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;같은 주의 ‘보여 주는’ 스킬들&lt;/h2&gt;
-&lt;table&gt;
-&lt;tr&gt;&lt;th&gt;프로젝트&lt;/th&gt;&lt;th&gt;하는 일&lt;/th&gt;&lt;th&gt;★(11/3)&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href="https://github.com/caru-ini/stack-diagram"&gt;stack-diagram&lt;/a&gt;&lt;/td&gt;&lt;td&gt;스택을 한 문장으로 말하면 공식 로고가 들어간 아키텍처 다이어그램&lt;/td&gt;&lt;td&gt;약 1,100&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href="https://github.com/NiazMorshed2007/reanimate"&gt;reanimate&lt;/a&gt;&lt;/td&gt;&lt;td&gt;아무 애니메이션이나 프레임 단위로 역설계하고, 복제본이 &lt;strong&gt;똑같이 움직이는지 증명&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;약 930&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href="https://github.com/patch-gg/pixelfx"&gt;pixelfx&lt;/a&gt;&lt;/td&gt;&lt;td&gt;픽셀아트 효과 244개 + 나만의 효과를 만드는 스킬&lt;/td&gt;&lt;td&gt;약 3,400&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-코딩 에이전트가 코드를 &lt;strong&gt;쓰는&lt;/strong&gt; 단계에서, 사람이 그 결과를 &lt;strong&gt;이해하고 검사하는&lt;/strong&gt; 단계로 도구의 무게가 옮겨 가고 있다. 특히 Floorplan의 건강검진은 비개발자가 만든 앱에서 실제로 자주 터지는 사고(키 노출, 열린 DB) 목록 그대로라 실용적이다. 단, 지도는 AI가 추론한 결과이므로 &lt;strong&gt;그럴듯한 그림이 틀린 추론을 가릴 수 있다&lt;/strong&gt;는 점은 기억하자.
-&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>[11/3] GitHub 트렌드: 에이전트가 ‘폰 안으로’ — 숨은 화면에서 앱을 대신 조작하는 Mika(★5천, 닷새), 루팅 없이 APK 하나로 DeepSeek Harness를 돌리는 DSH-Android. 결제 직전엔 멈춘다</title>
-<id>https://codemwk.github.io/aipaper-newspaper/github-android-phone-agents-867a9dc3175f</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/github-android-phone-agents-867a9dc3175f/" rel="alternate" type="text/html"/>
-<updated>2026-11-02T22:07:00Z</updated>
-<published>2026-11-02T22:07:00Z</published>
-<category term="GitHub 트렌드"/>
-<summary>이번 주 GitHub 급상승의 한 축은 안드로이드 에이전트다. Mika(10/29 생성, 11/3 기준 ★약 5,200, Apache-2.0)는 별도의 ‘백그라운드 화면’에서 앱과 웹을 사람처럼 보고 눌러 일을 끝낸다 — 쓰는 동안 내 화면은 그대로. DSH-Android(★약 750)는 루팅·Termux 없이 APK 하나로 DeepSeek Harness를 폰에서 돌리고, 조건부 자동화와 내장 리눅스 환경까지. 둘 다 결제 전 확인·서버 없음 등 안전장치를 내세우지만, 권한 감사 도구는 아직 뒤처져 있다.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;이번 주 GitHub 급상승의 한 축은 안드로이드 에이전트다. Mika(10/29 생성, 11/3 기준 ★약 5,200, Apache-2.0)는 별도의 ‘백그라운드 화면’에서 앱과 웹을 사람처럼 보고 눌러 일을 끝낸다 — 쓰는 동안 내 화면은 그대로. DSH-Android(★약 750)는 루팅·Termux 없이 APK 하나로 DeepSeek Harness를 폰에서 돌리고, 조건부 자동화와 내장 리눅스 환경까지. 둘 다 결제 전 확인·서버 없음 등 안전장치를 내세우지만, 권한 감사 도구는 아직 뒤처져 있다.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; GitHub 트렌드&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-지난번 저장하신 DeepSeek Harness와 이어지는 소식이다. 데스크톱·코딩용이던 에이전트가 이번 주 &lt;strong&gt;스마트폰 앱 조작&lt;/strong&gt;으로 넘어왔다(&lt;a href="https://claracle.com/weekly/2026/w45/"&gt;Claracle W45 정리&lt;/a&gt;, &lt;a href="https://github.com/wangzan101/Mika"&gt;Mika&lt;/a&gt;, &lt;a href="https://github.com/jackwener/DSH-Android"&gt;DSH-Android&lt;/a&gt;).
-&lt;/p&gt;
-&lt;h2&gt;Mika — “한 문장 말하면 폰이 알아서”&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;숨은 화면에서 작업&lt;/strong&gt;: 앱을 열고, 탭하고, 입력하고, 스크롤하는 걸 별도 백그라운드 화면에서 한다. 나는 폰을 평소처럼 쓰고, 작은 실시간 창으로 지켜볼 수 있다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;앱 API 불필요&lt;/strong&gt;: 사람처럼 화면을 보고 버튼을 찾으니 앱별 연동이 필요 없다. 내장 브라우저에선 보고 있는 페이지에서 바로 시키고, 화면을 터치하면 멈춘다.&lt;/li&gt;
-&lt;li&gt;예시: “오늘 단톡방에서 무슨 얘기 했어?” 요약, “30달러 이하 별점 4.5+ 충전기” → &lt;strong&gt;장바구니에 넣고 결제 직전에 멈춤&lt;/strong&gt;, 배달 주문은 &lt;strong&gt;결제 전에 물어봄&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;쓸수록 선호를 기억하고, 끝낸 작업을 ‘스킬’로 저장. &lt;strong&gt;Mika 서버 없음&lt;/strong&gt; — 내 모델 API 키나 ChatGPT·xAI·OpenRouter 계정으로 로그인.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;DSH-Android — “폰 위의 진짜 하네스”&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;DeepSeek의 에이전트 하네스(dsh)를 &lt;strong&gt;포크 없이 그대로&lt;/strong&gt; APK에 내장. 스킬·MCP·서브에이전트·웹 검색 사용 가능.&lt;/li&gt;
-&lt;li&gt;화면 읽기·조작(접근성 서비스), 파일 정리, 밝기·와이파이·알람 같은 시스템 설정, &lt;strong&gt;조건부 자동화&lt;/strong&gt;(와이파이 연결·충전 시작·특정 장소 도착·알림 수신 시).&lt;/li&gt;
-&lt;li&gt;폰 안에 리눅스 환경이 있어 파이썬·스크립트 실행. 안드로이드 14+에선 Shizuku를 켜면 가상 화면에서 작업해 내 화면을 안 가린다. DeepSeek 외 OpenAI·Claude·Gemini·Grok 등 모델 선택 가능.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;조심할 점&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;두 프로젝트 모두 &lt;strong&gt;접근성 권한 = 화면의 모든 것을 읽고 누를 수 있는 권한&lt;/strong&gt;을 요구한다. Claracle 주간 분석도 “에이전트에게 손을 주는 속도를, 그 손을 지켜보는 도구(행동 로그·권한 경계·되돌리기)가 못 따라간다”고 짚었다.&lt;/li&gt;
-&lt;li&gt;데모 상당수가 위챗·샤오훙수 등 중국 앱 기준. 메신저 자동 발송, 구직 사이트 자동 인사 같은 기능은 각 서비스 약관과 충돌할 수 있다.&lt;/li&gt;
-&lt;li&gt;실사용은 &lt;strong&gt;보조 폰이나 결제 수단 없는 계정&lt;/strong&gt;에서 먼저 시험해 보는 게 현실적이다.&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>[11/3] 디자인: Figma 에이전트·Make에 Google Drive 연결, ‘커넥터’는 무료 Starter 플랜까지 — 리서치 문서·스프레드시트·이미지를 그대로 디자인 맥락으로. 단, ‘쓰기’ 권한은 기본 꺼짐</title>
-<id>https://codemwk.github.io/aipaper-newspaper/figma-agent-connectors-drive-2711de43418f</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/figma-agent-connectors-drive-2711de43418f/" rel="alternate" type="text/html"/>
-<updated>2026-11-02T22:06:00Z</updated>
-<published>2026-11-02T22:06:00Z</published>
-<category term="디자인/UI·UX"/>
-<summary>Figma가 11/2(한국 11/2 저녁) Google Drive 커넥터를 Figma 에이전트와 Make에 추가하고, 커넥터 기능을 Starter 포함 전 플랜에 열었다. 드라이브의 리서치·데이터·이미지를 프롬프트 맥락으로 쓰고, 결정 요약이나 에셋을 새 드라이브 파일로 만들 수 있다. 검증 커넥터는 Notion·Linear·GitHub·Granola·zeroheight·Mobbin 등 20여 개. 외부로 ‘쓰는’ 도구는 기본 비활성, 도구마다 ‘실행 전 묻기/항상 실행/실행 안 함’ 선택, Figma도 프롬프트 인젝션을 경고.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;Figma가 11/2(한국 11/2 저녁) Google Drive 커넥터를 Figma 에이전트와 Make에 추가하고, 커넥터 기능을 Starter 포함 전 플랜에 열었다. 드라이브의 리서치·데이터·이미지를 프롬프트 맥락으로 쓰고, 결정 요약이나 에셋을 새 드라이브 파일로 만들 수 있다. 검증 커넥터는 Notion·Linear·GitHub·Granola·zeroheight·Mobbin 등 20여 개. 외부로 ‘쓰는’ 도구는 기본 비활성, 도구마다 ‘실행 전 묻기/항상 실행/실행 안 함’ 선택, Figma도 프롬프트 인젝션을 경고.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; 디자인/UI·UX&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-디자인 에이전트가 &lt;strong&gt;캔버스 밖의 자료&lt;/strong&gt;를 직접 읽기 시작했다. 인터뷰 노트, 설문 스프레드시트, 브랜드 이미지 폴더가 프롬프트 한 줄로 디자인 맥락이 된다(&lt;a href="https://forum.figma.com/product-updates-3/connect-google-drive-to-the-figma-agent-and-make-59533"&gt;Figma 포럼 공지&lt;/a&gt;, &lt;a href="https://help.figma.com/hc/en-us/articles/35440096186007-Use-verified-partner-MCP-connectors-with-the-Figma-agent-and-Figma-Make"&gt;Figma 도움말&lt;/a&gt;).
-&lt;/p&gt;
-&lt;h2&gt;무엇이 바뀌었나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Google Drive 커넥터&lt;/strong&gt;: 드라이브 파일(문서·시트·이미지 등)을 읽어 리서치 요약, 실제 데이터 반영, 에셋을 캔버스로 가져와 편집. 반대로 &lt;strong&gt;결정 요약·에셋을 새 드라이브 파일로 생성&lt;/strong&gt;도 가능.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;커넥터 전 플랜 개방&lt;/strong&gt;: 무료 Starter에서도 프롬프트 박스의 ‘+’ 메뉴 → 커넥터에서 추가. (직접 만드는 커스텀 MCP 커넥터는 유료 플랜)&lt;/li&gt;
-&lt;li&gt;검증 커넥터 목록: Amplitude, Asana, Atlassian, Box, Contentsquare, Dovetail, Google Drive, Granola, GitHub, Hex, Linear, Mobbin, Notion, Slack, Sprig, Zapier, zeroheight 등.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;꼭 봐야 할 설정 한 가지&lt;/h2&gt;
-&lt;table&gt;
-&lt;tr&gt;&lt;th&gt;설정&lt;/th&gt;&lt;th&gt;의미&lt;/th&gt;&lt;th&gt;추천 상황&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Ask to run&lt;/td&gt;&lt;td&gt;매번 허락받고 실행&lt;/td&gt;&lt;td&gt;기본값으로 두기 좋음&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Always run&lt;/td&gt;&lt;td&gt;묻지 않고 실행&lt;/td&gt;&lt;td&gt;믿을 수 있는 소스·읽기 도구만&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Never run&lt;/td&gt;&lt;td&gt;아예 안 씀&lt;/td&gt;&lt;td&gt;필요 없는 도구 — 에이전트 속도도 빨라짐&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;외부로 &lt;strong&gt;쓰는 도구는 기본 비활성&lt;/strong&gt;이다. 켜는 순간 에이전트가 Slack 메시지 발송, Jira 이슈 생성 같은 일을 할 수 있다.&lt;/li&gt;
-&lt;li&gt;Figma 도움말 스스로 “외부 소스에서 맥락을 가져올 땐 &lt;strong&gt;프롬프트 인젝션&lt;/strong&gt;을 경계하라”고 적었다. 누군가 공유 드라이브 문서에 숨긴 지시문이 에이전트를 움직일 수 있다는 뜻.&lt;/li&gt;
-&lt;li&gt;‘Always run’ 상태에선 16MB를 넘는 응답(대략 5~6MB 이상 이미지)은 내려받기가 실패할 수 있다 — 그럴 땐 ‘Ask to run’으로 바꿔 다시.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-지난 몇 주 Figma의 흐름(에이전트 정식 출시, 코드 레이어·Specs, 라이브러리 가이드라인)은 &lt;strong&gt;디자인 시스템을 에이전트에게 가르치는 일&lt;/strong&gt;이었다. 이번엔 &lt;strong&gt;리서치·데이터를 에이전트에게 먹이는 일&lt;/strong&gt;이다. 디자이너의 일이 ‘시안 그리기’에서 &lt;strong&gt;‘에이전트가 볼 맥락과 권한을 설계하기’&lt;/strong&gt;로 넓어지고 있다.
-&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>[11/3] 디자인: Clayzo — 모션 그래픽을 ‘타임라인’이 아니라 코딩 에이전트가 읽고 고치는 ‘글’로. 에이전트가 프레임을 직접 보고 스스로 검토, 영상보다 최대 40배 작은 파일로 웹·iOS에서 실시간 재생</title>
-<id>https://codemwk.github.io/aipaper-newspaper/clayzo-agent-motion-design-074ff9f32909</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/clayzo-agent-motion-design-074ff9f32909/" rel="alternate" type="text/html"/>
-<updated>2026-11-02T22:05:00Z</updated>
-<published>2026-11-02T22:05:00Z</published>
-<category term="디자인/UI·UX"/>
-<summary>11/2 Product Hunt 일간 6위(157표) Clayzo는 Claude Code·Codex·Cursor 같은 코딩 에이전트가 웹 애니메이션·모션 그래픽을 만들게 하는 무료 도구다. 도형·텍스트·키프레임·스프링·셰이더·카메라·오디오·호버/드래그 상태를 전용 형식으로 쓰고, CLI로 아무 프레임이나 즉시 미리 보며 에이전트가 자기 작업을 검토한다. 결과는 .clayzo 한 파일(영상 대비 최대 ~40배 작음)로 WebGL/Swift 플레이어 재생 또는 MP4·GIF·WebM 내보내기.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;11/2 Product Hunt 일간 6위(157표) Clayzo는 Claude Code·Codex·Cursor 같은 코딩 에이전트가 웹 애니메이션·모션 그래픽을 만들게 하는 무료 도구다. 도형·텍스트·키프레임·스프링·셰이더·카메라·오디오·호버/드래그 상태를 전용 형식으로 쓰고, CLI로 아무 프레임이나 즉시 미리 보며 에이전트가 자기 작업을 검토한다. 결과는 .clayzo 한 파일(영상 대비 최대 ~40배 작음)로 WebGL/Swift 플레이어 재생 또는 MP4·GIF·WebM 내보내기.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; 디자인/UI·UX&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-지난번 저장하신 OpenMontage(에이전트용 영상 스튜디오)와 이어지는 소식이다. Clayzo는 모션 디자인을 &lt;strong&gt;에이전트가 읽을 수 있는 텍스트&lt;/strong&gt;로 바꿔, “40번째 프레임 이징만 천천히”가 한 줄 수정이 되게 하려 한다(&lt;a href="https://www.hunted.space/product/clayzo"&gt;Product Hunt 요약&lt;/a&gt;, &lt;a href="https://www.producthunt.com/products/clayzo"&gt;Product Hunt&lt;/a&gt;).
-&lt;/p&gt;
-&lt;h2&gt;어떻게 일하나 (코드 없이)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;프로젝트에 Clayzo를 설치하고 로그인하면, 에이전트에게 &lt;strong&gt;스킬 2개&lt;/strong&gt;가 생긴다: 애니메이션 작성용, 미리보기·내보내기용.&lt;/li&gt;
-&lt;li&gt;에이전트가 Clayzo 형식으로 애니메이션을 쓴다 — 도형, 글자, 키프레임, 스프링, 커스텀 효과/셰이더, 카메라 이동, 오디오, &lt;strong&gt;호버·누르기·드래그 같은 인터랙션 상태&lt;/strong&gt;까지.&lt;/li&gt;
-&lt;li&gt;CLI로 &lt;strong&gt;특정 프레임을 즉시 렌더해 에이전트가 직접 보고&lt;/strong&gt; 어색한 부분을 스스로 고친다.&lt;/li&gt;
-&lt;li&gt;결과는 애니메이션+에셋이 묶인 &lt;strong&gt;.clayzo 파일 하나&lt;/strong&gt;(영상보다 최대 ~40배 작음). 웹·iOS·Mac 앱에선 WebGL/Swift 플레이어로 실시간 재생, 필요하면 MP4·GIF·WebM으로.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;디자이너에게 무엇이 바뀌나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;모션이 영상 파일이 아니라 &lt;strong&gt;살아 있는 UI 자산&lt;/strong&gt;이 된다. 같은 파일이 랜딩 페이지 인터랙션이자 출시 영상이 된다.&lt;/li&gt;
-&lt;li&gt;“코드로 영상 만들기”는 Remotion, Anthropic의 Claude Motion(Team·Enterprise 전용 베타)도 하는 일이다. Clayzo의 차별점은 &lt;strong&gt;무료 + 내 에이전트 그대로 + 프레임 단위 자기 검토&lt;/strong&gt;다.&lt;/li&gt;
-&lt;li&gt;지난주 Rive CLI 1.8이 ‘에이전트가 고치고 사람이 검토하는’ 구조를 내세운 것과 같은 방향. 모션 디자인 도구들이 &lt;strong&gt;에이전트를 1순위 사용자&lt;/strong&gt;로 다시 설계 중이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;아직 답이 없는 질문 (댓글에서)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;디자이너가 .clayzo 파일을 열어 &lt;strong&gt;키프레임을 손으로&lt;/strong&gt; 밀 수 있나, 모든 수정이 에이전트를 거쳐야 하나?&lt;/li&gt;
-&lt;li&gt;여러 작품에서 &lt;strong&gt;캐릭터·스타일을 고정&lt;/strong&gt;하는 방법은?&lt;/li&gt;
-&lt;li&gt;이미지·영상 생성 모델과 섞는 하이브리드는 언제 유리한가? — 출시 시점 공개 자료에선 답이 없다.&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>[11/3] AI 콘텐츠: Hera ‘AI 크리에이티브 캔버스’ — 에이전트 여러 개를 동시에 돌려 광고 시안을 나란히, 결과는 ‘고칠 수 있는 레이어’로, 마음에 드는 건 같은 보드에서 모션 광고로</title>
-<id>https://codemwk.github.io/aipaper-newspaper/hera-creative-canvas-3511ea094717</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/hera-creative-canvas-3511ea094717/" rel="alternate" type="text/html"/>
-<updated>2026-11-02T22:04:00Z</updated>
-<published>2026-11-02T22:04:00Z</published>
-<category term="AI 콘텐츠"/>
-<summary>Hera가 11/2 Product Hunt에 캔버스 버전을 내놓았다(일간 5위, 165표, Garry Tan 헌팅). 웹사이트 주소를 붙이면 브랜드 키트를 뽑고, 프롬프트 몇 줄로 브랜드에 맞는 광고 수십 개를 나란히 만든다. 결과는 편집 가능한 레이어라 ‘한 군데만’ 고칠 수 있고, 고른 시안을 같은 보드에서 애니메이션으로 만들고 모든 규격으로 리사이즈. 창업자는 ‘아직 거친 부분이 있다’고 인정.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;Hera가 11/2 Product Hunt에 캔버스 버전을 내놓았다(일간 5위, 165표, Garry Tan 헌팅). 웹사이트 주소를 붙이면 브랜드 키트를 뽑고, 프롬프트 몇 줄로 브랜드에 맞는 광고 수십 개를 나란히 만든다. 결과는 편집 가능한 레이어라 ‘한 군데만’ 고칠 수 있고, 고른 시안을 같은 보드에서 애니메이션으로 만들고 모든 규격으로 리사이즈. 창업자는 ‘아직 거친 부분이 있다’고 인정.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 콘텐츠&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-채팅창 AI 디자인의 두 가지 고질병 — &lt;strong&gt;“결과가 하나씩만 나온다”, “작은 수정에 전체를 다시 그린다”&lt;/strong&gt;. Hera는 그 답으로 캔버스를 골랐다(&lt;a href="https://hunted.space/product/hera-6"&gt;Product Hunt 요약&lt;/a&gt;, &lt;a href="https://www.producthunt.com/products/hera-6"&gt;Product Hunt&lt;/a&gt;).
-&lt;/p&gt;
-&lt;h2&gt;무엇을 하나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;여러 에이전트 동시 지휘&lt;/strong&gt;: 같은 요청을 여러 AI 에이전트가 동시에 작업, 결과를 보드에 나란히 놓고 비교.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;브랜드 키트 자동 추출&lt;/strong&gt;: 웹사이트 URL을 붙이면 색·폰트 등 브랜드 키트를 만들고, 새 작업이 그 룩을 따른다. 마음에 드는 남의 광고를 레퍼런스로 넣어도 된다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;편집 가능한 레이어&lt;/strong&gt;: 결과물이 평면 이미지가 아니라 레이어. 피드백으로 고치거나 손으로 직접 한 요소만 바꾸고 나머지는 유지.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;같은 보드에서 모션&lt;/strong&gt;: 완성 디자인을 애니메이션 광고로 바꾸고, 모든 광고 규격으로 리사이즈.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;창업자가 밝힌 배경&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;4월 첫 출시 후 사용자 통화에서 반복된 말: “작은 수정이 결과를 오히려 망친다”, “결국 마무리는 Figma나 After Effects에서 한다 — 거기에 통제권이 있으니까.”&lt;/li&gt;
-&lt;li&gt;그래서 “모델은 이미 디자인·애니메이션을 잘하는데, 그 일에 맞는 &lt;strong&gt;인터페이스&lt;/strong&gt;가 없었다”는 문제 정의. 창업자 스스로 “첫 버전이라 거친 부분이 있다”고 썼다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;댓글에서 나온 좋은 질문&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;시안 A의 레이아웃과 시안 B의 헤드라인 처리를 &lt;strong&gt;섞을 수 있나&lt;/strong&gt;, 아니면 하나를 통째로 골라야 하나?&lt;/li&gt;
-&lt;li&gt;만든 5개 변형 중 &lt;strong&gt;실제 성과가 좋은 건&lt;/strong&gt; 어떤 건지 캔버스 안에서 알 수 있나? (현재는 언급 없음)&lt;/li&gt;
-&lt;li&gt;수정도 크레딧을 쓰나? 클라이언트별로 브랜드 키트 보드를 따로 둘 수 있나?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-AI 이미지·영상 도구의 경쟁 축이 &lt;strong&gt;모델 품질 → 작업 인터페이스&lt;/strong&gt;로 옮겨 가고 있다. ‘나란히 비교 + 레이어 단위 수정 + 정지→모션 연결’은 광고 제작 현장의 실제 흐름을 그대로 옮긴 설계로, 다른 도구들도 따라올 가능성이 높은 패턴이다.
-&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>[11/3] AI 콘텐츠: Imagination Studio — 기획·콘티·이미지·소리 있는 영상·목소리·음악을 ‘내 컴퓨터 한 대’에서. 구독·클라우드 없는 오픈소스 AI 영화 스튜디오(Mac·DGX Spark)</title>
-<id>https://codemwk.github.io/aipaper-newspaper/imagination-studio-local-film-730aae04e21a</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/imagination-studio-local-film-730aae04e21a/" rel="alternate" type="text/html"/>
-<updated>2026-11-02T22:03:00Z</updated>
-<published>2026-11-02T22:03:00Z</published>
-<category term="AI 콘텐츠"/>
-<summary>개발자 keys(drowzeys)와 Wasserman Productions의 Sam Wasserman이 만든 Imagination Studio가 11/2 주목받았다. Apache-2.0 오픈소스로, 영화 기획(Slate 워크플로)부터 Qwen-Image-2.1·FLUX3-K 이미지, MiniMax H3/FastH3 소리 동기 영상, Fish Audio Drama 3 다화자 음성, MiniMax Music 3 노래까지 로컬에서 돌린다. 5초 864×480 클립 렌더에 DGX Spark 73초, M5 Ultra Mac 66초. 메모리에 따라 기능이 잠기고 풀린다.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;개발자 keys(drowzeys)와 Wasserman Productions의 Sam Wasserman이 만든 Imagination Studio가 11/2 주목받았다. Apache-2.0 오픈소스로, 영화 기획(Slate 워크플로)부터 Qwen-Image-2.1·FLUX3-K 이미지, MiniMax H3/FastH3 소리 동기 영상, Fish Audio Drama 3 다화자 음성, MiniMax Music 3 노래까지 로컬에서 돌린다. 5초 864×480 클립 렌더에 DGX Spark 73초, M5 Ultra Mac 66초. 메모리에 따라 기능이 잠기고 풀린다.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 콘텐츠&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-지금까지 로컬 AI 영상 제작은 모델 서버 여러 개, 파이썬 파이프라인 여러 개를 붙이는 일이었다. Imagination Studio는 그걸 &lt;strong&gt;앱 하나·작업 대기열 하나·라이브러리 하나&lt;/strong&gt;로 묶었다(&lt;a href="https://hermes-ai.net/news/imagination-studio-packs-video-voice-and-image-generation-into-one-local-app/"&gt;Hermes AI News&lt;/a&gt;, &lt;a href="https://github.com/drowzeys/Imagination-Studio-by-keys-Wasserman"&gt;GitHub&lt;/a&gt;).
-&lt;/p&gt;
-&lt;h2&gt;작업 공간 8개&lt;/h2&gt;
-&lt;table&gt;
-&lt;tr&gt;&lt;th&gt;영역&lt;/th&gt;&lt;th&gt;하는 일&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Story&lt;/td&gt;&lt;td&gt;캐스팅·로케이션·룩북·샷 프롬프트까지 ‘영화 크루처럼’ 기획(Wasserman Slate 워크플로)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Image&lt;/td&gt;&lt;td&gt;Qwen-Image-2.1, FLUX3-K, MOSS-Image. 캐릭터 5방향 턴어라운드&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Video&lt;/td&gt;&lt;td&gt;MiniMax H3 / FastH3로 &lt;strong&gt;최대 15초, 소리 동기&lt;/strong&gt; 영상&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Previs&lt;/td&gt;&lt;td&gt;참고 영상에서 포즈 골격·깊이·윤곽·카메라 움직임 설명 추출&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Sound&lt;/td&gt;&lt;td&gt;Fish Audio Drama 3(한 테이크 최대 16명, [whispering] 같은 연기 지시, 음성 복제), MiniMax Music 3(최대 5분 보컬 포함)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Edit&lt;/td&gt;&lt;td&gt;업스케일, SAM 3.1로 인물 지우기&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Agent room&lt;/td&gt;&lt;td&gt;Claude Code·Codex·Gemini·Grok 등 외부 에이전트, 로컬 모델 연결&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Studio Vaults&lt;/td&gt;&lt;td&gt;생성물·LoRA 보관함&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&lt;h2&gt;실제로 얼마나 빠른가&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;FastH3 5초 864×480 클립: &lt;strong&gt;DGX Spark 73초, M5 Ultra Mac 66초&lt;/strong&gt;(제작자 수치). DGX Spark 최대 8대까지 묶을 수 있고, Tailscale+QR로 폰에서 원격 조작.&lt;/li&gt;
-&lt;li&gt;설치 프로그램이 메모리·디스크를 먼저 재고, &lt;strong&gt;통합 메모리 용량에 따라 쓸 수 있는 기능이 열린다&lt;/strong&gt;. 큰 영상·편집 모델은 OS와 메모리를 나눠 써야 해서다.&lt;/li&gt;
-&lt;li&gt;핵심 생성은 구독·클라우드 추론·생성 API 키 없이 로컬. 단, 에이전트 연동을 켜면 클라우드를 쓸 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;영상·음성·음악 AI가 각각 좋아진 다음 단계는 &lt;strong&gt;‘파이프라인의 통합’&lt;/strong&gt;이다. 지난주 다룬 Genspark Media Studio가 클라우드 쪽 답이라면, 이건 &lt;strong&gt;로컬·오픈소스 쪽 답&lt;/strong&gt;이다. 원본 소재가 밖으로 나가지 않는다는 점이 광고·영화 사전 시각화 현장에서 의미가 있다.&lt;/li&gt;
-&lt;li&gt;다만 ‘개인 개발자+제작사’ 프로젝트(10월 초 생성, ★약 500)라 안정성은 미지수. 모델별 라이선스(특히 상업 이용)는 각 모델 조건을 따로 확인해야 한다.&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>[11/3] AI 모델: 메이퇀 LongCat-2.5 — 1.6조 파라미터, 그림도 ‘글자처럼’ 읽는 에이전트 모델. 전 과정을 중국산 칩으로 학습했고, 에이전트의 ‘실패 기록’을 다시 숙제로 만든다</title>
-<id>https://codemwk.github.io/aipaper-newspaper/longcat-2-5-multimodal-agent-daa48fd9634a</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/longcat-2-5-multimodal-agent-daa48fd9634a/" rel="alternate" type="text/html"/>
-<updated>2026-11-02T22:02:00Z</updated>
-<published>2026-11-02T22:02:00Z</published>
-<category term="AI 모델"/>
-<summary>배달 플랫폼 메이퇀이 11/1~2 LongCat-2.5를 공개했다. 총 1.6조·토큰당 약 480억 활성 파라미터의 네이티브 멀티모달 모델로, 이미지를 이산 토큰으로 바꿔 글과 같은 줄에서 처리한다. 장기 코딩 에이전트용 강화학습, 실제 에이전트 실패 궤적을 재현 가능한 학습 과제로 바꾸는 파이프라인, 국산 가속기에서 4비트(W4A4) 추론. 자체 표에선 Claude-Opus-4.8과 Opus-5 사이. longcat.ai와 API로 제공.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;배달 플랫폼 메이퇀이 11/1~2 LongCat-2.5를 공개했다. 총 1.6조·토큰당 약 480억 활성 파라미터의 네이티브 멀티모달 모델로, 이미지를 이산 토큰으로 바꿔 글과 같은 줄에서 처리한다. 장기 코딩 에이전트용 강화학습, 실제 에이전트 실패 궤적을 재현 가능한 학습 과제로 바꾸는 파이프라인, 국산 가속기에서 4비트(W4A4) 추론. 자체 표에선 Claude-Opus-4.8과 Opus-5 사이. longcat.ai와 API로 제공.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 모델&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-LongCat-2.5는 “&lt;strong&gt;긴 일을 끝까지 하는&lt;/strong&gt;” 에이전트를 목표로 한 멀티모달 모델이다. 메이퇀은 학습 전 과정을 &lt;strong&gt;중국산 AI 가속기&lt;/strong&gt;에서 돌렸다고 강조한다(&lt;a href="https://longcat.ai/blog/longcat-2.5/"&gt;LongCat 블로그&lt;/a&gt;, &lt;a href="https://www.meituan.com/news/NN261102280001343"&gt;메이퇀 뉴스&lt;/a&gt;).
-&lt;/p&gt;
-&lt;h2&gt;무엇이 새로운가 (코드 없이)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;그림을 글자처럼&lt;/strong&gt;: 이미지를 여러 단계의 ‘시각 단어’(이산 토큰)로 바꿔, 텍스트와 같은 형식으로 한 뼈대에 넣는다. 그래서 별도 비전 인코더 없이 웹페이지·3D 전시 페이지 같은 &lt;strong&gt;시각 코딩&lt;/strong&gt;을 한다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;실패를 숙제로&lt;/strong&gt;: 실제 에이전트가 실패한 궤적을 모아, 통과 여부를 자동 검증할 수 있는 학습 과제로 바꿔 계속 추가한다. GitHub PR·이슈에서 과제와 환경을 합성하고, 테스트로 검증.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;편법 차단&lt;/strong&gt;: 과제 환경에서 인터넷을 끄고 git 기록·캐시를 지운 뒤, LLM 심판이 궤적을 감사해 ‘점수만 따는’ 꼼수를 걸러낸다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;국산 칩 최적화&lt;/strong&gt;: 장기 문맥 학습, 4비트 가중치·활성값(W4A4) 추론. W8A8 대비 프리필 처리량 +43.3%, 디코드 +42.8%(회사 수치).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;성능은 어디쯤 (회사 자체 표)&lt;/h2&gt;
-&lt;table&gt;
-&lt;tr&gt;&lt;th&gt;벤치마크&lt;/th&gt;&lt;th&gt;LongCat-2.5&lt;/th&gt;&lt;th&gt;참고&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Terminal Bench v2.1&lt;/td&gt;&lt;td&gt;88.4&lt;/td&gt;&lt;td&gt;Opus-5 89.1, GPT-5.6-Sol 88.8&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;BrowseComp&lt;/td&gt;&lt;td&gt;91.9&lt;/td&gt;&lt;td&gt;Opus-5 90.8&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;MCP Atlas&lt;/td&gt;&lt;td&gt;83.1&lt;/td&gt;&lt;td&gt;Opus-5 85.8&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;JobBench&lt;/td&gt;&lt;td&gt;65.4&lt;/td&gt;&lt;td&gt;Opus-5 66.7&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&lt;p&gt;
-메이퇀 발표는 “다수 벤치마크에서 Claude-Opus-4.8과 Opus-5 사이, 일부는 Opus-5 이상”이다. 다른 모델 점수는 공개 자료 인용, 일부는 자체 측정이라 &lt;strong&gt;독립 검증 전 참고치&lt;/strong&gt;로 보자.
-&lt;/p&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;순위보다 흥미로운 건 &lt;strong&gt;제조법&lt;/strong&gt;이다. ‘실패 궤적 → 검증 가능한 과제’ 루프와 ‘보상 해킹 감사’는 에이전트 모델을 만드는 쪽이 공통으로 겪는 문제에 대한 구체적 답이다.&lt;/li&gt;
-&lt;li&gt;수출 규제 속에서 &lt;strong&gt;1조급 모델을 국산 칩으로 학습·4비트 서빙&lt;/strong&gt;까지 했다는 건 중국 AI 인프라의 자립 신호. 사용은 longcat.ai 웹과 동시 공개된 API로 가능하다(가중치 공개는 이번 발표에 없음).&lt;/li&gt;
-&lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>[11/3] AI 트레이딩: 42AI — 차트가 아니라 ‘트레이더의 마음’을 예측한다는 행동 세계 모델. 증권사 10곳이 유동성·증거금·헤지에 쓰는 중, 시드 6,250만 달러</title>
-<id>https://codemwk.github.io/aipaper-newspaper/42ai-trader-behavior-model-20521dcff7de</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/42ai-trader-behavior-model-20521dcff7de/" rel="alternate" type="text/html"/>
-<updated>2026-11-02T22:01:00Z</updated>
-<published>2026-11-02T22:01:00Z</published>
-<category term="AI 트레이딩"/>
-<summary>이스라엘 42AI가 11/2 스텔스를 벗었다. 고객의 KYC·상담 통화·입출금·매매 기록에서 ‘성향’을 뽑아 트랜스포머 기반 세계 모델로 ‘변동장에서 이 고객이 어떻게 움직일지’ 확률을 낸다. 대형 증권사 10곳이 유동성·증거금·헤지 관리에 사용, 매출은 ‘7자리(수백만 달러)’. 98% 정확도는 ‘예측 범위 안’ 기준이며, 고객을 상대로 쓰일 위험은 회사도 ‘타당한 우려’라고 인정.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;이스라엘 42AI가 11/2 스텔스를 벗었다. 고객의 KYC·상담 통화·입출금·매매 기록에서 ‘성향’을 뽑아 트랜스포머 기반 세계 모델로 ‘변동장에서 이 고객이 어떻게 움직일지’ 확률을 낸다. 대형 증권사 10곳이 유동성·증거금·헤지 관리에 사용, 매출은 ‘7자리(수백만 달러)’. 98% 정확도는 ‘예측 범위 안’ 기준이며, 고객을 상대로 쓰일 위험은 회사도 ‘타당한 우려’라고 인정.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 트레이딩&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-대부분의 AI 트레이딩 도구는 &lt;strong&gt;가격&lt;/strong&gt;을 예측한다. 42AI는 &lt;strong&gt;사람&lt;/strong&gt;을 예측한다. 증권사 입장에서 “폭락장에서 우리 고객들이 한꺼번에 팔까?”를 미리 아는 건 곧 돈이다(&lt;a href="https://techcrunch.com/2026/11/02/42ai-comes-out-of-stealth-with-62-5m-and-a-world-model-that-can-predict-human-behavior/"&gt;TechCrunch&lt;/a&gt;, &lt;a href="https://www.axios.com/pro/all-deals/2026/11/02/pro-rata-premium-first-look-tutor-thornton-ajami"&gt;Axios Pro&lt;/a&gt;).
-&lt;/p&gt;
-&lt;h2&gt;어떻게 작동하나 (코드 없이)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;겉보기엔 무관한 행동을 모은다: KYC 절차, 온보딩, &lt;strong&gt;상담 통화의 감정·목소리&lt;/strong&gt;, 전화 횟수, 송금, 매매 타이밍.&lt;/li&gt;
-&lt;li&gt;이를 ‘성향’(예: 위험 회피형)의 수학적 표현으로 바꿔 트랜스포머 기반 &lt;strong&gt;행동 세계 모델&lt;/strong&gt;에 넣는다.&lt;/li&gt;
-&lt;li&gt;모델은 상황별로 “이 사람이 이런 결정을 할 확률”을 낸다. 설명 문장은 별도 언어모델이 쓴다.&lt;/li&gt;
-&lt;li&gt;학습 보상: 시뮬레이션 중에도 사람의 기본 성향을 유지해야 한다(위험 회피형을 갑자기 공격형으로 보면 ‘오답’).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;숫자 (모두 회사 주장)&lt;/h2&gt;
-&lt;table&gt;
-&lt;tr&gt;&lt;th&gt;항목&lt;/th&gt;&lt;th&gt;내용&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;고객&lt;/td&gt;&lt;td&gt;대형 증권사 10곳 — 유동성, 증거금 요건, 헤지 노출 관리&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;데이터&lt;/td&gt;&lt;td&gt;심리 평가 수천 명 → 정부·바이오뱅크 200만 명+ → 고객 데이터 약 3,000만 명&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;정확도&lt;/td&gt;&lt;td&gt;“98%”는 &lt;strong&gt;매매 흐름이 예측 범위 안에 들어왔는지&lt;/strong&gt; 기준. 방향·거래량 예측 F1 0.8~0.85&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;가격&lt;/td&gt;&lt;td&gt;정액 또는 &lt;strong&gt;창출 가치의 일정 비율&lt;/strong&gt;. 한 증권사는 동적 헤지로 약 3,000만 달러 가치를 얻었다고 주장&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;자금&lt;/td&gt;&lt;td&gt;시드 6,250만 달러(3년간, 창업자·Infinity Group — 회장인 공동창업자 부친이 세운 곳)&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&lt;h2&gt;개인 트레이더에게 무슨 의미인가&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;이 모델은 개인을 돕는 도구가 아니라 &lt;strong&gt;증권사가 개인을 읽는 도구&lt;/strong&gt;다. TechCrunch가 “고객 예측을 고객에게 불리하게 쓰는 걸 무엇이 막나”라고 묻자, 회사는 규제·모니터링·내부 윤리위원회를 들었지만 구체적 차단 장치는 설명하지 않았다.&lt;/li&gt;
-&lt;li&gt;회사는 “모델은 그 사람이 누구인지 모른다(PII 불필요)”고 하지만, 연결된 고객 활동으로 &lt;strong&gt;개인별 행동 프로필&lt;/strong&gt;은 만든다.&lt;/li&gt;
-&lt;li&gt;한계도 인정: 친구·동료 조언처럼 모델이 못 보는 상황 정보가 있으면 정확도가 떨어진다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;p&gt;
-지난주까지 AiPaper가 다룬 AI 트레이딩 흐름이 ‘에이전트에게 주문 권한을 얼마나 줄까’였다면, 이건 반대편 — &lt;strong&gt;플랫폼이 AI로 고객 행동을 선반영&lt;/strong&gt;하는 흐름이다. 내 상담 통화와 송금 패턴까지 리스크 모델의 입력이 될 수 있다는 점은 알고 있을 만하다.
-&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>[11/3] AI 비즈니스: Peec AI — ‘ChatGPT가 우리 브랜드를 뭐라고 말하나’를 파는 회사. 출시 2년 만에 ARR 2,000만 달러, 월 99달러에서 30만 달러 계약까지</title>
-<id>https://codemwk.github.io/aipaper-newspaper/peec-ai-business-9ce136abbc81</id>
-<link href="https://codemwk.github.io/aipaper-newspaper/peec-ai-business-9ce136abbc81/" rel="alternate" type="text/html"/>
-<updated>2026-11-02T22:00:00Z</updated>
-<published>2026-11-02T22:00:00Z</published>
-<category term="AI 비즈니스"/>
-<summary>베를린 Peec AI가 11/2 연간 반복매출(ARR) 2,000만 달러 돌파를 발표했다. 5월 1,000만 달러에서 6개월 만에 2배. 고객 4,000곳+(80개국), 월 1억 건 넘는 LLM 대화를 돌려 ‘AI 답변 속 브랜드 노출·평판’을 측정한다. 월 99달러 셀프서비스에서 시작해 연 10만~30만 달러 기업 계약까지. 경쟁사 131곳이 2강(Peec·Profound)으로 정리됐다는 건 창업자 주장.</summary>
-<content type="html">&lt;p&gt;&lt;em&gt;베를린 Peec AI가 11/2 연간 반복매출(ARR) 2,000만 달러 돌파를 발표했다. 5월 1,000만 달러에서 6개월 만에 2배. 고객 4,000곳+(80개국), 월 1억 건 넘는 LLM 대화를 돌려 ‘AI 답변 속 브랜드 노출·평판’을 측정한다. 월 99달러 셀프서비스에서 시작해 연 10만~30만 달러 기업 계약까지. 경쟁사 131곳이 2강(Peec·Profound)으로 정리됐다는 건 창업자 주장.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;분류:&lt;/strong&gt; AI 비즈니스&lt;/p&gt;
-&lt;h2&gt;한줄 요약&lt;/h2&gt;
-&lt;p&gt;
-사람들이 검색창 대신 챗봇에게 “괜찮은 러닝화 추천해 줘”라고 묻는 시대, 브랜드의 새 질문은 &lt;strong&gt;“AI가 우리를 추천하나, 뭐라고 설명하나”&lt;/strong&gt;다. Peec AI는 그걸 측정하고 고치는 도구를 구독으로 판다(&lt;a href="https://www.globenewswire.com/news-release/2026/11/02/3393511/0/en/peec-ai-doubles-revenue-in-six-months-to-hit-20m-arr.html"&gt;보도자료&lt;/a&gt;, &lt;a href="https://pathfounders.com/p/we-had-131-rivals-peec-ai-founder-says-geo-gold-rush-has-become-a-bloodbath-as-its-revenue-hits-20m"&gt;Pathfounders 인터뷰&lt;/a&gt;).
-&lt;/p&gt;
-&lt;h2&gt;누구에게 무엇을 파나&lt;/h2&gt;
-&lt;table&gt;
-&lt;tr&gt;&lt;th&gt;항목&lt;/th&gt;&lt;th&gt;내용&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;고객&lt;/td&gt;&lt;td&gt;마케팅팀·에이전시. 4,000곳+, 80개국(Siemens, Hugo Boss, Sky, Mindshare, Seer Interactive 등)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;하는 일&lt;/td&gt;&lt;td&gt;고객 대신 &lt;strong&gt;월 1억 건+ LLM 대화&lt;/strong&gt;를 돌리고 웹페이지 8,000만 건+을 분석해 “AI 답변에 우리가 몇 번, 어떤 말로 나오나” 측정&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;신기능&lt;/td&gt;&lt;td&gt;브랜드 평판(어떻게 묘사되고 어떤 출처가 답을 만드는지), AI 쇼핑 노출, ‘Actions’(개선 우선순위), 자연어 Peec Agent(MCP 커넥터 25개+)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;가격&lt;/td&gt;&lt;td&gt;&lt;strong&gt;월 99달러&lt;/strong&gt;부터 셀프서비스 → 기업 계약 &lt;strong&gt;연 10만·20만·30만 달러&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&lt;h2&gt;어떻게 돈을 버나&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;처음엔 중소기업용 셀프서비스, 올해 들어 엔터프라이즈 플랫폼으로 올라갔다. 미국 경쟁사 Profound가 포춘 100을 노릴 때 &lt;strong&gt;“그 아래 전부”&lt;/strong&gt;를 노린 게 전략이라는 설명.&lt;/li&gt;
-&lt;li&gt;성장: 2025년 2월 출시 → 2026년 5월 ARR 1,000만 달러 → 11월 2,000만 달러. 회사는 “SEO 시대 대표주자 Semrush는 같은 지점까지 8년 걸렸다”고 비교한다.&lt;/li&gt;
-&lt;li&gt;누적 투자 약 4,000만 달러(Singular, 20VC, Antler 등). 직원 100명+, 뉴욕에 미국 영업 거점.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;왜 중요한가&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;SEO → GEO(생성형 엔진 최적화)&lt;/strong&gt;: 클릭을 얻는 경쟁에서 ‘추천받는 브랜드가 되는’ 경쟁으로. 창업자는 GEO가 SEO보다 &lt;strong&gt;구매 결정에 훨씬 가깝다&lt;/strong&gt;고 본다.&lt;/li&gt;
-&lt;li&gt;다음 단계는 사람 없이 &lt;strong&gt;에이전트가 고르는 구매&lt;/strong&gt;다. 예: Lovable에서 “결제 붙여 줘” 하면 에이전트가 Stripe 등 공급자를 묻지도 않고 고른다. 브랜드가 사람뿐 아니라 &lt;strong&gt;소프트웨어에게 어떻게 보이는가&lt;/strong&gt;가 매출 문제가 된다.&lt;/li&gt;
-&lt;li&gt;브랜드·크리에이티브 쪽에서 보면, “우리가 어떻게 보이고 기억되나”를 측정하는 지표에 &lt;strong&gt;AI의 묘사&lt;/strong&gt;가 새 축으로 추가됐다는 신호다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;주의&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;“경쟁사 131곳 추적, 지금은 Profound와 2강” “YC 출신 17곳 대부분 피벗·실패”는 창업자 인터뷰 주장. Bluefish, Brandlight, Evertune, AthenaHQ, Promptwatch 등은 여전히 영업 중이고, Adobe(Semrush 인수)·Ahrefs·Similarweb도 같은 시장에 들어왔다.&lt;/li&gt;
-&lt;li&gt;ARR은 회사 발표치이며 감사 수치가 아니다. AI 답변은 매번 달라지므로 ‘노출 점수’는 샘플링 방식에 따라 흔들릴 수 있다.&lt;/li&gt;
 &lt;/ul&gt;&lt;hr/&gt;&lt;p&gt;이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.&lt;/p&gt;</content>
 </entry>
 </feed>
