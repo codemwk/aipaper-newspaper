@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/7] AI 비즈니스: Traversal — AI가 쓴 코드를 지키는 AI SRE, 시리즈 B 1.2억·기업가치 10억 달러·ARR 올해 9배 — AiPaper 뉴스</title>
+  <meta name="description" content="Traversal은 프로덕션 장애의 원인을 찾아 고치는 AI SRE다. 11/3 Kleiner Perkins·Redpoint·Khosla 공동 주도 시리즈 B 1.2억 달러로 기업가치 10억 달러. ARR은 연초 대비 9배(절대액 비공개), 지난 분기 조사 15만 건. Datadog Bits AI와 경쟁하며 멀티 텔레메트리 레이어를 판다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 비즈니스 · 2026-11-07 07:00 KST</div>
+    <h1>[11/7] AI 비즈니스: Traversal — AI가 쓴 코드를 지키는 AI SRE, 시리즈 B 1.2억·기업가치 10억 달러·ARR 올해 9배</h1>
+  </header>
+  <article>
+<p><em>Traversal은 프로덕션 장애의 원인을 찾아 고치는 AI SRE다. 11/3 Kleiner Perkins·Redpoint·Khosla 공동 주도 시리즈 B 1.2억 달러로 기업가치 10억 달러. ARR은 연초 대비 9배(절대액 비공개), 지난 분기 조사 15만 건. Datadog Bits AI와 경쟁하며 멀티 텔레메트리 레이어를 판다.</em></p>
+<p><strong>분류:</strong> AI 비즈니스</p>
+<h2>한줄 요약</h2>
+<p>
+코딩 에이전트가 배포 속도를 올리자, <strong>누가 깨진 프로덕션을 고칠지</strong>가 다음 예산이 됐다. Traversal은 로그·메트릭·코드·배포 이력을 읽어 원인을 찾는 <strong>AI SRE</strong>다. 11/3 Kleiner Perkins·Redpoint Ventures·Khosla Ventures가 공동 주도한 <strong>시리즈 B 1.2억 달러</strong>로 기업가치 <strong>10억 달러</strong>, 누적 약 1.73억 달러(<a href="https://www.businesswire.com/news/home/20261103122345/en/Traversal-Raises-%24120M-with-a-%241-Billion-Valuation-to-Keep-Code-Running-With-a-Superintelligent-AI-Site-Reliability-Engineer">BusinessWire 11/3</a>).
+</p>
+<h2>누구에게 무엇을 파나</h2>
+<ul>
+<li><strong>고객</strong>: Nubank, Harvey, DigitalOcean, PepsiCo, American Express 등. Forbes는 Blackstone도 고객으로 전했다(<a href="https://thenextweb.com/news/traversal-120m-series-b-1b-valuation-ai-sre">TNW</a>).</li>
+<li><strong>상품</strong>: Traversal Workers. Splunk·Dynatrace·CloudWatch·Elasticsearch·GitHub/GitLab·Jira/ServiceNow 등을 <strong>기본 읽기 전용</strong>으로 연결하고, <strong>Production World Model</strong>(서비스·컨테이너·의존성 지도)과 <strong>Causal Search Engine</strong>(가설 수천 개 병렬 검증)으로 근본 원인을 좁힌다. Slack/Teams에 근거와 권장 수정(가끔 PR 초안)을 올린다(<a href="https://sacra.com/c/traversal/">Sacra</a>).</li>
+<li><strong>벤치마크</strong>: Cornell Tech·Columbia와 만든 ORCA-bench(1,079개 RCA 과제)에서 프론티어 에이전트 최고 성적이 중간 난이도 <strong>25.3%</strong>, 모호한 보고서는 <strong>10%</strong>, 환각은 <strong>최대 40%</strong> — “범용 에이전트만으론 온콜이 안 된다”는 회사 주장의 근거다.</li>
+</ul>
+<h2>돈 버는 구조</h2>
+<p>
+엔터프라이즈 세일즈. 공개 가격표 없음. 장애·알림 볼륨, 텔레메트리 규모, 온콜 구조, 롤아웃 범위로 <strong>Worker 수와 배포 형태</strong>를 잡는다(<a href="https://www.traversal.com/get-pricing">Get Pricing</a>). 회사 발표: ARR <strong>연초 대비 9배</strong>, 제품 사용량 약 100배, MAU 약 20배; 지난 분기 조사 <strong>15만+</strong>, 엔지니어 <strong>4,000+</strong>, 주요 장애 1,000+/경미 5만+/중요 변경 5,000+. 절대 ARR은 Agarwal CEO가 Forbes에도 밝히지 않았다.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+어제 판 <strong>Upwind</strong>(런타임 보안)가 ‘에이전트가 클라우드에 뿌려진 뒤 방어’였다면, Traversal은 <strong>에이전트가 쓴 코드가 프로덕션에서 깨질 때 조사·복구</strong>다. Datadog Bits AI SRE(플랫폼 묶음) vs 멀티 툴 독립 레이어 경쟁의 유니콘 숫자다.
+</p>
+<h2>주의</h2>
+<ul>
+<li>ARR 절대액·ROI “수천만 달러”는 회사·사례 인용. 감사 실적 아님.</li>
+<li>자율 수정 권한을 키울수록 오진단 리스크가 커진다. 기본은 읽기 전용.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

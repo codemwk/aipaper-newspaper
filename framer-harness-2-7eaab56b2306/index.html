@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/7] 디자인: Framer Harness 2 — 에이전트 JS를 스트리밍 중 실행, 비용 최대 33%·속도 20% 개선 — AiPaper 뉴스</title>
+  <meta name="description" content="Framer가 에이전트 하네스를 재작성했다. 모델이 JS를 쓰는 동안 AST 셀 단위로 바로 실행해 캔버스에 먼저 반영하고, 실패하면 남은 생성을 끊는다. 메시지당 도구 단계 약 2배 감소, 캐시 입력 토큰 39% 감소. 외부 에이전트도 MCP로 같은 하네스를 쓴다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인 · 2026-11-07 07:01 KST</div>
+    <h1>[11/7] 디자인: Framer Harness 2 — 에이전트 JS를 스트리밍 중 실행, 비용 최대 33%·속도 20% 개선</h1>
+  </header>
+  <article>
+<p><em>Framer가 에이전트 하네스를 재작성했다. 모델이 JS를 쓰는 동안 AST 셀 단위로 바로 실행해 캔버스에 먼저 반영하고, 실패하면 남은 생성을 끊는다. 메시지당 도구 단계 약 2배 감소, 캐시 입력 토큰 39% 감소. 외부 에이전트도 MCP로 같은 하네스를 쓴다.</em></p>
+<p><strong>분류:</strong> 디자인</p>
+<h2>한줄 요약</h2>
+<p>
+“옛 브랜드 색을 전부 찾아 바꿔” 같은 작업은 노드 수천 개를 보고 수백 속성을 고쳐야 한다. Framer <strong>Harness 2</strong>(11/2)는 그 일을 <strong>한 프로그램</strong>으로 쓰게 하고, 모델이 코드를 <strong>스트리밍하는 동안</strong> 실행한다. 체감은 <strong>최대 33% 저렴·20% 빠름</strong>(<a href="https://www.framer.com/blog/harness-2/">Framer 블로그</a>).
+</p>
+<h2>무엇이 바뀌었나</h2>
+<ul>
+<li><strong>Eager execution</strong>: 들어오는 JS를 AST로 잘라 “셀”로 컴파일 → Web Worker에서 순서 실행. 생성이 끝나기 전에 캔버스가 움직인다.</li>
+<li><strong>조기 취소</strong>: 필수 조건이 깨지면 <code>return</code>/<code>throw</code>로 남은 토큰 생성을 끊고, 이미 적용된 편집은 유지. 실패한 가정을 늦게 발견해 출력 토큰을 태우던 낭비를 줄인다.</li>
+<li><strong>DSL → 메서드</strong>: <code>INSERT</code>/<code>PATCH</code> 대신 <code>tree.get</code>·<code>tree.patch</code>·<code>tree.walk</code>. 읽기–쓰기가 한 요청으로 묶인다.</li>
+<li><strong>통합 하네스</strong>: 앱 안 에이전트와 ChatGPT Desktop·Claude Code·Cursor 등 <strong>외부 에이전트가 MCP로 같은 실행 경로</strong>를 탄다. 읽기/쓰기가 MCP 왕복 없이 로컬 문서 사본에서 동기 처리된다.</li>
+</ul>
+<h2>숫자 (회사 측정)</h2>
+<p>
+메시지당 도구 단계 <strong>약 2배↓</strong>, 캐시 입력 토큰 <strong>39%↓</strong>(본문 후반엔 43% fewer tool steps로도 표기). 품질 저하 없다고 회사는 밝혔다. 독립 A/B는 공개되지 않았다.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+에이전트 UX의 병목이 모델이 아니라 <strong>하네스</strong>임을 제품 팀이 숫자로 증명한 사례다. 지난번 저장하신 design-agent·Framer 계열 관심과 이어진다 — “더 큰 워크플로를 한 번에”가 곧 비용·지연·신뢰다.
+</p>
+<h2>주의</h2>
+<p>
+수치는 Framer 내부 평균. 논문 *Executing as You Generate*(2026-04)와 같은 아이디어를 프로덕션에 옮긴 것이며, 저자들은 파서 버퍼 최적화도 채택 예정이라고 적었다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/7] 신선 각도: 디자인 스킬은 하나가 아니다 — 13개 레포를 5개 일로 나누는 분류법 — AiPaper 뉴스</title>
+  <meta name="description" content="Setproduct가 11/3, Claude Code·Cursor·Codex용 디자인 스킬 13개를 스타가 아니라 ‘일’로 분류했다. A 처음부터 만들기 / B 기존 UI 다듬기 / C 방향 탐색 / D 다이어그램·쇼케이스 / E 가짜 제품 UI. 같은 레인은 경쟁, 다른 레인은 조합 — Marble taxonomy처럼 도구 목록이 아니라 운영 프레임이다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인 · 2026-11-07 07:03 KST</div>
+    <h1>[11/7] 신선 각도: 디자인 스킬은 하나가 아니다 — 13개 레포를 5개 일로 나누는 분류법</h1>
+  </header>
+  <article>
+<p><em>Setproduct가 11/3, Claude Code·Cursor·Codex용 디자인 스킬 13개를 스타가 아니라 ‘일’로 분류했다. A 처음부터 만들기 / B 기존 UI 다듬기 / C 방향 탐색 / D 다이어그램·쇼케이스 / E 가짜 제품 UI. 같은 레인은 경쟁, 다른 레인은 조합 — Marble taxonomy처럼 도구 목록이 아니라 운영 프레임이다.</em></p>
+<p><strong>분류:</strong> 디자인</p>
+<h2>한줄 요약</h2>
+<p>
+에이전트에게 랜딩을 시키면 Inter·보라 그라데이션·카드 안의 카드가 나온다. 그걸 막겠다고 쏟아진 “design skill” 레포는 11/3 기준 1.3k~145k★인데, <strong>스타로는 고를 수 없다</strong>. Setproduct는 13개를 <strong>다섯 가지 일(lane)</strong>으로 다시 잘랐다(<a href="https://www.setproduct.com/blog/design-skills-for-ai-agents-compared">Setproduct</a>).
+</p>
+<h2>다섯 레인</h2>
+<table>
+<tr><th>레인</th><th>하는 일</th><th>대표</th></tr>
+<tr><td>A 처음부터</td><td>페이지 생성 + 검사</td><td>hallmark (101k★), hallmark, UI UX Pro Max (145k★)</td></tr>
+<tr><td>B 다듬기</td><td>이미 있는 코드에 규칙</td><td>emilkowalski/skills, jakubkrehel/skills, transitions.dev</td></tr>
+<tr><td>C 탐색</td><td>변형을 나란히</td><td>oil-ui</td></tr>
+<tr><td>D 인접 산출물</td><td>다이어그램·맵</td><td>diagram-design, archify</td></tr>
+<tr><td>E 가짜 UI</td><td>히어로용 미니 화면</td><td>Stageshow</td></tr>
+</table>
+<p>
+규칙: <strong>같은 레인 둘은 싸운다</strong>(hallmark vs impeccable 둘 다 <code>DESIGN.md</code> 파이프라인). <strong>다른 레인은 겹친다</strong>(Krehel + Emil + impeccable detect CI).
+</p>
+<h2>숫자보다 검사기</h2>
+<p>
+표에서 중요한 열은 stars가 아니라 <strong>How output is checked</strong>. hallmark는 브라우저 8폭 렌더, impeccable은 <strong>62개 결정적 디텍터·CI exit code</strong>, Stageshow는 <code>film.mjs --gate</code> 콘택트 시트. 검사기 없는 스킬은 스타일 가이드일 뿐이다. elayadesign 13.9k★/커밋 16, Stageshow 1.3k★/커밋 1 — 런치 주간 스타의 함정.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 <strong>impeccable / UI UX Pro Max</strong>와 이어지는 소식이다. Marble taxonomy처럼 <strong>제품 런칭이 아니라 분류 프레임</strong>을 한 편에 담았다. “다 설치”가 아니라 <strong>이번 주 일 → 왼쪽 도구 하나 → 출고될 때까지 멈춤</strong>이 실무 규칙이다.
+</p>
+<h2>주의</h2>
+<p>
+스타·커밋은 2026-11-03 스냅샷. Premium/Pro(Oil UI $9.99, transitions.dev, uupm.cc)와 impeccable 텔레메트리 기본 On을 확인한 뒤 쓸 것.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
