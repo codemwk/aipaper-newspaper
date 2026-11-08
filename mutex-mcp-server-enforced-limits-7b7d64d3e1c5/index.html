@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/9] AI 트레이딩: MUTEX MCP — ‘프롬프트가 아니라 서버가 한도를 강제한다’, 그래도 에이전트 키의 구멍은 인정 — AiPaper 뉴스</title>
+  <meta name="description" content="크립토 거래소 MUTEX가 11/2 계정 전체를 AI 에이전트에 맡길 수 있는 MCP 서버를 공개했다. 출금은 사전 연결된 지갑만, 에이전트는 자기 권한을 못 올림, 봇 키의 최악은 봇 잔고. 같은 주 브로커 MCP들(PrimeXBT·TradeStation·B2BROKER)과 안전 모델을 비교한다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 트레이딩 · 2026-11-09 07:15 KST</div>
+    <h1>[11/9] AI 트레이딩: MUTEX MCP — ‘프롬프트가 아니라 서버가 한도를 강제한다’, 그래도 에이전트 키의 구멍은 인정</h1>
+  </header>
+  <article>
+<p><em>크립토 거래소 MUTEX가 11/2 계정 전체를 AI 에이전트에 맡길 수 있는 MCP 서버를 공개했다. 출금은 사전 연결된 지갑만, 에이전트는 자기 권한을 못 올림, 봇 키의 최악은 봇 잔고. 같은 주 브로커 MCP들(PrimeXBT·TradeStation·B2BROKER)과 안전 모델을 비교한다.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>한줄 요약</h2>
+<p>
+MUTEX는 11/2 “Claude 등 MCP 에이전트가 계정을 운영하되, <strong>한도는 프롬프트가 아니라 서버가 강제한다</strong>”는 MCP 서버를 냈다. 핵심 문장은 “프롬프트는 설득당할 수 있지만 서버는 안 그렇다”(<a href="https://mutex.trade/news/ai-agents-on-mutex">MUTEX 공지</a>).
+</p>
+<h2>안전 설계 (공식 설명)</h2>
+<ul>
+<li>출금은 <strong>본인이 미리 연결한 지갑</strong>으로만. API와 서명기가 각각 다른 주소를 거부한다.</li>
+<li>에이전트는 지갑 변경, 에이전트 접근 on/off, API 키 생성·폐기, 서명키 승인을 <strong>할 수 없다</strong>(자기 권한 상승 불가).</li>
+<li>에이전트 접근은 <strong>기본 꺼짐</strong>. 꺼져 있으면 읽기도 거부된다.</li>
+<li><strong>봇 키</strong>는 격리된 봇 계정 하나만 다루며, 최악의 손실은 ‘그 봇 잔고’. 출금하려면 별도 서명키를 30일 또는 90일 단위로 승인해야 한다.</li>
+<li>주문 전 <code>preview_order</code>로 예상 체결·수수료·증거금을 보고 <code>place_order</code>를 부르게 하며, 재시도는 고유 참조로 <strong>중복 체결/중복 출금을 막는다</strong>.</li>
+</ul>
+<h2>스스로 밝힌 한계</h2>
+<p>
+“에이전트 키는 내 세션과 같아서, 에이전트가 탈취되면 <strong>메인 퍼프 계정을 거래하고 연결 지갑으로 출금</strong>할 수 있고 서버는 서명 전에 묻지 않는다.” 그래서 <strong>작게 채운 봇 키로 시작</strong>하라고 권한다. 이 솔직함이 이 공지의 가장 쓸모 있는 부분이다.
+</p>
+<h2>이번 주 다른 MCP들과 비교</h2>
+<ul>
+<li><strong>PrimeXBT</strong>(11/4): 모든 주문에 명시적 확인, 읽기전용/읽기+거래 권한, AI로 출금·이체 불가(<a href="https://www.globenewswire.com/news-release/2026/11/04/3395052/0/en/primexbt-launches-ai-assisted-trading-with-mcp-integration-connecting-chatgpt-and-claude-to-trading-accounts.html">GlobeNewswire</a>).</li>
+<li><strong>TradeStation 기관용 MCP</strong>: OAuth 2.0 PKCE, 기존 권한·위험 한도 상속, 도구별 범위 지정, 주문 승인 필수, 감사 로그(<a href="https://institutional.tradestation.com/technology/institutional-ai-trading/">TradeStation</a>).</li>
+<li><strong>B2BROKER B2TRADER</strong>: 터미널 내 채팅은 거래마다 확인하지만 <strong>풀 액세스 MCP는 건별 확인이 없고</strong> 주문은 되돌릴 수 없다고 문서가 직접 경고, 프롬프트 인젝션 위험도 명시(<a href="https://docs.b2broker.com/b2trader/terminal/connect-your-ai-agent/full-access-safety">B2BROKER 문서</a>).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+브로커 MCP가 늘수록 비교축은 기능이 아니라 <strong>‘확인 vs 서버 한도 vs 키 범위’</strong>다. MT5 네이티브 MCP를 쓰는 분도 같은 질문을 던져 볼 만하다: 에이전트가 자기 권한을 올릴 수 있나, 최악 손실은 얼마로 제한되나, 데모 계정부터 시작할 수 있나.
+</p>
+<h2>주의</h2>
+<p>
+위 내용은 각사 공식 설명이다. 실거래 보안 검증이나 사고 사례 데이터는 없다. 레버리지 상품은 손실 위험이 크다. 투자 권유가 아니다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

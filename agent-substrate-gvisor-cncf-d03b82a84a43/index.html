@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/9] 새로운 시각: 에이전트는 95%의 시간을 ‘기다린다’ — Google이 Agent Substrate와 gVisor를 CNCF에 기부한 이유 — AiPaper 뉴스</title>
+  <meta name="description" content="AI 에이전트는 모델 응답·사람 검토를 기다리며 세션 시간의 90~95%를 보낸다. 그렇다고 컨테이너를 끌 수도 없다(메모리·git 상태). Google이 KubeCon에서 Agent Substrate 1.0과 gVisor를 CNCF 샌드박스로 기부했다: 500ms 미만 재개, 신뢰할 수 없는 코드 격리."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 새로운 시각 · 2026-11-09 07:35 KST</div>
+    <h1>[11/9] 새로운 시각: 에이전트는 95%의 시간을 ‘기다린다’ — Google이 Agent Substrate와 gVisor를 CNCF에 기부한 이유</h1>
+  </header>
+  <article>
+<p><em>AI 에이전트는 모델 응답·사람 검토를 기다리며 세션 시간의 90~95%를 보낸다. 그렇다고 컨테이너를 끌 수도 없다(메모리·git 상태). Google이 KubeCon에서 Agent Substrate 1.0과 gVisor를 CNCF 샌드박스로 기부했다: 500ms 미만 재개, 신뢰할 수 없는 코드 격리.</em></p>
+<p><strong>분류:</strong> 새로운 시각</p>
+<h2>한줄 요약</h2>
+<p>
+에이전트가 코딩하거나 장애를 분석하는 동안 <strong>90~95%의 시간은 모델 토큰을 기다리거나 사람의 리뷰를 기다리는 시간</strong>이다(Google 설명). 그 사이 CPU는 0인데 상태(언어 런타임, 로컬 git, 미커밋 편집, 도구 세션)는 지켜야 한다. Google Cloud는 KubeCon NA(11/9~12, 솔트레이크시티)를 앞두고 <strong>Agent Substrate와 gVisor를 CNCF 샌드박스로 기부</strong>한다고 밝혔다(<a href="https://opensource.googleblog.com/2026/11/sandboxing-untrusted-ai-agents-at-scale.html">Google Open Source Blog</a>).
+</p>
+<h2>문제: 쿠버네티스는 ‘기다리는 프로그램’을 위해 만들어지지 않았다</h2>
+<ul>
+<li><strong>항상 켜둔 Pod</strong>: 빠르지만 사용자가 만 명이면 유휴 비용이 감당 안 된다.</li>
+<li><strong>0으로 스케일</strong>: 싸지만 저장소 클론·패키지 설치부터 다시 하느라 재개가 20초 넘게 걸린다.</li>
+<li><strong>대량 평가·RL</strong>: 수천 개 짧은 샌드박스를 Pod로 만들면 etcd·API 서버가 무너진다.</li>
+</ul>
+<h2>해법: Actor와 Worker 분리</h2>
+<p>
+<strong>Actor</strong>는 세션 상태(파일시스템·환경변수·메모리)를, <strong>Worker</strong>는 미리 데워둔 Pod 풀의 연산을 맡는다. 요청이 오면 라우터가 붙잡아두고, 상태를 복원해 <strong>500ms 미만에 재개</strong>하고, 턴이 끝나면 스냅샷을 저장하고 자리를 반납한다. 격리는 <strong>gVisor</strong>(사용자 공간에서 시스템 콜을 가로채는 애플리케이션 커널)가 맡고, 하드웨어 가상화가 필요하면 Cloud Hypervisor microVM을 같은 API로 쓴다.
+</p>
+<h2>gVisor 기부의 배경(프로젝트 공식 글)</h2>
+<p>
+gVisor 팀은 10/2 글에서 채택자가 Google·Ant Group·OpenAI·Anthropic·Modal·Tines 같은 소수에 몰려 있고, ‘Google 단독 소유’라는 거버넌스 위험이 확산을 막았다고 설명했다(<a href="https://gvisor.dev/blog/2026/10/02/gvisor-cncf/">gVisor 블로그</a>). 유지보수자로 Ant Group·Modal·Tines가 합류를 약속했고 OpenAI·Tencent·NVIDIA는 계속 기여한다.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+‘에이전트 시대의 인프라’가 모델이 아니라 <strong>“멈춰 있는 에이전트를 싸게 보관하고 안전하게 깨우는 문제”</strong>로 옮겨가고 있다. 개인용 상시 비서형 에이전트도 같은 구조적 문제가 있다 — 대부분의 시간은 대기다.
+</p>
+<h2>주의</h2>
+<p>
+‘500ms 미만’, ‘90~95%’는 Google의 설명이고 독립 벤치마크는 없다. Agent Substrate는 1.0 릴리스이긴 하나 CNCF 샌드박스 단계의 초기 프로젝트다. 일반 개인 사용자가 당장 쓸 물건은 아니다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
