@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/11] AlgoVesta MCP: 거래소 16곳+MT5를 한 연결로 — “모델은 호출자일 뿐, 권한자는 서버” — AiPaper 뉴스</title>
+  <meta name="description" content="AlgoVesta가 Claude·ChatGPT·Cursor에서 암호화폐 거래소 16곳과 MetaTrader 5를 하나의 호스팅 MCP로 거래하게 하는 서버를 공개했다. 기본은 5,000달러 모의계좌, 실거래는 2단계 인증 후. 리스크 규칙은 모델 밖 서버에서 집행하고, 손절 없는 주문은 거부한다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 트레이딩 · 2026-11-11 07:00 KST</div>
+    <h1>[11/11] AlgoVesta MCP: 거래소 16곳+MT5를 한 연결로 — “모델은 호출자일 뿐, 권한자는 서버”</h1>
+  </header>
+  <article>
+<p><em>AlgoVesta가 Claude·ChatGPT·Cursor에서 암호화폐 거래소 16곳과 MetaTrader 5를 하나의 호스팅 MCP로 거래하게 하는 서버를 공개했다. 기본은 5,000달러 모의계좌, 실거래는 2단계 인증 후. 리스크 규칙은 모델 밖 서버에서 집행하고, 손절 없는 주문은 거부한다.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>무엇인가</h2>
+<p>
+<strong>AlgoVesta</strong>는 원격 MCP 서버 하나로 <strong>암호화폐 거래소 16곳(Binance·Bybit·OKX·Hyperliquid 등) + MetaTrader 5 + 모의 엔진</strong>에 접근하게 해 준다. Claude·ChatGPT·Cursor·Claude Code·Gemini CLI 등 원격 MCP를 지원하는 클라이언트에 URL만 붙이면 된다. 설치할 것은 없고, MT5 터미널도 AlgoVesta 서버에서 24시간 돌린다. 서버 자체는 비공개 상용이고 GitHub에는 문서·도구 명세만 있다(11/5 Show HN, <a href="https://github.com/AlgoVesta/mcp">GitHub 문서</a>).
+</p>
+<h2>안전 설계가 본론이다</h2>
+<ul>
+<li><strong>모의가 기본.</strong> 새 키는 5,000달러 가상 잔고의 <code>paper</code> 범위. 실거래 <code>live</code> 범위는 TOTP 등 <strong>2단계 인증 후에만</strong>, 서버에서 강제.</li>
+<li><strong>서버 측 정책 벽.</strong> “거래당 1% 이상 위험 금지, 포지션 3개까지, 일일 낙폭 5%면 정지” 같은 말을 <code>compile_policy</code>가 JSON 규칙으로 바꾸고, 사용자가 승인한다. 규칙은 <strong>요청이 모델을 떠난 뒤 서버에서 결정론적으로</strong> 평가된다. 프롬프트 인젝션은 모델이 ‘무엇을 요청할지’는 바꿀 수 있어도 서버의 판정은 못 바꾼다.</li>
+<li><strong>손절 필수.</strong> 손절이 없고 저장된 기본값도 없으면 주문 거부, 나중에 손절을 지울 수도 없다. MT5/외환은 익절도 필수.</li>
+<li><strong>자동매매 스위치는 사람만.</strong> <code>auto_trade</code>는 어떤 범위에서도 쓰기 불가 필드다. 한 번의 주문은 눈에 보이지만, 전략은 대화가 끝난 뒤에도 계속 거래하니까.</li>
+<li><strong>출금 경로 없음.</strong> 거래소 API 키는 출금 권한 없이 만들어 AlgoVesta 안에 암호화 보관. AI가 쥐는 건 언제든 취소 가능한 MCP 링크뿐.</li>
+<li><strong>멱등성 키·서명 영수증.</strong> 같은 주문을 두 번 보내도 한 번만 실행되고, 모든 행동에 ed25519 서명·해시 체인 영수증이 붙는다. 킬 스위치로 전체 동결.</li>
+</ul>
+<h2>유용한 도구</h2>
+<p>
+<code>simulate_order</code>(체결 예상·증거금·정책 판정까지 미리), <code>compare_venues</code>(연결된 거래소별 스프레드·수수료·슬리피지 실측 비교, 라우팅은 안 함), <code>simulate_policy</code>(“이 규칙이 있었다면 내 과거 거래 중 뭐가 막혔고 손익이 어땠나”), TradingView 백테스트 가져오기.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 <strong>MT5 안전장치(RiskGate·MUTEX) 흐름</strong>의 가장 완성된 형태에 가깝다. 11/5 PrimeXBT, 11/10 Bybit EU 스킬이 “확인 후 실행”을 넣었다면, AlgoVesta는 <strong>규칙 집행을 모델 바깥으로 완전히 빼고 영수증으로 검증 가능하게</strong> 만들었다. 측정치도 솔직하다. MT5 왕복 평균 약 1.2초, 거래소 약 4.1초 — 저지연 매매용이 아니라고 스스로 밝힌다.
+</p>
+<h2>주의</h2>
+<p>
+<strong>호스팅·비공개 서버</strong>라 거래소 키를 제3자에게 맡기는 구조다. 출금 권한 없는 키라도 거래 권한은 있다. MCP 링크 자체가 비밀번호이니 유출 시 즉시 취소할 것. 실거래 검증은 6개 거래소만 완료됐다고 명시한다. 투자 조언 아님.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

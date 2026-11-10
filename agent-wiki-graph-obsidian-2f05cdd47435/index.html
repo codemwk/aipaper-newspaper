@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/11] 회의 녹음 28개를 옵시디언 위키로: 에이전트 9개가 한 볼트를 같이 쓰는 법 — ‘출처는 불변, 모르면 [UNVERIFIED]’ — AiPaper 뉴스</title>
+  <meta name="description" content="Mike Moore가 11/9 Claude Code로 한 주치 회의 녹음·데모 저장소·블로그를 옵시디언 LLM 위키에 넣은 실제 과정을 공개했다. 핵심은 루트 스키마 파일의 세 규칙(라우팅 질문, 출처 규칙, 팬아웃 목표)과 병렬 에이전트의 ‘소유권’ 규칙. 1,718페이지·고아 페이지 0개까지 갔다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-11-11 07:00 KST</div>
+    <h1>[11/11] 회의 녹음 28개를 옵시디언 위키로: 에이전트 9개가 한 볼트를 같이 쓰는 법 — ‘출처는 불변, 모르면 [UNVERIFIED]’</h1>
+  </header>
+  <article>
+<p><em>Mike Moore가 11/9 Claude Code로 한 주치 회의 녹음·데모 저장소·블로그를 옵시디언 LLM 위키에 넣은 실제 과정을 공개했다. 핵심은 루트 스키마 파일의 세 규칙(라우팅 질문, 출처 규칙, 팬아웃 목표)과 병렬 에이전트의 ‘소유권’ 규칙. 1,718페이지·고아 페이지 0개까지 갔다.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>무엇인가</h2>
+<p>
+Karpathy의 LLM Wiki 아이디어를 실무에 깊게 적용한 사례다. 에이전트는 매 세션 시작 시 일주일치 회의, 만든 데모, 겪었던 함정을 이미 알고 있다. 모델이 기억해서가 아니라, <strong>사람이 옵시디언으로 여는 마크다운 위키를 읽고 쓰기 때문</strong>이다. 예제 볼트가 담긴 스타터 킷은 <a href="https://github.com/themsquared/agent-wiki-graph">themsquared/agent-wiki-graph</a>(<a href="https://webofmike.com/agent-memory-obsidian-wiki/">원문</a>).
+</p>
+<h2>구조: 두 층</h2>
+<ul>
+<li><strong>고객(계정)별 볼트</strong>: 사람, 단계, 막힌 것, 누가 뭐라고 했는지. <code>_raw/</code>(불변 원본), <code>meetings/</code>, <code>people/</code>, <code>topics/</code>, 자동 재생성되는 <code>status.md</code>.</li>
+<li><strong>루트 기술 층</strong>: 특정 고객을 넘어 오래 남는 것 — 함정(<code>concepts/</code>), 제품 버전별 동작, 데모 환경. 복리로 쌓이는 건 이쪽이다.</li>
+<li>에이전트 기본 메모리는 <strong>한 줄 색인</strong>만 두고, 각 줄이 위키 페이지를 가리킨다.</li>
+</ul>
+<h2>에이전트를 움직이는 세 규칙 (루트 CLAUDE.md)</h2>
+<ul>
+<li><strong>라우팅 질문</strong>: “이 사실은 이 고객에 대한 것인가, 제품에 대한 것인가?” 고객 것은 볼트로, 일반화되는 건 <code>concepts/</code>로 보내고 양쪽에서 링크.</li>
+<li><strong>출처 규칙</strong>: 읽지 않은 사실은 쓰지 않는다. 확인 안 된 주장은 <code>[UNVERIFIED]</code>와 무엇이 확인해 줄지 함께 표시. “X 지원” 대신 “2026-10-14 실제 클러스터에서 재현”, 버전은 항상 고정.</li>
+<li><strong>팬아웃 목표</strong>: 진짜 소스 하나는 5~15페이지를 건드려야 한다. 한 페이지만 고쳤다면 덜 넣은 것.</li>
+</ul>
+<h2>병렬 에이전트가 한 볼트를 망치지 않는 법</h2>
+<p>
+에이전트 9개(고객별 6 + 데모·블로그·메모리 매핑 3)가 동시에 썼다. 규칙은 <strong>소유권</strong>: 각 하위 에이전트는 <strong>볼트 하나만</strong> 쓴다. <code>index.md</code>·<code>log.md</code>·기존 <code>concepts/</code> 같은 공유 파일은 오케스트레이터만 고치고, 하위 에이전트는 “제안 편집”을 보고서로 돌려준다. 내부 회의 에이전트는 다른 고객 7곳에 대한 사실을 찾았지만 직접 쓰지 않고 넘겼다.
+</p>
+<h2>현장에서 배운 함정 (가장 쓸모 있는 부분)</h2>
+<ul>
+<li><strong>화자 이름표는 생각보다 자주 틀린다.</strong> 이름이 붙은 라벨도 추측일 뿐. 본인이 자기 이름을 3인칭으로 부르면 라벨 오류 신호.</li>
+<li><strong>녹음기 요약은 전사 오류를 사실로 재진술한다.</strong> “Kubernetes 1.33”이 요약에서 “1.3”이 됐다. 사실은 전사본에서만 뽑는다.</li>
+<li>통화가 끝난 뒤 계속 녹음된 집안 소리, 개인 통화는 <strong>원본 저장 전에</strong> 걸러야 한다(<code>_raw/</code>는 불변이라 나중에 못 지운다).</li>
+<li>링크 검사기를 돌리니 1,658페이지 중 <strong>고아 페이지 108개</strong>. 고객별 색인에 전체 경로 링크 지도를 붙여 최종 <strong>1,718페이지·14,458링크·고아 0</strong>.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 <strong>LLM Wiki·vault-bridge·obsidian-wiki 흐름</strong>에서 가장 ‘운영 매뉴얼’에 가까운 글이다. 특히 “위키에서 가장 많이 링크된 페이지는 제품이 아니라 <strong>에이전트가 읽는 도구가 거짓말하는 방식(함정 목록)</strong>이었다”는 관찰은, 세컨드 브레인을 에이전트용으로 키울 때 무엇부터 적어야 하는지 알려 준다. 저자가 다음에 만들 것은 git 커밋에서 뽑는 <strong>주간 변경 페이지</strong> — “지금 무엇이 참인가”뿐 아니라 “지난주 이후 무엇이 바뀌었나”.
+</p>
+<h2>주의</h2>
+<p>
+저자 말대로 스키마 파일은 <strong>보안 장치가 아니라 라우팅 장치</strong>다. 협조적인 에이전트를 정리할 뿐, 악의적 입력을 막지 못한다. 업무 위키에는 고객 데이터가 들어가니 저장소 접근 권한을 관리할 것.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

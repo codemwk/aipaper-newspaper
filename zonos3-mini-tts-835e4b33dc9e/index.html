@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/11] Zyphra ZONOS3-Mini: 폰 브라우저에서도 실시간으로 도는 오픈 음성복제 TTS (Apache 2.0) — AiPaper 뉴스</title>
+  <meta name="description" content="Zyphra가 11/9 ZONOS3-Mini를 공개했다. 활성 1억·전체 8억 파라미터 MoE TTS로, 짧은 샘플로 목소리를 복제하고 나이·억양·감정·속도·속삭임까지 단어 단위로 조절한다. M3 MacBook Air 브라우저에서 첫 음성까지 150ms 미만."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 컨텐츠 생성 · 2026-11-11 07:00 KST</div>
+    <h1>[11/11] Zyphra ZONOS3-Mini: 폰 브라우저에서도 실시간으로 도는 오픈 음성복제 TTS (Apache 2.0)</h1>
+  </header>
+  <article>
+<p><em>Zyphra가 11/9 ZONOS3-Mini를 공개했다. 활성 1억·전체 8억 파라미터 MoE TTS로, 짧은 샘플로 목소리를 복제하고 나이·억양·감정·속도·속삭임까지 단어 단위로 조절한다. M3 MacBook Air 브라우저에서 첫 음성까지 150ms 미만.</em></p>
+<p><strong>분류:</strong> AI 컨텐츠 생성</p>
+<h2>무엇인가</h2>
+<p>
+<strong>ZONOS3-Mini</strong>는 Zyphra의 차세대 실시간 텍스트→음성(TTS) 모델이다. 활성 파라미터 <strong>1억 개</strong>, 전체 <strong>8억 개</strong>의 희소 MoE 구조이고 라이선스는 <strong>Apache 2.0</strong>이라 상업적으로도 쓸 수 있다. 가중치는 Hugging Face에, 런타임은 GitHub에 있다(<a href="https://www.zyphra.com/our-work/zonos3-mini/">Zyphra 발표</a>).
+</p>
+<h2>무엇이 새로운가</h2>
+<ul>
+<li><strong>기기에서 돈다.</strong> WebGPU 브라우저 런타임, GGML(C++), SGLang·vLLM 서버를 함께 냈다. 첫 음성까지(TTFA) <strong>Pixel 9 브라우저 570ms 미만, M3 MacBook Air 150ms 미만</strong>.</li>
+<li><strong>목소리 설계.</strong> 같은 화자로 미국·영국·호주 억양 바꾸기, 25세↔75세 같은 나이 조절, 음색(부드러움·거칠기), 여러 속성을 섞은 ‘캐스팅’.</li>
+<li><strong>연기 지시.</strong> 속도, 감정(안도·억눌린 분노·불안), 투사(속삭임↔방 건너편에 부르기), 생동감. 특히 문장 중 <strong>특정 단어 구간만 속삭이게</strong> 하는 단어 단위 조절이 된다. 생성 후 일부 문장만 고치는 편집 모델도 함께 공개.</li>
+<li><strong>작아진 이유.</strong> 기존 DAC 코덱(86Hz)이 너무 무거워 자체 코덱 ZAC-1을 만들었고, 같은 조건에서 단어 오류율을 10분의 1로 줄였다고 한다.</li>
+</ul>
+<h2>성능 주장</h2>
+<p>
+자체 평가셋 ZTTS2-Eval(35개 언어)과 이를 묶은 ‘TTS Capability Index’에서 <strong>오픈 모델 1위</strong>, 그다음이 Fish S2 Pro, MOSS TTS v1.5라고 한다. ElevenLabs·Cartesia 등과의 비교는 청취 샘플로 제시했다. 평가셋도, 지표도 Zyphra가 만든 것이라는 점은 감안해야 한다.
+</p>
+<h2>누구에게 쓸모 있나</h2>
+<p>
+숏폼 내레이션, 다국어 더빙 시안, 앱 안의 음성 안내를 <strong>API 비용·데이터 유출 없이 로컬에서</strong> 돌리고 싶은 사람. 지난번 다룬 Fish Audio·Inworld TTS 2처럼 ‘감정 연기’ 경쟁이 오픈 소형 모델까지 내려왔다는 신호다.
+</p>
+<h2>주의</h2>
+<p>
+음성 복제는 본인 또는 동의받은 목소리에만 쓸 것. 지원 언어 품질은 언어별로 차이가 크니 한국어는 직접 들어보고 판단해야 한다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
