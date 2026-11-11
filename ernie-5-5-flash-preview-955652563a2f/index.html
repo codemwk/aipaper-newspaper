@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/12] ERNIE 5.5 Flash Preview: 화면을 못 보는 텍스트 모델이 11시간 동안 게임을 만든 방법 — ‘테스트로 눈을 대신’ — AiPaper 뉴스</title>
+  <meta name="description" content="바이두가 11/11 ERNIE 5.5 Flash Preview(총 280B/활성 14B MoE, 100만 토큰 컨텍스트)를 공개했다. 11/8 공개된 베이스 모델의 첫 사후학습 버전으로, API는 Qianfan에서 바로, 가중치는 Apache 2.0으로 곧 공개 예정. 데모에서 텍스트 전용 모델이 플레이테스트 문제를 ‘측정 가능한 테스트’로 바꿔 Unreal 게임을 완성했다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-11-12 07:00 KST</div>
+    <h1>[11/12] ERNIE 5.5 Flash Preview: 화면을 못 보는 텍스트 모델이 11시간 동안 게임을 만든 방법 — ‘테스트로 눈을 대신’</h1>
+  </header>
+  <article>
+<p><em>바이두가 11/11 ERNIE 5.5 Flash Preview(총 280B/활성 14B MoE, 100만 토큰 컨텍스트)를 공개했다. 11/8 공개된 베이스 모델의 첫 사후학습 버전으로, API는 Qianfan에서 바로, 가중치는 Apache 2.0으로 곧 공개 예정. 데모에서 텍스트 전용 모델이 플레이테스트 문제를 ‘측정 가능한 테스트’로 바꿔 Unreal 게임을 완성했다.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+11/8 기사에서 다룬 <strong>ERNIE 5.5 Flash Base</strong>의 첫 사후학습 체크포인트가 나왔다. <strong>총 280B·활성 14B MoE, 100만 토큰 컨텍스트</strong>, 코딩·3D 모델링·지식 작업·콘텐츠 제작에 강하다고 소개한다. API는 바이두 <strong>Qianfan</strong> 플랫폼에서 지금 쓸 수 있고, 가중치는 <strong>Apache 2.0으로 “곧”</strong> 공개한다(<a href="https://ernie.baidu.com/release/ernie-5-5-flash-preview/">ERNIE 공식 발표</a>).
+</p>
+<h2>눈여겨볼 데모: 보이지 않으면 재라</h2>
+<p>
+가장 흥미로운 건 성능표보다 <strong>작업 방식</strong>이다. 바이두에 따르면 모델은 <strong>한 번의 11시간 코딩 작업</strong>으로 여러 세대 Unreal Engine용 에셋을 UE 5.8 프로젝트 하나로 합치고 3인칭 무협 게임을 C++로 작성했다. 텍스트 전용 모델이라 화면을 볼 수 없으니, 플레이테스트에서 나온 문제 — 캐릭터가 땅 위에 떠 있음, 달리는 방향 불일치, 카메라 위치 — 를 <strong>코드로 측정 가능한 테스트</strong>로 바꿨다. 늘어나는 테스트 묶음과 플레이 피드백이 반복을 이끌었다.
+</p>
+<p>
+또 게임 기획서만 받고 Cocos·Unity·PixiJS 등으로 <strong>모바일 미니게임 약 100개</strong>를 만들었고, 게임 규칙을 화면과 분리해 결정론적 시뮬레이션으로 돌려 <strong>봇 플레이로 모든 레벨이 깰 수 있는지</strong> 자동 확인했다고 한다. 과학 해설 영상(대본·내레이션·자막·편집까지 에이전트 하네스 안에서) 데모도 있다.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+“멀티모달이 아니면 시각 작업은 못 한다”는 통념에 대한 실용적인 반례다. <strong>관찰을 숫자로 바꾸는 습관</strong>(위치 오차, 방향 벡터, 클리어 가능 여부)이 있으면 텍스트 모델도 긴 시각 작업을 끝까지 끌고 간다. 디자인·영상 자동화에도 그대로 옮길 수 있는 패턴이다.
+</p>
+<h2>주의</h2>
+<p>
+‘Preview’는 사후학습 <strong>중간 체크포인트</strong>이고 바이두도 일부 능력이 부족할 수 있다고 밝혔다. 데모는 회사가 고른 사례이며, 외부 에셋·도구(이미지 생성 모델, 에셋 팩 등)를 함께 썼다고 명시돼 있다. 가중치 공개 시점은 아직 미정.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

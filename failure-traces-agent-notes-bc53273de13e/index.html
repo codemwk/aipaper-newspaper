@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/12] 에이전트가 ‘실패 노트’로 배운다는 말, 얼마나 사실일까 — 고정 가중치 실험이 보여준 냉정한 숫자 — AiPaper 뉴스</title>
+  <meta name="description" content="arXiv 2611.11342는 모델 가중치는 그대로 두고 ‘주변 노트(하네스)’만 고쳐 9B 에이전트를 개선하는 실험을 사전등록 방식으로 검증했다. 실수 기록을 보고 쓴 노트는 정확도를 4.0%p 더 올렸지만, 개선의 약 60%는 실수를 안 봐도 ‘써 보고 점수 좋은 노트 남기기’만으로 나왔다. 실제 대화 환경에서는 효과가 입증되지 않았다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-11-12 07:00 KST</div>
+    <h1>[11/12] 에이전트가 ‘실패 노트’로 배운다는 말, 얼마나 사실일까 — 고정 가중치 실험이 보여준 냉정한 숫자</h1>
+  </header>
+  <article>
+<p><em>arXiv 2611.11342는 모델 가중치는 그대로 두고 ‘주변 노트(하네스)’만 고쳐 9B 에이전트를 개선하는 실험을 사전등록 방식으로 검증했다. 실수 기록을 보고 쓴 노트는 정확도를 4.0%p 더 올렸지만, 개선의 약 60%는 실수를 안 봐도 ‘써 보고 점수 좋은 노트 남기기’만으로 나왔다. 실제 대화 환경에서는 효과가 입증되지 않았다.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+“에이전트가 실수에서 배워 스스로 좋아진다”는 주장의 상당수는 모델을 다시 학습시키는 게 아니라 <strong>노트·프롬프트·규칙 파일(하네스)</strong>을 고쳐 쓰는 방식이다. LLM Wiki가 하는 일과 같다. Hopit AI의 <a href="https://arxiv.org/abs/2611.11342">arXiv 2611.11342</a>는 이걸 엄격하게 재 봤다: <strong>결과는 “효과는 있다, 하지만 보이는 것보다 작다.”</strong>
+</p>
+<h2>실험 설계 (쉽게)</h2>
+<ul>
+<li>가중치를 고정한 오픈 <strong>9B 모델(Qwen3.5-9B)</strong> 에이전트. 노트는 더 큰 ‘선생 모델’이 쓴다.</li>
+<li>비교: ① 에이전트의 <strong>실패 기록을 보고</strong> 쓴 노트 vs ② <strong>같은 절차지만 실패 기록을 숨기고</strong> 쓴 노트. 둘 다 목표 규칙은 알려 줬다. 주요 분석은 <strong>사전등록</strong>.</li>
+</ul>
+<h2>결과</h2>
+<ul>
+<li>생성된 고객 서비스 판단 과제: 실패 기록을 본 노트가 <strong>+4.0%p</strong> 더 좋았다.</li>
+<li>그런데 <strong>“써 보고 점수 좋은 노트를 남기는” 탐색 과정만으로 전체 개선의 약 60%</strong>가 나왔다. 실패를 읽은 덕분이 아니라 시행착오 선택 덕이 컸다는 뜻.</li>
+<li><strong>실제 고객 서비스 대화</strong> 전체에서는 같은 노트가 개선을 입증하지 못했다.</li>
+<li>교훈을 하나씩 엄격히 걸러 보니 통과한 건 고객 서비스 2개(새 데이터 검증 대기), 도구 사용 1개 — 그 1개도 새 과제에선 효과를 보이지 못했다. 탐색적 분석에서는 절차 없는 <strong>중립적 노트가 학습된 교훈보다 점수가 높았다.</strong></li>
+<li>덤: 블라인드 감사에서 도구 사용 테스트 문항 <strong>240개 중 146개가 결함</strong>으로 판정됐다. 벤치마크 자체가 흔들린다.</li>
+</ul>
+<h2>LLM Wiki를 만드는 사람에게</h2>
+<ul>
+<li><strong>실패 로그를 쌓는 것 자체는 유효</strong>하지만, 효과의 큰 몫은 “여러 버전을 써 보고 <strong>측정해서 남기는</strong>” 습관에서 온다. 평가 없이 쌓기만 하는 위키는 개선을 착각하기 쉽다.</li>
+<li><strong>작은 시험 셋</strong>을 따로 두고 노트를 바꿀 때마다 돌려 보자. 쉬운 판단 과제에서 좋아진 노트가 긴 실제 대화에서 그대로 통하리란 보장은 없다.</li>
+<li>노트가 길어질수록 좋은 게 아니다. 중립적인 짧은 노트가 이긴 결과는 “교훈 목록”을 늘리기 전에 한 번 생각하게 만든다.</li>
+</ul>
+<h2>주의</h2>
+<p>
+단일 9B 모델·특정 과제에서의 결과이고 프리프린트다. 저자도 대조군이 탐색 과정의 차이를 완전히 분리하지는 못한다고 밝혔다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

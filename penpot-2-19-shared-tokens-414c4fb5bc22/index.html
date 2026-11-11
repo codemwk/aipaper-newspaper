@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/12] Penpot 2.19: 디자인 토큰을 ‘라이브러리 하나’에서 모든 파일로 — 그리고 이틀 뒤 보안 패치 4건 — AiPaper 뉴스</title>
+  <meta name="description" content="오픈소스 디자인 툴 Penpot 2.19(11/9)가 라이브러리 공유 디자인 토큰, 면별 선 두께, 단축키 커스터마이즈, 새 패스 편집기를 넣었다. 11/11 2.19.1은 초대 토큰 노출·SVG 스크립트 우회 등 보안 문제 4건을 고쳤다. 셀프호스팅이면 업그레이드 절차를 꼭 확인할 것."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인 / UI·UX · 2026-11-12 07:00 KST</div>
+    <h1>[11/12] Penpot 2.19: 디자인 토큰을 ‘라이브러리 하나’에서 모든 파일로 — 그리고 이틀 뒤 보안 패치 4건</h1>
+  </header>
+  <article>
+<p><em>오픈소스 디자인 툴 Penpot 2.19(11/9)가 라이브러리 공유 디자인 토큰, 면별 선 두께, 단축키 커스터마이즈, 새 패스 편집기를 넣었다. 11/11 2.19.1은 초대 토큰 노출·SVG 스크립트 우회 등 보안 문제 4건을 고쳤다. 셀프호스팅이면 업그레이드 절차를 꼭 확인할 것.</em></p>
+<p><strong>분류:</strong> 디자인 / UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+Penpot은 Figma의 오픈소스 대안이자, MCP 서버로 에이전트가 직접 캔버스를 만지는 흐름에서 자주 언급되는 툴이다. <strong>2.19.0(11/9 GitHub 릴리스)</strong>의 핵심은 <strong>디자인 토큰을 라이브러리에서 공유</strong>하는 기능이고, <strong>2.19.1(11/11)</strong>은 보안 수정 4건이다(<a href="https://penpot.app/release-notes/2-19-is-this-it">Penpot 릴리스 노트</a>, <a href="https://github.com/penpot/penpot/releases">GitHub Releases</a>).
+</p>
+<h2>무엇이 바뀌었나 (2.19)</h2>
+<ul>
+<li><strong>공유 디자인 토큰</strong>: 토큰을 한 라이브러리에 두고, 연결된 모든 파일이 그걸 쓴다. 컴포넌트·색상처럼 라이브러리 업데이트와 <strong>자동 동기화</strong>. 테마·세트는 파일마다 고를 수 있다. “토큰이 진짜 단일 원천(single source of truth)”이 되는 셈.</li>
+<li><strong>면별 선 두께(per-side stroke)</strong>: 사각형·보드의 위·오른쪽·아래·왼쪽 선 두께를 따로. 토큰과도 연결된다. 카드 하단 구분선 같은 UI 패턴을 꼼수 없이 그린다.</li>
+<li><strong>단축키 커스터마이즈</strong>: 재지정·충돌 경고·초기화, 설정 내보내기/가져오기.</li>
+<li><strong>패스 편집기 개편</strong>과 <strong>WebGL 렌더러</strong>(선명한 텍스트, 빠른 내보내기 — 설정에서 켜야 함).</li>
+<li>커뮤니티 수정 중 <strong>MCP 플러그인 연결 상태에서 페이지 이동 시 크래시</strong>가 고쳐졌다. 에이전트 연동을 쓰는 사람에겐 체감되는 수정이다.</li>
+</ul>
+<h2>2.19.1 보안 수정</h2>
+<p>
+편집자 권한 팀원이 대기 중인 초대 토큰을 볼 수 있던 문제, 공유 링크 범위 밖으로 댓글 작성자 신원이 새던 문제, 권한 검사 없는 ‘모든 스레드 읽음’ API, 그리고 <strong>“정화된” SVG가 실제 스크립트를 품을 수 있던 문제(CVE-2026-105694)</strong>. 외부 SVG를 자주 붙여 넣는 팀이라면 바로 올리는 게 좋다.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 <strong>DESIGN.md·디자인 시스템 MCP</strong> 흐름과 이어진다. 에이전트가 디자인 시스템을 읽으려면 토큰이 <strong>파일마다 복제된 사본이 아니라 한 곳에서 관리되는 계약</strong>이어야 한다. 2.19는 오픈소스 쪽에서 그 전제를 갖춘 업데이트다.
+</p>
+<h2>주의</h2>
+<p>
+셀프호스팅은 <strong>브레이킹 체인지</strong>가 있다: 대형 인스턴스는 업그레이드 전에 파일 페이로드 마이그레이션을 수동 실행해야 하고, Admin Console이 기본 활성화되어 별도 서비스 배포·환경변수 설정이 필요하다. 업그레이드 가이드를 먼저 볼 것.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

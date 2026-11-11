@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/12] 로봇의 ‘다음 장면’을 예측하는 모델이 공개됐다: Runway Praxis-1 오픈 웨이트, MBZUAI PAN 2 — AiPaper 뉴스</title>
+  <meta name="description" content="11/11 Runway가 영상과 로봇 행동을 함께 예측하는 ‘월드 액션 모델’ Praxis-1(27B MoE)을 Apache 2.0 오픈 웨이트로 풀었다. 같은 날 MBZUAI는 행동을 말로 주면 다음 장면을 영상으로 시뮬레이션하는 PAN 2를 학습 코드까지 공개했고, DeepMind는 Gemini Robotics 2.5를 냈다. 영상 생성 기술이 로봇 두뇌로 넘어가는 하루."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-11-12 07:00 KST</div>
+    <h1>[11/12] 로봇의 ‘다음 장면’을 예측하는 모델이 공개됐다: Runway Praxis-1 오픈 웨이트, MBZUAI PAN 2</h1>
+  </header>
+  <article>
+<p><em>11/11 Runway가 영상과 로봇 행동을 함께 예측하는 ‘월드 액션 모델’ Praxis-1(27B MoE)을 Apache 2.0 오픈 웨이트로 풀었다. 같은 날 MBZUAI는 행동을 말로 주면 다음 장면을 영상으로 시뮬레이션하는 PAN 2를 학습 코드까지 공개했고, DeepMind는 Gemini Robotics 2.5를 냈다. 영상 생성 기술이 로봇 두뇌로 넘어가는 하루.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+영상 생성 회사로 알려진 <strong>Runway</strong>가 11/11 <strong>Praxis-1</strong>을 누구나 쓸 수 있는 <strong>오픈 웨이트(Apache 2.0, 상업 이용 가능)</strong>로 공개했다. 9월에 소개한 첫 ‘월드 액션 모델’로, <strong>영상과 행동을 함께 예측하는 27B 파라미터 MoE 확산 트랜스포머</strong>다(<a href="https://runway.com/news/company-news/praxis-1-is-now-available">Runway 발표</a>).
+</p>
+<h2>무엇이 새로운가</h2>
+<ul>
+<li><strong>영상으로 배운 로봇 감각</strong>: 대규모 영상 사전학습으로 “물체가 어떻게 움직이고 작업이 어떻게 진행되는지”를 먼저 배운다. Runway는 자체 연구에서 <strong>웹 영상이 원격조종 로봇 영상만큼 사전학습 데이터로 유효</strong>했다고 주장한다. 병목이 비싼 로봇 데이터에서 흔한 영상으로 옮겨 간다는 뜻이다.</li>
+<li><strong>수치(회사 발표)</strong>: NVIDIA RoboLab-120에서 1,200 에피소드 성공률 <strong>46.2%</strong>(FLUX 3 Action 42.9%, Cosmos3 Nano 36.8%, π0.5 28.0%). 학습에 없던 Google RT-1 로봇에 미세조정하자 SimplerEnv <strong>80.0%</strong>(원래 RT-1 정책 52.4%).</li>
+<li><strong>어디서 돌아가나</strong>: 가중치·추론·미세조정 코드(LoRA 포함)를 GitHub·Hugging Face(LeRobot 지원)·vLLM-Omni로 배포. H100부터 RTX 5090, 로봇 탑재용 Jetson Thor까지.</li>
+</ul>
+<h2>같은 날 나온 두 가지</h2>
+<ul>
+<li><strong>PAN 2 (MBZUAI 산하 IFM)</strong>: 시작 장면과 ‘행동을 말로’ 주면 다음에 벌어질 일을 물리·시간·공간에 맞는 영상으로 시뮬레이션. “행동하기 전에 결과를 본다”는 <strong>시뮬레이션 추론</strong>. 가중치에 더해 <strong>학습 코드 전체</strong>까지 Apache 2.0으로 공개한 드문 사례다(<a href="https://mbzuai.ac.ae/news-events/news/the-institute-foundation-models-unveils-pan-2-open-world-model-physical">MBZUAI</a>).</li>
+<li><strong>Gemini Robotics 2.5 (DeepMind)</strong>: 메르세데스-벤츠 개념검증에서 자동차 부품 포장 성공률 96%, 작업 속도 20~30% 향상(회사 발표). Apptronik·Boston Dynamics 등 파트너를 통해 배포(<a href="https://siliconangle.com/2026/11/11/google-deepmind-releases-new-advanced-robotics-ai-model-and-next-generation-gene-prediction-model/">SiliconANGLE</a>).</li>
+</ul>
+<h2>왜 중요한가 (콘텐츠 만드는 사람에게도)</h2>
+<p>
+영상 생성 모델이 “예쁜 장면”을 넘어 <strong>“그다음에 실제로 무슨 일이 일어나는가”</strong>를 맞히는 쪽으로 가고 있다. 같은 능력이 영상 쪽에선 물리적으로 그럴듯한 연출로, 로봇 쪽에선 행동 계획으로 쓰인다. Runway가 영상 툴 회사에서 <strong>물리 AI 회사</strong>로 무게를 옮기는 신호이기도 하다.
+</p>
+<h2>주의</h2>
+<p>
+벤치마크는 모두 발표 주체가 고른 수치다. 로봇 성공률 46%는 ‘절반 이상 실패’라는 뜻이기도 하다. 실제 현장 투입은 여전히 하드웨어별 미세조정과 안전 검증이 필요하다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
