@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/13] 새로운 각도: AI는 자기 머릿속을 들여다볼 수 있을까 — 연구자가 ‘생각’을 몰래 심었더니 Qwen은 최대 54% 알아챘다, 그런데 무엇을 심었는지는 몰랐다 — AiPaper 뉴스</title>
+  <meta name="description" content="Singularity Hub가 11/11 정리한 ‘AI 자기성찰’ 연구 흐름: 모델 내부에 특정 개념의 활성 패턴을 주입하는 실험에서 Qwen3-235B는 최대 53.9%, Llama 3.1 405B는 최대 31.7% 확률로 주입을 감지했고, 조작하지 않은 시행에선 한 번도 거짓 신고를 하지 않았다. 하지만 무엇을 주입했는지 맞힌 비율은 12~14%였고, 프롬프트로 ‘집착하라’고 시키기만 해도 비슷한 신고가 나왔다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 새로운 각도 · 2026-11-13 07:09 KST</div>
+    <h1>[11/13] 새로운 각도: AI는 자기 머릿속을 들여다볼 수 있을까 — 연구자가 ‘생각’을 몰래 심었더니 Qwen은 최대 54% 알아챘다, 그런데 무엇을 심었는지는 몰랐다</h1>
+  </header>
+  <article>
+<p><em>Singularity Hub가 11/11 정리한 ‘AI 자기성찰’ 연구 흐름: 모델 내부에 특정 개념의 활성 패턴을 주입하는 실험에서 Qwen3-235B는 최대 53.9%, Llama 3.1 405B는 최대 31.7% 확률로 주입을 감지했고, 조작하지 않은 시행에선 한 번도 거짓 신고를 하지 않았다. 하지만 무엇을 주입했는지 맞힌 비율은 12~14%였고, 프롬프트로 ‘집착하라’고 시키기만 해도 비슷한 신고가 나왔다.</em></p>
+<p><strong>분류:</strong> 새로운 각도</p>
+<h2>한줄 요약</h2>
+<p>
+AI가 “제가 이렇게 생각했어요”라고 설명할 때, 그게 <strong>실제 내부에서 일어난 일</strong>인지 <strong>그럴듯하게 지어낸 말</strong>인지 확인할 방법이 있을까? 연구자들은 모델의 신경망에 <strong>‘생각’을 몰래 심는</strong> 방식으로 이 질문을 실험하고 있다(<a href="https://singularityhub.com/2026/11/11/ai-models-can-tell-when-researchers-plant-concepts-in-their-neural-networks-is-it-self-reflection/">Singularity Hub, 11/11</a>).
+</p>
+<h2>실험은 이렇게 한다</h2>
+<ul>
+<li>특정 개념(예: ‘사과’)에 해당하는 내부 활성 패턴을 찾는다.</li>
+<li>모델이 답하는 도중에 그 패턴을 인위적으로 키운다(<strong>개념 주입</strong>).</li>
+<li>모델에게 미리 말해 둔다. “연구자가 당신 머릿속에 생각을 넣을 수도 있다. 뭔가 느껴지면 알려 달라.”</li>
+</ul>
+<p>
+이 방법은 Anthropic의 Jack Lindsey가 2025년에 처음 시도했다. 그때 최고 성능 모델이 주입을 감지하고 개념까지 맞힌 비율은 약 20%였다.
+</p>
+<h2>결과: 알아채기는 한다, 내용은 모른다</h2>
+<ul>
+<li>텍사스대 Harvey Lederman·Kyle Mahowald 팀이 개념 821개로 실험했다. <strong>Qwen3-235B는 최대 53.9%, Llama 3.1 405B는 최대 31.7%</strong> 확률로 주입을 감지했다. 조작하지 않은 시행에서는 두 모델 모두 <strong>거짓 신고가 0건</strong>이었다.</li>
+<li>무엇을 주입했는지 맞힌 비율은 Qwen 최대 13.9%, Llama 최대 12.9%였다. 그런데 틀린 답은 주입한 개념과 아무 관련이 없었고, Qwen의 오답 중 거의 4분의 3이 그냥 <strong>“사과”</strong>였다. 답하기 전에 주입을 멈추면 정답률은 크게 떨어졌지만 감지율은 그대로였다. 정답은 ‘알아서’ 맞힌 게 아니라, 주입한 개념을 말하게 되는 부작용이었다는 해석이다.</li>
+<li>Lindsey 팀의 후속 연구는 Gemma 3 안에서 <strong>이상 감지 회로</strong>를 찾아냈다. 이 능력은 원시 모델이 챗봇으로 훈련되는 과정에서 생기고, 개념을 알아맞히는 능력과는 별개의 회로로 보인다.</li>
+</ul>
+<h2>반론</h2>
+<p>
+뉴욕대 연구진은 신경망을 건드리지 않고 프롬프트로 “이 개념에 집착하라”고 시키기만 했다. 그랬더니 모델은 실제 주입보다 <strong>더 자주</strong> “생각이 주입됐다”고 신고했다. ‘프롬프트로 조작됨’이라는 선택지를 줘도 두 경우를 제대로 구분하지 못했다. 진짜로 자기 내부를 살피는 거라면 구분할 수 있어야 한다는 게 반론의 요지다.
+</p>
+<h2>왜 흥미로운가</h2>
+<ul>
+<li>철학의 질문(“기계도 자기 생각을 생각할 수 있나”)이 <strong>실험으로 확인할 수 있는 질문</strong>이 됐다.</li>
+<li>실용적인 시사점도 있다. AI의 자기 설명(“이렇게 판단했습니다”)은 아직 <strong>증거가 아니라 참고 자료</strong>로 다뤄야 한다. 이번 호 트레이딩 기사(“AI가 한 일을 누가 증명하나”)와 같은 결론이다. 로그는 모델의 말이 아니라 <strong>시스템이 남겨야</strong> 한다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/13] 세컨드 브레인: ‘에이전트용 볼트는 따로’ — 내 일기장까지 AI에게 열지 말자는 제안, 그리고 obsidian-wiki v2026.11.4의 ‘기억 보존’ 수정 — AiPaper 뉴스</title>
+  <meta name="description" content="AFFiNE 팀이 11/12 글에서 개인 볼트 전체를 에이전트에게 열지 말고, 에이전트가 읽고 인용할 ‘LLM 위키 볼트’를 따로 두라고 제안했다. 읽기 금지·읽기 허용·쓰기 허용 3단 권한과 1시간 점검표를 담았다. 같은 날짜대에 Ar9av/obsidian-wiki v2026.11.4(11/11)는 PDF·JS 렌더링 URL 수집, 기억 동기화 때 revision 검사로 핵심 내용 보존 기능을 더했다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-11-13 07:05 KST</div>
+    <h1>[11/13] 세컨드 브레인: ‘에이전트용 볼트는 따로’ — 내 일기장까지 AI에게 열지 말자는 제안, 그리고 obsidian-wiki v2026.11.4의 ‘기억 보존’ 수정</h1>
+  </header>
+  <article>
+<p><em>AFFiNE 팀이 11/12 글에서 개인 볼트 전체를 에이전트에게 열지 말고, 에이전트가 읽고 인용할 ‘LLM 위키 볼트’를 따로 두라고 제안했다. 읽기 금지·읽기 허용·쓰기 허용 3단 권한과 1시간 점검표를 담았다. 같은 날짜대에 Ar9av/obsidian-wiki v2026.11.4(11/11)는 PDF·JS 렌더링 URL 수집, 기억 동기화 때 revision 검사로 핵심 내용 보존 기능을 더했다.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>한줄 요약</h2>
+<p>
+LLM Wiki 유행의 기본값은 “Claude를 내 옵시디언 볼트 전체에 연결하고 알아서 정리하게 하라”였다. 이번 주엔 반대 방향 제안이 나왔다. <strong>사람용 볼트와 에이전트용 위키를 분리하자</strong>는 것이다.
+</p>
+<h2>“방을 나눠라” (AFFiNE, 11/12)</h2>
+<ul>
+<li>AFFiNE 팀 글에 따르면, 옵시디언을 만드는 Steph Ango(kepano)는 11/11 자기 셋업의 큰 변화로 <strong>에이전트가 쓰는 별도의 LLM 위키 볼트</strong>를 꼽았다(<a href="https://dev.to/affineofficial/give-your-agents-their-own-wiki-keep-your-vault-to-yourself-5644">DEV Community</a>).</li>
+<li>개인 볼트에는 일기, 초안, 연봉 메모, 미공개 계획, 반쯤 틀린 메모가 섞여 있다. 사람은 무엇이 사적이고 낡았는지 알지만 <strong>에이전트는 모른다</strong>. 그대로 열면 두 가지 일이 생긴다. 볼 필요 없는 것을 읽고 다른 곳에서 반복하는 것, 그리고 <strong>볼트에 다시 써 넣는 것</strong>이다.</li>
+<li>제안 구조: <strong>볼트 A</strong>(사람의 작업 공간, 에이전트 접근 기본 금지), <strong>볼트 B</strong>(에이전트가 검색·인용하는 정제된 위키, 원본 자료는 수정 불가). 권한은 <strong>읽기 금지 → 읽기 허용 → 쓰기 허용</strong> 순으로 정하고, 쓰기는 마지막에 드물게만 준다.</li>
+<li>AGENTS.md·CLAUDE.md에 넣을 규칙도 제시했다. “에이전트 위키에서만 답하고 페이지 이름을 밝힐 것”, “위키에 없는 사실은 없다고 말할 것”.</li>
+<li>1시간 점검법의 마지막 단계: 사람 볼트에만 있는 정보를 물어봤을 때 <strong>“그건 모릅니다”라고 답해야 정상</strong>이다. 답이 나온다면 유출이다.</li>
+</ul>
+<p>
+※ 글쓴이가 자사 제품 AFFiNE을 소개하는 글이므로 결론 부분은 감안해서 읽자. 원칙 자체는 제품과 상관없이 쓸 수 있다.
+</p>
+<h2>obsidian-wiki v2026.11.4 (11/11)</h2>
+<p>
+11/10에 다룬 v2026.11.3(ingest-guard) 이틀 뒤에 나온 업데이트다(<a href="https://github.com/Ar9av/obsidian-wiki/releases">GitHub 릴리스</a>).
+</p>
+<ul>
+<li><strong>수집 확장</strong>: firecrawl CLI가 설치돼 있으면 PDF와 자바스크립트로 렌더링되는 URL도 읽는다.</li>
+<li><strong>기억 보존</strong>: 메모리를 동기화할 때 revision 검사를 거쳐 오래 남겨야 할 핵심 내용(durable takeaways)을 지키고, 동기화가 잘못되면 되돌릴 수 있게 했다.</li>
+<li><strong>유효성 판단 수정</strong>: 페이지가 유효한지를 볼트의 달력(타임존) 기준으로 판단한다.</li>
+<li>새 버전 알림과 업그레이드 뒤 스킬 자동 갱신 기능도 들어갔다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+두 소식 모두 같은 걸 말한다. 세컨드 브레인의 다음 과제는 기억을 <strong>더 많이</strong> 쌓는 게 아니라 <strong>경계와 보존</strong>이다. 무엇을 보여 줄지, 무엇을 덮어쓰지 못하게 할지가 핵심이다.
+</p>
+<p>
+지난번 저장하신 vault-bridge·enquire-mcp(기억 신선도) 소식과 이어지는 이야기다. 지금 쓰는 볼트에 <code>agent-wiki/</code> 폴더 하나를 따로 만들고, 에이전트를 거기에만 연결해 보는 것부터 시작하면 된다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

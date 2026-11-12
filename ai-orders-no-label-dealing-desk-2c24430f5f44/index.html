@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/13] AI 트레이딩: AI가 넣은 주문엔 ‘꼬리표’가 없다 — MT5·cTrader·Match-Trade가 MCP를 열자 브로커 딜링 데스크가 겪는 새 문제 — AiPaper 뉴스</title>
+  <meta name="description" content="Finance Magnates 보도를 정리한 Trading Technology 11/12 기사: MetaQuotes·Spotware·Match-Trade가 MCP 연결을 열면서 AI 에이전트가 실계좌에서 주문을 넣고 있지만, MT5는 주문 출처를 데스크톱·모바일·웹·EA로만 구분할 뿐 AI 주문 표시는 따로 없다. 일부 오픈소스 MT5 연결은 EA 주문으로 보인다. 브로커는 서버 로그 없이는 고객이 에이전트에게 무엇을 시켰는지 확인할 수 없다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 트레이딩 · 2026-11-13 07:04 KST</div>
+    <h1>[11/13] AI 트레이딩: AI가 넣은 주문엔 ‘꼬리표’가 없다 — MT5·cTrader·Match-Trade가 MCP를 열자 브로커 딜링 데스크가 겪는 새 문제</h1>
+  </header>
+  <article>
+<p><em>Finance Magnates 보도를 정리한 Trading Technology 11/12 기사: MetaQuotes·Spotware·Match-Trade가 MCP 연결을 열면서 AI 에이전트가 실계좌에서 주문을 넣고 있지만, MT5는 주문 출처를 데스크톱·모바일·웹·EA로만 구분할 뿐 AI 주문 표시는 따로 없다. 일부 오픈소스 MT5 연결은 EA 주문으로 보인다. 브로커는 서버 로그 없이는 고객이 에이전트에게 무엇을 시켰는지 확인할 수 없다.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>한줄 요약</h2>
+<p>
+지금까지 MT5+MCP 이야기는 <strong>트레이더 쪽 안전장치</strong>(승인, 읽기 전용, 한도)가 중심이었다. 이번엔 <strong>브로커 쪽</strong> 이야기다. AI가 넣은 주문은 브로커 시스템에서 “AI 주문”으로 보이지 않는다(<a href="https://tradingtechnology.org/news/trading-platforms-add-ai-links-for-live-retail-fx-accounts">Trading Technology, 11/12</a>, 원 보도 Finance Magnates).
+</p>
+<h2>무엇이 문제인가</h2>
+<ul>
+<li>MetaQuotes(MT5 내장 MCP), Spotware(cTrader AI Agent Connect), Match-Trade(브로커용에서 트레이더용으로 확대)가 공식 MCP 연결을 제공한다. 공식 연결에서는 보통 <strong>매매 허용 / 승인 요청 / 읽기 전용</strong>을 고를 수 있다.</li>
+<li>하지만 MT5가 딜링 데스크에 보여 주는 주문 출처는 <strong>데스크톱·모바일·웹·EA</strong>뿐이다. <strong>AI 주문 전용 표시는 없다.</strong> 알고리즘 매매를 켜야 하는 일부 오픈소스 MT5 연결의 주문은 <strong>EA 주문으로 보이고</strong>, EA 주문이 모바일 주문으로 표시된 사례도 있었다.</li>
+<li>브로커가 MCP 서버를 직접 운영하지 않으면(예: 자체 서버를 둔 ThinkMarkets) 에이전트 지시 기록을 볼 수 없다. 호스팅 서비스를 쓰면 <strong>계좌 토큰을 서비스 업체가 보관</strong>하기도 한다.</li>
+</ul>
+<h2>브로커에게 생기는 일</h2>
+<ul>
+<li>고객이 수동 매매에서 에이전트로 바꾸면, A북/B북 배정의 근거인 <strong>고객 프로필이 실제와 어긋난다</strong>.</li>
+<li>여러 고객이 같은 모델·프롬프트·오픈소스 연결을 쓰면 <strong>같은 방향으로 동시에 움직이는 포지션 쏠림</strong>이 생길 수 있다.</li>
+<li>에이전트가 지시를 잘못 이해했을 때, 서버 로그가 없으면 고객이 <strong>실제로 무엇을 시켰는지</strong> 확인할 방법이 없다. 토큰이 유출되면 제3자의 매매도 고객 본인 매매처럼 보인다.</li>
+</ul>
+<h2>개인 트레이더에게 주는 시사점</h2>
+<ul>
+<li><strong>분쟁 대비 기록은 내가 남긴다</strong>: 에이전트에게 준 지시와 에이전트의 응답, 주문 로그를 직접 보관하자. 브로커는 이 기록을 갖고 있지 않을 수 있다.</li>
+<li><strong>토큰 보관 위치 확인</strong>: 호스팅형 MCP라면 계좌 토큰을 누가 들고 있는지 확인하자. 가능하면 로컬 연결이나 브로커 공식 서버를 쓰는 편이 낫다.</li>
+<li><strong>승인 모드 기본</strong>: 공식 연결의 ‘주문 전 확인’ 설정을 켜 두자.</li>
+</ul>
+<p>
+지난번 저장하신 RiskGate·mt5-trading-mcp 같은 안전 레이어 소식과 이어지는 이야기다. 그때는 “내 계좌를 AI로부터 어떻게 지키나”였다면, 이번엔 “<strong>AI가 한 일을 누가 증명하나</strong>”라는 질문이다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
