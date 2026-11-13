@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/14] AI 모델: Edge0-145B — ‘노트북에서 도는 1,450억 파라미터’ 오픈 모델. 단 맥 지원은 블로그와 문서가 엇갈린다 — AiPaper 뉴스</title>
+  <meta name="description" content="Edge0가 11/12 1,450억 파라미터 오픈 가중치 모델 Edge0-145B와 120B, 추론 엔진을 Apache 2.0으로 공개했다. 한 번에 약 100억 개만 계산에 쓰는 구조로 최대 메모리 29GB, 초당 80토큰 이상을 주장한다. 코딩 벤치마크 DeepSWE 1.1 64.6점은 회사 내부 측정이다. 블로그는 MacBook Pro를 예로 들지만, GitHub 문서는 현재 ‘NVIDIA GPU + CUDA 13(리눅스·윈도)’만 요구사항으로 적었다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-11-14 07:01 KST</div>
+    <h1>[11/14] AI 모델: Edge0-145B — ‘노트북에서 도는 1,450억 파라미터’ 오픈 모델. 단 맥 지원은 블로그와 문서가 엇갈린다</h1>
+  </header>
+  <article>
+<p><em>Edge0가 11/12 1,450억 파라미터 오픈 가중치 모델 Edge0-145B와 120B, 추론 엔진을 Apache 2.0으로 공개했다. 한 번에 약 100억 개만 계산에 쓰는 구조로 최대 메모리 29GB, 초당 80토큰 이상을 주장한다. 코딩 벤치마크 DeepSWE 1.1 64.6점은 회사 내부 측정이다. 블로그는 MacBook Pro를 예로 들지만, GitHub 문서는 현재 ‘NVIDIA GPU + CUDA 13(리눅스·윈도)’만 요구사항으로 적었다.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+“큰 모델은 클라우드, 작은 모델은 내 기기”라는 공식에 도전하는 모델이 나왔다. <strong>Edge0-145B</strong>는 전체 1,450억 파라미터 중 <strong>약 100억 개만</strong> 매번 계산에 참여한다. 덕분에 개인 컴퓨터에서 <strong>최대 메모리 29GB, 초당 80토큰 이상</strong>으로 돈다고 회사는 밝혔다(<a href="https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer">Edge0 블로그</a>).
+</p>
+<h2>무엇이 새로운가</h2>
+<ul>
+<li><strong>전문가끼리 큰 행렬을 나눠 쓴다</strong>: 전문가 64개가 한 그룹으로 큰 행렬 2개를 공유하고, 각 전문가는 차이를 담는 작은 파라미터만 따로 가진다. 저장하고 옮겨야 할 가중치가 크게 줄어든다.</li>
+<li>베이스 모델은 <strong>Qwen3.8-Flash-Next</strong>다. 엔진 edge0-strata는 MIT 라이선스 Strata의 포크다(<a href="https://github.com/Edge0-AI/Edge0/blob/main/docs/models/edge0-145b.md">모델 문서</a>).</li>
+<li>가중치와 추론 엔진, 배포 도구를 모두 공개했다. 저장소 라이선스는 <strong>Apache 2.0</strong>이다.</li>
+<li>회사 주장 성능(모두 내부 평가): 코딩 <strong>DeepSWE 1.1 64.6</strong>(Qwen3.8-Flash-Next 58.7, DeepSeek-V4-Flash 54.4), 추론 <strong>GPQA-Diamond 90.4</strong>, 지시 이행 <strong>IFBench 80.6</strong>. 기술 보고서는 아직 “공개 예정”이다.</li>
+</ul>
+<h2>주의: ‘맥북에서 된다’는 말은 아직 확인 전</h2>
+<ul>
+<li>블로그는 “MacBook Pro 같은 호환 노트북”을 예로 든다. 하지만 GitHub의 145B 문서는 요구사항을 <strong>“NVIDIA GPU와 CUDA 13이 있는 리눅스 또는 윈도”</strong>로 적었다. Apple M2 Ultra 측정값에 대해서는 “<strong>macOS 출시를 의미하지 않는다</strong>”고 따로 써 놓았다.</li>
+<li>문서에 실린 실측 표에는 VRAM 16GiB + 램 20GiB로 제한한 테스트도 있다. 다만 “일반적인 최소 사양이 아니라 측정용 예산”이라고 선을 그었다. 실제로는 RTX 4090·5090급 GPU를 가진 사람이 먼저 써 볼 수 있다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+로컬 모델의 장점은 분명하다. <strong>토큰 요금이 없고, 데이터가 밖으로 나가지 않고, 오프라인에서도 돈다</strong>. 다만 하드웨어와 전기는 여전히 돈이 든다. 고객 자료나 매매 기록처럼 민감한 데이터로 에이전트를 돌리고 싶다면 지켜볼 만한 방향이다. 다만 성능 비교는 회사 자체 측정뿐이니, 독립 평가가 나오기 전까지는 <strong>“크기와 속도는 확인, 실력은 보류”</strong>로 보는 게 맞다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

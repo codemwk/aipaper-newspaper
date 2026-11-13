@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/14] AI 트레이딩: 별 7만 개 ‘daily_stock_analysis’ — 매일 아침 내 관심 종목을 AI가 분석해 메신저로 보내준다. 한국 주식도 지원, 주문 기능은 없다 — AiPaper 뉴스</title>
+  <meta name="description" content="GitHub 주간 트렌딩 5위(+3.6천 별, 누적 약 7.15만)인 ZhuLinsen/daily_stock_analysis는 중국·홍콩·미국·일본·한국·대만 주식의 관심 종목을 LLM이 매일 분석해 ‘결정 대시보드’를 텔레그램·디스코드·슬랙·이메일로 보내는 오픈소스(MIT)다. GitHub Actions로 서버 없이 무료로 정기 실행할 수 있고, 15가지 전략으로 추가 질문도 할 수 있다. 분석·알림 도구일 뿐 주문은 넣지 않는다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 트레이딩 · 2026-11-14 07:04 KST</div>
+    <h1>[11/14] AI 트레이딩: 별 7만 개 ‘daily_stock_analysis’ — 매일 아침 내 관심 종목을 AI가 분석해 메신저로 보내준다. 한국 주식도 지원, 주문 기능은 없다</h1>
+  </header>
+  <article>
+<p><em>GitHub 주간 트렌딩 5위(+3.6천 별, 누적 약 7.15만)인 ZhuLinsen/daily_stock_analysis는 중국·홍콩·미국·일본·한국·대만 주식의 관심 종목을 LLM이 매일 분석해 ‘결정 대시보드’를 텔레그램·디스코드·슬랙·이메일로 보내는 오픈소스(MIT)다. GitHub Actions로 서버 없이 무료로 정기 실행할 수 있고, 15가지 전략으로 추가 질문도 할 수 있다. 분석·알림 도구일 뿐 주문은 넣지 않는다.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>한줄 요약</h2>
+<p>
+“AI가 대신 매매”가 아니라 <strong>“AI가 매일 아침 브리핑”</strong>하는 쪽이 GitHub에서 가장 큰 인기를 끌고 있다. <strong>daily_stock_analysis</strong>는 이번 주 GitHub 트렌딩 5위에 올랐다(+3.6천 별, 누적 약 7.15만)(<a href="https://githot.dev/en/weekly">Githot 주간</a>, <a href="https://github.com/ZhuLinsen/daily_stock_analysis">GitHub</a>, MIT).
+</p>
+<h2>무엇을 해 주나</h2>
+<ul>
+<li><strong>관심 종목 목록</strong>(예: <code>005930.KS</code> 같은 한국 종목 코드)을 넣으면, 시세·차트·기술 지표·뉴스·공시·기본 지표를 모아 LLM이 분석한다.</li>
+<li>결과는 <strong>‘결정 대시보드’</strong> 형식이다. 핵심 결론, 점수, 추세, 매수·매도 가격대, 리스크 경고, 촉매 요인, 행동 체크리스트가 들어간다. 이걸 <strong>텔레그램·디스코드·슬랙·이메일</strong>(중국 메신저 포함)로 보낸다.</li>
+<li><strong>에이전트 질의</strong>: 이동평균, 엘리어트 파동, 추세, 이벤트, 성장 등 <strong>15가지 내장 전략</strong>으로 이어서 질문할 수 있다. 웹 작업 화면에서는 백테스트와 보유 종목 관리도 된다.</li>
+<li><strong>서버 없이 무료로</strong>: 저장소를 포크하고 GitHub Actions 시크릿에 LLM API 키와 알림 채널을 넣으면 매일 자동으로 돈다. Gemini, Claude, OpenAI 호환 API, DeepSeek, Ollama 로컬 모델을 쓸 수 있다.</li>
+</ul>
+<h2>주의할 점</h2>
+<ul>
+<li><strong>주문 기능은 없다</strong>. README 면책 조항도 “학습·연구용이며 투자 조언이 아니다”라고 밝힌다. 오히려 이 점이 장점이다. 사람이 결정하는 구조가 기본이다.</li>
+<li>기본 데이터 소스(AkShare·Baostock·YFinance)는 무료지만 <strong>안정성을 보장하지 않는다</strong>. 한국 주식은 시장마다 데이터 범위가 다르니 ‘시장 지원 범위’ 문서를 먼저 확인해야 한다.</li>
+<li>README 맨 위의 스폰서 링크(모델 중계 서비스 등)는 제휴 링크다. API 키는 <strong>공식 제공사 키를 쓰는 게 안전하다</strong>.</li>
+<li>LLM이 써 주는 “매수 가격대”는 근거가 그럴듯해 보여도 <strong>검증된 신호가 아니다</strong>. 이번 주 다룬 ‘속이기 어려운 퀀트 루프’ 연구에서도 샤프 지수 2.94짜리 전략이 홀드아웃 구간에서 0.26으로 떨어졌다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 TradingAgents(LLM 여러 개가 분석가·트레이더 역할을 나눠 맡는 프레임워크)와 이어지는 소식이다. 차이는 <strong>실행 방식</strong>이다. 연구용 프레임워크에서 “<strong>포크하고 키만 넣으면 매일 아침 메신저로 오는</strong>” 생활 도구로 내려왔다. MT5 자동매매로 바로 가기 전에, <strong>분석은 AI가, 판단과 주문은 사람이</strong> 하는 단계부터 써 보기 좋은 구조다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

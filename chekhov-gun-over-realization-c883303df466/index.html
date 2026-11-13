@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/14] 새로운 각도: ‘체호프의 총’은 언제나 발사된다 — 프롬프트에 ‘없다’고 써도, ‘상상한다’고 써도 이미지 AI는 그걸 그려 넣는다. 8개 모델 모두 41~73% — AiPaper 뉴스</title>
+  <meta name="description" content="도쿄대·일본 국립정보학연구소(NII) 등의 연구진이 arXiv 2611.16630에서 이미지 생성 AI의 ‘과잉 실현(over-realization)’을 체계적으로 측정했다. 프롬프트에 언급만 된 대상(부정, 인물의 상상, 비유, 가려진 것)을 그림에 그려 넣는 실패다. GPT-Image-1.5, Nano Banana, Ideogram v3, FLUX.1-dev, Qwen-Image 등 8개 시스템 모두 41~73% 비율로 이 실수를 했고, CLIPScore 같은 기존 지표는 이 실수에 오히려 점수를 더 줬다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 새로운 각도 · 2026-11-14 07:10 KST</div>
+    <h1>[11/14] 새로운 각도: ‘체호프의 총’은 언제나 발사된다 — 프롬프트에 ‘없다’고 써도, ‘상상한다’고 써도 이미지 AI는 그걸 그려 넣는다. 8개 모델 모두 41~73%</h1>
+  </header>
+  <article>
+<p><em>도쿄대·일본 국립정보학연구소(NII) 등의 연구진이 arXiv 2611.16630에서 이미지 생성 AI의 ‘과잉 실현(over-realization)’을 체계적으로 측정했다. 프롬프트에 언급만 된 대상(부정, 인물의 상상, 비유, 가려진 것)을 그림에 그려 넣는 실패다. GPT-Image-1.5, Nano Banana, Ideogram v3, FLUX.1-dev, Qwen-Image 등 8개 시스템 모두 41~73% 비율로 이 실수를 했고, CLIPScore 같은 기존 지표는 이 실수에 오히려 점수를 더 줬다.</em></p>
+<p><strong>분류:</strong> 새로운 각도</p>
+<h2>한줄 요약</h2>
+<p>
+“1막에 총을 걸었으면 3막에서는 쏴야 한다”는 체호프의 원칙을 이미지 AI는 <strong>너무 충실하게</strong> 지킨다. 프롬프트에 <strong>언급만 된 것도 전부 그림에 넣는다</strong>. 연구진은 이 실패를 <strong>과잉 실현(over-realization)</strong>이라고 부르고 처음으로 체계적으로 측정했다(<a href="https://arxiv.org/abs/2611.16630">arXiv 2611.16630</a>).
+</p>
+<h2>네 가지 함정</h2>
+<p>
+연구진은 언어학의 ‘정신 공간’ 이론을 빌려, 대상이 <strong>장면 바깥의 공간</strong>에 있는 네 가지 경우를 정리했다.
+</p>
+<ul>
+<li><strong>부정</strong>: “말은 어디에도 없는 욕실” → 말이 나온다.</li>
+<li><strong>인물의 믿음·상상</strong>: “능선 위에 사나운 호랑이가 있다고 믿으며 겁에 질린 마야” → 진짜 호랑이를 옆에 세운다.</li>
+<li><strong>비유</strong>: “코치는 호랑이처럼 사납다” → 팀 엠블럼과 현수막에 호랑이를 넣는다. “조끼가 오이처럼 초록색” → 오이가 등장한다.</li>
+<li><strong>가려진 시점</strong>: “엄마가 쓴 ‘보고 싶다’는 편지를 읽는 톰” → 글자를 보여 주려고 편지를 <strong>카메라 쪽으로 돌린다</strong>. 읽는 사람 쪽이 아니라서 장면이 모순된다.</li>
+</ul>
+<h2>숫자</h2>
+<ul>
+<li>평가 대상: GPT-Image-1.5, Ideogram v3, Nano Banana(gemini-2.5-flash-image), FLUX.1-dev, Qwen-Image, SD3.5-Medium·Large, OmniGen2. 프롬프트는 698개, 사람이 라벨링한 이미지는 2,841장이다.</li>
+<li><strong>8개 시스템 모두</strong> 이미지의 <strong>41~73%</strong>에서 과잉 실현이 나왔다. 상용 모델은 “○○ 없이” 같은 정형화된 부정은 거의 해결했다. 하지만 나머지 세 상황에서는 <strong>모든 시스템이 최소 32%</strong> 실수했다.</li>
+<li><strong>기존 지표는 실수에 상을 준다</strong>: CLIPScore 같은 정렬·선호 지표는 언급된 대상이 그림에 있으면 점수를 올린다. 그래서 이 실패는 지금까지 측정되지 않았다.</li>
+<li><strong>프롬프트 확장(재작성)은 일부만 효과가 있다</strong>. 그마저도 재작성기가 <strong>그 단어를 아예 빼 버리기 때문</strong>이다. 생성기가 그 단어를 보는 순간 그림에 넣는 경향이 있다.</li>
+<li>모델 내부를 보면, 확산 모델은 ‘언급만 된’ 대상에 ‘요청된’ 대상만큼 주의를 기울인다. 반면 그걸 막아야 할 신호어(no, imagines, like, hidden)는 <strong>평범한 단어보다도 주의를 덜 받는다</strong>.</li>
+</ul>
+<h2>왜 중요한가 — 프롬프트를 쓰는 사람에게</h2>
+<ul>
+<li><strong>비유는 위험하다</strong>: “사자처럼 당당한 브랜드”라고 쓰면 사자가 나올 확률이 높다. 원하는 느낌을 <strong>시각적 속성</strong>(자세, 구도, 색, 대비)으로 풀어 써야 한다.</li>
+<li><strong>“~없이”보다 “빼기”</strong>: 넣지 않을 대상은 <strong>프롬프트에서 아예 언급하지 않는 게</strong> 가장 확실하다. 연구에서 효과가 있었던 것도 결국 단어를 지운 경우였다.</li>
+<li><strong>보이지 않아야 할 글자</strong>(봉투 속 편지, 뒤집힌 화이트보드)는 모델이 보여 주려고 장면을 비튼다. 스토리보드 단계에서 확인해야 한다.</li>
+<li>브랜드 컨셉 시안을 대량으로 뽑을 때 “<strong>언급만 했는데 그려진 것</strong>”을 따로 체크하는 검수 항목을 하나 추가할 만하다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

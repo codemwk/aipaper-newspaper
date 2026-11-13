@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/14] 디자인: 에이전트의 답이 ‘우리 컴포넌트’로 그려진다 — 구글 A2UI 1.0 정식판, CopilotKit 생성형 UI, 그리고 ‘에이전트 먼저’ 디자인 시스템 Sorted UI — AiPaper 뉴스</title>
+  <meta name="description" content="구글이 11/11 생성형 UI 프로토콜 A2UI의 첫 안정판 1.0을 냈다. 에이전트는 ‘무엇을 보여줄지’만 설명하고, 앱은 등록된 자사 컴포넌트로만 화면을 그린다. 다음 날 CopilotKit은 A2UI 1.0 기반 생성형 UI(기본 컴포넌트 70개)를 냈고, Scrums.com은 토큰 파일 1개·컴포넌트 69개로 ‘에이전트가 먼저 읽는’ 디자인 시스템 Sorted UI를 공개했다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인 / UI·UX · 2026-11-14 07:02 KST</div>
+    <h1>[11/14] 디자인: 에이전트의 답이 ‘우리 컴포넌트’로 그려진다 — 구글 A2UI 1.0 정식판, CopilotKit 생성형 UI, 그리고 ‘에이전트 먼저’ 디자인 시스템 Sorted UI</h1>
+  </header>
+  <article>
+<p><em>구글이 11/11 생성형 UI 프로토콜 A2UI의 첫 안정판 1.0을 냈다. 에이전트는 ‘무엇을 보여줄지’만 설명하고, 앱은 등록된 자사 컴포넌트로만 화면을 그린다. 다음 날 CopilotKit은 A2UI 1.0 기반 생성형 UI(기본 컴포넌트 70개)를 냈고, Scrums.com은 토큰 파일 1개·컴포넌트 69개로 ‘에이전트가 먼저 읽는’ 디자인 시스템 Sorted UI를 공개했다.</em></p>
+<p><strong>분류:</strong> 디자인 / UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+에이전트가 텍스트 벽 대신 <strong>화면으로 답하는 시대</strong>가 오면서, 디자인 시스템은 사람만 보는 문서가 아니라 <strong>에이전트가 고를 수 있는 부품 목록(카탈로그)</strong>이 되고 있다. 이번 주에 그 표준과 도구가 한꺼번에 나왔다.
+</p>
+<h2>A2UI 1.0 — 구글의 생성형 UI 표준, 첫 안정판 (11/11)</h2>
+<ul>
+<li>에이전트는 “무엇을 보여줄지”만 메시지로 보낸다. 각 앱은 <strong>자기 네이티브 컴포넌트</strong>로 그 화면을 그린다. 에이전트는 <strong>등록된 디자인 시스템 컴포넌트만</strong> 배치할 수 있다(<a href="https://developers.googleblog.com/en/a2ui-10-build-delightful-fast-reliable-agentic-experiences/">Google Developers Blog</a>).</li>
+<li>1.0에서 달라진 점: <strong>양방향 함수 호출</strong>(예약 선택기가 그 자리에서 빈자리를 확인), 접근성 지원, 확장 메타데이터. 렌더러는 React·Angular·Lit·Flutter·SwiftUI를 지원하고, Jetpack Compose는 0.9.1까지 지원한다(1.0은 곧).</li>
+<li><strong>민감한 값은 모델에 가지 않는다</strong>: 데이터 연결은 서버에서 이뤄지고, 모델은 구조만 짠다.</li>
+<li>이미 쓰는 곳: Jira(에이전트가 작업 항목 안에서 대화형 카드로 질문), Alation(같은 피드를 Claude 안과 자사 앱에서 거의 같은 레이아웃으로), ByteDance Lynx, Gemini Notebook의 슬라이드 옵션 카드.</li>
+</ul>
+<h2>CopilotKit 생성형 UI — “내 앱에도 ChatGPT식 Intelligent UI를” (11/12)</h2>
+<ul>
+<li>A2UI 1.0 위에 만든 생성형 UI다. 기본 카탈로그는 <strong>컴포넌트 70개</strong>(A2UI 기본 18개 + 자체 52개: 표·차트·지도·폼 등)이고, 테마를 바꾸거나 자사 컴포넌트로 교체할 수 있다(<a href="https://www.copilotkit.ai/blog/open-intelligent-ui-with-a2ui">CopilotKit 블로그</a>).</li>
+<li>컴포넌트마다 “<strong>언제 쓰는지</strong>” 설명과 타입이 정해진 속성을 붙여 등록한다. 에이전트가 카탈로그와 맞지 않는 걸 보내면 이유를 돌려받고 다음 턴에 고친다(<strong>자가 수정</strong>). 그래서 사용자에게는 깨진 화면이 보이지 않는다.</li>
+<li>이 글은 OpenAI 디자인팀 앤드루 첸의 말을 인용한다. “생성형 UI의 가장 어려운 부분은 UI를 만드는 게 아니라 <strong>그게 원래 제품 일부처럼 느껴지게 하는 것</strong>.”</li>
+</ul>
+<h2>Sorted UI — 에이전트를 먼저 고려해 만든 디자인 시스템 (11/9)</h2>
+<ul>
+<li>Scrums.com이 자사 사이트를 만드는 디자인 시스템을 MIT로 공개했다. 규칙은 세 가지다. <strong>토큰 파일은 하나</strong>(<code>tokens.css</code>, 컴포넌트에 hex 값이나 폰트 이름이 직접 들어가면 결함으로 본다), <strong>컴포넌트 69개를 한 패키지에서 이름으로 가져오기</strong>, <strong>문서는 에이전트가 읽을 수 있는 평범한 페이지</strong>(<a href="https://www.scrums.com/blog/announcing-sorted-ui">발표</a>).</li>
+<li>디자인 책임자 에이미 로저스: “디자인 시스템은 결정의 묶음이다. 우리는 그 결정을 <strong>기계도 사람만큼 따를 수 있게</strong> 적었다.”</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 Meta Astryx·DESIGN.md처럼 ‘에이전트가 읽는 디자인 시스템’ 흐름과 이어지는 소식이다. 이제 표준(A2UI)과 렌더링 도구(CopilotKit)까지 갖춰졌다. 브랜드 작업 결과물에도 <strong>“에이전트가 쓸 수 있는 컴포넌트 카탈로그 + 언제 쓰는지에 대한 설명”</strong>이 들어갈 차례다. 로고와 컬러 가이드만 넘기던 아이덴티티 납품물이, 앞으로는 <strong>AI 답변 화면에서도 브랜드처럼 보이게 하는 규칙집</strong>까지 포함하게 된다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
