@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/15] AI 트레이딩: Snap &amp; Trade 2.1 — 차트 캡처 한 장으로 매매 계획을 짜는 Claude 스킬. 원칙은 ‘계산은 AI가 아니라 스크립트가’, 손익비 1.5 미만이면 거절 — AiPaper 뉴스</title>
+  <meta name="description" content="11/12 공개된 오픈소스 Claude 스킬 Snap &amp; Trade 2.1.0은 TradingView·MT4/MT5·바이낸스 등 어떤 플랫폼의 차트 캡처든 받아 LONG/SHORT/NO TRADE와 진입·손절·목표가를 제시한다. 숫자 계산은 LLM이 아니라 파이썬 스크립트가 맡고, 손익비가 1.5R에 못 미치면 계획을 거절한다. 주문은 사용자가 명시적으로 승인해야 나가고, 기본은 모의투자다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 트레이딩 · 2026-11-15 07:05 KST</div>
+    <h1>[11/15] AI 트레이딩: Snap &amp; Trade 2.1 — 차트 캡처 한 장으로 매매 계획을 짜는 Claude 스킬. 원칙은 ‘계산은 AI가 아니라 스크립트가’, 손익비 1.5 미만이면 거절</h1>
+  </header>
+  <article>
+<p><em>11/12 공개된 오픈소스 Claude 스킬 Snap &amp; Trade 2.1.0은 TradingView·MT4/MT5·바이낸스 등 어떤 플랫폼의 차트 캡처든 받아 LONG/SHORT/NO TRADE와 진입·손절·목표가를 제시한다. 숫자 계산은 LLM이 아니라 파이썬 스크립트가 맡고, 손익비가 1.5R에 못 미치면 계획을 거절한다. 주문은 사용자가 명시적으로 승인해야 나가고, 기본은 모의투자다.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>한줄 요약</h2>
+<p>
+<strong>Snap &amp; Trade 2.1.0</strong>(개발자 AhmedCh, 11/12)은 차트 스크린샷을 붙여 넣고 “롱이야 숏이야?”라고 물으면 <strong>매매 계획서</strong>를 돌려주는 Claude 스킬이다. 눈에 띄는 건 기능보다 설계 원칙이다. <strong>“LLM은 절대 계산하지 않는다.”</strong>(<a href="https://dev.to/kirby54/today-i-released-snap-trade-210-an-open-source-claude-skill-that-turns-a-screenshot-of-any-188">개발자 글</a>, <a href="https://github.com/Kirby54/Snap-Trade">GitHub</a>)
+</p>
+<h2>무엇을 해주나</h2>
+<ul>
+<li>주식·암호화폐·외환·지수·선물, 어떤 타임프레임이든 차트를 <strong>단계별로 읽고</strong> 셋업을 5점 만점으로 채점한다. 기준은 추세·지지저항·캔들·모멘텀·거래량의 겹침(컨플루언스)이다. 가짜 승률 대신 점수를 준다.</li>
+<li>결론은 <strong>LONG / SHORT / NO TRADE</strong> 중 하나다. 진입가, 손절가, 1·2차 목표가, 그리고 <strong>“이 가격이면 계획 무효”</strong> 지점을 함께 준다.</li>
+<li>계좌 크기와 위험 비율로 포지션 크기를 계산하고, 백테스트 일지(승률, 평균 R, 프로핏 팩터, 연속 손실)를 기록한다.</li>
+<li>다른 오픈소스(day-trader-skill, MIT)에서 가져온 모듈 11개가 붙어 있다. 종목 스캐너, 뉴스, SEC 실적, <strong>리스크 게이트</strong>, Alpaca 주문(기본은 모의투자), 알림 등이다. 테스트 324개가 리눅스·윈도·맥 CI에서 돈다.</li>
+</ul>
+<h2>핵심 설계: AI가 하고 싶어도 못 하게</h2>
+<ul>
+<li>모든 계획은 <strong>파이썬 스크립트가 숫자를 다시 검산</strong>하고, <strong>손익비 1.5R 미만이면 거절</strong>한다. 개발자의 첫 시험(나스닥100 차트)에서 누가 봐도 그럴듯한 하락 돌파 숏은 0.91R밖에 안 돼 스크립트가 거부했다. 대신 되돌림 구간의 더 나은 지정가 진입을 제안했다.</li>
+<li>주문은 사용자가 <strong>명시적으로 “예”라고 해야만</strong> 나간다. 실시간 데이터 모듈은 아직 미국 주식만 지원한다.</li>
+<li>개발자 스스로 <strong>검증된 실적이 없다</strong>고 밝혔다. 편향 없는 백테스트를 진행 중이고, 손실을 포함한 결과를 README에 올리겠다고 했다. 투자 조언이 아니다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 RiskGate·mt5-trading-mcp(MT5 안전장치)와 이어지는 소식이다. 방향이 같다. <strong>AI에게 판단은 맡기되, 숫자와 한도는 코드로 막는다.</strong> 개인이 MT5 차트를 캡처해 쓰는 경우에도 그대로 적용된다. “확신에 찬 신호”가 아니라 <strong>거절할 줄 아는 계획서</strong>가 기준이 되어야 한다. 직접 써본다면 “NO TRADE”가 얼마나 자주 나오는지부터 보는 게 좋다. 너무 드물면 필터가 느슨한 것이다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

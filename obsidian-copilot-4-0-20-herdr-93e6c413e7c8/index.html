@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/15] 세컨드 브레인: Obsidian Copilot 4.0.20 — 대화가 빗나가면 ‘그 지점부터 새 대화로’, 준 권한은 한 번에 회수. Herdr는 에이전트가 Obsidian 화면까지 조작 — AiPaper 뉴스</title>
+  <meta name="description" content="Obsidian Copilot 4.0.20(11/13)이 프로젝트 파일 탭, 아무 답변에서나 대화를 갈라 다른 에이전트로 이어가는 기능, ‘항상 허용’ 규칙 회수 화면을 넣었다. 며칠 묵은 긴 대화는 메모리 사용량이 약 96% 줄었다. 같은 주 Herdr Mission Control은 Obsidian 커뮤니티 목록에 올라갔고, 허락하면 에이전트가 Obsidian 창을 보고 클릭·입력까지 한다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 / PKM · 2026-11-15 07:09 KST</div>
+    <h1>[11/15] 세컨드 브레인: Obsidian Copilot 4.0.20 — 대화가 빗나가면 ‘그 지점부터 새 대화로’, 준 권한은 한 번에 회수. Herdr는 에이전트가 Obsidian 화면까지 조작</h1>
+  </header>
+  <article>
+<p><em>Obsidian Copilot 4.0.20(11/13)이 프로젝트 파일 탭, 아무 답변에서나 대화를 갈라 다른 에이전트로 이어가는 기능, ‘항상 허용’ 규칙 회수 화면을 넣었다. 며칠 묵은 긴 대화는 메모리 사용량이 약 96% 줄었다. 같은 주 Herdr Mission Control은 Obsidian 커뮤니티 목록에 올라갔고, 허락하면 에이전트가 Obsidian 창을 보고 클릭·입력까지 한다.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인 / PKM</p>
+<h2>Obsidian Copilot 4.0.20 (11/13) — 에이전트와 오래 일할 때 필요한 것들</h2>
+<ul>
+<li><strong>프로젝트 Files 탭</strong>: 프로젝트를 열면 연결된 노트·폴더·태그와 에이전트가 쓴 파일이 트리로 보인다. 에이전트가 새로 쓴 파일은 맨 위에 뜬다(<a href="https://github.com/logancyang/obsidian-copilot/releases/tag/4.0.20">릴리스 노트</a>).</li>
+<li><strong>여기서부터 새 대화로</strong>: 대화가 산으로 가면 처음부터 다시 할 필요 없이, <strong>이전 답변 아무 곳에서 갈라</strong> 새 대화로 이어간다. 갈라진 대화는 <strong>다른 에이전트</strong>로 바꿀 수도 있다.</li>
+<li><strong>승인 규칙 편집</strong>: Claude Code, Codex, OpenCode에 줬던 <strong>“항상 허용”을 목록으로 보고 한 번에 지운다</strong>. OpenCode는 커넥터·MCP 도구 호출을 하나씩 따로 승인하게 바뀌었다.</li>
+<li><strong>긴 대화가 가벼워졌다</strong>: 며칠 치 기록이 있는 대화를 다시 열 때 메모리가 1.1GB에서 40MB로, <strong>약 96% 줄었다</strong>(개발팀 테스트). 에이전트가 받는 긴 대화 기록도 약 4배 늘었다.</li>
+<li>에이전트가 문장을 고치면 diff 탭에 <strong>옛 문장과 새 문장이 깔끔하게 나뉘어</strong> 보이고, 답변 속 변경 파일 이름을 누르면 해당 노트로 바로 간다. Mercury 커넥터가 추가됐다.</li>
+</ul>
+<h2>Herdr Mission Control (11/9) — 에이전트가 Obsidian 화면을 ‘본다’</h2>
+<ul>
+<li>Claude Code, Codex, Gemini 등 <strong>에이전트 22종</strong>을 금고(vault) 안 터미널에서 돌리는 무료 오픈소스 플러그인이다. 0.2.2부터 <strong>Obsidian 커뮤니티 플러그인 목록</strong>에서 설치할 수 있다(<a href="https://github.com/agricidaniel/obsidian-herdr/releases">릴리스</a>, <a href="https://agricidaniel.com/blog/herdr-for-obsidian">개발자 글</a>).</li>
+<li>0.2.0의 새 기능: 설정을 켜면 에이전트가 <strong>Obsidian 창을 스크린샷으로 보고 버튼을 찾는다</strong>. ‘Full’ 권한이면 클릭·입력·단축키·드래그까지 한다. <strong>기본은 꺼져 있고</strong>, 열린 노트를 바꾸는 입력은 기록돼 되돌릴 수 있다.</li>
+<li>에이전트의 노트 수정은 ‘Vault Bridge’를 거쳐 기록되고 <strong>한 번에 되돌릴 수 있다</strong>. 설정 폴더·.git·.env는 건드리지 않는다.</li>
+<li>주의: 개발자는 <strong>리눅스에서만 테스트</strong>했다고 밝혔다. 에이전트가 읽은 노트와 스크린샷은 해당 AI 제공사로 넘어간다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 Obsidian Copilot V4와 이어지는 소식이다. 이번 업데이트의 공통점은 <strong>‘되돌릴 수 있음’</strong>이다. 대화는 갈라서 다시 하고, 권한은 회수하고, 수정은 diff로 보고 되돌린다. 세컨드 브레인에 에이전트를 들이면 결국 <strong>얼마나 많이 맡기느냐보다 얼마나 쉽게 무를 수 있느냐</strong>가 신뢰를 정한다. Herdr의 화면 조작은 강력하지만, 노트 원본이 있는 금고라면 <strong>처음엔 꺼둔 채로</strong> 쓰는 편이 안전하다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
