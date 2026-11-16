@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/17] AI 트레이딩: ‘에이전트에게 얼마나 맡길까’ 5단계 — Reya는 ‘손실 한도 넘으면 포지션까지 닫는’ 에이전트 전용 계좌, Paribu는 ‘주문서만 쓰고 승인은 사람’ — AiPaper 뉴스</title>
+  <meta name="description" content="거래소들이 AI 에이전트 매매를 붙이는 방식이 갈린다. 탈중앙 거래소 Reya는 에이전트가 쓴 전략을 승인하면 24시간 돌리는 기능을 냈다. 전용 ‘Agentic Account’는 입출금이 막혀 있고, 정한 기간 내 최대 손실에 닿으면 열린 포지션을 모두 닫고 멈춘다. 튀르키예 거래소 Paribu의 Paribu Intelligence는 포트폴리오와 뉴스를 보고 주문서를 준비하되, 실행은 사용자가 승인해야 한다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 트레이딩 · 2026-11-17 07:40 KST</div>
+    <h1>[11/17] AI 트레이딩: ‘에이전트에게 얼마나 맡길까’ 5단계 — Reya는 ‘손실 한도 넘으면 포지션까지 닫는’ 에이전트 전용 계좌, Paribu는 ‘주문서만 쓰고 승인은 사람’</h1>
+  </header>
+  <article>
+<p><em>거래소들이 AI 에이전트 매매를 붙이는 방식이 갈린다. 탈중앙 거래소 Reya는 에이전트가 쓴 전략을 승인하면 24시간 돌리는 기능을 냈다. 전용 ‘Agentic Account’는 입출금이 막혀 있고, 정한 기간 내 최대 손실에 닿으면 열린 포지션을 모두 닫고 멈춘다. 튀르키예 거래소 Paribu의 Paribu Intelligence는 포트폴리오와 뉴스를 보고 주문서를 준비하되, 실행은 사용자가 승인해야 한다.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>한줄 요약</h2>
+<p>
+어제 다룬 Coinbase Agent Controls의 자동정지는 <strong>“새 주문만 막고, 열린 포지션은 그대로”</strong>였다. 같은 시기 다른 거래소들은 다른 답을 내놨다. 비교의 기준으로 쓸 만한 틀도 하나 나왔다. Reya가 제시한 <strong>‘에이전트 권한 5단계’</strong>다(<a href="https://blog.reya.network/super-intelligence-meets-trading/">Reya 블로그 11/3</a>).
+</p>
+<h2>권한 5단계(Reya의 정리)</h2>
+<table>
+<tr><th>단계</th><th>에이전트가 하는 일</th><th>매매 결정은</th></tr>
+<tr><td>L0 리서치</td><td>읽고 요약하고 설명</td><td>나</td></tr>
+<tr><td>L1 준비</td><td>수량·가격·손절을 짜 주고, 주문은 내가</td><td>나</td></tr>
+<tr><td>L2 건별 승인</td><td>에이전트가 주문, 나는 하나씩 확인</td><td>나(한 번에 한 탭)</td></tr>
+<tr><td>L3 전략 승인</td><td>규칙 전략을 한 번 승인하면 한도 안에서 무인 실행</td><td>내가 승인한 전략</td></tr>
+<tr><td>L4 제한된 자율</td><td>에이전트가 바꿀 수 없는 위험 한도 안에서 자유 매매</td><td>에이전트</td></tr>
+</table>
+<h2>Reya: L3, ‘포지션까지 닫는’ 손실 한도</h2>
+<ul>
+<li><strong>말로 전략 → 읽을 수 있는 규칙</strong>: “ETH가 2천 달러에 닿으면 1만 달러 롱” 같은 요청을 에이전트가 <strong>결정론적 전략</strong>(같은 조건이면 늘 같은 행동)으로 바꾼다. 모의투자로 시험한 뒤 승인하면 24시간 돈다. 언제든 멈추고, 모든 행동을 감사하고, 손익을 본다.</li>
+<li><strong>Agentic Account</strong>: 에이전트 매매는 별도 하위 계좌에서만 한다. 에이전트는 <strong>입금·출금을 못 한다</strong>. <strong>정한 기간 내 최대 손실</strong>에 닿으면 전략이 <strong>열린 포지션을 모두 닫고 멈춘다</strong>. 이 한도는 온체인에서 강제된다.</li>
+<li>전략은 거래소 매칭 엔진 안의 별도 스레드로 돈다. 조건이 맞으면 약 0.3ms 만에 실행된다고 한다.</li>
+<li>지금은 소수 사용자 대상이다(대기자 명단). Reya는 L4가 “약 6개월 안”에 가능해질 거라 봤지만, 현재 모델은 거기엔 <strong>너무 느리다</strong>고 스스로 인정했다.</li>
+</ul>
+<h2>Paribu: L1~L2, ‘주문서까지만’</h2>
+<ul>
+<li>튀르키예 거래소 Paribu는 11/11 이스탄불 행사에서 <strong>Paribu Intelligence</strong>를 공개했다. 사용자의 포트폴리오와 실시간 시세에 접근해 차트를 만들고, 관련 뉴스를 정리하고, <strong>바로 실행할 수 있는 주문서</strong>를 준비한다.</li>
+<li>단, <strong>최종 실행은 사용자 승인</strong>이 있어야 한다(사람이 고리 안에 있는 구조). 무료 트레이딩 터미널 Paribu Terminal, AI 금융 미디어 Paribu TV도 함께 내놨다(<a href="https://turkspark.com/en/sparks/paribu-launches-ai-agent-that-drafts-crypto-trades-based-on-real-time-news-and-portfolios-1794397315715">TurkSpark</a>).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 <strong>RiskGate·mt5-trading-mcp(MT5 안전장치)</strong> 흐름과 이어지는 소식이다. 이 표는 MT5에서 에이전트를 붙일 때도 그대로 체크리스트가 된다. <strong>① 지금 내 셋업은 몇 단계인가? ② 손실 한도에 닿으면 ‘새 주문 금지’인가, ‘포지션 청산’인가? ③ 그 한도를 에이전트가 바꿀 수 있는 곳에 두었나?</strong> Coinbase는 ②에서 ‘금지’, Reya는 ‘청산’을 골랐다. 어느 쪽이 맞는지는 전략에 따라 다르다. 하지만 <strong>모르고 쓰는 것</strong>이 가장 위험하다. Reya도 “수익은 누구도 정직하게 약속할 수 없다”고 썼다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

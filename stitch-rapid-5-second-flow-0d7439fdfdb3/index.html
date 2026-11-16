@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/17] 디자인: 구글 ‘Stitch Rapid’ — 문장 하나로 5초 만에 ‘눌러지는’ 여러 화면 흐름. 고칠 땐 탭하거나 말하면 2초 — AiPaper 뉴스</title>
+  <meta name="description" content="구글이 11/11 AI UI 디자인 도구 Stitch에 실험 기능 ‘Stitch Rapid’를 단계적으로 열었다. 짧은 지시나 스크린샷으로 약 5초 만에 클릭으로 넘어가는 여러 화면 프로토타입을 만든다. 요소를 탭하면 약 2초 만에 다른 안이 나오고, 스페이스바를 누른 채 말로 고칠 수 있다. 7가지 디자인 시스템 중 고를 수 있고, 마음에 들면 정식 Stitch로 넘긴다. 단 작업은 세션 간 저장되지 않는다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인 · 2026-11-17 07:20 KST</div>
+    <h1>[11/17] 디자인: 구글 ‘Stitch Rapid’ — 문장 하나로 5초 만에 ‘눌러지는’ 여러 화면 흐름. 고칠 땐 탭하거나 말하면 2초</h1>
+  </header>
+  <article>
+<p><em>구글이 11/11 AI UI 디자인 도구 Stitch에 실험 기능 ‘Stitch Rapid’를 단계적으로 열었다. 짧은 지시나 스크린샷으로 약 5초 만에 클릭으로 넘어가는 여러 화면 프로토타입을 만든다. 요소를 탭하면 약 2초 만에 다른 안이 나오고, 스페이스바를 누른 채 말로 고칠 수 있다. 7가지 디자인 시스템 중 고를 수 있고, 마음에 들면 정식 Stitch로 넘긴다. 단 작업은 세션 간 저장되지 않는다.</em></p>
+<p><strong>분류:</strong> 디자인</p>
+<h2>한줄 요약</h2>
+<p>
+초기 아이디어 단계의 디자인을 <strong>“몇 분이 아니라 몇 초”</strong>로 돌려 보는 실험이다. 구글 Stitch 팀은 이것을 “생각의 속도를 따라오는 디자인 파트너”라고 소개했다. 엔진은 구글이 같은 날 발표한 <strong>Gemini Decisions API</strong>다(선택지를 빠르게 평가해 확률을 돌려주는 모델)(<a href="https://gihyo.jp/article/2026/11/stitch-rapid">gihyo.jp 11/16</a>).
+</p>
+<h2>어떻게 쓰나</h2>
+<ul>
+<li><strong>5초 만에 흐름 전체</strong>: 입력창에 만들고 싶은 화면과 흐름을 쓰거나 스크린샷을 넣는다. 구글 소개 영상에서는 “비디오 도어벨 설치 흐름” 한 줄로 구성품 확인 → 전원 → 코드 스캔 → 와이파이 설정 화면이 한 번에 나왔다.</li>
+<li><strong>디자인 시스템 7종</strong>: Wireframe, Breeze, Material Design 3 등에서 고른다. 기본값은 Auto다.</li>
+<li><strong>탭하거나 말해서 수정</strong>: 요소를 오른쪽 클릭해 바꿀 점을 쓰거나, 글자는 더블클릭해 바로 고친다. <strong>스페이스바를 누른 채 말하면</strong> 2초 안에 화면에 반영된다고 구글은 밝혔다. 요소나 화면을 골라 <strong>약 2초 만에 다른 안</strong>을 뽑아 비교할 수도 있다.</li>
+<li><strong>즉석 슬라이더(Tuner)</strong>: 선택한 요소에 맞는 조절 막대가 뜬다. 자간, 밀도, 모서리 둥글기 같은 <strong>원하는 슬라이더를 말로 만들어 달라고</strong> 할 수도 있다.</li>
+<li><strong>눌러 보며 확인</strong>: 화면 간 연결선이 자동으로 잡힌다. 재생 모드에서 버튼을 눌러 흐름을 따라가다가, 연결된 화면이 없으면 <strong>다음 화면을 그 자리에서 생성</strong>한다.</li>
+<li><strong>넘기기</strong>: 마음에 들면 ‘Send to Stitch’로 정식 Stitch에 보내 세부를 다듬는다. 화면은 HTML로 내려받을 수 있다.</li>
+</ul>
+<h2>주의할 점</h2>
+<ul>
+<li><strong>작업이 세션 간 저장되지 않는다.</strong> gihyo 기자가 써 보니 ‘Send to Stitch’를 누르자 Rapid 화면이 새로고침되며 작업이 사라졌다. 남기고 싶으면 먼저 내려받아야 한다.</li>
+<li>구글 스스로 “초기 MVP”라고 했다. 반응 좋은 기능을 정식 Stitch에 합칠 예정이다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 <strong>Stitch·DESIGN.md 계열</strong>과 이어지는 소식이다. 그동안 AI 디자인 도구의 경쟁은 “얼마나 완성도 높은 한 화면”이었다. Rapid는 질문을 바꾼다. <strong>“흐름 10개를 1분 안에 보고 버릴 수 있나.”</strong> 브랜드·제품 작업 초반에는 정답 하나보다 틀린 안 여러 개를 빨리 보는 게 더 값지다. 클라이언트 미팅에서 말로 바꾸고 바로 눌러 보는 <strong>‘라이브 와이어프레임’</strong>도 현실적인 사용법이다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

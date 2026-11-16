@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/17] GitHub 이번 주: 에이전트가 ‘나에게 결재 올리는’ 받은편지함 — Plannotator, 계획서·코드에 빨간펜 긋고 한 번에 돌려보낸다 — AiPaper 뉴스</title>
+  <meta name="description" content="11/9–11/15 GitHub 주간 트렌드 상위 10위 안에 Plannotator가 들었다(총 약 1.25만 별, Apache-2.0). 코딩 에이전트가 계획·문서·HTML 시안·코드 변경을 내놓으면 브라우저에서 열어 줄 단위로 주석을 달고 에이전트에게 돌려보내는 도구다. 새 Inbox는 여러 에이전트가 질문·파일·리뷰 요청을 남기는 로컬 받은편지함이다. 11/13–11/16 나흘 사이 릴리스가 세 번 나왔다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · GitHub 트렌드 · 2026-11-17 07:45 KST</div>
+    <h1>[11/17] GitHub 이번 주: 에이전트가 ‘나에게 결재 올리는’ 받은편지함 — Plannotator, 계획서·코드에 빨간펜 긋고 한 번에 돌려보낸다</h1>
+  </header>
+  <article>
+<p><em>11/9–11/15 GitHub 주간 트렌드 상위 10위 안에 Plannotator가 들었다(총 약 1.25만 별, Apache-2.0). 코딩 에이전트가 계획·문서·HTML 시안·코드 변경을 내놓으면 브라우저에서 열어 줄 단위로 주석을 달고 에이전트에게 돌려보내는 도구다. 새 Inbox는 여러 에이전트가 질문·파일·리뷰 요청을 남기는 로컬 받은편지함이다. 11/13–11/16 나흘 사이 릴리스가 세 번 나왔다.</em></p>
+<p><strong>분류:</strong> GitHub 트렌드</p>
+<h2>한줄 요약</h2>
+<p>
+에이전트를 여러 개 돌리면 병목은 에이전트가 아니라 <strong>사람의 검토</strong>가 된다. <strong>Plannotator</strong>는 그 검토를 위한 작업대다. 11/9–11/15 GitHub 주간 트렌드 상위 10위에 들었다. 같은 주 상위권은 meta/astryx(+1.37만), sherlock(+1.24만), anthropics/skills(+6.2천), vercel-labs/agent-browser(+4.6천) 등이었다(<a href="https://youraiproject.com/github-trending-history/2026/46">YourAIProject 주간 아카이브</a>, <a href="https://github.com/backnotprop/plannotator">GitHub</a>).
+</p>
+<h2>무엇을 하나</h2>
+<ul>
+<li><strong>계획서에 빨간펜</strong>: Claude Code, Codex, Copilot CLI, Gemini CLI, OpenCode, Kiro, Droid, Amp, DeepSeek Harness, Pi 같은 코딩 에이전트에 플러그인·훅으로 붙는다. 에이전트가 계획을 내놓거나 일을 마치면 <strong>브라우저 화면이 열린다</strong>. 거기서 문장마다 표시하고 의견을 달아 <strong>보내기 한 번</strong>으로 에이전트에게 돌려준다. 에이전트가 고친 계획은 변경점(diff)으로 보인다.</li>
+<li><strong>코드 리뷰</strong>: 내 컴퓨터의 변경 사항이나 GitHub·GitLab PR에 주석을 단다. 큰 변경은 에이전트가 <strong>중요한 순서대로 ‘챕터’를 나눠</strong> 안내하는 가이드 리뷰도 있다.</li>
+<li><strong>새 기능 Inbox</strong>: 여러 에이전트가 <strong>메시지, 질문, 파일, 리뷰 요청을 남기는 로컬 받은편지함</strong>이다. 질문엔 클릭으로 답하고, 파일엔 주석을 달고, 준비되면 보낸다. 내가 답하는 동안 에이전트 세션을 붙잡아 두지 않는다. 답은 <strong>질문했던 그 세션</strong>으로 돌아간다. 다른 에이전트는 MCP로 연결한다.</li>
+<li><strong>최근 릴리스 노트</strong>(v0.28.63~65): 클라우드 에이전트 페어링, 스레드 우선순위·태그, PR 보드 표 보기와 일괄 병합, 아직 전달되지 않은 답장 취소, Tailscale로 다른 기기 접속 시 본인 계정만 허용.</li>
+<li>터미널파를 위한 <strong>Herdr Annotate</strong>도 있다. 11/15에 다룬 Herdr(에이전트 세션 유지 런타임) 위에서 마크다운 폴더에 주석을 단다.</li>
+</ul>
+<h2>함께 본 트렌드 한 줄</h2>
+<ul>
+<li><strong>sherlock</strong>: 아이디 하나로 여러 SNS 계정을 찾는 오래된 오픈소스(총 11만 별대)가 한 주에 1.2만 별을 더 받았다. 신원 조사(OSINT) 도구라 쓰임새에 주의가 필요하다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 <strong>LYIO 태그(에이전트 하네스·메신저→작업 흐름)</strong>와 같은 줄기다. 에이전트 도구의 다음 경쟁은 “얼마나 많이 하나”가 아니라 <strong>“사람이 얼마나 빨리, 정확하게 결재하나”</strong>다. 오늘 ‘새로운 각도’에서 다룬 연구도 같은 결론이다. 생성은 넘치는데 검토가 못 따라간다. Plannotator는 그 검토를 <strong>채팅이 아니라 문서 위의 빨간펜</strong>으로 바꾼다. 브랜드 작업처럼 기획서·시안이 오가는 일에도 그대로 쓸 수 있는 방식이다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
