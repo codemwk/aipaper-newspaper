@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/18] AI 도구: Google AI Studio, 프롬프트 한 줄로 ‘로그인·DB 붙은’ 안드로이드 앱 → 내 폰 Play 스토어까지 — AiPaper 뉴스</title>
+  <meta name="description" content="Google AI Studio의 Build 에이전트가 11/17부터 안드로이드 앱을 풀스택으로 만든다. 저장·로그인·AI 기능이 필요하면 Cloud Firestore DB, 보안 규칙, Google 로그인을 확인 후 자동 구성하고, Gemini API 키는 앱 안에 넣지 않고 Firebase AI Logic·App Check로 보호한다. 브라우저 HD 에뮬레이터(소리 출력), 화면 캡처를 그대로 에이전트에게 보내는 버튼, 커스텀 글꼴, 개인 Google Play 라이브러리 배포가 함께 나왔다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 도구 · 2026-11-18 07:20 KST</div>
+    <h1>[11/18] AI 도구: Google AI Studio, 프롬프트 한 줄로 ‘로그인·DB 붙은’ 안드로이드 앱 → 내 폰 Play 스토어까지</h1>
+  </header>
+  <article>
+<p><em>Google AI Studio의 Build 에이전트가 11/17부터 안드로이드 앱을 풀스택으로 만든다. 저장·로그인·AI 기능이 필요하면 Cloud Firestore DB, 보안 규칙, Google 로그인을 확인 후 자동 구성하고, Gemini API 키는 앱 안에 넣지 않고 Firebase AI Logic·App Check로 보호한다. 브라우저 HD 에뮬레이터(소리 출력), 화면 캡처를 그대로 에이전트에게 보내는 버튼, 커스텀 글꼴, 개인 Google Play 라이브러리 배포가 함께 나왔다.</em></p>
+<p><strong>분류:</strong> AI 도구</p>
+<h2>한줄 요약</h2>
+<p>
+<strong>Google AI Studio</strong>에서 프롬프트 하나로 <strong>실제로 쓸 수 있는 안드로이드 앱</strong>을 만들어 <strong>내 폰에 깔 수 있게</strong> 됐다. 11/17부터 순차 적용이다. 모델은 Gemini 4 Carbon·Hydrogen을 쓴다(<a href="https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/">Google Developers Blog</a>).
+</p>
+<h2>무엇이 새로워졌나</h2>
+<ul>
+<li><strong>진짜 저장과 로그인</strong>: 전엔 만든 앱의 데이터가 그 세션에만 남았다. 이제 프롬프트에 저장·로그인·AI 기능이 필요하면 Build 에이전트가 알아채고, <strong>확인을 받은 뒤</strong> Cloud Firestore 데이터베이스와 보안 규칙, Google 로그인을 자동으로 붙인다. 태블릿에서 하던 걸 폰에서 이어서 할 수 있다. 사용자는 <strong>자기 데이터만</strong> 읽고 쓴다.</li>
+<li><strong>API 키를 앱에 넣지 않는다</strong>: 앱이 Gemini를 부를 때 키를 앱 파일(APK)에 넣으면 털릴 수 있다. 에이전트가 <strong>Firebase AI Logic과 App Check</strong>를 자동으로 설정해, 키는 서버에 두고 진짜 내 앱에서 온 요청만 받게 한다.</li>
+<li><strong>내 폰에 바로</strong>: AI Studio 안에서 Play 계정을 몇 번 클릭으로 만들고, 앱을 <strong>개인 Google Play 라이브러리</strong>에 올려 폰에 설치한다. 서명·빌드는 뒤에서 처리한다. USB 디버깅이나 개발자 콘솔 설정이 필요 없다.</li>
+<li><strong>디자인 반복이 쉬워졌다</strong>:</li>
+</ul>
+<p>
+  - 브라우저 안 에뮬레이터가 더 빨리 켜지고, <strong>1200p HD</strong> 화면과 <strong>소리 출력</strong>을 지원한다. 음성 코치·게임 앱을 바로 들어 보며 고친다.
+<br/>
+  - <strong>스크린샷 한 번에 에이전트로</strong>: 실행 중인 화면을 찍어 프롬프트에 붙이고 “카드 여백 줄여 줘”처럼 말하면 UI 코드를 고친다. 글로 길게 설명할 필요가 없다.
+<br/>
+  - <strong>커스텀 글꼴</strong>: 원하는 서체를 말하면 내려받아 앱 전체 테마에 적용한다.
+</p>
+<ul>
+<li>내부적으로 공식 <strong>Android CLI</strong>로 프로젝트를 만들고 빌드해 오류를 줄였다고 한다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+‘바이브 코딩’ 앱이 장난감에서 벗어나는 조건은 <strong>저장, 로그인, 키 보안, 설치</strong>였다. 이번 업데이트는 그 네 가지를 에이전트가 처리하게 했다. 개인 대시보드나 브랜드 데모 앱을 <strong>내 폰에서 매일 쓰는 앱</strong>으로 만들어 보기 쉬워졌다. 디자인 쪽에서는 ‘스크린샷으로 지시하기’와 ‘글꼴 지정’이 반갑다. 다만 개인 라이브러리 배포는 <strong>나만 쓰는 용도</strong>다. 일반 공개 출시는 별도 절차가 필요하다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

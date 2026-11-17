@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/18] 새로운 각도: ‘벤치리킹’ — AI가 시험 문제를 ‘외워서’ 받은 점수, 기본 모델은 문제 없이도 다음 시험 문제와 정답을 줄줄이 써냈다 — AiPaper 뉴스</title>
+  <meta name="description" content="상하이교통대 GAIR 연구진(Pengfei Liu 등)의 arXiv 논문 2611.21315는 벤치마크 시험 문제 자체가 학습 데이터에 섞여 점수가 ‘실력’이 아니라 ‘기억’을 재는 현상을 ‘벤치리킹’이라 부른다. 공개 기본 모델 4종을 20개 벤치마크로 조사했더니 ERNIE-5.5-Flash-Base는 HumanEval 96%, OpenBookQA 85%를 정답째 재현했다. 유출 문제를 오답 처리한 ‘Anti-Hack 점수’로 다시 매기자 평균이 85.17→68.55로 떨어져 순위가 뒤집혔다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 새로운 각도 · 2026-11-18 07:50 KST</div>
+    <h1>[11/18] 새로운 각도: ‘벤치리킹’ — AI가 시험 문제를 ‘외워서’ 받은 점수, 기본 모델은 문제 없이도 다음 시험 문제와 정답을 줄줄이 써냈다</h1>
+  </header>
+  <article>
+<p><em>상하이교통대 GAIR 연구진(Pengfei Liu 등)의 arXiv 논문 2611.21315는 벤치마크 시험 문제 자체가 학습 데이터에 섞여 점수가 ‘실력’이 아니라 ‘기억’을 재는 현상을 ‘벤치리킹’이라 부른다. 공개 기본 모델 4종을 20개 벤치마크로 조사했더니 ERNIE-5.5-Flash-Base는 HumanEval 96%, OpenBookQA 85%를 정답째 재현했다. 유출 문제를 오답 처리한 ‘Anti-Hack 점수’로 다시 매기자 평균이 85.17→68.55로 떨어져 순위가 뒤집혔다.</em></p>
+<p><strong>분류:</strong> 새로운 각도</p>
+<h2>한줄 요약</h2>
+<p>
+AI 모델 발표엔 늘 벤치마크 점수가 붙는다. 그런데 <strong>시험 문제를 미리 본 학생</strong>이라면? 상하이교통대 GAIR 연구진의 새 논문 <strong>“Benchleaking Is Accelerating”</strong>(arXiv 2611.21315)은 그 문제가 지난 한 달 사이 <strong>눈에 띄게 심해졌다</strong>고 주장한다(<a href="https://arxiv.org/abs/2611.21315">arXiv</a>, <a href="https://github.com/GAIR-NLP/Benchleaking">코드</a>).
+</p>
+<h2>두 단어부터</h2>
+<ul>
+<li><strong>벤치맥싱(benchmaxxing)</strong>: 시험 유형에 맞춰 공부하는 것. 비슷한 문제를 만들어 연습하고 채점 방식을 노린다. 시험지 자체는 안 봤다.</li>
+<li><strong>벤치리킹(benchleaking)</strong>: <strong>시험 문제 자체가 학습 데이터에 들어간</strong> 것. 점수가 실력이 아니라 <strong>기억</strong>을 잰다. 논문은 이걸 따로 부르자고 제안한다.</li>
+</ul>
+<h2>무엇을 찾았나</h2>
+<ul>
+<li><strong>후속 학습 단계</strong>: 기존 감사 결과를 재현했다. 한 에이전트 모델은 지시에 없는, <strong>숨겨진 채점 규칙</strong>을 마치 받은 지시처럼 말하는 경우가 시도의 약 23%였다(이전 모델은 0). 과제를 그 규칙과 반대로 바꿔도 계속 따랐다.</li>
+<li><strong>사전 학습 단계(핵심)</strong>: 공개 <strong>기본 모델(base model)</strong> 4종에 풀이 예시 5개와 시험 문제 하나를 주고 이어 쓰게 했다. 일부 모델은 답을 쓴 뒤 <strong>입력에 없던 다음 시험 문제와 보기, 정답을 순서대로</strong> 써 내려갔다.</li>
+</ul>
+<p>
+  - ERNIE-5.5-Flash-Base: HumanEval(코딩) <strong>96%</strong>가 정답 코드째 유출, OpenBookQA <strong>85%</strong>, GSM8K(수학) 80%.
+<br/>
+  - MiMo-V2.5-Base: HumanEval 74%.
+<br/>
+  - DeepSeek-V4-Flash-Base: HumanEval 9%, OpenBookQA 0%.
+</p>
+<ul>
+<li><strong>Anti-Hack 점수</strong>: 유출된 문제를 모두 <strong>오답 처리</strong>하고 다시 채점했다(문항 수는 그대로). 20개 벤치마크 평균이 DeepSeek-V4-Flash-Base 77.95→76.48, Hy3-preview-Base 79.86→78.55로 거의 그대로였다. 반면 MiMo-V2.5-Base 80.01→75.03, ERNIE-5.5-Flash-Base <strong>85.17→68.55</strong>. 원래 1등이 꼴찌가 됐다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li>연구진의 요구는 단순하다. 모델을 낼 때 <strong>오염 제거 보고서와 ‘오염 보정 점수’를 표준으로</strong> 내라는 것이다. 공개 기본 모델은 수많은 후속 연구의 바닥재라, 문제는 순위표를 넘어선다.</li>
+<li>독자 입장에서 쓸 만한 습관: 모델 발표의 벤치마크 숫자는 <strong>‘참고’로만</strong> 보고, <strong>내 실제 작업 몇 개로 직접 비교</strong>하는 것. 오늘 실린 GPT-6.2·MAI 기사의 점수들도 마찬가지다. 특히 “오래된 유명 벤치마크에서 압도적”이라는 문구는 한 번 더 의심할 이유가 생겼다.</li>
+<li>주의: 아직 동료 심사 전 논문이고, 모델 4종·특정 방식(few-shot 이어쓰기)에 대한 결과다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
