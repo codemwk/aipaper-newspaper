@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/23] 디자인: Onlook 2.0 — 목업이 아니라 ‘진짜 돌아가는 내 앱’ 위에 캔버스를 깔고, 내 Claude·ChatGPT 구독으로 시안 10개를 나란히 — AiPaper 뉴스</title>
+  <meta name="description" content="디자이너용 오픈소스 도구 Onlook이 11/19 완전히 새로 만든 2.0 맥 데스크톱 앱을 공개했다. 내 저장소를 열면 실제 앱이 로컬에서 돌아가고, 그 화면들이 무한 캔버스 위 프레임으로 뜬다. ‘이 화면 10가지 버전’, ‘이 컴포넌트의 모든 상태’를 시키면 실제 코드로 나란히 만들어지고, 바뀐 내용은 별도 복사본에서 일반 PR이 된다. AI는 따로 팔지 않고 사용자의 Claude Code·ChatGPT(Codex) 구독을 그대로 쓴다. 앱은 무료, 편집기는 Apache 2.0. 앱의 UI는 Meta의 오픈 디자인 시스템 Astryx로 만들었다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 디자인 / UI·UX · 2026-11-23 07:30 KST</div>
+    <h1>[11/23] 디자인: Onlook 2.0 — 목업이 아니라 ‘진짜 돌아가는 내 앱’ 위에 캔버스를 깔고, 내 Claude·ChatGPT 구독으로 시안 10개를 나란히</h1>
+  </header>
+  <article>
+<p><em>디자이너용 오픈소스 도구 Onlook이 11/19 완전히 새로 만든 2.0 맥 데스크톱 앱을 공개했다. 내 저장소를 열면 실제 앱이 로컬에서 돌아가고, 그 화면들이 무한 캔버스 위 프레임으로 뜬다. ‘이 화면 10가지 버전’, ‘이 컴포넌트의 모든 상태’를 시키면 실제 코드로 나란히 만들어지고, 바뀐 내용은 별도 복사본에서 일반 PR이 된다. AI는 따로 팔지 않고 사용자의 Claude Code·ChatGPT(Codex) 구독을 그대로 쓴다. 앱은 무료, 편집기는 Apache 2.0. 앱의 UI는 Meta의 오픈 디자인 시스템 Astryx로 만들었다.</em></p>
+<p><strong>분류:</strong> 디자인 / UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+디자이너가 Figma에서 그린 화면을 개발자가 다시 만드는 대신, <strong>처음부터 실제 코드 위에서 디자인하자</strong>는 도구다. <strong>Onlook 2.0</strong>이 11/19 오픈소스로 다시 나왔고, 같은 날 Hacker News 런칭도 했다(<a href="https://onlook.substack.com/p/the-brand-new-onlook-is-here">Onlook 공지</a>, <a href="https://github.com/onlook-dev/onlook/releases/tag/v2.0.2">GitHub v2.0.2</a>).
+</p>
+<h2>무엇이 되나</h2>
+<ul>
+<li><strong>진짜 앱이 캔버스에</strong>: GitHub 저장소나 로컬 폴더를 열면 Onlook이 개발 서버를 띄운다. 각 프레임은 <strong>내 앱을 실제로 돌리는 브라우저</strong>다. 실제 데이터로 보이고, ‘미리보기’로 눌러 볼 수 있다.</li>
+<li><strong>아이디어를 한꺼번에</strong>: “제품의 모든 흐름”, “이 컴포넌트의 모든 상태”, “이 화면 10가지 버전”을 시키면 캔버스에 나란히 뜬다. 요소 하나를 골라 “변형 쇼케이스를 만들어”라고 하면 된다. 만든 사람의 말로는 “코드 위에서 크리에이티브 디렉팅하는 느낌”이다.</li>
+<li><strong>반응형 확인</strong>: 데스크톱·태블릿·모바일 프레임을 나란히 본다.</li>
+<li><strong>안전한 복사본</strong>: 작업은 원본 폴더가 아닌 <strong>별도 작업 복사본(git worktree)</strong>에서 하고, 결과는 <strong>일반 PR</strong>이 된다. 엔지니어에게 리뷰를 받거나 그냥 버리면 된다.</li>
+<li><strong>아티팩트</strong>: 저장소 밖에 사는 가벼운 HTML 스케치. 화면 일부를 ‘찍어’ 참고 자료로 쓰거나, HTML·PNG·JPEG·PDF로 내보내 동료에게 보낸다.</li>
+</ul>
+<h2>돈과 AI</h2>
+<ul>
+<li><strong>AI 모델을 팔지 않는다.</strong> 사용자가 이미 낸 <strong>Claude Code나 ChatGPT(Codex) 구독</strong>으로 에이전트가 코드를 고친다. Onlook 서버가 나와 코드 사이에 끼지 않는다.</li>
+<li>데스크톱 앱 <strong>무료</strong>, 편집기 <strong>Apache 2.0</strong>. 지금은 <strong>맥 전용</strong>(애플 실리콘·인텔), 윈도우는 준비 중이다. 나중에 팀용 유료 클라우드를 낼 계획이지만 “내 컴퓨터에서 할 수 있는 건 계속 무료”라고 했다.</li>
+<li>1.0은 React+Tailwind 프로젝트에서만 됐고, 큰 코드베이스에서 느렸다. 코딩 에이전트가 어떤 코드든 읽게 되면서 <strong>에이전트 중심으로 다시 만들었다.</strong> 웹 버전, Storybook 버전도 시도했다가 접었다고 솔직히 적었다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 <strong>Meta Astryx</strong>(에이전트가 읽는 오픈 디자인 시스템)와 이어진다. Onlook 2.0의 데스크톱 앱 UI 자체가 <strong>Astryx로 만들어졌다.</strong> Astryx는 이번 주 GitHub 주간 트렌딩에도 다시 올랐다(+3,967★). 오늘 실린 배민 CLAYDesign과 같은 흐름이다. <strong>디자인의 최종 산출물이 ‘그림’에서 ‘실제로 돌아가는 코드’로 옮겨 가고 있다.</strong> 웹사이트·제품 UI를 다루는 스튜디오라면, 시안 단계부터 클라이언트에게 “눌러지는 진짜 화면 10개”를 보여 주는 방식이 현실적인 비용으로 가능해졌다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

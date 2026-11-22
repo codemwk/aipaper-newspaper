@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/23] 세컨드 브레인: 내 LLM Wiki를 ‘내 서버’로 — obsidian-wiki가 명령 한 줄 자체 호스팅·로그인·Git 동기화를, 옵시디언 플러그인은 ‘파일 옮김’을 기록한다 — AiPaper 뉴스</title>
+  <meta name="description" content="Karpathy의 LLM Wiki 패턴을 구현한 두 프로젝트가 또 업데이트를 냈다. 에이전트용 스킬 묶음 obsidian-wiki는 v2026.11.6(11/17)에 볼트 웹 뷰어를, v2026.11.7(11/19)에 명령 한 줄 자체 호스팅(TLS, 읽기 전용 키, 양방향 Git 동기화)과 OAuth 2.1 로그인·MCP Registry 등록을 넣었다. 옵시디언 플러그인 Karpathy LLM Wiki 1.32.0(11/17)은 파일 이름만 바꿨는데 ‘노트가 바뀌었다’고 잘못 경고하던 문제를 고치고 이동 기록을 남기며, ‘관련 페이지’ 목록이 허브 페이지로 쏠리던 현상을 절반으로 줄였다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 세컨드 브레인 · 2026-11-23 07:45 KST</div>
+    <h1>[11/23] 세컨드 브레인: 내 LLM Wiki를 ‘내 서버’로 — obsidian-wiki가 명령 한 줄 자체 호스팅·로그인·Git 동기화를, 옵시디언 플러그인은 ‘파일 옮김’을 기록한다</h1>
+  </header>
+  <article>
+<p><em>Karpathy의 LLM Wiki 패턴을 구현한 두 프로젝트가 또 업데이트를 냈다. 에이전트용 스킬 묶음 obsidian-wiki는 v2026.11.6(11/17)에 볼트 웹 뷰어를, v2026.11.7(11/19)에 명령 한 줄 자체 호스팅(TLS, 읽기 전용 키, 양방향 Git 동기화)과 OAuth 2.1 로그인·MCP Registry 등록을 넣었다. 옵시디언 플러그인 Karpathy LLM Wiki 1.32.0(11/17)은 파일 이름만 바꿨는데 ‘노트가 바뀌었다’고 잘못 경고하던 문제를 고치고 이동 기록을 남기며, ‘관련 페이지’ 목록이 허브 페이지로 쏠리던 현상을 절반으로 줄였다.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인</p>
+<h2>한줄 요약</h2>
+<p>
+LLM Wiki가 ‘내 노트북 안의 실험’에서 <strong>여러 기기·여러 에이전트가 함께 쓰는 기억 서버</strong>로 커지고 있다. 11/16·11/18에 이어 세 번째 후속 소식이다.
+</p>
+<h2>obsidian-wiki: 기억을 ‘서버’로 (v2026.11.6~11.7)</h2>
+<p>
+에이전트(Claude Code, Codex, Cursor 등)가 옵시디언 볼트를 공유 기억으로 관리하게 하는 스킬 39개 묶음이다(<a href="https://github.com/Ar9av/obsidian-wiki/releases">릴리스</a>).
+</p>
+<ul>
+<li><strong>11/17 웹 뷰어</strong>: 볼트를 브라우저로 보는 화면과 <strong>에이전트 연결 안내</strong>가 들어왔다.</li>
+<li><strong>11/19 명령 한 줄 자체 호스팅</strong>: 미리 만든 이미지로 서버를 띄우고, TLS(암호화 접속) 설정, <strong>읽기 전용 키</strong>, <strong>양방향 Git 동기화</strong>까지 한 번에.</li>
+<li><strong>11/19 로그인·보안</strong>: OAuth 2.1 로그인, 접속 횟수 제한과 잠금, 클라우드 배포 템플릿, <strong>MCP Registry 등록</strong>(MCP 클라이언트에서 찾아 연결하기 쉬워짐).</li>
+<li>외부 리뷰(<a href="https://andrew.ooo/posts/obsidian-wiki-review-llm-wiki-agent-memory/">andrew.ooo, 11/20</a>)는 “LLM·임베딩·벡터DB를 안에 넣지 않은 게 가장 큰 장점이자 한계”라고 정리했다. 기억이 <strong>사람이 읽고 고칠 수 있는 마크다운</strong>으로 남는 대신, 검색은 단어 기반이라 품질이 연결한 에이전트에 달렸다. 11/20 기준 약 3,800★, MIT.</li>
+</ul>
+<h2>Karpathy LLM Wiki 플러그인 1.32.0 (11/17)</h2>
+<p>
+옵시디언 안에서 돌아가는 플러그인이다(<a href="https://github.com/GD4AI/obsidian-llm-wiki/releases">릴리스</a>).
+</p>
+<ul>
+<li><strong>‘옮김’은 ‘수정’이 아니다</strong>: 링크를 안전하게 지키며 파일 이름만 바꿔도 “수집 후 노트가 변경됨”이라고 경고하던 문제를 고쳤다. 이제 <strong>어디서 어디로 왜 옮겼는지</strong> 수집 기록에 남는다.</li>
+<li><strong>관련 페이지 정리</strong>: 너무 많은 페이지가 가리키는 ‘허브’ 페이지는 근거로 치지 않는다. 2,141페이지 볼트에서 허브 쏠림이 <strong>69.2% → 34.7%</strong>로 줄었다. 같은 노트끼리를 ‘다른 자료 간 관계’로 잘못 묶던 비율도 <strong>96.9% → 0%</strong>.</li>
+<li>네덜란드어·폴란드어·태국어가 추가돼 인터페이스와 위키 출력이 <strong>14개 언어</strong>를 지원한다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 <strong>LLM Wiki·vault-bridge</strong> 소식과 이어진다(obsidian 태그). 실무 판단 기준은 이렇다.
+</p>
+<ul>
+<li><strong>혼자, 한 기기</strong>라면 플러그인이 쉽다.</li>
+<li><strong>Mac mini·노트북·휴대폰, 여러 에이전트가 같은 기억을 써야</strong> 한다면 obsidian-wiki 자체 호스팅이 맞다. 이때 <strong>에이전트에는 읽기 전용 키부터</strong> 주고, 쓰기는 Git 기록이 남는 경로로만 허용하는 게 안전하다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
