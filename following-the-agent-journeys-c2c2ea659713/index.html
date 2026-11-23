@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/24] 새로운 각도: 내 서비스의 ‘방문자’가 AI라면 — 문서 읽기·API 호출·로그인이 한 에이전트의 한 여정인지 이어 붙이는 연구, 1만 2,000번 실행·이벤트 202만 개 — AiPaper 뉴스</title>
+  <meta name="description" content="에이전트 분석 회사 Agentrail이 11/23 논문 ‘Following the Agent’를 냈다. AI 에이전트가 제품 문서를 읽고, API를 부르고, 브라우저로 가입하면 서비스 쪽에선 서로 다른 방문자 여러 명처럼 보인다. 연구진은 확실한 증거로 잇고, 제약 안에서 추론하고, 애매하면 잇지 않는 방식으로 여정을 복원했다. 9개 에이전트 도구·15개 모델·3개 제품의 실제 실행 1만 2,000번에서 B³ F1 0.750으로, 30분 세션 묶기(0.409)를 크게 앞섰다. 반면 ‘어떤 모델인지 맞히기’는 아직 실전 기준을 통과하지 못했다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · 새로운 각도 · 2026-11-24 07:55 KST</div>
+    <h1>[11/24] 새로운 각도: 내 서비스의 ‘방문자’가 AI라면 — 문서 읽기·API 호출·로그인이 한 에이전트의 한 여정인지 이어 붙이는 연구, 1만 2,000번 실행·이벤트 202만 개</h1>
+  </header>
+  <article>
+<p><em>에이전트 분석 회사 Agentrail이 11/23 논문 ‘Following the Agent’를 냈다. AI 에이전트가 제품 문서를 읽고, API를 부르고, 브라우저로 가입하면 서비스 쪽에선 서로 다른 방문자 여러 명처럼 보인다. 연구진은 확실한 증거로 잇고, 제약 안에서 추론하고, 애매하면 잇지 않는 방식으로 여정을 복원했다. 9개 에이전트 도구·15개 모델·3개 제품의 실제 실행 1만 2,000번에서 B³ F1 0.750으로, 30분 세션 묶기(0.409)를 크게 앞섰다. 반면 ‘어떤 모델인지 맞히기’는 아직 실전 기준을 통과하지 못했다.</em></p>
+<p><strong>분류:</strong> 새로운 각도</p>
+<h2>한줄 요약</h2>
+<p>
+웹 분석은 오랫동안 <strong>‘사람 방문자’</strong>를 전제로 했다. 쿠키, 세션, 30분 안에 다시 오면 같은 사람. 그런데 AI 에이전트는 문서 → API → MCP 서버 → 브라우저 로그인을 <strong>순간 이동하듯 오간다.</strong> 공유 ID도 쿠키도 없다. 서비스 입장에선 <strong>한 에이전트가 여러 명의 낯선 방문자</strong>로 보인다. 11/23 Agentrail의 논문이 이 조각들을 다시 이어 붙이는 방법을 내놨다(<a href="https://www.agentrail.co/research/following-the-agent">Agentrail 연구</a>).
+</p>
+<h2>어떻게 잇나</h2>
+<p>
+세 가지 원칙이다. ① <strong>확실한 증거</strong>(같은 토큰, 같은 키 등)로 묶을 수 있으면 묶는다. ② 증거가 없으면 <strong>제약 안에서 추론</strong>한다. ③ <strong>애매하면 잇지 않고 남겨 둔다.</strong> 틀리게 잇는 것보다 모른다고 두는 편이 낫다는 설계다.
+</p>
+<h2>결과 (만든 회사의 자체 평가)</h2>
+<ul>
+<li><strong>실제 운영 데이터</strong>: 9개 에이전트 도구(harness), 15개 모델, 3개 제품에서 <strong>1만 2,000번 실행, 이벤트 202만 개.</strong> 여정 복원 정확도(B³ F1) <strong>0.750.</strong> 증거만 쓰면 0.550, 흔히 쓰는 <strong>30분 세션 묶기 0.409</strong>, 10초 묶기 0.380.</li>
+<li><strong>증거로 이은 연결 2,193개 중 틀린 것 0개.</strong> 반면 추론으로 이은 연결은 <strong>32.6%가 틀렸다.</strong> 그래서 ‘애매하면 비워 두기’가 중요하다.</li>
+<li>시뮬레이션 여정 50만 개에서는 평균 0.866.</li>
+<li><strong>어떤 도구인지 맞히기</strong>: 실험실에서 Claude Code·Codex 실행 146번은 모두 맞혔다.</li>
+<li><strong>어떤 모델인지 맞히기는 아직 안 된다.</strong> 같은 작업 안에서는 응답 타이밍으로 86%를 맞혔지만, 작업이 바뀌면 46%(우연 33%)로 떨어졌고, 모르는 모델을 아는 모델로 잘못 받아들이는 비율이 44%였다. <strong>실전 기준을 통과한 모델 분류는 0개.</strong></li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+이 연구가 던지는 질문은 숫자보다 크다. <strong>“우리 서비스의 사용자 중 AI는 몇이고, 어디서 막히나?”</strong> 공저자 Vivek Mittal의 X 소개 글을 둘러싼 논의에서는 초기 사용자들이 <strong>쿠키 동의 배너 때문에 에이전트가 가입 중간에 멈추는</strong> 문제를 찾아낸 사례가 언급됐다. 사람에게는 사소한 팝업이 에이전트에게는 벽이다. 디자인 쪽에서 보면 <strong>‘에이전트 UX’</strong>라는 새 영역이다. 문서 구조, 가입 흐름, 오류 메시지를 사람과 에이전트 둘 다 통과할 수 있게 만드는 일이다. 브랜드 웹사이트를 설계할 때도 이제 <strong>“AI 비서가 이 사이트에서 우리 서비스를 대신 신청할 수 있나?”</strong>를 점검 항목에 넣을 때가 됐다. 단, 이 결과는 해당 분석 제품을 만드는 회사의 자체 연구이고, 외부 재현은 아직 없다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>

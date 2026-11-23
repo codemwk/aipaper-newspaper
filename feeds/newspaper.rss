@@ -7,13 +7,439 @@
 <language>ko</language>
 <atom:link href="https://codemwk.github.io/aipaper-newspaper/feeds/newspaper.rss" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-<lastBuildDate>Sun, 22 Nov 2026 22:12:41 +0000</lastBuildDate>
+<lastBuildDate>Mon, 23 Nov 2026 22:17:19 +0000</lastBuildDate>
 <managingEditor>AiPaper 뉴스</managingEditor>
+<item>
+<title>[11/24] 새로운 각도: 내 서비스의 ‘방문자’가 AI라면 — 문서 읽기·API 호출·로그인이 한 에이전트의 한 여정인지 이어 붙이는 연구, 1만 2,000번 실행·이벤트 202만 개</title>
+<link>https://codemwk.github.io/aipaper-newspaper/following-the-agent-journeys-c2c2ea659713/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/following-the-agent-journeys-c2c2ea659713</guid>
+<pubDate>Mon, 23 Nov 2026 22:17:19 +0000</pubDate>
+<category>새로운 각도</category>
+<description>에이전트 분석 회사 Agentrail이 11/23 논문 ‘Following the Agent’를 냈다. AI 에이전트가 제품 문서를 읽고, API를 부르고, 브라우저로 가입하면 서비스 쪽에선 서로 다른 방문자 여러 명처럼 보인다. 연구진은 확실한 증거로 잇고, 제약 안에서 추론하고, 애매하면 잇지 않는 방식으로 여정을 복원했다. 9개 에이전트 도구·15개 모델·3개 제품의 실제 실행 1만 2,000번에서 B³ F1 0.750으로, 30분 세션 묶기(0.409)를 크게 앞섰다. 반면 ‘어떤 모델인지 맞히기’는 아직 실전 기준을 통과하지 못했다.</description>
+<content:encoded><![CDATA[<p><em>에이전트 분석 회사 Agentrail이 11/23 논문 ‘Following the Agent’를 냈다. AI 에이전트가 제품 문서를 읽고, API를 부르고, 브라우저로 가입하면 서비스 쪽에선 서로 다른 방문자 여러 명처럼 보인다. 연구진은 확실한 증거로 잇고, 제약 안에서 추론하고, 애매하면 잇지 않는 방식으로 여정을 복원했다. 9개 에이전트 도구·15개 모델·3개 제품의 실제 실행 1만 2,000번에서 B³ F1 0.750으로, 30분 세션 묶기(0.409)를 크게 앞섰다. 반면 ‘어떤 모델인지 맞히기’는 아직 실전 기준을 통과하지 못했다.</em></p>
+<p><strong>분류:</strong> 새로운 각도</p>
+<h2>한줄 요약</h2>
+<p>
+웹 분석은 오랫동안 <strong>‘사람 방문자’</strong>를 전제로 했다. 쿠키, 세션, 30분 안에 다시 오면 같은 사람. 그런데 AI 에이전트는 문서 → API → MCP 서버 → 브라우저 로그인을 <strong>순간 이동하듯 오간다.</strong> 공유 ID도 쿠키도 없다. 서비스 입장에선 <strong>한 에이전트가 여러 명의 낯선 방문자</strong>로 보인다. 11/23 Agentrail의 논문이 이 조각들을 다시 이어 붙이는 방법을 내놨다(<a href="https://www.agentrail.co/research/following-the-agent">Agentrail 연구</a>).
+</p>
+<h2>어떻게 잇나</h2>
+<p>
+세 가지 원칙이다. ① <strong>확실한 증거</strong>(같은 토큰, 같은 키 등)로 묶을 수 있으면 묶는다. ② 증거가 없으면 <strong>제약 안에서 추론</strong>한다. ③ <strong>애매하면 잇지 않고 남겨 둔다.</strong> 틀리게 잇는 것보다 모른다고 두는 편이 낫다는 설계다.
+</p>
+<h2>결과 (만든 회사의 자체 평가)</h2>
+<ul>
+<li><strong>실제 운영 데이터</strong>: 9개 에이전트 도구(harness), 15개 모델, 3개 제품에서 <strong>1만 2,000번 실행, 이벤트 202만 개.</strong> 여정 복원 정확도(B³ F1) <strong>0.750.</strong> 증거만 쓰면 0.550, 흔히 쓰는 <strong>30분 세션 묶기 0.409</strong>, 10초 묶기 0.380.</li>
+<li><strong>증거로 이은 연결 2,193개 중 틀린 것 0개.</strong> 반면 추론으로 이은 연결은 <strong>32.6%가 틀렸다.</strong> 그래서 ‘애매하면 비워 두기’가 중요하다.</li>
+<li>시뮬레이션 여정 50만 개에서는 평균 0.866.</li>
+<li><strong>어떤 도구인지 맞히기</strong>: 실험실에서 Claude Code·Codex 실행 146번은 모두 맞혔다.</li>
+<li><strong>어떤 모델인지 맞히기는 아직 안 된다.</strong> 같은 작업 안에서는 응답 타이밍으로 86%를 맞혔지만, 작업이 바뀌면 46%(우연 33%)로 떨어졌고, 모르는 모델을 아는 모델로 잘못 받아들이는 비율이 44%였다. <strong>실전 기준을 통과한 모델 분류는 0개.</strong></li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+이 연구가 던지는 질문은 숫자보다 크다. <strong>“우리 서비스의 사용자 중 AI는 몇이고, 어디서 막히나?”</strong> 공저자 Vivek Mittal의 X 소개 글을 둘러싼 논의에서는 초기 사용자들이 <strong>쿠키 동의 배너 때문에 에이전트가 가입 중간에 멈추는</strong> 문제를 찾아낸 사례가 언급됐다. 사람에게는 사소한 팝업이 에이전트에게는 벽이다. 디자인 쪽에서 보면 <strong>‘에이전트 UX’</strong>라는 새 영역이다. 문서 구조, 가입 흐름, 오류 메시지를 사람과 에이전트 둘 다 통과할 수 있게 만드는 일이다. 브랜드 웹사이트를 설계할 때도 이제 <strong>“AI 비서가 이 사이트에서 우리 서비스를 대신 신청할 수 있나?”</strong>를 점검 항목에 넣을 때가 됐다. 단, 이 결과는 해당 분석 제품을 만드는 회사의 자체 연구이고, 외부 재현은 아직 없다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>[11/24] 디자인: Spline ‘Hana’ 대형 업데이트 — 화면 카드를 캔버스에서 바로 3D로 기울이고, CSS 그대로의 그리드 레이아웃, 버전 기록, 그리고 모든 도구를 에이전트도 쓴다</title>
+<link>https://codemwk.github.io/aipaper-newspaper/spline-hana-3d-grid-0e4b1e07d2e2/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/spline-hana-3d-grid-0e4b1e07d2e2</guid>
+<pubDate>Mon, 23 Nov 2026 22:17:19 +0000</pubDate>
+<category>디자인 / UI·UX</category>
+<description>3D 디자인 도구 Spline이 11/19 2D 디자인 캔버스 Hana에 지금까지 가장 큰 업데이트를 냈다. 3D 변형을 숫자 입력 대신 캔버스 위 회전 손잡이로 다루고, 기울어져도 텍스트·오토 레이아웃은 그대로 편집된다. 오토 레이아웃에 CSS와 같은 문법의 그리드 모드가 생겼고, 한 레이어에 여러 채우기, 버전 기록, ⌘K 명령 팔레트, 가변 두께 선·경로 위 텍스트, 여러 페이지 PDF 내보내기가 들어갔다. 모든 도구는 Spline MCP로 Claude·ChatGPT·Cursor도 쓸 수 있다.</description>
+<content:encoded><![CDATA[<p><em>3D 디자인 도구 Spline이 11/19 2D 디자인 캔버스 Hana에 지금까지 가장 큰 업데이트를 냈다. 3D 변형을 숫자 입력 대신 캔버스 위 회전 손잡이로 다루고, 기울어져도 텍스트·오토 레이아웃은 그대로 편집된다. 오토 레이아웃에 CSS와 같은 문법의 그리드 모드가 생겼고, 한 레이어에 여러 채우기, 버전 기록, ⌘K 명령 팔레트, 가변 두께 선·경로 위 텍스트, 여러 페이지 PDF 내보내기가 들어갔다. 모든 도구는 Spline MCP로 Claude·ChatGPT·Cursor도 쓸 수 있다.</em></p>
+<p><strong>분류:</strong> 디자인 / UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+<strong>Hana</strong>는 3D 도구로 알려진 Spline이 만든 <strong>2D 디자인 캔버스</strong>다. 11/19 업데이트로 Figma와 비슷한 일상 도구를 크게 채우면서, 자기 장점인 <strong>3D 표현</strong>을 손에 잡히게 만들었다(<a href="https://spline.design/blog/hana-design-tools-update">Spline 블로그</a>).
+</p>
+<h2>3D 변형, 캔버스에서 손으로</h2>
+<ul>
+<li>예전엔 패널에 숫자를 입력했고, 물체가 기울어도 선택 상자는 평평하게 남았다. 이제는 <strong>선택 상자가 물체를 따라 기울고</strong>, 원래 위치는 점선으로 남는다.</li>
+<li>물체 위에 <strong>축별 회전 고리 세 개</strong>가 뜬다. 고리를 끌면 그 축으로, 안쪽을 끌면 자유롭게 돈다. 뒤쪽 고리는 흐려져 방향이 한눈에 보인다.</li>
+<li>3D 변형은 이제 <strong>효과(Effects) 패널</strong>에 있다. 회전 X·Y·Z, 깊이, 원근, 평탄화, 뒷면 표시를 한곳에서. 위쪽 작은 큐브를 끌어 돌릴 수도 있다.</li>
+<li><strong>평면으로 굳히지 않는다.</strong> 기울인 카드 안의 텍스트는 텍스트, 오토 레이아웃은 그대로 작동한다. 회전·깊이·원근은 상태(state)와 이벤트로 애니메이션할 수 있다. 블로그 표지의 기울어진 앱 화면들도 이렇게 만든 <strong>일반 Hana 프레임</strong>이다.</li>
+</ul>
+<h2>그리드와 레이아웃</h2>
+<ul>
+<li>오토 레이아웃에 Row·Column·Wrap에 이어 <strong>Grid</strong> 모드. 열·행 크기를 픽셀, 남는 공간 비율(<code>1fr</code>), 내용에 맞춤(<code>auto</code>)으로 정하고, 요소가 여러 칸을 차지할 수 있다.</li>
+<li>트랙 크기는 <strong>CSS와 같은 문법</strong>(<code>1fr 1fr 200 auto</code>, <code>repeat(3, 1fr)</code>). HTML로 내보내면 <strong>CSS grid</strong>가 된다.</li>
+<li>비율 잠금 저장, 최소·최대 크기, 글자 기준선 정렬, 겹침 순서 선택도 생겼다.</li>
+</ul>
+<h2>그 밖의 도구</h2>
+<ul>
+<li><strong>한 레이어에 여러 채우기</strong>(그라디언트 위 색, 오버레이 틴트), 다이아몬드 그라디언트, 여러 선, <strong>Display P3</strong> 색 공간.</li>
+<li>벡터: 선·화살표 도구, <strong>가변 두께 선</strong>, <strong>경로 위 텍스트</strong>, 올가미 선택, 경로 단순화·오프셋.</li>
+<li><strong>버전 기록</strong>(이름 붙인 버전 저장·복원은 유료), <strong>⌘K 명령 팔레트</strong>(여기서 에이전트에게 바로 요청), 찾기·바꾸기, 일괄 이름 변경, 아웃라인 모드, 픽셀 미리보기, <strong>여러 프레임을 한 PDF로.</strong></li>
+<li><strong>에이전트 연결</strong>: 모든 도구가 <strong>Spline MCP</strong>로 Claude, ChatGPT, Cursor 등에서 작동한다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+이달 초(11/12) Figma가 3D 변형을 오픈 베타로 낸 데 이어, 디자인 도구 경쟁이 <strong>“평면 UI를 공간에 배치하는 표현”</strong>으로 번지고 있다. 앱 화면을 기울여 깊이감 있게 보여 주는 이미지는 포트폴리오·케이스 스터디·런칭 비주얼의 단골이다. 예전엔 목업 툴이나 3D 프로그램을 거쳐야 했는데, 이제 <strong>편집 가능한 상태 그대로</strong> 캔버스에서 만든다. 그리드가 <strong>CSS 문법 그대로 내보내진다</strong>는 점은, 시안이 코드로 넘어갈 때 다시 짜는 일을 줄인다. 브랜드 스튜디오의 가상 리브랜딩 결과물을 “기울어진 화면 보드”로 보여 주는 데 바로 쓸 만하다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>[11/24] 디자인: Figma 에이전트가 FigJam·Slides로 — 포스트잇 수백 장을 ‘결정·다음 할 일·남은 질문’ 기획서로, 대본을 슬라이드 덱으로, 스프레드시트 캡처를 차트로</title>
+<link>https://codemwk.github.io/aipaper-newspaper/figma-agent-figjam-slides-2f949f627988/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/figma-agent-figjam-slides-2f949f627988</guid>
+<pubDate>Mon, 23 Nov 2026 22:17:19 +0000</pubDate>
+<category>디자인 / UI·UX</category>
+<description>Figma가 11/23 캔버스 에이전트를 FigJam과 Figma Slides에서도 정식 제공한다고 밝혔다(유료 플랜 전체). FigJam에서는 Notion·Google Drive 같은 커넥터로 리서치·피드백을 보드에 모으고, 포스트잇을 주제별로 묶고, 토론 결과를 캔버스 위 문서 ‘Spec’으로 정리한다. Slides에서는 대본을 개요로 나눠 덱을 만들고, CSV·스크린샷 데이터로 차트를 채우고, 청중에 맞게 덱을 고치거나 발표 시간을 추정한다.</description>
+<content:encoded><![CDATA[<p><em>Figma가 11/23 캔버스 에이전트를 FigJam과 Figma Slides에서도 정식 제공한다고 밝혔다(유료 플랜 전체). FigJam에서는 Notion·Google Drive 같은 커넥터로 리서치·피드백을 보드에 모으고, 포스트잇을 주제별로 묶고, 토론 결과를 캔버스 위 문서 ‘Spec’으로 정리한다. Slides에서는 대본을 개요로 나눠 덱을 만들고, CSV·스크린샷 데이터로 차트를 채우고, 청중에 맞게 덱을 고치거나 발표 시간을 추정한다.</em></p>
+<p><strong>분류:</strong> 디자인 / UI·UX</p>
+<h2>한줄 요약</h2>
+<p>
+Figma 에이전트가 <strong>디자인 화면 밖</strong>으로 나왔다. 회의 준비(FigJam)와 발표(Slides)까지 같은 에이전트가 돕는다. 11/23 정식 제공을 발표했다(<a href="https://www.figma.com/blog/introducing-figma-agent-in-figjam-and-slides/">Figma 블로그</a>).
+</p>
+<h2>FigJam: 토론 전후의 잡일</h2>
+<ul>
+<li><strong>맥락 모으기</strong>: *Add context → Connectors*로 Notion, Google Drive 같은 앱을 붙이거나, 스크린샷·파일을 첨부한다. 에이전트가 지난 크리틱 피드백, 경쟁사 사례, 리서치를 <strong>보드 위로</strong> 가져와 요약한다.</li>
+<li><strong>할 수 있는 일</strong>: 브레인스토밍 보드 세팅, 리서치·데이터로 <strong>고객 여정 지도</strong> 만들기, 포스트잇 <strong>주제별 묶기</strong>, 담당자·마감일이 붙은 할 일 표.</li>
+<li><strong>토론 → 결정</strong>: 포스트잇을 골라 *Organize → Summarize*, 또는 “이 토론을 결정·다음 단계·남은 질문이 있는 Spec으로 정리해 줘.” 결과는 원래 피드백 옆, <strong>캔버스 위 문서(Spec)</strong>로 남는다. 나중에 “어떻게 이 결정에 왔나”를 같은 보드에서 본다.</li>
+<li>Specs 담당 엔지니어 리드: 예전엔 “댓글을 하나하나 다 읽다 인용을 놓치거나 디테일에 시간을 너무 썼다.”</li>
+</ul>
+<h2>Figma Slides: 이야기에 집중할 시간</h2>
+<ul>
+<li><strong>있는 재료로 시작</strong>: Spec·대본·자료를 넣으면 에이전트가 <strong>슬라이드 개요</strong>를 먼저 만들고, 검토 후 *Generate deck*으로 초안을 만든다. Config 키노트 담당 브랜드 디자이너가 이렇게 쓴다고 소개했다.</li>
+<li><strong>차트 자동화</strong>: 스프레드시트 스크린샷이나 CSV를 주면 <strong>막대 차트를 데이터대로 채운다.</strong> “어떻게 보일지는 내가 정밀하게 정하고, 수학적 정확성은 에이전트에게.”</li>
+<li>그 밖에: <strong>다른 청중에 맞게 덱 고치기</strong>, 전체 문구 줄이기, 이야기·슬라이드 피드백 받기, 발표자 노트로 <strong>발표 시간 추정.</strong></li>
+</ul>
+<h2>조건</h2>
+<p>
+FigJam·Slides의 에이전트는 <strong>모든 유료 플랜</strong>에서 정식 제공. 커넥터와 첨부는 일부만 지원한다.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+어제 전한 <strong>Dev Mode·Specs</strong>에 이어, Figma는 에이전트를 <strong>아이디어 → 결정 → 디자인 → 발표 → 개발 인계</strong> 전 구간에 깔고 있다. 그 중심에 <strong>Spec(캔버스 위 문서)</strong>이 있다. 토론 결과가 Spec이 되고, Spec이 슬라이드가 되고, 다시 코딩 에이전트에게 넘어간다. 브랜드 스튜디오에 가장 쓸모 있는 건 <strong>클라이언트 워크숍 정리</strong>다. 워크숍 포스트잇을 그날 바로 “결정·남은 질문” 문서로 바꾸고, 같은 재료로 제안 덱 초안을 만들 수 있다. 다만 덱의 이야기 구조와 톤은 여전히 사람이 정해야 한다. Figma도 “사람이 검토하고 편집하라”는 흐름으로 설계했다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>[11/24] 세컨드 브레인: Obsidian 공식 플러그인이 Grok Bot에도 — 봇이 내 볼트에 노트·Bases·Canvas를 쓴다. 같은 주 obsidian-wiki는 ‘되돌리기·복구 가능한 삭제·쓰기 거부권’을 넣었다</title>
+<link>https://codemwk.github.io/aipaper-newspaper/obsidian-grok-bot-wiki-undo-71b9d996e31b/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/obsidian-grok-bot-wiki-undo-71b9d996e31b</guid>
+<pubDate>Mon, 23 Nov 2026 22:17:19 +0000</pubDate>
+<category>세컨드 브레인</category>
+<description>Obsidian이 11/19 ‘Grok Bot이 이제 Obsidian 볼트에 연결된다’고 밝혔다. 공식 플러그인 목록은 ChatGPT·Codex·Cursor·Grok Bot 넷이 됐다. 봇은 노트를 만들고 찾고 고치며, 링크 갱신, 웹 글 수집, Bases·Canvas 파일 생성까지 한다. 11/23 obsidian-wiki v2026.11.8은 에이전트가 볼트를 고칠 때를 대비한 안전장치를 넣었다. 마지막 변경 되돌리기(undo), 복구 가능한 페이지 삭제(memory_forget), 쓰기 전에 거부·수정하는 운영자 훅, 여러 볼트 전환과 받은편지함이 달린 웹 뷰어.</description>
+<content:encoded><![CDATA[<p><em>Obsidian이 11/19 ‘Grok Bot이 이제 Obsidian 볼트에 연결된다’고 밝혔다. 공식 플러그인 목록은 ChatGPT·Codex·Cursor·Grok Bot 넷이 됐다. 봇은 노트를 만들고 찾고 고치며, 링크 갱신, 웹 글 수집, Bases·Canvas 파일 생성까지 한다. 11/23 obsidian-wiki v2026.11.8은 에이전트가 볼트를 고칠 때를 대비한 안전장치를 넣었다. 마지막 변경 되돌리기(undo), 복구 가능한 페이지 삭제(memory_forget), 쓰기 전에 거부·수정하는 운영자 훅, 여러 볼트 전환과 받은편지함이 달린 웹 뷰어.</em></p>
+<p><strong>분류:</strong> 세컨드 브레인</p>
+<h2>한줄 요약</h2>
+<p>
+11/14 전한 <strong>Obsidian 공식 플러그인</strong>(Claude Code·Codex·Cursor)에 <strong>Grok Bot</strong>이 더해졌다. 이제 AI가 내 볼트에 직접 쓰는 일이 흔해진다. 그래서 같은 주 나온 <strong>obsidian-wiki의 ‘되돌리기’ 기능</strong>이 짝처럼 중요하다(<a href="https://obsidian.md/help/skills">Obsidian 도움말: Skills</a>, <a href="https://github.com/Ar9av/obsidian-wiki/releases/tag/v2026.11.8">obsidian-wiki v2026.11.8</a>).
+</p>
+<h2>Obsidian for Grok Bot (11/19)</h2>
+<ul>
+<li>Obsidian 공식 X 계정: <strong>“Grok Bot can now connect to your Obsidian vault.”</strong> 도움말에는 “Obsidian은 <strong>ChatGPT, Codex, Cursor, Grok Bot</strong>의 공식 플러그인”이라고 적혀 있다. 설치는 플러그인 페이지에서 <strong>Add to Grok Bot.</strong></li>
+<li>할 수 있는 일: Obsidian식 마크다운 노트 쓰기(위키링크·임베드·콜아웃·속성), <strong>Bases</strong>(표·필터·수식)와 <strong>Canvas</strong> 파일 만들기, 링크 갱신, 웹 페이지를 깨끗한 마크다운으로 가져오기(Defuddle), Obsidian CLI로 실행 중인 앱의 노트 검색·관리.</li>
+<li>조건: CLI 기능은 <strong>데스크톱 Obsidian이 켜져 있고 CLI가 활성화</strong>돼 있어야 한다. 마크다운·Bases·Canvas는 파일 형식 설명이라, 볼트 파일을 읽고 쓸 수 있는 에이전트면 된다. 변경은 Obsidian Sync로 기기 간 동기화된다.</li>
+<li>개인정보: 스킬 자체는 아무것도 보내지 않는다. 다만 <strong>에이전트가 읽은 노트는 그 AI 모델의 대화 내용이 된다.</strong> 민감한 볼트는 정책을 먼저 확인하라고 도움말이 적었다.</li>
+</ul>
+<h2>obsidian-wiki v2026.11.8 (11/23): 에이전트용 안전장치</h2>
+<ul>
+<li><strong><code>obsidian-wiki undo</code></strong>: 볼트의 <strong>마지막 변경을 한 번에 되돌린다.</strong></li>
+<li><strong><code>memory_forget</code></strong>: MCP로 페이지를 지우되 <strong>복구 가능한 삭제.</strong> <code>memory_write_many</code>로 여러 페이지를 한꺼번에 쓰는 도구도 생겼다.</li>
+<li><strong><code>WIKI_WRITE_HOOK</code></strong>: 운영자가 정한 규칙으로 <strong>쓰기 직전에 페이지를 거부하거나 고쳐 쓴다.</strong> 예: 특정 폴더 쓰기 금지, 금지어 제거.</li>
+<li>웹 뷰어에 <strong>볼트 전환, 받은편지함, Ask(질문), 인사이트</strong> 추가. ‘추론된·애매한 링크’를 따로 표시하고, 링크마다 <strong>출처 기록</strong>을 본다. 검색은 답마다 범위를 보여 주고 특정 폴더만 찾을 수 있다.</li>
+<li><code>[[페이지#제목]]</code> 같은 <strong>깨진 제목 링크 점검</strong>, 대화 압축 직전 기억을 붙잡는 훅도 들어갔다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 <strong>LLM Wiki·vault-bridge 계열</strong>(에이전트가 볼트를 기억 장소로 쓰는 흐름)과 이어진다. 지금 이 신문을 만드는 것도 Grok Bot이다. 봇이 볼트에 <strong>직접 쓸 수 있게 되면</strong> 질문은 “연결할까”에서 <strong>“실수하면 어떻게 되돌리나”</strong>로 바뀐다. 현실적인 순서는 이렇다. ① 봇 전용 폴더(예: <code>Inbox/AI</code>)를 만들어 <strong>새 노트만 쓰게</strong> 하고, ② 기존 노트 수정은 Git이나 undo가 있는 환경에서만 허용하고, ③ 삭제는 복구 가능한 방식만 쓴다. 한 사용자의 지적처럼 <strong>봇이 돌아가는 컴퓨터와 볼트가 있는 컴퓨터가 다르면</strong> 공식 플러그인이 가장 안전한 통로다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>[11/24] AI 콘텐츠: OpenMotion 0.2 — 내 코딩 에이전트를 ‘영상·소리·디자인·게임 스튜디오’로. 스튜디오 7개, 템플릿 287개, 브랜드 키트 152개를 한 작업장에</title>
+<link>https://codemwk.github.io/aipaper-newspaper/openmotion-agent-creative-studio-11120b505e58/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/openmotion-agent-creative-studio-11120b505e58</guid>
+<pubDate>Mon, 23 Nov 2026 22:17:19 +0000</pubDate>
+<category>AI 콘텐츠</category>
+<description>‘Claude Motion·CapCut의 오픈소스 대안’을 내건 OpenMotion이 11/20 0.2.0, 11/21 0.2.1을 냈다. 참고 영상을 넣으면 내 브랜드 키트로 편집 가능한 모션 그래픽을 만들고 MP4로 뽑는다. 0.2에서는 이미지·시네마·사운드·디자인·게임 등 스튜디오 7개, 스킬 104개, 템플릿 287개, 브랜드 키트 152개를 한 작업장으로 묶었다. Claude Code·Codex 등 22개 에이전트에서 쓰고 Apache 2.0. 지난 7일 약 5,000★가 늘어 약 1.6만★.</description>
+<content:encoded><![CDATA[<p><em>‘Claude Motion·CapCut의 오픈소스 대안’을 내건 OpenMotion이 11/20 0.2.0, 11/21 0.2.1을 냈다. 참고 영상을 넣으면 내 브랜드 키트로 편집 가능한 모션 그래픽을 만들고 MP4로 뽑는다. 0.2에서는 이미지·시네마·사운드·디자인·게임 등 스튜디오 7개, 스킬 104개, 템플릿 287개, 브랜드 키트 152개를 한 작업장으로 묶었다. Claude Code·Codex 등 22개 에이전트에서 쓰고 Apache 2.0. 지난 7일 약 5,000★가 늘어 약 1.6만★.</em></p>
+<p><strong>분류:</strong> AI 콘텐츠</p>
+<h2>한줄 요약</h2>
+<p>
+<strong>OpenMotion</strong>은 내가 이미 쓰는 코딩 에이전트(Claude Code, Codex 등)를 <strong>영상 제작 스튜디오</strong>로 바꾸는 오픈소스다. 출발점은 “이 영상 느낌으로, 우리 브랜드로” 모션 그래픽을 만드는 일이었고, 0.2에서 <strong>이미지·소리·디자인·게임</strong>까지 넓혔다(<a href="https://github.com/nexu-io/openmotion">GitHub</a>, <a href="https://github.com/nexu-io/openmotion/releases/tag/v0.2.0">0.2.0 릴리스</a>, <a href="https://github.com/nexu-io/openmotion/releases/tag/v0.2.1">0.2.1 릴리스</a>).
+</p>
+<h2>무엇을 하나</h2>
+<ul>
+<li><strong>참고 영상 → 편집 가능한 모션 그래픽</strong>: 레퍼런스 영상을 넣으면 <strong>내 브랜드 키트</strong>(색·서체·시각 방향)로 다시 만든다. YouTube·쇼츠·릴스·틱톡용 MP4로 내보낸다.</li>
+<li><strong>스튜디오 7개</strong>: 이미지(배경 제거, 조명 바꾸기, 캐릭터 일관성), <strong>시네마</strong>(카메라 제어, 멀티샷, 영상과 함께 나오는 소리), <strong>사운드</strong>(음악·효과음·음성 합성, 파형 비교), 디자인, 게임 등.</li>
+<li><strong>디자인 스튜디오</strong>는 영상 밖으로 나간다. 웹 프로토타입, 앱, 슬라이드, 인쇄 레이아웃, 데이터 시각화, WebGL까지 같은 작업장에서 만든다.</li>
+<li><strong>게임 스튜디오(0.2.1)</strong>: 플레이 가능한 템플릿을 내 캐릭터·문구로 리믹스하고, 직접 플레이해 보며 에이전트와 고친다. MCP 도구로 붙는다.</li>
+<li>결과물은 <strong>계속 편집 가능한 프로젝트</strong>로 남는다. 타임라인 확대·클립 속도·리뷰 댓글 같은 편집 기능도 다듬었다.</li>
+</ul>
+<h2>숫자와 조건</h2>
+<ul>
+<li>스킬 <strong>104개</strong>, 템플릿 <strong>287개</strong>, 브랜드 키트 <strong>152개</strong>, 지원 에이전트 <strong>22개.</strong> 설명서 역할을 하는 Motion.md 가이드는 300개 이상이다.</li>
+<li><strong>Apache 2.0.</strong> 약 <strong>1.6만★</strong>, 최근 7일 약 <strong>+5,000★</strong>(k-state 창작 데일리 11/22 기준 +4,968).</li>
+<li>이미지·영상 생성은 연결한 <strong>외부 모델 제공사</strong> 몫이다. 제공사 페이지에 검증된 기능, 로그인·구독 안내, 가격 신호를 보여 준다. 즉 앱은 무료여도 <strong>생성 비용은 따로 든다.</strong></li>
+<li>시작: <code>npx skills add nexu-io/openmotion --skill openmotion</code> 후 에이전트에게 “시네마 스튜디오 열어 줘”.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 <strong>OpenMontage</strong>(에이전트용 영상 제작 시스템)와 이어지는 흐름이다. 이번 주 창작 분야 GitHub 상승 상위권에는 OpenMotion 외에도 99가지 영화 스타일을 코드로 담은 lemo-opuscar, Remotion 기반 제품 홍보 영상 스킬 video-shotcraft가 함께 올랐다. <strong>“영상 편집기를 따로 배우지 않고, 에이전트에게 말로 시키는”</strong> 쪽으로 무게가 옮겨 가고 있다. 브랜드 스튜디오 입장에서는 <strong>브랜드 키트가 1급 기능</strong>이라는 점이 핵심이다. 아이덴티티 하나를 정해 두면 쇼츠·슬라이드·웹 시안·인쇄물이 같은 규칙으로 나온다. 개념 연구(가상 리브랜딩) 결과물을 여러 매체로 한꺼번에 펼쳐 보이는 데 바로 쓸 수 있다. 다만 0.x 버전이라 변화가 잦고, 외부 모델 비용은 미리 확인해야 한다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>[11/24] GitHub 이번 주: ‘에이전트가 진짜 소프트웨어를 만지게’ — 아무 프로그램이나 명령어로 바꾸는 CLI-Anything, 채팅 한 줄을 PR까지 끌고 가는 텐센트 LoopForge, 에이전트↔화면 규격 AG-UI</title>
+<link>https://codemwk.github.io/aipaper-newspaper/github-cli-anything-loopforge-d6a3e3548ed9/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/github-cli-anything-loopforge-d6a3e3548ed9</guid>
+<pubDate>Mon, 23 Nov 2026 22:17:19 +0000</pubDate>
+<category>GitHub 트렌드</category>
+<description>11/16~21 GitHub 트렌딩을 묶은 주간 정리에서 반복된 주제는 ‘화려한 데모가 아니라 배관’이었다. CLI-Anything(약 6.3만★)은 아무 소프트웨어나 에이전트가 부를 수 있는 명령줄 도구로 바꾸는 7단계 생성기와 공유 허브를 낸다. 텐센트 LoopForge(약 5,900★, 11/23 v0.4.2)는 채팅으로 요구사항을 받으면 도커 샌드박스에서 역할을 나눠 작업하고 사람 승인 관문을 거쳐 PR을 올리는 자체 호스팅 작업장이다. AG-UI는 에이전트와 사용자 화면을 잇는 약 16종 이벤트 규격이다.</description>
+<content:encoded><![CDATA[<p><em>11/16~21 GitHub 트렌딩을 묶은 주간 정리에서 반복된 주제는 ‘화려한 데모가 아니라 배관’이었다. CLI-Anything(약 6.3만★)은 아무 소프트웨어나 에이전트가 부를 수 있는 명령줄 도구로 바꾸는 7단계 생성기와 공유 허브를 낸다. 텐센트 LoopForge(약 5,900★, 11/23 v0.4.2)는 채팅으로 요구사항을 받으면 도커 샌드박스에서 역할을 나눠 작업하고 사람 승인 관문을 거쳐 PR을 올리는 자체 호스팅 작업장이다. AG-UI는 에이전트와 사용자 화면을 잇는 약 16종 이벤트 규격이다.</em></p>
+<p><strong>분류:</strong> GitHub 트렌드</p>
+<h2>한줄 요약</h2>
+<p>
+에이전트는 생각은 잘하는데 <strong>진짜 프로그램을 다루는 건 서툴다.</strong> 이번 주 GitHub 상위권은 그 틈을 메우는 저장소들이었다. 11/16~21 트렌딩을 합친 주간 정리는 “불꽃놀이가 아니라 배관의 주”라고 요약했다(<a href="https://www.tommyz.blog/blog/github-trending-weekly-2026-11-16-to-2026-11-21">Tommy Zhang 주간 정리</a>, <a href="https://githubtrending.today/archive/2026-11-23/">11/23 트렌딩</a>).
+</p>
+<h2>CLI-Anything — “모든 소프트웨어를 에이전트용으로”</h2>
+<ul>
+<li><strong>무엇</strong>: 사람이 쓰던 프로그램을 <strong>에이전트가 부를 수 있는 명령어 도구(CLI)</strong>로 바꾼다(<a href="https://github.com/HKUDS/CLI-Anything">GitHub</a>). 홍콩대 HKUDS 연구실 프로젝트, 약 6.3만★(11/23 하루 +699).</li>
+<li><strong>두 갈래</strong>: ① 남들이 만든 도구를 <strong>CLI-Hub</strong>에서 찾아 설치, ② <code>/cli-anything</code> 명령으로 내 프로그램·사내 도구에 <strong>분석 → 설계 → 구현 → 테스트 계획 → 테스트 작성 → 문서화 → 배포</strong> 7단계 생성기를 돌린다.</li>
+<li><strong>왜 CLI인가</strong>: 화면을 흉내 내며 클릭하는 자동화는 쉽게 깨진다. 명령어는 서로 이어 붙일 수 있고, <code>--help</code>로 스스로 설명하고, JSON으로 결과를 내 <strong>매번 같은 결과</strong>가 나온다.</li>
+<li>만든 도구에는 되돌리기(undo/redo)가 기본이고, Claude Code·Cursor·Codex·Copilot CLI 등에 붙는다.</li>
+</ul>
+<h2>LoopForge — 채팅 한 줄에서 PR까지, 사람 관문 포함</h2>
+<ul>
+<li><strong>무엇</strong>: 코딩 에이전트로 소프트웨어를 납품하는 팀을 위한 <strong>자체 호스팅 작업장</strong>(<a href="https://github.com/Tencent/LoopForge">GitHub</a>). 텐센트, 11/23 v0.4.2.</li>
+<li><strong>흐름</strong>: 채팅으로 메인 봇에게 요구사항을 말하면 → <strong>도커 샌드박스</strong>를 띄우고 저장소를 받아 → 기획·구현·리뷰 같은 <strong>역할에 나눠 맡기고</strong> → PR을 올린다.</li>
+<li><strong>SOP로 저장</strong>: 한 번 검증된 방식은 “에이전트 + 스크립트 + <strong>사람 승인 관문</strong>”으로 묶은 표준 절차가 된다. 실행은 관찰·재개할 수 있다.</li>
+<li><strong>문제의식</strong>: “이 버그 고쳐”라고 시키면 그 한 번의 실행에 결과가 달려 있다. 계획을 건너뛰고, 테스트를 잊고, <strong>자기 코드를 자기가 리뷰</strong>하고, 몰래 멈춘다. 데모엔 괜찮아도 팀이 납품하는 방식은 아니라는 것.</li>
+<li>Claude Code·Codex·Cursor CLI·OpenCode·Kimi Code 등을 실행기로 쓴다. 기존 코딩 도우미 안에서 쓰는 LoopForge Local도 있다.</li>
+</ul>
+<h2>AG-UI — 에이전트와 ‘화면’ 사이의 공용어</h2>
+<ul>
+<li>에이전트가 실행 중에 <strong>약 16종 표준 이벤트</strong>를 내보내면, 앱 화면이 그걸 받아 채팅 스트리밍·상태 동기화·생성형 UI·사람 확인을 처리한다(<a href="https://github.com/ag-ui-protocol/ag-ui">GitHub</a>).</li>
+<li>정리하면 <strong>MCP = 에이전트에게 도구, A2A = 에이전트끼리, AG-UI = 에이전트와 사용자 화면.</strong> LangGraph, CrewAI, Google ADK, Mastra, Claude Agent SDK 등과 연동되고 MIT 라이선스다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+세 저장소의 공통점은 <strong>“모델을 더 똑똑하게”가 아니라 “모델을 일하게 하는 틀”</strong>이다. 메신저에서 시킨 일을 PR로 받는 흐름을 고민 중이라면 LoopForge의 <strong>SOP + 사람 관문</strong> 설계가 가장 직접적인 참고가 된다. 오늘 실린 Claude Ship이 “PR 이후”를 맡는다면, LoopForge는 <strong>“PR 이전”의 절차</strong>를 맡는 셈이다. CLI-Anything은 자동매매나 디자인 도구처럼 <strong>API가 없는 프로그램</strong>을 에이전트에 연결할 때 화면 클릭 자동화 대신 시도해 볼 만한 방법이다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>[11/24] AI 모델: ‘답을 쓰지 말고 고르기만 해’ 결정 모델 두 개가 같은 날 — AWS Strands Decider v2(최대 31B)와 Hugging Face 쪽 IVE-4B·Ivonnet-0.8B</title>
+<link>https://codemwk.github.io/aipaper-newspaper/decision-models-decider-ive-3e339792ed6a/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/decision-models-decider-ive-3e339792ed6a</guid>
+<pubDate>Mon, 23 Nov 2026 22:17:19 +0000</pubDate>
+<category>AI 모델</category>
+<description>11/23 ‘결정 모델’ 두 종이 나란히 공개됐다. 결정 모델은 글을 생성하지 않고, 개발자가 미리 준 선택지(최대 255개)마다 확률을 매겨 돌려준다. AWS Strands Decider v2는 Gemma 4 기반 오픈 가중치(Apache 2.0, 최대 31B)로, 상황을 양방향으로 한 번 읽고 여러 질문에 재사용한다. ‘한 가지 디테일이 답을 바꾸는’ 시험에서 84.3점(v1 23.2). IVE-4B·Ivonnet-0.8B는 문서 이미지를 OCR 없이 픽셀로 읽고, 처음 보는 분야 과제에서 5B 이하 166개 모델 중 1위라고 밝혔다.</description>
+<content:encoded><![CDATA[<p><em>11/23 ‘결정 모델’ 두 종이 나란히 공개됐다. 결정 모델은 글을 생성하지 않고, 개발자가 미리 준 선택지(최대 255개)마다 확률을 매겨 돌려준다. AWS Strands Decider v2는 Gemma 4 기반 오픈 가중치(Apache 2.0, 최대 31B)로, 상황을 양방향으로 한 번 읽고 여러 질문에 재사용한다. ‘한 가지 디테일이 답을 바꾸는’ 시험에서 84.3점(v1 23.2). IVE-4B·Ivonnet-0.8B는 문서 이미지를 OCR 없이 픽셀로 읽고, 처음 보는 분야 과제에서 5B 이하 166개 모델 중 1위라고 밝혔다.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+에이전트가 하는 일의 상당수는 사실 <strong>‘고르기’</strong>다. 이 페이지가 관련 있나? 어떤 도구를 부를까? 이 티켓은 어느 팀으로? <strong>결정 모델</strong>은 이런 질문에 글 대신 <strong>선택지별 확률</strong>만 내놓는다. 11/23 두 종이 동시에 나왔다(<a href="https://venturebeat.com/data/awss-strands-decider-v2-targets-the-agent-decisions-that-hinge-on-a-single-detail">VentureBeat</a>, <a href="https://huggingface.co/blog/QuentinJG/ive-release">Hugging Face 블로그</a>).
+</p>
+<h2>AWS Strands Decider v2</h2>
+<ul>
+<li><strong>Gemma 4 기반, Apache 2.0 오픈 가중치</strong>, 다섯 가지 크기(최대 31B). 질문 하나에 선택지 <strong>최대 255개</strong>, 각각 확률을 돌려준다. 가장 작은 모델은 GPU 없이 돈다.</li>
+<li>바뀐 점: 일반 언어 모델은 왼쪽→오른쪽으로 읽어 앞부분이 뒷내용을 못 본다. v2는 <strong>상황 전체를 양방향으로 한 번 읽고</strong>, 그 결과를 여러 질문이 나눠 쓴다. “상황을 한 번만 읽고 질문은 여러 개”라 비용이 준다.</li>
+<li>한 가지 디테일만 다른 쌍으로 만든 시험(DecisionPivot)에서 최대 모델 <strong>84.3점, v1은 23.2점.</strong> 다만 v1은 더 작은 모델과 비교한 값이다.</li>
+<li>AWS 사례(회사 수치): 아마존 내부 티켓 분류에서 Claude Sonnet 4.6을 v1 소형 모델로 바꾸자 호출당 <strong>4.2초 → 0.9초</strong>, 100만 티켓당 비용 <strong>약 2만 2,200달러 → 약 500달러.</strong> 라우터로 쓰면 Haiku/Sonnet 사이를 나눠 <strong>Sonnet 단독 대비 94% 해결, 비용 44%.</strong></li>
+<li>AWS 과학자의 한 문장 기준: <strong>“요청이 오기 전에 가능한 답을 미리 적을 수 있나? 그렇다면 결정이고, Decider에게 맡겨라.”</strong> 새 글이나 설명이 필요하면 큰 모델 몫이다.</li>
+</ul>
+<h2>IVE-4B · Ivonnet-0.8B</h2>
+<ul>
+<li>문서 파이프라인용 결정 모델 두 개, <strong>Apache 2.0.</strong> 스캔 페이지·차트·스크린샷을 <strong>OCR 없이 픽셀에서 바로</strong> 읽는다.</li>
+<li>공개 Decision Index에서 <strong>처음 보는 분야의 비공개 과제</strong> 기준, 5B 이하 <strong>166개 모델 중 1위</strong>라고 밝혔다. 분야가 바뀌어도 점수를 가장 덜 잃는 모델이라는 주장이다.</li>
+<li>확률을 믿을 만하다는 지표(보정 오차) <strong>1.6%</strong>, 응답 <strong>텍스트 49ms·이미지 128ms.</strong> 4B 학습은 H100 4장 노드 하나로 약 13시간.</li>
+<li>비결로 두 가지를 꼽았다. 선택지 순서를 섞고 이름을 바꾸는 등 <strong>데이터의 지름길을 없앤 것</strong>, 그리고 <strong>시각 부분을 얼려 둔 것</strong>(학습하면 차트 읽기가 망가졌다).</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+10/5에 전한 Cloudflare <strong>Clef</strong> 이후 결정 모델은 하나의 분야가 됐다. 9월 Jev, 10월 OpenAI Decisions API, 11월 Gemini Decision 1·Microsoft-Decision 1.1, 그리고 이번 둘이다(VentureBeat 정리). 실무적인 의미는 <strong>비용 구조</strong>다. 에이전트 안의 “고르기” 단계만 작은 결정 모델로 빼면, 큰 모델은 글쓰기·추론에만 쓴다. <strong>확률이 붙어 나오니</strong> “90% 이상이면 자동, 아니면 사람에게” 같은 규칙도 바로 걸 수 있다. 자동매매라면 “이 뉴스가 내 포지션에 악재인가: 예/아니오/무관” 같은 분류에 바로 대입해 볼 수 있다. 다만 성능·비용 수치는 모두 만든 쪽 발표이고, AWS도 <strong>“내 트래픽 수백 건으로 먼저 시험하라”</strong>고 했다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>[11/24] AI 도구: Anthropic ‘Claude Ship’ — PR을 올리면 Claude가 리뷰하고, 고치고, 팀 규칙이 허락하면 ‘승인’까지. 사람은 정말 봐야 할 변경만</title>
+<link>https://codemwk.github.io/aipaper-newspaper/claude-ship-review-fix-approve-872762ee91e0/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/claude-ship-review-fix-approve-872762ee91e0</guid>
+<pubDate>Mon, 23 Nov 2026 22:17:19 +0000</pubDate>
+<category>AI 도구</category>
+<description>Anthropic이 11/23 Claude Ship 베타를 공개했다. 이미 정식 출시된 Code Review에, 실패한 CI·머지 충돌·리뷰 지적을 알아서 고치는 PR Steward와 저장소에 둔 정책 파일대로 일상적 변경을 승인하는 Claude Approvals를 붙였다. 개발자는 Claude Code에서 /ship 한 번으로 푸시·PR·리뷰·수정까지 맡긴다. Claude Team·Enterprise, GitHub 저장소 대상이며 토큰 과금. Claude Code 팀에서는 6~9월 머지된 PR이 두 배 넘게 늘고 되돌린 비율은 40% 넘게 줄었다고 한다.</description>
+<content:encoded><![CDATA[<p><em>Anthropic이 11/23 Claude Ship 베타를 공개했다. 이미 정식 출시된 Code Review에, 실패한 CI·머지 충돌·리뷰 지적을 알아서 고치는 PR Steward와 저장소에 둔 정책 파일대로 일상적 변경을 승인하는 Claude Approvals를 붙였다. 개발자는 Claude Code에서 /ship 한 번으로 푸시·PR·리뷰·수정까지 맡긴다. Claude Team·Enterprise, GitHub 저장소 대상이며 토큰 과금. Claude Code 팀에서는 6~9월 머지된 PR이 두 배 넘게 늘고 되돌린 비율은 40% 넘게 줄었다고 한다.</em></p>
+<p><strong>분류:</strong> AI 도구</p>
+<h2>한줄 요약</h2>
+<p>
+에이전트가 코드를 빨리 쓰게 되자 <strong>막히는 곳이 ‘PR 이후’로 옮겨 갔다.</strong> 리뷰를 기다리고, 지적을 고치고, 승인해 줄 사람을 찾는 일이다. 11/23 공개된 <strong>Claude Ship</strong>은 이 세 단계를 Claude에게 맡긴다(<a href="https://claude.com/resources/articles/introducing-claude-ship">Anthropic</a>, <a href="https://code.claude.com/docs/en/claude-ship">문서</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/1040134/anthropic-claude-ship-ai-pull-requests">The Verge</a>).
+</p>
+<h2>세 단계</h2>
+<ul>
+<li><strong>Code Review (정식 출시)</strong>: 여러 관점으로 PR을 검토하고, 찾은 문제를 <strong>스스로 반박 검증</strong>한 뒤 분류해 남긴다. 저장소마다 Quick·Standard·Deep 수준을 고른다.</li>
+<li><strong>PR Steward (베타)</strong>: PR을 ‘초록불’로 유지하는 담당. 실패한 CI, 머지 충돌, 리뷰 지적이 오면 고친다. <strong>푸시할 때마다 무엇을 바꿨고 어떻게 되돌리는지</strong> 댓글을 단다. <code>@claude</code>로 지시하고 <code>@claude stop</code>으로 멈춘다. <strong>스스로 승인·머지는 하지 않게</strong> 설계됐다.</li>
+<li><strong>Claude Approvals (베타)</strong>: 팀이 저장소에 쓴 <strong>정책 파일</strong>(<code>.claude/approvals.yml</code>)대로 일상적 변경은 승인하고, 특정 경우엔 사람 서명을 요구한다. 회사 표현으로 <strong>“더 똑똑한 CODEOWNERS.”</strong> 처음엔 <strong>관찰 모드</strong>로 돌려 믿음이 생긴 뒤 브랜치 보호 규칙에 연결하라고 권한다.</li>
+</ul>
+<h2>쓰는 법과 비용</h2>
+<ul>
+<li>개발자: Claude Code에서 <strong><code>/ship</code></strong> 한 번. 푸시 → PR 열기 → 리뷰 → 지적·실패 수정까지. 머지 가능 여부는 본인 권한과 브랜치 규칙을 따른다.</li>
+<li>관리자: 저장소별로 켜고, 리뷰 수준·실행 시점·<strong>월 지출 한도</strong>를 정한다. 기존 브랜치 보호와 필수 체크는 그대로 쓴다.</li>
+<li><strong>토큰 과금</strong>이다. PR 수·크기·리뷰 수준·Steward 작업량에 따라 비용이 늘어난다. Approvals는 기본료가 없지만, 정책에 Claude 리뷰를 쓰면 관찰 모드에서도 리뷰 비용이 든다.</li>
+<li>Claude <strong>Team·Enterprise</strong>, <strong>GitHub</strong> 저장소 대상. 데이터 무보존(ZDR)·HIPAA·고객 관리 암호키 조직은 쓸 수 없다. 자격 있는 Enterprise는 1만 달러 이상 크레딧을 받을 수 있다(2027-01-15까지 신청).</li>
+</ul>
+<h2>회사가 밝힌 효과</h2>
+<p>
+Claude Code 팀에서는 Claude 리뷰를 여러 검토 층 중 하나로 두고, <strong>6월~9월 머지된 PR이 두 배 넘게</strong> 늘었고 <strong>되돌린(revert) 비율은 40% 넘게</strong> 줄었다. 고객 피드백을 읽은 PM이 Claude에게 PR을 열게 하고, 리뷰·문서 검토·정책 승인을 거쳐 <strong>그날 저녁 머지</strong>된 사례도 소개했다. 모두 회사 자체 수치다.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+핵심은 <strong>“사람 승인을 없앤다”가 아니라 “어떤 변경에 사람이 필요한지를 파일로 적는다”</strong>는 점이다. 문서 오타, 의존성 소폭 업데이트처럼 위험이 낮은 변경은 정책이 통과시키고, 결제·인증·배포 설정은 사람에게 넘기는 식이다. 혼자 여러 에이전트를 돌리는 개인 개발자에게도 같은 원리가 통한다. <strong>승인 규칙을 글로 먼저 써 두면</strong>, 에이전트에게 맡길 범위가 자연스럽게 정해진다. 다만 Team 이상 요금제 전용이라, 개인은 당장 <code>/ship</code>만 시험해 볼 수 있다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>[11/24] AI 모델: 기억을 ‘대화창’이 아니라 모델 안에 — MemTensor·NVIDIA ‘MemT-1.0-Pro’, 대화가 길어져도 크기가 안 느는 내장 메모리</title>
+<link>https://codemwk.github.io/aipaper-newspaper/memt-memory-native-model-73388665327c/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/memt-memory-native-model-73388665327c</guid>
+<pubDate>Mon, 23 Nov 2026 22:15:00 +0000</pubDate>
+<category>AI 모델</category>
+<description>중국 MemTensor가 NVIDIA와 함께 11/22 MemT-1.0-Pro를 Hugging Face에 공개했다. NVIDIA Nemotron 3 Ultra(550B)를 그대로 얼리고, 층마다 ‘기억 블록’을 붙여 대화 내용을 고정 크기의 내부 상태로 압축한다. 총 554B(활성 59B), 학습한 건 기억 파라미터 4.23B뿐. 128K 토큰 대화 기준 전체 KV 캐시보다 약 66배 적은 저장 공간이라고 한다. 다만 저자들 스스로 정밀한 기억 찾기는 RAG·외부 메모리 시스템이 아직 앞선다고 밝혔다.</description>
+<content:encoded><![CDATA[<p><em>중국 MemTensor가 NVIDIA와 함께 11/22 MemT-1.0-Pro를 Hugging Face에 공개했다. NVIDIA Nemotron 3 Ultra(550B)를 그대로 얼리고, 층마다 ‘기억 블록’을 붙여 대화 내용을 고정 크기의 내부 상태로 압축한다. 총 554B(활성 59B), 학습한 건 기억 파라미터 4.23B뿐. 128K 토큰 대화 기준 전체 KV 캐시보다 약 66배 적은 저장 공간이라고 한다. 다만 저자들 스스로 정밀한 기억 찾기는 RAG·외부 메모리 시스템이 아직 앞선다고 밝혔다.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+지금 AI의 ‘기억’은 대부분 <strong>바깥에 있다.</strong> 벡터 DB, 요약 노트, 파일을 매번 대화창에 다시 넣는다. <strong>MemT-1.0-Pro</strong>는 반대로 <strong>기억을 모델 내부 상태로 옮기는</strong> 실험이다(<a href="https://huggingface.co/MemTensor/MemT-1.0-Pro">Hugging Face</a>, <a href="https://github.com/MemTensor/MemT-1.0">GitHub</a>, <a href="https://www.neuraldaily.news/en/a/memt-1-0-pro-memory-native-model-nemotron">Neural Daily</a>).
+</p>
+<h2>어떻게 기억하나</h2>
+<ul>
+<li>바탕은 <strong>NVIDIA Nemotron 3 Ultra 550B-A55B.</strong> 이 모델은 <strong>얼려 두고</strong>, 각 층에 <strong>‘네이티브 메모리 블록’</strong>을 붙였다. 총 554B, 활성 59B, 새로 학습한 건 <strong>기억 파라미터 4.23B</strong>뿐이다.</li>
+<li>대화가 끝날 때마다 새 정보를 <strong>고정 크기 기억 상태</strong>에 쓴다. 지울 것·쓸 것·잊을 것을 정하는 ‘문(gate)’이 있다. 답을 만들 때는 이 상태를 읽어 주의(attention) 결과에 더한다.</li>
+<li>핵심은 <strong>크기가 늘지 않는다</strong>는 점이다. 128K 토큰 대화 기준으로 <strong>전체 KV 캐시보다 약 66배 적은 저장 공간</strong>이라고 저자들은 밝혔다. 사용 중에 모델 가중치는 바뀌지 않고, 기억 상태만 바뀐다.</li>
+<li>앞서 나온 Nano(Qwen3.6 기반), Flash(DeepSeek-V4-Flash 기반)의 큰형이다. 기술 보고서는 arXiv에 있다.</li>
+</ul>
+<h2>성적표, 솔직한 버전</h2>
+<ul>
+<li>11개 기억 벤치마크에서 Pro·Flash·Nano가 <strong>‘모델 내장형 기억’ 방식 중 1·2·3위.</strong> 예전 방식(MemoryLLM, LoCoMo 46.6)보다 크게 올랐다.</li>
+<li>하지만 <strong>바깥 기억 시스템이 아직 앞선다.</strong> LoCoMo에서 MemT-Pro 64.6 대 MemOS(같은 Nemotron) 87.8, MemoryAgentBench 23.9 대 27.1. 긴 기록에서 <strong>정확한 증거를 찾아야 하는 일</strong>은 RAG가 낫다고 저자들이 직접 적었다.</li>
+<li>돌리려면 <strong>GPU 8장(BF16)</strong> 서버가 필요하다. 라이선스는 Nemotron을 따라 OpenMDW-1.1.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+세컨드 브레인을 쓰는 입장에서 이 연구는 <strong>“노트를 버려도 된다”가 아니라 그 반대</strong>를 말해 준다. 정확한 사실, 날짜, 출처는 여전히 <strong>파일·위키 같은 바깥 기억</strong>이 이긴다. 내장 기억이 잘하는 건 <strong>“이 저장소는 이런 버릇이 있다” 같은 흐릿한 경험</strong>을 매번 길게 붙여 넣지 않는 일이다. 저장소에는 코딩 에이전트가 과거 경험을 내장 기억에 넣어, 작업 문맥에 텍스트를 하나도 더하지 않는 예시가 있다. 앞으로 개인 AI는 <strong>“사실은 Obsidian에, 습관은 모델 안에”</strong>처럼 두 층으로 나뉠 가능성이 크다. 지금은 연구 공개 단계이고, 개인이 바로 쓸 수 있는 크기는 아니다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>[11/24] AI 모델: Z.ai ‘GLM-5.4’ — 층을 더 쌓지 않고 ‘같은 층을 두 번 돌려’ 2~3조급 지능을 노린 첫 루프 트랜스포머 플래그십</title>
+<link>https://codemwk.github.io/aipaper-newspaper/glm-5-4-loop-transformer-b58a9be837af/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/glm-5-4-loop-transformer-b58a9be837af</guid>
+<pubDate>Mon, 23 Nov 2026 22:10:00 +0000</pubDate>
+<category>AI 모델</category>
+<description>중국 Z.ai(지푸)가 11/23 GLM-5.4를 공개했다. GLM-5 기반 모델(750B 규모)의 가운데 28개 층을 두 번 반복 실행하는 ‘루프 트랜스포머’로, 파라미터를 늘리지 않고 생각의 깊이를 늘렸다. 회사는 2~3조 파라미터 모델에 견줄 지능이라고 주장한다. 30B 실험에서는 학습 연산 약 10%만 더 써서 수학·과학·긴 문맥에서 이득이 컸고, 답변 길이는 10~14% 줄었다. 약점은 ‘마라톤 생각’. 코딩 플랜·ZCode·채팅에서 쓸 수 있고 API는 곧, 가중치는 안전 보강 후 공개 예정.</description>
+<content:encoded><![CDATA[<p><em>중국 Z.ai(지푸)가 11/23 GLM-5.4를 공개했다. GLM-5 기반 모델(750B 규모)의 가운데 28개 층을 두 번 반복 실행하는 ‘루프 트랜스포머’로, 파라미터를 늘리지 않고 생각의 깊이를 늘렸다. 회사는 2~3조 파라미터 모델에 견줄 지능이라고 주장한다. 30B 실험에서는 학습 연산 약 10%만 더 써서 수학·과학·긴 문맥에서 이득이 컸고, 답변 길이는 10~14% 줄었다. 약점은 ‘마라톤 생각’. 코딩 플랜·ZCode·채팅에서 쓸 수 있고 API는 곧, 가중치는 안전 보강 후 공개 예정.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+보통 AI 모델은 <strong>층을 더 쌓아(파라미터를 늘려)</strong> 똑똑해진다. <strong>GLM-5.4</strong>는 반대로, <strong>같은 층 묶음을 두 번 돌려</strong> 더 깊이 생각하게 했다. 11/23 Z.ai가 공개한 첫 루프 구조 플래그십이다(<a href="https://z.ai/blog/glm-5.4">Z.ai 블로그</a>).
+</p>
+<h2>무엇이 다른가</h2>
+<ul>
+<li><strong>루프 구조</strong>: 기반 모델의 <strong>28개 층을 두 번</strong> 실행한다. 첫 번째는 전체 맥락을 조심스럽게 쌓고, 두 번째는 그 결과를 다듬어 답을 쓴다. 어려운 토큰일수록 첫 번째부터 더 많이 고쳐 쓰도록 ‘문(gate)’이 스스로 조절된다.</li>
+<li><strong>처음부터 새로 학습하지 않았다.</strong> 루프 모델을 처음부터 학습하면 같은 연산 예산의 일반 모델보다 못하다는 게 그동안의 결과였다. 그래서 <strong>이미 학습된 모델을 루프로 바꿔 이어 학습</strong>했다.</li>
+<li><strong>메모리 비용 억제</strong>: 반복할 때마다 기억 저장(KV 캐시)을 통째로 늘리면 비용이 두 배가 된다. 두 번째 바퀴는 첫 바퀴 것을 재사용하고 <strong>최근 구간(슬라이딩 윈도)만 따로</strong> 둔다. 100만 토큰 문맥에서도 GLM-5.3보다 배포 비용 증가를 “충분히 통제”했다고 밝혔다.</li>
+<li><strong>속도</strong>: 한가할 때 초당 최대 200토큰, 붐빌 때 70~80토큰.</li>
+</ul>
+<h2>회사가 내놓은 근거</h2>
+<ul>
+<li>1B → 4B → 30B → 750B로 단계적으로 검증했다.</li>
+<li><strong>30B 비교 실험</strong>: 파라미터 수는 같고 학습 연산만 약 10% 더 쓴 루프 버전이 수학, 과학 추론, 긴 문맥에서 크게 앞섰다. 대부분 시험에서 <strong>답변 길이가 10~14% 줄었다.</strong> 회사 해석은 “생각의 일부가 겉으로 쓰는 글에서 <strong>모델 내부의 깊이</strong>로 옮겨 갔다.”</li>
+<li>약점도 적었다. <strong>지나치게 긴 ‘마라톤 생각’ 루프</strong>에 빠지는 경향이 있다. 다만 그 반성 과정이 정확도는 꾸준히 올린다고 했다.</li>
+</ul>
+<h2>‘일반화된 코딩’</h2>
+<p>
+Z.ai는 GLM-5.4의 방향을 <strong>“코드로 모든 일을 푼다”</strong>로 잡았다. 시연은 코드로 만든 <strong>자기 내레이션 뮤직비디오</strong>, FreeCAD로 설계한 <strong>6축 로봇 팔</strong>, 캐릭터·물리·전투가 있는 <strong>완성형 게임</strong>, 셰이더만으로 만든 <strong>3D 새 관찰 장면</strong>이다.
+</p>
+<h2>어디서 쓰나</h2>
+<p>
+GLM 코딩 플랜, ZCode, Z.ai 채팅. <strong>API는 ‘곧’</strong>, <strong>가중치는 “안전 보강 후 책임 있게 공개”</strong> 예정이다. 더 큰 다음 모델도 “곧”이라고 했다.
+</p>
+<h2>왜 중요한가</h2>
+<p>
+어제 전한 Thinking Machines의 <strong>Inkling 2 Mini</strong>(가운데 층을 세 번 반복)와 같은 아이디어가 이번엔 <strong>750B급 플래그십</strong>에 들어왔다. ‘더 큰 모델’ 경쟁이 <strong>‘같은 모델을 더 깊이 돌리기’</strong>로 넓어지고 있다. 쓰는 쪽에서 보면 <strong>같은 크기·비슷한 비용에 더 깊은 추론</strong>을 기대할 수 있다는 뜻이다. 다만 “2~3조급”이라는 말은 회사 주장이고, 외부 검증과 API 가격은 아직 없다. 루프 모델은 오래 생각하는 경향이 있어 <strong>응답 시간 상한</strong>을 두고 쓰는 편이 안전하다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>[11/24] AI 트레이딩: MT5 내장 MCP를 직접 켜 보니 — 도구 107개, 백테스트 7.5초, 그리고 ‘거래 허용’이 기본값이었다. 원격형 fxapis는 ‘읽기 전용부터’</title>
+<link>https://codemwk.github.io/aipaper-newspaper/mt5-builtin-mcp-tested-3285641de568/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/mt5-builtin-mcp-tested-3285641de568</guid>
+<pubDate>Mon, 23 Nov 2026 22:05:00 +0000</pubDate>
+<category>AI 트레이딩</category>
+<description>트레이딩 정보 사이트 Kairotick이 11/18 MT5 내장 MCP 서버를 Claude Code에 붙여 실제로 시험하고 11/23 결과를 정리했다. 터미널 서버가 노출하는 도구는 107개, Strategy Tester를 MCP로만 돌려 6개월 EURUSD H1 백테스트가 7.5초에 끝났고 일반 테스터와 결과가 센트 단위까지 같았다. 하지만 시험 터미널에서는 ‘MCP 거래 허용’이 기본으로 켜져 있었다. 같은 주 fxapis는 MT5 계정을 클라우드에서 붙이는 원격 MCP를 문서화했다 — 기본은 읽기 전용, 거래는 계정별·2단계 인증·주문 크기 한도.</description>
+<content:encoded><![CDATA[<p><em>트레이딩 정보 사이트 Kairotick이 11/18 MT5 내장 MCP 서버를 Claude Code에 붙여 실제로 시험하고 11/23 결과를 정리했다. 터미널 서버가 노출하는 도구는 107개, Strategy Tester를 MCP로만 돌려 6개월 EURUSD H1 백테스트가 7.5초에 끝났고 일반 테스터와 결과가 센트 단위까지 같았다. 하지만 시험 터미널에서는 ‘MCP 거래 허용’이 기본으로 켜져 있었다. 같은 주 fxapis는 MT5 계정을 클라우드에서 붙이는 원격 MCP를 문서화했다 — 기본은 읽기 전용, 거래는 계정별·2단계 인증·주문 크기 한도.</em></p>
+<p><strong>분류:</strong> AI 트레이딩</p>
+<h2>한줄 요약</h2>
+<p>
+MT5에는 이미 <strong>AI 에이전트용 문(MCP 서버)</strong>이 들어 있다. 켜는 법은 쉽다. 문제는 <strong>그 문이 기본적으로 얼마나 열려 있느냐</strong>다. 11/23 Kairotick의 실측 정리와 fxapis의 원격 MCP 문서가 이 질문에 서로 다른 답을 보여 준다(<a href="https://kairotick.com/ai/mt5-mcp/">Kairotick</a>, <a href="https://www.metatrader5.com/en/terminal/help/mcp_and_ai/configuration">MetaTrader 5 도움말</a>, <a href="https://docs.fxapis.com/guides/mcp">fxapis</a>).
+</p>
+<h2>MT5 내장 MCP: 실제로 해 본 결과</h2>
+<ul>
+<li>켜는 법: <strong>도구 &gt; 옵션 &gt; MCP</strong> 탭에서 *Enable internal server*를 켜고 API 키를 만든 뒤 <strong>Copy.</strong> Claude Code·Codex용 설정이 클립보드에 들어온다. 기본 주소는 <code>127.0.0.1:22346</code>(내 컴퓨터 안에서만). 시험한 빌드 6241~6320 모두 이 탭이 있었다.</li>
+<li>서버는 세 개다. <strong>terminal</strong>(내 MT5), <strong>metaeditor</strong>(코드 편집기), <strong>marketdata</strong>(MetaTrader.com 시세·뉴스).</li>
+<li>터미널 서버의 도구는 <strong>107개</strong>(11/18 기준). 주문·청산·손절 수정 10개, 차트·지표 28개, <strong>Strategy Tester 11개</strong>, 경제 캘린더·뉴스 9개, 파일·웹 16개 등.</li>
+<li><strong>백테스트를 말로</strong>: 기본 제공 MACD Sample EA를 MCP만으로 EURUSD H1, 6개월 돌리는 데 <strong>7.5초.</strong> 직접 만든 EA를 USDJPY M1로 두 방식 비교했더니 <strong>로그 581줄이 똑같고 손익이 센트까지 일치</strong>, 거래 147건도 같았다. 단, 첫 실행은 가격 기록을 받느라 113초 대 57초로 느렸다.</li>
+<li>겪은 함정: <strong>터미널 두 개가 같은 포트를 못 쓴다</strong>(두 번째에 22356 같은 다른 포트를 줘야 함). 설정 파일에 저장된 키는 암호화돼 있어 복사해 쓰면 401 오류. EA가 파일에 줄을 이어 쓰면 실행마다 비워야 한다.</li>
+</ul>
+<h2>가장 중요한 한 줄: 기본값</h2>
+<ul>
+<li>시험 터미널에서 <code>terminal_get_info</code>는 <strong><code>mcp_trade_allowed: true</code></strong>를 돌려줬다. 즉 <strong>거래 허용이 기본으로 켜져 있었다.</strong> 이번 주문 점검은 *Algo Trading* 버튼이 꺼져 있어서 거절됐을 뿐이다.</li>
+<li>그래서 권장 설정은 <strong>도구 &gt; 옵션 &gt; AI Assistant &gt; Trading</strong>을 <strong>‘확인 후 거래’ 또는 ‘거래 금지’</strong>로 두는 것. *Dangerous shell operations*(MT5 폴더 밖 PowerShell·Python 실행)는 끈다. 꺼도 MQL5·Common 폴더 파일은 읽고 쓸 수 있다.</li>
+<li>에이전트가 낸 주문도 <strong>프랍펌 일일 손실·낙폭 한도에 똑같이 잡힌다.</strong> 펀디드 계정은 회사의 자동매매 규정부터 확인하라고 적었다.</li>
+</ul>
+<h2>원격형 fxapis: ‘허용한 것만’ 서버가 막는다</h2>
+<ul>
+<li>설치 없이 <code>api.fxapis.com/mcp</code>를 AI 앱에 넣고 로그인하면, MT5 터미널이 <strong>EU 클라우드</strong>에서 돈다. claude.ai, ChatGPT 같은 웹 앱에서도 쓸 수 있다는 점이 내장 서버와 다르다.</li>
+<li><strong>기본은 읽기 전용.</strong> 거래는 로그인 때 <strong>계정별로</strong> 켜고, <strong>2단계 인증</strong>이 필요하며, <strong>최대 주문 크기와 하루 주문 횟수</strong>를 정할 수 있다. 이 제한은 모델이 뭐라 하든 API가 매번 검사한다.</li>
+<li>주문 도구에는 매번 새 <strong>idempotency key</strong>가 붙는다. 같은 요청을 재시도해도 <strong>주문이 두 번 나가지 않는다.</strong> 여러 계정에 같은 주문을 넣는 도구도 있다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<p>
+지난번 저장하신 <strong>‘MT5 Build 6060 네이티브 MCP’</strong>와 이어지는 소식이다. 그때는 “이런 기능이 생겼다”였다면, 이번엔 <strong>실제로 켜 본 사람의 측정값과 함정</strong>이다. 특히 FTMO·Tradeify처럼 한 컴퓨터에서 MT5를 여러 개 띄우는 환경이라면 <strong>포트 충돌</strong>과 <strong>‘거래 허용 기본값’</strong> 두 가지는 바로 확인할 가치가 있다. 가장 쓸 만한 출발점은 거래가 아니라 <strong>“Strategy Tester를 말로 돌리고 리포트를 데이터로 받는”</strong> 쪽이다. 결과가 일반 테스터와 같다는 확인이 나왔기 때문이다. 같은 페이지는 Kairotick 자사 MCP(경제지표 시간·프랍 규정)와 손실 한도 EA 홍보도 함께 싣고 있으니, 측정 부분만 가려 읽으면 된다.
+</p><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
+<item>
+<title>[11/24] AI 비즈니스: Everful — 작은 소매점에 ‘중국 공장 소싱팀’을 소프트웨어로 붙여 주는 회사, 출시 2년 반 만에 연 매출 1억 달러 페이스</title>
+<link>https://codemwk.github.io/aipaper-newspaper/everful-ai-business-25353e3fafeb/</link>
+<guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/everful-ai-business-25353e3fafeb</guid>
+<pubDate>Mon, 23 Nov 2026 22:00:00 +0000</pubDate>
+<category>AI 비즈니스</category>
+<description>샌프란시스코·싱가포르의 Everful이 11/19 시리즈 A 4,850만 달러를 발표했다(Vertex Ventures 동남아·인도, January Capital 공동 주도, Square Peg·Lightspeed 참여). 소싱 전담팀이 없는 작은 소매점·브랜드를 3만 곳이 넘는 검증 공장과 연결하고, 상품 발굴부터 공장 섭외·품질검사·물류까지 통째로 맡는다. AI 에이전트가 트렌드 추적, 공장 찾기·평가, 주문 조율을 한다. 월 500만 개 이상을 60여 개국에 보내고, 연말 연환산 매출 1억 달러를 바라본다.</description>
+<content:encoded><![CDATA[<p><em>샌프란시스코·싱가포르의 Everful이 11/19 시리즈 A 4,850만 달러를 발표했다(Vertex Ventures 동남아·인도, January Capital 공동 주도, Square Peg·Lightspeed 참여). 소싱 전담팀이 없는 작은 소매점·브랜드를 3만 곳이 넘는 검증 공장과 연결하고, 상품 발굴부터 공장 섭외·품질검사·물류까지 통째로 맡는다. AI 에이전트가 트렌드 추적, 공장 찾기·평가, 주문 조율을 한다. 월 500만 개 이상을 60여 개국에 보내고, 연말 연환산 매출 1억 달러를 바라본다.</em></p>
+<p><strong>분류:</strong> AI 비즈니스</p>
+<h2>한줄 요약</h2>
+<p>
+<strong>Everful</strong>은 “공장과 소매점을 이어 주는 장터”가 아니라 <strong>“소싱을 대신 해 주는 회사”</strong>다. 작은 가게가 중국 공장에서 물건을 떼 오려면 중개상, 끝없는 이메일, 높은 최소 주문량을 거쳐야 했다. Everful은 그 일을 AI 에이전트와 자체 물류로 처리한다. 11/19 <strong>시리즈 A 4,850만 달러</strong>를 발표했다(<a href="https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/">TechCrunch</a>, <a href="https://www.prnewswire.com/news-releases/everful-raises-48-5-million-series-a-to-build-the-ai-infrastructure-layer-for-global-commerce-302945927.html">PR Newswire</a>).
+</p>
+<h2>누구에게 무엇을 파나</h2>
+<ul>
+<li>고객은 <strong>소싱팀이 없는 작은 소매점과 브랜드</strong>다. 가장 큰 시장은 미국이고, 60여 개국에 판다.</li>
+<li>살 수 있는 방식은 세 가지다. <strong>도매, 드롭십(재고 없이 주문 들어오면 바로 발송), 커스터마이즈.</strong> 모두 <strong>최소 주문량이 낮다.</strong></li>
+<li>카탈로그에는 <strong>2,000만 개 이상</strong> 상품이 있고, 검증한 공장 파트너는 <strong>3만 곳 이상</strong>이다. Shopify와 연동된다.</li>
+<li>Everful이 직접 맡는 일: 상품 소싱, 여러 공장 주문 합치기, <strong>품질검사</strong>, 물류. 공동창업자 Kevin Han은 “장터는 이걸 안 해 준다. 우리는 전부 한다”고 말했다.</li>
+</ul>
+<h2>AI가 하는 일</h2>
+<ul>
+<li>회사 중심에는 <strong>‘수요와 공급의 세계 모델’</strong>이 있다. 고객이 무엇을 원하는지, 어느 공장이 무엇을 만들 수 있는지, 어떻게 옮기는지를 하나의 지도로 묶은 데이터다.</li>
+<li>AI 에이전트가 이 지도를 보고 <strong>뜨는 상품을 찾고, 새 공장을 찾아 검증하고, 주문 내내 공장과 연락</strong>한다. 여러 언어로 흩어진 공급 데이터를 언어 모델과 이미지 인식으로 읽는다.</li>
+<li>모든 공장은 Everful 자체 검사 데이터로 <strong>계속 점수가 매겨진다.</strong> 주문·검사·배송이 쌓일수록 지도가 정확해진다는 게 회사 설명이다.</li>
+<li>CEO Sisi Song: “예전엔 소싱이 사람 문제였다. 크면 해외에 팀을 뽑았다. AI는 그 팀을 소프트웨어로 바꾼다.”</li>
+</ul>
+<h2>돈 버는 구조와 숫자</h2>
+<ul>
+<li>상품을 팔고 이행(fulfillment)까지 맡는 <strong>거래 기반 모델</strong>이다. 수수료율·마진은 공개하지 않았다.</li>
+<li>출시 <strong>2년 반이 안 돼</strong> 월 <strong>500만 개 이상</strong> 출고, 연말까지 <strong>연환산 매출 1억 달러</strong> 도달 전망(회사 발표).</li>
+<li>직원 약 <strong>70명</strong>, 그중 <strong>45명이 연구개발.</strong> 엔지니어링과 사업을 잇는 ‘AI 운영팀’을 따로 뒀다. 사람이 적은데 물량이 큰 구조다.</li>
+<li>창업자: 알리바바 임원·Bessemer 투자자 출신 <strong>Sisi Song</strong>, 이전 회사 Orbeus를 아마존에 판 <strong>Kevin Han.</strong> 2024년 주얼리 도매로 시작해 전 품목으로 넓혔다.</li>
+<li>투자금은 미국·유럽(영국·프랑스·이탈리아) 확장과 <strong>제품 커스터마이즈 자동화</strong>에 쓴다.</li>
+</ul>
+<h2>왜 중요한가</h2>
+<ul>
+<li><strong>“도구를 파는 대신 결과를 판다.”</strong> Han은 “일을 고객에게 남기는 도구가 아니라, 결과를 내는 에이전트를 만든다”고 했다. 어제 Numa(딜러십), 지난주 Model ML(투자은행)과 같은 흐름이다. AI 회사가 소프트웨어 구독이 아니라 <strong>업무 결과 자체</strong>로 돈을 번다.</li>
+<li><strong>위험도 분명하다.</strong> 중국 공장에 기대는 사업이라 미·중 관세와 정책 변화를 바로 맞는다. 미국은 800달러 이하 소포 면세(de minimis)를 중단했다. Song은 오히려 “해외 B2B 소싱 + 현지 판매” 모델이 유리해진다고 본다. 알리바바, Faire와의 경쟁도 세다.</li>
+<li>브랜드 스튜디오 관점에서: 작은 브랜드가 <strong>‘굿즈·패키지 실물’을 빠르고 적은 수량으로 시험</strong>할 수 있는 길이 넓어진다. 브랜드 리뉴얼 제안에 실물 샘플을 붙이는 비용이 내려간다.</li>
+<li>주의할 점: 매출 전망·출고량·공장 수는 모두 회사 발표다. 가격·마진·기업가치는 공개되지 않았다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>]]></content:encoded>
+</item>
 <item>
 <title>[11/23] 새로운 각도: AI가 ‘자기 뇌’를 직접 고쳐 썼다 — 학습 없이 자기 가중치를 편집해 6.6점 올린 27B 모델, 작은 모델은 자기를 망가뜨렸다</title>
 <link>https://codemwk.github.io/aipaper-newspaper/self-rewriting-weights-a4567491b8f3/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/self-rewriting-weights-a4567491b8f3</guid>
-<pubDate>Sun, 22 Nov 2026 22:12:41 +0000</pubDate>
+<pubDate>Sun, 22 Nov 2026 22:55:00 +0000</pubDate>
 <category>새로운 각도</category>
 <description>UIUC·CMU·프린스턴·스탠퍼드 등 연구진이 11/18 arXiv에 ‘언어 모델은 자기 가중치를 다시 쓸 수 있다’는 논문을 올렸다. 오픈 모델 Qwen3.5-27B에게 자기 가중치와 채점된 답안, 자기를 실행해 볼 권한만 주고 학습(경사하강) 없이 스스로 고치게 했다. 모델은 자기 내부 상태를 읽어 원인을 찾고 가중치를 편집해, 처음 보는 문제 490개에서 정확도가 6.6점 올랐다. 일부러 망가뜨린 자기 복사본도 고쳐, 처음 보는 이미지 과제에서 원래 성능의 80% 이상을 되찾았다. 같은 계열 2B·4B·9B 모델은 편집을 못 하거나 무작위로 건드려 스스로를 망가뜨렸다.</description>
 <content:encoded><![CDATA[<p><em>UIUC·CMU·프린스턴·스탠퍼드 등 연구진이 11/18 arXiv에 ‘언어 모델은 자기 가중치를 다시 쓸 수 있다’는 논문을 올렸다. 오픈 모델 Qwen3.5-27B에게 자기 가중치와 채점된 답안, 자기를 실행해 볼 권한만 주고 학습(경사하강) 없이 스스로 고치게 했다. 모델은 자기 내부 상태를 읽어 원인을 찾고 가중치를 편집해, 처음 보는 문제 490개에서 정확도가 6.6점 올랐다. 일부러 망가뜨린 자기 복사본도 고쳐, 처음 보는 이미지 과제에서 원래 성능의 80% 이상을 되찾았다. 같은 계열 2B·4B·9B 모델은 편집을 못 하거나 무작위로 건드려 스스로를 망가뜨렸다.</em></p>
@@ -47,7 +473,7 @@
 <title>[11/23] AI 트레이딩: “외국인이 사는 종목 찾아줘” — SK증권은 말로 조건검색을, 다이와증권은 ‘사람 승인 후 에이전트 체결’을 실험했다</title>
 <link>https://codemwk.github.io/aipaper-newspaper/sk-daiwa-agent-trading-3869161bec0d/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/sk-daiwa-agent-trading-3869161bec0d</guid>
-<pubDate>Sun, 22 Nov 2026 22:12:41 +0000</pubDate>
+<pubDate>Sun, 22 Nov 2026 22:50:00 +0000</pubDate>
 <category>AI 트레이딩</category>
 <description>11/20 한국과 일본 증권사에서 AI 매매의 두 단계가 동시에 나왔다. SK증권은 한국금융IT와 만든 ‘AI조건검색 &amp; 차트분석’을 HTS 주파수W·MTS 주파수3에 넣었다. 자연어 요청을 조건검색식으로 바꿔 종목을 찾고, MACD·RSI·모멘텀으로 차트를 분석하며, 하루 세 번 AI 브리핑을 보낸다. 오픈소스 LLM을 내부망에 둬 고객정보 유출 위험을 줄였다. 다이와증권그룹은 여러 AI 에이전트가 사람의 사전 승인을 받아 테스트용 토큰을 여러 탈중앙 거래소에서 교환하고, 지시·승인·결과를 묶어 기록하는 실증에 성공했다.</description>
 <content:encoded><![CDATA[<p><em>11/20 한국과 일본 증권사에서 AI 매매의 두 단계가 동시에 나왔다. SK증권은 한국금융IT와 만든 ‘AI조건검색 &amp; 차트분석’을 HTS 주파수W·MTS 주파수3에 넣었다. 자연어 요청을 조건검색식으로 바꿔 종목을 찾고, MACD·RSI·모멘텀으로 차트를 분석하며, 하루 세 번 AI 브리핑을 보낸다. 오픈소스 LLM을 내부망에 둬 고객정보 유출 위험을 줄였다. 다이와증권그룹은 여러 AI 에이전트가 사람의 사전 승인을 받아 테스트용 토큰을 여러 탈중앙 거래소에서 교환하고, 지시·승인·결과를 묶어 기록하는 실증에 성공했다.</em></p>
@@ -81,7 +507,7 @@ AI 매매는 단계가 있다. <strong>① 찾기 → ② 분석 → ③ 주문 
 <title>[11/23] 세컨드 브레인: 내 LLM Wiki를 ‘내 서버’로 — obsidian-wiki가 명령 한 줄 자체 호스팅·로그인·Git 동기화를, 옵시디언 플러그인은 ‘파일 옮김’을 기록한다</title>
 <link>https://codemwk.github.io/aipaper-newspaper/obsidian-wiki-self-host-3f49b135619e/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/obsidian-wiki-self-host-3f49b135619e</guid>
-<pubDate>Sun, 22 Nov 2026 22:12:41 +0000</pubDate>
+<pubDate>Sun, 22 Nov 2026 22:45:00 +0000</pubDate>
 <category>세컨드 브레인</category>
 <description>Karpathy의 LLM Wiki 패턴을 구현한 두 프로젝트가 또 업데이트를 냈다. 에이전트용 스킬 묶음 obsidian-wiki는 v2026.11.6(11/17)에 볼트 웹 뷰어를, v2026.11.7(11/19)에 명령 한 줄 자체 호스팅(TLS, 읽기 전용 키, 양방향 Git 동기화)과 OAuth 2.1 로그인·MCP Registry 등록을 넣었다. 옵시디언 플러그인 Karpathy LLM Wiki 1.32.0(11/17)은 파일 이름만 바꿨는데 ‘노트가 바뀌었다’고 잘못 경고하던 문제를 고치고 이동 기록을 남기며, ‘관련 페이지’ 목록이 허브 페이지로 쏠리던 현상을 절반으로 줄였다.</description>
 <content:encoded><![CDATA[<p><em>Karpathy의 LLM Wiki 패턴을 구현한 두 프로젝트가 또 업데이트를 냈다. 에이전트용 스킬 묶음 obsidian-wiki는 v2026.11.6(11/17)에 볼트 웹 뷰어를, v2026.11.7(11/19)에 명령 한 줄 자체 호스팅(TLS, 읽기 전용 키, 양방향 Git 동기화)과 OAuth 2.1 로그인·MCP Registry 등록을 넣었다. 옵시디언 플러그인 Karpathy LLM Wiki 1.32.0(11/17)은 파일 이름만 바꿨는데 ‘노트가 바뀌었다’고 잘못 경고하던 문제를 고치고 이동 기록을 남기며, ‘관련 페이지’ 목록이 허브 페이지로 쏠리던 현상을 절반으로 줄였다.</em></p>
@@ -122,7 +548,7 @@ LLM Wiki가 ‘내 노트북 안의 실험’에서 <strong>여러 기기·여�
 <title>[11/23] GitHub 이번 주: 에이전트에게 ‘엑셀’, ‘영상 편집기’, ‘디자인 도구’를 쥐여 주는 저장소들 — Univer, ffmpeg-skill, stitch-skills</title>
 <link>https://codemwk.github.io/aipaper-newspaper/github-univer-ffmpeg-stitch-248a382b8b6b/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/github-univer-ffmpeg-stitch-248a382b8b6b</guid>
-<pubDate>Sun, 22 Nov 2026 22:12:41 +0000</pubDate>
+<pubDate>Sun, 22 Nov 2026 22:40:00 +0000</pubDate>
 <category>GitHub 트렌드</category>
 <description>11/22 GitHub 주간 트렌딩에서 눈에 띈 흐름은 ‘코딩 에이전트에게 사무·창작 도구를 붙이는’ 저장소다. 이번 주 가장 많이 오른 Univer(+7,240★)는 내 제품 안에 스프레드시트·문서 편집기를 넣고 사람과 AI 에이전트가 함께 쓰게 하는 오피스 SDK. ffmpeg-skill(+3,598★)은 컷·자막·화면비·음량·플랫폼별 내보내기 등 FFmpeg 도구 42개를 에이전트용으로 묶어 클라우드·API 키 없이 로컬에서 영상을 편집한다. 구글의 stitch-skills(+2,431★)는 Stitch 디자인 도구를 Claude Code·Cursor·Codex에서 부르는 스킬 묶음이다.</description>
 <content:encoded><![CDATA[<p><em>11/22 GitHub 주간 트렌딩에서 눈에 띈 흐름은 ‘코딩 에이전트에게 사무·창작 도구를 붙이는’ 저장소다. 이번 주 가장 많이 오른 Univer(+7,240★)는 내 제품 안에 스프레드시트·문서 편집기를 넣고 사람과 AI 에이전트가 함께 쓰게 하는 오피스 SDK. ffmpeg-skill(+3,598★)은 컷·자막·화면비·음량·플랫폼별 내보내기 등 FFmpeg 도구 42개를 에이전트용으로 묶어 클라우드·API 키 없이 로컬에서 영상을 편집한다. 구글의 stitch-skills(+2,431★)는 Stitch 디자인 도구를 Claude Code·Cursor·Codex에서 부르는 스킬 묶음이다.</em></p>
@@ -159,7 +585,7 @@ LLM Wiki가 ‘내 노트북 안의 실험’에서 <strong>여러 기기·여�
 <title>[11/23] 디자인: Figma 에이전트가 ‘개발자 화면(Dev Mode)’으로 — 버전 비교·코드 조각·에셋 일괄 다운로드, 그리고 기획서(Specs)를 코딩 에이전트에 넘기는 법</title>
 <link>https://codemwk.github.io/aipaper-newspaper/figma-agent-dev-mode-specs-a7a42dcd9211/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/figma-agent-dev-mode-specs-a7a42dcd9211</guid>
-<pubDate>Sun, 22 Nov 2026 22:12:41 +0000</pubDate>
+<pubDate>Sun, 22 Nov 2026 22:35:00 +0000</pubDate>
 <category>디자인</category>
 <description>Figma가 11/19 Dev Mode에서도 Figma 에이전트를 쓸 수 있게 했다. 개발자는 디자인에 대해 묻고, 버전 차이를 시각 비교나 변경 목록으로 받고, React 코드 조각과 SVG 아이콘 일괄 다운로드 링크를 얻는다. Dev 좌석은 디자인을 바꾸지 않고 대화만 하고, 편집 권한 있는 Full 좌석은 수정도 요청한다. 11/18에는 한 프롬프트로 이미지를 2·4·6장, 또는 최대 3개 모델로 동시에 생성하는 기능이 들어왔다. 11/20 Figma는 Specs 문서로 코딩 에이전트에 구현 계획을 넘기는 작업 예시도 공개했다.</description>
 <content:encoded><![CDATA[<p><em>Figma가 11/19 Dev Mode에서도 Figma 에이전트를 쓸 수 있게 했다. 개발자는 디자인에 대해 묻고, 버전 차이를 시각 비교나 변경 목록으로 받고, React 코드 조각과 SVG 아이콘 일괄 다운로드 링크를 얻는다. Dev 좌석은 디자인을 바꾸지 않고 대화만 하고, 편집 권한 있는 Full 좌석은 수정도 요청한다. 11/18에는 한 프롬프트로 이미지를 2·4·6장, 또는 최대 3개 모델로 동시에 생성하는 기능이 들어왔다. 11/20 Figma는 Specs 문서로 코딩 에이전트에 구현 계획을 넘기는 작업 예시도 공개했다.</em></p>
@@ -194,7 +620,7 @@ LLM Wiki가 ‘내 노트북 안의 실험’에서 <strong>여러 기기·여�
 <title>[11/23] 디자인: Onlook 2.0 — 목업이 아니라 ‘진짜 돌아가는 내 앱’ 위에 캔버스를 깔고, 내 Claude·ChatGPT 구독으로 시안 10개를 나란히</title>
 <link>https://codemwk.github.io/aipaper-newspaper/onlook-2-real-code-canvas-d6aebeb46656/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/onlook-2-real-code-canvas-d6aebeb46656</guid>
-<pubDate>Sun, 22 Nov 2026 22:12:41 +0000</pubDate>
+<pubDate>Sun, 22 Nov 2026 22:30:00 +0000</pubDate>
 <category>디자인 / UI·UX</category>
 <description>디자이너용 오픈소스 도구 Onlook이 11/19 완전히 새로 만든 2.0 맥 데스크톱 앱을 공개했다. 내 저장소를 열면 실제 앱이 로컬에서 돌아가고, 그 화면들이 무한 캔버스 위 프레임으로 뜬다. ‘이 화면 10가지 버전’, ‘이 컴포넌트의 모든 상태’를 시키면 실제 코드로 나란히 만들어지고, 바뀐 내용은 별도 복사본에서 일반 PR이 된다. AI는 따로 팔지 않고 사용자의 Claude Code·ChatGPT(Codex) 구독을 그대로 쓴다. 앱은 무료, 편집기는 Apache 2.0. 앱의 UI는 Meta의 오픈 디자인 시스템 Astryx로 만들었다.</description>
 <content:encoded><![CDATA[<p><em>디자이너용 오픈소스 도구 Onlook이 11/19 완전히 새로 만든 2.0 맥 데스크톱 앱을 공개했다. 내 저장소를 열면 실제 앱이 로컬에서 돌아가고, 그 화면들이 무한 캔버스 위 프레임으로 뜬다. ‘이 화면 10가지 버전’, ‘이 컴포넌트의 모든 상태’를 시키면 실제 코드로 나란히 만들어지고, 바뀐 내용은 별도 복사본에서 일반 PR이 된다. AI는 따로 팔지 않고 사용자의 Claude Code·ChatGPT(Codex) 구독을 그대로 쓴다. 앱은 무료, 편집기는 Apache 2.0. 앱의 UI는 Meta의 오픈 디자인 시스템 Astryx로 만들었다.</em></p>
@@ -226,7 +652,7 @@ LLM Wiki가 ‘내 노트북 안의 실험’에서 <strong>여러 기기·여�
 <title>[11/23] 디자인: 배민 ‘CLAYDesign’ — 범용 AI 디자인 도구가 ‘배민 같지만 배민 아닌’ 화면을 그리자, 디자인 시스템으로 직접 만든 사내 도구</title>
 <link>https://codemwk.github.io/aipaper-newspaper/baemin-claydesign-1d20fe362779/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/baemin-claydesign-1d20fe362779</guid>
-<pubDate>Sun, 22 Nov 2026 22:12:41 +0000</pubDate>
+<pubDate>Sun, 22 Nov 2026 22:25:00 +0000</pubDate>
 <category>디자인 / UI·UX</category>
 <description>우아한형제들 디자인시스템팀이 11/20 기술블로그에 사내 AI 도구 CLAYDesign의 구조를 공개했다. 한 줄 프롬프트로 배민 디자인 시스템(클레이 민트) 컴포넌트만 써서 화면을 만들고, Figma·React·SwiftUI·Compose 코드와 사내 테스트 앱으로 내보낸다. 핵심은 AI에게 코드를 쓰게 하지 않고 ‘화면 JSON 문서’를 쓰게 한 뒤, 디자인 시스템 코드에서 자동 추출한 카탈로그로 검사해 틀린 값은 저장을 막는 것. 전사 정식 운영 첫 주 300명 이상이 화면 1,000개 이상을 만들었다.</description>
 <content:encoded><![CDATA[<p><em>우아한형제들 디자인시스템팀이 11/20 기술블로그에 사내 AI 도구 CLAYDesign의 구조를 공개했다. 한 줄 프롬프트로 배민 디자인 시스템(클레이 민트) 컴포넌트만 써서 화면을 만들고, Figma·React·SwiftUI·Compose 코드와 사내 테스트 앱으로 내보낸다. 핵심은 AI에게 코드를 쓰게 하지 않고 ‘화면 JSON 문서’를 쓰게 한 뒤, 디자인 시스템 코드에서 자동 추출한 카탈로그로 검사해 틀린 값은 저장을 막는 것. 전사 정식 운영 첫 주 300명 이상이 화면 1,000개 이상을 만들었다.</em></p>
@@ -262,7 +688,7 @@ LLM Wiki가 ‘내 노트북 안의 실험’에서 <strong>여러 기기·여�
 <title>[11/23] AI 콘텐츠: 구글 Genie 4, 개발자에게 열렸다 — 소리까지 나는 ‘걸어 다니는 세계’를 API로, 1초에 약 0.1달러</title>
 <link>https://codemwk.github.io/aipaper-newspaper/genie-4-api-worlds-8c8969370249/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/genie-4-api-worlds-8c8969370249</guid>
-<pubDate>Sun, 22 Nov 2026 22:12:41 +0000</pubDate>
+<pubDate>Sun, 22 Nov 2026 22:20:00 +0000</pubDate>
 <category>AI 콘텐츠</category>
 <description>10/28 연구 프리뷰로 전한 구글 딥마인드의 실시간 세계 모델 Genie 4가 11/18 Google AI Ultra 구독자용 Project Genie에, 11/19 Gemini API와 AI Studio에 정식으로 열렸다. 글이나 참고 이미지 한 장으로 720p·24fps 세계를 만들고, 키보드로 돌아다니며 글로 날씨·조명·사건을 바꾼다. 주변음·효과음·대사가 함께 나온다. 비용은 1초에 약 0.10달러(분당 약 6달러), 무료 등급은 없다. 모든 결과에는 SynthID 워터마크가 들어간다.</description>
 <content:encoded><![CDATA[<p><em>10/28 연구 프리뷰로 전한 구글 딥마인드의 실시간 세계 모델 Genie 4가 11/18 Google AI Ultra 구독자용 Project Genie에, 11/19 Gemini API와 AI Studio에 정식으로 열렸다. 글이나 참고 이미지 한 장으로 720p·24fps 세계를 만들고, 키보드로 돌아다니며 글로 날씨·조명·사건을 바꾼다. 주변음·효과음·대사가 함께 나온다. 비용은 1초에 약 0.10달러(분당 약 6달러), 무료 등급은 없다. 모든 결과에는 SynthID 워터마크가 들어간다.</em></p>
@@ -293,7 +719,7 @@ LLM Wiki가 ‘내 노트북 안의 실험’에서 <strong>여러 기기·여�
 <title>[11/23] AI 콘텐츠: 창작 도구가 ‘대화창 안으로’ — Suno MCP 무료 플랜까지 개방, Picsart는 모델 250개를 키 하나·MCP 하나로</title>
 <link>https://codemwk.github.io/aipaper-newspaper/suno-picsart-mcp-creative-e0b08975e36d/</link>
 <guid isPermaLink="false">https://codemwk.github.io/aipaper-newspaper/suno-picsart-mcp-creative-e0b08975e36d</guid>
-<pubDate>Sun, 22 Nov 2026 22:12:41 +0000</pubDate>
+<pubDate>Sun, 22 Nov 2026 22:15:00 +0000</pubDate>
 <category>AI 콘텐츠</category>
 <description>음악·이미지·영상 도구가 앱을 여는 대신 ChatGPT·Claude·Cursor 대화창에서 바로 쓰이는 쪽으로 움직인다. Suno는 11/18 Suno MCP를 무료 플랜 포함 모든 요금제에 열었다. 주소 하나를 커스텀 커넥터로 넣으면 노래·커버·연장·매시업, 스템 분리, MIDI 변환을 대화로 시키고 결과는 내 Suno 라이브러리에 쌓인다. Picsart는 11/20 Picsart Platform을 내놨다. 30여 회사의 이미지·영상·음성·텍스트 모델 250개 이상을 하나의 API 키·CLI·MCP 서버로 쓰고, 5달러부터 충전해 생성 건당 낸다.</description>
 <content:encoded><![CDATA[<p><em>음악·이미지·영상 도구가 앱을 여는 대신 ChatGPT·Claude·Cursor 대화창에서 바로 쓰이는 쪽으로 움직인다. Suno는 11/18 Suno MCP를 무료 플랜 포함 모든 요금제에 열었다. 주소 하나를 커스텀 커넥터로 넣으면 노래·커버·연장·매시업, 스템 분리, MIDI 변환을 대화로 시키고 결과는 내 Suno 라이브러리에 쌓인다. Picsart는 11/20 Picsart Platform을 내놨다. 30여 회사의 이미지·영상·음성·텍스트 모델 250개 이상을 하나의 API 키·CLI·MCP 서버로 쓰고, 5달러부터 충전해 생성 건당 낸다.</em></p>
