@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>[11/26] AI 모델: 앤트그룹 Ling-3.2-air — 문서·오피스·브라우저 일을 ‘끝내는’ 데 맞춘 MIT 오픈 멀티모달 모델, 작업 완료율 15.7%→61% — AiPaper 뉴스</title>
+  <meta name="description" content="앤트그룹이 11/24 Ling-3.2-air 가중치를 MIT 라이선스로 공개했다. 텍스트·이미지·영상을 처리하는 하이브리드 선형 어텐션 MoE로, 언어 부분은 총 124B·활성 5.5B다. 대화보다 도구를 써서 문서 작성·오피스 소프트웨어·브라우저 업무를 끝내는 데 초점을 맞췄고, 자체 공개한 AutomationBench-AA에서 작업 완료율이 이전 Ling-3.0-flash-VL의 15.7%에서 61%로 올랐다고 밝혔다."/>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1.25rem 3rem;line-height:1.65;color:#111;background:#fafafa}
+    header{margin-bottom:1.5rem}
+    .meta{color:#555;font-size:0.95rem}
+    a{color:#06c}
+    h1{font-size:1.45rem;line-height:1.35;margin:0.4rem 0 0.6rem}
+    h2{font-size:1.15rem;margin-top:1.4rem}
+    h3{font-size:1.05rem}
+    code{background:#eee;padding:0.1em 0.3em;border-radius:3px}
+    hr{border:none;border-top:1px solid #ddd;margin:1.5rem 0}
+    footer{margin-top:2rem;font-size:0.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta"><a href="../">AiPaper 뉴스</a> · AI 모델 · 2026-11-26 07:35 KST</div>
+    <h1>[11/26] AI 모델: 앤트그룹 Ling-3.2-air — 문서·오피스·브라우저 일을 ‘끝내는’ 데 맞춘 MIT 오픈 멀티모달 모델, 작업 완료율 15.7%→61%</h1>
+  </header>
+  <article>
+<p><em>앤트그룹이 11/24 Ling-3.2-air 가중치를 MIT 라이선스로 공개했다. 텍스트·이미지·영상을 처리하는 하이브리드 선형 어텐션 MoE로, 언어 부분은 총 124B·활성 5.5B다. 대화보다 도구를 써서 문서 작성·오피스 소프트웨어·브라우저 업무를 끝내는 데 초점을 맞췄고, 자체 공개한 AutomationBench-AA에서 작업 완료율이 이전 Ling-3.0-flash-VL의 15.7%에서 61%로 올랐다고 밝혔다.</em></p>
+<p><strong>분류:</strong> AI 모델</p>
+<h2>한줄 요약</h2>
+<p>
+“말 잘하는 모델”이 아니라 <strong>“일을 끝내는 모델”</strong>을 내세운 오픈 모델이다. 상업적으로 거의 제약 없는 <strong>MIT 라이선스</strong>라는 점이 크다(<a href="https://technode.com/2026/11/25/ant-releases-ling-3-2-air-multimodal-model-under-mit-license/">TechNode</a>).
+</p>
+<h2>무엇이 나왔나</h2>
+<ul>
+<li><strong>입력:</strong> 텍스트, 이미지, 영상.</li>
+<li><strong>구조:</strong> 하이브리드 <strong>선형 어텐션 + MoE.</strong> 언어 부분 총 <strong>124B</strong>, 토큰당 활성 <strong>5.5B.</strong> 선형 어텐션은 긴 입력에서 계산량이 덜 늘어나는 방식이다.</li>
+<li><strong>배포:</strong> SGLang·vLLM 배포 안내 포함. 자체 서버에 올리고 상업용으로 고쳐 쓸 수 있다.</li>
+<li><strong>회사가 밝힌 개선(이전 Ling-3.0-flash-VL 대비):</strong></li>
+</ul>
+<p>
+  - 문서 작성, 오피스 소프트웨어, 브라우저 기반 업무.
+<br/>
+  - 자체 공개 평가 <strong>AutomationBench-AA 작업 완료율 15.7% → 61%.</strong>
+<br/>
+  - PDF 문서 생성과 전문 업무 처리도 좋아졌다고 함.
+</p>
+<h2>왜 중요한가</h2>
+<ul>
+<li>11/10 소개한 <strong>Ling-3.2-flash</strong>(560B·활성 25B, API 중심)의 <strong>작고 가중치가 공개된 형제</strong>다. 직접 띄워 고쳐 쓰려는 쪽에겐 이쪽이 더 현실적이다.</li>
+<li>오늘 함께 실린 Mellum2.1·Solar Mini 4.5와 같은 흐름이다. <strong>총 크기는 커도 실제로 움직이는 파라미터는 작게</strong> — 그래야 에이전트처럼 여러 번 도구를 부르는 일을 싸게 돌린다.</li>
+<li>“보고서 PDF 만들기”, “스프레드시트 채우기”, “웹 화면에서 처리하기” 같은 <strong>사무 자동화 에이전트의 바탕 모델</strong>로 쓸 만한 오픈 선택지가 하나 늘었다.</li>
+<li>주의: 61%는 앤트가 직접 공개한 평가 기준이며, 독립 재현 결과는 아직 없다. 124B라 로컬 PC보다는 서버용이다.</li>
+</ul><hr/><p>이 글은 AiPaper 뉴스가 직접 쓴 해설 기사입니다. 원문 사이트로 나가지 않아도 이 화면에서 끝까지 읽을 수 있게 전문을 넣었습니다.</p>
+  </article>
+  <footer>
+    <p><a href="../">← 목록</a> · <a href="../feeds/newspaper.rss">RSS</a></p>
+  </footer>
+</body>
+</html>
